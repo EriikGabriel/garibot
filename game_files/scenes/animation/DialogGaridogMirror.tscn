@@ -1,0 +1,258 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/animation/GaridogBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/animation/Dialog/NextButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/animation/Dialog/FastForwardIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Images/Effects/baloon.png" type="Texture" id=4]
+[ext_resource path="res://scenes/stages/ControllerAnim.gd" type="Script" id=5]
+[ext_resource path="res://assets/Font/text.tres" type="DynamicFont" id=6]
+
+[sub_resource type="Animation" id=1]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Balao:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Balao/Texto:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Balao:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Balao/Texto:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "conversa2"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Balao:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Balao/Texto:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "conversa_final"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Balao:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Balao/Texto:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_level_complete"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Balao:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "play_line"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Balao:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Balao/Texto:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Balao/Texto:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[node name="DialogGaridog" type="Node2D" groups=[
+"animation",
+]]
+script = ExtResource( 5 )
+dialog = [ "Heehehe", "JoojjoojOooj", "Borala" ]
+dialog_sound = "talk_garidog"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/conversa0 = SubResource( 1 )
+anims/conversa1 = SubResource( 2 )
+anims/conversa2 = SubResource( 3 )
+anims/conversa_final = SubResource( 4 )
+anims/default = SubResource( 5 )
+anims/play_line = SubResource( 6 )
+
+[node name="Balao" type="Sprite" parent="."]
+visible = false
+position = Vector2( 608.25, 195.25 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="Texto" type="Label" parent="Balao"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -460.0
+margin_top = -151.5
+margin_right = 429.0
+margin_bottom = 96.5
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.45098, 0.164706, 0.490196 )
+text = "OBRIGADO GARIBOT!
+VOCÊ RECICLOU O LIXO, AJUDOU AS PESSOAS E O MUNDO INTEIRO!"
+valign = 1
+autowrap = true
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 281, 22 )
+
+[node name="Corpo" parent="." instance=ExtResource( 1 )]
+scale = Vector2( -1, 1 )
+
+[node name="DialogSfx" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
+[node name="FastForwardIcon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 745, 242 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

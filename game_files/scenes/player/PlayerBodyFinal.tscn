@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/player/PlayerBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Images/Other Garibots/METAL.png" type="Texture" id=2]
+
+[node name="PlayerBody" instance=ExtResource( 1 )]
+change_skin_enabled = false
+
+[node name="Body" parent="Skeleton2D" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Head" parent="Skeleton2D/Body" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Face" parent="Skeleton2D/Body/Head" index="0"]
+self_modulate = Color( 0, 1, 0.415686, 1 )
+position = Vector2( 2.96673, -11.03 )
+
+[node name="Magnet" parent="Skeleton2D/Body/Head" index="1"]
+texture = ExtResource( 2 )
+
+[node name="ShoulderR" parent="Skeleton2D/Body" index="1"]
+texture = ExtResource( 2 )
+
+[node name="ShoulderL" parent="Skeleton2D/Body" index="2"]
+texture = ExtResource( 2 )
+
+[node name="LegL" parent="Skeleton2D/Body" index="3"]
+texture = ExtResource( 2 )
+
+[node name="LegR" parent="Skeleton2D/Body" index="4"]
+texture = ExtResource( 2 )

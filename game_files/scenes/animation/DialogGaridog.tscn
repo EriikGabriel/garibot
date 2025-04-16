@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/animation/Dialog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/animation/GariDog.tscn" type="PackedScene" id=4]
+
+[node name="Dialog" instance=ExtResource( 3 )]
+dialog = [ "GALLERY_INSTRUCTIONS" ]
+corpo_anim_override = NodePath("GariDog/Corpo/PersonAnimationPlayer")
+dialog_sound = "talk_garidog"
+
+[node name="AnimationPlayer" parent="." index="0"]
+autoplay = "default"
+
+[node name="Texto" parent="Balao" index="0"]
+margin_left = -440.0
+margin_top = -156.5
+margin_right = 345.0
+margin_bottom = 99.5
+
+[node name="FastForwardIcon" parent="." index="2"]
+position = Vector2( 537, 242 )
+
+[node name="GariDog" parent="." index="3" instance=ExtResource( 4 )]
+position = Vector2( 484.532, 298.385 )
+scale = Vector2( -1, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
+position = Vector2( 326.288, 316.407 )
+offset = Vector2( 75, -75 )
+current = true
+zoom = Vector2( 0.65, 0.65 )
+limit_left = -400
+limit_right = 8000
+limit_bottom = 900
+limit_smoothed = true
+
+[editable path="GariDog"]

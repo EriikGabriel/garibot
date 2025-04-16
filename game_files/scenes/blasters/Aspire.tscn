@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56.056, 42.0565 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 10.4451
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 45.2377, 0.514213 )
+shape = SubResource( 1 )
+
+[node name="Position2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Position2D"]
+shape = SubResource( 2 )

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/animation/shader_trocar_cores.shader" type="Shader" id=1]
+[ext_resource path="res://scenes/animation/BoyBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/animation/Dialog.tscn" type="PackedScene" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/old_color = Color( 0.988235, 0.211765, 0.388235, 1 )
+shader_param/new_color = Color( 0.988235, 0.211765, 0.388235, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/old_color = Color( 0.384314, 0.258824, 0, 1 )
+shader_param/new_color = Color( 0.238281, 0.238281, 0.238281, 1 )
+
+[node name="DialogTimothy" instance=ExtResource( 3 )]
+corpo_anim_override = NodePath("BoyBody/Corpo/PersonAnimationPlayer")
+dialog_sound = "talk_kid"
+
+[node name="Texto" parent="Balao" index="0"]
+margin_left = -440.0
+margin_top = -156.5
+margin_right = 345.0
+margin_bottom = 99.5
+
+[node name="FastForwardIcon" parent="." index="2"]
+position = Vector2( 537, 242 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+position = Vector2( 326.288, 316.407 )
+offset = Vector2( 75, -75 )
+zoom = Vector2( 0.65, 0.65 )
+limit_smoothed = true
+
+[node name="BoyBody" parent="." index="5" instance=ExtResource( 2 )]
+material = SubResource( 1 )
+position = Vector2( 489, 300 )
+scale = Vector2( -1, 1 )
+
+[node name="Cabeça" parent="BoyBody/Corpo" index="0"]
+material = SubResource( 2 )
+
+[editable path="BoyBody"]

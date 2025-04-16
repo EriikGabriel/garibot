@@ -1,0 +1,286 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/Images/UI/MainMenu/Sair.png" type="Texture" id=1]
+[ext_resource path="res://assets/Font/text.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/menu/painel_style_blue.tres" type="StyleBox" id=3]
+[ext_resource path="res://scenes/menu/painel_style_gallery.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/Font/text_ui_small.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scenes/menu/button_test.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/Images/UI/MainMenu/Sair02.png" type="Texture" id=7]
+[ext_resource path="res://assets/Font/text_ui_small_window.tres" type="DynamicFont" id=8]
+[ext_resource path="res://scenes/menu/painel_style_blue_window.tres" type="StyleBox" id=9]
+[ext_resource path="res://assets/Images/Collectibles/monitor.png" type="Texture" id=10]
+[ext_resource path="res://assets/Font/text_ui_gallery.tres" type="DynamicFont" id=11]
+[ext_resource path="res://assets/Font/text_ui.tres" type="DynamicFont" id=12]
+[ext_resource path="res://scenes/gallery/GaleriaItenCollected.gd" type="Script" id=13]
+[ext_resource path="res://assets/Images/UI/MainMenu/Sair03.png" type="Texture" id=14]
+[ext_resource path="res://assets/Images/UI/MainMenu/PlayIcon2.png" type="Texture" id=15]
+[ext_resource path="res://assets/Images/UI/MainMenu/PlayIcon.png" type="Texture" id=16]
+[ext_resource path="res://scenes/gallery/USeItem.gd" type="Script" id=17]
+
+[node name="Galeria" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+flag = true
+useItemButton = NodePath("Panel/Info/HBoxContainer/VBoxContainer/HBoxContainer/USeItem")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 0.827451, 0.447059, 1, 1 )
+anchor_left = 0.463
+anchor_top = 0.47
+anchor_right = 0.463
+anchor_bottom = 0.47
+margin_left = -347.4
+margin_top = -185.5
+margin_right = 408.6
+margin_bottom = 203.5
+mouse_filter = 1
+custom_styles/panel = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.707108
+margin_bottom = 0.707092
+mouse_filter = 2
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Galeria" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 97.0
+margin_right = 756.0
+margin_bottom = 139.0
+custom_fonts/font = ExtResource( 2 )
+text = "Escolha um dos seguintes resíduos:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
+margin_top = 149.0
+margin_right = 756.0
+margin_bottom = 249.0
+mouse_filter = 1
+
+[node name="ItemList" type="ItemList" parent="Panel/VBoxContainer/CenterContainer"]
+margin_left = 28.0
+margin_right = 728.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 700, 100 )
+mouse_filter = 1
+custom_styles/selected_focus = ExtResource( 6 )
+custom_styles/cursor_unfocused = ExtResource( 6 )
+custom_styles/selected = ExtResource( 6 )
+custom_styles/bg = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/vseparation = 4
+custom_constants/hseparation = 4
+allow_reselect = true
+auto_height = true
+max_columns = 7
+same_column_width = true
+fixed_column_width = 162
+icon_mode = 0
+fixed_icon_size = Vector2( 40, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarGaleria" type="TextureButton" parent="Panel/VBoxContainer"]
+margin_left = 361.0
+margin_top = 259.0
+margin_right = 395.0
+margin_bottom = 291.0
+grow_horizontal = 0
+size_flags_horizontal = 6
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 14 )
+texture_focused = ExtResource( 7 )
+stretch_mode = 3
+
+[node name="Info" type="WindowDialog" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 60.0
+margin_top = 60.0
+margin_right = -60.0
+margin_bottom = -60.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/panel = ExtResource( 9 )
+custom_fonts/title_font = ExtResource( 8 )
+custom_colors/title_color = Color( 1, 1, 1, 1 )
+popup_exclusive = true
+window_title = "Informações"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Info/HBoxContainer"]
+margin_right = 127.0
+margin_bottom = 259.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Nome" type="Label" parent="Panel/Info/HBoxContainer/VBoxContainer"]
+margin_top = 13.0
+margin_right = 127.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 12 )
+text = "Nome"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Imagem" type="TextureRect" parent="Panel/Info/HBoxContainer/VBoxContainer"]
+margin_left = 13.0
+margin_top = 56.0
+margin_right = 113.0
+margin_bottom = 156.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Qtd" type="Label" parent="Panel/Info/HBoxContainer/VBoxContainer"]
+margin_top = 176.0
+margin_right = 127.0
+margin_bottom = 194.0
+custom_fonts/font = ExtResource( 11 )
+text = "100 Coletados"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Info/HBoxContainer/VBoxContainer"]
+margin_left = 46.0
+margin_top = 214.0
+margin_right = 80.0
+margin_bottom = 246.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="VoltarInfo" type="TextureButton" parent="Panel/Info/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 34.0
+margin_bottom = 32.0
+grow_horizontal = 0
+size_flags_horizontal = 6
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 14 )
+texture_focused = ExtResource( 7 )
+stretch_mode = 3
+
+[node name="USeItem" type="TextureButton" parent="Panel/Info/HBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 74.0
+margin_right = 109.0
+margin_bottom = 34.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 15 )
+texture_focused = ExtResource( 15 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+galeria = NodePath("../../../../../..")
+
+[node name="VSeparator" type="VSeparator" parent="Panel/Info/HBoxContainer"]
+margin_left = 147.0
+margin_right = 151.0
+margin_bottom = 259.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/Info/HBoxContainer"]
+margin_left = 171.0
+margin_top = 50.0
+margin_right = 616.0
+margin_bottom = 208.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Descrição" type="Label" parent="Panel/Info/HBoxContainer/VBoxContainer2"]
+margin_right = 445.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 11 )
+text = "Um texto de descrição...
+
+
+
+"
+align = 3
+valign = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="Panel/Info/HBoxContainer/VBoxContainer2"]
+margin_top = 106.0
+margin_right = 445.0
+margin_bottom = 136.0
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlasterInfo" type="Label" parent="Panel/Info/HBoxContainer/VBoxContainer2"]
+margin_top = 140.0
+margin_right = 445.0
+margin_bottom = 158.0
+custom_fonts/font = ExtResource( 11 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_selected" from="Panel/VBoxContainer/CenterContainer/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/VoltarGaleria" to="." method="_on_VoltarGaleria_pressed"]
+[connection signal="pressed" from="Panel/Info/HBoxContainer/VBoxContainer/HBoxContainer/VoltarInfo" to="." method="_on_VoltarInfo_pressed"]
+[connection signal="pressed" from="Panel/Info/HBoxContainer/VBoxContainer/HBoxContainer/USeItem" to="Panel/Info/HBoxContainer/VBoxContainer/HBoxContainer/USeItem" method="_on_USeItem_pressed"]

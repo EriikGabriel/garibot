@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Sounds/enemy_sfx/enemy_printer_shoot.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/Sounds/enemy_sfx/enemy_computer.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/Sounds/enemy_sfx/enemy_furadeira_dash.mp3" type="AudioStream" id=4]
+
+[node name="EnemySfx" type="Node2D"]
+
+[node name="SfxHop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="SfxShoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
+[node name="SfxDash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )

@@ -1,0 +1,23 @@
+extends TouchScreenButton
+
+
+
+func _on_TouchScreenButton_Z_pressed():
+	
+	var ev = InputEventAction.new()
+
+	ev.action = "roll_attack"
+	ev.pressed = true
+	Input.parse_input_event(ev)
+	
+	
+	pass # Replace with function body.
+
+
+func _on_TouchScreenButton_Z_released():
+	var ev = InputEventAction.new()
+
+	ev.action = "roll_attack"
+	ev.pressed = false
+	Input.parse_input_event(ev)
+	pass # Replace with function body.

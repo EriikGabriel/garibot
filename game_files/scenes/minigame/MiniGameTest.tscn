@@ -1,0 +1,305 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenes/menu/painel_style_white.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/Font/window_title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/Font/text_ui.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/menu/buttons/ButtonNormal.tres" type="StyleBox" id=4]
+[ext_resource path="res://scenes/menu/buttons/ButtonHover.tres" type="StyleBox" id=5]
+[ext_resource path="res://scenes/menu/buttons/ButtonPress.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/Images/Collectibles/tv.png" type="Texture" id=7]
+[ext_resource path="res://assets/Images/Scenery/bana.png" type="Texture" id=8]
+[ext_resource path="res://scenes/menu/painel_style_blue.tres" type="StyleBox" id=9]
+[ext_resource path="res://assets/Images/Collectibles/geladeira.png" type="Texture" id=10]
+[ext_resource path="res://assets/Images/Stage Elements/happy_emoji.png" type="Texture" id=11]
+[ext_resource path="res://scenes/minigame/MiniGameTest.gd" type="Script" id=13]
+[ext_resource path="res://assets/Images/Collectibles/garrafa.png" type="Texture" id=16]
+[ext_resource path="res://assets/Images/Collectibles/melancia.png" type="Texture" id=17]
+
+[sub_resource type="Theme" id=1]
+
+[node name="MiniGameTest" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+rect_pivot_offset = Vector2( -1220, -100 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+organic_list = [ [ "melancia", ExtResource( 17 ) ], [ "garrafa", ExtResource( 16 ) ] ]
+right = Color( 0.654902, 1, 0.443137, 1 )
+wrong = Color( 1, 0.360784, 0.298039, 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -209.0
+margin_top = -136.5
+margin_right = 209.0
+margin_bottom = 136.5
+custom_styles/panel = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pergunta" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 35.0
+margin_right = 418.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "QUIZ_QUESTION"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controles" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 70.0
+margin_right = 418.0
+margin_bottom = 95.0
+custom_fonts/font = ExtResource( 2 )
+text = "QUIZ_CONTROL"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opcoes" type="CenterContainer" parent="Panel/VBoxContainer"]
+margin_top = 105.0
+margin_right = 418.0
+margin_bottom = 155.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/Opcoes"]
+margin_left = 134.0
+margin_right = 284.0
+margin_bottom = 50.0
+theme = SubResource( 1 )
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opcao0" type="Panel" parent="Panel/VBoxContainer/Opcoes/GridContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 50, 50 )
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpcaoImagem0" type="TextureRect" parent="Panel/VBoxContainer/Opcoes/GridContainer/Opcao0"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/Opcoes/GridContainer/Opcao0"]
+show_behind_parent = true
+margin_right = 50.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opcao1" type="Panel" parent="Panel/VBoxContainer/Opcoes/GridContainer"]
+margin_left = 50.0
+margin_right = 100.0
+margin_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 50, 50 )
+custom_styles/panel = ExtResource( 1 )
+
+[node name="OpcaoImagem1" type="TextureRect" parent="Panel/VBoxContainer/Opcoes/GridContainer/Opcao1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/Opcoes/GridContainer/Opcao1"]
+show_behind_parent = true
+margin_right = 50.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opcao2" type="Panel" parent="Panel/VBoxContainer/Opcoes/GridContainer"]
+margin_left = 100.0
+margin_right = 150.0
+margin_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 50, 50 )
+custom_styles/panel = ExtResource( 1 )
+
+[node name="OpcaoImagem2" type="TextureRect" parent="Panel/VBoxContainer/Opcoes/GridContainer/Opcao2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer/Opcoes/GridContainer/Opcao2"]
+show_behind_parent = true
+margin_top = 0.704895
+margin_right = 50.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NomeDaOpcao" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 165.0
+margin_right = 418.0
+margin_bottom = 190.0
+custom_fonts/font = ExtResource( 2 )
+text = "Computador"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotaoOK" type="CenterContainer" parent="Panel/VBoxContainer"]
+margin_top = 200.0
+margin_right = 418.0
+margin_bottom = 238.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotaoOK" type="Button" parent="Panel/VBoxContainer/BotaoOK"]
+margin_left = 131.0
+margin_right = 286.0
+margin_bottom = 38.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
+text = "BUTTON_OK"
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -109.0
+margin_right = 136.0
+margin_bottom = 112.0
+custom_styles/panel = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer"]
+margin_top = 49.0
+margin_right = 271.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 96, 96 )
+texture = ExtResource( 11 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texto" type="Label" parent="Panel2/VBoxContainer"]
+margin_top = 149.0
+margin_right = 271.0
+margin_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 5
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Correto!"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+pause_mode = 2
+wait_time = 2.0
+
+[connection signal="button_up" from="Panel/VBoxContainer/Opcoes/GridContainer/Opcao0/Button" to="." method="_on_Button_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/Opcoes/GridContainer/Opcao1/Button2" to="." method="_on_Button2_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/Opcoes/GridContainer/Opcao2/Button3" to="." method="_on_Button3_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/BotaoOK/BotaoOK" to="." method="_on_BotaoOK_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

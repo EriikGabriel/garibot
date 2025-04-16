@@ -1,0 +1,1992 @@
+[gd_scene load_steps=71 format=2]
+
+[ext_resource path="res://scenes/tilesets/TileGrass.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/Images/Tilesets/TilePredio.png" type="Texture" id=2]
+[ext_resource path="res://assets/Images/Tilesets/TileParedeCinza.png" type="Texture" id=3]
+[ext_resource path="res://scenes/story/Gerador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/tilesets/Esteira.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game_ui/GameUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/story/Garra.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/enemies/Virus.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/story/Parede.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/player/PlayerBody.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/game_ui/GameOver.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/game_ui/LevelComplete.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/story/InimigosJuntos.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/enemies/BasicEnemySprite.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/story/RecicladoraMestre.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/tilesets/Caixa.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/Sounds/story/story_intro1.mp3" type="AudioStream" id=17]
+[ext_resource path="res://assets/Sounds/story/story_intro3.mp3" type="AudioStream" id=18]
+[ext_resource path="res://assets/Sounds/story/story_intro2.mp3" type="AudioStream" id=19]
+[ext_resource path="res://assets/Images/Scenery/fundo2.1.png" type="Texture" id=20]
+[ext_resource path="res://assets/Images/Scenery/lixo.png" type="Texture" id=21]
+[ext_resource path="res://assets/Images/Collectibles/radio.png" type="Texture" id=22]
+[ext_resource path="res://assets/Images/Collectibles/fogao.png" type="Texture" id=23]
+[ext_resource path="res://assets/Images/Scenery/fundo2.0.png" type="Texture" id=24]
+[ext_resource path="res://assets/Images/Collectibles/microondas.png" type="Texture" id=25]
+[ext_resource path="res://assets/Images/Scenery/saco.png" type="Texture" id=26]
+[ext_resource path="res://assets/Images/Collectibles/placas.png" type="Texture" id=27]
+[ext_resource path="res://scenes/story/Begin.gd" type="Script" id=28]
+[ext_resource path="res://assets/Images/Tilesets/TileParedeVermelha.png" type="Texture" id=29]
+[ext_resource path="res://assets/Font/Langdon.otf" type="DynamicFontData" id=30]
+[ext_resource path="res://assets/Images/Scenery/fundo2.2.png" type="Texture" id=31]
+[ext_resource path="res://assets/Images/Printer/printer_back.png" type="Texture" id=32]
+[ext_resource path="res://assets/Images/Scenery/saco2png.png" type="Texture" id=33]
+[ext_resource path="res://assets/Font/text.tres" type="DynamicFont" id=34]
+[ext_resource path="res://assets/Images/Scenery/ceu3.png" type="Texture" id=35]
+[ext_resource path="res://assets/Images/Scenery/fundo1.png" type="Texture" id=36]
+[ext_resource path="res://assets/Images/Scenery/arvores_fundo.png" type="Texture" id=37]
+[ext_resource path="res://assets/Font/text_ui_gallery.tres" type="DynamicFont" id=38]
+[ext_resource path="res://assets/Images/Tilesets/TileCiclovia.png" type="Texture" id=39]
+[ext_resource path="res://scenes/stages/UsinaPipe.tscn" type="PackedScene" id=40]
+[ext_resource path="res://scenes/stages/PlacaUsina.tscn" type="PackedScene" id=41]
+[ext_resource path="res://scenes/stages/UsinaFloor.tscn" type="PackedScene" id=42]
+[ext_resource path="res://scenes/stages/UsinaVidro.tscn" type="PackedScene" id=43]
+[ext_resource path="res://assets/Images/MobileButtons/key_blue_pressed.png" type="Texture" id=44]
+[ext_resource path="res://assets/Images/MobileButtons/key_blue_up.png" type="Texture" id=45]
+[ext_resource path="res://assets/Images/UI/Misc/next-dialog.png" type="Texture" id=46]
+[ext_resource path="res://assets/Images/UI/Misc/next-dialog-2.png" type="Texture" id=47]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.0760234, 0.51462 )
+colors = PoolColorArray( 0.882353, 1, 0.243137, 1, 0.407843, 0.560784, 0.968627, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 100
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=12]
+resource_local_to_scene = true
+0/name = "TilePredio.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 96 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 256, Vector2( 0, 1 ), 260, Vector2( 0, 2 ), 4, Vector2( 1, 0 ), 320, Vector2( 1, 1 ), 325, Vector2( 1, 2 ), 5, Vector2( 2, 0 ), 64, Vector2( 2, 1 ), 65, Vector2( 2, 2 ), 1, Vector2( 3, 0 ), 324, Vector2( 3, 1 ), 321 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "TileParedeVermelha.png 1"
+1/texture = ExtResource( 29 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 96, 96 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 256, Vector2( 0, 1 ), 260, Vector2( 0, 2 ), 4, Vector2( 1, 0 ), 320, Vector2( 1, 1 ), 325, Vector2( 1, 2 ), 5, Vector2( 2, 0 ), 64, Vector2( 2, 1 ), 65, Vector2( 2, 2 ), 1 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 32, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "TileParedeCinza.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 96, 96 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 0
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 256, Vector2( 0, 1 ), 260, Vector2( 0, 2 ), 4, Vector2( 1, 0 ), 320, Vector2( 1, 1 ), 325, Vector2( 1, 2 ), 5, Vector2( 2, 0 ), 64, Vector2( 2, 1 ), 65, Vector2( 2, 2 ), 1 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 32, 32 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 3 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "TileCiclovia.png 3"
+3/texture = ExtResource( 39 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 224, 128 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 0
+3/autotile/bitmask_flags = [ Vector2( 0, 1 ), 260, Vector2( 1, 0 ), 320, Vector2( 1, 1 ), 325, Vector2( 1, 2 ), 5, Vector2( 2, 1 ), 65, Vector2( 3, 0 ), 261, Vector2( 3, 1 ), 325, Vector2( 3, 2 ), 4, Vector2( 3, 3 ), 325, Vector2( 4, 0 ), 69, Vector2( 4, 1 ), 325, Vector2( 4, 2 ), 1, Vector2( 4, 3 ), 325, Vector2( 5, 1 ), 325, Vector2( 5, 2 ), 256, Vector2( 5, 3 ), 324, Vector2( 6, 1 ), 325, Vector2( 6, 2 ), 64, Vector2( 6, 3 ), 321 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 32, 32 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="DynamicFont" id=13]
+size = 69
+outline_size = 2
+font_data = ExtResource( 30 )
+
+[sub_resource type="Animation" id=14]
+length = 20.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.25, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 12 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.25, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 12 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Garibot/PlayerBody")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5, 12, 13.3, 13.5, 15.4, 15.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "walk_holding", 2 ],
+"method": "play"
+}, {
+"args": [ "walk_holding", 2 ],
+"method": "play"
+}, {
+"args": [ "walk_holding", 2 ],
+"method": "play"
+}, {
+"args": [ "idle", 1 ],
+"method": "play"
+}, {
+"args": [ "turn_back", 1 ],
+"method": "play"
+}, {
+"args": [ "turn_front", 1 ],
+"method": "play"
+}, {
+"args": [ "walk", 2 ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Garibot/PlayerBody:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5, 12, 12.1, 13.3, 15.6, 19 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 770 ), Vector2( 500, 770 ), Vector2( 1200, 770 ), Vector2( 3000, 930 ), Vector2( 3200, 930 ), Vector2( 3200, 930 ), Vector2( 3600, 930 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Garibot/PlayerBody/CameraPlayer:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CameraMundo:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 5, 11.9, 13.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, false ]
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("CameraMundo:zoom:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5, 12, 13.5 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("CameraMundo:zoom:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5, 12, 13.5 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Scenery/Fade:color:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.1, 11.7, 12, 12.3, 18.5, 19 )
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("Garibot/PlayerBody")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 13.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "set_hand_item_visible"
+}, {
+"args": [ false ],
+"method": "set_hand_item_visible"
+} ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("NpcsAndItems/Lixo:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 13.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("NpcsAndItems/Lixo:position:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 3204, -0.25, 0, 0.25, 0, 3204, -0.25, 0, 0.25, 0, 3322.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 13.5, 16 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("NpcsAndItems/Lixo:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 875, -0.25, 0, 0.25, 0, 875, -0.25, 0, 0.25, 0, 875, -0.25, 0, 0.25, 0, 725, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 13.5, 16, 17.5 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("CameraMundo:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 820, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("CameraMundo:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 580, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Garibot/PlayerBody/CameraPlayer:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 32, 0 ) ]
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("Scenery/Esteira/Garra:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( -234, -0.25, 0, 0.25, 0, -234, -0.25, 0, 0.25, 0, -84, -0.25, 0, 0.25, 0, -84, -0.25, 0, 0.25, 0, -234, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 14.5, 15.8, 16, 17.5 )
+}
+tracks/17/type = "method"
+tracks/17/path = NodePath("Scenery/Esteira/Garra")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 15 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "close", 1 ],
+"method": "play"
+} ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("NpcsAndItems/PilhaLixo/Virus2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -394.079, -80.4648 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("NpcsAndItems/PilhaLixo/Virus3:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -395.085, -23.1265 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Scenery/Esteira:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Garibot/PlayerBody:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Music/1:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Scenery/Fade:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 14.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3, 5, 8.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3, 5, 8.5 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Garibot/PlayerBody")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3, 4.5, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "walk", 2 ],
+"method": "play"
+}, {
+"args": [ "hello", 1 ],
+"method": "play"
+}, {
+"args": [ "idle", 1 ],
+"method": "play"
+}, {
+"args": [ "walk", 2 ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Garibot/PlayerBody:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3, 8.5, 11.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3700, 930 ), Vector2( 4100, 930 ), Vector2( 4100, 930 ), Vector2( 4500, 930 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Garibot/PlayerBody/CameraPlayer:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CameraMundo:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 5, 14.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("CameraMundo:zoom:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 8, 12 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("CameraMundo:zoom:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 8, 12 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Scenery/Fade:color:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 11.5, 12, 14.6 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("CameraMundo:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 4300, -0.25, 0, 0.25, 0, 4300, -0.25, 0, 0.25, 0, 4100, -0.25, 0, 0.25, 0, 4100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 8, 12 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("CameraMundo:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 710, -0.25, 0, 0.25, 0, 730, -0.25, 0, 0.25, 0, 730, -0.25, 0, 0.25, 0, 814, -0.25, 0, 0.25, 0, 814, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.000999928, 5, 8, 12 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Scenery/Fade/Texto:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 11.5, 12, 14, 14.6 )
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Garibot/PlayerBody/CameraPlayer:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32, -100 ), Vector2( 120, -100 ) ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("NpcsAndItems/RecicladoraMestre")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 3.5, 8.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "hello", 1 ],
+"method": "play"
+}, {
+"args": [ "happy", 1 ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 17.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Garibot/PlayerBody")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Garibot/PlayerBody:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3700, 930 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Garibot/PlayerBody/CameraPlayer:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CameraMundo:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("CameraMundo:zoom:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("CameraMundo:zoom:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Scenery/Fade:color:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 16.4, 16.9, 18.4 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("CameraMundo:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 4300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("CameraMundo:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 710, -0.25, 0, 0.25, 0, 730, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.000999928 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Scenery/Fade/Texto:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Garibot/PlayerBody/CameraPlayer:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 32, -100 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("NpcsAndItems/RecicladoraMestre/CameraMaquina:current")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("NpcsAndItems/RecicladoraMestre/CameraMaquina:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -200 ) ]
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("NpcsAndItems/RecicladoraMestre/CameraMaquina:zoom:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6, 9, 10.5 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("NpcsAndItems/RecicladoraMestre/CameraMaquina:zoom:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6, 9, 10.5 )
+}
+tracks/17/type = "method"
+tracks/17/path = NodePath("NpcsAndItems/RecicladoraMestre")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 2, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "msg" ],
+"method": "play"
+}, {
+"args": [ "virus" ],
+"method": "play"
+} ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Music/2:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 2, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Music/3:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Music/1:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 2.8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 8.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3, 4.9, 6.9, 8.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3, 4.9, 6.9, 8.5 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Garibot/PlayerBody")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "walk_scaried", 4 ],
+"method": "play"
+}, {
+"args": [ "walk_scaried", 6 ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Garibot/PlayerBody:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5, 3, 4.5, 4.9, 6.5, 7, 8.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3050, 930 ), Vector2( 3300, 930 ), Vector2( 3050, 930 ), Vector2( 3310, 930 ), Vector2( 3310, 930 ), Vector2( 3310, 800 ), Vector2( 3310, 800 ), Vector2( 2200, 500 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Garibot/PlayerBody/CameraPlayer:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CameraMundo:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Scenery/Fade:color:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 7.6, 8, 14.6 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Scenery/Fade/Texto:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 8 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Garibot/PlayerBody/CameraPlayer:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 6.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -80 ), Vector2( 0, -80 ), Vector2( 0, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Garibot/PlayerBody:scale")
+tracks/9/interp = 0
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Garibot/PlayerBody:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 7, 7.5, 8, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 360.0, 720.0, 1080.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Scenery/Esteira:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 2.3, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.666667, 0.403922, 0.945098, 1 ), Color( 0.666667, 0.403922, 0.945098, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Scenery/Esteira/Garra:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 2.4, 4.5, 4.9, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 272, -229.291 ), Vector2( 272, -229.291 ), Vector2( 272, -77.29 ), Vector2( 272, -77 ), Vector2( 272, -207 ) ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("Scenery/Esteira/Garra")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 2.4, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "open", 1 ],
+"method": "play"
+}, {
+"args": [ "close", 1 ],
+"method": "play"
+} ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Scenery/Esteira/Garra:rotation_degrees")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 7, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 55.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("NpcsAndItems/PilhaLixo/Virus3:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3249.83, 26.1946 ), Vector2( -2901.67, -91.6861 ), Vector2( -2845.47, -143.773 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("NpcsAndItems/PilhaLixo/Virus3:modulate")
+tracks/16/interp = 2
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("NpcsAndItems/PilhaLixo/Virus2:position")
+tracks/17/interp = 2
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.601, 3.2, 4, 5.4, 7, 7.7, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2863.19, 64.5734 ), Vector2( -2959.71, 0.835533 ), Vector2( -2821.56, 45.0409 ), Vector2( -3191.88, -18.4927 ), Vector2( -3155.68, 72.4747 ), Vector2( -3094.84, 78.2805 ), Vector2( -2995.64, 4.20576 ), Vector2( -2926.6, 56.9424 ), Vector2( -2700, 40 ), Vector2( -2823.6, 48.9424 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("NpcsAndItems/Lixo:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 14.0
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Garibot/PlayerBody")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "walk_scaried", 8 ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Garibot/PlayerBody:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 11.25, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5950, 700 ), Vector2( 5950, 700 ), Vector2( 6400, 600 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Garibot/PlayerBody/CameraPlayer:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CameraMundo:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("CameraMundo:zoom:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0.25, -0.25, 0, 0.25, 0, 0.348703, -0.25, 0, 0.25, 0, 0.349, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 3, 8.25, 14 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("CameraMundo:zoom:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0.25, -0.25, 0, 0.25, 0, 0.348703, -0.25, 0, 0.25, 0, 0.349, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 3, 8.25, 14 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Scenery/Fade:color:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 12.5, 13, 14.5 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("CameraMundo:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 4300, -0.25, 0, 0.25, 0, 6180, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.001 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("CameraMundo:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 710, -0.25, 0, 0.25, 0, 800, -0.25, 0, 0.25, 0, 800, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.000999928, 8.25, 14 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Scenery/Fade/Texto:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Garibot/PlayerBody/CameraPlayer:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 32, -100 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("NpcsAndItems/RecicladoraMestre/CameraMaquina:current")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("NpcsAndItems/RecicladoraMestre/CameraMaquina:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -200 ) ]
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("NpcsAndItems/RecicladoraMestre/CameraMaquina:zoom:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.836814, -0.25, 0, 0.25, 0, 0.836814, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 3, 6, 9, 10.5 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("NpcsAndItems/RecicladoraMestre/CameraMaquina:zoom:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.836814, -0.25, 0, 0.25, 0, 0.836814, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 3, 6, 9, 10.5 )
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("NpcsAndItems/PilhaLixo/Virus:position")
+tracks/17/interp = 2
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.25, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -149.326, -41.1603 ), Vector2( 3.8291, -77.5345 ), Vector2( 67.0056, -36.3742 ), Vector2( 6.47883, -75.5895 ), Vector2( 0.735176, -14.3277 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("NpcsAndItems/PilhaLixo/Virus:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 1, 2.25, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("NpcsAndItems/PilhaLixo/Virus:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 2.25, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/20/type = "method"
+tracks/20/path = NodePath("NpcsAndItems/PilhaLixo/EnemyBody")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 2.5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "trash", 1 ],
+"method": "play"
+}, {
+"args": [ "alive", 1 ],
+"method": "play"
+}, {
+"args": [ "walk", 1 ],
+"method": "play"
+} ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("NpcsAndItems/PilhaLixo/EnemyBody:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 5.5, 6.5, 6.75, 13.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.31201, -12.387 ), Vector2( -1.31201, -12.387 ), Vector2( 25.688, -12.387 ), Vector2( 25.688, 10 ), Vector2( 201.688, 10 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Scenery/Lixo/Lixo3:self_modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 7, 8.25, 18 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Scenery/Lixo/Lixo2:self_modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 5.5, 7, 18 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Scenery/Lixo:self_modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 18 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("NpcsAndItems/PilhaLixo/InimigosJuntos:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 5.25, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -300, 13 ), Vector2( -300, 13 ), Vector2( 60, 13 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("NpcsAndItems/PilhaLixo/Virus3:position")
+tracks/26/interp = 2
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0, 1, 2.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -24.2649, -55.3277 ), Vector2( -52.0242, -6.50964 ), Vector2( -251.125, -188.381 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("NpcsAndItems/PilhaLixo/Virus2:position")
+tracks/27/interp = 2
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -135.265, -14.3277 ), Vector2( 101.167, -53.5736 ), Vector2( 409.391, -108.135 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Garibot/PlayerBody:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 11, 12, 13, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0, 720.0, 1440.0 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Garibot/PlayerBody:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 11, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.1, 0.1 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scenery/Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Garibot/PlayerBody/CameraPlayer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 32, 0 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 73.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimacaoGeral")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20.2, 33.7, 50.5, 59 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "cena1", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "cena2", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "cena3", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "cena4", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "cena5", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 73 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "next_scene"
+} ]
+}
+
+[sub_resource type="Animation" id=21]
+
+[sub_resource type="Animation" id=22]
+resource_name = "Mobile_Button_Dialog"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 47 ), ExtResource( 46 ), ExtResource( 47 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "NEW_Mobile_Button_Dialog"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 45 ), ExtResource( 44 ), ExtResource( 45 ) ]
+}
+
+[node name="Stage" type="Node2D"]
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 900.625, 409.526 ],
+"_edit_vertical_guides_": [ 8002.08, 800.904, 1600.11, 2400.41, 3198.5, 4037.76, 4943.75, 5826.51, 6697.65, 7255.18 ]
+}
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( -400, 0 )
+z_index = -10
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+
+[node name="Ceu" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -400, -0.473633 )
+z_index = -10
+texture = ExtResource( 35 )
+centered = false
+offset = Vector2( 0, 580 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8400, 320 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Background/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -402.452, 575.537 )
+offset = Vector2( 402.452, -575.537 )
+texture = SubResource( 2 )
+texture_rotation_degrees = 90.0
+polygon = PoolVector2Array( -395.745, -56.4475, -406.146, 582.329, 8183.01, 595.966, 8150.8, -54.9027 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2( 0.75, 0.75 )
+motion_offset = Vector2( 0, -150 )
+
+[node name="Predios" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.803922, 0.92549, 0.505882, 0.941176 )
+position = Vector2( -400, 550 )
+texture = ExtResource( 36 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 8400, 350 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+
+[node name="Arvores" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer3"]
+modulate = Color( 1, 1, 1, 0.941176 )
+position = Vector2( -400, 332 )
+texture = ExtResource( 37 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 8400, 600 )
+
+[node name="Tiles" type="Node2D" parent="."]
+z_index = -5
+
+[node name="Grass" type="TileMap" parent="Tiles"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 0
+format = 1
+tile_data = PoolIntArray( 917670, 0, 0, 917671, 0, 0, 917672, 0, 0, 917673, 0, 0, 917674, 0, 0, 917675, 0, 0, 917676, 0, 0, 983213, 0, 0, 983214, 0, 0, 983215, 0, 0, 1638387, 2, 0, 1638388, 2, 1, 1638389, 2, 1, 1638390, 2, 1, 1638391, 2, 1, 1638392, 2, 1, 1638393, 2, 1, 1638394, 2, 1, 1638395, 2, 1, 1638396, 2, 1, 1638397, 2, 1, 1638398, 2, 1, 1638399, 2, 1, 1572864, 2, 1, 1572865, 2, 1, 1572866, 2, 1, 1572867, 2, 1, 1572868, 2, 1, 1572869, 2, 1, 1572870, 2, 1, 1572871, 2, 1, 1572872, 2, 1, 1572873, 2, 1, 1572874, 2, 1, 1572875, 2, 2, 1572876, 1, 0, 1572877, 1, 1, 1572878, 1, 1, 1572879, 1, 1, 1572880, 1, 1, 1572881, 1, 1, 1572882, 1, 1, 1572883, 1, 1, 1572884, 1, 1, 1572885, 1, 1, 1572886, 1, 1, 1572887, 1, 1, 1572888, 1, 1, 1572889, 1, 1, 1572890, 1, 1, 1572891, 1, 1, 1572892, 1, 1, 1572893, 1, 1, 1572894, 1, 1, 1572895, 1, 1, 1572896, 1, 1, 1572897, 1, 1, 1572898, 1, 1, 1572899, 1, 1, 1572900, 1, 1, 1572901, 1, 1, 1572902, 1, 1, 1572903, 1, 1, 1572904, 1, 1, 1572905, 1, 1, 1572906, 1, 1, 1572907, 1, 1, 1572908, 1, 1, 1572909, 1, 1, 1572910, 1, 1, 1572911, 1, 1, 1572912, 1, 1, 1572913, 1, 1, 1572914, 1, 1, 1572915, 1, 1, 1572916, 1, 1, 1572917, 1, 1, 1572918, 1, 1, 1572919, 1, 1, 1572920, 1, 1, 1572921, 1, 1, 1572922, 1, 1, 1572923, 1, 1, 1572924, 1, 1, 1572925, 1, 1, 1572926, 1, 1, 1572927, 1, 1, 1572928, 1, 1, 1572929, 1, 1, 1572930, 1, 1, 1572931, 1, 1, 1572932, 1, 1, 1572933, 1, 1, 1572934, 1, 1, 1572935, 1, 1, 1572936, 1, 1, 1572937, 1, 1, 1572938, 1, 1, 1572939, 1, 1, 1572940, 1, 2, 1703923, 2, 65536, 1703924, 2, 65540, 1703925, 2, 65540, 1703926, 2, 65540, 1703927, 2, 65539, 1703928, 2, 65540, 1703929, 2, 65539, 1703930, 2, 65540, 1703931, 2, 65540, 1703932, 2, 65540, 1703933, 2, 65539, 1703934, 2, 65539, 1703935, 2, 65540, 1638400, 2, 65540, 1638401, 2, 65537, 1638402, 2, 65540, 1638403, 2, 65539, 1638404, 2, 65539, 1638405, 2, 65539, 1638406, 2, 65537, 1638407, 2, 65539, 1638408, 2, 65540, 1638409, 2, 65537, 1638410, 2, 65539, 1638411, 2, 65538, 1638412, 1, 65536, 1638413, 1, 65537, 1638414, 1, 65537, 1638415, 1, 65540, 1638416, 1, 65539, 1638417, 1, 65540, 1638418, 1, 65539, 1638419, 1, 65540, 1638420, 1, 65540, 1638421, 1, 65537, 1638422, 1, 65539, 1638423, 1, 65537, 1638424, 1, 65539, 1638425, 1, 65537, 1638426, 1, 65537, 1638427, 1, 65537, 1638428, 1, 65537, 1638429, 1, 65539, 1638430, 1, 65540, 1638431, 1, 65537, 1638432, 1, 65537, 1638433, 1, 65540, 1638434, 1, 65537, 1638435, 1, 65540, 1638436, 1, 65539, 1638437, 1, 65537, 1638438, 1, 65539, 1638439, 1, 65539, 1638440, 1, 65539, 1638441, 1, 65540, 1638442, 1, 65537, 1638443, 1, 65540, 1638444, 1, 65537, 1638445, 1, 65539, 1638446, 1, 65537, 1638447, 1, 65540, 1638448, 1, 65540, 1638449, 1, 65540, 1638450, 1, 65537, 1638451, 1, 65537, 1638452, 1, 65537, 1638453, 1, 65540, 1638454, 1, 65537, 1638455, 1, 65540, 1638456, 1, 65537, 1638457, 1, 65539, 1638458, 1, 65540, 1638459, 1, 65539, 1638460, 1, 65540, 1638461, 1, 65540, 1638462, 1, 65539, 1638463, 1, 65537, 1638464, 1, 65537, 1638465, 1, 65537, 1638466, 1, 65540, 1638467, 1, 65539, 1638468, 1, 65539, 1638469, 1, 65537, 1638470, 1, 65537, 1638471, 1, 65539, 1638472, 1, 65537, 1638473, 1, 65537, 1638474, 1, 65537, 1638475, 1, 65537, 1638476, 1, 65538, 1769459, 2, 65536, 1769460, 2, 65539, 1769461, 2, 65540, 1769462, 2, 65537, 1769463, 2, 65539, 1769464, 2, 65539, 1769465, 2, 65540, 1769466, 2, 65539, 1769467, 2, 65540, 1769468, 2, 65540, 1769469, 2, 65540, 1769470, 2, 65539, 1769471, 2, 65539, 1703936, 2, 65539, 1703937, 2, 65539, 1703938, 2, 65539, 1703939, 2, 65540, 1703940, 2, 65539, 1703941, 2, 65539, 1703942, 2, 65540, 1703943, 2, 65537, 1703944, 2, 65537, 1703945, 2, 65539, 1703946, 2, 65537, 1703947, 2, 65538, 1703948, 1, 65536, 1703949, 1, 65539, 1703950, 1, 65540, 1703951, 1, 65539, 1703952, 1, 65540, 1703953, 1, 65540, 1703954, 1, 65540, 1703955, 1, 65537, 1703956, 1, 65539, 1703957, 1, 65540, 1703958, 1, 65540, 1703959, 1, 65539, 1703960, 1, 65539, 1703961, 1, 65537, 1703962, 1, 65537, 1703963, 1, 65537, 1703964, 1, 65539, 1703965, 1, 65540, 1703966, 1, 65540, 1703967, 1, 65540, 1703968, 1, 65539, 1703969, 1, 65540, 1703970, 1, 65537, 1703971, 1, 65540, 1703972, 1, 65539, 1703973, 1, 65539, 1703974, 1, 65540, 1703975, 1, 65537, 1703976, 1, 65540, 1703977, 1, 65539, 1703978, 1, 65539, 1703979, 1, 65539, 1703980, 1, 65539, 1703981, 1, 65539, 1703982, 1, 65539, 1703983, 1, 65539, 1703984, 1, 65537, 1703985, 1, 65540, 1703986, 1, 65539, 1703987, 1, 65537, 1703988, 1, 65539, 1703989, 1, 65540, 1703990, 1, 65539, 1703991, 1, 65540, 1703992, 1, 65540, 1703993, 1, 65539, 1703994, 1, 65537, 1703995, 1, 65540, 1703996, 1, 65539, 1703997, 1, 65540, 1703998, 1, 65537, 1703999, 1, 65539, 1704000, 1, 65540, 1704001, 1, 65539, 1704002, 1, 65537, 1704003, 1, 65539, 1704004, 1, 65540, 1704005, 1, 65537, 1704006, 1, 65539, 1704007, 1, 65539, 1704008, 1, 65540, 1704009, 1, 65539, 1704010, 1, 65539, 1704011, 1, 65539, 1704012, 1, 65538, 1704107, 2, 0, 1704108, 2, 1, 1704109, 2, 1, 1704110, 2, 1, 1704111, 2, 1, 1704112, 2, 1, 1704113, 2, 1, 1704114, 2, 1, 1704115, 2, 1, 1704116, 2, 1, 1704117, 2, 1, 1704118, 2, 1, 1704119, 2, 1, 1704120, 2, 1, 1704121, 2, 1, 1704122, 2, 1, 1704123, 2, 1, 1704124, 2, 1, 1704125, 2, 1, 1704126, 2, 1, 1704127, 2, 1, 1704128, 2, 1, 1704129, 2, 1, 1704130, 2, 1, 1704131, 2, 1, 1704132, 2, 1, 1704133, 2, 1, 1704134, 2, 1, 1704135, 2, 1, 1704136, 2, 1, 1704137, 2, 1, 1704138, 2, 1, 1704139, 2, 1, 1704140, 2, 1, 1704141, 2, 1, 1704142, 2, 1, 1704143, 2, 1, 1704144, 2, 1, 1704145, 2, 1, 1704146, 2, 1, 1704147, 2, 1, 1704148, 2, 1, 1704149, 2, 1, 1704150, 2, 1, 1704151, 2, 1, 1704152, 2, 1, 1704153, 2, 1, 1704154, 2, 2, 1834995, 2, 65536, 1834996, 2, 65540, 1834997, 2, 65537, 1834998, 2, 65539, 1834999, 2, 65539, 1835000, 2, 65540, 1835001, 2, 65540, 1835002, 2, 65539, 1835003, 2, 65537, 1835004, 2, 65539, 1835005, 2, 65537, 1835006, 2, 65540, 1835007, 2, 65537, 1769472, 2, 65540, 1769473, 2, 65537, 1769474, 2, 65537, 1769475, 2, 65540, 1769476, 2, 65540, 1769477, 2, 65540, 1769478, 2, 65540, 1769479, 2, 65540, 1769480, 2, 65540, 1769481, 2, 65540, 1769482, 2, 65540, 1769483, 2, 65538, 1769484, 1, 65536, 1769485, 1, 65540, 1769486, 1, 65539, 1769487, 1, 65540, 1769488, 1, 65539, 1769489, 1, 65537, 1769490, 1, 65539, 1769491, 1, 65540, 1769492, 1, 65540, 1769493, 1, 65540, 1769494, 1, 65540, 1769495, 1, 65540, 1769496, 1, 65540, 1769497, 1, 65537, 1769498, 1, 65539, 1769499, 1, 65540, 1769500, 1, 65540, 1769501, 1, 65540, 1769502, 1, 65540, 1769503, 1, 65537, 1769504, 1, 65537, 1769505, 1, 65540, 1769506, 1, 65537, 1769507, 1, 65539, 1769508, 1, 65539, 1769509, 1, 65540, 1769510, 1, 65540, 1769511, 1, 65537, 1769512, 1, 65537, 1769513, 1, 65540, 1769514, 1, 65537, 1769515, 1, 65540, 1769516, 1, 65540, 1769517, 1, 65539, 1769518, 1, 65540, 1769519, 1, 65537, 1769520, 1, 65540, 1769521, 1, 65539, 1769522, 1, 65539, 1769523, 1, 65540, 1769524, 1, 65539, 1769525, 1, 65537, 1769526, 1, 65539, 1769527, 1, 65540, 1769528, 1, 65537, 1769529, 1, 65540, 1769530, 1, 65540, 1769531, 1, 65537, 1769532, 1, 65537, 1769533, 1, 65540, 1769534, 1, 65539, 1769535, 1, 65540, 1769536, 1, 65539, 1769537, 1, 65540, 1769538, 1, 65540, 1769539, 1, 65539, 1769540, 1, 65537, 1769541, 1, 65540, 1769542, 1, 65537, 1769543, 1, 65539, 1769544, 1, 65539, 1769545, 1, 65537, 1769546, 1, 65537, 1769547, 1, 65540, 1769548, 1, 65538, 1769643, 2, 65536, 1769644, 2, 65539, 1769645, 2, 65539, 1769646, 2, 65537, 1769647, 2, 65540, 1769648, 2, 65540, 1769649, 2, 65537, 1769650, 2, 65539, 1769651, 2, 65539, 1769652, 2, 65540, 1769653, 2, 65537, 1769654, 2, 65540, 1769655, 2, 65540, 1769656, 2, 65540, 1769657, 2, 65539, 1769658, 2, 65537, 1769659, 2, 65540, 1769660, 2, 65540, 1769661, 2, 65540, 1769662, 2, 65537, 1769663, 2, 65539, 1769664, 2, 65537, 1769665, 2, 65537, 1769666, 2, 65539, 1769667, 2, 65540, 1769668, 2, 65537, 1769669, 2, 65540, 1769670, 2, 65537, 1769671, 2, 65537, 1769672, 2, 65539, 1769673, 2, 65539, 1769674, 2, 65537, 1769675, 2, 65540, 1769676, 2, 65537, 1769677, 2, 65539, 1769678, 2, 65539, 1769679, 2, 65540, 1769680, 2, 65540, 1769681, 2, 65539, 1769682, 2, 65537, 1769683, 2, 65539, 1769684, 2, 65539, 1769685, 2, 65539, 1769686, 2, 65539, 1769687, 2, 65539, 1769688, 2, 65539, 1769689, 2, 65537, 1769690, 2, 65538, 1900531, 2, 131072, 1900532, 2, 131073, 1900533, 2, 131073, 1900534, 2, 131073, 1900535, 2, 131073, 1900536, 2, 131073, 1900537, 2, 131073, 1900538, 2, 131073, 1900539, 2, 131073, 1900540, 2, 131073, 1900541, 2, 131073, 1900542, 2, 131073, 1900543, 2, 131073, 1835008, 2, 131073, 1835009, 2, 131073, 1835010, 2, 131073, 1835011, 2, 131073, 1835012, 2, 131073, 1835013, 2, 131073, 1835014, 2, 131073, 1835015, 2, 131073, 1835016, 2, 131073, 1835017, 2, 131073, 1835018, 2, 131073, 1835019, 2, 131074, 1835020, 1, 131072, 1835021, 1, 131073, 1835022, 1, 131073, 1835023, 1, 131073, 1835024, 1, 131073, 1835025, 1, 131073, 1835026, 1, 131073, 1835027, 1, 131073, 1835028, 1, 131073, 1835029, 1, 131073, 1835030, 1, 131073, 1835031, 1, 131073, 1835032, 1, 131073, 1835033, 1, 131073, 1835034, 1, 131073, 1835035, 1, 131073, 1835036, 1, 131073, 1835037, 1, 131073, 1835038, 1, 131073, 1835039, 1, 131073, 1835040, 1, 131073, 1835041, 1, 131073, 1835042, 1, 131073, 1835043, 1, 131073, 1835044, 1, 131073, 1835045, 1, 131073, 1835046, 1, 131073, 1835047, 1, 131073, 1835048, 1, 131073, 1835049, 1, 131073, 1835050, 1, 131073, 1835051, 1, 131073, 1835052, 1, 131073, 1835053, 1, 131073, 1835054, 1, 131073, 1835055, 1, 131073, 1835056, 1, 131073, 1835057, 1, 131073, 1835058, 1, 131073, 1835059, 1, 131073, 1835060, 1, 131073, 1835061, 1, 131073, 1835062, 1, 131073, 1835063, 1, 131073, 1835064, 1, 131073, 1835065, 1, 131073, 1835066, 1, 131073, 1835067, 1, 131073, 1835068, 1, 131073, 1835069, 1, 131073, 1835070, 1, 131073, 1835071, 1, 131073, 1835072, 1, 131073, 1835073, 1, 131073, 1835074, 1, 131073, 1835075, 1, 131073, 1835076, 1, 131073, 1835077, 1, 131073, 1835078, 1, 131073, 1835079, 1, 131073, 1835080, 1, 131073, 1835081, 1, 131073, 1835082, 1, 131073, 1835083, 1, 131073, 1835084, 1, 131074, 1835179, 2, 65536, 1835180, 2, 65539, 1835181, 2, 65539, 1835182, 2, 65537, 1835183, 2, 65540, 1835184, 2, 65540, 1835185, 2, 65540, 1835186, 2, 65540, 1835187, 2, 65537, 1835188, 2, 65540, 1835189, 2, 65539, 1835190, 2, 65539, 1835191, 2, 65537, 1835192, 2, 65537, 1835193, 2, 65540, 1835194, 2, 65540, 1835195, 2, 65540, 1835196, 2, 65537, 1835197, 2, 65539, 1835198, 2, 65537, 1835199, 2, 65537, 1835200, 2, 65540, 1835201, 2, 65537, 1835202, 2, 65539, 1835203, 2, 65540, 1835204, 2, 65540, 1835205, 2, 65537, 1835206, 2, 65539, 1835207, 2, 65537, 1835208, 2, 65540, 1835209, 2, 65540, 1835210, 2, 65539, 1835211, 2, 65537, 1835212, 2, 65537, 1835213, 2, 65539, 1835214, 2, 65540, 1835215, 2, 65539, 1835216, 2, 65540, 1835217, 2, 65539, 1835218, 2, 65537, 1835219, 2, 65537, 1835220, 2, 65539, 1835221, 2, 65537, 1835222, 2, 65540, 1835223, 2, 65539, 1835224, 2, 65537, 1835225, 2, 65537, 1835226, 2, 65538, 1900715, 2, 65536, 1900716, 2, 65539, 1900717, 2, 65539, 1900718, 2, 65539, 1900719, 2, 65537, 1900720, 2, 65540, 1900721, 2, 65540, 1900722, 2, 65540, 1900723, 2, 65540, 1900724, 2, 65537, 1900725, 2, 65539, 1900726, 2, 65540, 1900727, 2, 65540, 1900728, 2, 65540, 1900729, 2, 65539, 1900730, 2, 65539, 1900731, 2, 65539, 1900732, 2, 65539, 1900733, 2, 65540, 1900734, 2, 65539, 1900735, 2, 65540, 1900736, 2, 65539, 1900737, 2, 65537, 1900738, 2, 65540, 1900739, 2, 65540, 1900740, 2, 65537, 1900741, 2, 65537, 1900742, 2, 65537, 1900743, 2, 65537, 1900744, 2, 65540, 1900745, 2, 65540, 1900746, 2, 65540, 1900747, 2, 65539, 1900748, 2, 65537, 1900749, 2, 65540, 1900750, 2, 65540, 1900751, 2, 65537, 1900752, 2, 65537, 1900753, 2, 65537, 1900754, 2, 65540, 1900755, 2, 65539, 1900756, 2, 65539, 1900757, 2, 65539, 1900758, 2, 65537, 1900759, 2, 65537, 1900760, 2, 65540, 1900761, 2, 65539, 1900762, 2, 65538, 1966251, 2, 65536, 1966252, 2, 65537, 1966253, 2, 65537, 1966254, 2, 65539, 1966255, 2, 65540, 1966256, 2, 65540, 1966257, 2, 65540, 1966258, 2, 65540, 1966259, 2, 65537, 1966260, 2, 65539, 1966261, 2, 65537, 1966262, 2, 65540, 1966263, 2, 65537, 1966264, 2, 65540, 1966265, 2, 65537, 1966266, 2, 65539, 1966267, 2, 65539, 1966268, 2, 65537, 1966269, 2, 65539, 1966270, 2, 65539, 1966271, 2, 65540, 1966272, 2, 65537, 1966273, 2, 65539, 1966274, 2, 65537, 1966275, 2, 65537, 1966276, 2, 65540, 1966277, 2, 65539, 1966278, 2, 65540, 1966279, 2, 65539, 1966280, 2, 65540, 1966281, 2, 65540, 1966282, 2, 65537, 1966283, 2, 65537, 1966284, 2, 65540, 1966285, 2, 65539, 1966286, 2, 65540, 1966287, 2, 65540, 1966288, 2, 65540, 1966289, 2, 65539, 1966290, 2, 65540, 1966291, 2, 65537, 1966292, 2, 65539, 1966293, 2, 65537, 1966294, 2, 65537, 1966295, 2, 65540, 1966296, 2, 65539, 1966297, 2, 65537, 1966298, 2, 65538, 2031787, 2, 131072, 2031788, 2, 131073, 2031789, 2, 131073, 2031790, 2, 131073, 2031791, 2, 131073, 2031792, 2, 131073, 2031793, 2, 131073, 2031794, 2, 131073, 2031795, 2, 131073, 2031796, 2, 131073, 2031797, 2, 131073, 2031798, 2, 131073, 2031799, 2, 131073, 2031800, 2, 131073, 2031801, 2, 131073, 2031802, 2, 131073, 2031803, 2, 131073, 2031804, 2, 131073, 2031805, 2, 131073, 2031806, 2, 131073, 2031807, 2, 131073, 2031808, 2, 131073, 2031809, 2, 131073, 2031810, 2, 131073, 2031811, 2, 131073, 2031812, 2, 131073, 2031813, 2, 131073, 2031814, 2, 131073, 2031815, 2, 131073, 2031816, 2, 131073, 2031817, 2, 131073, 2031818, 2, 131073, 2031819, 2, 131073, 2031820, 2, 131073, 2031821, 2, 131073, 2031822, 2, 131073, 2031823, 2, 131073, 2031824, 2, 131073, 2031825, 2, 131073, 2031826, 2, 131073, 2031827, 2, 131073, 2031828, 2, 131073, 2031829, 2, 131073, 2031830, 2, 131073, 2031831, 2, 131073, 2031832, 2, 131073, 2031833, 2, 131073, 2031834, 2, 131074 )
+
+[node name="Floor" parent="Tiles" instance=ExtResource( 42 )]
+tile_set = SubResource( 12 )
+
+[node name="Pipe" parent="Tiles" instance=ExtResource( 40 )]
+
+[node name="Scenery" type="Node2D" parent="."]
+z_index = -4
+
+[node name="Parede2" type="Polygon2D" parent="Scenery"]
+z_index = -10
+polygon = PoolVector2Array( 2500, 195, 2500, 715, 5000, 715, 5000, 195 )
+
+[node name="Parede" parent="Scenery/Parede2" instance=ExtResource( 9 )]
+
+[node name="Parede3" type="Polygon2D" parent="Scenery"]
+z_index = -10
+polygon = PoolVector2Array( 2500, 800, 2500, 1000, 5000, 1000, 5000, 800 )
+
+[node name="Parede" type="Polygon2D" parent="Scenery/Parede3"]
+modulate = Color( 0.619608, 1, 0.611765, 0.701961 )
+texture = ExtResource( 32 )
+polygon = PoolVector2Array( 2500, 800, 2500, 1000, 5000, 1000, 5000, 800 )
+
+[node name="Vidro" type="Polygon2D" parent="Scenery"]
+z_index = -10
+color = Color( 0.164706, 0.27451, 1, 0.411765 )
+polygon = PoolVector2Array( 2500, 715, 2500, 800, 5000, 800, 5000, 715 )
+
+[node name="Vidro2" parent="Scenery" instance=ExtResource( 43 )]
+
+[node name="PlacaUsina" parent="Scenery" instance=ExtResource( 41 )]
+
+[node name="PlacaMaquina" type="Polygon2D" parent="Scenery"]
+position = Vector2( 3425, 362 )
+scale = Vector2( 0.721161, 0.725565 )
+color = Color( 0.407843, 1, 0.513726, 1 )
+polygon = PoolVector2Array( 708, 410, 708, 604, 1108, 604, 1108, 410 )
+
+[node name="Usina" type="Label" parent="Scenery/PlacaMaquina"]
+margin_left = 733.0
+margin_top = 446.0
+margin_right = 1095.0
+margin_bottom = 609.0
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0.0627451, 0.576471, 1 )
+text = "recicladora
+principal"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Caixa" parent="Scenery" instance=ExtResource( 16 )]
+position = Vector2( 3809.14, 833.193 )
+
+[node name="Caixa2" parent="Scenery/Caixa" instance=ExtResource( 16 )]
+position = Vector2( -63.3584, -0.956421 )
+
+[node name="Caixa3" parent="Scenery/Caixa" instance=ExtResource( 16 )]
+position = Vector2( -30.198, -64.8743 )
+
+[node name="Caixa4" parent="Scenery/Caixa" instance=ExtResource( 16 )]
+position = Vector2( -96.6675, 63.3838 )
+
+[node name="Caixa5" parent="Scenery/Caixa" instance=ExtResource( 16 )]
+position = Vector2( -32.6675, 63.3838 )
+
+[node name="Caixa6" parent="Scenery/Caixa" instance=ExtResource( 16 )]
+position = Vector2( 31.3325, 63.3838 )
+
+[node name="Fade" type="Polygon2D" parent="Scenery"]
+position = Vector2( 3320.87, 558.949 )
+z_index = 50
+color = Color( 0, 0, 0, 0 )
+polygon = PoolVector2Array( -4000, -1000, -4000, 450, 4500, 450, 4500, -1000 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Texto" type="Label" parent="Scenery/Fade"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 689.902
+margin_top = 225.092
+margin_right = 889.902
+margin_bottom = 278.093
+custom_fonts/font = ExtResource( 34 )
+text = "Horas depois..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Esteira" parent="Scenery" instance=ExtResource( 5 )]
+position = Vector2( 3041, 900 )
+
+[node name="Garra" parent="Scenery/Esteira" instance=ExtResource( 7 )]
+position = Vector2( 272, -234 )
+
+[node name="Esteira2" parent="Scenery" instance=ExtResource( 5 )]
+position = Vector2( 3517, 708 )
+
+[node name="Lixo" type="Sprite" parent="Scenery"]
+position = Vector2( 6178.47, 670.974 )
+z_index = -20
+texture = ExtResource( 24 )
+
+[node name="Lixo2" type="Sprite" parent="Scenery/Lixo"]
+self_modulate = Color( 0.136364, 0.136364, 0.136364, 0 )
+show_behind_parent = true
+z_index = -20
+texture = ExtResource( 20 )
+
+[node name="Lixo3" type="Sprite" parent="Scenery/Lixo"]
+self_modulate = Color( 1, 1, 1, 0 )
+show_behind_parent = true
+z_index = -20
+texture = ExtResource( 31 )
+
+[node name="Sprite" parent="Scenery" instance=ExtResource( 4 )]
+
+[node name="NpcsAndItems" type="Node2D" parent="."]
+
+[node name="Lixo" type="Sprite" parent="NpcsAndItems"]
+visible = false
+position = Vector2( 3204, 875 )
+texture = ExtResource( 33 )
+
+[node name="RecicladoraMestre" parent="NpcsAndItems" instance=ExtResource( 15 )]
+position = Vector2( 4350, 927 )
+
+[node name="CameraMaquina" type="Camera2D" parent="NpcsAndItems/RecicladoraMestre"]
+position = Vector2( 0, -200 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="PilhaLixo" type="Sprite" parent="NpcsAndItems"]
+position = Vector2( 6158.64, 819.71 )
+texture = ExtResource( 25 )
+
+[node name="InimigosJuntos" parent="NpcsAndItems/PilhaLixo" instance=ExtResource( 13 )]
+visible = false
+show_behind_parent = true
+position = Vector2( -300, 13 )
+
+[node name="Sprite6" type="Sprite" parent="NpcsAndItems/PilhaLixo"]
+position = Vector2( -54, -11 )
+z_index = -10
+texture = ExtResource( 21 )
+
+[node name="Sprite" type="Sprite" parent="NpcsAndItems/PilhaLixo/Sprite6"]
+position = Vector2( 11.269, 3.69482 )
+rotation = -0.374216
+texture = ExtResource( 22 )
+
+[node name="Sprite3" type="Sprite" parent="NpcsAndItems/PilhaLixo/Sprite6"]
+position = Vector2( 142.62, 0.540039 )
+rotation = -0.886904
+texture = ExtResource( 23 )
+
+[node name="Sprite4" type="Sprite" parent="NpcsAndItems/PilhaLixo/Sprite6"]
+position = Vector2( 114.576, 0.469421 )
+texture = ExtResource( 26 )
+
+[node name="Sprite2" type="Sprite" parent="NpcsAndItems/PilhaLixo/Sprite6"]
+position = Vector2( 92.644, 7.22278 )
+texture = ExtResource( 27 )
+
+[node name="Sprite5" type="Sprite" parent="NpcsAndItems/PilhaLixo/Sprite6"]
+position = Vector2( -25, 10 )
+texture = ExtResource( 33 )
+flip_h = true
+
+[node name="EnemyBody" parent="NpcsAndItems/PilhaLixo" instance=ExtResource( 14 )]
+visible = false
+show_behind_parent = true
+position = Vector2( -1.31201, -12.387 )
+
+[node name="Virus" parent="NpcsAndItems/PilhaLixo" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( -31.7226, -73.0401 )
+scale = Vector2( 1.125, 1.125 )
+
+[node name="Virus2" parent="NpcsAndItems/PilhaLixo" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( -394.079, -80.4648 )
+
+[node name="Virus3" parent="NpcsAndItems/PilhaLixo" instance=ExtResource( 8 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -395.085, -23.1265 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Garibot" type="Node2D" parent="."]
+position = Vector2( 0, -20 )
+
+[node name="PlayerBody" parent="Garibot" instance=ExtResource( 10 )]
+position = Vector2( 780, 770 )
+rotation = 18.8496
+
+[node name="CameraPlayer" type="Camera2D" parent="Garibot/PlayerBody"]
+position = Vector2( 32, -100 )
+offset = Vector2( 0, -30 )
+zoom = Vector2( 0.5, 0.5 )
+limit_bottom = 1000
+
+[node name="CameraMundo" type="Camera2D" parent="."]
+position = Vector2( 820, 580 )
+current = true
+
+[node name="AnimacaoGeral" type="AnimationPlayer" parent="."]
+autoplay = "parado"
+anims/cena1 = SubResource( 14 )
+anims/cena2 = SubResource( 15 )
+anims/cena3 = SubResource( 16 )
+anims/cena4 = SubResource( 17 )
+anims/cena5 = SubResource( 18 )
+anims/parado = SubResource( 19 )
+
+[node name="OrdemGeral" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 20 )
+anims/parado = SubResource( 21 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUI" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+[node name="LevelComplete" parent="CanvasLayer" instance=ExtResource( 12 )]
+
+[node name="Espaco" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -27.0
+margin_bottom = -9.0
+custom_fonts/font = ExtResource( 38 )
+text = "[PRESSIONE ESPAÇO PARA PULAR A HISTÓRIA]"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mobile_button" type="TextureRect" parent="CanvasLayer/Espaco"]
+visible = false
+modulate = Color( 1, 1, 1, 0.698039 )
+margin_left = 318.0
+margin_top = -9.12199
+margin_right = 350.0
+margin_bottom = 22.878
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Espaco/Mobile_button"]
+autoplay = "NEW_Mobile_Button_Dialog"
+anims/Mobile_Button_Dialog = SubResource( 22 )
+anims/NEW_Mobile_Button_Dialog = SubResource( 23 )
+
+[node name="Music" type="Node" parent="."]
+
+[node name="1" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 17 )
+volume_db = -8.0
+
+[node name="2" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 19 )
+volume_db = -8.0
+
+[node name="3" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 18 )
+volume_db = -8.0

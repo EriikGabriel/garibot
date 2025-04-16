@@ -1,0 +1,10 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 15
+outline_size = 1
+outline_color = Color( 0.169006, 0.195251, 0.203125, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )

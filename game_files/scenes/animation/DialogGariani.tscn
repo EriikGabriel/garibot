@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/animation/GarianiBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/animation/Dialog.tscn" type="PackedScene" id=2]
+
+[node name="Dialog" instance=ExtResource( 2 )]
+dialog = [ "..." ]
+dialog_sound = "talk_kid"
+
+[node name="AnimationPlayer" parent="." index="0"]
+autoplay = "default"
+
+[node name="Texto" parent="Balao" index="0"]
+margin_left = -453.0
+margin_top = -154.5
+margin_right = 384.0
+margin_bottom = 99.5
+percent_visible = 1.0
+
+[node name="FastForwardIcon" parent="." index="2"]
+position = Vector2( 545, 242 )
+
+[node name="Corpo" parent="." index="3" instance=ExtResource( 1 )]

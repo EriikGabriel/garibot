@@ -1,0 +1,224 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/Images/Effects/virus_eyes1.png" type="Texture" id=1]
+[ext_resource path="res://assets/Images/Effects/EnemyVirus.png" type="Texture" id=2]
+[ext_resource path="res://assets/Images/Effects/EnemyVirus1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Images/Effects/EnemyVirus3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Images/Effects/EnemyVirus2.png" type="Texture" id=5]
+[ext_resource path="res://assets/Images/Effects/virus_eyes.png" type="Texture" id=6]
+[ext_resource path="res://assets/Images/EnemiesRig/inimigoGeladeiraRig.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Andando"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("corpo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 31.8247, 60.4423 ), Vector2( 31.8247, 60.4423 ), Vector2( 31.8247, 60.4423 ), Vector2( 31.8247, 60.4423 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("corpo:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.449658, -0.399433, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("corpo/perna1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 17.0163, 9.50932 ), Vector2( 17.0163, 9.50932 ), Vector2( 17.0163, 9.50932 ), Vector2( 17.0163, 9.50932 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("corpo/perna1:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -22.1124, 25.5209, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("corpo/perna2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.29716, 9.02811 ), Vector2( 3.29716, 9.02811 ), Vector2( 3.29716, 9.02811 ), Vector2( 3.29716, 9.02811 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("corpo/perna2:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 22.913, -18.4908, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("corpo/perna4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -18.1608, 8.84666 ), Vector2( -18.1608, 8.84666 ), Vector2( -18.1608, 8.84666 ), Vector2( -18.1608, 8.84666 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("corpo/perna4:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.229, 21.7005, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("corpo/perna3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4.26067, 9.17799 ), Vector2( -4.26067, 9.17799 ), Vector2( -4.26067, 9.17799 ), Vector2( -4.26067, 9.17799 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("corpo/perna3:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 22.8285, -13.2832, 0.0 ]
+}
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="geladeira" type="Node2D"]
+modulate = Color( 0.666667, 0.403922, 0.945098, 1 )
+position = Vector2( -29, -38 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Andando"
+anims/Andando = SubResource( 1 )
+
+[node name="corpo" type="Polygon2D" parent="."]
+position = Vector2( 31.8247, 60.4423 )
+offset = Vector2( -31.8247, -60.4423 )
+texture = ExtResource( 7 )
+polygon = PoolVector2Array( 5.7345, -0.0927505, 5.9845, 71.4072, 58.7345, 71.6572, 57.7345, -1.34275 )
+uv = PoolVector2Array( 5.7345, -0.0927505, 5.9845, 71.4072, 58.7345, 71.6572, 57.7345, -1.34275 )
+
+[node name="perna1" type="Polygon2D" parent="corpo"]
+position = Vector2( 17.0163, 9.50932 )
+offset = Vector2( -48.0967, -74.5242 )
+texture = ExtResource( 7 )
+polygon = PoolVector2Array( 58.2345, 71.1572, 56.7345, 82.1572, 42.7345, 81.1572, 43.4845, 71.9072 )
+uv = PoolVector2Array( 58.2345, 71.1572, 56.7345, 82.1572, 42.7345, 81.1572, 43.4845, 71.9072 )
+
+[node name="perna2" type="Polygon2D" parent="corpo"]
+position = Vector2( 3.29716, 9.02811 )
+z_index = -1
+offset = Vector2( -48.0967, -74.5242 )
+texture = ExtResource( 7 )
+polygon = PoolVector2Array( 58.2345, 71.1572, 56.7345, 82.1572, 42.7345, 81.1572, 43.4845, 71.9072 )
+uv = PoolVector2Array( 58.2345, 71.1572, 56.7345, 82.1572, 42.7345, 81.1572, 43.4845, 71.9072 )
+
+[node name="perna3" type="Polygon2D" parent="corpo"]
+position = Vector2( -4.26067, 9.17799 )
+offset = Vector2( -48.0967, -74.5242 )
+texture = ExtResource( 7 )
+polygon = PoolVector2Array( 58.2345, 71.1572, 56.7345, 82.1572, 42.7345, 81.1572, 43.4845, 71.9072 )
+uv = PoolVector2Array( 58.2345, 71.1572, 56.7345, 82.1572, 42.7345, 81.1572, 43.4845, 71.9072 )
+
+[node name="perna4" type="Polygon2D" parent="corpo"]
+position = Vector2( -18.1608, 8.84666 )
+z_index = -1
+offset = Vector2( -48.0967, -74.5242 )
+texture = ExtResource( 7 )
+polygon = PoolVector2Array( 58.2345, 71.1572, 56.7345, 82.1572, 42.7345, 81.1572, 43.4845, 71.9072 )
+uv = PoolVector2Array( 58.2345, 71.1572, 56.7345, 82.1572, 42.7345, 81.1572, 43.4845, 71.9072 )
+
+[node name="Olhos" type="AnimatedSprite" parent="corpo"]
+position = Vector2( 8.1753, -28.4423 )
+z_index = 1
+z_as_relative = false
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="virus" type="AnimatedSprite" parent="corpo"]
+modulate = Color( 1, 1, 1, 0.686275 )
+show_behind_parent = true
+position = Vector2( -31.8247, -9.4423 )
+rotation = -1.5708
+scale = Vector2( 0.7, 0.7 )
+z_as_relative = false
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="virus2" type="AnimatedSprite" parent="corpo"]
+modulate = Color( 1, 1, 1, 0.686275 )
+show_behind_parent = true
+position = Vector2( -31.8247, -40.4423 )
+rotation = -1.5708
+scale = Vector2( 0.7, 0.7 )
+z_as_relative = false
+frames = SubResource( 3 )
+playing = true

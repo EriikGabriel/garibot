@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Images/UI/Tutorial/Tecla_Grande.png" type="Texture" id=2]
+[ext_resource path="res://assets/Images/UI/Tutorial/Tecla.png" type="Texture" id=3]
+[ext_resource path="res://scenes/stages/StageTutorial/VBoxContainer.gd" type="Script" id=4]
+[ext_resource path="res://assets/Images/MobileButtons/key_blue_up.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 1
+outline_color = Color( 0.169006, 0.195251, 0.203125, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 1
+outline_color = Color( 0.169006, 0.195251, 0.203125, 1 )
+use_filter = true
+extra_spacing_char = 54
+font_data = ExtResource( 1 )
+
+[node name="Hint" type="CenterContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = -34.0
+margin_right = 14.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 80, 80 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 23.0
+margin_top = 6.0
+margin_right = 57.0
+margin_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer"]
+margin_right = 34.0
+margin_bottom = 32.0
+texture = ExtResource( 5 )
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer"]
+visible = false
+margin_top = 36.0
+margin_right = 77.0
+margin_bottom = 68.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer/TextureRect2"]
+margin_top = 1.0
+margin_right = 157.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.5, 0.5 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+text = "espaço"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 34.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+stretch_mode = 4
+
+[node name="Label3" type="Label" parent="VBoxContainer/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -39.176
+margin_top = -16.2645
+margin_right = 116.824
+margin_bottom = 44.7355
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+text = "z"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

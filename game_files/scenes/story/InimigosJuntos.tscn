@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/enemies/Animgeladeira.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/enemies/Animmicroondas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/enemies/BasicEnemySprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/enemies/Animfogao.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/enemies/Animfuradeira.tscn" type="PackedScene" id=5]
+
+
+
+
+
+
+[node name="InimigosJuntos" type="Node2D"]
+
+[node name="Geladeira" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96.5982, -74.2962 )
+
+[node name="Microondas" parent="." instance=ExtResource( 2 )]
+position = Vector2( -136.017, -48.2374 )
+
+[node name="EnemyBody" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64.9214, -2.84232 )
+z_index = 20
+
+[node name="Fogao" parent="." instance=ExtResource( 4 )]
+position = Vector2( -10.6418, -58.3902 )
+
+[node name="Furadeira" parent="." instance=ExtResource( 5 )]
+position = Vector2( -40.0786, 0.157677 )

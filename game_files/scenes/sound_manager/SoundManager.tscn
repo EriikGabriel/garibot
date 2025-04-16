@@ -1,0 +1,311 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://scenes/sound_manager/SoundManager.gd" type="Script" id=1]
+[ext_resource path="res://assets/Sounds/ui/ui_select.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/Sounds/songs/bonus_win_fanfare.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/Sounds/songs/lose-fanfare.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/Sounds/songs/menu-mapa.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/Sounds/songs/fase-2.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/Sounds/songs/win-fanfare.mp3" type="AudioStream" id=7]
+[ext_resource path="res://scenes/sound_manager/debug.gd" type="Script" id=8]
+[ext_resource path="res://assets/Sounds/ui/ui_main_menu_select.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/Sounds/songs/fase-1.mp3" type="AudioStream" id=10]
+[ext_resource path="res://assets/Sounds/stage_3/hammer_open.mp3" type="AudioStream" id=11]
+[ext_resource path="res://assets/Sounds/ui/ui_deselect.mp3" type="AudioStream" id=12]
+[ext_resource path="res://assets/Sounds/ui/wrong_answer.mp3" type="AudioStream" id=14]
+[ext_resource path="res://assets/Sounds/ui/correct_answer_3.mp3" type="AudioStream" id=15]
+[ext_resource path="res://assets/Sounds/ui/correct_answer_2.mp3" type="AudioStream" id=16]
+[ext_resource path="res://assets/Sounds/ui/correct_answer_1.mp3" type="AudioStream" id=17]
+[ext_resource path="res://assets/Sounds/ui/blaster_get.mp3" type="AudioStream" id=18]
+[ext_resource path="res://assets/Sounds/songs/fase-3_v2.mp3" type="AudioStream" id=19]
+[ext_resource path="res://assets/Sounds/songs/fase-3_outside.mp3" type="AudioStream" id=20]
+[ext_resource path="res://assets/Sounds/stage_3/pp_up.mp3" type="AudioStream" id=21]
+[ext_resource path="res://assets/Sounds/stage_3/pp_down.mp3" type="AudioStream" id=22]
+[ext_resource path="res://assets/Sounds/stage_3/hammer_close.mp3" type="AudioStream" id=23]
+[ext_resource path="res://assets/Sounds/stage_3/gate_close.mp3" type="AudioStream" id=24]
+[ext_resource path="res://assets/Sounds/stage_3/gate_open.mp3" type="AudioStream" id=25]
+[ext_resource path="res://assets/Sounds/songs/dameDaNe.mp3" type="AudioStream" id=26]
+[ext_resource path="res://assets/Sounds/songs/fase-3_chase.mp3" type="AudioStream" id=27]
+[ext_resource path="res://assets/Sounds/recycle_anim/recycle_anim_consume.mp3" type="AudioStream" id=28]
+[ext_resource path="res://assets/Sounds/sfx/blaster_bubble.mp3" type="AudioStream" id=29]
+[ext_resource path="res://assets/Sounds/sfx/blaster_magnet_off.mp3" type="AudioStream" id=30]
+[ext_resource path="res://assets/Sounds/sfx/blaster_magnet_on.mp3" type="AudioStream" id=31]
+[ext_resource path="res://assets/Sounds/dialogs/talk_boss.mp3" type="AudioStream" id=32]
+[ext_resource path="res://assets/Sounds/dialogs/talk_kid.mp3" type="AudioStream" id=33]
+[ext_resource path="res://assets/Sounds/dialogs/talk_garidog.mp3" type="AudioStream" id=34]
+[ext_resource path="res://assets/Sounds/dialogs/talk_mayor.mp3" type="AudioStream" id=35]
+[ext_resource path="res://assets/Sounds/dialogs/talk_tim.mp3" type="AudioStream" id=36]
+[ext_resource path="res://assets/Sounds/dialogs/talk_tim_holo.mp3" type="AudioStream" id=37]
+[ext_resource path="res://assets/Sounds/songs/bonus.mp3" type="AudioStream" id=38]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+random_pitch = 1.0
+
+[node name="SoundManager" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="songs" type="Node" parent="."]
+
+[node name="blank" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 28 )
+volume_db = -80.0
+
+[node name="world_map" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
+[node name="main_menu" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
+[node name="tutorial" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 10 )
+volume_db = -15.0
+
+[node name="stage_1" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 10 )
+volume_db = -15.0
+
+[node name="stage_2" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 6 )
+volume_db = -15.0
+
+[node name="stage_3" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 19 )
+volume_db = -5.0
+
+[node name="win_fanfare" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 7 )
+volume_db = -15.0
+
+[node name="bonus_win_fanfare" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[node name="lose_fanfare" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 4 )
+volume_db = -15.0
+
+[node name="dameDaNe" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 26 )
+volume_db = -15.0
+
+[node name="stage_final-boss-talk" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 20 )
+volume_db = -10.0
+
+[node name="stage_final-chase" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 27 )
+volume_db = -10.0
+
+[node name="credits" type="AudioStreamPlayer" parent="songs"]
+
+[node name="bonus" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 38 )
+volume_db = -5.0
+
+[node name="bonus_mobile" type="AudioStreamPlayer" parent="songs"]
+stream = ExtResource( 38 )
+volume_db = -5.0
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="ui_deselect" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 12 )
+volume_db = -8.0
+
+[node name="ui_main_menu_select" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 9 )
+pitch_scale = 2.0
+
+[node name="ui_move" type="AudioStreamPlayer" parent="sfx"]
+stream = SubResource( 1 )
+volume_db = -8.0
+
+[node name="ui_select" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 2 )
+volume_db = -8.0
+
+[node name="right_answer_1" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 17 )
+volume_db = -15.0
+
+[node name="right_answer_2" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 16 )
+volume_db = -15.0
+
+[node name="right_answer_3" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 15 )
+volume_db = -15.0
+
+[node name="wrong_answer" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 14 )
+volume_db = -15.0
+
+[node name="blaster_get" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 18 )
+volume_db = -20.0
+
+[node name="pp_down" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 22 )
+
+[node name="pp_up" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 21 )
+
+[node name="gate_open" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 25 )
+volume_db = -10.0
+
+[node name="gate_close" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 24 )
+volume_db = -10.0
+
+[node name="hammer_open" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 11 )
+volume_db = -10.0
+
+[node name="hammer_close" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 23 )
+volume_db = -10.0
+
+[node name="blaster_magnet_on" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 31 )
+volume_db = -15.0
+
+[node name="blaster_magnet_off" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 30 )
+volume_db = -15.0
+
+[node name="blaster_bubble" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 29 )
+volume_db = -5.0
+
+[node name="talk_tim" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 36 )
+volume_db = -5.0
+
+[node name="talk_tim_holo" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 37 )
+volume_db = -5.0
+
+[node name="talk_mayor" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 35 )
+volume_db = -5.0
+
+[node name="talk_garidog" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 34 )
+volume_db = -5.0
+
+[node name="talk_kid" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 33 )
+volume_db = -5.0
+
+[node name="talk_boss" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 32 )
+volume_db = -5.0
+
+[node name="debug" type="Control" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SongSelect" type="OptionButton" parent="debug"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -10.0
+margin_right = 145.0
+margin_bottom = 11.0
+text = "Song Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SongSelect2" type="OptionButton" parent="debug"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -215.5
+margin_top = -10.5
+margin_right = -70.5
+margin_bottom = 10.5
+text = "Channel Select"
+
+[node name="FadeSelect" type="OptionButton" parent="debug"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -27.5
+margin_top = -10.0
+margin_right = 110.5
+margin_bottom = 10.0
+text = "Fade Effect"
+
+[node name="SfxSelect" type="OptionButton" parent="debug"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 155.464
+margin_top = -10.0
+margin_right = 293.464
+margin_bottom = 10.0
+text = "SFX"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="debug"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = -10.0
+margin_bottom = 10.0
+text = ">"
+
+[node name="current" type="Label" parent="debug"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+margin_right = 40.0
+
+[node name="next" type="Label" parent="debug"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -14.0
+margin_right = 20.0
+
+[node name="TweenFadeIn" type="Tween" parent="."]
+playback_speed = 2.0
+playback/speed = 2.0
+
+[node name="TweenFadeInPause" type="Tween" parent="."]
+
+[node name="TweenCrossCurr" type="Tween" parent="."]
+
+[node name="TweenCrossNext" type="Tween" parent="."]
+
+[node name="TweenSwitchCurr" type="Tween" parent="."]
+
+[node name="TweenSwitchNext" type="Tween" parent="."]
+
+[connection signal="item_selected" from="debug/SfxSelect" to="debug" method="_on_SfxSelect_item_selected"]
+[connection signal="pressed" from="debug/Play" to="debug" method="_on_Button_pressed"]
+[connection signal="tween_completed" from="TweenFadeIn" to="." method="_on_TweenFadeIn_tween_completed"]
+[connection signal="tween_completed" from="TweenFadeInPause" to="." method="_on_TweenFadeInPause_tween_completed"]
+[connection signal="tween_completed" from="TweenCrossCurr" to="." method="_on_TweenCrossCurr_tween_completed"]
+[connection signal="tween_completed" from="TweenCrossNext" to="." method="_on_TweenCrossNext_tween_completed"]

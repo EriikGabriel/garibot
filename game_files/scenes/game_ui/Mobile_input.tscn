@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Images/UI/Tutorial/Tecla.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game_ui/TouchScreenButton_X.gd" type="Script" id=2]
+[ext_resource path="res://scenes/game_ui/TouchScreenButton_Z.gd" type="Script" id=3]
+[ext_resource path="res://scenes/game_ui/TouchScreenButton_Space.gd" type="Script" id=4]
+
+[node name="Mobile_input" type="Control"]
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchScreenButton_X" type="TouchScreenButton" parent="."]
+position = Vector2( 720.578, 281.106 )
+scale = Vector2( 1.60454, 1.64232 )
+z_index = 50
+normal = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="TouchScreenButton_Z" type="TouchScreenButton" parent="."]
+position = Vector2( 656.82, 360.605 )
+scale = Vector2( 1.61818, 1.49982 )
+z_index = 50
+normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="TouchScreenButton_accept" type="TouchScreenButton" parent="."]
+position = Vector2( 730.978, 357.402 )
+scale = Vector2( 1.86363, 1.9176 )
+z_index = 50
+normal = ExtResource( 1 )
+script = ExtResource( 4 )
+[connection signal="pressed" from="TouchScreenButton_X" to="TouchScreenButton_X" method="_on_TouchScreenButton_X_pressed"]
+[connection signal="released" from="TouchScreenButton_X" to="TouchScreenButton_X" method="_on_TouchScreenButton_X_released"]
+[connection signal="pressed" from="TouchScreenButton_Z" to="TouchScreenButton_Z" method="_on_TouchScreenButton_Z_pressed"]
+[connection signal="released" from="TouchScreenButton_Z" to="TouchScreenButton_Z" method="_on_TouchScreenButton_Z_released"]
+[connection signal="pressed" from="TouchScreenButton_accept" to="TouchScreenButton_accept" method="_on_TouchScreenButton_Space_pressed"]
+[connection signal="released" from="TouchScreenButton_accept" to="TouchScreenButton_accept" method="_on_TouchScreenButton_accept_released"]

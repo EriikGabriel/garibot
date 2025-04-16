@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://scenes/animation/shader_trocar_cores.shader" type="Shader" id=1]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/old_color = Color( 0, 0.564706, 0.0745098, 1 )
+shader_param/new_color = Color( 0.301961, 0.0901961, 0.0901961, 1 )

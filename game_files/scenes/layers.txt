@@ -1,0 +1,9 @@
+1- Player
+2- Player Projectile
+3- Enemy
+4- Enemy Projectile
+5- Items
+11- Recycling Mach
+12- Moving Tiles
+13- Objects (Boxes, etc)
+14- Tiles

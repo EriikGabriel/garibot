@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/animation/Space.gd" type="Script" id=2]
+[ext_resource path="res://assets/Font/JuanMikes.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/animation/Mobile_button.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="NextButton" type="Node2D"]
+visible = false
+position = Vector2( 65, 22 )
+script = ExtResource( 2 )
+
+[node name="Space" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 497.463
+margin_top = 211.848
+margin_right = 658.463
+margin_bottom = 259.849
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.45098, 0.164706, 0.490196 )
+text = "[ESPAÇO]"
+autowrap = true
+uppercase = true
+max_lines_visible = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Space"]
+autoplay = "default"
+anims/default = SubResource( 2 )
+
+[node name="Mobile_button" parent="." instance=ExtResource( 4 )]
+visible = false

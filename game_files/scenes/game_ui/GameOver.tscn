@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/game_ui/GameOverButton.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game_ui/GameOver.gd" type="Script" id=3]
+[ext_resource path="res://scenes/menu/buttons/RedButtonNormal.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scenes/menu/buttons/GreenButtonNormal.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/Font/text_ui.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/Images/UI/Storyboard/GameOver.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 800, 492 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 68
+outline_size = 3
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=3]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Hide"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="GameOver" type="Control" groups=[
+"game_over",
+]]
+pause_mode = 2
+visible = false
+mouse_filter = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 802.0
+margin_bottom = 454.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuButton" type="Button" parent="Panel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = -34.0
+margin_right = 170.0
+margin_bottom = 34.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 7 )
+disabled = true
+enabled_focus_mode = 0
+text = "BUTTON_EXIT"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+texto = "SAIR"
+key_shortcut = "roll_attack"
+
+[node name="RetryButton" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -182.0
+margin_top = -34.0
+margin_right = -10.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 138.957, 0.545349 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
+disabled = true
+enabled_focus_mode = 0
+text = "BUTTON_BACK"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+texto = "VOLTAR"
+
+[node name="Game Over" type="Label" parent="Panel"]
+anchor_right = 1.0
+margin_bottom = 114.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.929412, 0.156863, 0.00392157, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "GAME_OVER"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Panel")
+autoplay = "Hide"
+anims/GameOver = SubResource( 3 )
+anims/Hide = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_game_over_visibility_changed"]
+[connection signal="pressed" from="Panel/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="Panel/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

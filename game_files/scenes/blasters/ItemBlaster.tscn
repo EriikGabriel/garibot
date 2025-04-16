@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/blasters/ItemBlaster.gd" type="Script" id=1]
+[ext_resource path="res://assets/Images/Blasters/vaccum.png" type="Texture" id=2]
+[ext_resource path="res://scenes/game_ui/TutorialWindow.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="ItemBlaster" type="Area2D"]
+collision_layer = 16
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+blaster = "vacuum"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -256, -272 )
+z_index = 2
+
+[node name="TutorialWindow" parent="Node2D" instance=ExtResource( 3 )]
+visible = false
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 500.0
+margin_bottom = 300.0
+[connection signal="body_entered" from="." to="." method="_on_ItemBlaster_body_entered"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

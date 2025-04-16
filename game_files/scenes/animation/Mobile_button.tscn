@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Images/UI/Misc/next-dialog.png" type="Texture" id=1]
+[ext_resource path="res://assets/Images/UI/Misc/next-dialog-2.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=22]
+resource_name = "Mobile_Button_Dialog"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 2 ) ]
+}
+
+[node name="Mobile_button" type="TextureRect"]
+modulate = Color( 1, 1, 1, 0.698039 )
+margin_left = 508.0
+margin_top = 199.878
+margin_right = 540.0
+margin_bottom = 231.878
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Mobile_Button_Dialog"
+anims/Mobile_Button_Dialog = SubResource( 22 )
