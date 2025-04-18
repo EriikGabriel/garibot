@@ -2,7 +2,7 @@ extends Node2D
 
 var collectedItems = { }
 
-export var y_default = 128.8
+@export var y_default = 128.8
 
 const SPEED = 10
 
@@ -15,12 +15,12 @@ func _process(delta):
 		i += 1;
 		item.position.y = y_default
 		if(i<=3):
-			(item as RigidBody2D).add_central_force((get_parent().get_body().global_position - item.global_position));
+			(item as RigidBody2D).apply_central_force((get_parent().get_body().global_position - item.global_position));
 		else:
 			item.set_visible(false)
 	pass
 
-func add_item(name, var item_texture):
+func add_item(name, item_texture):
 	# collected items list
 	#GAMBIARRAAAAAA
 	if name == null:

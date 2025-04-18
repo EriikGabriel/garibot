@@ -1,8 +1,8 @@
 extends Area2D
 
 enum TYPE {SWITCH, FADE_OUT}
-export(TYPE) var type
-export var oneshot := true
+@export var type: TYPE
+@export var one_shot := true
 
 func _on_SongTransitionTrigger_body_exited(_body):
 	match type:
@@ -10,5 +10,5 @@ func _on_SongTransitionTrigger_body_exited(_body):
 			DJ.switch()
 		TYPE.FADE_OUT:
 			DJ.stop()
-	if oneshot:
+	if one_shot:
 		queue_free()

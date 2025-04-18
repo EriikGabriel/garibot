@@ -4,7 +4,7 @@ extends ColorRect
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var trashbin = get_node("./Trashbins")
+@onready var trashbin = get_node("./Trashbins")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

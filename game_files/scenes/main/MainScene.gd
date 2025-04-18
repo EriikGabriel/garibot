@@ -7,7 +7,7 @@ func _ready():
 	verify_touch()
 
 func verify_touch():
-	if OS.has_touchscreen_ui_hint():
+	if DisplayServer.is_touchscreen_available():
 		Global_variable.mobile_control_node.show_buttons()
 		Global_variable.mobile_control_flag = true
 

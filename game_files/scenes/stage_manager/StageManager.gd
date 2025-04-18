@@ -31,7 +31,7 @@ const stage_indexes = {
 
 const control_mobile = preload("res://scenes/mobile_control/mobile_control.tscn");
 
-onready var gv = Global_variable
+@onready var gv = Global_variable
 
 var current_stage
 var current_idx = 0
@@ -74,15 +74,15 @@ func change_stage_idx(idx : int):
 		old_stage.queue_free()
 	
 	StageLoader.goto_scene(stages[idx])
-	yield(StageLoader, "resource_loaded")
+	await StageLoader.resource_loaded
 	var stage = StageLoader.resource
 	
-	var _new = stage.instance()
+	var _new = stage.instantiate()
 	
 	self.add_child(_new);
 	for signall in _new.get_signal_list():
-		if "change_scene" == signall["name"]:
-			_new.connect("change_scene", self, "change_stage")
+		if "change_scene_to_file" == signall["name"]:
+			_new.connect("change_scene_to_file", Callable(self, "change_stage"))
 	
 	hide_loading()
 
@@ -121,7 +121,7 @@ func hide_loading():
 
 func _disable_sound():
 	_old_volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db(0))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(0))
 
 func _enable_sound():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), _old_volume)

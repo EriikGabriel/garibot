@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/Images/Lixeira/lixeira_azul.png" type="Texture" id=1]
+[ext_resource path="res://assets/Images/Lixeira/lixeira_azul.png" type="Texture2D" id=1]
 [ext_resource path="res://scenes/item/Lixeira.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -9,7 +9,7 @@ extents = Vector2( 14.8305, 23.6917 )
 [node name="Lixeira" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2( 0.429473, -0.143432 )
 texture = ExtResource( 1 )
 

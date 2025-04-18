@@ -2,10 +2,10 @@ extends Node
 
 signal current_changed(name)
 
-onready var debug = $debug
-onready var songs_list = $songs
-onready var sfx_list = $sfx
-export var DEBUG_MODE = false
+@onready var debug = $debug
+@onready var songs_list = $songs
+@onready var sfx_list = $sfx
+@export var DEBUG_MODE = false
 
 # Songs and sound effects dictionary is populated at _ready()
 var songs = { }
@@ -142,7 +142,7 @@ func play_fanfare(name: String):
 	if songs[name]:
 		next = songs[name]
 		
-		if next.connect("finished", self, "_on_fanfare_finished"):
+		if next.connect("finished", Callable(self, "_on_fanfare_finished")):
 			return
 		
 		current.stream_paused = true
@@ -156,7 +156,7 @@ func _on_fanfare_finished():
 	next.stop()
 	current.stream_paused = false
 	emit_signal("current_changed", current.name)
-	next.disconnect("finished", self, "_on_fanfare_finished")
+	next.disconnect("finished", Callable(self, "_on_fanfare_finished"))
 
 
 # Play main stream, prepare second stream to switch at the same time

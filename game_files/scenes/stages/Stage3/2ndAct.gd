@@ -3,8 +3,8 @@ extends Node2D
 const BEGIN_POS = 9300
 const END_POS = 10500
 
-export var player: NodePath 
-onready var player_node = get_node(player)
+@export var player: NodePath 
+@onready var player_node = get_node(player)
 var zoom = 1
 
 func _process(_delta):

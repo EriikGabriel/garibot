@@ -1,16 +1,16 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 signal enemy_defeated()
 
-export (int) var WALK_SPEED = 64
-export (int) var STARTER_DIRECTION = 1
-export (int) var AIR_FINAL_SPEED = 550
-export (int) var GRAV = 16
-export (bool) var IS_BULLET_PROOF = false
+@export var WALK_SPEED: int = 64
+@export var STARTER_DIRECTION: int = 1
+@export var AIR_FINAL_SPEED: int = 550
+@export var GRAV: int = 16
+@export var IS_BULLET_PROOF: bool = false
 
 
-onready var sprite = $Sprite
-onready var floor_detection = $Sprite/RayCast2D
+@onready var sprite = $Sprite2D
+@onready var floor_detection = $Sprite2D/RayCast2D
 
 
 var motion = Vector2(0,0)
@@ -20,7 +20,7 @@ var orientation = 1
 var state
 
 
-var is_virus = false setget set_virus
+var is_virus = false: set = set_virus
 
 
 enum ENEMY {
@@ -70,7 +70,14 @@ func _physics_process(delta):
 	
 	motion.y = approach(motion.y, AIR_FINAL_SPEED, GRAV)
 	
-	motion = move_and_slide_with_snap(motion, Vector2(0,32), FALL_DIR, true, 4, 0.79)
+	set_velocity(motion)
+	# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `Vector2(0,32)`
+	set_up_direction(FALL_DIR)
+	set_floor_stop_on_slope_enabled(true)
+	set_max_slides(4)
+	set_floor_max_angle(0.79)
+	move_and_slide()
+	motion = velocity
 	
 	
 func destroy():

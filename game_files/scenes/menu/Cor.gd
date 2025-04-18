@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-onready var player = get_tree().get_nodes_in_group("player").front()
+@onready var player = get_tree().get_nodes_in_group("player").front()
 
 func _ready():
 	pass

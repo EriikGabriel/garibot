@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/Images/Tilesets/esteira.png" type="Texture" id=1]
-[ext_resource path="res://assets/Images/Tilesets/esteira_left.png" type="Texture" id=2]
-[ext_resource path="res://assets/Images/Tilesets/esteira_right.png" type="Texture" id=3]
+[ext_resource path="res://assets/Images/Tilesets/esteira.png" type="Texture2D" id=1]
+[ext_resource path="res://assets/Images/Tilesets/esteira_left.png" type="Texture2D" id=2]
+[ext_resource path="res://assets/Images/Tilesets/esteira_right.png" type="Texture2D" id=3]
 [ext_resource path="res://scenes/tilesets/Esteira.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=19]
@@ -15,17 +15,17 @@ extents = Vector2( 1, 4 )
 script = ExtResource( 4 )
 size = 320
 
-[node name="Meio" type="Sprite" parent="."]
+[node name="Meio" type="Sprite2D" parent="."]
 position = Vector2( 0, -16 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( -3.2, 0, 320, 32 )
 
-[node name="Esq" type="Sprite" parent="."]
+[node name="Esq" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 
-[node name="Dir" type="Sprite" parent="."]
+[node name="Dir" type="Sprite2D" parent="."]
 position = Vector2( 320, 0 )
 texture = ExtResource( 3 )
 

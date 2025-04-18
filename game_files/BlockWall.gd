@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_node("TileMap").set_collision_layer_bit(0,true)
+	get_node("TileMap").set_collision_layer_value(0,true)
 	self.visible = true
 		
 #	pass
@@ -17,6 +17,6 @@ func _process(delta):
 
 func _on_FinalBoss_half_life(variable):
 	if variable == 1:
-		get_node("TileMap").set_collision_layer_bit(0,false)
+		get_node("TileMap").set_collision_layer_value(0,false)
 		self.visible = false
 	pass # Replace with function body.

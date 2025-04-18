@@ -1,9 +1,9 @@
 extends Node
 
 var amount = 0
-export var enabled: bool = false
-export var y_default = 600.0
-export var start_people = 0
+@export var enabled: bool = false
+@export var y_default = 600.0
+@export var start_people = 0
 
 #primeiras 5 posições são meninos, as 5 posições seguintes são meninas e as outras 5 são mulheres
 var qtd_boy = 0
@@ -36,7 +36,7 @@ func _update_position(delta):
 			var player_orientation = get_orientation()
 			item.scale.x = player_orientation
 			
-			item.global_position.x = interpolate(item.global_position.x,
+			item.global_position.x = sample(item.global_position.x,
 			self.global_position.x -30*player_orientation + side*(i*40+12), 
 			(delta*SPEED*(MAX_PEOPLE-i+1)/MAX_PEOPLE)
 			)
@@ -44,7 +44,7 @@ func _update_position(delta):
 			item.set_visible(false)
 
 
-func interpolate(A, B, t):
+func sample(A, B, t):
 	return A * (1 - t) + B * t
 
 # Nova funçao ready, assim consigo fazer pessoas diferentes aparecerem

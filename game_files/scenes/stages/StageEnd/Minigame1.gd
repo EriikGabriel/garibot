@@ -15,7 +15,7 @@ var right_item_sprite = null
 var right_item_name = null
 
 var timer = 0
-export(PackedScene) var usina_item
+@export var usina_item: PackedScene
 
 
 func _ready():
@@ -30,7 +30,7 @@ func _process(delta):
 		timer += delta
 		if timer > 8:
 			timer = 0
-			var _new = usina_item.instance()
+			var _new = usina_item.instantiate()
 			add_child(_new)
 			_new.init(Vector2(0, 100), Vector2(800, 0))
 			_new.set_sprite(right_item_sprite)

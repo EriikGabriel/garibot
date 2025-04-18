@@ -5,7 +5,7 @@ code = "shader_type canvas_item;
 render_mode blend_mix;
 
 uniform float outLineSize  = 0.02;
-uniform vec4  outLineColor : hint_color;
+uniform vec4  outLineColor : source_color;
 
 void fragment()
 {

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 # Declare member variables here. Examples:
 var angle = 10.0
@@ -30,8 +30,12 @@ func commonShot(_delta):
 
 func weirdShot(delta):
 	vec = vec.rotated(-angle * orientation * delta)
-	var _collision = move_and_slide(vec*curve)
-	_collision = move_and_slide(Vector2.RIGHT * orientation * speed)
+	set_velocity(vec*curve)
+	move_and_slide()
+	var _collision = velocity
+	set_velocity(Vector2.RIGHT * orientation * speed)
+	move_and_slide()
+	_collision = velocity
 	pass
 
 func _on_DamageArea_body_entered(_body):

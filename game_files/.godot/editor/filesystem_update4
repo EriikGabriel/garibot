@@ -1,0 +1,9 @@
+res://text/Textos Garibot.pt_BR.translation
+res://text/Galeria.pt_BR.translation
+res://DefautEnv.tres
+res://scenes/main/MainScene.tscn
+res://scenes/sound_manager/SoundManager.tscn
+res://scenes/item/ItemTextureMap.gd
+res://scenes/mobile_control/mobile_control.gd
+res://scenes/main/MainScene.gd
+res://scenes/stage_manager/LoadingScreen.gd

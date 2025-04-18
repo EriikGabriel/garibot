@@ -16,11 +16,11 @@ var people_collect = 0
 var mobile_control_node = null
 var open_door = false
 
-func add_item_collect( var item) :
+func add_item_collect(item) :
 	if dicionario_item.has(item) :
 		dicionario_item[item] += 1
 
-func remove_item_collect(var item) :
+func remove_item_collect(item) :
 	#print(item)
 	#print(dicionario_item.has(item))
 	#print(dicionario_item[item])

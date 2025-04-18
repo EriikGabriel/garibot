@@ -4,16 +4,16 @@ var upper_target
 var lower_target
 var finished = false
 
-export var start_open = false
-export var last_gate = false
+@export var start_open = false
+@export var last_gate = false
 
 const UPPER_OPEN = Vector2(0, -175)
 const UPPER_CLOSED = Vector2(0, 0)
 const LOWER_OPEN = Vector2(0, 175)
 const LOWER_CLOSED = Vector2(0, 0)
 
-export var level_complete : NodePath
-onready var level_complete_node = get_node(level_complete)
+@export var level_complete : NodePath
+@onready var level_complete_node = get_node(level_complete)
 
 func _ready():
 	upper_target = $Upper.position

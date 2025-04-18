@@ -2,15 +2,15 @@ extends Node
 
 var initial_position
 
-onready var player = get_tree().get_nodes_in_group("player").front()
-onready var level_complete = get_tree().get_nodes_in_group("level_complete").front()
+@onready var player = get_tree().get_nodes_in_group("player").front()
+@onready var level_complete = get_tree().get_nodes_in_group("level_complete").front()
 
-onready var dialog = $Dialog
-onready var camera = $Camera2D
-onready var camera_anim = $Camera2D/AnimationPlayer
+@onready var dialog = $Dialog
+@onready var camera = $Camera2D
+@onready var camera_anim = $Camera2D/AnimationPlayer
 
-export(Array, String, MULTILINE) var start_dialog = ["..."]
-export(Array, String, MULTILINE) var end_dialog = ["..."]
+@export var start_dialog = ["..."] # (Array, String, MULTILINE)
+@export var end_dialog = ["..."] # (Array, String, MULTILINE)
 
 enum STATE {
 	START,
@@ -25,7 +25,7 @@ func _ready():
 
 func play_start():
 	current_state = STATE.START
-	player.set_control(false)
+	player.set_ctrl_pressed(false)
 	initial_position = player.get_position()
 	player.set_camera_current(false)
 	camera.set_global_position(player.get_camera_position())
@@ -34,13 +34,13 @@ func play_start():
 
 func play_end():
 	current_state = STATE.END
-	player.set_control(false)
+	player.set_ctrl_pressed(false)
 	player.set_position(initial_position)
 	player.change_orientation(1)
 	player.set_camera_current(false)
 	camera.set_offset(Vector2(75,-75))
 	camera.set_zoom(Vector2(0.65,0.65))
-	camera._set_current(true)
+	camera.set_current(true)
 	dialog.play(end_dialog[0])
 
 
@@ -66,7 +66,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "zoom_out":
 		player.set_camera_current(true)
 		player.set_in_cutscene(false)
-		player.set_control(true)
+		player.set_ctrl_pressed(true)
 
 
 func _on_RecicleStation_play_end():
@@ -76,4 +76,4 @@ func _on_RecicleStation_play_end():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		play_end()
-		player.set_control(false)
+		player.set_ctrl_pressed(false)

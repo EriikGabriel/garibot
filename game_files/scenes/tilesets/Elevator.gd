@@ -1,7 +1,7 @@
 extends "MovePlat.gd"
 
-export (Texture)var open
-export (Texture)var closed
+@export var open: Texture2D
+@export var closed: Texture2D
 
 func _ready():
 	set_activated(false)
@@ -9,18 +9,18 @@ func _ready():
 
 func set_activated(_open):
 	if _open:
-		$Sprite.texture = open
+		$Sprite2D.texture = open
 	else:
-		$Sprite.texture = closed
+		$Sprite2D.texture = closed
 	
 	DJ.play_sfx("gate_open")
-	.set_activated(_open)
+	super.set_activated(_open)
 	
 func invert_direction():
 	set_activated(false)
 
 func set_direction():
-	.invert_direction()
+	super.invert_direction()
 	set_activated(true)
 
 func _on_Area2D_body_entered(body):

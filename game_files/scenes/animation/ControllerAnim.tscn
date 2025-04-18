@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/stages/ControllerAnim.gd" type="Script" id=1]
-[ext_resource path="res://assets/Font/JuanMikes.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/Font/JuanMikes.otf" type="FontFile" id=2]
 [ext_resource path="res://scenes/animation/GarianiBody.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/Images/People/gariani.png" type="Texture" id=4]
-[ext_resource path="res://assets/Images/Effects/baloon.png" type="Texture" id=6]
-[ext_resource path="res://assets/Images/UI/Misc/playIconSmall.png" type="Texture" id=7]
+[ext_resource path="res://assets/Images/People/gariani.png" type="Texture2D" id=4]
+[ext_resource path="res://assets/Images/Effects/baloon.png" type="Texture2D" id=6]
+[ext_resource path="res://assets/Images/UI/Misc/playIconSmall.png" type="Texture2D" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 6.0
@@ -16,8 +16,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -28,8 +28,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
@@ -40,8 +40,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ "PRECISAMOS DE SUA AJUDA GARIBOT!
 " ]
@@ -53,8 +53,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Vector2( 0.65, 0.65 ) ]
 }
@@ -65,8 +65,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Vector2( 75, -75 ) ]
 }
@@ -80,8 +80,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -92,8 +92,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
@@ -104,8 +104,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ "O ELEVADOR DO PRÉDIO QUEBROU E AS PESSOAS FICARAM PRESAS NO TERRAÇO!" ]
 }
@@ -120,8 +120,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -132,8 +132,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
@@ -144,8 +144,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 1,
 "values": [ "COLETE O LIXO ELETRÔNICO ESPALHADO E IMPRIMA AS PEÇAS QUE FALTAM DO ELEVADOR!", "COLETE O LIXO ELETRÔNICO ESPALHADO E IMPRIMA AS PEÇAS QUE FALTAM DO ELEVADOR!" ]
 }
@@ -156,8 +156,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 7 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 7 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [  ],
 "method": "stop"
@@ -170,8 +170,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 6, 7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 6, 7 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.65, 0.65 ), Vector2( 1, 1 ) ]
 }
@@ -182,8 +182,8 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 6, 7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 6, 7 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 75, -75 ), Vector2( 0, 0 ) ]
 }
@@ -198,8 +198,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -210,8 +210,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
@@ -222,8 +222,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 1,
 "values": [ "OBRIGADO GARIBOT!
 VOCÊ RECICLOU O LIXO, AJUDOU AS PESSOAS E O MUNDO INTEIRO!", "OBRIGADO GARIBOT!
@@ -236,8 +236,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 5 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [  ],
 "method": "show_level_complete"
@@ -252,13 +252,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 1 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 1,
 "values": [ false, false ]
 }
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="FontFile" id=6]
 size = 40
 use_filter = true
 font_data = ExtResource( 2 )
@@ -273,8 +273,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ) ]
 }
@@ -304,14 +304,14 @@ anims/default = SubResource( 5 )
 
 [node name="Corpo" parent="." instance=ExtResource( 3 )]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 self_modulate = Color( 0.34902, 0.803922, 0.321569, 0.745098 )
 position = Vector2( 493, 291 )
 texture = ExtResource( 4 )
 flip_h = true
 
-[node name="Balao" type="Sprite" parent="."]
+[node name="Balao" type="Sprite2D" parent="."]
 position = Vector2( 400.25, 195.25 )
 texture = ExtResource( 6 )
 
@@ -320,14 +320,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -303.0
-margin_top = -103.0
-margin_right = 271.0
-margin_bottom = 47.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.878431, 0.45098, 0.164706, 0.490196 )
+offset_left = -303.0
+offset_top = -103.0
+offset_right = 271.0
+offset_bottom = 47.0
+scale = Vector2( 0.5, 0.5 )
+theme_override_fonts/font = SubResource( 6 )
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_colors/font_shadow_color = Color( 0.878431, 0.45098, 0.164706, 0.490196 )
 text = "OBRIGADO GARIBOT!
 VOCÊ RECICLOU O LIXO, AJUDOU AS PESSOAS E O MUNDO INTEIRO!"
 valign = 1
@@ -338,13 +338,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FastForwardIcon" type="Sprite" parent="."]
+[node name="FastForwardIcon" type="Sprite2D" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( 521, 218 )
 texture = ExtResource( 7 )
 
-[node name="Sprite3" type="Sprite" parent="FastForwardIcon"]
+[node name="Sprite3" type="Sprite2D" parent="FastForwardIcon"]
 position = Vector2( 17, 0 )
 texture = ExtResource( 7 )
 

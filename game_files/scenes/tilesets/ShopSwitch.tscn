@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/Images/Stage Elements/check_on.png" type="Texture" id=1]
+[ext_resource path="res://assets/Images/Stage Elements/check_on.png" type="Texture2D" id=1]
 [ext_resource path="res://scenes/tilesets/ShopSwitch.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -9,7 +9,7 @@ extents = Vector2( 6.44404, 54.7814 )
 [node name="ShopSwitch" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2( 0.463287, -8.10758 )
 scale = Vector2( 0.898655, 0.851602 )
 texture = ExtResource( 1 )

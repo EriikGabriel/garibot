@@ -21,9 +21,9 @@ func _ready():
 	add_to_group("lixeira")
 
 
-func change_item( var name : String , typevar):
+func change_item(name : String, typevar):
 	if textures.has(name):
-		$Sprite.set_texture(textures.get(name))
+		$Sprite2D.set_texture(textures.get(name))
 		emit_signal("changed_item", name)
 		#get_parent().get_parent().get_node("CanvasLayer/GameUI/MarginContainer/HBoxContainer/CenterContainer3/MarginContainer2/TextureRect").set_texture(textures.get(name))
 		#get_parent().get_parent().get_node("CanvasLayer/GameUI/MarginContainer/HBoxContainer/Label").set_text(texts.get(name))

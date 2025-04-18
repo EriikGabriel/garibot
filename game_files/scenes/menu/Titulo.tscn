@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/Font/title.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/Images/UI/MainMenu/Titulo.png" type="Texture" id=2]
+[ext_resource path="res://assets/Font/title.tres" type="FontFile" id=1]
+[ext_resource path="res://assets/Images/UI/MainMenu/Titulo.png" type="Texture2D" id=2]
 
 [node name="Titulo" type="TextureRect"]
 anchor_right = 1.0
-margin_top = -1.5867
-margin_right = 186.0
-margin_bottom = 182.413
+offset_top = -1.5867
+offset_right = 186.0
+offset_bottom = 182.413
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -17,13 +17,13 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -41.0
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.905882, 0.960784, 0.960784, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 2
-custom_constants/shadow_offset_y = 2
+offset_top = -41.0
+theme_override_fonts/font = ExtResource( 1 )
+theme_override_colors/font_color = Color( 0.905882, 0.960784, 0.960784, 1 )
+theme_override_colors/font_outline_color = Color( 0, 0, 0, 1 )
+theme_override_colors/font_shadow_color = Color( 0, 0, 0, 1 )
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 text = "TITLE"
 align = 1
 valign = 1

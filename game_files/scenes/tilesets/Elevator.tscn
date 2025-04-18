@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/tilesets/Elevator.gd" type="Script" id=1]
-[ext_resource path="res://assets/Images/Tilesets/elevator.png" type="Texture" id=2]
-[ext_resource path="res://assets/Images/Stage Elements/elevator_open.png" type="Texture" id=3]
-[ext_resource path="res://assets/Images/Stage Elements/elevator_close.png" type="Texture" id=4]
+[ext_resource path="res://assets/Images/Tilesets/elevator.png" type="Texture2D" id=2]
+[ext_resource path="res://assets/Images/Stage Elements/elevator_open.png" type="Texture2D" id=3]
+[ext_resource path="res://assets/Images/Stage Elements/elevator_close.png" type="Texture2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 47.9791, 4.09476 )
@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 open = ExtResource( 3 )
 closed = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2( 0, 1.08072 )
 texture = ExtResource( 2 )
 

@@ -1,4 +1,4 @@
-extends TextureProgress
+extends TextureProgressBar
 
 func _ready():
 	self.max_value = (get_tree().get_nodes_in_group("item").size() 

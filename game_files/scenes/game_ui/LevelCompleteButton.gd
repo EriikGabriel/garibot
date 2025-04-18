@@ -2,7 +2,7 @@ extends Button
 
 const key_shortcut = "ui_accept"
 
-export var go_to_credits = false
+@export var go_to_credits = false
 
 func _unhandled_input(_event):
 	if Input.is_action_just_released(key_shortcut):

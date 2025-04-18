@@ -1,7 +1,7 @@
 extends Node2D
 
-export var level_complete: NodePath
-onready var level_complete_node = get_node(level_complete)
+@export var level_complete: NodePath
+@onready var level_complete_node = get_node(level_complete)
 var end = false
 var player = null
 

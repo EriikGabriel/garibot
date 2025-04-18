@@ -9,17 +9,17 @@ var shown_item_names = ["", "", ""]
 var electronic_names = ["celular", "monitor", "tv",
 "impressora", "furadeira", "fogao", "geladeira", "microondas", "radio", "bateria"]
 
-export var electronic_list = []
-export var organic_list = []
+@export var electronic_list = []
+@export var organic_list = []
 
-export var right : Color
-export var wrong : Color
+@export var right : Color
+@export var wrong : Color
 
-onready var panel2_node = $Panel2
-onready var panel2_texto_node = $Panel2/VBoxContainer/Texto
-onready var panel2_textura_node = $Panel2/VBoxContainer/TextureRect
-onready var happy_texture = preload("res://assets/Images/Stage Elements/happy_emoji.png")
-onready var thinking_texture = preload("res://assets/Images/Stage Elements/emoji_think.png")
+@onready var panel2_node = $Panel2
+@onready var panel2_texto_node = $Panel2/VBoxContainer/Texto
+@onready var panel2_textura_node = $Panel2/VBoxContainer/TextureRect
+@onready var happy_texture = preload("res://assets/Images/Stage Elements/happy_emoji.png")
+@onready var thinking_texture = preload("res://assets/Images/Stage Elements/emoji_think.png")
 
 signal minigame_done
 
@@ -95,7 +95,7 @@ func _on_BotaoOK_button_up():
 
 
 func opcao_node(i):
-	return find_node("Opcao" + str(i), true, true).get_child(0)
+	return find_child("Opcao" + str(i), true, true).get_child(0)
 
 
 func setup_items(item_list):

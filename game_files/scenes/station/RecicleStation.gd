@@ -3,8 +3,8 @@ extends Node2D
 signal play_end
 signal created_ui
 
-export(PackedScene) var minigame
-export var blaster = "shock"
+@export var minigame: PackedScene
+@export var blaster = "shock"
 var player
 
 func _ready():
@@ -22,8 +22,8 @@ func _on_Area2D_body_entered(body):
 		player.change_orientation(-1)
 		
 		# Open and setup window
-		var new = minigame.instance()
-		new.connect("minigame_done", self, "start_animation")
+		var new = minigame.instantiate()
+		new.connect("minigame_done", Callable(self, "start_animation"))
 		new.setup_items(item_list)
 		emit_signal("created_ui", new)
 		#get_parent().find_node("GameUI", true, true).add_child(new)

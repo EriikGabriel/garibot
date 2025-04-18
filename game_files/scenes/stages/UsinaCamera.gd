@@ -6,8 +6,8 @@ const END_POS = 2630
 const BEGIN_POS2 = 2775
 const END_POS2 = 3800
 
-export var player: NodePath 
-onready var player_node = get_node(player)
+@export var player: NodePath 
+@onready var player_node = get_node(player)
 var zoom = 1
 var total_zoom = 1
 

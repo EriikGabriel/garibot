@@ -16,12 +16,12 @@ visible = true
 self_modulate = Color( 0.588235, 0.0901961, 1, 1 )
 
 [node name="Texto" parent="Balao" index="0"]
-margin_left = -453.0
-margin_top = -154.5
-margin_right = 147.0
-margin_bottom = 99.5
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.945098, 0.745098, 1, 0.490196 )
+offset_left = -453.0
+offset_top = -154.5
+offset_right = 147.0
+offset_bottom = 99.5
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_colors/font_shadow_color = Color( 0.945098, 0.745098, 1, 0.490196 )
 
 [node name="FastForwardIcon" parent="." index="2"]
 position = Vector2( 545, 242 )

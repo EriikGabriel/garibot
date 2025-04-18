@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/menu/painel_style_blue.tres" type="StyleBox" id=1]
-[ext_resource path="res://assets/Font/text.tres" type="DynamicFont" id=2]
-[ext_resource path="res://assets/Font/text_ui.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/Font/text.tres" type="FontFile" id=2]
+[ext_resource path="res://assets/Font/text_ui.tres" type="FontFile" id=3]
 [ext_resource path="res://scenes/menu/buttons/ButtonNormal.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/Images/UI/Misc/cogIcon.png" type="Texture" id=5]
-[ext_resource path="res://assets/Images/Player/PlayerCharIcon2.png" type="Texture" id=6]
-[ext_resource path="res://assets/Images/Player/PlayerCharIcon.png" type="Texture" id=7]
-[ext_resource path="res://assets/Images/Player/PlayerCharIcon3.png" type="Texture" id=8]
+[ext_resource path="res://assets/Images/UI/Misc/cogIcon.png" type="Texture2D" id=5]
+[ext_resource path="res://assets/Images/Player/PlayerCharIcon2.png" type="Texture2D" id=6]
+[ext_resource path="res://assets/Images/Player/PlayerCharIcon.png" type="Texture2D" id=7]
+[ext_resource path="res://assets/Images/Player/PlayerCharIcon3.png" type="Texture2D" id=8]
 [ext_resource path="res://scenes/menu/painel_style_white.tres" type="StyleBox" id=9]
 [ext_resource path="res://scenes/menu/painel_style_blue_margin.tres" type="StyleBox" id=10]
 [ext_resource path="res://scenes/menu/GameMenu.gd" type="Script" id=11]
@@ -25,7 +25,7 @@ color = Color( 0.478431, 0.721569, 0.8, 1 )
 thickness = 6
 
 [node name="GameMenu" type="Control"]
-pause_mode = 2
+process_mode = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
@@ -36,10 +36,10 @@ __meta__ = {
 }
 
 [node name="Shadow" type="Panel" parent="."]
-pause_mode = 2
+process_mode = 3
 modulate = Color( 0, 0, 0, 0.54902 )
-margin_right = 798.0
-margin_bottom = 450.0
+offset_right = 798.0
+offset_bottom = 450.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -48,10 +48,10 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 40.0
-margin_top = 40.0
-margin_right = -40.0
-margin_bottom = -40.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -59,11 +59,11 @@ __meta__ = {
 
 [node name="ButtonsPanel" type="Panel" parent="HBoxContainer"]
 self_modulate = Color( 0.627451, 0.627451, 0.627451, 1 )
-margin_right = 200.0
-margin_bottom = 370.0
-rect_min_size = Vector2( 200, 370 )
+offset_right = 200.0
+offset_bottom = 370.0
+custom_minimum_size = Vector2( 200, 370 )
 mouse_filter = 1
-custom_styles/panel = ExtResource( 1 )
+theme_override_styles/panel = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -72,11 +72,11 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ButtonsPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 30.0
-margin_top = 10.0
-margin_right = -30.0
-margin_bottom = -10.0
-custom_constants/separation = 20
+offset_left = 30.0
+offset_top = 10.0
+offset_right = -30.0
+offset_bottom = -10.0
+theme_override_constants/separation = 20
 alignment = 1
 __meta__ = {
 "_edit_lock_": true,
@@ -84,80 +84,80 @@ __meta__ = {
 }
 
 [node name="Pause" type="Label" parent="HBoxContainer/ButtonsPanel/VBoxContainer"]
-margin_top = 38.0
-margin_right = 144.0
-margin_bottom = 80.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0.0689783, 0.12784, 0.147461, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 4
+offset_top = 38.0
+offset_right = 144.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource( 2 )
+theme_override_colors/font_shadow_color = Color( 0.0689783, 0.12784, 0.147461, 1 )
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
 text = "Pause"
 align = 1
 uppercase = true
 
 [node name="Voltar" type="Button" parent="HBoxContainer/ButtonsPanel/VBoxContainer"]
-margin_top = 100.0
-margin_right = 144.0
-margin_bottom = 138.0
+offset_top = 100.0
+offset_right = 144.0
+offset_bottom = 138.0
 grow_horizontal = 2
 size_flags_stretch_ratio = 0.0
-custom_styles/hover = ExtResource( 13 )
-custom_styles/pressed = ExtResource( 12 )
-custom_styles/focus = ExtResource( 13 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
-custom_colors/font_color_hover = Color( 0.12549, 0.196078, 0.215686, 1 )
+theme_override_styles/hover = ExtResource( 13 )
+theme_override_styles/pressed = ExtResource( 12 )
+theme_override_styles/focus = ExtResource( 13 )
+theme_override_styles/normal = ExtResource( 4 )
+theme_override_fonts/font = ExtResource( 3 )
+theme_override_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
+theme_override_colors/font_hover_color = Color( 0.12549, 0.196078, 0.215686, 1 )
 text = "Voltar"
 
 [node name="Galeria" type="Button" parent="HBoxContainer/ButtonsPanel/VBoxContainer"]
-margin_top = 158.0
-margin_right = 144.0
-margin_bottom = 196.0
-custom_styles/hover = ExtResource( 13 )
-custom_styles/pressed = ExtResource( 12 )
-custom_styles/focus = ExtResource( 13 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
-custom_colors/font_color_hover = Color( 0.121569, 0.180392, 0.196078, 1 )
+offset_top = 158.0
+offset_right = 144.0
+offset_bottom = 196.0
+theme_override_styles/hover = ExtResource( 13 )
+theme_override_styles/pressed = ExtResource( 12 )
+theme_override_styles/focus = ExtResource( 13 )
+theme_override_styles/normal = ExtResource( 4 )
+theme_override_fonts/font = ExtResource( 3 )
+theme_override_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
+theme_override_colors/font_hover_color = Color( 0.121569, 0.180392, 0.196078, 1 )
 text = "Galeria"
 
 [node name="Mapa" type="Button" parent="HBoxContainer/ButtonsPanel/VBoxContainer"]
-margin_top = 216.0
-margin_right = 144.0
-margin_bottom = 254.0
-custom_styles/hover = ExtResource( 13 )
-custom_styles/pressed = ExtResource( 12 )
-custom_styles/focus = ExtResource( 13 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
-custom_colors/font_color_hover = Color( 0.121569, 0.180392, 0.196078, 1 )
+offset_top = 216.0
+offset_right = 144.0
+offset_bottom = 254.0
+theme_override_styles/hover = ExtResource( 13 )
+theme_override_styles/pressed = ExtResource( 12 )
+theme_override_styles/focus = ExtResource( 13 )
+theme_override_styles/normal = ExtResource( 4 )
+theme_override_fonts/font = ExtResource( 3 )
+theme_override_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
+theme_override_colors/font_hover_color = Color( 0.121569, 0.180392, 0.196078, 1 )
 text = "Mapa"
 
 [node name="Sair" type="Button" parent="HBoxContainer/ButtonsPanel/VBoxContainer"]
-margin_top = 274.0
-margin_right = 144.0
-margin_bottom = 312.0
-custom_styles/hover = ExtResource( 13 )
-custom_styles/pressed = ExtResource( 12 )
-custom_styles/focus = ExtResource( 13 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
-custom_colors/font_color_hover = Color( 0.121569, 0.180392, 0.196078, 1 )
+offset_top = 274.0
+offset_right = 144.0
+offset_bottom = 312.0
+theme_override_styles/hover = ExtResource( 13 )
+theme_override_styles/pressed = ExtResource( 12 )
+theme_override_styles/focus = ExtResource( 13 )
+theme_override_styles/normal = ExtResource( 4 )
+theme_override_fonts/font = ExtResource( 3 )
+theme_override_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
+theme_override_colors/font_hover_color = Color( 0.121569, 0.180392, 0.196078, 1 )
 text = "Sair"
 
 [node name="ConfigPanel" type="Panel" parent="HBoxContainer"]
-margin_left = 204.0
-margin_top = 35.0
-margin_right = 720.0
-margin_bottom = 335.0
-rect_min_size = Vector2( 516, 300 )
+offset_left = 204.0
+offset_top = 35.0
+offset_right = 720.0
+offset_bottom = 335.0
+custom_minimum_size = Vector2( 516, 300 )
 mouse_filter = 1
 size_flags_vertical = 4
-custom_styles/panel = ExtResource( 1 )
+theme_override_styles/panel = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -166,11 +166,11 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ConfigPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 10.0
-margin_right = -20.0
-margin_bottom = -10.0
-custom_constants/separation = 18
+offset_left = 20.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+theme_override_constants/separation = 18
 alignment = 1
 __meta__ = {
 "_edit_lock_": true,
@@ -178,13 +178,13 @@ __meta__ = {
 }
 
 [node name="Configurações" type="Label" parent="HBoxContainer/ConfigPanel/VBoxContainer"]
-margin_top = 1.0
-margin_right = 476.0
-margin_bottom = 43.0
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0.12549, 0.196078, 0.215686, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 4
+offset_top = 1.0
+offset_right = 476.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource( 2 )
+theme_override_colors/font_shadow_color = Color( 0.12549, 0.196078, 0.215686, 1 )
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
 text = "Configurações"
 align = 1
 valign = 1
@@ -194,25 +194,25 @@ __meta__ = {
 }
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/ConfigPanel/VBoxContainer"]
-margin_top = 61.0
-margin_right = 476.0
-margin_bottom = 65.0
+offset_top = 61.0
+offset_right = 476.0
+offset_bottom = 65.0
 mouse_filter = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ConfigPanel/VBoxContainer"]
-margin_top = 83.0
-margin_right = 476.0
-margin_bottom = 106.0
-custom_constants/separation = 20
+offset_top = 83.0
+offset_right = 476.0
+offset_bottom = 106.0
+theme_override_constants/separation = 20
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Volume" type="Label" parent="HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer"]
-margin_right = 82.0
-margin_bottom = 23.0
-custom_fonts/font = ExtResource( 3 )
+offset_right = 82.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource( 3 )
 text = "Volume:"
 valign = 1
 __meta__ = {
@@ -220,47 +220,47 @@ __meta__ = {
 }
 
 [node name="HSlider" type="HSlider" parent="HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer"]
-margin_left = 102.0
-margin_right = 456.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 90, 20 )
+offset_left = 102.0
+offset_right = 456.0
+offset_bottom = 20.0
+custom_minimum_size = Vector2( 90, 20 )
 mouse_filter = 1
 size_flags_horizontal = 3
-custom_icons/tick = ExtResource( 5 )
-custom_icons/grabber_disabled = ExtResource( 5 )
-custom_icons/grabber_highlight = ExtResource( 5 )
-custom_icons/grabber = ExtResource( 5 )
-custom_styles/slider = SubResource( 1 )
-custom_styles/grabber_area_highlight = SubResource( 2 )
-custom_styles/grabber_area = SubResource( 2 )
+theme_override_icons/tick = ExtResource( 5 )
+theme_override_icons/grabber_disabled = ExtResource( 5 )
+theme_override_icons/grabber_highlight = ExtResource( 5 )
+theme_override_icons/grabber = ExtResource( 5 )
+theme_override_styles/slider = SubResource( 1 )
+theme_override_styles/grabber_area_highlight = SubResource( 2 )
+theme_override_styles/grabber_area = SubResource( 2 )
 max_value = 1.0
 step = 0.001
 ticks_on_borders = true
 
 [node name="Label" type="Label" parent="HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer"]
-margin_left = 476.0
-margin_top = 4.0
-margin_right = 476.0
-margin_bottom = 18.0
+offset_left = 476.0
+offset_top = 4.0
+offset_right = 476.0
+offset_bottom = 18.0
 
 [node name="HSeparator2" type="HSeparator" parent="HBoxContainer/ConfigPanel/VBoxContainer"]
-margin_top = 124.0
-margin_right = 476.0
-margin_bottom = 128.0
+offset_top = 124.0
+offset_right = 476.0
+offset_bottom = 128.0
 mouse_filter = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/ConfigPanel/VBoxContainer"]
-margin_top = 146.0
-margin_right = 476.0
-margin_bottom = 200.0
-custom_constants/separation = 20
+offset_top = 146.0
+offset_right = 476.0
+offset_bottom = 200.0
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Cor" type="Label" parent="HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer2"]
-margin_top = 15.0
-margin_right = 164.0
-margin_bottom = 38.0
-custom_fonts/font = ExtResource( 3 )
+offset_top = 15.0
+offset_right = 164.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource( 3 )
 text = "Cor do Avatar:"
 valign = 1
 __meta__ = {
@@ -268,16 +268,16 @@ __meta__ = {
 }
 
 [node name="Cores" type="ItemList" parent="HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer2"]
-margin_left = 235.0
-margin_right = 425.0
-margin_bottom = 54.0
+offset_left = 235.0
+offset_right = 425.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 190, 44 )
+custom_minimum_size = Vector2( 190, 44 )
 size_flags_horizontal = 6
-custom_styles/selected_focus = ExtResource( 9 )
-custom_styles/selected = ExtResource( 9 )
-custom_styles/bg = ExtResource( 10 )
+theme_override_styles/selected_focus = ExtResource( 9 )
+theme_override_styles/selected = ExtResource( 9 )
+theme_override_styles/bg = ExtResource( 10 )
 items = [ "", ExtResource( 7 ), false, "", ExtResource( 6 ), false, "", ExtResource( 8 ), false ]
 auto_height = true
 max_columns = 3
@@ -285,31 +285,31 @@ same_column_width = true
 fixed_icon_size = Vector2( 50, 50 )
 
 [node name="HSeparator3" type="HSeparator" parent="HBoxContainer/ConfigPanel/VBoxContainer"]
-margin_top = 218.0
-margin_right = 476.0
-margin_bottom = 222.0
+offset_top = 218.0
+offset_right = 476.0
+offset_bottom = 222.0
 mouse_filter = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/ConfigPanel/VBoxContainer"]
-margin_top = 240.0
-margin_right = 476.0
-margin_bottom = 278.0
+offset_top = 240.0
+offset_right = 476.0
+offset_bottom = 278.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Controles" type="Button" parent="HBoxContainer/ConfigPanel/VBoxContainer/CenterContainer"]
-margin_left = 123.0
-margin_right = 353.0
-margin_bottom = 38.0
+offset_left = 123.0
+offset_right = 353.0
+offset_bottom = 38.0
 size_flags_horizontal = 0
-custom_styles/hover = ExtResource( 13 )
-custom_styles/pressed = ExtResource( 12 )
-custom_styles/focus = ExtResource( 13 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
-custom_colors/font_color_hover = Color( 0.121569, 0.180392, 0.196078, 1 )
+theme_override_styles/hover = ExtResource( 13 )
+theme_override_styles/pressed = ExtResource( 12 )
+theme_override_styles/focus = ExtResource( 13 )
+theme_override_styles/normal = ExtResource( 4 )
+theme_override_fonts/font = ExtResource( 3 )
+theme_override_colors/font_color = Color( 0.121569, 0.180392, 0.196078, 1 )
+theme_override_colors/font_hover_color = Color( 0.121569, 0.180392, 0.196078, 1 )
 toggle_mode = true
 text = "Alternar controles"
 __meta__ = {

@@ -11,10 +11,10 @@ dialog_sound = "talk_kid"
 autoplay = "default"
 
 [node name="Texto" parent="Balao" index="0"]
-margin_left = -453.0
-margin_top = -154.5
-margin_right = 384.0
-margin_bottom = 99.5
+offset_left = -453.0
+offset_top = -154.5
+offset_right = 384.0
+offset_bottom = 99.5
 percent_visible = 1.0
 
 [node name="FastForwardIcon" parent="." index="2"]

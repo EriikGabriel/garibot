@@ -2,13 +2,13 @@ extends Control
 
 const X_OFFSET = 54
 const Y_OFFSET = 54
-export(Texture) var descontente
-export(Texture) var contente
-export(PackedScene) var cabeca
+@export var descontente: Texture2D
+@export var contente: Texture2D
+@export var cabeca: PackedScene
 
 func setup(qtd):
 	for _i in range(qtd):
-		var new = cabeca.instance()
+		var new = cabeca.instantiate()
 		$VBoxContainer/HBoxContainer.add_child(new)
 	
 	_hide_box_if_empty()

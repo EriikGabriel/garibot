@@ -1,6 +1,6 @@
 extends TextureButton
 
-onready var stage = Global_variable.last_stage_number
+@onready var stage = Global_variable.last_stage_number
 
 const key_shortcut = "ui_accept"
 

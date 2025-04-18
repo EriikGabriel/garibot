@@ -19,7 +19,7 @@ func _ready():
 func _on_right_pressed():
 	var a = InputEventAction.new()
 	a.action = "ui_right"
-	a.pressed = true
+	a.button_pressed = true
 	Input.parse_input_event(a)
 
 	pass # Replace with function body.

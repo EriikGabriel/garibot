@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var buttons_node = $CanvasLayer/Buttons
-onready var pause_node = $CanvasLayer/Pause
+@onready var buttons_node = $CanvasLayer/Buttons
+@onready var pause_node = $CanvasLayer/Pause
 
 func _ready():
 	Global_variable.mobile_control_node = self
@@ -23,7 +23,7 @@ func hide_buttons():
 
 
 func buttons_visibile() -> bool:
-	 return $CanvasLayer/Buttons.is_visible_in_tree()
+	return $CanvasLayer/Buttons.is_visible_in_tree()
 
 
 func show_pause_button():

@@ -2,24 +2,24 @@ extends Node2D
 
 var actual_state
 var can_interact = false
-onready var node_global = get_tree().get_root().get_node("/root/Global_variable")
-onready var value_bar = get_tree().get_nodes_in_group("value_bar").front()
+@onready var node_global = get_tree().get_root().get_node("/root/Global_variable")
+@onready var value_bar = get_tree().get_nodes_in_group("value_bar").front()
 var enemypreload = preload("res://scenes/enemies/Enemy2.tscn")
-export (int, 1,5) var qtditem = 0 #item q é ser coletado
-export (int,0,2) var modo_converter = 0 # 0 Pessoas seguindo
+@export var qtditem = 0 #item q é ser coletado # (int, 1,5)
+@export var modo_converter = 0 # 0 Pessoas seguindo # (int,0,2)
 #1 Sim
 #2 Não
-export var min_pessoas = 2
+@export var min_pessoas = 2
 var vel = Vector2(0,0)
 
-export var color_hair_array: Array
-export var color_shirt_array: Array
+@export var color_hair_array: Array
+@export var color_shirt_array: Array
 var shirt_color: Color
 var hair_color: Color
 
 var garibot_followers
 
-onready var number_node = $Number.set_text(str(min_pessoas))
+@onready var number_node = $Number.set_text(str(min_pessoas))
 
 enum STATE{
 	VERDE,
@@ -101,7 +101,7 @@ func throw_enemies():
 	print(qtditem)
 	if qtditem > 0:
 		# print("ae carai")
-		var enemy = enemypreload.instance()
+		var enemy = enemypreload.instantiate()
 		enemy.set_position(Vector2(5,0) + self.position)
 		get_tree().get_root().call_deferred('add_child', enemy)
 		qtditem -= 1

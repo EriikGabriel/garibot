@@ -2,10 +2,10 @@
 
 [ext_resource path="res://scenes/animation/BoyLixoBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/stages/npc/PessoaLixoInterativo.gd" type="Script" id=2]
-[ext_resource path="res://assets/Font/text.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/Font/text.tres" type="FontFile" id=3]
 [ext_resource path="res://scenes/animation/Mosquinhas.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/stages/npc/IndicadorCabecas.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/animation/shader_trocar_cores.shader" type="Shader" id=6]
+[ext_resource path="res://scenes/animation/shader_trocar_cores.gdshader" type="Shader" id=6]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -54,14 +54,14 @@ wait_time = 2.0
 
 [node name="Number" type="Label" parent="."]
 visible = false
-margin_left = -43.727
-margin_top = -22.364
-margin_right = -3.72699
-margin_bottom = 11.636
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+offset_left = -43.727
+offset_top = -22.364
+offset_right = -3.72699
+offset_bottom = 11.636
+theme_override_fonts/font = ExtResource( 3 )
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_colors/font_shadow_color = Color( 0, 0, 0, 1 )
+theme_override_constants/shadow_outline_size = 1
 text = "1"
 align = 1
 valign = 1
@@ -73,10 +73,10 @@ __meta__ = {
 visible = false
 
 [node name="IndicadorCabecas" parent="." instance=ExtResource( 5 )]
-margin_left = -8.0
-margin_top = -78.0
-margin_right = 40.0
-margin_bottom = -50.0
+offset_left = -8.0
+offset_top = -78.0
+offset_right = 40.0
+offset_bottom = -50.0
 [connection signal="animation_finished" from="Boy/Bobo/Corpo/Animation" to="." method="_on_Animation_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer_Anim_Vermelho" to="." method="_on_Timer_Anim_Vermelho_timeout"]

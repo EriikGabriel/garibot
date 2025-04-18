@@ -8,7 +8,7 @@ var posX = [50,700]
 var itemName 
 
 func _on_Timer_timeout():
-	var lixo = spawnLix.instance()
+	var lixo = spawnLix.instantiate()
 	itemName = Global_variable.get_name_item_collect()
 	if itemName.size() == 0 : 
 		if $EndGame.is_stopped() :

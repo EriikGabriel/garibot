@@ -1,6 +1,6 @@
 extends Area2D
 
-export(int, "DOWN", "RIGHT", "UP", "LEFT") var gravity_trigger
+@export var gravity_trigger # (int, "DOWN", "RIGHT", "UP", "LEFT")
 
 func _on_MagnetTrigger_body_entered(body):
 	if body.is_in_group("player"):

@@ -2,10 +2,10 @@ extends "blaster.gd"
 
 
 #onready var player = get_parent().get_parent().get_parent()
-onready var area = $Area2D
-onready var pos = $Area2D/Position2D
-onready var collision = $Area2D/CollisionShape2D
-onready var sound_effect = $SFX
+@onready var area = $Area2D
+@onready var pos = $Area2D/Marker2D
+@onready var collision = $Area2D/CollisionShape2D
+@onready var sound_effect = $SFX
 
 var is_sucking = false
 var last_enemy = null
@@ -15,14 +15,14 @@ func _process(_delta):
 	
 	if is_shooting or is_sucking:
 			#Play animation
-			player.set_control(false)
+			player.set_ctrl_pressed(false)
 			
 			collision.disabled = false
 			
 			if not sound_effect.playing:
 				sound_effect.play()
 	else:
-		player.set_control(false)
+		player.set_ctrl_pressed(false)
 		collision.disabled = true
 		sound_effect.stop()
 	pass
@@ -53,7 +53,7 @@ func _on_TweenScale_tween_completed(object, _key):
 	object.call_deferred("destroy")
 
 func destroy():
-	player.set_control(true)
+	player.set_ctrl_pressed(true)
 	queue_free()
 
 func disable_damage(body):

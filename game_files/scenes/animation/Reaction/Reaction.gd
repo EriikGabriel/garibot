@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var anim_player = $AnimationPlayer
+@onready var anim_player = $AnimationPlayer
 
 func play(name: String, blend: float, speed: float, from_end: bool):
 	anim_player.play(name, blend, speed, from_end)

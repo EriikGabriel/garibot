@@ -24,6 +24,6 @@ func _on_left_released():
 func _on_left_pressed():
 	var a = InputEventAction.new()
 	a.action = "ui_left"
-	a.pressed = true
+	a.button_pressed = true
 	Input.parse_input_event(a)
 	pass # Replace with function body.

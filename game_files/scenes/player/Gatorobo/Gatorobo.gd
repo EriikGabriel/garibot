@@ -1,21 +1,21 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-onready var body = $GatoroboBody
-onready var anim_player = $GatoroboBody/GariDog/Corpo/PersonAnimationPlayer
+@onready var body = $GatoroboBody
+@onready var anim_player = $GatoroboBody/GariDog/Corpo/PersonAnimationPlayer
 
 # EXPORT VARIABLES
-export (int) var MAXSPEED = 300
-export (int) var FLOOR_ACC = 125
-export (int) var AIR_ACC = 75
-export (int) var JUMP_MIN_HEIGHT = 200
-export (int) var JUMP_MAX_HEIGHT = 750
-export (int) var AIR_FINAL_SPEED = 700
-export (int) var GRAVITY_FORCE = 30
-export (int) var ROLL_SPEED = 1200
-export (int) var ROLL_DURATION = 15 # How further the dash goes
-export (int) var ROLL_COOLDOWN = 50 # How many frames to activate dash again
-export (int) var DAMAGE_DURATION = 15
-export (bool) var has_control = true
+@export var MAXSPEED: int = 300
+@export var FLOOR_ACC: int = 125
+@export var AIR_ACC: int = 75
+@export var JUMP_MIN_HEIGHT: int = 200
+@export var JUMP_MAX_HEIGHT: int = 750
+@export var AIR_FINAL_SPEED: int = 700
+@export var GRAVITY_FORCE: int = 30
+@export var ROLL_SPEED: int = 1200
+@export var ROLL_DURATION: int = 15 # How further the dash goes
+@export var ROLL_COOLDOWN: int = 50 # How many frames to activate dash again
+@export var DAMAGE_DURATION: int = 15
+@export var has_control: bool = true
 
 # SCRIPT VARIABLES
 var move_velocity = 0
@@ -253,7 +253,14 @@ func calculate_velocity():
 			velocity.x = jump_velocity * -1
 			floor_normal = Vector2(1, 0)
 				
-	velocity = move_and_slide_with_snap(velocity, snap, floor_normal, true, 5, 0.85)
+	set_velocity(velocity)
+	# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `snap`
+	set_up_direction(floor_normal)
+	set_floor_stop_on_slope_enabled(true)
+	set_max_slides(5)
+	set_floor_max_angle(0.85)
+	move_and_slide()
+	velocity = velocity
 	pass
 
 

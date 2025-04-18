@@ -1,8 +1,8 @@
 extends Node2D
 
-export var size = 1080;
-export var velocidade = 160;
-export var extend_ratio = 1.0
+@export var size = 1080;
+@export var velocidade = 160;
+@export var extend_ratio = 1.0
 
 var animation = 0
 

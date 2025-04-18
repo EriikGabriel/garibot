@@ -1,17 +1,17 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-onready var sprite = $Sprite
+@onready var sprite = $Sprite2D
 signal enemy_defeated
 
 var shot = preload("res://scenes/enemies/Shoot/Shoot.tscn")
 
 # Visual variables
-export var itemIdx = 0
+@export var itemIdx = 0
 var item = preload("res://scenes/item/Item.tscn")
 
 # Movement variables
-export var speed := 50.0
-export var gravity := 2000.0
+@export var speed := 50.0
+@export var gravity := 2000.0
 var velocity := Vector2(speed, 0.0)
 var orientation := 1.0
 var count = 0
@@ -22,7 +22,7 @@ var hopReady = false
 var jumpReady = false
 var shootReady = false
 var seeingPlayer = false
-onready var shootRate = get_node("ShootTimer")
+@onready var shootRate = get_node("ShootTimer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,7 +46,13 @@ func _process(delta):
 	
 	velocity.x *= orientation
 	
-	velocity = move_and_slide(velocity, Vector2.UP, true, 4, 0.79)
+	set_velocity(velocity)
+	set_up_direction(Vector2.UP)
+	set_floor_stop_on_slope_enabled(true)
+	set_max_slides(4)
+	set_floor_max_angle(0.79)
+	move_and_slide()
+	velocity = velocity
 	pass
 
 func turn():
@@ -78,7 +84,7 @@ func shoot():
 	if shootReady:
 		$sfx.play()
 		
-		var bullet = shot.instance()
+		var bullet = shot.instantiate()
 		bullet.orientation = orientation
 		bullet.set_position(position + Vector2(30.0*orientation, -10.0))
 		
@@ -93,7 +99,7 @@ func shoot():
 func spawn_item():
 	$sfx.play()
 
-	var itemDrop = item.instance()
+	var itemDrop = item.instantiate()
 	itemDrop.set_position(self.position)
 	itemDrop.change_item("tv")
 	

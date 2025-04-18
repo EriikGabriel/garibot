@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 # Declare member variables here. Examples:
 var angle = 10.0
@@ -22,6 +22,8 @@ func _process(delta):
 
 func weirdShot(delta):
 	vec = vec.rotated(-angle * orientation * delta)
-	move_and_slide(vec*curve)
-	move_and_slide(pos * speed)
+	set_velocity(vec*curve)
+	move_and_slide()
+	set_velocity(pos * speed)
+	move_and_slide()
 	pass

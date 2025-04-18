@@ -25,8 +25,8 @@ func _process(delta):
 			anim_time -= delta
 
 func move(delta):
-	get_parent().unit_offset += delta + acceleration(delta)
-	if get_parent().unit_offset >= 1:
+	get_parent().progress_ratio += delta + acceleration(delta)
+	if get_parent().progress_ratio >= 1:
 		$CollisionShape2D.disabled = true
 		$AnimationPlayer.play("disapear")
 

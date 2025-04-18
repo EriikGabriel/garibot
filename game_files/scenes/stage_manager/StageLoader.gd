@@ -9,7 +9,7 @@ var resource
 signal resource_loaded
 
 func goto_scene(path): # game requests to switch to this scene
-	loader = ResourceLoader.load_interactive(path)
+	loader = ResourceLoader.load_threaded_request(path)
 	if loader == null: # check for errors
 		show_error()
 		return
@@ -32,8 +32,8 @@ func _process(_time):
 		wait_frames -= 1
 		return
 
-	var t = OS.get_ticks_msec()
-	while OS.get_ticks_msec() < t + time_max: # use "time_max" to control how much time we block this thread
+	var t = Time.get_ticks_msec()
+	while Time.get_ticks_msec() < t + time_max: # use "time_max" to control how much time we block this thread
 
 		# poll your loader
 		var err = loader.poll()

@@ -1,23 +1,23 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/Images/Bar/Barra/barra-frente.png" type="Texture" id=1]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-vazia.png" type="Texture" id=2]
+[ext_resource path="res://assets/Images/Bar/Barra/barra-frente.png" type="Texture2D" id=1]
+[ext_resource path="res://assets/Images/Bar/Barra/barra-vazia.png" type="Texture2D" id=2]
 [ext_resource path="res://scenes/enemies/FinalBossLife.gd" type="Script" id=3]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-verde.png" type="Texture" id=5]
+[ext_resource path="res://assets/Images/Bar/Barra/barra-verde.png" type="Texture2D" id=5]
 
 [node name="Boss_life_control" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FinalBossLife" type="TextureProgress" parent="."]
-margin_left = 8.0
-margin_top = 403.0
-margin_right = 520.0
-margin_bottom = 435.0
-rect_scale = Vector2( 1.5, 0.5 )
+[node name="FinalBossLife" type="TextureProgressBar" parent="."]
+offset_left = 8.0
+offset_top = 403.0
+offset_right = 520.0
+offset_bottom = 435.0
+scale = Vector2( 1.5, 0.5 )
 value = 100.0
 texture_under = ExtResource( 2 )
 texture_over = ExtResource( 1 )

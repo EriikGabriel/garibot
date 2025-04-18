@@ -82,7 +82,7 @@ var items = {
 	"recyclabe": false,},
 }
 
-onready var textures = {
+@onready var textures = {
 	"celular" : load("res://assets/Images/Collectibles/celular.png"),
 	"monitor" : load("res://assets/Images/Collectibles/monitor.png"),
 	"tv" : load("res://assets/Images/Collectibles/tv.png"),
@@ -100,14 +100,14 @@ onready var textures = {
 	"radio": load("res://assets/Images/Collectibles/radio.png"),
 	"bateria": load("res://assets/Images/Collectibles/battery.png"),
 	}
-onready var textures_d = {
+@onready var textures_d = {
 	"ITEM_CELLPHONE" : load("res://assets/Images/Collectibles/celular_d.png"),
 	"ITEM_COMPUTER" : load("res://assets/Images/Collectibles/monitor_d.png"),
 	"ITEM_TV" : load("res://assets/Images/Collectibles/tv_d.png"),
 	"ITEM_MICROWAVE" : load("res://assets/Images/Collectibles/microondas_d.png")
 	}
 
-onready var textures_m = {
+@onready var textures_m = {
 	"ITEM_CELLPHONE" : load("res://assets/Images/Collectibles/celular_m.png"),
 	"ITEM_COMPUTER" : load("res://assets/Images/Collectibles/monitor_m.png"),
 	"ITEM_TV" : load("res://assets/Images/Collectibles/tv_m.png"),
@@ -179,7 +179,7 @@ func increase_count(item):
 
 
 #TODO
-func get(_name : String):
+func get_iten(_name : StringName):
 	if !items.keys().has(_name):
 		return null
 	return items[_name]

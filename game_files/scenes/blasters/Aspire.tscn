@@ -12,10 +12,10 @@ radius = 10.4451
 position = Vector2( 45.2377, 0.514213 )
 shape = SubResource( 1 )
 
-[node name="Position2D" type="Area2D" parent="."]
+[node name="Marker2D" type="Area2D" parent="."]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Position2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D"]
 shape = SubResource( 2 )

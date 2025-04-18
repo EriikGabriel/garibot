@@ -1,26 +1,26 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 
 # PRELOADS
 # warning-ignore:unused_class_variable
-onready var body = $PlayerBody
-onready var blaster_manager = $PlayerBody/Blasters
-onready var health_bar = get_tree().get_nodes_in_group("health_bar").front()
-onready var game_over = get_tree().get_nodes_in_group("game_over").front()
+@onready var body = $PlayerBody
+@onready var blaster_manager = $PlayerBody/Blasters
+@onready var health_bar = get_tree().get_nodes_in_group("health_bar").front()
+@onready var game_over = get_tree().get_nodes_in_group("game_over").front()
 
 # EXPORT VARIABLES
-export (int) var MAXSPEED = 300
-export (int) var FLOOR_ACC = 125
-export (int) var AIR_ACC = 75
-export (int) var JUMP_MIN_HEIGHT = 200
-export (int) var JUMP_MAX_HEIGHT = 750
-export (int) var AIR_FINAL_SPEED = 700
-export (int) var GRAVITY_FORCE = 30
-export (int) var ROLL_SPEED = 1200
-export (int) var ROLL_DURATION = 15 # How far the dash goes
-export (int) var ROLL_COOLDOWN = 50 # How many frames to activate dash again
-export (int) var DAMAGE_DURATION = 15
-export (bool) var has_control = true
+@export var MAXSPEED: int = 300
+@export var FLOOR_ACC: int = 125
+@export var AIR_ACC: int = 75
+@export var JUMP_MIN_HEIGHT: int = 200
+@export var JUMP_MAX_HEIGHT: int = 750
+@export var AIR_FINAL_SPEED: int = 700
+@export var GRAVITY_FORCE: int = 30
+@export var ROLL_SPEED: int = 1200
+@export var ROLL_DURATION: int = 15 # How far the dash goes
+@export var ROLL_COOLDOWN: int = 50 # How many frames to activate dash again
+@export var DAMAGE_DURATION: int = 15
+@export var has_control: bool = true
 var in_cutscene = false
 
 # SCRIPT VARIABLES
@@ -345,7 +345,14 @@ func calculate_velocity():
 			velocity.x = -jump_velocity
 			floor_normal = Vector2(1, 0)
 				
-	velocity = move_and_slide_with_snap(velocity, snap, floor_normal, true, 5, 0.85)
+	set_velocity(velocity)
+	# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `snap`
+	set_up_direction(floor_normal)
+	set_floor_stop_on_slope_enabled(true)
+	set_max_slides(5)
+	set_floor_max_angle(0.85)
+	move_and_slide()
+	velocity = velocity
 
 
 func calculate_cooldown():
@@ -488,7 +495,7 @@ func get_orientation():
 func set_in_cutscene(_new):
 	in_cutscene = _new
 
-func set_control(_new):
+func set_ctrl_pressed(_new):
 	has_control = _new
 
 func get_has_control():

@@ -6,15 +6,15 @@ var playing = false
 var flag_next_line = false
 
 const base_text_speed = .5
-onready var text_speed = base_text_speed
+@onready var text_speed = base_text_speed
 const MAX_CHAR = 200
 
 var initial_position
 
-export var dialog = ["Texto 1", "Texto 2"]
-export var corpo_anim_override: NodePath = "Corpo/PersonAnimationPlayer"
-export var anim_player_override: NodePath = "AnimationPlayer"
-export(String, 
+@export var dialog = ["Texto 1", "Texto 2"]
+@export var corpo_anim_override: NodePath = "Corpo/PersonAnimationPlayer"
+@export var anim_player_override: NodePath = "AnimationPlayer"
+@export(String, 
 	"talk_tim",
 	"talk_tim_holo", 
 	"talk_mayor", 
@@ -23,9 +23,9 @@ export(String,
 	"talk_boss"
 	) onready var dialog_sound
 
-onready var balao_texto = $Balao/Texto
-onready var corpo_anim = get_node(corpo_anim_override)
-onready var anim_player = get_node(anim_player_override)
+@onready var balao_texto = $Balao/Texto
+@onready var corpo_anim = get_node(corpo_anim_override)
+@onready var anim_player = get_node(anim_player_override)
 
 signal finished
 signal dialog_finished(node_name)
@@ -63,7 +63,7 @@ func fast_forward_input(delta):
 func play(dialog_text):
 	var new_dialog = split_text(tr(dialog_text))
 	
-	if not new_dialog.empty():
+	if not new_dialog.is_empty():
 		self.dialog = new_dialog.duplicate()
 	play_next()
 	playing = true
@@ -113,7 +113,7 @@ func next_line_control() :
 	(Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_right") or
 	Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("roll_attack"))):
 		$Balao/Texto.visible = false
-		if not dialog.empty():
+		if not dialog.is_empty():
 			play_next()
 		else:
 			play_default()
@@ -135,12 +135,12 @@ func split_text(text : String) :
 	# split unsplitted
 	for dialog_paragraph in dialog_paragraphs:
 		var words = Array(dialog_paragraph.replace(" ","|").split("|"))
-		while not words.empty():
+		while not words.is_empty():
 			var s = ""
-			while not words.empty() and s.length() + words[0].length() < MAX_CHAR:
+			while not words.is_empty() and s.length() + words[0].length() < MAX_CHAR:
 				s += words[0]
 				words.remove(0)
-				if (not words.empty() and s.length() + words[0].length() < MAX_CHAR) or string_ends_with_pontuation(s):
+				if (not words.is_empty() and s.length() + words[0].length() < MAX_CHAR) or string_ends_with_pontuation(s):
 					s += " "
 				else:
 					s += "..."
@@ -154,5 +154,5 @@ func string_ends_with_pontuation(s: String):
 	return s.ends_with(",") or s.ends_with("!") or s.ends_with("?") or s.ends_with(".")
 
 
-func get_camera():
+func get_camera_3d():
 	return $Camera2D

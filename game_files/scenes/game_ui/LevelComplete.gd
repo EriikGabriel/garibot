@@ -1,11 +1,11 @@
 extends Control
 
-export(Texture) var full_star
+@export var full_star: Texture2D
 enum TYPE {BASIC, BONUS}
-export(TYPE) var type
+@export var type: TYPE
 
-onready var star_2 = $Panel/Pontos/HBoxContainer/VBoxContainer/HBoxContainer/Star2
-onready var star_3 = $Panel/Pontos/HBoxContainer/VBoxContainer/HBoxContainer/Star3
+@onready var star_2 = $Panel/Pontos/HBoxContainer/VBoxContainer/HBoxContainer/Star2
+@onready var star_3 = $Panel/Pontos/HBoxContainer/VBoxContainer/HBoxContainer/Star3
 
 func set_score():
 	Global_variable.mobile_control_node.hide_pause_button()

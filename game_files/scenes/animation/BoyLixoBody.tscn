@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/animation/AnimationCorrer.tres" type="Animation" id=1]
-[ext_resource path="res://assets/Images/Scenery/lixo.png" type="Texture" id=2]
+[ext_resource path="res://assets/Images/Scenery/lixo.png" type="Texture2D" id=2]
 [ext_resource path="res://scenes/animation/AnimationIdle.tres" type="Animation" id=3]
-[ext_resource path="res://assets/Images/People/boy_complex.png" type="Texture" id=4]
-[ext_resource path="res://assets/Images/Stage Elements/Stage2/lixo_aberto.png" type="Texture" id=5]
+[ext_resource path="res://assets/Images/People/boy_complex.png" type="Texture2D" id=4]
+[ext_resource path="res://assets/Images/Stage Elements/Stage2/lixo_aberto.png" type="Texture2D" id=5]
 [ext_resource path="res://scenes/animation/Reaction/Reaction.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/animation/AnimationAttack.tres" type="Animation" id=7]
 [ext_resource path="res://scenes/animation/AnimationIdleWaiting.tres" type="Animation" id=8]
-[ext_resource path="res://scenes/animation/shader_trocar_cores.shader" type="Shader" id=9]
+[ext_resource path="res://scenes/animation/shader_trocar_cores.gdshader" type="Shader" id=9]
 [ext_resource path="res://scenes/animation/LixoBody.gd" type="Script" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -28,7 +28,7 @@ material = SubResource( 1 )
 script = ExtResource( 10 )
 cabeca = NodePath("Bobo/Corpo/Cabeça")
 
-[node name="Lixo" type="Sprite" parent="."]
+[node name="Lixo" type="Sprite2D" parent="."]
 visible = false
 use_parent_material = true
 position = Vector2( -22, 8 )
@@ -38,7 +38,7 @@ texture = ExtResource( 2 )
 use_parent_material = true
 position = Vector2( -498, -295 )
 
-[node name="Corpo" type="Sprite" parent="Bobo"]
+[node name="Corpo" type="Sprite2D" parent="Bobo"]
 use_parent_material = true
 texture = ExtResource( 4 )
 region_enabled = true
@@ -48,7 +48,7 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="Cabeça" type="Sprite" parent="Bobo/Corpo"]
+[node name="Cabeça" type="Sprite2D" parent="Bobo/Corpo"]
 material = SubResource( 2 )
 position = Vector2( 1.00003, -10 )
 texture = ExtResource( 4 )
@@ -56,7 +56,7 @@ offset = Vector2( 0, -11.5 )
 region_enabled = true
 region_rect = Rect2( 58, 36, 18, 23 )
 
-[node name="Braco_Esq" type="Sprite" parent="Bobo/Corpo"]
+[node name="Braco_Esq" type="Sprite2D" parent="Bobo/Corpo"]
 use_parent_material = true
 position = Vector2( -9, -7 )
 rotation = 4.18879
@@ -65,7 +65,7 @@ offset = Vector2( -2.00006, 5 )
 region_enabled = true
 region_rect = Rect2( 19, 68, 13, 18 )
 
-[node name="Antebraco_Esq" type="Sprite" parent="Bobo/Corpo/Braco_Esq"]
+[node name="Antebraco_Esq" type="Sprite2D" parent="Bobo/Corpo/Braco_Esq"]
 position = Vector2( -6, 10 )
 rotation = 0.698132
 texture = ExtResource( 4 )
@@ -73,13 +73,13 @@ offset = Vector2( 3, 7 )
 region_enabled = true
 region_rect = Rect2( 19, 93, 12, 17 )
 
-[node name="Sprite" type="Sprite" parent="Bobo/Corpo/Braco_Esq/Antebraco_Esq"]
+[node name="Sprite2D" type="Sprite2D" parent="Bobo/Corpo/Braco_Esq/Antebraco_Esq"]
 show_behind_parent = true
 position = Vector2( -0.625118, 20.7942 )
 rotation = -1.5708
 texture = ExtResource( 5 )
 
-[node name="Braco_Esq2" type="Sprite" parent="Bobo/Corpo"]
+[node name="Braco_Esq2" type="Sprite2D" parent="Bobo/Corpo"]
 show_behind_parent = true
 use_parent_material = true
 position = Vector2( 10, -7 )
@@ -89,7 +89,7 @@ offset = Vector2( -2.00006, 5 )
 region_enabled = true
 region_rect = Rect2( 19, 68, 13, 18 )
 
-[node name="Antebraco_Esq2" type="Sprite" parent="Bobo/Corpo/Braco_Esq2"]
+[node name="Antebraco_Esq2" type="Sprite2D" parent="Bobo/Corpo/Braco_Esq2"]
 position = Vector2( -6, 10 )
 rotation = 0.698132
 texture = ExtResource( 4 )
@@ -97,7 +97,7 @@ offset = Vector2( 3, 7 )
 region_enabled = true
 region_rect = Rect2( 19, 93, 12, 17 )
 
-[node name="Perna" type="Sprite" parent="Bobo/Corpo"]
+[node name="Perna" type="Sprite2D" parent="Bobo/Corpo"]
 show_behind_parent = true
 use_parent_material = true
 position = Vector2( 4.00003, 10 )
@@ -106,21 +106,21 @@ offset = Vector2( 1, 5 )
 region_enabled = true
 region_rect = Rect2( 77, 89, 10, 15 )
 
-[node name="Canela" type="Sprite" parent="Bobo/Corpo/Perna"]
+[node name="Canela" type="Sprite2D" parent="Bobo/Corpo/Perna"]
 position = Vector2( 2, 9 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, 5 )
 region_enabled = true
 region_rect = Rect2( 78, 106, 9, 13 )
 
-[node name="Pé" type="Sprite" parent="Bobo/Corpo/Perna/Canela"]
+[node name="Pé" type="Sprite2D" parent="Bobo/Corpo/Perna/Canela"]
 position = Vector2( -2, 10 )
 texture = ExtResource( 4 )
 offset = Vector2( 2, 1 )
 region_enabled = true
 region_rect = Rect2( 78, 121, 9, 5 )
 
-[node name="Perna2" type="Sprite" parent="Bobo/Corpo"]
+[node name="Perna2" type="Sprite2D" parent="Bobo/Corpo"]
 show_behind_parent = true
 use_parent_material = true
 position = Vector2( -4.99997, 10 )
@@ -129,14 +129,14 @@ offset = Vector2( 1, 5 )
 region_enabled = true
 region_rect = Rect2( 46, 89, 10, 15 )
 
-[node name="Canela2" type="Sprite" parent="Bobo/Corpo/Perna2"]
+[node name="Canela2" type="Sprite2D" parent="Bobo/Corpo/Perna2"]
 position = Vector2( 2, 9 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, 5 )
 region_enabled = true
 region_rect = Rect2( 47, 106, 9, 13 )
 
-[node name="Pé2" type="Sprite" parent="Bobo/Corpo/Perna2/Canela2"]
+[node name="Pé2" type="Sprite2D" parent="Bobo/Corpo/Perna2/Canela2"]
 position = Vector2( -2, 9.99997 )
 texture = ExtResource( 4 )
 offset = Vector2( 2, 1 )

@@ -1,17 +1,17 @@
 extends Area2D
 
-onready var dialog_node = get_parent()
+@onready var dialog_node = get_parent()
 
-export var player: NodePath
-onready var player_node = get_node(player)
+@export var player: NodePath
+@onready var player_node = get_node(player)
 
-export var dialog_text: String
+@export var dialog_text: String
 
 var first_time = true;
 
 func _on_ActivationArea_body_entered(_body):
 	if first_time:
-		dialog_node.get_camera().current = true
+		dialog_node.get_camera_3d().current = true
 		dialog_node.play(tr(dialog_text))
 		player_node.set_in_cutscene(true)
 	else:

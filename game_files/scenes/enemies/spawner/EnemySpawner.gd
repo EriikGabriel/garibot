@@ -1,7 +1,7 @@
-extends Position2D
+extends Marker2D
 
 
-onready var enemy_counter = get_parent().get_node("CanvasLayer/pause_menu/Panel/EnemyCounter")
+@onready var enemy_counter = get_parent().get_node("CanvasLayer/pause_menu/Panel/EnemyCounter")
 
 
 var is_defeated = false
@@ -14,7 +14,7 @@ func _ready():
 	
 	if get_child_count() and get_child(1):
 		enemy = get_child(1)
-		ENEMY_FILE = enemy.get_filename()
+		ENEMY_FILE = enemy.get_scene_file_path()
 	else:
 		enemy = null
 
@@ -27,7 +27,7 @@ func _on_enemy_defeated():
 
 func _on_VisibilityNotifier2D_screen_exited():
 	if is_defeated and get_child_count() <= 1:
-		var virus_enemy = load(ENEMY_FILE).instance()
+		var virus_enemy = load(ENEMY_FILE).instantiate()
 		
 		virus_enemy.set_virus(true)
 		

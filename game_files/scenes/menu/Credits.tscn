@@ -1,25 +1,25 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://assets/Font/text.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/Font/text.tres" type="FontFile" id=2]
 [ext_resource path="res://scenes/player/PlayerBody.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/Images/Scenery/fundo1.png" type="Texture" id=4]
-[ext_resource path="res://assets/Font/window_title.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/Images/Scenery/fundo1.png" type="Texture2D" id=4]
+[ext_resource path="res://assets/Font/window_title.tres" type="FontFile" id=5]
 [ext_resource path="res://scenes/menu/Button.gd" type="Script" id=6]
-[ext_resource path="res://assets/Images/Scenery/fundo0.png" type="Texture" id=7]
+[ext_resource path="res://assets/Images/Scenery/fundo0.png" type="Texture2D" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "background"
 length = 8.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect/TextureRect:rect_position")
+tracks/0/path = NodePath("TextureRect/TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 8 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 130 ), Vector2( -448, 130 ) ]
 }
@@ -34,32 +34,32 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("MarginContainer:margin_left")
+tracks/1/path = NodePath("MarginContainer:offset_left")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ 75.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("MarginContainer:margin_right")
+tracks/2/path = NodePath("MarginContainer:offset_right")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ -800.0 ]
 }
@@ -70,8 +70,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ false ]
 }
@@ -82,8 +82,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
@@ -98,8 +98,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
@@ -110,8 +110,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
@@ -122,8 +122,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1.7 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 1.7 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -131,14 +131,14 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=4]
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("MarginContainer:margin_right")
+tracks/0/path = NodePath("MarginContainer:offset_right")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ -800, -75 ]
 }
@@ -149,8 +149,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ false ]
 }
@@ -164,20 +164,20 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("MarginContainer/Panel/MarginContainer/RichTextLabel:rect_position")
+tracks/1/path = NodePath("MarginContainer/Panel/MarginContainer/RichTextLabel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 70 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 70 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 30, 450 ), Vector2( 30, -2500 ) ]
 }
@@ -188,8 +188,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [ "walk", 2 ],
 "method": "play"
@@ -202,8 +202,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [ "spin", 1 ],
 "method": "play"
@@ -216,8 +216,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [ "bye", 1 ],
 "method": "play"
@@ -230,8 +230,8 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 3.9 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 3.9 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [ "fly_bubble", 1 ],
 "method": "play"
@@ -303,7 +303,7 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_clip_content = true
+clip_contents = true
 texture = ExtResource( 7 )
 expand = true
 __meta__ = {
@@ -314,10 +314,10 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -413.746
-margin_top = -320.0
-margin_right = 130.254
-rect_pivot_offset = Vector2( 672, 0 )
+offset_left = -413.746
+offset_top = -320.0
+offset_right = 130.254
+pivot_offset = Vector2( 672, 0 )
 texture = ExtResource( 4 )
 stretch_mode = 2
 __meta__ = {
@@ -327,34 +327,34 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 75.0
-margin_right = -75.0
+offset_left = 75.0
+offset_right = -75.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 modulate = Color( 1, 1, 1, 0.784314 )
-margin_right = 650.0
-margin_bottom = 450.0
+offset_right = 650.0
+offset_bottom = 450.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 111.0
-margin_bottom = 2106.0
-custom_constants/margin_top = 450
-custom_constants/margin_left = 30
+offset_right = 111.0
+offset_bottom = 2106.0
+theme_override_constants/margin_top = 450
+theme_override_constants/margin_left = 30
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="Label" parent="MarginContainer/Panel/MarginContainer"]
-margin_left = 30.0
-margin_top = 495.0
-margin_right = 761.0
-margin_bottom = 3417.0
-custom_fonts/font = ExtResource( 2 )
+offset_left = 30.0
+offset_top = 495.0
+offset_right = 761.0
+offset_bottom = 3417.0
+theme_override_fonts/font = ExtResource( 2 )
 text = "               Garibot e o Mundo de Resíduos
 
  - Professoras Orientadoras - 
@@ -468,11 +468,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -57.0
-margin_top = -80.0
-margin_right = 57.0
-margin_bottom = -49.0
-custom_fonts/font = ExtResource( 5 )
+offset_left = -57.0
+offset_top = -80.0
+offset_right = 57.0
+offset_bottom = -49.0
+theme_override_fonts/font = ExtResource( 5 )
 text = "Voltar"
 flat = true
 script = ExtResource( 6 )

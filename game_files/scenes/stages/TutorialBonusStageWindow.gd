@@ -1,8 +1,8 @@
 extends Panel
 
 
-onready var player = get_parent().get_parent().get_child(2)
-onready var itemSpawn = get_parent().get_parent().get_child(7)
+@onready var player = get_parent().get_parent().get_child(2)
+@onready var itemSpawn = get_parent().get_parent().get_child(7)
 var start = false
 
 

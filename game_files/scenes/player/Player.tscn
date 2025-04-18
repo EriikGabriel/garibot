@@ -17,7 +17,7 @@ extents = Vector2( 13.7192, 2.82816 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 20.422, 30.1177 )
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="CharacterBody2D" groups=[
 "player",
 ]]
 collision_mask = 15388
@@ -33,19 +33,19 @@ __meta__ = {
 visible = false
 
 [node name="Velocity" type="Label" parent="Debug"]
-margin_left = -19.3711
-margin_top = -78.8406
-margin_right = 20.6289
-margin_bottom = -64.8406
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+offset_left = -19.3711
+offset_top = -78.8406
+offset_right = 20.6289
+offset_bottom = -64.8406
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
 text = "velocity"
 
 [node name="State" type="Label" parent="Debug"]
-margin_left = -20.5334
-margin_top = -97.2431
-margin_right = 19.4666
-margin_bottom = -83.2431
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+offset_left = -20.5334
+offset_top = -97.2431
+offset_right = 19.4666
+offset_bottom = -83.2431
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
 text = "state"
 
 [node name="Tween" type="Tween" parent="."]
@@ -56,8 +56,8 @@ limit_left = -400
 limit_right = 20000
 limit_bottom = 900
 limit_smoothed = true
-smoothing_enabled = true
-smoothing_speed = 20.0
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
 
 [node name="FollowItems" parent="." instance=ExtResource( 7 )]
 

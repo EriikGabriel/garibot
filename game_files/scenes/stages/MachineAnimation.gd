@@ -2,16 +2,16 @@ extends Node2D
 
 var initial_position
 
-onready var player = get_tree().get_nodes_in_group("player").front()
-onready var player_camera = player.get_node("Camera2D")
-onready var level_complete = get_tree().get_nodes_in_group("level_complete").front()
+@onready var player = get_tree().get_nodes_in_group("player").front()
+@onready var player_camera = player.get_node("Camera2D")
+@onready var level_complete = get_tree().get_nodes_in_group("level_complete").front()
 
-onready var dialog = $Dialog
-onready var camera = $Camera2D
-onready var camera_anim = $Camera2D/AnimationPlayer
+@onready var dialog = $Dialog
+@onready var camera = $Camera2D
+@onready var camera_anim = $Camera2D/AnimationPlayer
 
-export(Array, String, MULTILINE) var start_dialog = ["..."]
-export(Array, String, MULTILINE) var end_dialog = ["..."]
+@export var start_dialog = ["..."] # (Array, String, MULTILINE)
+@export var end_dialog = ["..."] # (Array, String, MULTILINE)
 
 const MAX_CHAR = 90
 

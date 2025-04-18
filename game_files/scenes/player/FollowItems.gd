@@ -28,13 +28,13 @@ func _process(delta):
 	for item in $Items.get_children():
 		i += 1;
 		if(i<=3):
-			item.global_position = item.global_position.linear_interpolate( (self.global_position + 
+			item.global_position = item.global_position.lerp( (self.global_position + 
 									Vector2 (side*(i*20+12), 0)), delta*SPEED*(3-i+1)/3);
 		else:
 			item.set_visible(false)
 	pass
 
-func add_item(name, var item_texture):
+func add_item(name, item_texture):
 	# collected items list
 	#GAMBIARRAAAAAA
 	if name == null:

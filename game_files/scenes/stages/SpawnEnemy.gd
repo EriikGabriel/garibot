@@ -17,7 +17,7 @@ func _on_Timer_timeout():
 
 func spawn():
 	if timerspawn and start :
-		var enemy = enemypreload.instance()
+		var enemy = enemypreload.instantiate()
 		var random_number = rng.randi_range(0, 3)
 		rng.randomize()
 		enemy.set_position(positions[random_number])

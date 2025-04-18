@@ -22,7 +22,7 @@ func change_blaster(new_blaster, player):
 			return
 		get_child(0).destroy()
 	
-	current_blaster = blasters[new_blaster].instance()
+	current_blaster = blasters[new_blaster].instantiate()
 	current_blaster.set_player(player)
 	current_blaster.name = new_blaster
 	add_child(current_blaster)

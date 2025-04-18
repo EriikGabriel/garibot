@@ -1,10 +1,10 @@
 extends Node2D
 
-onready var map = self.get_parent()
-onready var player_body_node = $player_body
+@onready var map = self.get_parent()
+@onready var player_body_node = $player_body
 
 var lastPos
-onready var bodyAnimation = get_node("player_body/AnimationPlayer")
+@onready var bodyAnimation = get_node("player_body/AnimationPlayer")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	lastPos = self.position

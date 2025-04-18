@@ -1,27 +1,27 @@
 extends Node2D
 
-onready var anim_player = $AnimationPlayer
-onready var blaster = $Skeleton2D/Body/ShoulderR/ArmR/Blaster
+@onready var anim_player = $AnimationPlayer
+@onready var blaster = $Skeleton2D/Body/ShoulderR/ArmR/Blaster
 # vou deixar, já que é parte do body tbm
-onready var player_body_blasters = self.get_parent().get_node_or_null("PlayerBody/Blasters")
-onready var hand_item = $Skeleton2D/Body/ShoulderL/ArmL/Trash
-onready var magnet_node = $Skeleton2D/Body/Head/Magnet
+@onready var player_body_blasters = self.get_parent().get_node_or_null("PlayerBody/Blasters")
+@onready var hand_item = $Skeleton2D/Body/ShoulderL/ArmL/Trash
+@onready var magnet_node = $Skeleton2D/Body/Head/Magnet
 var blaster_manager
 var player
 
 signal anim_finished
 
-export var change_skin_enabled = true
+@export var change_skin_enabled = true
 
 var animation_details = {"vacuum":["aim_vaccum", 1], "bubble":["fly_bubble", 2], "shock":["aim_shock", 0], "magnet":["aim_magnet", 3],}
 
-onready var body_skins = [
+@onready var body_skins = [
 	load("res://assets/Images/Player/PlayerChar.png"),
 	load("res://assets/Images/Player/PlayerChar_alternative.png"),
 	load("res://assets/Images/Player/PlayerChar_alternative2.png"),
 	]
 
-onready var face_skins = [
+@onready var face_skins = [
 	load("res://assets/Images/Player/face.png"),
 	load("res://assets/Images/Player/face_alternative.png"),
 	load("res://assets/Images/Player/face_alternative2.png")

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 #onready var sprite = $Sprite
 signal enemy_defeated
@@ -6,28 +6,28 @@ signal enemy_defeated
 var shot = preload("res://scenes/enemies/Shoot/Shoot.tscn")
 
 # Visual variables
-export var itemIdx = 0
+@export var itemIdx = 0
 var item = preload("res://scenes/item/Item.tscn")
 
 # Movement variables
-export var speed := 100.0
-export var gravity := 1500.0
+@export var speed := 100.0
+@export var gravity := 1500.0
 var velocity := Vector2(speed, 0.0)
 var orientation := 1.0
 var count = 0
 
 #Addicional features 
-export (int,"Off", "Common", "Drill","Printer") var enemyType
-export var shoot_ability = false
-export var dash_ability = false
-export var jump_immunity = false
-export (String,"celular", "monitor", "tv", "impressora",
+@export var enemyType # (int,"Off", "Common", "Drill","Printer")
+@export var shoot_ability = false
+@export var dash_ability = false
+@export var jump_immunity = false
+@export (String,"celular", "monitor", "tv", "impressora",
 		"furadeira", "fogao", "geladeira", "microondas") var itemType
 		
 # Sound file for hop sound effect
-export var sfxHop_sound = "res://assets/Sounds/enemy_sfx/enemy_computer.mp3"
-export var sfxDash_sound = "res://assets/Sounds/enemy_sfx/enemy_furadeira_dash.mp3"
-export var sfxShoot_sound = "res://assets/Sounds/enemy_sfx/enemy_furadeira_dash.mp3"
+@export var sfxHop_sound = "res://assets/Sounds/enemy_sfx/enemy_computer.mp3"
+@export var sfxDash_sound = "res://assets/Sounds/enemy_sfx/enemy_furadeira_dash.mp3"
+@export var sfxShoot_sound = "res://assets/Sounds/enemy_sfx/enemy_furadeira_dash.mp3"
 var destroyedSfx = preload("res://scenes/enemies/Sounds/DestroyedSfx.tscn")
 
 #Dictionary of features
@@ -45,7 +45,7 @@ var hopReady = false
 var jumpReady = false
 var shootReady = false
 var seeingPlayer = false
-onready var shootRate = get_node("AbilityTimer")
+@onready var shootRate = get_node("AbilityTimer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -76,7 +76,13 @@ func _process(delta):
 		dash()
 	
 	velocity.x *= orientation
-	velocity = move_and_slide(velocity, Vector2.UP, true, 4, 0.79)
+	set_velocity(velocity)
+	set_up_direction(Vector2.UP)
+	set_floor_stop_on_slope_enabled(true)
+	set_max_slides(4)
+	set_floor_max_angle(0.79)
+	move_and_slide()
+	velocity = velocity
 
 
 func turn():
@@ -111,7 +117,7 @@ func shoot():
 	if shootReady:
 		$EnemySfx/SfxShoot.play(0)
 		
-		var bullet = shot.instance()
+		var bullet = shot.instantiate()
 		bullet.orientation = orientation
 		bullet.set_position(position + Vector2(30.0*orientation, -10.0))
 		
@@ -135,7 +141,7 @@ func dash():
 
 
 func spawn_item():
-	var itemDrop = item.instance()
+	var itemDrop = item.instantiate()
 	itemDrop.set_position(self.position)
 	itemDrop.itemName = itemType
 	
@@ -147,7 +153,7 @@ func destroy():
 	emit_signal("enemy_defeated")
 	spawn_item()
 	
-	var destroyed_sfx = destroyedSfx.instance()
+	var destroyed_sfx = destroyedSfx.instantiate()
 	destroyed_sfx.set_position(self.position)
 	get_parent().add_child(destroyed_sfx)
 	queue_free()

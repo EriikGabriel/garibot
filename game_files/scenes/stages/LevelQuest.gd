@@ -1,7 +1,7 @@
 extends Node2D
 
 var active = false
-onready var item = get_tree().get_nodes_in_group("value_bar").front()
+@onready var item = get_tree().get_nodes_in_group("value_bar").front()
 
 signal checkpointed
 signal open_gate

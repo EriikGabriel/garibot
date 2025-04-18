@@ -6,7 +6,7 @@ func _on_TouchScreenButton_X_pressed():
 	var ev = InputEventAction.new()
 
 	ev.action = "ui_blaster"
-	ev.pressed = true
+	ev.button_pressed = true
 	Input.parse_input_event(ev)
 	
 	pass # Replace with function body.
@@ -18,7 +18,7 @@ func _on_TouchScreenButton_X_released():
 	var ev = InputEventAction.new()
 
 	ev.action = "ui_blaster"
-	ev.pressed = false
+	ev.button_pressed = false
 	Input.parse_input_event(ev)
 	
 	pass # Replace with function body.

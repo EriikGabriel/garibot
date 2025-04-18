@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var dialog = $DialogTimothy
-onready var label = $CanvasLayer/Label
+@onready var dialog = $DialogTimothy
+@onready var label = $CanvasLayer/Label
 var gallery_opened = false
 
 func _ready():

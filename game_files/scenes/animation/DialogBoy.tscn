@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/animation/shader_trocar_cores.shader" type="Shader" id=1]
+[ext_resource path="res://scenes/animation/shader_trocar_cores.gdshader" type="Shader" id=1]
 [ext_resource path="res://scenes/animation/BoyBody.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/animation/Dialog.tscn" type="PackedScene" id=3]
 
@@ -21,10 +21,10 @@ corpo_anim_override = NodePath("BoyBody/Corpo/PersonAnimationPlayer")
 dialog_sound = "talk_kid"
 
 [node name="Texto" parent="Balao" index="0"]
-margin_left = -440.0
-margin_top = -156.5
-margin_right = 345.0
-margin_bottom = 99.5
+offset_left = -440.0
+offset_top = -156.5
+offset_right = 345.0
+offset_bottom = 99.5
 
 [node name="FastForwardIcon" parent="." index="2"]
 position = Vector2( 537, 242 )

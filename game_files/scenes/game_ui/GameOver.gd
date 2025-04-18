@@ -1,6 +1,6 @@
 extends Control
 
-onready var animPlayer = $AnimationPlayer
+@onready var animPlayer = $AnimationPlayer
 
 func _on_game_over_visibility_changed():
 	Global_variable.mobile_control_node.hide_pause_button()

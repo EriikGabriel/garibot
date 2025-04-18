@@ -1,15 +1,15 @@
 extends Node2D
-onready var value_bar = get_tree().get_nodes_in_group("value_bar").front()
-onready var maxvalue = 0
-onready var arvores_anim = $AnimationPlayer
+@onready var value_bar = get_tree().get_nodes_in_group("value_bar").front()
+@onready var maxvalue = 0
+@onready var arvores_anim = $AnimationPlayer
 
 var nivel = 0
 
 func _ready():
 	nivel = 0
 	arvores_anim.play("inicio")
-	value_bar.connect("value_changed", self, "_on_Bar_value_changed")
-	value_bar.connect("changed", self, "_on_Bar_changed")
+	value_bar.connect("value_changed", Callable(self, "_on_Bar_value_changed"))
+	value_bar.connect("changed", Callable(self, "_on_Bar_changed"))
 
 func _on_Bar_changed():
 	maxvalue = value_bar.max_value

@@ -1,6 +1,6 @@
 extends Button
 
-export (String) var texto = "TEXTO"
+@export var texto: String = "TEXTO"
 const key_shortcut = "ui_accept"
 
 signal was_pressed

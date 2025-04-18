@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/menu/GameMenu.tscn" type="PackedScene" id=3]
 
 [node name="MenuManager" type="Control"]
-pause_mode = 2
+process_mode = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1

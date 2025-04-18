@@ -18,7 +18,7 @@ func _process(delta):
 
 func shoot():
 	if shootReady:
-		var bullet = shot.instance()
+		var bullet = shot.instantiate()
 		posshoot.x = posshoot.x - position.x
 		posshoot.y = posshoot.y - position.y 
 		bullet.pos.x = posshoot.x/max(abs(posshoot.x),abs(posshoot.y))

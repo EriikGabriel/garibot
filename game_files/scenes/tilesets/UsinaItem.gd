@@ -1,6 +1,6 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-export(Texture) var initial_sprite
+@export var initial_sprite: Texture2D
 var correct_item = false
 var center = null
 var timer = 0
@@ -42,7 +42,7 @@ func set_center(_center):
 
 
 func set_sprite(_new):
-	$Sprite.texture = _new
+	$Sprite2D.texture = _new
 
 
 func set_gravity(isInverted):
@@ -64,7 +64,7 @@ func set_correct(a):
 
 
 func connect_to_minigame4(minigame4):
-	minigame4.connect("gravity_altered", self, "set_gravity")
+	minigame4.connect("gravity_altered", Callable(self, "set_gravity"))
 	# print_debug("connect to minigame4")
 
 

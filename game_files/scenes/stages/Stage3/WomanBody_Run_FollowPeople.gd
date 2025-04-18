@@ -3,7 +3,7 @@ extends Node2D
 const MIN_DIST = 0.1
 
 var control = false
-onready var last_x = 0
+@onready var last_x = 0
 
 func _process(_delta):
 	if _is_running():

@@ -1,7 +1,7 @@
 extends Area2D
 
 var tagged = false
-export var texture : Texture
+@export var texture : Texture2D
 
 func tag():
 	tagged = true

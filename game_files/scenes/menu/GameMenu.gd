@@ -1,12 +1,12 @@
 extends Control
 
-export var gallery_path : NodePath = "../Galeria" 
-onready var node_gallery = get_node(gallery_path)
+@export var gallery_path : NodePath = "../Galeria" 
+@onready var node_gallery = get_node(gallery_path)
 
-onready var node_cores = $HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer2/Cores
-onready var node_stageManager = StageManager
-onready var slider = $HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer/HSlider
-onready var controles_button_node = $HBoxContainer/ConfigPanel/VBoxContainer/CenterContainer/Controles
+@onready var node_cores = $HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer2/Cores
+@onready var node_stageManager = StageManager
+@onready var slider = $HBoxContainer/ConfigPanel/VBoxContainer/HBoxContainer/HSlider
+@onready var controles_button_node = $HBoxContainer/ConfigPanel/VBoxContainer/CenterContainer/Controles
 
 signal garibot_Color(idx)
 
@@ -14,13 +14,13 @@ func _ready():
 	node_cores.select(0)
 	if Global_variable.mobile_control_node:
 		Global_variable.mobile_control_node.show_pause_button()
-		controles_button_node.pressed = Global_variable.mobile_control_node.buttons_visibile()
+		controles_button_node.button_pressed = Global_variable.mobile_control_node.buttons_visibile()
 
 #Abre o menu de pause
 func open_pause_menu():
 	self.visible = true
 	self.get_tree().paused = true
-	slider.set_value(db2linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))))
+	slider.set_value(db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))))
 	
 	DJ.play_sfx("ui_select")
 
@@ -54,7 +54,7 @@ func _on_Sair_pressed():
 
 #Acionado ao mudar o volume do jogo
 func _on_HSlider_value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db(value))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
 	pass 
 
 #Acionado ao trocar a cor do garibot

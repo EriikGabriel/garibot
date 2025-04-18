@@ -2,19 +2,19 @@ extends Control
 
 var was_tree_paused : bool = false
 
-onready var item_list = $Panel/VBoxContainer/CenterContainer/ItemList
-onready var item_info_name = $Panel/Info/HBoxContainer/VBoxContainer/Nome
-onready var item_info_texture = $Panel/Info/HBoxContainer/VBoxContainer/Imagem
-onready var item_info_desc = $"Panel/Info/HBoxContainer/VBoxContainer2/Descrição"
-onready var item_info_blaster = $Panel/Info/HBoxContainer/VBoxContainer2/BlasterInfo
-onready var item_info_qtd = $Panel/Info/HBoxContainer/VBoxContainer/Qtd
-onready var item_info_sep = $Panel/Info/HBoxContainer/VBoxContainer2/HSeparator
-onready var info_panel = $Panel/Info
-export var flag = false
-export var item_qtd_min = 4
+@onready var item_list = $Panel/VBoxContainer/CenterContainer/ItemList
+@onready var item_info_name = $Panel/Info/HBoxContainer/VBoxContainer/Nome
+@onready var item_info_texture = $Panel/Info/HBoxContainer/VBoxContainer/Imagem
+@onready var item_info_desc = $"Panel/Info/HBoxContainer/VBoxContainer2/Descrição"
+@onready var item_info_blaster = $Panel/Info/HBoxContainer/VBoxContainer2/BlasterInfo
+@onready var item_info_qtd = $Panel/Info/HBoxContainer/VBoxContainer/Qtd
+@onready var item_info_sep = $Panel/Info/HBoxContainer/VBoxContainer2/HSeparator
+@onready var info_panel = $Panel/Info
+@export var flag = false
+@export var item_qtd_min = 4
 
-export var useItemButton : NodePath
-onready var useItem_node = get_node(useItemButton)
+@export var useItemButton : NodePath
+@onready var useItem_node = get_node(useItemButton)
 
 
 func _ready():

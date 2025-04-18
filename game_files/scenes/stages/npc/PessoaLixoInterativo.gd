@@ -2,33 +2,33 @@ extends Node2D
 
 var actual_state
 var can_interact = false
-onready var value_bar = get_tree().get_nodes_in_group("value_bar").front()
+@onready var value_bar = get_tree().get_nodes_in_group("value_bar").front()
 var enemypreload = preload("res://scenes/enemies/Enemy2.tscn")
-export (int, 1,5) var qtditem = 0 #item q é ser coletado
-export (int,0,2) var modo_converter = 0 # 0 Pessoas seguindo
+@export var qtditem = 0 #item q é ser coletado # (int, 1,5)
+@export var modo_converter = 0 # 0 Pessoas seguindo # (int,0,2)
 #1 Sim
 #2 Não
-export var min_pessoas = 2
+@export var min_pessoas = 2
 var vel = Vector2(0,0)
 
-export(String, "boy", "woman", "girl") var person_type = "boy"
+@export var person_type = "boy" # (String, "boy", "woman", "girl")
 
-export var color_hair_array: Array
-export var color_shirt_array: Array
+@export var color_hair_array: Array
+@export var color_shirt_array: Array
 var shirt_color: Color
 var hair_color: Color
 
-export var person: NodePath
-onready var person_node := get_node(person)
+@export var person: NodePath
+@onready var person_node := get_node(person)
 
 #export var reaction: NodePath
-onready var reaction_node := person_node.get_node("Reaction")
+@onready var reaction_node := person_node.get_node("Reaction")
 
-export var body_anim_player: NodePath
-onready var body_anim_player_node := get_node(body_anim_player)
+@export var body_anim_player: NodePath
+@onready var body_anim_player_node := get_node(body_anim_player)
 
-export var moscas_anim_player: NodePath
-onready var moscas_anim_player_node := get_node(moscas_anim_player)
+@export var moscas_anim_player: NodePath
+@onready var moscas_anim_player_node := get_node(moscas_anim_player)
 
 
 var garibot_followers
@@ -102,7 +102,7 @@ func converter_random() :
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		body.change_state(body.STATE.HELLO)
-		yield(body.get_body(),"anim_finished")
+		await body.get_body().anim_finished
 		body.change_state(body.last_state)
 		_follow_player(body)
 
@@ -119,7 +119,7 @@ func collect_itens():
 
 func throw_enemies():
 	if qtditem > 0:
-		var enemy = enemypreload.instance()
+		var enemy = enemypreload.instantiate()
 		enemy.set_position(Vector2(5,0) + self.position)
 		get_tree().get_root().call_deferred('add_child', enemy)
 		qtditem -= 1

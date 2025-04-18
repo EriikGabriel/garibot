@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var espaco = $CanvasLayer/Espaco
-onready var mobile_button = $CanvasLayer/Espaco/Mobile_button
+@onready var espaco = $CanvasLayer/Espaco
+@onready var mobile_button = $CanvasLayer/Espaco/Mobile_button
 
 func _ready():
 	_show_mobile_button()

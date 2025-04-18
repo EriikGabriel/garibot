@@ -10,7 +10,7 @@ radius = 75.8905
 [sub_resource type="CircleShape2D" id=2]
 radius = 98.938
 
-[node name="FinalBoss" type="KinematicBody2D"]
+[node name="FinalBoss" type="CharacterBody2D"]
 position = Vector2( 400, 150 )
 collision_layer = 4
 collision_mask = 3

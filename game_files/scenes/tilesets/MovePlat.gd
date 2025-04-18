@@ -1,12 +1,12 @@
 extends Node2D
 
-export var velocidade = 5
-export var distancia = 1000
-export var direcaox = 0
-export var direcaoy = 0
+@export var velocidade = 5
+@export var distancia = 1000
+@export var direcaox = 0
+@export var direcaoy = 0
 var origin_position = 0
 var diffpos = 0
-export var activated = true
+@export var activated = true
 var distancing = true
 
 var body_array = []

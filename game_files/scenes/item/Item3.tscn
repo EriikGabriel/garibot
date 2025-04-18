@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/item/Item.gd" type="Script" id=1]
-[ext_resource path="res://assets/Images/Collectibles/items.png" type="Texture" id=2]
+[ext_resource path="res://assets/Images/Collectibles/items.png" type="Texture2D" id=2]
 [ext_resource path="res://assets/Sounds/ui/ui_select.mp3" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -19,7 +19,7 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 vframes = 3
 frame = 1

@@ -1,6 +1,6 @@
 extends Area2D
 
-export var animation = "parte4"
+@export var animation = "parte4"
 signal play_animation(anim)
 signal stop_animation
 signal playback_animation

@@ -1,8 +1,8 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var life = 15
-onready var animPlayer = $AnimationPlayer
-onready var player = get_tree().get_nodes_in_group("player").front()
+@onready var animPlayer = $AnimationPlayer
+@onready var player = get_tree().get_nodes_in_group("player").front()
 var shot = preload("res://scenes/enemies/Shoot/Shoot.tscn")
 
 enum ENEMY {
@@ -36,7 +36,9 @@ func _physics_process(_delta):
 			ori.x = int(clamp(ori.x,-1,1))
 			ori.y = int(clamp(ori.y,-1,1))
 			change_orientation(ori.x)
-			var _collision = move_and_slide(ori * speed)
+			set_velocity(ori * speed)
+			move_and_slide()
+			var _collision = velocity
 			$BossBody/AnimationPlayer.play("move")
 			$DamageArea.monitoring = true
 		ENEMY.SLEEP:

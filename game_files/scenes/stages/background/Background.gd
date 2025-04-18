@@ -1,20 +1,20 @@
 extends Node2D
 
-export var value_bar : NodePath
-export var back_texture : Texture
-export var dark_sky : bool = false
+@export var value_bar : NodePath
+@export var back_texture : Texture2D
+@export var dark_sky : bool = false
 
-onready var value_bar_node : TextureProgress = get_node(value_bar)
-onready var anim_tree = $AnimationTree
-onready var sky_modulate = $ParallaxBackground/ParallaxLayer2/CanvasModulate
+@onready var value_bar_node : TextureProgressBar = get_node(value_bar)
+@onready var anim_tree = $AnimationTree
+@onready var sky_modulate = $ParallaxBackground/ParallaxLayer2/CanvasModulate
 
 var max_value
 
 func _ready():
 	sky_modulate.set_visible(dark_sky)
 	_set_anim_params(0.0)
-	var _return = value_bar_node.connect("value_changed", self, "_on_Bar_value_changed")
-	_return = value_bar_node.connect("changed", self, "_on_Bar_changed")
+	var _return = value_bar_node.connect("value_changed", Callable(self, "_on_Bar_value_changed"))
+	_return = value_bar_node.connect("changed", Callable(self, "_on_Bar_changed"))
 	$ParallaxBackground/ParallaxLayer/casas.set_texture(back_texture)
 
 func _on_Bar_changed():

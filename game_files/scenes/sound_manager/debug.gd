@@ -1,11 +1,11 @@
 extends Control
 
-onready var sound_manager = get_parent()
-onready var songs_list = get_parent().get_child(0)
-onready var sfx_list = get_parent().get_child(1)
+@onready var sound_manager = get_parent()
+@onready var songs_list = get_parent().get_child(0)
+@onready var sfx_list = get_parent().get_child(1)
 
 func _ready():
-	sound_manager.connect("current_changed", self, "_on_current_changed")
+	sound_manager.connect("current_changed", Callable(self, "_on_current_changed"))
 	
 	for s in songs_list.get_children():
 		$SongSelect.add_item(s.name)

@@ -4,7 +4,7 @@ var lower_target
 var finished = false
 var open = false
 
-export var start_open = false
+@export var start_open = false
 
 const LOWER_OPEN = Vector2(0, 100)
 const LOWER_CLOSED = Vector2(0, 0)

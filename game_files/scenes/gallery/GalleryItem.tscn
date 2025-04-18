@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/Images/Collectibles/impressora.png" type="Texture" id=1]
-[ext_resource path="res://assets/Font/text_ui.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/Images/Collectibles/impressora.png" type="Texture2D" id=1]
+[ext_resource path="res://assets/Font/text_ui.tres" type="FontFile" id=2]
 [ext_resource path="res://scenes/menu/ResiduoButton.gd" type="Script" id=3]
-[ext_resource path="res://assets/Images/Blasters/hydro.png" type="Texture" id=4]
+[ext_resource path="res://assets/Images/Blasters/hydro.png" type="Texture2D" id=4]
 [ext_resource path="res://scenes/menu/painel_style_white.tres" type="StyleBox" id=5]
-[ext_resource path="res://assets/Font/window_title.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/Font/window_title.tres" type="FontFile" id=6]
 [ext_resource path="res://scenes/menu/painel_style_blue.tres" type="StyleBox" id=7]
 [ext_resource path="res://scenes/menu/buttons/ButtonNormal.tres" type="StyleBox" id=8]
 [ext_resource path="res://scenes/menu/buttons/ButtonHover.tres" type="StyleBox" id=9]
@@ -17,7 +17,7 @@ Button/colors/font_color = Color( 1, 1, 1, 1 )
 Button/colors/font_color_disabled = Color( 0.196078, 0.317647, 0.356863, 1 )
 Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-Button/constants/hseparation = 2
+Button/constants/h_separation = 2
 Button/fonts/font = null
 Button/styles/disabled = ExtResource( 10 )
 Button/styles/focus = ExtResource( 9 )
@@ -29,8 +29,8 @@ CheckBox/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckBox/colors/font_color_hover = Color( 0, 0, 0, 1 )
 CheckBox/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 CheckBox/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-CheckBox/constants/check_vadjust = 0
-CheckBox/constants/hseparation = 4
+CheckBox/constants/check_v_offset = 0
+CheckBox/constants/h_separation = 4
 CheckBox/fonts/font = null
 CheckBox/icons/checked = null
 CheckBox/icons/radio_checked = null
@@ -47,13 +47,13 @@ CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-CheckButton/constants/check_vadjust = 0
-CheckButton/constants/hseparation = 4
+CheckButton/constants/check_v_offset = 0
+CheckButton/constants/h_separation = 4
 CheckButton/fonts/font = null
 CheckButton/icons/off = null
-CheckButton/icons/off_disabled = null
+CheckButton/icons/unchecked_disabled = null
 CheckButton/icons/on = null
-CheckButton/icons/on_disabled = null
+CheckButton/icons/checked_disabled = null
 CheckButton/styles/disabled = null
 CheckButton/styles/focus = null
 CheckButton/styles/hover = null
@@ -75,7 +75,7 @@ ColorPickerButton/colors/font_color = Color( 0, 0, 0, 1 )
 ColorPickerButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 ColorPickerButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
 ColorPickerButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-ColorPickerButton/constants/hseparation = 2
+ColorPickerButton/constants/h_separation = 2
 ColorPickerButton/fonts/font = null
 ColorPickerButton/icons/bg = null
 ColorPickerButton/styles/disabled = null
@@ -85,8 +85,8 @@ ColorPickerButton/styles/normal = null
 ColorPickerButton/styles/pressed = null
 Dialogs/constants/button_margin = 32
 Dialogs/constants/margin = 8
-FileDialog/colors/files_disabled = Color( 0, 0, 0, 1 )
-FileDialog/colors/folder_icon_modulate = Color( 0, 0, 0, 1 )
+FileDialog/colors/file_disabled_color = Color( 0, 0, 0, 1 )
+FileDialog/colors/folder_icon_color = Color( 0, 0, 0, 1 )
 FileDialog/icons/folder = null
 FileDialog/icons/parent_folder = null
 FileDialog/icons/reload = null
@@ -120,14 +120,14 @@ GraphNode/icons/port = null
 GraphNode/icons/resizer = null
 GraphNode/styles/breakpoint = null
 GraphNode/styles/comment = null
-GraphNode/styles/commentfocus = null
+GraphNode/styles/comment_focus = null
 GraphNode/styles/defaultfocus = null
 GraphNode/styles/defaultframe = null
 GraphNode/styles/frame = null
 GraphNode/styles/position = null
-GraphNode/styles/selectedframe = null
-GridContainer/constants/hseparation = 4
-GridContainer/constants/vseparation = 4
+GraphNode/styles/selected_frame = null
+GridContainer/constants/h_separation = 4
+GridContainer/constants/v_separation = 4
 HBoxContainer/constants/separation = 4
 HScrollBar/icons/decrement = null
 HScrollBar/icons/decrement_highlight = null
@@ -154,13 +154,13 @@ Icons/icons/close = null
 ItemList/colors/font_color = Color( 0, 0, 0, 1 )
 ItemList/colors/font_color_selected = Color( 0, 0, 0, 1 )
 ItemList/colors/guide_color = Color( 0, 0, 0, 1 )
-ItemList/constants/hseparation = 4
+ItemList/constants/h_separation = 4
 ItemList/constants/icon_margin = 4
 ItemList/constants/line_separation = 2
-ItemList/constants/vseparation = 2
+ItemList/constants/v_separation = 2
 ItemList/fonts/font = null
 ItemList/styles/bg = null
-ItemList/styles/bg_focus = null
+ItemList/styles/focus = null
 ItemList/styles/cursor = null
 ItemList/styles/cursor_unfocused = null
 ItemList/styles/selected = null
@@ -193,15 +193,15 @@ LinkButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 LinkButton/constants/underline_spacing = 2
 LinkButton/fonts/font = null
 LinkButton/styles/focus = null
-MarginContainer/constants/margin_bottom = 0
-MarginContainer/constants/margin_left = 0
-MarginContainer/constants/margin_right = 0
-MarginContainer/constants/margin_top = 0
+MarginContainer/constants/offset_bottom = 0
+MarginContainer/constants/offset_left = 0
+MarginContainer/constants/offset_right = 0
+MarginContainer/constants/offset_top = 0
 MenuButton/colors/font_color = Color( 0, 0, 0, 1 )
 MenuButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 MenuButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
 MenuButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-MenuButton/constants/hseparation = 3
+MenuButton/constants/h_separation = 3
 MenuButton/fonts/font = null
 MenuButton/styles/disabled = null
 MenuButton/styles/focus = null
@@ -213,7 +213,7 @@ OptionButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 OptionButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
 OptionButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 OptionButton/constants/arrow_margin = 2
-OptionButton/constants/hseparation = 2
+OptionButton/constants/h_separation = 2
 OptionButton/fonts/font = null
 OptionButton/icons/arrow = null
 OptionButton/styles/disabled = null
@@ -223,13 +223,13 @@ OptionButton/styles/normal = null
 OptionButton/styles/pressed = null
 Panel/styles/panel = ExtResource( 7 )
 PanelContainer/styles/panel = ExtResource( 7 )
-PopupDialog/styles/panel = ExtResource( 7 )
+Popup/styles/panel = ExtResource( 7 )
 PopupMenu/colors/font_color = Color( 0.992157, 0.984314, 0.984314, 1 )
 PopupMenu/colors/font_color_accel = Color( 0, 0, 0, 1 )
 PopupMenu/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 PopupMenu/colors/font_color_hover = Color( 0, 0, 0, 1 )
-PopupMenu/constants/hseparation = 4
-PopupMenu/constants/vseparation = 4
+PopupMenu/constants/h_separation = 4
+PopupMenu/constants/v_separation = 4
 PopupMenu/fonts/font = null
 PopupMenu/icons/checked = null
 PopupMenu/icons/radio_checked = null
@@ -256,8 +256,8 @@ RichTextLabel/constants/line_separation = 1
 RichTextLabel/constants/shadow_as_outline = 0
 RichTextLabel/constants/shadow_offset_x = 1
 RichTextLabel/constants/shadow_offset_y = 1
-RichTextLabel/constants/table_hseparation = 3
-RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/constants/table_h_separation = 3
+RichTextLabel/constants/table_v_separation = 3
 RichTextLabel/fonts/bold_font = null
 RichTextLabel/fonts/bold_italics_font = null
 RichTextLabel/fonts/italics_font = null
@@ -270,7 +270,7 @@ SpinBox/icons/updown = null
 TabContainer/colors/font_color_bg = Color( 0, 0, 0, 1 )
 TabContainer/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 TabContainer/colors/font_color_fg = Color( 0, 0, 0, 1 )
-TabContainer/constants/hseparation = 4
+TabContainer/constants/h_separation = 4
 TabContainer/constants/label_valign_bg = 2
 TabContainer/constants/label_valign_fg = 0
 TabContainer/constants/side_margin = 8
@@ -286,25 +286,25 @@ TabContainer/styles/panel = null
 TabContainer/styles/tab_bg = null
 TabContainer/styles/tab_disabled = null
 TabContainer/styles/tab_fg = null
-Tabs/colors/font_color_bg = Color( 0, 0, 0, 1 )
-Tabs/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-Tabs/colors/font_color_fg = Color( 0, 0, 0, 1 )
-Tabs/constants/hseparation = 4
-Tabs/constants/label_valign_bg = 2
-Tabs/constants/label_valign_fg = 0
-Tabs/constants/top_margin = 24
-Tabs/fonts/font = null
-Tabs/icons/close = null
-Tabs/icons/decrement = null
-Tabs/icons/decrement_highlight = null
-Tabs/icons/increment = null
-Tabs/icons/increment_highlight = null
-Tabs/styles/button = null
-Tabs/styles/button_pressed = null
-Tabs/styles/panel = null
-Tabs/styles/tab_bg = null
-Tabs/styles/tab_disabled = null
-Tabs/styles/tab_fg = null
+TabBar/colors/font_color_bg = Color( 0, 0, 0, 1 )
+TabBar/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+TabBar/colors/font_color_fg = Color( 0, 0, 0, 1 )
+TabBar/constants/h_separation = 4
+TabBar/constants/label_valign_bg = 2
+TabBar/constants/label_valign_fg = 0
+TabBar/constants/top_margin = 24
+TabBar/fonts/font = null
+TabBar/icons/close = null
+TabBar/icons/decrement = null
+TabBar/icons/decrement_highlight = null
+TabBar/icons/increment = null
+TabBar/icons/increment_highlight = null
+TabBar/styles/button = null
+TabBar/styles/button_pressed = null
+TabBar/styles/panel = null
+TabBar/styles/tab_bg = null
+TabBar/styles/tab_disabled = null
+TabBar/styles/tab_fg = null
 TextEdit/colors/background_color = Color( 0, 0, 0, 1 )
 TextEdit/colors/bookmark_color = Color( 0, 0, 0, 1 )
 TextEdit/colors/brace_mismatch_color = Color( 0, 0, 0, 1 )
@@ -344,17 +344,17 @@ TextEdit/styles/completion = null
 TextEdit/styles/focus = null
 TextEdit/styles/normal = null
 TextEdit/styles/read_only = null
-ToolButton/colors/font_color = Color( 0, 0, 0, 1 )
-ToolButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-ToolButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-ToolButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-ToolButton/constants/hseparation = 3
-ToolButton/fonts/font = null
-ToolButton/styles/disabled = null
-ToolButton/styles/focus = null
-ToolButton/styles/hover = null
-ToolButton/styles/normal = null
-ToolButton/styles/pressed = null
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/constants/h_separation = 3
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
 TooltipLabel/colors/font_color = Color( 0, 0, 0, 1 )
 TooltipLabel/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 TooltipLabel/constants/shadow_offset_x = 1
@@ -371,11 +371,11 @@ Tree/colors/title_button_color = Color( 0, 0, 0, 1 )
 Tree/constants/button_margin = 4
 Tree/constants/draw_guides = 1
 Tree/constants/draw_relationship_lines = 0
-Tree/constants/hseparation = 4
+Tree/constants/h_separation = 4
 Tree/constants/item_margin = 12
 Tree/constants/scroll_border = 4
 Tree/constants/scroll_speed = 12
-Tree/constants/vseparation = 4
+Tree/constants/v_separation = 4
 Tree/fonts/font = null
 Tree/fonts/title_button_font = null
 Tree/icons/arrow = null
@@ -385,7 +385,7 @@ Tree/icons/select_arrow = null
 Tree/icons/unchecked = null
 Tree/icons/updown = null
 Tree/styles/bg = null
-Tree/styles/bg_focus = null
+Tree/styles/focus = null
 Tree/styles/button_pressed = null
 Tree/styles/cursor = null
 Tree/styles/cursor_unfocused = null
@@ -419,28 +419,28 @@ VSplitContainer/constants/autohide = 1
 VSplitContainer/constants/separation = 12
 VSplitContainer/icons/grabber = null
 VSplitContainer/styles/bg = null
-WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
-WindowDialog/constants/close_h_ofs = 18
-WindowDialog/constants/close_v_ofs = 18
-WindowDialog/constants/scaleborder_size = 4
-WindowDialog/constants/title_height = 20
-WindowDialog/fonts/title_font = ExtResource( 6 )
-WindowDialog/icons/close = null
-WindowDialog/icons/close_highlight = null
-WindowDialog/styles/panel = ExtResource( 7 )
+Window/colors/title_color = Color( 1, 1, 1, 1 )
+Window/constants/close_h_offset = 18
+Window/constants/close_v_offset = 18
+Window/constants/scaleborder_size = 4
+Window/constants/title_height = 20
+Window/fonts/title_font = ExtResource( 6 )
+Window/icons/close = null
+Window/icons/close_highlight = null
+Window/styles/panel = ExtResource( 7 )
 
 [node name="ResiduoButton" type="Button"]
-margin_right = 44.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 44, 44 )
-focus_neighbour_left = NodePath("../../Voltar")
-focus_neighbour_right = NodePath("../Fogao_button")
-focus_neighbour_bottom = NodePath("../Furadeira_button3")
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 7 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 5 )
+offset_right = 44.0
+offset_bottom = 40.0
+custom_minimum_size = Vector2( 44, 44 )
+focus_neighbor_left = NodePath("../../Voltar")
+focus_neighbor_right = NodePath("../Fogao_button")
+focus_neighbor_bottom = NodePath("../Furadeira_button3")
+theme_override_styles/hover = ExtResource( 7 )
+theme_override_styles/pressed = ExtResource( 7 )
+theme_override_styles/focus = ExtResource( 7 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 5 )
 icon = ExtResource( 1 )
 expand_icon = true
 script = ExtResource( 3 )
@@ -454,10 +454,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -159.0
-margin_top = -140.0
-margin_right = 279.0
-margin_bottom = 125.0
+offset_left = -159.0
+offset_top = -140.0
+offset_right = 279.0
+offset_bottom = 125.0
 theme = SubResource( 1 )
 window_title = "Informações"
 __meta__ = {
@@ -465,64 +465,64 @@ __meta__ = {
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Residuo_popup"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 430.0
-margin_bottom = 212.0
-custom_constants/separation = 30
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 430.0
+offset_bottom = 212.0
+theme_override_constants/separation = 30
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Residuo_popup/HBoxContainer2"]
-margin_left = 16.0
-margin_right = 142.0
-margin_bottom = 204.0
+offset_left = 16.0
+offset_right = 142.0
+offset_bottom = 204.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Residuo_popup/HBoxContainer2/VBoxContainer2"]
-margin_top = 56.0
-margin_right = 126.0
-margin_bottom = 120.0
+offset_top = 56.0
+offset_right = 126.0
+offset_bottom = 120.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="TextureRect" parent="Residuo_popup/HBoxContainer2/VBoxContainer2/CenterContainer"]
-margin_left = 31.0
-margin_right = 95.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+[node name="Sprite2D" type="TextureRect" parent="Residuo_popup/HBoxContainer2/VBoxContainer2/CenterContainer"]
+offset_left = 31.0
+offset_right = 95.0
+offset_bottom = 64.0
+custom_minimum_size = Vector2( 64, 64 )
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 4
 
 [node name="Name" type="Label" parent="Residuo_popup/HBoxContainer2/VBoxContainer2"]
-margin_top = 124.0
-margin_right = 126.0
-margin_bottom = 147.0
+offset_top = 124.0
+offset_right = 126.0
+offset_bottom = 147.0
 text = "Impressora"
 
 [node name="VSeparator" type="VSeparator" parent="Residuo_popup/HBoxContainer2"]
-margin_left = 172.0
-margin_right = 176.0
-margin_bottom = 204.0
+offset_left = 172.0
+offset_right = 176.0
+offset_bottom = 204.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Residuo_popup/HBoxContainer2"]
-margin_left = 206.0
-margin_right = 406.0
-margin_bottom = 204.0
-custom_constants/separation = 20
+offset_left = 206.0
+offset_right = 406.0
+offset_bottom = 204.0
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="Residuo_popup/HBoxContainer2/VBoxContainer"]
-margin_right = 200.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 200, 150 )
+offset_right = 200.0
+offset_bottom = 150.0
+custom_minimum_size = Vector2( 200, 150 )
 text = "Descrição"
 scroll_following = true
 __meta__ = {
@@ -530,23 +530,23 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Residuo_popup/HBoxContainer2/VBoxContainer"]
-margin_top = 170.0
-margin_right = 200.0
-margin_bottom = 204.0
+offset_top = 170.0
+offset_right = 200.0
+offset_bottom = 204.0
 alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Residuo_popup/HBoxContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 54.0
-margin_right = 86.0
-margin_bottom = 34.0
+offset_left = 54.0
+offset_right = 86.0
+offset_bottom = 34.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BlasterTexture" type="TextureRect" parent="Residuo_popup/HBoxContainer2/VBoxContainer/HBoxContainer/CenterContainer"]
-margin_right = 32.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 32, 34 )
+offset_right = 32.0
+offset_bottom = 34.0
+custom_minimum_size = Vector2( 32, 34 )
 texture = ExtResource( 4 )
 stretch_mode = 1
 __meta__ = {
@@ -554,10 +554,10 @@ __meta__ = {
 }
 
 [node name="BlasterName" type="Label" parent="Residuo_popup/HBoxContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 90.0
-margin_top = 5.0
-margin_right = 146.0
-margin_bottom = 28.0
+offset_left = 90.0
+offset_top = 5.0
+offset_right = 146.0
+offset_bottom = 28.0
 text = "Hidro"
 valign = 1
 __meta__ = {

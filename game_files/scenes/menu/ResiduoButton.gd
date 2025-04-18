@@ -1,12 +1,12 @@
 extends Button
 
-export (String) var item = "impressora"
+@export var item: String = "impressora"
 
-onready var sprite = $Residuo_popup/HBoxContainer2/VBoxContainer2/CenterContainer/Sprite
-onready var item_name = $Residuo_popup/HBoxContainer2/VBoxContainer2/Name
-onready var blaster_name = $Residuo_popup/HBoxContainer2/VBoxContainer/HBoxContainer/BlasterName
-onready var blaster_texture = $Residuo_popup/HBoxContainer2/VBoxContainer/HBoxContainer/CenterContainer/BlasterTexture
-onready var description = $Residuo_popup/HBoxContainer2/VBoxContainer/Description
+@onready var sprite = $Residuo_popup/HBoxContainer2/VBoxContainer2/CenterContainer/Sprite2D
+@onready var item_name = $Residuo_popup/HBoxContainer2/VBoxContainer2/Name
+@onready var blaster_name = $Residuo_popup/HBoxContainer2/VBoxContainer/HBoxContainer/BlasterName
+@onready var blaster_texture = $Residuo_popup/HBoxContainer2/VBoxContainer/HBoxContainer/CenterContainer/BlasterTexture
+@onready var description = $Residuo_popup/HBoxContainer2/VBoxContainer/Description
 
 
 func _pressed():
