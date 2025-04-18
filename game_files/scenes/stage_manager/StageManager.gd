@@ -48,15 +48,15 @@ func reset_stage():
 	change_stage(current_stage)
 
 
-func change_stage(name : String, keep_loading_hidden: bool = false):
+func change_stage(stage_name : String, keep_loading_hidden: bool = false):
 	_keep_loading_hidden = keep_loading_hidden
-	if stage_indexes.has(name):
+	if stage_indexes.has(stage_name):
 		last_idx = current_idx
 		last_stage = current_stage
 		
-		current_idx = stage_indexes[name]
-		current_stage = name
-		DJ.play_with_fade_in(name)
+		current_idx = stage_indexes[stage_name]
+		current_stage = stage_name
+		DJ.play_with_fade_in(stage_name)
 		change_stage_idx(current_idx)
 		if last_idx == 1:
 			Global_variable.last_stage_number = current_idx-3

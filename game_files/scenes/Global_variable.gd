@@ -31,17 +31,17 @@ func remove_item_collect(item) :
 		
 func get_name_item_collect() :
 	var lista = []
-	for name in dicionario_item :
-		if dicionario_item[name] > 0 :
-			lista.append(name)
+	for iten_name in dicionario_item :
+		if dicionario_item[iten_name] > 0 :
+			lista.append(iten_name)
 	#print("lista:")
 	#print(lista)
 	return lista
 
 func get_qtd_item() :
 	var qtd = 0
-	for name in dicionario_item :
-		qtd = qtd + dicionario_item[name]
+	for iten_name in dicionario_item :
+		qtd = qtd + dicionario_item[iten_name]
 	
 	return qtd
 	

@@ -1,57 +1,58 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://dufcxykvj6mu7"]
 
-[ext_resource path="res://assets/Font/text_ui.tres" type="FontFile" id=1]
-[ext_resource path="res://assets/Images/UI/Misc/menuTile.png" type="Texture2D" id=3]
-[ext_resource path="res://scenes/GameScene.gd" type="Script" id=4]
-[ext_resource path="res://assets/Images/Player/PlayerCharIcon.png" type="Texture2D" id=6]
-[ext_resource path="res://scenes/stage_manager/LoadingScreen.gd" type="Script" id=7]
+[ext_resource type="FontFile" path="res://assets/Font/text_ui.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://cbwwbhoempco0" path="res://assets/Images/UI/Misc/menuTile.png" id="3"]
+[ext_resource type="Script" path="res://scenes/GameScene.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://hcmrqcc6e0l5" path="res://assets/Images/Player/PlayerCharIcon.png" id="6"]
+[ext_resource type="Script" path="res://scenes/stage_manager/LoadingScreen.gd" id="7"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "load"
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Screen/CenterContainer/NinePatchRect/VBoxContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.196078 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eurux"]
+_data = {
+"load": SubResource("1")
 }
 
 [node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("7")
 
 [node name="Screen" type="Control" parent="."]
 process_mode = 3
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("4")
 
 [node name="TextureRect" type="TextureRect" parent="Screen"]
+clip_contents = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-clip_contents = true
 mouse_filter = 2
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Screen/TextureRect"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -59,12 +60,9 @@ offset_top = -320.0
 offset_right = 544.0
 mouse_filter = 2
 stretch_mode = 2
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="CenterContainer" type="CenterContainer" parent="Screen"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -74,53 +72,41 @@ offset_top = -200.0
 offset_right = 200.0
 offset_bottom = 200.0
 mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Screen/CenterContainer"]
-self_modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color(1, 1, 1, 0)
 show_behind_parent = true
-offset_right = 400.0
-offset_bottom = 400.0
-custom_minimum_size = Vector2( 400, 400 )
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 42, 42 )
+texture = ExtResource("3")
+region_rect = Rect2(0, 0, 42, 42)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Screen/CenterContainer/NinePatchRect"]
-modulate = Color( 1, 1, 1, 0.396315 )
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Screen/CenterContainer/NinePatchRect/VBoxContainer"]
-offset_top = 111.0
-offset_right = 400.0
-offset_bottom = 261.0
-custom_minimum_size = Vector2( 150, 150 )
-mouse_filter = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource( 6 )
-expand = true
+mouse_filter = 2
+texture = ExtResource("6")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="Screen/CenterContainer/NinePatchRect/VBoxContainer"]
-offset_top = 265.0
-offset_right = 400.0
-offset_bottom = 288.0
-theme_override_fonts/font = ExtResource( 1 )
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1")
 text = "Carregando..."
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eurux")
+}
 autoplay = "load"
-anims/load = SubResource( 1 )

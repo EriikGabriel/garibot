@@ -1,37 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://bk130w8ou1vgh"]
 
-[ext_resource path="res://assets/Font/text_ui_gallery.tres" type="FontFile" id=1]
-[ext_resource path="res://assets/Images/UI/Misc/Fundo_2.png" type="Texture2D" id=2]
-[ext_resource path="res://scenes/stages/StageTutorial/TutorialBox.gd" type="Script" id=4]
+[ext_resource type="FontFile" path="res://assets/Font/text_ui_gallery.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://dkise8kqclf5m" path="res://assets/Images/UI/Misc/Fundo_2.png" id="2"]
+[ext_resource type="Script" path="res://scenes/stages/StageTutorial/TutorialBox.gd" id="4"]
 
 [node name="TutorialBox" type="MarginContainer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_constants/margin_right = 180
-theme_override_constants/margin_top = 290
 theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 290
+theme_override_constants/margin_right = 180
 theme_override_constants/margin_bottom = 10
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("4")
 
 [node name="Panel" type="NinePatchRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0.705882 )
-offset_left = 180.0
-offset_top = 290.0
-offset_right = 620.0
-offset_bottom = 440.0
-texture = ExtResource( 2 )
+self_modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 2
+texture = ExtResource("2")
 patch_margin_left = 20
 patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
@@ -40,30 +33,16 @@ offset_right = -8.0
 offset_bottom = -8.0
 size_flags_horizontal = 4
 alignment = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer"]
-offset_top = 58.0
-offset_right = 412.0
-offset_bottom = 76.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource( 1 )
-theme_override_colors/font_shadow_color = Color( 0, 0, 0, 1 )
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
 text = "TUTORIAL_HINT_0"
-valign = 3
-autowrap = true
+vertical_alignment = 3
 uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VSeparator" type="VSeparator" parent="Panel/HBoxContainer"]
-offset_left = 416.0
-offset_right = 424.0
-offset_bottom = 134.0
+layout_mode = 2
 theme_override_constants/separation = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}

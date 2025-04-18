@@ -1,80 +1,78 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=3 uid="uid://er1ev6jfevko"]
 
-[ext_resource path="res://scenes/menu/Titulo.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/Images/UI/MainMenu/Button1.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Font/text_ui_icon_button.tres" type="FontFile" id=3]
-[ext_resource path="res://assets/Images/Scenery/fundo1.png" type="Texture2D" id=4]
-[ext_resource path="res://assets/Images/UI/Misc/menuTile.png" type="Texture2D" id=5]
-[ext_resource path="res://assets/Images/UI/MainMenu/PlayIcon.png" type="Texture2D" id=6]
-[ext_resource path="res://assets/Images/Scenery/fundo0.png" type="Texture2D" id=7]
-[ext_resource path="res://scenes/menu/PlayButton.gd" type="Script" id=8]
-[ext_resource path="res://scenes/GameScene.gd" type="Script" id=9]
-[ext_resource path="res://scenes/menu/buttons/IconButtonNormal.tres" type="StyleBox" id=10]
-[ext_resource path="res://scenes/menu/buttons/IconButtonPress.tres" type="StyleBox" id=11]
+[ext_resource type="PackedScene" uid="uid://558x7ew4vkan" path="res://scenes/menu/Titulo.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dco63oy6kmrap" path="res://assets/Images/UI/MainMenu/Button1.png" id="2"]
+[ext_resource type="FontFile" path="res://assets/Font/text_ui_icon_button.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://g4m7xflkwamx" path="res://assets/Images/Scenery/fundo1.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cbwwbhoempco0" path="res://assets/Images/UI/Misc/menuTile.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://4x1bea1fjvda" path="res://assets/Images/UI/MainMenu/PlayIcon.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://d1ehovhnuopye" path="res://assets/Images/Scenery/fundo0.png" id="7"]
+[ext_resource type="Script" path="res://scenes/menu/PlayButton.gd" id="8"]
+[ext_resource type="Script" path="res://scenes/GameScene.gd" id="9"]
+[ext_resource type="StyleBox" path="res://scenes/menu/buttons/IconButtonNormal.tres" id="10"]
+[ext_resource type="StyleBox" path="res://scenes/menu/buttons/IconButtonPress.tres" id="11"]
 
-[sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 68, 34 )
-offset_left = 6.0
-offset_right = 6.0
-offset_top = 2.0
-offset_bottom = 4.0
+[sub_resource type="StyleBoxTexture" id="1"]
+texture = ExtResource("2")
 expand_margin_left = 2.0
-expand_margin_right = 2.0
 expand_margin_top = 2.0
+expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 68, 34)
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 length = 16.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("TextureRect/TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 16 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, 130 ), Vector2( -448, 130 ) ]
+"values": [Vector2(0, 130), Vector2(-448, 130)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e0sn6"]
+_data = {
+"move": SubResource("2")
 }
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-clip_contents = true
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -320.0
 offset_right = 544.0
-texture = ExtResource( 4 )
+texture = ExtResource("4")
 stretch_mode = 2
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -83,20 +81,17 @@ offset_left = -200.0
 offset_top = -200.0
 offset_right = 200.0
 offset_bottom = 200.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer"]
 show_behind_parent = true
-offset_right = 400.0
-offset_bottom = 400.0
-custom_minimum_size = Vector2( 400, 400 )
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 42, 42 )
+texture = ExtResource("5")
+region_rect = Rect2(0, 0, 42, 42)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/NinePatchRect"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
@@ -104,43 +99,29 @@ offset_left = -493.0
 offset_right = 493.0
 theme_override_constants/separation = 50
 alignment = 1
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
-[node name="Titulo" parent="CenterContainer/NinePatchRect/VBoxContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-offset_top = 58.0
-offset_right = 986.0
-offset_bottom = 242.0
+[node name="Titulo" parent="CenterContainer/NinePatchRect/VBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer"]
-offset_left = 342.0
-offset_top = 292.0
-offset_right = 643.0
-offset_bottom = 342.0
-pivot_offset = Vector2( 52, 20 )
-focus_mode = 0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 5
-theme_override_styles/hover = SubResource( 1 )
-theme_override_styles/pressed = ExtResource( 11 )
-theme_override_styles/normal = ExtResource( 10 )
-theme_override_fonts/font = ExtResource( 3 )
-theme_override_colors/font_color = Color( 0.0941176, 0.152941, 0.168627, 1 )
-theme_override_colors/font_hover_color = Color( 1, 1, 1, 1 )
-theme_override_constants/h_separation = 10
-action_mode = 0
 focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.0941176, 0.152941, 0.168627, 1)
+theme_override_constants/h_separation = 10
+theme_override_fonts/font = ExtResource("3")
+theme_override_styles/hover = SubResource("1")
+theme_override_styles/pressed = ExtResource("11")
+theme_override_styles/normal = ExtResource("10")
+action_mode = 0
 text = "BUTTON_PLAY"
-icon = ExtResource( 6 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+icon = ExtResource("6")
+script = ExtResource("8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e0sn6")
+}
 autoplay = "move"
-anims/move = SubResource( 2 )
-[connection signal="button_pressed" from="CenterContainer/NinePatchRect/VBoxContainer/PlayButton" to="." method="_on_PlayButton_button_pressed"]

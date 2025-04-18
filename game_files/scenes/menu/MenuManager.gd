@@ -29,4 +29,3 @@ func _on_Galeria_hide():
 
 func _on_GameMenu_hide():
 	_menu_closed()
-

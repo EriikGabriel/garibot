@@ -1,9 +1,21 @@
-res://text/Textos Garibot.pt_BR.translation
-res://text/Galeria.pt_BR.translation
 res://DefautEnv.tres
 res://scenes/main/MainScene.tscn
+res://scenes/stages/background/Background.gd
 res://scenes/sound_manager/SoundManager.tscn
-res://scenes/item/ItemTextureMap.gd
-res://scenes/mobile_control/mobile_control.gd
-res://scenes/main/MainScene.gd
-res://scenes/stage_manager/LoadingScreen.gd
+res://scenes/menu/GameMenu.tscn
+res://scenes/menu/MainMenu.tscn
+res://scenes/menu/MenuManager.tscn
+res://scenes/menu/Titulo.tscn
+res://scenes/world_map/WorldMap.tscn
+res://scenes/minigame/MiniGameTest.tscn
+res://scenes/stages/StageTutorial/TutorialBox.tscn
+res://scenes/stages/BonusStage.tscn
+res://scenes/stages/Stage1.tscn
+res://scenes/Global_variable.gd
+res://scenes/stage_manager/StageManager.gd
+res://scenes/sound_manager/SoundManager.gd
+res://scenes/menu/PlayButton.gd
+res://scenes/stage_manager/StageLoader.gd
+res://scenes/story/Begin.gd
+res://scenes/stage_manager/LoadingScreen.tscn
+res://scenes/story/Begin.tscn

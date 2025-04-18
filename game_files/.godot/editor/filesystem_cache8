@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1744987848
+::res://::1744998980
 BlockWall.gd::GDScript::-1::1744987830::0::1::::<>Node2D<>::
 BlockWall.tscn::PackedScene::-1::1744987830::0::1::::<><>::res://scenes/tilesets/TilePipe.tres
-DefautEnv.tres::Environment::-1::1744987830::0::1::::<><>::
+DefautEnv.tres::Environment::3076543593055859556::1744993627::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1744984041::0::1::::<><>::
 ItemManager.gd::GDScript::-1::1744987830::0::1::::<>Node2D<>::
 ItemTextureMap.gd::GDScript::-1::1744987830::0::1::::<>Node<>::
@@ -12,7 +12,7 @@ Node2D.gd::GDScript::-1::1744987830::0::1::::<>Sprite2D<>::
 TutorialWindow.gd::GDScript::-1::1744987830::0::1::::<>Panel<>::
 ::res://assets/::1744987356
 MovePlat.gd::GDScript::-1::1744987834::0::1::::<>Node2D<>::
-::res://assets/Font/::1744987356
+::res://assets/Font/::1744987853
 Boogaloo-Regular.ttf::FontFile::3527455019479905939::1744984040::1744987853::1::::<><>::
 Comic Book.otf::FontFile::4387078743097078676::1744984040::1744987853::1::::<><>::
 gomarice_shmup_in_the_zone.ttf::FontFile::3774191193934328819::1744984040::1744987853::1::::<><>::
@@ -28,21 +28,21 @@ text_ui_small_window.tres::FontFile::-1::1744987835::0::1::::<><>::res://assets/
 title.tres::FontFile::-1::1744987835::0::1::::<><>::res://assets/Font/gomarice_shmup_in_the_zone.ttf
 tutorial_hint.tres::FontFile::-1::1744987835::0::1::::<><>::res://assets/Font/gomarice_shmup_in_the_zone.ttf
 window_title.tres::FontFile::-1::1744987835::0::1::::<><>::res://assets/Font/gomarice_shmup_in_the_zone.ttf
-::res://assets/Images/::1744984584
+::res://assets/Images/::1744987854
 check.png::CompressedTexture2D::3622100279488275208::1744984040::1744987854::1::::<><>::
 Icon.png::CompressedTexture2D::347097355145809057::1744984040::1744987854::1::::<><>::
 ImpressoraSprite.png::CompressedTexture2D::4752113113416173109::1744984040::1744987854::1::::<><>::
 RecicSprite.png::CompressedTexture2D::3828520495219704511::1744984040::1744987854::1::::<><>::
-::res://assets/Images/Bar/::1744984585
+::res://assets/Images/Bar/::1744987855
 Lixo.png::CompressedTexture2D::4803698228390648938::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Bar/Barra/::1744984585
+::res://assets/Images/Bar/Barra/::1744987855
 barra-cheia.png::CompressedTexture2D::7270951782435451423::1744984040::1744987855::1::::<><>::
 barra-frente.png::CompressedTexture2D::7317184903812611548::1744984040::1744987855::1::::<><>::
 barra-vazia.png::CompressedTexture2D::2353584226192674848::1744984040::1744987855::1::::<><>::
 barra-verde.png::CompressedTexture2D::2466599022945112615::1744984040::1744987855::1::::<><>::
 cheia.png::CompressedTexture2D::6802862137151195393::1744984040::1744987855::1::::<><>::
 verde.png::CompressedTexture2D::7699884722421682894::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Blasters/::1744984585
+::res://assets/Images/Blasters/::1744987855
 blasters.png::CompressedTexture2D::3149588132921919151::1744984040::1744987855::1::::<><>::
 bubble.png::CompressedTexture2D::7058149286705994::1744984040::1744987855::1::::<><>::
 effect.png::CompressedTexture2D::2081435350955912521::1744984040::1744987855::1::::<><>::
@@ -50,7 +50,7 @@ hydro.png::CompressedTexture2D::657410514983518030::1744984040::1744987855::1:::
 magnet.png::CompressedTexture2D::7816100161134126208::1744984040::1744987855::1::::<><>::
 player_shoot4.png::CompressedTexture2D::7503266087284725370::1744984040::1744987855::1::::<><>::
 vaccum.png::CompressedTexture2D::4085086017166840062::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Boss/::1744984585
+::res://assets/Images/Boss/::1744987855
 base.png::CompressedTexture2D::8854366320905525219::1744984040::1744987855::1::::<><>::
 boca.png::CompressedTexture2D::5536912595776052632::1744984040::1744987855::1::::<><>::
 cabeca_completa.png::CompressedTexture2D::3525677646927834043::1744984040::1744987855::1::::<><>::
@@ -62,7 +62,7 @@ Engrenagens3.png::CompressedTexture2D::3455387143234383489::1744984040::17449878
 Engrenagens4.png::CompressedTexture2D::5781480730617015780::1744984040::1744987855::1::::<><>::
 lasers.png::CompressedTexture2D::592707378614054006::1744984040::1744987855::1::::<><>::
 olhos.png::CompressedTexture2D::192057365539190664::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Collectibles/::1744984585
+::res://assets/Images/Collectibles/::1744987855
 agua.png::CompressedTexture2D::7761091173464724746::1744984040::1744987855::1::::<><>::
 battery.png::CompressedTexture2D::6258850349317823272::1744984040::1744987855::1::::<><>::
 celular.png::CompressedTexture2D::4004226616918294452::1744984040::1744987855::1::::<><>::
@@ -93,10 +93,10 @@ teclado.png::CompressedTexture2D::7423820743015054105::1744984040::1744987855::1
 tv.png::CompressedTexture2D::38266341978232071::1744984040::1744987855::1::::<><>::
 tv_d.png::CompressedTexture2D::3119666279369988029::1744984040::1744987855::1::::<><>::
 tv_m.png::CompressedTexture2D::6922446592915067352::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Dog/::1744984584
+::res://assets/Images/Dog/::1744987855
 DogNewConcept.png::CompressedTexture2D::7922776620801281191::1744984040::1744987855::1::::<><>::
 DogSprite.png::CompressedTexture2D::7599255978513215223::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Effects/::1744984584
+::res://assets/Images/Effects/::1744987855
 ballon_tail.png::CompressedTexture2D::1698859687989719190::1744984040::1744987855::1::::<><>::
 baloon.png::CompressedTexture2D::38419895028834536::1744984040::1744987855::1::::<><>::
 baloon_clear.png::CompressedTexture2D::373044665067002628::1744984040::1744987855::1::::<><>::
@@ -108,7 +108,7 @@ EnemyVirus.png::CompressedTexture2D::2276031777055418100::1744984040::1744987855
 light.png::CompressedTexture2D::3186184798590097152::1744984040::1744987855::1::::<><>::
 virus_eyes1.png::CompressedTexture2D::9024491425302670194::1744984040::1744987855::1::::<><>::
 virus_eyes.png::CompressedTexture2D::5744075463871580700::1744984040::1744987855::1::::<><>::
-::res://assets/Images/EnemiesFrames/::1744984584
+::res://assets/Images/EnemiesFrames/::1744987855
 inimigoCameraF1.png::CompressedTexture2D::3893645406115220681::1744984040::1744987855::1::::<><>::
 inimigoCameraF2.png::CompressedTexture2D::8763071155975926962::1744984040::1744987855::1::::<><>::
 inimigoCameraF3.png::CompressedTexture2D::8518724238270056005::1744984040::1744987855::1::::<><>::
@@ -120,7 +120,7 @@ inimigoFuradeiraFrame3.png::CompressedTexture2D::5348831705086731099::1744984040
 inimigoRadio_F1.png::CompressedTexture2D::6664003342853302510::1744984040::1744987855::1::::<><>::
 inimigoRadio_F2.png::CompressedTexture2D::7357982902866731558::1744984040::1744987855::1::::<><>::
 inimigoRadio_F3.png::CompressedTexture2D::4546598544134689462::1744984040::1744987855::1::::<><>::
-::res://assets/Images/EnemiesRig/::1744984585
+::res://assets/Images/EnemiesRig/::1744987855
 Furadeira.png::CompressedTexture2D::1793651265103948877::1744984040::1744987855::1::::<><>::
 inimigoCelularRig.png::CompressedTexture2D::5531458082505542166::1744984040::1744987855::1::::<><>::
 inimigoControleRig.png::CompressedTexture2D::5440717141233324777::1744984040::1744987855::1::::<><>::
@@ -133,11 +133,11 @@ inimigoMonitorRig2.png::CompressedTexture2D::3512014271550728199::1744984040::17
 inimigoMonitorRig.png::CompressedTexture2D::4942176447126451425::1744984040::1744987855::1::::<><>::
 inimigoTvRig.png::CompressedTexture2D::6267802391618332531::1744984040::1744987855::1::::<><>::
 sujeira.png::CompressedTexture2D::4718124333646772133::1744984040::1744987855::1::::<><>::
-::res://assets/Images/gameUI/::1744984585
+::res://assets/Images/gameUI/::1744987855
 battery.png::CompressedTexture2D::2859447067949891972::1744984040::1744987855::1::::<><>::
 battery_block.png::CompressedTexture2D::6263666286869426280::1744984040::1744987855::1::::<><>::
 battery_full.png::CompressedTexture2D::3963125101909413783::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Grenade-Bullet/::1744984585
+::res://assets/Images/Grenade-Bullet/::1744987855
 1.png::CompressedTexture2D::3131841377340729074::1744984040::1744987855::1::::<><>::
 2.png::CompressedTexture2D::7812006591177024188::1744984040::1744987855::1::::<><>::
 3.png::CompressedTexture2D::2758023065836637316::1744984040::1744987855::1::::<><>::
@@ -149,28 +149,28 @@ battery_full.png::CompressedTexture2D::3963125101909413783::1744984040::17449878
 9.png::CompressedTexture2D::5280106880295449434::1744984040::1744987855::1::::<><>::
 10.png::CompressedTexture2D::7396249684682367507::1744984040::1744987855::1::::<><>::
 11.png::CompressedTexture2D::8595517632419921116::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Lixeira/::1744984586
+::res://assets/Images/Lixeira/::1744987856
 lixeira_amarela.png::CompressedTexture2D::3139745254069451228::1744984040::1744987856::1::::<><>::
 lixeira_azul.png::CompressedTexture2D::6218852298451091043::1744984040::1744987856::1::::<><>::
 lixeira_marrom.png::CompressedTexture2D::4778772221884320536::1744984040::1744987856::1::::<><>::
 lixeira_verde.png::CompressedTexture2D::1079043088436925982::1744984040::1744987856::1::::<><>::
 lixeira_vermelha.png::CompressedTexture2D::3733416518544791165::1744984040::1744987856::1::::<><>::
-::res://assets/Images/Main Recicler/::1744984586
+::res://assets/Images/Main Recicler/::1744987856
 face_maq.png::CompressedTexture2D::8170684136441347322::1744984040::1744987856::1::::<><>::
 garra.png::CompressedTexture2D::1604622330201941640::1744984040::1744987856::1::::<><>::
 tela.png::CompressedTexture2D::3064436650018238678::1744984040::1744987856::1::::<><>::
 tela_ligada.png::CompressedTexture2D::635851287796862150::1744984040::1744987856::1::::<><>::
-::res://assets/Images/Map/::1744984586
+::res://assets/Images/Map/::1744987856
 TileAgua.png::CompressedTexture2D::4819012412506443273::1744984040::1744987856::1::::<><>::
 TileConcreto.png::CompressedTexture2D::727567929217631478::1744984040::1744987856::1::::<><>::
 TileGrama.png::CompressedTexture2D::1438713797446524567::1744984040::1744987856::1::::<><>::
 TileRua.png::CompressedTexture2D::887286561513785639::1744984040::1744987856::1::::<><>::
 TileStage.png::CompressedTexture2D::728716156260441139::1744984040::1744987856::1::::<><>::
 TileTerra.png::CompressedTexture2D::5178364208507666621::1744984040::1744987856::1::::<><>::
-::res://assets/Images/Minigame/::1744984586
+::res://assets/Images/Minigame/::1744987856
 x_indicator.png::CompressedTexture2D::3733300272721648103::1744984040::1744987856::1::::<><>::
 z_indicator.png::CompressedTexture2D::3302946863563792681::1744984040::1744987856::1::::<><>::
-::res://assets/Images/MobileButtons/::1744984586
+::res://assets/Images/MobileButtons/::1744987856
 key_blue.png::CompressedTexture2D::6224052985811148088::1744984040::1744987856::1::::<><>::
 key_blue_left.png::CompressedTexture2D::9069922913475172243::1744984040::1744987856::1::::<><>::
 key_blue_left_pressed.png::CompressedTexture2D::1370524742456303862::1744984040::1744987856::1::::<><>::
@@ -185,12 +185,12 @@ key_blue_x.png::CompressedTexture2D::7834486685948711488::1744984040::1744987856
 key_blue_x_pressed.png::CompressedTexture2D::5456137345022863376::1744984040::1744987856::1::::<><>::
 key_blue_z.png::CompressedTexture2D::468326473089251676::1744984040::1744987856::1::::<><>::
 key_blue_z_pressed.png::CompressedTexture2D::1173376625482429289::1744984040::1744987856::1::::<><>::
-::res://assets/Images/Other Garibots/::1744984586
+::res://assets/Images/Other Garibots/::1744987856
 METAL.png::CompressedTexture2D::8115244371098510200::1744984040::1744987856::1::::<><>::
 papel.png::CompressedTexture2D::1571745378367110384::1744984040::1744987856::1::::<><>::
 plastico.png::CompressedTexture2D::5057413368395056046::1744984040::1744987856::1::::<><>::
 vidro.png::CompressedTexture2D::2247528097148678736::1744984040::1744987856::1::::<><>::
-::res://assets/Images/People/::1744984586
+::res://assets/Images/People/::1744987856
 boca.png::CompressedTexture2D::2435006771154706787::1744984040::1744987856::1::::<><>::
 boy.png::CompressedTexture2D::5239689954752730157::1744984040::1744987856::1::::<><>::
 boy_complex.png::CompressedTexture2D::8653752384241673588::1744984040::1744987856::1::::<><>::
@@ -204,7 +204,7 @@ scientist.png::CompressedTexture2D::150294565251970313::1744984040::1744987856::
 scientist_body.png::CompressedTexture2D::9078940552536889751::1744984040::1744987856::1::::<><>::
 woman.png::CompressedTexture2D::4267029819421886771::1744984040::1744987856::1::::<><>::
 woman_complex.png::CompressedTexture2D::3427795751839958656::1744984040::1744987856::1::::<><>::
-::res://assets/Images/Player/::1744984586
+::res://assets/Images/Player/::1744987856
 face.png::CompressedTexture2D::1321207519867474030::1744984040::1744987856::1::::<><>::
 face_alternative2.png::CompressedTexture2D::6541100328165792006::1744984040::1744987856::1::::<><>::
 face_alternative.png::CompressedTexture2D::1681644190966118076::1744984040::1744987856::1::::<><>::
@@ -215,7 +215,7 @@ PlayerCharIcon3.png::CompressedTexture2D::6804330964041953739::1744984040::17449
 PlayerCharIcon.png::CompressedTexture2D::496210466979621960::1744984040::1744987855::1::::<><>::
 PlayerChar_alternative2.png::CompressedTexture2D::3377007184417775294::1744984040::1744987855::1::::<><>::
 PlayerChar_alternative.png::CompressedTexture2D::6804577630853400655::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Printer/::1744984585
+::res://assets/Images/Printer/::1744987855
 caixa_impressão.png::CompressedTexture2D::2705497869488331656::1744984040::1744987855::1::::<><>::
 filamento.png::CompressedTexture2D::4887357542704942541::1744984040::1744987855::1::::<><>::
 gerador_eolico_sem_helice.png::CompressedTexture2D::726944257403625528::1744984040::1744987855::1::::<><>::
@@ -227,7 +227,7 @@ porta_1.png::CompressedTexture2D::4575764442027556929::1744984040::1744987855::1
 porta_2.png::CompressedTexture2D::4669961207070613248::1744984040::1744987855::1::::<><>::
 printer_back.png::CompressedTexture2D::2646131886581414338::1744984040::1744987855::1::::<><>::
 printer_border.png::CompressedTexture2D::3699728725370933483::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Recycler/::1744984585
+::res://assets/Images/Recycler/::1744987855
 caixa_impressão_3d.png::CompressedTexture2D::3617491679189880744::1744984040::1744987855::1::::<><>::
 caixa_reciclagem.png::CompressedTexture2D::745578642861036370::1744984040::1744987855::1::::<><>::
 caixa_reciclagem_3d.png::CompressedTexture2D::6687388974589789095::1744984040::1744987855::1::::<><>::
@@ -237,7 +237,7 @@ recic_painel_back.png::CompressedTexture2D::7508092249926841614::1744984040::174
 recic_painel_border_inf0.png::CompressedTexture2D::2307809970031708073::1744984040::1744987855::1::::<><>::
 recic_painel_inf0.png::CompressedTexture2D::3424836363727395039::1744984040::1744987855::1::::<><>::
 recic_painel_sup0.png::CompressedTexture2D::50576359950231691::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Scenery/::1744984586
+::res://assets/Images/Scenery/::1744987856
 arvore.png::CompressedTexture2D::7478070050306615483::1744984040::1744987856::1::::<><>::
 arvores_fundo.png::CompressedTexture2D::8283624080818699687::1744984040::1744987856::1::::<><>::
 bana2.png::CompressedTexture2D::7181421616217290462::1744984040::1744987856::1::::<><>::
@@ -283,15 +283,15 @@ teclado.png::CompressedTexture2D::2140748018639270193::1744984040::1744987854::1
 TrashTile.png::CompressedTexture2D::7782408184399814369::1744984040::1744987854::1::::<><>::
 tv.png::CompressedTexture2D::2004427266783622771::1744984040::1744987854::1::::<><>::
 ::res://assets/Images/Scenery/houses/::1744984040
-::res://assets/Images/Scenery/Stage1/::1744984586
+::res://assets/Images/Scenery/Stage1/::1744987856
 casas.png::CompressedTexture2D::3599066078586846779::1744984040::1744987856::1::::<><>::
 chão.png::CompressedTexture2D::7768322391557903312::1744984040::1744987856::1::::<><>::
 fundo1_1.png::CompressedTexture2D::8705508368038967365::1744984040::1744987856::1::::<><>::
-::res://assets/Images/Scenery/Stage4/::1744984586
+::res://assets/Images/Scenery/Stage4/::1744987856
 fundo1.png::CompressedTexture2D::8233406960747061915::1744984040::1744987856::1::::<><>::
-::res://assets/Images/splashscreen/::1744984585
+::res://assets/Images/splashscreen/::1744987855
 Logo_Nome_Fundo_escuro.png::CompressedTexture2D::6271950463247242068::1744984040::1744987855::1::::<><>::
-::res://assets/Images/Stage Elements/::1744984583
+::res://assets/Images/Stage Elements/::1744987854
 angry_emoji.png::CompressedTexture2D::6829283105873027942::1744984040::1744987853::1::::<><>::
 check_off.png::CompressedTexture2D::3126028700715379087::1744984040::1744987854::1::::<><>::
 check_on.png::CompressedTexture2D::3332822521080880108::1744984040::1744987854::1::::<><>::
@@ -303,23 +303,23 @@ guincho.png::CompressedTexture2D::511857363848249279::1744984040::1744987853::1:
 guindaste.png::CompressedTexture2D::1933579103672473817::1744984040::1744987853::1::::<><>::
 happy_emoji.png::CompressedTexture2D::8123067442476581971::1744984040::1744987853::1::::<><>::
 talk.png::CompressedTexture2D::5516025019255835736::1744984040::1744987853::1::::<><>::
-::res://assets/Images/Stage Elements/Stage1/::1744984583
+::res://assets/Images/Stage Elements/Stage1/::1744987854
 barraca_feira_completa.png::CompressedTexture2D::8363262558504352823::1744984040::1744987854::1::::<><>::
 base_barraca_feira.png::CompressedTexture2D::6983231641217396229::1744984040::1744987854::1::::<><>::
 colunas_barraca_feira.png::CompressedTexture2D::1772861714327078873::1744984040::1744987854::1::::<><>::
 teto_barraca_feira.png::CompressedTexture2D::8016316100903012205::1744984040::1744987854::1::::<><>::
-::res://assets/Images/Stage Elements/Stage2/::1744984583
+::res://assets/Images/Stage Elements/Stage2/::1744987854
 lixo.png::CompressedTexture2D::4623311430286935139::1744984040::1744987854::1::::<><>::
 lixo_aberto.png::CompressedTexture2D::2481018186518138628::1744984040::1744987854::1::::<><>::
 tampa.png::CompressedTexture2D::220568113342865784::1744984040::1744987854::1::::<><>::
-::res://assets/Images/Stage Elements/StageEnd/::1744984583
+::res://assets/Images/Stage Elements/StageEnd/::1744987854
 carimbo.png::CompressedTexture2D::5081328704503020452::1744984040::1744987854::1::::<><>::
 fundo_carimbo.png::CompressedTexture2D::1439560722774887254::1744984040::1744987854::1::::<><>::
 plate light.png::CompressedTexture2D::936677690723549443::1744984040::1744987854::1::::<><>::
 plate.png::CompressedTexture2D::2101866234408002812::1744984040::1744987854::1::::<><>::
 pressure_plate.png::CompressedTexture2D::3547534125996755914::1744984040::1744987854::1::::<><>::
 wall.png::CompressedTexture2D::1662734949351375173::1744984040::1744987854::1::::<><>::
-::res://assets/Images/Tilesets/::1744984584
+::res://assets/Images/Tilesets/::1744987854
 arvore2.png::CompressedTexture2D::2675862517823888052::1744984040::1744987853::1::::<><>::
 arvore3.png::CompressedTexture2D::858901679479471096::1744984040::1744987853::1::::<><>::
 arvore4.png::CompressedTexture2D::4650806853321349469::1744984040::1744987853::1::::<><>::
@@ -358,7 +358,7 @@ tronco2.png::CompressedTexture2D::6099494186931925980::1744984040::1744987854::1
 tronco3.png::CompressedTexture2D::4273391301636384057::1744984040::1744987854::1::::<><>::
 tronco.png::CompressedTexture2D::779997859998202329::1744984040::1744987854::1::::<><>::
 ::res://assets/Images/UI/::1744984040
-::res://assets/Images/UI/MainMenu/::1744984584
+::res://assets/Images/UI/MainMenu/::1744987855
 AboutButton1.png::CompressedTexture2D::3161064794451568332::1744984040::1744987854::1::::<><>::
 AboutButton2.png::CompressedTexture2D::7988976298646150144::1744984040::1744987854::1::::<><>::
 AboutButton3.png::CompressedTexture2D::2447541696328225863::1744984040::1744987854::1::::<><>::
@@ -384,7 +384,7 @@ Tabela.png::CompressedTexture2D::5137410294120336962::1744984040::1744987854::1:
 Tabelafundo.png::CompressedTexture2D::6854650329373996061::1744984040::1744987854::1::::<><>::
 Titulo.png::CompressedTexture2D::2100627538030459216::1744984040::1744987854::1::::<><>::
 voltar.png::CompressedTexture2D::9089772975195439943::1744984040::1744987854::1::::<><>::
-::res://assets/Images/UI/Misc/::1744984584
+::res://assets/Images/UI/Misc/::1744987854
 cogIcon.png::CompressedTexture2D::340185014312150815::1744984040::1744987854::1::::<><>::
 Configuracao.png::CompressedTexture2D::3931019494247119150::1744984040::1744987854::1::::<><>::
 Fundo_2.png::CompressedTexture2D::7878767307986198676::1744984040::1744987854::1::::<><>::
@@ -395,31 +395,31 @@ next-dialog.png::CompressedTexture2D::3483952513966161241::1744984040::174498785
 PLay 1.png::CompressedTexture2D::4425191350931344571::1744984040::1744987854::1::::<><>::
 playIcon.png::CompressedTexture2D::3551709994937633440::1744984040::1744987854::1::::<><>::
 playIconSmall.png::CompressedTexture2D::7254850016866000645::1744984040::1744987854::1::::<><>::
-::res://assets/Images/UI/Storyboard/::1744984584
+::res://assets/Images/UI/Storyboard/::1744987854
 Cena4.png::CompressedTexture2D::8945620621189410033::1744984040::1744987854::1::::<><>::
 Cena5.png::CompressedTexture2D::4575519303650660910::1744984040::1744987854::1::::<><>::
 EmptyStar.png::CompressedTexture2D::6229682392960662464::1744984040::1744987854::1::::<><>::
 FullStar.png::CompressedTexture2D::5223292520231248595::1744984040::1744987854::1::::<><>::
 GameOver.png::CompressedTexture2D::5432413116160334370::1744984040::1744987854::1::::<><>::
 LevelComplete.png::CompressedTexture2D::1610760450762216378::1744984040::1744987854::1::::<><>::
-::res://assets/Images/UI/Tutorial/::1744984584
+::res://assets/Images/UI/Tutorial/::1744987854
 2_Teclas.png::CompressedTexture2D::1864908404800287936::1744984040::1744987854::1::::<><>::
 Tecla.png::CompressedTexture2D::1160688240049759408::1744984040::1744987854::1::::<><>::
 Tecla_Grande.png::CompressedTexture2D::7402376100590939968::1744984040::1744987854::1::::<><>::
-::res://assets/Images/Usina/::1744984584
+::res://assets/Images/Usina/::1744987854
 ima1x1.png::CompressedTexture2D::3707811531254786415::1744984040::1744987854::1::::<><>::
 ima2x2.png::CompressedTexture2D::3873504158865549161::1744984040::1744987854::1::::<><>::
 ima3x3.png::CompressedTexture2D::5574231077355073967::1744984040::1744987854::1::::<><>::
 porta_usina.png::CompressedTexture2D::3134679564222726286::1744984040::1744987854::1::::<><>::
 ::res://assets/Sounds/::1744984041
-::res://assets/Sounds/dialogs/::1744984582
+::res://assets/Sounds/dialogs/::1744987853
 talk_boss.mp3::AudioStreamMP3::6772988080103458920::1744984040::1744987853::1::::<><>::
 talk_garidog.mp3::AudioStreamMP3::1814339764689016313::1744984040::1744987853::1::::<><>::
 talk_kid.mp3::AudioStreamMP3::4636673176936162533::1744984040::1744987853::1::::<><>::
 talk_mayor.mp3::AudioStreamMP3::1607738504072856169::1744984040::1744987853::1::::<><>::
 talk_tim.mp3::AudioStreamMP3::65123006641896293::1744984040::1744987853::1::::<><>::
 talk_tim_holo.mp3::AudioStreamMP3::7507291677075267413::1744984040::1744987853::1::::<><>::
-::res://assets/Sounds/enemy_sfx/::1744984583
+::res://assets/Sounds/enemy_sfx/::1744987853
 enemy_computer.mp3::AudioStreamMP3::1055152858691389658::1744984040::1744987853::1::::<><>::
 enemy_fogao.mp3::AudioStreamMP3::4381173894111508206::1744984040::1744987853::1::::<><>::
 enemy_furadeira_dash.mp3::AudioStreamMP3::3165798068482055338::1744984040::1744987853::1::::<><>::
@@ -429,14 +429,14 @@ enemy_microwave.mp3::AudioStreamMP3::7982316226139490642::1744984040::1744987853
 enemy_printer_hop.mp3::AudioStreamMP3::6491119122723248135::1744984040::1744987853::1::::<><>::
 enemy_printer_shoot.mp3::AudioStreamMP3::2159428559614371980::1744984040::1744987853::1::::<><>::
 enemy_tv.mp3::AudioStreamMP3::74250657804219046::1744984040::1744987853::1::::<><>::
-::res://assets/Sounds/recycle_anim/::1744984583
+::res://assets/Sounds/recycle_anim/::1744987853
 GaribotTheme_LastVersionipromise.mp3::AudioStreamMP3::5811612867513897230::1744984040::1744987853::1::::<><>::
 recycle_anim_1.mp3::AudioStreamMP3::8079732977993650622::1744984040::1744987853::1::::<><>::
 recycle_anim_2.mp3::AudioStreamMP3::4798848870233039343::1744984040::1744987853::1::::<><>::
 recycle_anim_base.mp3::AudioStreamMP3::6958936480635583666::1744984040::1744987853::1::::<><>::
 recycle_anim_consume.mp3::AudioStreamMP3::2433525685050522481::1744984040::1744987853::1::::<><>::
 recycle_anim_insert.mp3::AudioStreamMP3::5687370570954696124::1744984040::1744987853::1::::<><>::
-::res://assets/Sounds/sfx/::1744984582
+::res://assets/Sounds/sfx/::1744987853
 blaster_bubble.mp3::AudioStreamMP3::3929906384190739508::1744984040::1744987853::1::::<><>::
 blaster_magnet_off.mp3::AudioStreamMP3::2780218914845376852::1744984040::1744987853::1::::<><>::
 blaster_magnet_on.mp3::AudioStreamMP3::5786413201526172417::1744984040::1744987853::1::::<><>::
@@ -448,7 +448,7 @@ magnet-on.mp3::AudioStreamMP3::6188321462084148814::1744984041::1744987853::1:::
 roll_garibot.mp3::AudioStreamMP3::6220911758648534374::1744984041::1744987853::1::::<><>::
 shot_garibot.mp3::AudioStreamMP3::5774607465903076406::1744984041::1744987853::1::::<><>::
 vaccum-sfx.mp3::AudioStreamMP3::6131130019190969047::1744984041::1744987853::1::::<><>::
-::res://assets/Sounds/songs/::1744984583
+::res://assets/Sounds/songs/::1744987853
 bonus.mp3::AudioStreamMP3::6488494825259258003::1744984041::1744987853::1::::<><>::
 bonus_win_fanfare.mp3::AudioStreamMP3::8682132963424985134::1744984041::1744987853::1::::<><>::
 dameDaNe.mp3::AudioStreamMP3::5294953936322438044::1744984041::1744987853::1::::<><>::
@@ -464,7 +464,7 @@ fase-5.mp3::AudioStreamMP3::8139939017917311715::1744984041::1744987853::1::::<>
 lose-fanfare.mp3::AudioStreamMP3::2312749235530238841::1744984041::1744987853::1::::<><>::
 menu-mapa.mp3::AudioStreamMP3::6137220213599901703::1744984041::1744987853::1::::<><>::
 win-fanfare.mp3::AudioStreamMP3::7401279582784928156::1744984041::1744987853::1::::<><>::
-::res://assets/Sounds/stage_3/::1744984583
+::res://assets/Sounds/stage_3/::1744987853
 claw_move.mp3::AudioStreamMP3::1255060103682803697::1744984041::1744987853::1::::<><>::
 claw_move_continuous.mp3::AudioStreamMP3::4740360628529080284::1744984041::1744987853::1::::<><>::
 claw_open.mp3::AudioStreamMP3::1906271986111440306::1744984041::1744987853::1::::<><>::
@@ -474,11 +474,11 @@ hammer_close.mp3::AudioStreamMP3::530247017300507590::1744984041::1744987853::1:
 hammer_open.mp3::AudioStreamMP3::7703918563306405269::1744984041::1744987853::1::::<><>::
 pp_down.mp3::AudioStreamMP3::8775151520155897777::1744984041::1744987853::1::::<><>::
 pp_up.mp3::AudioStreamMP3::3345737861494057563::1744984041::1744987853::1::::<><>::
-::res://assets/Sounds/story/::1744984583
+::res://assets/Sounds/story/::1744987853
 story_intro1.mp3::AudioStreamMP3::1035478082635752752::1744984041::1744987853::1::::<><>::
 story_intro2.mp3::AudioStreamMP3::1221084934204699125::1744984041::1744987853::1::::<><>::
 story_intro3.mp3::AudioStreamMP3::4502016793084762368::1744984041::1744987853::1::::<><>::
-::res://assets/Sounds/ui/::1744984583
+::res://assets/Sounds/ui/::1744987853
 blaster_get.mp3::AudioStreamMP3::2763699053170495821::1744984041::1744987853::1::::<><>::
 correct_answer_1.mp3::AudioStreamMP3::3125355348496390385::1744984041::1744987853::1::::<><>::
 correct_answer_2.mp3::AudioStreamMP3::3028520128799705152::1744984041::1744987853::1::::<><>::
@@ -488,7 +488,7 @@ ui_main_menu_select.mp3::AudioStreamMP3::2661214348098396376::1744984041::174498
 ui_move.mp3::AudioStreamMP3::8022706694494881227::1744984041::1744987853::1::::<><>::
 ui_select.mp3::AudioStreamMP3::5309104807023859487::1744984041::1744987853::1::::<><>::
 wrong_answer.mp3::AudioStreamMP3::3836020768773032025::1744984041::1744987853::1::::<><>::
-::res://assets/Test/::1744984584
+::res://assets/Test/::1744987854
 icon.png::CompressedTexture2D::7584288602646310471::1744984041::1744987854::1::::<><>::
 ::res://scenes/::1744987356
 GameScene.gd::GDScript::-1::1744987830::0::1::::<>Control<>::
@@ -655,7 +655,7 @@ TouchScreenButton_X.gd::GDScript::-1::1744987833::0::1::::<>TouchScreenButton<>:
 TouchScreenButton_Z.gd::GDScript::-1::1744987833::0::1::::<>TouchScreenButton<>::
 TutorialWindow.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/menu/painel_style_blue.tres<>res://assets/Images/Blasters/hydro.png<>res://TutorialWindow.gd<>res://assets/Font/text_ui.tres
 UI.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/game_ui/GameUI.tscn<>res://scenes/game_ui/LevelComplete.tscn<>res://scenes/game_ui/GameOver.tscn<>res://scenes/menu/MenuManager.tscn
-::res://scenes/item/::1744987815
+::res://scenes/item/::1744987872
 Item2.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/item/Item.gd<>res://assets/Images/Collectibles/items.png<>res://assets/Sounds/ui/ui_select.mp3
 Item3.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/item/Item.gd<>res://assets/Images/Collectibles/items.png<>res://assets/Sounds/ui/ui_select.mp3
 Item.gd::GDScript::-1::1744987833::0::1::::<>Area2D<>::
@@ -664,22 +664,22 @@ ItemMiniGame.gd::GDScript::-1::1744987833::0::1::::<>Area2D<>::
 ItemMiniGame.tres::ShaderMaterial::-1::1744987833::0::1::::<><>::
 ItemMiniGame.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/item/ItemMiniGame.gd<>res://assets/Images/Collectibles/garrafa.png<>res://assets/Sounds/ui/ui_select.mp3<>res://assets/Images/Effects/light.png
 ItemScript.gd::GDScript::-1::1744987833::0::1::::<>Area2D<>::
-ItemTextureMap.gd::GDScript::-1::1744987833::0::1::::<>Node<>::
+ItemTextureMap.gd::GDScript::-1::1744987872::0::1::::<>Node<>::
 Lixeira.gd::GDScript::-1::1744987833::0::1::::<>Area2D<>::
 Lixeira.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://assets/Images/Lixeira/lixeira_azul.png<>res://scenes/item/Lixeira.gd
-::res://scenes/main/::1744987815
-MainScene.gd::GDScript::-1::1744987833::0::1::::<>Node<>::
-MainScene.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/main/MainScene.gd<>res://scenes/mobile_control/mobile_control.tscn<>res://scenes/stage_manager/LoadingScreen.tscn
-::res://scenes/menu/::1744987356
+::res://scenes/main/::1744993625
+MainScene.gd::GDScript::-1::1744987890::0::1::::<>Node<>::
+MainScene.tscn::PackedScene::3240670070586634451::1744993625::0::1::::<><>::res://scenes/main/MainScene.gd<>res://scenes/mobile_control/mobile_control.tscn<>res://scenes/stage_manager/LoadingScreen.tscn
+::res://scenes/menu/::1744993626
 Button.gd::GDScript::-1::1744987833::0::1::::<>Button<>::
 button_test.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/MainMenu/Tabela.png
 Cor.gd::GDScript::-1::1744987833::0::1::::<>HBoxContainer<>::
 Credits.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://assets/Font/text.tres<>res://scenes/player/PlayerBody.tscn<>res://assets/Images/Scenery/fundo1.png<>res://assets/Font/window_title.tres<>res://scenes/menu/Button.gd<>res://assets/Images/Scenery/fundo0.png
 GameMenu.gd::GDScript::-1::1744987833::0::1::::<>Control<>::
-GameMenu.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/menu/painel_style_blue.tres<>res://assets/Font/text.tres<>res://assets/Font/text_ui.tres<>res://scenes/menu/buttons/ButtonNormal.tres<>res://assets/Images/UI/Misc/cogIcon.png<>res://assets/Images/Player/PlayerCharIcon2.png<>res://assets/Images/Player/PlayerCharIcon.png<>res://assets/Images/Player/PlayerCharIcon3.png<>res://scenes/menu/painel_style_white.tres<>res://scenes/menu/painel_style_blue_margin.tres<>res://scenes/menu/GameMenu.gd<>res://scenes/menu/buttons/ButtonPress.tres<>res://scenes/menu/buttons/ButtonHover.tres
-MainMenu.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/menu/Titulo.tscn<>res://assets/Images/UI/MainMenu/Button1.png<>res://assets/Font/text_ui_icon_button.tres<>res://assets/Images/Scenery/fundo1.png<>res://assets/Images/UI/Misc/menuTile.png<>res://assets/Images/UI/MainMenu/PlayIcon.png<>res://assets/Images/Scenery/fundo0.png<>res://scenes/menu/PlayButton.gd<>res://scenes/GameScene.gd<>res://scenes/menu/buttons/IconButtonNormal.tres<>res://scenes/menu/buttons/IconButtonPress.tres
-MenuManager.gd::GDScript::-1::1744987833::0::1::::<>Node<>::
-MenuManager.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/menu/MenuManager.gd<>res://scenes/gallery/Galeria.tscn<>res://scenes/menu/GameMenu.tscn
+GameMenu.tscn::PackedScene::992293035498194565::1744993626::0::1::::<><>::res://scenes/menu/painel_style_blue.tres<>res://assets/Font/text.tres<>res://assets/Font/text_ui.tres<>res://scenes/menu/buttons/ButtonNormal.tres<>uid://e312d5kw1y7p::::res://assets/Images/UI/Misc/cogIcon.png<>uid://cfh85c45e0uia::::res://assets/Images/Player/PlayerCharIcon2.png<>uid://hcmrqcc6e0l5::::res://assets/Images/Player/PlayerCharIcon.png<>uid://c37clpnwhun1t::::res://assets/Images/Player/PlayerCharIcon3.png<>res://scenes/menu/painel_style_white.tres<>res://scenes/menu/GameMenu.gd<>res://scenes/menu/buttons/ButtonPress.tres<>res://scenes/menu/buttons/ButtonHover.tres
+MainMenu.tscn::PackedScene::317436732653765638::1744993626::0::1::::<><>::uid://558x7ew4vkan::::res://scenes/menu/Titulo.tscn<>uid://dco63oy6kmrap::::res://assets/Images/UI/MainMenu/Button1.png<>res://assets/Font/text_ui_icon_button.tres<>uid://g4m7xflkwamx::::res://assets/Images/Scenery/fundo1.png<>uid://cbwwbhoempco0::::res://assets/Images/UI/Misc/menuTile.png<>uid://4x1bea1fjvda::::res://assets/Images/UI/MainMenu/PlayIcon.png<>uid://d1ehovhnuopye::::res://assets/Images/Scenery/fundo0.png<>res://scenes/menu/PlayButton.gd<>res://scenes/GameScene.gd<>res://scenes/menu/buttons/IconButtonNormal.tres<>res://scenes/menu/buttons/IconButtonPress.tres
+MenuManager.gd::GDScript::-1::1744992746::0::1::::<>Node<>::
+MenuManager.tscn::PackedScene::4884289195035376257::1744993626::0::1::::<><>::res://scenes/menu/MenuManager.gd<>res://scenes/gallery/Galeria.tscn<>uid://oew6lbrruwtx::::res://scenes/menu/GameMenu.tscn
 MenuPrincipalButton.gd::GDScript::-1::1744987833::0::1::::<>Button<>::
 painel_style.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/Misc/menuTile.png
 painel_style_blue.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/Misc/Fundo_2.png
@@ -688,10 +688,10 @@ painel_style_blue_window.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::re
 painel_style_gallery.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/Misc/Fundo_2.png
 painel_style_stage_2.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/Effects/baloon.png
 painel_style_white.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/Misc/Fundo_3.png
-Panel.gd::GDScript::-1::1744984041::0::1::::<>RefCounted<>::
-PlayButton.gd::GDScript::-1::1744987833::0::1::::<>Button<>::
+Panel.gd::GDScript::-1::1744992746::0::1::::<>RefCounted<>::
+PlayButton.gd::GDScript::-1::1744992547::0::1::::<>Button<>::
 ResiduoButton.gd::GDScript::-1::1744987833::0::1::::<>Button<>::
-Titulo.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://assets/Font/title.tres<>res://assets/Images/UI/MainMenu/Titulo.png
+Titulo.tscn::PackedScene::2169643063749463021::1744993626::0::1::::<><>::res://assets/Font/title.tres<>uid://46ta8d5p1fwq::::res://assets/Images/UI/MainMenu/Titulo.png
 ::res://scenes/menu/buttons/::1744987356
 ButtonHover.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/MainMenu/Button2.png
 ButtonNormal.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/MainMenu/Button1.png
@@ -701,14 +701,14 @@ IconButtonHover.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://asset
 IconButtonNormal.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/MainMenu/Button1.png
 IconButtonPress.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/MainMenu/Button3.png
 RedButtonNormal.tres::StyleBoxTexture::-1::1744987833::0::1::::<><>::res://assets/Images/UI/MainMenu/Button1.png
-::res://scenes/minigame/::1744987356
+::res://scenes/minigame/::1744993626
 font_minigame.tres::FontFile::-1::1744987833::0::1::::<><>::res://assets/Font/JuanMikes.otf
 MiniGameTest.gd::GDScript::-1::1744987833::0::1::::<>Control<>::
-MiniGameTest.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/menu/painel_style_white.tres<>res://assets/Font/window_title.tres<>res://assets/Font/text_ui.tres<>res://scenes/menu/buttons/ButtonNormal.tres<>res://scenes/menu/buttons/ButtonHover.tres<>res://scenes/menu/buttons/ButtonPress.tres<>res://assets/Images/Collectibles/tv.png<>res://assets/Images/Scenery/bana.png<>res://scenes/menu/painel_style_blue.tres<>res://assets/Images/Collectibles/geladeira.png<>res://assets/Images/Stage Elements/happy_emoji.png<>res://scenes/minigame/MiniGameTest.gd<>res://assets/Images/Collectibles/garrafa.png<>res://assets/Images/Collectibles/melancia.png
-::res://scenes/mobile_control/::1744987356
+MiniGameTest.tscn::PackedScene::2735014707419724690::1744993626::0::1::::<><>::res://scenes/menu/painel_style_white.tres<>res://assets/Font/window_title.tres<>res://assets/Font/text_ui.tres<>res://scenes/menu/buttons/ButtonNormal.tres<>res://scenes/menu/buttons/ButtonHover.tres<>res://scenes/menu/buttons/ButtonPress.tres<>uid://ssigwxj7t7l::::res://assets/Images/Collectibles/tv.png<>uid://dudpaufgv5rw7::::res://assets/Images/Scenery/bana.png<>res://scenes/menu/painel_style_blue.tres<>uid://857a510uer0m::::res://assets/Images/Collectibles/geladeira.png<>uid://dny4y7qpl4204::::res://assets/Images/Stage Elements/happy_emoji.png<>res://scenes/minigame/MiniGameTest.gd<>uid://b0quamc8je8n4::::res://assets/Images/Collectibles/garrafa.png<>uid://vafbdxlrckgc::::res://assets/Images/Collectibles/melancia.png
+::res://scenes/mobile_control/::1744987877
 Confirm.gd::GDScript::-1::1744987833::0::1::::<>TouchScreenButton<>::
 left.gd::GDScript::-1::1744987833::0::1::::<>TouchScreenButton<>::
-mobile_control.gd::GDScript::-1::1744987833::0::1::::<>Node2D<>::
+mobile_control.gd::GDScript::-1::1744987877::0::1::::<>Node2D<>::
 mobile_control.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/mobile_control/ui_blaster.gd<>res://scenes/mobile_control/Confirm.gd<>res://scenes/mobile_control/roll_attack.gd<>res://assets/Images/MobileButtons/key_blue_up.png<>res://scenes/mobile_control/left.gd<>res://scenes/mobile_control/right.gd<>res://scenes/mobile_control/Pause.gd<>res://assets/Images/MobileButtons/key_blue_right.png<>res://assets/Images/MobileButtons/key_blue_left_pressed.png<>res://assets/Images/MobileButtons/key_blue_x.png<>res://assets/Images/MobileButtons/key_blue_right_pressed.png<>res://assets/Images/MobileButtons/key_blue_pause.png<>res://assets/Images/MobileButtons/key_blue_pause_pressed.png<>res://assets/Images/MobileButtons/key_blue_z.png<>res://assets/Images/MobileButtons/key_blue_x_pressed.png<>res://assets/Images/MobileButtons/key_blue_up_pressed.png<>res://assets/Images/MobileButtons/key_blue_z_pressed.png<>res://assets/Images/MobileButtons/key_blue_left.png<>res://scenes/mobile_control/mobile_control.gd
 Pause.gd::GDScript::-1::1744987833::0::1::::<>TouchScreenButton<>::
 right.gd::GDScript::-1::1744987833::0::1::::<>TouchScreenButton<>::
@@ -745,18 +745,18 @@ Gatorobo.tscn::PackedScene::-1::1744987833::0::1::::<><>::res://scenes/animation
 EnemyTestZone.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://scenes/tilesets/TileRoad.tres<>res://scenes/enemies/EnemyPrinter.tscn<>res://scenes/enemies/EnemyTelevision.tscn<>res://scenes/player/Player.tscn<>res://scenes/enemies/EnemyGeladeira.tscn<>res://scenes/enemies/EnemyFogao.tscn<>res://scenes/enemies/EnemyMicro.tscn<>res://scenes/enemies/EnemyComputer.tscn<>res://scenes/enemies/EnemyFuradeira.tscn<>res://scenes/game_ui/GameUI.tscn
 ::res://scenes/scenary/::1744987356
 Arvores.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://assets/Images/Tilesets/arvore3.png<>res://assets/Images/Tilesets/arvore7.png<>res://assets/Images/Tilesets/arvore4.png<>res://assets/Images/Tilesets/arvore6.png<>res://assets/Images/Tilesets/arvore2.png<>res://assets/Images/Tilesets/arvore5.png
-::res://scenes/sound_manager/::1744987815
+::res://scenes/sound_manager/::1744993626
 debug.gd::GDScript::-1::1744987832::0::1::::<>Control<>::
-SoundManager.gd::GDScript::-1::1744987832::0::1::::<>Node<>::
-SoundManager.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://scenes/sound_manager/SoundManager.gd<>res://assets/Sounds/ui/ui_select.mp3<>res://assets/Sounds/songs/bonus_win_fanfare.mp3<>res://assets/Sounds/songs/lose-fanfare.mp3<>res://assets/Sounds/songs/menu-mapa.mp3<>res://assets/Sounds/songs/fase-2.mp3<>res://assets/Sounds/songs/win-fanfare.mp3<>res://scenes/sound_manager/debug.gd<>res://assets/Sounds/ui/ui_main_menu_select.mp3<>res://assets/Sounds/songs/fase-1.mp3<>res://assets/Sounds/stage_3/hammer_open.mp3<>res://assets/Sounds/ui/ui_deselect.mp3<>res://assets/Sounds/ui/wrong_answer.mp3<>res://assets/Sounds/ui/correct_answer_3.mp3<>res://assets/Sounds/ui/correct_answer_2.mp3<>res://assets/Sounds/ui/correct_answer_1.mp3<>res://assets/Sounds/ui/blaster_get.mp3<>res://assets/Sounds/songs/fase-3_v2.mp3<>res://assets/Sounds/songs/fase-3_outside.mp3<>res://assets/Sounds/stage_3/pp_up.mp3<>res://assets/Sounds/stage_3/pp_down.mp3<>res://assets/Sounds/stage_3/hammer_close.mp3<>res://assets/Sounds/stage_3/gate_close.mp3<>res://assets/Sounds/stage_3/gate_open.mp3<>res://assets/Sounds/songs/dameDaNe.mp3<>res://assets/Sounds/songs/fase-3_chase.mp3<>res://assets/Sounds/recycle_anim/recycle_anim_consume.mp3<>res://assets/Sounds/sfx/blaster_bubble.mp3<>res://assets/Sounds/sfx/blaster_magnet_off.mp3<>res://assets/Sounds/sfx/blaster_magnet_on.mp3<>res://assets/Sounds/dialogs/talk_boss.mp3<>res://assets/Sounds/dialogs/talk_kid.mp3<>res://assets/Sounds/dialogs/talk_garidog.mp3<>res://assets/Sounds/dialogs/talk_mayor.mp3<>res://assets/Sounds/dialogs/talk_tim.mp3<>res://assets/Sounds/dialogs/talk_tim_holo.mp3<>res://assets/Sounds/songs/bonus.mp3
-::res://scenes/stages/::1744987356
+SoundManager.gd::GDScript::-1::1744988478::0::1::::<>Node<>::
+SoundManager.tscn::PackedScene::9046629808212854528::1744993626::0::1::::<><>::res://scenes/sound_manager/SoundManager.gd<>uid://chv1gewpae2m2::::res://assets/Sounds/ui/ui_select.mp3<>uid://dvxxpxoelrahi::::res://assets/Sounds/songs/bonus_win_fanfare.mp3<>uid://77kv3fwewf42::::res://assets/Sounds/songs/lose-fanfare.mp3<>uid://cto6edawj52kh::::res://assets/Sounds/songs/menu-mapa.mp3<>uid://fe7hn8ke8jt::::res://assets/Sounds/songs/fase-2.mp3<>uid://ddph81meeoi7m::::res://assets/Sounds/songs/win-fanfare.mp3<>res://scenes/sound_manager/debug.gd<>uid://bd6d2udnhev5y::::res://assets/Sounds/ui/ui_main_menu_select.mp3<>uid://ccw6wuge6v6xv::::res://assets/Sounds/songs/fase-1.mp3<>uid://dh03obvw0asb2::::res://assets/Sounds/stage_3/hammer_open.mp3<>uid://b15v75p8lc0lu::::res://assets/Sounds/ui/ui_deselect.mp3<>uid://buwgx4cfoxdpx::::res://assets/Sounds/ui/wrong_answer.mp3<>uid://xey36bld14e7::::res://assets/Sounds/ui/correct_answer_3.mp3<>uid://bjfbjwmi544hw::::res://assets/Sounds/ui/correct_answer_2.mp3<>uid://bkr7e70go4xgb::::res://assets/Sounds/ui/correct_answer_1.mp3<>uid://bfm0yp5d1fdxl::::res://assets/Sounds/ui/blaster_get.mp3<>uid://g25j5rux0hwo::::res://assets/Sounds/songs/fase-3_v2.mp3<>uid://dmpmury3q0oue::::res://assets/Sounds/songs/fase-3_outside.mp3<>uid://bnwx2wybki7gp::::res://assets/Sounds/stage_3/pp_up.mp3<>uid://dxa0p01jmmrfd::::res://assets/Sounds/stage_3/pp_down.mp3<>uid://hs4ddc6p18is::::res://assets/Sounds/stage_3/hammer_close.mp3<>uid://1adyjo013cdd::::res://assets/Sounds/stage_3/gate_close.mp3<>uid://5a2otp3h666e::::res://assets/Sounds/stage_3/gate_open.mp3<>uid://cho6eadhg8n77::::res://assets/Sounds/songs/dameDaNe.mp3<>uid://c0vv1nav5qqc2::::res://assets/Sounds/songs/fase-3_chase.mp3<>uid://baw22vid7dd02::::res://assets/Sounds/recycle_anim/recycle_anim_consume.mp3<>uid://bv8w8pqnncx7y::::res://assets/Sounds/sfx/blaster_bubble.mp3<>uid://bfu02ga7yfsv1::::res://assets/Sounds/sfx/blaster_magnet_off.mp3<>uid://coo8m6kpg2qi0::::res://assets/Sounds/sfx/blaster_magnet_on.mp3<>uid://c3q5ehq645x01::::res://assets/Sounds/dialogs/talk_boss.mp3<>uid://b7cblhims07hp::::res://assets/Sounds/dialogs/talk_kid.mp3<>uid://0345765no2rl::::res://assets/Sounds/dialogs/talk_garidog.mp3<>uid://w52hok3d45cv::::res://assets/Sounds/dialogs/talk_mayor.mp3<>uid://6sti08ek5hp::::res://assets/Sounds/dialogs/talk_tim.mp3<>uid://de7t85vyppnsv::::res://assets/Sounds/dialogs/talk_tim_holo.mp3<>uid://cypctdovvdqnr::::res://assets/Sounds/songs/bonus.mp3
+::res://scenes/stages/::1744993627
 2ndAct.gd::GDScript::-1::1744987831::0::1::::<>Node2D<>::
 ActivationArea.gd::GDScript::-1::1744987831::0::1::::<>Area2D<>::
 AnimationArea.gd::GDScript::-1::1744987831::0::1::::<>Area2D<>::
 AnimationPlayer.gd::GDScript::-1::1744987831::0::1::::<>AnimationPlayer<>::
 Arvores.gd::GDScript::-1::1744987831::0::1::::<>Node2D<>::
 BonusStage.gd::GDScript::-1::1744987831::0::1::::<>Node2D<>::
-BonusStage.tscn::PackedScene::-1::1744987831::0::1::::<><>::res://scenes/game_ui/BonusGameUI.tscn<>res://scenes/game_ui/GameOver.tscn<>res://scenes/game_ui/LevelComplete.tscn<>res://scenes/player/PlayerBody.tscn<>res://scenes/stages/itemSpawn.gd<>res://scenes/menu/MenuManager.tscn<>res://scenes/game_ui/LevelBonusComplete.tscn<>res://scenes/player/Gatorobo/Gatorobo.tscn<>res://scenes/stages/TutorialBonusStageWindow.gd<>res://scenes/menu/painel_style_blue.tres<>res://assets/Images/Lixeira/lixeira_amarela.png<>res://assets/Images/Scenery/fundo2.2.png<>res://assets/Images/Scenery/fundo1.png<>res://scenes/tilesets/TileCity.tres<>res://scenes/tilesets/TileRoad.tres<>res://assets/Images/Scenery/ceu1.png<>res://assets/Font/text_ui.tres<>res://assets/Images/Lixeira/lixeira_vermelha.png<>res://assets/Images/Lixeira/lixeira_verde.png<>res://assets/Images/Lixeira/lixeira_marrom.png<>res://assets/Images/Lixeira/lixeira_azul.png<>res://assets/Font/text_ui_small.tres
+BonusStage.tscn::PackedScene::2965930915203517527::1744993626::0::1::::<><>::res://scenes/game_ui/BonusGameUI.tscn<>res://scenes/game_ui/GameOver.tscn<>res://scenes/game_ui/LevelComplete.tscn<>res://scenes/player/PlayerBody.tscn<>res://scenes/stages/itemSpawn.gd<>uid://cbt8sabb6tj8t::::res://scenes/menu/MenuManager.tscn<>res://scenes/game_ui/LevelBonusComplete.tscn<>res://scenes/player/Gatorobo/Gatorobo.tscn<>res://scenes/stages/TutorialBonusStageWindow.gd<>res://scenes/menu/painel_style_blue.tres<>uid://bky6e7letaw5y::::res://assets/Images/Lixeira/lixeira_amarela.png<>uid://cwywft7a1qmja::::res://assets/Images/Scenery/fundo2.2.png<>uid://g4m7xflkwamx::::res://assets/Images/Scenery/fundo1.png<>res://scenes/tilesets/TileCity.tres<>res://scenes/tilesets/TileRoad.tres<>uid://novtl17cewlc::::res://assets/Images/Scenery/ceu1.png<>res://assets/Font/text_ui.tres<>uid://btgq3bieuv6p2::::res://assets/Images/Lixeira/lixeira_vermelha.png<>uid://pmxxgn8b05wc::::res://assets/Images/Lixeira/lixeira_verde.png<>uid://cac4xeo13ogxc::::res://assets/Images/Lixeira/lixeira_marrom.png<>uid://cuupuavajnrol::::res://assets/Images/Lixeira/lixeira_azul.png<>res://assets/Font/text_ui_small.tres
 BonusStageMobile.tscn::PackedScene::-1::1744987831::0::1::::<><>::res://scenes/game_ui/BonusGameUIMobile.tscn<>res://scenes/game_ui/GameOver.tscn<>res://scenes/game_ui/LevelComplete.tscn<>res://scenes/player/PlayerBody.tscn<>res://scenes/stages/itemSpawn.gd<>res://scenes/menu/MenuManager.tscn<>res://scenes/game_ui/LevelBonusComplete.tscn<>res://scenes/player/Gatorobo/Gatorobo.tscn<>res://scenes/stages/TutorialBonusStageWindow.gd<>res://scenes/menu/painel_style_blue.tres<>res://assets/Images/Lixeira/lixeira_amarela.png<>res://assets/Images/Scenery/fundo2.2.png<>res://assets/Images/Scenery/fundo1.png<>res://scenes/tilesets/TileCity.tres<>res://scenes/tilesets/TileRoad.tres<>res://assets/Images/Scenery/ceu1.png<>res://assets/Font/text_ui.tres<>res://assets/Images/Lixeira/lixeira_vermelha.png<>res://assets/Images/Lixeira/lixeira_verde.png<>res://assets/Images/Lixeira/lixeira_marrom.png<>res://assets/Images/Lixeira/lixeira_azul.png<>res://assets/Font/text_ui_small.tres
 BoyAnimControler.gd::GDScript::-1::1744987831::0::1::::<>Node2D<>::
 CameraControl.gd::GDScript::-1::1744987831::0::1::::<>Node2D<>::
@@ -774,7 +774,7 @@ Quest0.gd::GDScript::-1::1744987831::0::1::::<>Node2D<>::
 Scene.gd::GDScript::-1::1744987831::0::1::::<>Node2D<>::
 SpawnEnemy.gd::GDScript::-1::1744987831::0::1::::<>Node2D<>::
 Sprite.gd::GDScript::-1::1744987831::0::1::::<>Node<>::
-Stage1.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://scenes/item/Item.tscn<>res://scenes/game_ui/GameUI.tscn<>res://scenes/game_ui/GameOver.tscn<>res://scenes/tilesets/Caixa.tscn<>res://scenes/game_ui/LevelComplete.tscn<>res://scenes/stages/background/Background.tscn<>res://scenes/menu/MenuManager.tscn<>res://scenes/enemies/EnemyComputer.tscn<>res://scenes/station/RecicleStation.tscn<>res://scenes/player/Player.tscn<>res://scenes/animation/BoyBody.tscn<>res://scenes/tilesets/TileMachine.tres<>res://scenes/stages/LevelQuest.gd<>res://scenes/tilesets/MovePlat.tscn<>res://scenes/enemies/EnemyTelevision.tscn<>res://scenes/stages/BoyAnimControler.gd<>res://scenes/stages/GirlAnimControler.gd<>res://scenes/tilesets/TilePipe.tres<>res://scenes/tilesets/TileGrass.tres<>res://scenes/tilesets/TileCity.tres<>res://scenes/tilesets/TileRoad.tres<>res://scenes/animation/GirlBody.tscn<>res://scenes/tilesets/TileShopping.tres<>res://assets/Images/Scenery/CheckpointOff.png<>res://assets/Images/Scenery/saco2png.png<>res://scenes/animation/DialogGariani.tscn<>res://scenes/stages/WomanAnimControler.gd<>res://scenes/animation/MissionAnimation.tscn<>res://assets/Images/Scenery/labwall.png<>res://assets/Images/Scenery/saco.png<>res://scenes/animation/shader_trocar_cores.gdshader<>res://assets/Images/Scenery/placa.png<>res://assets/Images/Scenery/lixo.png<>res://assets/Images/Stage Elements/check_on.png<>res://assets/Images/Stage Elements/check_off.png<>res://scenes/animation/WomanBody.tscn<>res://scenes/tilesets/ShopSwitch.tscn<>res://scenes/tilesets/Elevator.tscn
+Stage1.tscn::PackedScene::5074111613185628987::1744993627::0::1::::<><>::res://scenes/item/Item.tscn<>res://scenes/game_ui/GameUI.tscn<>res://scenes/game_ui/GameOver.tscn<>res://scenes/tilesets/Caixa.tscn<>res://scenes/game_ui/LevelComplete.tscn<>res://scenes/stages/background/Background.tscn<>uid://cbt8sabb6tj8t::::res://scenes/menu/MenuManager.tscn<>res://scenes/enemies/EnemyComputer.tscn<>res://scenes/station/RecicleStation.tscn<>res://scenes/player/Player.tscn<>res://scenes/animation/BoyBody.tscn<>res://scenes/tilesets/TileMachine.tres<>res://scenes/stages/LevelQuest.gd<>res://scenes/tilesets/MovePlat.tscn<>res://scenes/enemies/EnemyTelevision.tscn<>res://scenes/stages/BoyAnimControler.gd<>res://scenes/stages/GirlAnimControler.gd<>res://scenes/tilesets/TilePipe.tres<>res://scenes/tilesets/TileGrass.tres<>res://scenes/tilesets/TileCity.tres<>res://scenes/tilesets/TileRoad.tres<>res://scenes/animation/GirlBody.tscn<>res://scenes/tilesets/TileShopping.tres<>uid://crn55qmhgn3ud::::res://assets/Images/Scenery/CheckpointOff.png<>uid://c1r1ly312ed1::::res://assets/Images/Scenery/saco2png.png<>res://scenes/animation/DialogGariani.tscn<>res://scenes/stages/WomanAnimControler.gd<>res://scenes/animation/MissionAnimation.tscn<>uid://bbhvdec8umpfp::::res://assets/Images/Scenery/labwall.png<>uid://dhvh1c7rbje67::::res://assets/Images/Scenery/saco.png<>res://scenes/animation/shader_trocar_cores.gdshader<>uid://ccik6e3rju44s::::res://assets/Images/Scenery/placa.png<>uid://bvk04bxcfg8i1::::res://assets/Images/Scenery/lixo.png<>uid://bnqpdnubhtlp1::::res://assets/Images/Stage Elements/check_on.png<>uid://bksjia2buv4rr::::res://assets/Images/Stage Elements/check_off.png<>res://scenes/animation/WomanBody.tscn<>res://scenes/tilesets/ShopSwitch.tscn<>res://scenes/tilesets/Elevator.tscn
 Stage2.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://scenes/story/Parede.tscn<>res://scenes/menu/MenuManager.tscn<>res://scenes/game_ui/GameOver.tscn<>res://scenes/stages/LevelQuest.gd<>res://scenes/stages/MagnetTrigger.gd<>res://scenes/game_ui/LevelComplete.tscn<>res://scenes/tilesets/MovePlat.tscn<>res://scenes/item/Item.tscn<>res://scenes/stages/background/Background.tscn<>res://scenes/stages/npc/BoyLixoInterativo.tscn<>res://assets/Images/Scenery/labwall.png<>res://scenes/player/FollowPeople.tscn<>res://assets/Images/Usina/ima1x1.png<>res://assets/Images/Scenery/saco.png<>res://scenes/station/RecicleStation.tscn<>res://scenes/tilesets/TileGrass.tres<>res://scenes/tilesets/TileRoad.tres<>res://scenes/tilesets/TilePipe.tres<>res://scenes/player/Player.tscn<>res://scenes/game_ui/GameUI.tscn<>res://scenes/tilesets/Esteira.tscn<>res://scenes/enemies/EnemyMicro.tscn<>res://scenes/enemies/EnemyFuradeira.tscn<>res://scenes/enemies/EnemyPrinter.tscn<>res://scenes/animation/MissionAnimation.gd<>res://scenes/animation/DialogGaridog.tscn<>res://assets/Images/Scenery/arvore.png<>res://scenes/tilesets/TileLixo.tres<>res://scenes/animation/DialogBoy.tscn<>res://scenes/stages/Stage3End.gd<>res://scenes/animation/DialogGaridogMirror.tscn<>res://assets/Images/Scenery/lixo.png<>res://scenes/animation/NewDialog.gd<>res://assets/Images/Scenery/placa.png<>res://assets/Font/text_ui_gallery.tres<>res://scenes/stages/npc/GirlLixoInterativo.tscn<>res://scenes/stages/npc/WomanLixoInterativo.tscn<>res://scenes/animation/Mosquinhas.tscn
 Stage3.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://assets/Images/Tilesets/TilePredio.png<>res://scenes/stages/LevelQuestEnd.gd<>res://scenes/story/Parede.tscn<>res://scenes/tilesets/TilePipe.tres<>res://assets/Images/Tilesets/TileParedeCinza.png<>res://assets/Images/Tilesets/TileParedeVermelha.png<>res://assets/Images/Tilesets/TileCiclovia.png<>res://scenes/stages/PlacaUsina.tscn<>res://scenes/stages/UsinaVidro.tscn<>res://scenes/player/Player.tscn<>res://scenes/stages/ActivationArea.gd<>res://scenes/stages/UsinaCamera.gd<>res://scenes/tilesets/TileGrass.tres<>res://scenes/player/FollowPeople.tscn<>res://scenes/tilesets/TileCity.tres<>res://scenes/stages/background/Background.tscn<>res://scenes/enemies/EnemyComputer.tscn<>res://scenes/tilesets/Gate.tscn<>res://scenes/tilesets/PressurePlate.tscn<>res://scenes/story/Garra.gd<>res://scenes/gallery/GaleriaItenCollected.tscn<>res://scenes/tilesets/Esteira.tscn<>res://scenes/tilesets/Esteira.gd<>res://assets/Images/Tilesets/esteira_right.png<>res://scenes/enemies/EnemyFuradeira.tscn<>res://assets/Images/Tilesets/esteira.png<>res://scenes/station/RecicleStation.tscn<>res://assets/Images/Tilesets/esteira_left.png<>res://scenes/stages/StageEnd/Minigame1.gd<>res://scenes/game_ui/GameOver.tscn<>res://scenes/game_ui/GameUI.tscn<>res://scenes/menu/MenuManager.tscn<>res://scenes/game_ui/LevelComplete.tscn<>res://assets/Images/Main Recicler/garra.png<>res://assets/Images/Tilesets/conveyor.png<>res://scenes/tilesets/Hammer.tscn<>res://scenes/tilesets/UsinaItem.tscn<>res://scenes/item/Item.tscn<>res://scenes/tilesets/BlackBox.tscn<>res://scenes/stages/StageEnd/Minigame2.gd<>res://scenes/stages/StageEnd/Minigame3.gd<>res://scenes/tilesets/Hammer.gd<>res://scenes/animation/DialogThimothy.tscn<>res://assets/Images/Usina/ima1x1.png<>res://assets/Images/Stage Elements/StageEnd/fundo_carimbo.png<>res://scenes/stages/StageEnd/Minigame4.gd<>res://scenes/stages/StageEnd/TagItems.gd<>res://scenes/enemies/FinalBoss.tscn<>res://scenes/tilesets/MovePlat.gd<>res://assets/Images/Stage Elements/Stage1/teto_barraca_feira.png<>res://scenes/tilesets/Caixa.tscn<>res://scenes/animation/DialogHoloThimothy.tscn<>res://scenes/stages/StageEnd/DialogActivationArea.gd<>res://scenes/enemies/EnemyFogao.tscn<>res://scenes/enemies/EnemyGeladeira.tscn<>res://assets/Images/Collectibles/melancia.png<>res://assets/Images/Collectibles/agua.png<>res://assets/Images/Collectibles/jornal.png<>res://assets/Images/Collectibles/sacola.png<>res://assets/Images/Collectibles/refri.png<>res://scenes/stages/StageEnd/DialogsStageEnd.gd<>res://scenes/animation/DialogBoss.tscn<>res://assets/Images/Scenery/placa_fabrica.png<>res://assets/Images/Scenery/placa_fabrica_plastico.png<>res://assets/Images/Scenery/placa_fabrica_metal.png<>res://scenes/stages/StageEnd/SongTransitionTrigger.tscn<>res://assets/Sounds/stage_3/claw_open.mp3<>res://assets/Sounds/stage_3/claw_move.mp3<>res://assets/Images/Scenery/posteE.png<>res://assets/Images/Scenery/posteD.png<>res://assets/Images/Scenery/poste.png
 Stage3End.gd::GDScript::-1::1744987832::0::1::::<>Node2D<>::
@@ -818,7 +818,7 @@ Minigame4.gd::GDScript::-1::1744987832::0::1::::<>Node2D<>::
 SongTransitionTrigger.gd::GDScript::-1::1744987832::0::1::::<>Area2D<>::
 SongTransitionTrigger.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://scenes/stages/StageEnd/SongTransitionTrigger.gd
 TagItems.gd::GDScript::-1::1744987832::0::1::::<>Area2D<>::
-::res://scenes/stages/StageTutorial/::1744987356
+::res://scenes/stages/StageTutorial/::1744993626
 Hint_0.gd::GDScript::-1::1744987832::0::1::::<>CenterContainer<>::
 Hint_0.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://assets/Font/gomarice_shmup_in_the_zone.ttf<>res://assets/Images/UI/Tutorial/2_Teclas.png<>res://assets/Images/MobileButtons/key_blue_right.png<>res://assets/Images/MobileButtons/key_blue_left.png<>res://scenes/stages/StageTutorial/Hint_0.gd
 Hint_1.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://assets/Font/gomarice_shmup_in_the_zone.ttf<>res://assets/Images/UI/Tutorial/Tecla_Grande.png<>res://assets/Images/UI/Tutorial/Tecla.png<>res://scenes/stages/StageTutorial/VBoxContainer.gd<>res://assets/Images/MobileButtons/key_blue_up.png
@@ -831,12 +831,12 @@ TutorialBox2.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://scenes/stage
 TutorialBox3.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://scenes/stages/StageTutorial/Hint_3.tscn<>res://scenes/stages/StageTutorial/TutorialBox.tscn
 TutorialBox4.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://scenes/stages/StageTutorial/TutorialBox.tscn<>res://scenes/stages/StageTutorial/Hint_4.tscn
 TutorialBox.gd::GDScript::-1::1744987832::0::1::::<>MarginContainer<>::
-TutorialBox.tscn::PackedScene::-1::1744987832::0::1::::<><>::res://assets/Font/text_ui_gallery.tres<>res://assets/Images/UI/Misc/Fundo_2.png<>res://scenes/stages/StageTutorial/TutorialBox.gd
+TutorialBox.tscn::PackedScene::3143728869480180407::1744993626::0::1::::<><>::res://assets/Font/text_ui_gallery.tres<>uid://dkise8kqclf5m::::res://assets/Images/UI/Misc/Fundo_2.png<>res://scenes/stages/StageTutorial/TutorialBox.gd
 VBoxContainer.gd::GDScript::-1::1744987832::0::1::::<>VBoxContainer<>::
-::res://scenes/stage_manager/::1744987356
-LoadingScreen.gd::GDScript::-1::1744987831::0::1::::<>Control<>::
+::res://scenes/stage_manager/::1744993365
+LoadingScreen.gd::GDScript::-1::1744987900::0::1::::<>Control<>::
 LoadingScreen.tscn::PackedScene::-1::1744987831::0::1::::<><>::res://assets/Font/text_ui.tres<>res://assets/Images/UI/Misc/menuTile.png<>res://scenes/GameScene.gd<>res://assets/Images/Player/PlayerCharIcon.png<>res://scenes/stage_manager/LoadingScreen.gd
-StageLoader.gd::GDScript::-1::1744987831::0::1::::<>Node<>::
+StageLoader.gd::GDScript::-1::1744993365::0::1::::<>Node<>::
 StageLoader.tscn::PackedScene::-1::1744987831::0::1::::<><>::res://scenes/stage_manager/StageLoader.gd
 StageManager.gd::GDScript::-1::1744987831::0::1::::<>Node<>::
 StageManager.tscn::PackedScene::-1::1744987831::0::1::::<><>::res://scenes/stage_manager/StageManager.gd
@@ -890,7 +890,7 @@ TileShopping.tres::TileSet::-1::1744987830::0::1::::<><>::res://assets/Images/Ti
 UsinaItem.gd::GDScript::-1::1744987830::0::1::::<>CharacterBody2D<>::
 UsinaItem.tscn::PackedScene::-1::1744987830::0::1::::<><>::res://assets/Images/Collectibles/celular.png<>res://scenes/tilesets/UsinaItem.gd<>res://scenes/tilesets/UsinaItemArea.gd<>res://assets/Images/Collectibles/celular_d.png
 UsinaItemArea.gd::GDScript::-1::1744987830::0::1::::<>Area2D<>::
-::res://scenes/world_map/::1744987356
+::res://scenes/world_map/::1744993626
 NavigateDemo.gd::GDScript::-1::1744987830::0::1::::<>Node2D<>::
 PlayButtonMap.gd::GDScript::-1::1744987830::0::1::::<>TextureButton<>::
 Player.gd::GDScript::-1::1744987830::0::1::::<>Node2D<>::
@@ -899,8 +899,8 @@ tileee.tres::TileSet::-1::1744987830::0::1::::<><>::
 TileGrama.png::CompressedTexture2D::1290271375038500076::1744984041::1744987854::1::::<><>::
 TileTerra.png::CompressedTexture2D::8547557899401956829::1744984041::1744987854::1::::<><>::
 TileWalk.tres::TileSet::-1::1744987830::0::1::::<><>::res://scenes/world_map/TileTerra.png<>res://assets/Images/Map/TileGrama.png<>res://assets/Images/Map/TileAgua.png<>res://assets/Images/Map/TileConcreto.png<>res://assets/Images/Map/TileRua.png<>res://assets/Images/Map/TileStage.png
-WorldMap.tscn::PackedScene::-1::1744987830::0::1::::<><>::res://scenes/tilesets/TileCity.tres<>res://scenes/tilesets/TilePipe.tres<>res://scenes/world_map/NavigateDemo.gd<>res://scenes/player/PlayerBody.tscn<>res://assets/Images/Map/TileStage.png<>res://assets/Font/window_title.tres<>res://scenes/world_map/Player.gd<>res://scenes/world_map/PlayButtonMap.gd<>res://assets/Font/text_ui.tres<>res://scenes/menu/painel_style_blue.tres<>res://scenes/world_map/TileWalk.tres<>res://assets/Images/UI/Misc/playIconSmall.png<>res://assets/Images/UI/MainMenu/PlayButton3.png<>res://assets/Images/UI/MainMenu/PlayButton2.png<>res://assets/Images/UI/MainMenu/PlayButton1.png
-::res://text/::1744984582
+WorldMap.tscn::PackedScene::3962358762870952135::1744993626::0::1::::<><>::res://scenes/tilesets/TileCity.tres<>res://scenes/tilesets/TilePipe.tres<>res://scenes/world_map/NavigateDemo.gd<>res://scenes/player/PlayerBody.tscn<>uid://km834aouuf1l::::res://assets/Images/Map/TileStage.png<>res://assets/Font/window_title.tres<>res://scenes/world_map/Player.gd<>res://scenes/world_map/PlayButtonMap.gd<>res://assets/Font/text_ui.tres<>res://scenes/menu/painel_style_blue.tres<>res://scenes/world_map/TileWalk.tres<>uid://dbmkk4yvt6so0::::res://assets/Images/UI/Misc/playIconSmall.png<>uid://b63jk2g2cuspv::::res://assets/Images/UI/MainMenu/PlayButton3.png<>uid://befe8jspketi::::res://assets/Images/UI/MainMenu/PlayButton2.png<>uid://dlhp87vy440rm::::res://assets/Images/UI/MainMenu/PlayButton1.png
+::res://text/::1744987853
 Galeria.csv::Translation::840403522229116992::1744984041::1744987853::1::::<><>::
 Galeria.pt_BR.translation::OptimizedTranslation::2391972191077150031::1744987853::0::1::::<><>::
 Textos Garibot.csv::Translation::3071263231649297446::1744984041::1744987853::1::::<><>::

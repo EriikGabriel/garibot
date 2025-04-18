@@ -29,4 +29,3 @@ func _set_anim_params(f : float):
 	anim_tree["parameters/blend_trash/blend_amount"] = (f * 2) - 1
 	anim_tree["parameters/blend_tree/blend_amount"] = f
 	anim_tree["parameters/blend_tree/blend_amount"] = f
-

@@ -211,6 +211,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("8")
 
 [node name="SongSelect" type="OptionButton" parent="debug"]
@@ -283,80 +285,6 @@ anchor_bottom = 1.0
 offset_left = -20.0
 offset_top = -14.0
 offset_right = 20.0
-
-[node name="TweenFadeIn" type="Tween" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-playback_speed = 2.0
-playback/speed = 2.0
-script = null
-
-[node name="TweenFadeInPause" type="Tween" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
-
-[node name="TweenCrossCurr" type="Tween" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
-
-[node name="TweenCrossNext" type="Tween" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
-
-[node name="TweenSwitchCurr" type="Tween" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
-
-[node name="TweenSwitchNext" type="Tween" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
 
 [connection signal="item_selected" from="debug/SfxSelect" to="debug" method="_on_SfxSelect_item_selected"]
 [connection signal="pressed" from="debug/Play" to="debug" method="_on_Button_pressed"]

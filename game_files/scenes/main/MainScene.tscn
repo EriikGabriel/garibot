@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/main/MainScene.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/mobile_control/mobile_control.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/stage_manager/LoadingScreen.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dufcxykvj6mu7" path="res://scenes/stage_manager/LoadingScreen.tscn" id="3"]
 
 [node name="MainNode" type="Node"]
 script = ExtResource("1")
@@ -13,3 +13,5 @@ script = ExtResource("1")
 visible = false
 layout_mode = 3
 anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
