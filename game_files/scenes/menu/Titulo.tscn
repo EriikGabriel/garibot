@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://558x7ew4vkan"]
+[gd_scene load_steps=5 format=3 uid="uid://558x7ew4vkan"]
 
 [ext_resource type="FontFile" path="res://assets/Font/title.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://46ta8d5p1fwq" path="res://assets/Images/UI/MainMenu/Titulo.png" id="2"]
+[ext_resource type="FontFile" uid="uid://bt1im3pe2jshf" path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" id="3_f8db8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xoywd"]
+font = ExtResource("3_f8db8")
+font_size = 45
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
 
 [node name="Titulo" type="TextureRect"]
 anchors_preset = 10
@@ -23,6 +33,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("1")
-text = "TITLE"
+text = "E O  MUNDO DE RESÍDUOS"
+label_settings = SubResource("LabelSettings_xoywd")
 horizontal_alignment = 1
 vertical_alignment = 1

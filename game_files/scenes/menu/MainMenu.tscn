@@ -9,17 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://d1ehovhnuopye" path="res://assets/Images/Scenery/fundo0.png" id="7"]
 [ext_resource type="Script" path="res://scenes/menu/PlayButton.gd" id="8"]
 [ext_resource type="Script" path="res://scenes/GameScene.gd" id="9"]
-[ext_resource type="StyleBox" path="res://scenes/menu/buttons/IconButtonNormal.tres" id="10"]
-[ext_resource type="StyleBox" path="res://scenes/menu/buttons/IconButtonPress.tres" id="11"]
+[ext_resource type="StyleBox" uid="uid://4shotlrqt624" path="res://scenes/menu/buttons/IconButtonNormal.tres" id="10"]
+[ext_resource type="StyleBox" uid="uid://wire0mvxsx1g" path="res://scenes/menu/buttons/IconButtonPress.tres" id="11"]
 
 [sub_resource type="StyleBoxTexture" id="1"]
 texture = ExtResource("2")
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
 region_rect = Rect2(0, 0, 68, 34)
 
 [sub_resource type="Animation" id="2"]
@@ -69,7 +67,7 @@ anchor_bottom = 1.0
 offset_top = -320.0
 offset_right = 544.0
 texture = ExtResource("4")
-stretch_mode = 2
+stretch_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -82,13 +80,14 @@ offset_top = -200.0
 offset_right = 200.0
 offset_bottom = 200.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer"]
+[node name="NinePatchRect" type="TextureRect" parent="CenterContainer"]
 show_behind_parent = true
+texture_filter = 3
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("5")
-region_rect = Rect2(0, 0, 42, 42)
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/NinePatchRect"]
 layout_mode = 0
@@ -104,6 +103,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 5
@@ -116,7 +116,9 @@ theme_override_styles/hover = SubResource("1")
 theme_override_styles/pressed = ExtResource("11")
 theme_override_styles/normal = ExtResource("10")
 action_mode = 0
-text = "BUTTON_PLAY"
+text = "
+JOGAR
+"
 icon = ExtResource("6")
 script = ExtResource("8")
 
@@ -125,3 +127,5 @@ libraries = {
 "": SubResource("AnimationLibrary_e0sn6")
 }
 autoplay = "move"
+
+[connection signal="if_button_pressed" from="CenterContainer/NinePatchRect/VBoxContainer/PlayButton" to="." method="_on_play_button_if_button_pressed"]

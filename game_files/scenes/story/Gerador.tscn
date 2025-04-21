@@ -1,34 +1,41 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://b72ddgg0igcrb"]
 
-[ext_resource path="res://assets/Images/Printer/gerador_eolico_sem_helice.png" type="Texture2D" id=1]
-[ext_resource path="res://assets/Images/Printer/imp3d_helice0.png" type="Texture2D" id=2]
+[ext_resource type="Texture2D" uid="uid://kmewvtekwdtw" path="res://assets/Images/Printer/gerador_eolico_sem_helice.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://fvvuyu7yvrx4" path="res://assets/Images/Printer/imp3d_helice0.png" id="2"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "girando"
 length = 2.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Pa:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, -360.0 ]
+"values": [0.0, -360.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_65ons"]
+_data = {
+"girando": SubResource("1")
 }
 
 [node name="Gerador" type="Sprite2D"]
-position = Vector2( 616.898, 453.844 )
-texture = ExtResource( 1 )
+position = Vector2(616.898, 453.844)
+texture = ExtResource("1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_65ons")
+}
 autoplay = "girando"
-anims/girando = SubResource( 1 )
 
 [node name="Pa" type="Sprite2D" parent="."]
-position = Vector2( 0, -46 )
+position = Vector2(0, -46)
 rotation = -5.85664
-texture = ExtResource( 2 )
+texture = ExtResource("2")

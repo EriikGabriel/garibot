@@ -22,4 +22,3 @@ func _on_Player_changed_item(new_item):
 		else:
 			get_node("Trashbins/" + cor + "/" + cor).set_modulate(Color(1, 1, 1, 0.5))
 			get_node("Trashbins/" + cor).self_modulate.a = 0.0
-

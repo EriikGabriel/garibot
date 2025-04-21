@@ -30,5 +30,3 @@ func _on_MainMenuButton_pressed():
 		self.get_tree().paused = false
 		StageManager.change_stage("world_map")
 		StageManager.set_checkpointed(false)
-
-

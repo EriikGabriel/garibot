@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dd3xs0w0g7j34"]
 
-[ext_resource path="res://scenes/stage_manager/StageLoader.gd" type="Script" id=2]
+[ext_resource type="Script" path="res://scenes/stage_manager/StageLoader.gd" id="2"]
 
 [node name="StageLoader" type="Node"]
-script = ExtResource( 2 )
+script = ExtResource("2")

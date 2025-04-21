@@ -3,16 +3,16 @@
 [ext_resource type="TileSet" path="res://scenes/tilesets/TileGrass.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://cdq56xx81f5i3" path="res://assets/Images/Tilesets/TilePredio.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://dxqx8mpajhjlk" path="res://assets/Images/Tilesets/TileParedeCinza.png" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/story/Gerador.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b72ddgg0igcrb" path="res://scenes/story/Gerador.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/tilesets/Esteira.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://scenes/game_ui/GameUI.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://scenes/story/Garra.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://d1lqq666e1gml" path="res://scenes/story/Garra.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/Virus.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://scenes/story/Parede.tscn" id="9"]
 [ext_resource type="PackedScene" path="res://scenes/player/PlayerBody.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://scenes/game_ui/GameOver.tscn" id="11"]
 [ext_resource type="PackedScene" path="res://scenes/game_ui/LevelComplete.tscn" id="12"]
-[ext_resource type="PackedScene" path="res://scenes/story/InimigosJuntos.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://dnntyayfbomqh" path="res://scenes/story/InimigosJuntos.tscn" id="13"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/BasicEnemySprite.tscn" id="14"]
 [ext_resource type="PackedScene" path="res://scenes/story/RecicladoraMestre.tscn" id="15"]
 [ext_resource type="PackedScene" path="res://scenes/tilesets/Caixa.tscn" id="16"]
@@ -1835,6 +1835,12 @@ autoplay = "default"
 visible = false
 layout_mode = 3
 anchors_preset = 15
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource("11")]
 layout_mode = 3
@@ -1843,6 +1849,8 @@ anchors_preset = 0
 [node name="LevelComplete" parent="CanvasLayer" instance=ExtResource("12")]
 layout_mode = 3
 anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Espaco" type="Label" parent="CanvasLayer"]
 anchors_preset = 12
