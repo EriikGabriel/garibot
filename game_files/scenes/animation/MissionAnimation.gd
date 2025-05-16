@@ -76,4 +76,4 @@ func _on_RecicleStation_play_end():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		play_end()
-		player.set_ctrl_pressed(false)
+		player.set_ctrl(false)

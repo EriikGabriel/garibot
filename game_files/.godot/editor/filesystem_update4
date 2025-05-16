@@ -15,3 +15,12 @@ res://scenes/station/RecicleStation.tscn
 res://scenes/blasters/ItemBlaster.gd
 res://scenes/blasters/ItemBlaster.tscn
 res://scenes/animation/ControllerAnim.tscn
+res://scenes/story/Begin.gd
+res://scenes/main/MainScene.gd
+res://scenes/tilesets/TileGrass.tres
+res://scenes/tilesets/TilePipe.tres
+res://scenes/animation/MissionAnimation.gd
+res://scenes/player/Player.gd
+res://scenes/stages/ControllerAnim.gd
+res://scenes/minigame/MiniGameTest.gd
+res://scenes/blasters/ItemBlaster.gd
