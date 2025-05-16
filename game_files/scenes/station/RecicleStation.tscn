@@ -1,24 +1,24 @@
-[gd_scene load_steps=39 format=3 uid="uid://b2apk2d3f65mr"]
+[gd_scene load_steps=42 format=3 uid="uid://b2apk2d3f65mr"]
 
 [ext_resource type="Script" uid="uid://cy2o30job7yww" path="res://scenes/station/RecicleStation.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://b6gsf3vye7to0" path="res://assets/Images/Printer/porta_1.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://fvvuyu7yvrx4" path="res://assets/Images/Printer/imp3d_helice0.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://746j70kdjbuf" path="res://assets/Images/Recycler/recic_painel_border_inf0.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://b7sftxc1xqxhg" path="res://assets/Images/Printer/porta_2.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://bustf5hsvtiqx" path="res://assets/Images/RecicSprite.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://cbvqcg1brfmjt" path="res://assets/Images/Printer/filamento.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://de78gg4po3dmk" path="res://assets/Images/Recycler/recic_painel_back.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bipvpdm0p8pjl" path="res://assets/Images/Printer/porta_1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cybrbkvb50s5b" path="res://assets/Images/Printer/imp3d_helice0.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://coxmwhe1dakwb" path="res://assets/Images/Recycler/recic_painel_border_inf0.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c3bv6vptjftcb" path="res://assets/Images/Printer/porta_2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b0mwi7mlf05su" path="res://assets/Images/RecicSprite.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c6c1qgqx2xp2k" path="res://assets/Images/Printer/filamento.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://biaksvfb3nwhh" path="res://assets/Images/Recycler/recic_painel_back.png" id="8"]
 [ext_resource type="PackedScene" uid="uid://be74j7j7du61s" path="res://scenes/minigame/MiniGameTest.tscn" id="9"]
-[ext_resource type="Texture2D" uid="uid://bo6mdkjo36b0p" path="res://assets/Images/Printer/imp3d_comCores_semHelice_3d.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://bo2as4bqciwsd" path="res://assets/Images/Recycler/recic_painel_inf0.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://c2jok4gt7jvud" path="res://assets/Images/Recycler/caixa_reciclagem_3d.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://blcerj50it8hr" path="res://assets/Images/Printer/imp3d_comCores_semHelice_3d.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://c0dvxxlh4dyjb" path="res://assets/Images/Recycler/recic_painel_inf0.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://bq7ib1l1l4jbi" path="res://assets/Images/Recycler/caixa_reciclagem_3d.png" id="12"]
 [ext_resource type="PackedScene" uid="uid://6rm8f4l6up38" path="res://scenes/blasters/ItemBlaster.tscn" id="13"]
 [ext_resource type="FontFile" path="res://assets/Font/text_ui_icon_button.tres" id="14"]
-[ext_resource type="AudioStream" uid="uid://baw22vid7dd02" path="res://assets/Sounds/recycle_anim/recycle_anim_consume.mp3" id="15"]
-[ext_resource type="AudioStream" uid="uid://c6e7wxgud3fly" path="res://assets/Sounds/recycle_anim/recycle_anim_base.mp3" id="16"]
-[ext_resource type="AudioStream" uid="uid://dnd5a0ci3mp4i" path="res://assets/Sounds/recycle_anim/recycle_anim_1.mp3" id="17"]
-[ext_resource type="AudioStream" uid="uid://cnbafrxyynbl1" path="res://assets/Sounds/recycle_anim/recycle_anim_insert.mp3" id="18"]
-[ext_resource type="AudioStream" uid="uid://camuls1n0oagd" path="res://assets/Sounds/recycle_anim/recycle_anim_2.mp3" id="19"]
+[ext_resource type="AudioStream" uid="uid://mn7ysd4bnsec" path="res://assets/Sounds/recycle_anim/recycle_anim_consume.mp3" id="15"]
+[ext_resource type="AudioStream" uid="uid://cgspuag5scua" path="res://assets/Sounds/recycle_anim/recycle_anim_base.mp3" id="16"]
+[ext_resource type="AudioStream" uid="uid://daxio5vb8mvhp" path="res://assets/Sounds/recycle_anim/recycle_anim_1.mp3" id="17"]
+[ext_resource type="AudioStream" uid="uid://noilto6yuv6v" path="res://assets/Sounds/recycle_anim/recycle_anim_insert.mp3" id="18"]
+[ext_resource type="AudioStream" uid="uid://dlqvc7fpw30if" path="res://assets/Sounds/recycle_anim/recycle_anim_2.mp3" id="19"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(80.1658, 32.0066)
@@ -930,6 +930,18 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0), Vector2(0, -1)]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yl5tq"]
+_data = {
+&"begin": SubResource("2"),
+&"move_fil": SubResource("3"),
+&"open_printer": SubResource("4"),
+&"open_recicler": SubResource("5"),
+&"printing": SubResource("6"),
+&"reciclando_off": SubResource("7"),
+&"reciclando_on": SubResource("8"),
+&"working": SubResource("9")
+}
+
 [sub_resource type="Animation" id="10"]
 resource_name = "begin"
 tracks/0/type = "value"
@@ -1837,6 +1849,18 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0), Vector2(0, -1)]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jp4xr"]
+_data = {
+&"begin": SubResource("10"),
+&"move_fil": SubResource("11"),
+&"open_printer": SubResource("12"),
+&"open_recicler": SubResource("13"),
+&"printing": SubResource("14"),
+&"reciclando_off": SubResource("15"),
+&"reciclando_on": SubResource("16"),
+&"working": SubResource("17")
+}
+
 [sub_resource type="Animation" id="18"]
 capture_included = true
 tracks/0/type = "value"
@@ -2024,6 +2048,12 @@ tracks/13/keys = {
 "values": [true, true, true]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mh8bd"]
+_data = {
+&"default": SubResource("18"),
+&"print_scene": SubResource("19")
+}
+
 [node name="RecicleStation" type="Node2D"]
 z_index = -2
 script = ExtResource("1")
@@ -2159,7 +2189,6 @@ texture = ExtResource("11")
 offset = Vector2(0, -21)
 
 [node name="Area2D" type="Area2D" parent="."]
-space_override = 1
 collision_layer = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -2167,49 +2196,32 @@ position = Vector2(213.594, -20.408)
 shape = SubResource("1")
 
 [node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yl5tq")
+}
 autoplay = "begin"
-playback_speed = 0.5
-anims/begin = SubResource("2")
-anims/move_fil = SubResource("3")
-anims/open_printer = SubResource("4")
-anims/open_recicler = SubResource("5")
-anims/printing = SubResource("6")
-anims/reciclando_off = SubResource("7")
-anims/reciclando_on = SubResource("8")
-anims/working = SubResource("9")
-next/working = "open_recicler"
+next/working = &"open_recicler"
 
 [node name="RecyclingAnimation" type="AnimationPlayer" parent="."]
-playback_speed = 0.5
-anims/begin = SubResource("10")
-anims/move_fil = SubResource("11")
-anims/open_printer = SubResource("12")
-anims/open_recicler = SubResource("13")
-anims/printing = SubResource("14")
-anims/reciclando_off = SubResource("15")
-anims/reciclando_on = SubResource("16")
-anims/working = SubResource("17")
-next/working = "open_recicler"
+libraries = {
+&"": SubResource("AnimationLibrary_jp4xr")
+}
+next/working = &"open_recicler"
 
 [node name="Controller" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mh8bd")
+}
 autoplay = "default"
-playback_speed = 0.5
-anims/default = SubResource("18")
-anims/print_scene = SubResource("19")
 
 [node name="Reciclando" type="Label" parent="."]
 visible = false
 offset_top = -224.0
 offset_right = 192.0
 offset_bottom = -184.0
-theme_override_fonts/font = ExtResource("14")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14")
 text = "Reciclando..."
-percent_visible = 0.8
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="sfx" type="Node2D" parent="."]
 

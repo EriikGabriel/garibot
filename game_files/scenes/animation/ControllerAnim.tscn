@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://21qxcl7eqgpn"]
+[gd_scene load_steps=16 format=3 uid="uid://21qxcl7eqgpn"]
 
 [ext_resource type="Script" uid="uid://qplpfbwl17cu" path="res://scenes/stages/ControllerAnim.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://0a86om4x6b5b" path="res://assets/Font/JuanMikes.otf" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/animation/GarianiBody.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://ckehkc6wh41vy" path="res://assets/Images/People/gariani.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://su1ggmds3uq" path="res://assets/Images/Effects/baloon.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://dbmkk4yvt6so0" path="res://assets/Images/UI/Misc/playIconSmall.png" id="7"]
+[ext_resource type="FontFile" uid="uid://dmo1byh5id2ov" path="res://assets/Font/JuanMikes.otf" id="2"]
+[ext_resource type="PackedScene" uid="uid://dlk0m3p1hhc25" path="res://scenes/animation/GarianiBody.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://tjp2kfr2x604" path="res://assets/Images/People/gariani.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://0grcu25dy07x" path="res://assets/Images/Effects/baloon.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cx4w6g5144wmf" path="res://assets/Images/UI/Misc/playIconSmall.png" id="7"]
 
 [sub_resource type="Animation" id="1"]
 length = 6.0
@@ -258,6 +258,15 @@ tracks/0/keys = {
 "values": [false, false]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_npvom"]
+_data = {
+&"conversa0": SubResource("1"),
+&"conversa1": SubResource("2"),
+&"conversa2": SubResource("3"),
+&"conversa_final": SubResource("4"),
+&"default": SubResource("5")
+}
+
 [sub_resource type="FontFile" id="6"]
 fallbacks = Array[Font]([ExtResource("2")])
 cache/0/16/0/ascent = 0.0
@@ -282,13 +291,17 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4je2e"]
+_data = {
+&"default": SubResource("7")
+}
+
 [node name="ControllerAnim" type="Node2D" groups=["mission_animation"]]
 script = ExtResource("1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(398.288, 228.407)
 offset = Vector2(75, -75)
-current = true
 zoom = Vector2(0.65, 0.65)
 limit_left = -400
 limit_right = 8000
@@ -296,12 +309,10 @@ limit_bottom = 900
 limit_smoothed = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_npvom")
+}
 autoplay = "conversa0"
-anims/conversa0 = SubResource("1")
-anims/conversa1 = SubResource("2")
-anims/conversa2 = SubResource("3")
-anims/conversa_final = SubResource("4")
-anims/default = SubResource("5")
 
 [node name="Corpo" parent="." instance=ExtResource("3")]
 
@@ -317,6 +328,7 @@ position = Vector2(400.25, 195.25)
 texture = ExtResource("6")
 
 [node name="Texto" type="Label" parent="Balao"]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -326,18 +338,13 @@ offset_top = -103.0
 offset_right = 271.0
 offset_bottom = 47.0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = SubResource("6")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.878431, 0.45098, 0.164706, 0.490196)
+theme_override_fonts/font = SubResource("6")
 text = "OBRIGADO GARIBOT!
 VOCÊ RECICLOU O LIXO, AJUDOU AS PESSOAS E O MUNDO INTEIRO!"
-valign = 1
-autowrap = true
-percent_visible = 0.0
+vertical_alignment = 1
 max_lines_visible = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FastForwardIcon" type="Sprite2D" parent="."]
 visible = false
@@ -350,5 +357,7 @@ position = Vector2(17, 0)
 texture = ExtResource("7")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="FastForwardIcon"]
+libraries = {
+&"": SubResource("AnimationLibrary_4je2e")
+}
 autoplay = "default"
-anims/default = SubResource("7")

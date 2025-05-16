@@ -44,4 +44,3 @@ func ending_animation():
 	$"3DPrinter/Polygon2D2/ItemBlaster".monitoring = true
 	emit_signal("play_end")
 	$RecyclingAnimation.play("reciclando_off")
-

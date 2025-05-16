@@ -1,8 +1,8 @@
-[gd_scene load_steps=69 format=3 uid="uid://bf336oqrwtojd"]
+[gd_scene load_steps=70 format=3 uid="uid://bf336oqrwtojd"]
 
 [ext_resource type="TileSet" path="res://scenes/tilesets/TileGrass.tres" id="1"]
-[ext_resource type="Texture2D" uid="uid://cdq56xx81f5i3" path="res://assets/Images/Tilesets/TilePredio.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://dxqx8mpajhjlk" path="res://assets/Images/Tilesets/TileParedeCinza.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dfpsr2wxr54gs" path="res://assets/Images/Tilesets/TilePredio.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dfin0pleu5nid" path="res://assets/Images/Tilesets/TileParedeCinza.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://b72ddgg0igcrb" path="res://scenes/story/Gerador.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://crbwgyim7h0l1" path="res://scenes/tilesets/Esteira.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dpvi2rrm52awk" path="res://scenes/game_ui/GameUI.tscn" id="6"]
@@ -16,37 +16,37 @@
 [ext_resource type="PackedScene" uid="uid://cnnuldniniiba" path="res://scenes/enemies/BasicEnemySprite.tscn" id="14"]
 [ext_resource type="PackedScene" uid="uid://6t76q8i0paff" path="res://scenes/story/RecicladoraMestre.tscn" id="15"]
 [ext_resource type="PackedScene" uid="uid://b5dbh1qeighh4" path="res://scenes/tilesets/Caixa.tscn" id="16"]
-[ext_resource type="AudioStream" uid="uid://o0uf4xha60fk" path="res://assets/Sounds/story/story_intro1.mp3" id="17"]
-[ext_resource type="AudioStream" uid="uid://b5e2taahuucbw" path="res://assets/Sounds/story/story_intro3.mp3" id="18"]
-[ext_resource type="AudioStream" uid="uid://rnrdctt1p5u4" path="res://assets/Sounds/story/story_intro2.mp3" id="19"]
-[ext_resource type="Texture2D" uid="uid://brtmj1dr3ek4f" path="res://assets/Images/Scenery/fundo2.1.png" id="20"]
-[ext_resource type="Texture2D" uid="uid://bvk04bxcfg8i1" path="res://assets/Images/Scenery/lixo.png" id="21"]
-[ext_resource type="Texture2D" uid="uid://b3fqy40p23stm" path="res://assets/Images/Collectibles/radio.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://desxx36a62v4y" path="res://assets/Images/Collectibles/fogao.png" id="23"]
-[ext_resource type="Texture2D" uid="uid://b4msdr1au412m" path="res://assets/Images/Scenery/fundo2.0.png" id="24"]
-[ext_resource type="Texture2D" uid="uid://bh1i0xu3xswxh" path="res://assets/Images/Collectibles/microondas.png" id="25"]
-[ext_resource type="Texture2D" uid="uid://dhvh1c7rbje67" path="res://assets/Images/Scenery/saco.png" id="26"]
-[ext_resource type="Texture2D" uid="uid://bmeom7oldsfp3" path="res://assets/Images/Collectibles/placas.png" id="27"]
+[ext_resource type="AudioStream" uid="uid://byb4qbbbct20c" path="res://assets/Sounds/story/story_intro1.mp3" id="17"]
+[ext_resource type="AudioStream" uid="uid://df10apvs0p0y5" path="res://assets/Sounds/story/story_intro3.mp3" id="18"]
+[ext_resource type="AudioStream" uid="uid://ch1deqr1f5f0t" path="res://assets/Sounds/story/story_intro2.mp3" id="19"]
+[ext_resource type="Texture2D" uid="uid://dlebfb3ri5r2j" path="res://assets/Images/Scenery/fundo2.1.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://b3tolxbnck21p" path="res://assets/Images/Scenery/lixo.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://d03vvruwwyayh" path="res://assets/Images/Collectibles/radio.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://cb0q3cnm2ml3a" path="res://assets/Images/Collectibles/fogao.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://gmsyxhrcnsl2" path="res://assets/Images/Scenery/fundo2.0.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://dex2wa3qalc2v" path="res://assets/Images/Collectibles/microondas.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://bk7ykmid78xnj" path="res://assets/Images/Scenery/saco.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://bjeah1ehped5r" path="res://assets/Images/Collectibles/placas.png" id="27"]
 [ext_resource type="Script" uid="uid://cg0fsvf41sjt3" path="res://scenes/story/Begin.gd" id="28"]
-[ext_resource type="Texture2D" uid="uid://bbi013ao4xpak" path="res://assets/Images/Tilesets/TileParedeVermelha.png" id="29"]
-[ext_resource type="FontFile" uid="uid://dpk2uu8fs6q01" path="res://assets/Font/Langdon.otf" id="30"]
-[ext_resource type="Texture2D" uid="uid://cwywft7a1qmja" path="res://assets/Images/Scenery/fundo2.2.png" id="31"]
-[ext_resource type="Texture2D" uid="uid://bdx2n13ofy5du" path="res://assets/Images/Printer/printer_back.png" id="32"]
-[ext_resource type="Texture2D" uid="uid://c1r1ly312ed1" path="res://assets/Images/Scenery/saco2png.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://boae62gs1wxfl" path="res://assets/Images/Tilesets/TileParedeVermelha.png" id="29"]
+[ext_resource type="FontFile" uid="uid://2l4iks3evmvw" path="res://assets/Font/Langdon.otf" id="30"]
+[ext_resource type="Texture2D" uid="uid://1r7hwbufiu0p" path="res://assets/Images/Scenery/fundo2.2.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://bqw7vcv4lt1jh" path="res://assets/Images/Printer/printer_back.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://da7ceproev2op" path="res://assets/Images/Scenery/saco2png.png" id="33"]
 [ext_resource type="FontFile" path="res://assets/Font/text.tres" id="34"]
-[ext_resource type="Texture2D" uid="uid://c14vbkv8ocxdt" path="res://assets/Images/Scenery/ceu3.png" id="35"]
-[ext_resource type="Texture2D" uid="uid://g4m7xflkwamx" path="res://assets/Images/Scenery/fundo1.png" id="36"]
-[ext_resource type="Texture2D" uid="uid://dqawcwt2h3g6b" path="res://assets/Images/Scenery/arvores_fundo.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://wubt0w6xwhco" path="res://assets/Images/Scenery/ceu3.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://b3t8fe7vg8ogy" path="res://assets/Images/Scenery/fundo1.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://cyywu3p02vjg5" path="res://assets/Images/Scenery/arvores_fundo.png" id="37"]
 [ext_resource type="FontFile" path="res://assets/Font/text_ui_gallery.tres" id="38"]
-[ext_resource type="Texture2D" uid="uid://ckmika1ovmutp" path="res://assets/Images/Tilesets/TileCiclovia.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://d37h3ruwalk8j" path="res://assets/Images/Tilesets/TileCiclovia.png" id="39"]
 [ext_resource type="PackedScene" uid="uid://1oboikaahh53" path="res://scenes/stages/UsinaPipe.tscn" id="40"]
 [ext_resource type="PackedScene" uid="uid://caxnfviqj587r" path="res://scenes/stages/PlacaUsina.tscn" id="41"]
 [ext_resource type="PackedScene" uid="uid://dg68hglmx8wsu" path="res://scenes/stages/UsinaFloor.tscn" id="42"]
 [ext_resource type="PackedScene" uid="uid://c2yixyyey146g" path="res://scenes/stages/UsinaVidro.tscn" id="43"]
-[ext_resource type="Texture2D" uid="uid://b88tndlo4cl7s" path="res://assets/Images/MobileButtons/key_blue_pressed.png" id="44"]
-[ext_resource type="Texture2D" uid="uid://cso3roite08gs" path="res://assets/Images/MobileButtons/key_blue_up.png" id="45"]
-[ext_resource type="Texture2D" uid="uid://bpvwgomi1ghor" path="res://assets/Images/UI/Misc/next-dialog.png" id="46"]
-[ext_resource type="Texture2D" uid="uid://c0t5f6gymf3x3" path="res://assets/Images/UI/Misc/next-dialog-2.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://ck3yue8kplsd2" path="res://assets/Images/MobileButtons/key_blue_pressed.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://dq05m2oyeuedp" path="res://assets/Images/MobileButtons/key_blue_up.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://dtwn22kn4s0mc" path="res://assets/Images/UI/Misc/next-dialog.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://wtyilxxqevso" path="res://assets/Images/UI/Misc/next-dialog-2.png" id="47"]
 
 [sub_resource type="Gradient" id="1"]
 offsets = PackedFloat32Array(0.0760234, 0.51462)
@@ -85,35 +85,13 @@ cache/0/16/0/scale = 1.0
 
 [sub_resource type="Animation" id="14"]
 length = 20.0
-tracks/0/type = "bezier"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
+tracks/0/path = NodePath("Garibot/PlayerBody")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Garibot/PlayerBody")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 5, 12, 13.3, 13.5, 15.4, 15.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "values": [{
@@ -139,46 +117,68 @@ tracks/2/keys = {
 "method": &"play"
 }]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Garibot/PlayerBody:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Garibot/PlayerBody:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 5, 12, 12.1, 13.3, 15.6, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 770), Vector2(500, 770), Vector2(1200, 770), Vector2(3000, 930), Vector2(3200, 930), Vector2(3200, 930), Vector2(3600, 930)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Garibot/PlayerBody/CameraPlayer:current")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Garibot/PlayerBody/CameraPlayer:current")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 5, 11.9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false, true]
+"values": [true, true, true]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CameraMundo:current")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CameraMundo:current")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 5, 11.9, 13.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, false]
 }
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CameraMundo:zoom:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CameraMundo:zoom:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("CameraMundo:zoom:x")
+tracks/6/path = NodePath("Scenery/Fade:color:a")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -186,35 +186,13 @@ tracks/6/keys = {
 "points": PackedFloat32Array(),
 "times": PackedFloat32Array()
 }
-tracks/7/type = "bezier"
+tracks/7/type = "method"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("CameraMundo:zoom:y")
+tracks/7/path = NodePath("Garibot/PlayerBody")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Scenery/Fade:color:a")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
-}
-tracks/9/type = "method"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Garibot/PlayerBody")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0, 13.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -225,22 +203,44 @@ tracks/9/keys = {
 "method": &"set_hand_item_visible"
 }]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("NpcsAndItems/Lixo:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NpcsAndItems/Lixo:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0, 13.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NpcsAndItems/Lixo:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("NpcsAndItems/Lixo:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("NpcsAndItems/Lixo:position:x")
+tracks/11/path = NodePath("CameraMundo:position:x")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -251,7 +251,7 @@ tracks/11/keys = {
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("NpcsAndItems/Lixo:position:y")
+tracks/12/path = NodePath("CameraMundo:position:y")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -259,21 +259,22 @@ tracks/12/keys = {
 "points": PackedFloat32Array(),
 "times": PackedFloat32Array()
 }
-tracks/13/type = "bezier"
+tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("CameraMundo:position:x")
+tracks/13/path = NodePath("Garibot/PlayerBody/CameraPlayer:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 0)]
 }
 tracks/14/type = "bezier"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("CameraMundo:position:y")
+tracks/14/path = NodePath("Scenery/Esteira/Garra:position:y")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -281,36 +282,13 @@ tracks/14/keys = {
 "points": PackedFloat32Array(),
 "times": PackedFloat32Array()
 }
-tracks/15/type = "value"
+tracks/15/type = "method"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Garibot/PlayerBody/CameraPlayer:position")
+tracks/15/path = NodePath("Scenery/Esteira/Garra")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(32, 0)]
-}
-tracks/16/type = "bezier"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Scenery/Esteira/Garra:position:y")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
-}
-tracks/17/type = "method"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Scenery/Esteira/Garra")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
 "times": PackedFloat32Array(15),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -318,73 +296,73 @@ tracks/17/keys = {
 "method": &"play"
 }]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("NpcsAndItems/PilhaLixo/Virus2:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-394.079, -80.4648)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("NpcsAndItems/PilhaLixo/Virus3:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-395.085, -23.1265)]
+}
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("NpcsAndItems/PilhaLixo/Virus2:position")
+tracks/18/path = NodePath("Scenery/Esteira:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-394.079, -80.4648)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("NpcsAndItems/PilhaLixo/Virus3:position")
+tracks/19/path = NodePath("Garibot/PlayerBody:scale")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-395.085, -23.1265)]
+"values": [Vector2(1, 1)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Scenery/Esteira:modulate")
+tracks/20/path = NodePath("Music/1:playing")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Garibot/PlayerBody:scale")
+tracks/21/path = NodePath("Scenery/Fade:visible")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("Music/1:playing")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("Scenery/Fade:visible")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1458,8 +1436,34 @@ tracks/2/keys = {
 "values": [Vector2(32, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_5h3es"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_is35c"]
 _data = {
+&"RESET": SubResource("Animation_5h3es"),
 &"cena1": SubResource("14"),
 &"cena2": SubResource("15"),
 &"cena3": SubResource("16"),
@@ -1805,11 +1809,11 @@ scale = Vector2(0.75, 0.75)
 position = Vector2(0, -20)
 
 [node name="PlayerBody" parent="Garibot" instance=ExtResource("10")]
-position = Vector2(780, 770)
+position = Vector2(0, 770)
 rotation = 18.8496
 
 [node name="CameraPlayer" type="Camera2D" parent="Garibot/PlayerBody"]
-position = Vector2(32, -100)
+position = Vector2(32, 0)
 offset = Vector2(0, -30)
 zoom = Vector2(0.5, 0.5)
 limit_bottom = 1000

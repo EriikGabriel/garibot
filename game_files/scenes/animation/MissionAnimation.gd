@@ -5,7 +5,7 @@ var initial_position
 @onready var player = get_tree().get_nodes_in_group("player").front()
 @onready var level_complete = get_tree().get_nodes_in_group("level_complete").front()
 
-@onready var dialog = $Dialog
+@onready var dialog : ControllerAnim = $Dialog
 @onready var camera = $Camera2D
 @onready var camera_anim = $Camera2D/AnimationPlayer
 
@@ -25,7 +25,7 @@ func _ready():
 
 func play_start():
 	current_state = STATE.START
-	player.set_ctrl_pressed(false)
+	player.set_control(false)
 	initial_position = player.get_position()
 	player.set_camera_current(false)
 	camera.set_global_position(player.get_camera_position())
@@ -34,7 +34,7 @@ func play_start():
 
 func play_end():
 	current_state = STATE.END
-	player.set_ctrl_pressed(false)
+	player.set_control(false)
 	player.set_position(initial_position)
 	player.change_orientation(1)
 	player.set_camera_current(false)
@@ -66,7 +66,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "zoom_out":
 		player.set_camera_current(true)
 		player.set_in_cutscene(false)
-		player.set_ctrl_pressed(true)
+		player.set_control(true)
 
 
 func _on_RecicleStation_play_end():

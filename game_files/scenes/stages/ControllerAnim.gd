@@ -1,4 +1,5 @@
 extends Node
+class_name ControllerAnim
 
 const key_shortcut = "roll_attack"
 var hold_time = 0
@@ -14,14 +15,7 @@ var initial_position
 @export var dialog = ["Texto 1", "Texto 2"]
 @export var corpo_anim_override: NodePath = "Corpo/PersonAnimationPlayer"
 @export var anim_player_override: NodePath = "AnimationPlayer"
-@export(String, 
-	"talk_tim",
-	"talk_tim_holo", 
-	"talk_mayor", 
-	"talk_garidog", 
-	"talk_kid", 
-	"talk_boss"
-	) onready var dialog_sound
+@export_enum("talk_tim","talk_tim_holo", "talk_mayor", "talk_garidog", "talk_kid", "talk_boss") var dialog_sound = "talk_tim"
 
 @onready var balao_texto = $Balao/Texto
 @onready var corpo_anim = get_node(corpo_anim_override)
@@ -43,7 +37,7 @@ func fast_forward_input(delta):
 	if !playing:
 		return
 	
-	if $Balao/Texto.percent_visible < 1:
+	if $Balao/Texto.visible_ratio < 1:
 		$NextButton.set_visible(false)
 		if Input.is_action_pressed(key_shortcut):
 			hold_time += delta
@@ -139,7 +133,7 @@ func split_text(text : String) :
 			var s = ""
 			while not words.is_empty() and s.length() + words[0].length() < MAX_CHAR:
 				s += words[0]
-				words.remove(0)
+				words.remove_at(0)
 				if (not words.is_empty() and s.length() + words[0].length() < MAX_CHAR) or string_ends_with_pontuation(s):
 					s += " "
 				else:

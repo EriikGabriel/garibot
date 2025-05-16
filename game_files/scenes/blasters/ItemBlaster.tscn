@@ -1,38 +1,45 @@
 [gd_scene load_steps=5 format=3 uid="uid://6rm8f4l6up38"]
 
 [ext_resource type="Script" uid="uid://cv03bq8rielnk" path="res://scenes/blasters/ItemBlaster.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://byg31f70in51k" path="res://assets/Images/Blasters/vaccum.png" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/game_ui/TutorialWindow.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://drhjyhru4qaph" path="res://assets/Images/Blasters/vaccum.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://d0nju7mhw6ysj" path="res://scenes/game_ui/TutorialWindow.tscn" id="3"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 
 [node name="ItemBlaster" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1")
-__meta__ = {
-"_edit_group_": true
-}
 blaster = "vacuum"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
 
 [node name="Tween" type="Tween" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2")
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-256, -272)
 z_index = 2
+position = Vector2(-256, -272)
 
 [node name="TutorialWindow" parent="Node2D" instance=ExtResource("3")]
 visible = false
+anchors_preset = 8
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 500.0
 offset_bottom = 300.0
 
 [connection signal="body_entered" from="." to="." method="_on_ItemBlaster_body_entered"]
-[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

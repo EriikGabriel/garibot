@@ -1,7 +1,7 @@
-@tool
-extends "res://scenes/item/ItemScript.gd"
+#@tool
+extends Area2D#"res://scenes/item/ItemScript.gd"
 
-@export var blaster # (String, "magnet", "bubble", "shock")
+@export_enum ("magnet", "bubble", "shock") var blaster:= "magnet" 
 
 func _ready():
 	set_blaster(blaster)

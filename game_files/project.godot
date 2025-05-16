@@ -44,6 +44,10 @@ window/size/window_height_override=900
 window/stretch/mode="viewport"
 window/per_pixel_transparency/enabled=true
 
+[dotnet]
+
+project/assembly_name="Garibot_Sequel"
+
 [gdnative]
 
 singletons=[]
