@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://c1jmttn6jq8m6"]
 
-[ext_resource path="res://assets/Images/Bar/Barra/barra-frente.png" type="Texture2D" id=1]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-verde.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-vazia.png" type="Texture2D" id=3]
-[ext_resource path="res://scenes/enemies/FinalBossLife.gd" type="Script" id=4]
+[ext_resource type="Texture2D" uid="uid://dciq74b6d2p45" path="res://assets/Images/Bar/Barra/barra-frente.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bbe3r4rtblvrj" path="res://assets/Images/Bar/Barra/barra-verde.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://8sdgnyu1mqgu" path="res://assets/Images/Bar/Barra/barra-vazia.png" id="3"]
+[ext_resource type="Script" uid="uid://dlgms85mfe8wg" path="res://scenes/enemies/FinalBossLife.gd" id="4"]
 
 [node name="FinalBossLife" type="TextureProgressBar"]
 offset_left = -120.0
 offset_top = -7.0
 offset_right = 392.0
 offset_bottom = 25.0
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2(0.5, 0.5)
 value = 100.0
-texture_under = ExtResource( 3 )
-texture_over = ExtResource( 1 )
-texture_progress = ExtResource( 2 )
-script = ExtResource( 4 )
+texture_under = ExtResource("3")
+texture_over = ExtResource("1")
+texture_progress = ExtResource("2")
+script = ExtResource("4")
 __meta__ = {
 "_edit_use_anchors_": false
 }

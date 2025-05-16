@@ -1,28 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://3ym4i8d4w468"]
 
-[ext_resource path="res://assets/Images/Stage Elements/StageEnd/carimbo.png" type="Texture2D" id=1]
-[ext_resource path="res://scenes/tilesets/Hammer.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://ceno0ha402jo3" path="res://assets/Images/Stage Elements/StageEnd/carimbo.png" id="1"]
+[ext_resource type="Script" uid="uid://crdh0xygi4b5f" path="res://scenes/tilesets/Hammer.gd" id="2"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18.9127, 21.4832 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(37.8254, 42.9664)
 
 [node name="Hammer" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Lower" type="Area2D" parent="."]
 collision_layer = 64
 collision_mask = 32
 
 [node name="Sprite2D" type="Sprite2D" parent="Lower"]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lower"]
-position = Vector2( 0, 20 )
-shape = SubResource( 1 )
+position = Vector2(0, 20)
+shape = SubResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
+
 [connection signal="area_entered" from="Lower" to="." method="_on_Lower_area_entered"]

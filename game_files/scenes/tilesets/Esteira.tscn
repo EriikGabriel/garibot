@@ -1,46 +1,47 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://crbwgyim7h0l1"]
 
-[ext_resource path="res://assets/Images/Tilesets/esteira.png" type="Texture2D" id=1]
-[ext_resource path="res://assets/Images/Tilesets/esteira_left.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/Tilesets/esteira_right.png" type="Texture2D" id=3]
-[ext_resource path="res://scenes/tilesets/Esteira.gd" type="Script" id=4]
+[ext_resource type="Texture2D" uid="uid://1i0xbr5bryyn" path="res://assets/Images/Tilesets/esteira.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://kun3djwbsghf" path="res://assets/Images/Tilesets/esteira_left.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ruj05p47jkel" path="res://assets/Images/Tilesets/esteira_right.png" id="3"]
+[ext_resource type="Script" uid="uid://dwmf7i8vboqj8" path="res://scenes/tilesets/Esteira.gd" id="4"]
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 1, 12 )
+[sub_resource type="RectangleShape2D" id="19"]
+size = Vector2(2, 24)
 
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 1, 4 )
+[sub_resource type="RectangleShape2D" id="20"]
+size = Vector2(2, 8)
 
 [node name="Esteira" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 size = 320
 
 [node name="Meio" type="Sprite2D" parent="."]
-position = Vector2( 0, -16 )
-texture = ExtResource( 1 )
+position = Vector2(0, -16)
+texture = ExtResource("1")
 centered = false
 region_enabled = true
-region_rect = Rect2( -3.2, 0, 320, 32 )
+region_rect = Rect2(-3.2, 0, 320, 32)
 
 [node name="Esq" type="Sprite2D" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
 [node name="Dir" type="Sprite2D" parent="."]
-position = Vector2( 320, 0 )
-texture = ExtResource( 3 )
+position = Vector2(320, 0)
+texture = ExtResource("3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 160, 0 )
+position = Vector2(160, 0)
 collision_layer = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 19 )
+shape = SubResource("19")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 160, -10 )
+position = Vector2(160, -10)
 collision_layer = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 20 )
+shape = SubResource("20")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

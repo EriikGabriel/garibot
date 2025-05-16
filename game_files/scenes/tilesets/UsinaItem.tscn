@@ -1,27 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://dy8j8in3pcukf"]
 
-[ext_resource path="res://assets/Images/Collectibles/celular.png" type="Texture2D" id=1]
-[ext_resource path="res://scenes/tilesets/UsinaItem.gd" type="Script" id=2]
-[ext_resource path="res://scenes/tilesets/UsinaItemArea.gd" type="Script" id=3]
-[ext_resource path="res://assets/Images/Collectibles/celular_d.png" type="Texture2D" id=4]
+[ext_resource type="Texture2D" uid="uid://bxbxa6vgtaiv1" path="res://assets/Images/Collectibles/celular.png" id="1"]
+[ext_resource type="Script" uid="uid://dapiq0w47jk6w" path="res://scenes/tilesets/UsinaItem.gd" id="2"]
+[ext_resource type="Script" uid="uid://cg1llm2rlcvq2" path="res://scenes/tilesets/UsinaItemArea.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://c3rjq3ocgedb0" path="res://assets/Images/Collectibles/celular_d.png" id="4"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 19.9453
 
 [node name="UsinaItem" type="CharacterBody2D"]
 collision_layer = 32
 collision_mask = 14400
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
@@ -29,14 +29,15 @@ __meta__ = {
 [node name="UsinaItemArea" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 64
-script = ExtResource( 3 )
-texture = ExtResource( 4 )
+script = ExtResource("3")
+texture = ExtResource("4")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="UsinaItemArea"]
-shape = SubResource( 1 )
+shape = SubResource("1")
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+
 [connection signal="body_entered" from="UsinaItemArea" to="." method="_on_UsinaItemArea_body_entered"]
 [connection signal="body_exited" from="UsinaItemArea" to="." method="_on_UsinaItemArea_body_exited"]

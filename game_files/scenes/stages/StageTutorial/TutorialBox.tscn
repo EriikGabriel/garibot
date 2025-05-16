@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" path="res://assets/Font/text_ui_gallery.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://dkise8kqclf5m" path="res://assets/Images/UI/Misc/Fundo_2.png" id="2"]
-[ext_resource type="Script" path="res://scenes/stages/StageTutorial/TutorialBox.gd" id="4"]
+[ext_resource type="Script" uid="uid://f16rwvwx6u4i" path="res://scenes/stages/StageTutorial/TutorialBox.gd" id="4"]
 
 [node name="TutorialBox" type="MarginContainer"]
 anchors_preset = 15

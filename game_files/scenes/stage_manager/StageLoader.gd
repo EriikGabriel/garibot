@@ -40,7 +40,7 @@ func _process(_delta: float) -> void:
 		if err == OK:
 			resource = ResourceLoader.load_threaded_get(path_to_load)
 			emit_signal("resource_loaded")
-			change_scene()
+			#change_scene()
 			is_loading = false
 			set_process(false)
 			break

@@ -1,35 +1,35 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://cu3ks0hhjx2c7"]
 
-[ext_resource path="res://scenes/enemies/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://scenes/enemies/Sounds/EnemySfx.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/enemies/Animfuradeira.tscn" type="PackedScene" id=3]
+[ext_resource type="Script" uid="uid://37jtda7cmeqi" path="res://scenes/enemies/Enemy.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dp2i42vlnxbk" path="res://scenes/enemies/Sounds/EnemySfx.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cm3entag0l2e" path="res://scenes/enemies/Animfuradeira.tscn" id="3"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.3782, 17.8389 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(24.7564, 35.6778)
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.3375, 12.585 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(64.675, 25.17)
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 23.4765, 5.37781 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(46.953, 10.7556)
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 85, 12 )
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(170, 24)
 
 [node name="EnemyFuradeira" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 14339
-script = ExtResource( 1 )
+script = ExtResource("1")
 enemyType = 2
 dash_ability = true
 itemType = "furadeira"
 sfxHop_sound = "res://assets/Sounds/enemy_sfx/enemy_furadeira_hop.mp3"
 
-[node name="furadeira" parent="." instance=ExtResource( 3 )]
+[node name="furadeira" parent="." instance=ExtResource("3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.214638, 0.951426 )
-shape = SubResource( 1 )
+position = Vector2(0.214638, 0.951426)
+shape = SubResource("1")
 
 [node name="HopTimer" type="Timer" parent="."]
 autostart = true
@@ -54,40 +54,41 @@ autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
 visible = false
-position = Vector2( 19.778, 3.0409 )
-shape = SubResource( 2 )
+position = Vector2(19.778, 3.0409)
+shape = SubResource("2")
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="HitArea" type="Area2D" parent="."]
-position = Vector2( 20.9373, -3.94832 )
+position = Vector2(20.9373, -3.94832)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
 visible = false
-position = Vector2( -10.4062, -12.3225 )
-shape = SubResource( 3 )
+position = Vector2(-10.4062, -12.3225)
+shape = SubResource("3")
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="VisionArea" type="Area2D" parent="."]
-position = Vector2( 20, -10 )
+position = Vector2(20, -10)
 monitorable = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
 visible = false
 light_mask = 0
-position = Vector2( 75.394, 0.922134 )
-shape = SubResource( 4 )
+position = Vector2(75.394, 0.922134)
+shape = SubResource("4")
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="DashTimer" type="Timer" parent="."]
 
-[node name="EnemySfx" parent="." instance=ExtResource( 2 )]
+[node name="EnemySfx" parent="." instance=ExtResource("2")]
+
 [connection signal="timeout" from="HopTimer" to="." method="_on_HopTimer_timeout"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
 [connection signal="timeout" from="RestTimer" to="." method="_on_RestTimer_timeout"]

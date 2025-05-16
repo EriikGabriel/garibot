@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbt8sabb6tj8t"]
 
-[ext_resource type="Script" path="res://scenes/menu/MenuManager.gd" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/gallery/Galeria.tscn" id="2"]
+[ext_resource type="Script" uid="uid://by15tgay8hm3e" path="res://scenes/menu/MenuManager.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bykphqd3qve6u" path="res://scenes/gallery/Galeria.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://oew6lbrruwtx" path="res://scenes/menu/GameMenu.tscn" id="3"]
 
 [node name="MenuManager" type="Control"]

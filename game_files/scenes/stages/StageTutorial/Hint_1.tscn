@@ -1,25 +1,26 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://dcqip3ogear77"]
 
-[ext_resource path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" type="FontFile" id=1]
-[ext_resource path="res://assets/Images/UI/Tutorial/Tecla_Grande.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/UI/Tutorial/Tecla.png" type="Texture2D" id=3]
-[ext_resource path="res://scenes/stages/StageTutorial/VBoxContainer.gd" type="Script" id=4]
-[ext_resource path="res://assets/Images/MobileButtons/key_blue_up.png" type="Texture2D" id=5]
+[ext_resource type="FontFile" uid="uid://bt1im3pe2jshf" path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" id="1"]
+[ext_resource type="Texture2D" uid="uid://ddp1b2eify1ce" path="res://assets/Images/UI/Tutorial/Tecla_Grande.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://qsimo131kyr5" path="res://assets/Images/UI/Tutorial/Tecla.png" id="3"]
+[ext_resource type="Script" uid="uid://b8uep0gub184l" path="res://scenes/stages/StageTutorial/VBoxContainer.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://cso3roite08gs" path="res://assets/Images/MobileButtons/key_blue_up.png" id="5"]
 
-[sub_resource type="FontFile" id=1]
-size = 30
-outline_size = 1
-outline_color = Color( 0.169006, 0.195251, 0.203125, 1 )
-use_filter = true
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=2]
-size = 50
-outline_size = 1
-outline_color = Color( 0.169006, 0.195251, 0.203125, 1 )
-use_filter = true
-extra_spacing_char = 54
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="Hint" type="CenterContainer"]
 anchor_left = 0.5
@@ -30,7 +31,7 @@ offset_left = -66.0
 offset_top = -34.0
 offset_right = 14.0
 offset_bottom = 46.0
-custom_minimum_size = Vector2( 80, 80 )
+custom_minimum_size = Vector2(80, 80)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,7 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-script = ExtResource( 4 )
+script = ExtResource("4")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,7 +53,7 @@ __meta__ = {
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer"]
 offset_right = 34.0
 offset_bottom = 32.0
-texture = ExtResource( 5 )
+texture = ExtResource("5")
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer"]
@@ -60,7 +61,7 @@ visible = false
 offset_top = 36.0
 offset_right = 77.0
 offset_bottom = 68.0
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,9 +70,9 @@ __meta__ = {
 offset_top = 1.0
 offset_right = 157.0
 offset_bottom = 62.0
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2(0.5, 0.5)
 size_flags_vertical = 1
-theme_override_fonts/font = SubResource( 1 )
+theme_override_fonts/font = SubResource("1")
 text = "espaço"
 align = 1
 valign = 1
@@ -84,7 +85,7 @@ offset_top = 36.0
 offset_right = 34.0
 offset_bottom = 68.0
 size_flags_horizontal = 3
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 stretch_mode = 4
 
 [node name="Label3" type="Label" parent="VBoxContainer/TextureRect"]
@@ -98,9 +99,9 @@ offset_right = 116.824
 offset_bottom = 44.7355
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2(0.5, 0.5)
 size_flags_vertical = 1
-theme_override_fonts/font = SubResource( 2 )
+theme_override_fonts/font = SubResource("2")
 text = "z"
 align = 1
 valign = 1

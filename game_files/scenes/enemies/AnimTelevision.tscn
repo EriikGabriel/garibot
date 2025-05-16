@@ -1,510 +1,528 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://ceym42ttv0vc5"]
 
-[ext_resource path="res://scenes/enemies/BasicEnemySprite.gd" type="Script" id=1]
-[ext_resource path="res://assets/Images/Effects/EnemyVirus.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/Effects/EnemyVirus1.png" type="Texture2D" id=3]
-[ext_resource path="res://assets/Images/Effects/EnemyVirus3.png" type="Texture2D" id=4]
-[ext_resource path="res://assets/Images/Effects/EnemyVirus2.png" type="Texture2D" id=5]
-[ext_resource path="res://assets/Images/Effects/virus_eyes1.png" type="Texture2D" id=6]
-[ext_resource path="res://assets/Images/Effects/virus_eyes.png" type="Texture2D" id=7]
-[ext_resource path="res://assets/Images/EnemiesRig/inimigoTvRig.png" type="Texture2D" id=8]
+[ext_resource type="Script" uid="uid://bs2wfqinbdx7j" path="res://scenes/enemies/BasicEnemySprite.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://7or576qsfici" path="res://assets/Images/Effects/EnemyVirus.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bqgb8evn46o7x" path="res://assets/Images/Effects/EnemyVirus1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bdrodfpov2p6r" path="res://assets/Images/Effects/EnemyVirus3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://g6s2r7y06e0f" path="res://assets/Images/Effects/EnemyVirus2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d1tsb45yx56py" path="res://assets/Images/Effects/virus_eyes1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cn3qc3ytjumr1" path="res://assets/Images/Effects/virus_eyes.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cvkf133rfccop" path="res://assets/Images/EnemiesRig/inimigoTvRig.png" id="8"]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 4.0
-} ]
+}]
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 8.0
-} ]
+}]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "alive"
 length = 4.0
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Corpo/BracoEsq:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, -90.0 ]
+"values": [0.0, -90.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("PernaDir:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 4 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Corpo/Olhos:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 4 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Corpo:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 1.75, 4 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.75, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 15.0, 11.25, 0.0 ]
+"values": [15.0, 11.25, 0.0]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Corpo/BracoDir:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 1.05, 2, 3.15, 4 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.05, 2, 3.15, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [ -45.0, -100.0, -180.0, -180.0, -100.0 ]
+"values": [-45.0, -100.0, -180.0, -180.0, -100.0]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("PernaEsq:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 4 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("PernaDir:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 4 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -6, -2 ) ]
+"values": [Vector2(-6, -2)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("PernaEsq:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 4 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 10, -2 ) ]
+"values": [Vector2(10, -2)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("..:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 1.8, 4 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.8, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.666667, 0.403922, 0.945098, 1 ), Color( 0.666667, 0.403922, 0.945098, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.666667, 0.403922, 0.945098, 1), Color(0.666667, 0.403922, 0.945098, 1)]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Corpo/virus:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0, 1.25, 1.8, 4 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.25, 1.8, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.686275 ), Color( 1, 1, 1, 0.686275 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.686275), Color(1, 1, 1, 0.686275)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Corpo/Olhos:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0, 2.55, 3.65, 4 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 2.55, 3.65, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Corpo:position")
 tracks/11/interp = 2
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0, 2.25, 4 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 2.25, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 20 ), Vector2( 0, 20 ), Vector2( 0, 0 ) ]
+"values": [Vector2(0, 20), Vector2(0, 20), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 resource_name = "trash"
 length = 0.5
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Corpo/BracoEsq:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("PernaDir:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array(  ),
-"transitions": PackedFloat32Array(  ),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [  ]
+"values": []
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Corpo/Olhos:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array(  ),
-"transitions": PackedFloat32Array(  ),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [  ]
+"values": []
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Corpo:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 15.0 ]
+"values": [15.0]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Corpo/BracoDir:rotation_degrees")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ -45.0 ]
+"values": [-45.0]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("PernaEsq:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array(  ),
-"transitions": PackedFloat32Array(  ),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [  ]
+"values": []
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("PernaDir:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array(  ),
-"transitions": PackedFloat32Array(  ),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [  ]
+"values": []
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("PernaEsq:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array(  ),
-"transitions": PackedFloat32Array(  ),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [  ]
+"values": []
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("..:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Corpo/virus:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Corpo/Olhos:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Corpo:position")
 tracks/11/interp = 2
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 20 ) ]
+"values": [Vector2(0, 20)]
 }
 
-[sub_resource type="Animation" id=5]
-loop = true
+[sub_resource type="Animation" id="5"]
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Corpo/BracoEsq:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.45, 0.5, 0.6, 0.7, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.45, 0.5, 0.6, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [ -90.0, -90.0, -100.0, -80.0, -90.0, -90.0 ]
+"values": [-90.0, -90.0, -100.0, -80.0, -90.0, -90.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("PernaDir:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 0.0 ]
+"values": [0.0, 0.0, 0.0]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Corpo/Olhos:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Corpo:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.25, 0.75 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 10.0, -10.0 ]
+"values": [0.0, 10.0, -10.0]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Corpo/BracoDir:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.1, 0.2, 0.95 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ -100.0, -80.0, -90.0, -90.0 ]
+"values": [-100.0, -80.0, -90.0, -90.0]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("PernaEsq:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 0.0 ]
+"values": [0.0, 0.0, 0.0]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("PernaDir:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.5, 0.75, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( -6, -2 ), Vector2( -6, -2 ), Vector2( -6, -6 ), Vector2( -6, -2 ) ]
+"values": [Vector2(-6, -2), Vector2(-6, -2), Vector2(-6, -6), Vector2(-6, -2)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("PernaEsq:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 0.25, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 10, -2 ), Vector2( 10, -6 ), Vector2( 10, -2 ), Vector2( 10, -2 ) ]
+"values": [Vector2(10, -2), Vector2(10, -6), Vector2(10, -2), Vector2(10, -2)]
 }
 
 [node name="Sprite2D" type="Node2D"]
-modulate = Color( 0.666667, 0.403922, 0.945098, 1 )
-position = Vector2( -1, 14.5 )
+modulate = Color(0.666667, 0.403922, 0.945098, 1)
+position = Vector2(-1, 14.5)
 z_as_relative = false
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="AnimRoot" type="Marker2D" parent="."]
-position = Vector2( 0, -7 )
+position = Vector2(0, -7)
 z_index = -2
 z_as_relative = false
 
 [node name="PernaEsq" type="Sprite2D" parent="AnimRoot"]
-position = Vector2( 10, -2 )
+position = Vector2(10, -2)
 z_index = -1
 z_as_relative = false
-texture = ExtResource( 8 )
-offset = Vector2( 0.345753, 6.85661 )
+texture = ExtResource("8")
+offset = Vector2(0.345753, 6.85661)
 region_enabled = true
-region_rect = Rect2( 75, 95, 7, 12 )
+region_rect = Rect2(75, 95, 7, 12)
 
 [node name="Corpo" type="Sprite2D" parent="AnimRoot"]
-position = Vector2( 0, -11.6903 )
+position = Vector2(0, -11.6903)
 z_as_relative = false
-texture = ExtResource( 8 )
-offset = Vector2( 0, -16 )
+texture = ExtResource("8")
+offset = Vector2(0, -16)
 region_enabled = true
-region_rect = Rect2( 48, 20, 30, 61 )
+region_rect = Rect2(48, 20, 30, 61)
 
 [node name="Olhos" type="AnimatedSprite2D" parent="AnimRoot/Corpo"]
-position = Vector2( 4.3125, -32.7529 )
+position = Vector2(4.3125, -32.7529)
 z_index = 1
 z_as_relative = false
-frames = SubResource( 1 )
+frames = SubResource("1")
 playing = true
 
 [node name="BracoEsq" type="Sprite2D" parent="AnimRoot/Corpo"]
-position = Vector2( 12, -12 )
+position = Vector2(12, -12)
 rotation = -1.5708
 z_index = -1
 z_as_relative = false
-texture = ExtResource( 8 )
-offset = Vector2( 0.345753, 6.85661 )
+texture = ExtResource("8")
+offset = Vector2(0.345753, 6.85661)
 region_enabled = true
-region_rect = Rect2( 103, 40, 8, 24 )
+region_rect = Rect2(103, 40, 8, 24)
 
 [node name="BracoDir" type="Sprite2D" parent="AnimRoot/Corpo"]
-position = Vector2( -10, -12 )
+position = Vector2(-10, -12)
 rotation = -1.74533
 z_as_relative = false
-texture = ExtResource( 8 )
-offset = Vector2( 0.345753, 6.85661 )
+texture = ExtResource("8")
+offset = Vector2(0.345753, 6.85661)
 region_enabled = true
-region_rect = Rect2( 18, 41, 8, 24 )
+region_rect = Rect2(18, 41, 8, 24)
 
 [node name="virus" type="AnimatedSprite2D" parent="AnimRoot/Corpo"]
-modulate = Color( 1, 1, 1, 0.686275 )
-position = Vector2( -14.781, -12.891 )
+modulate = Color(1, 1, 1, 0.686275)
+position = Vector2(-14.781, -12.891)
 rotation = -1.68313
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2(0.7, 0.7)
 z_index = -2
 z_as_relative = false
-frames = SubResource( 2 )
+frames = SubResource("2")
 frame = 1
 playing = true
 
 [node name="PernaDir" type="Sprite2D" parent="AnimRoot"]
-position = Vector2( -6, -2 )
+position = Vector2(-6, -2)
 z_index = -1
 z_as_relative = false
-texture = ExtResource( 8 )
-offset = Vector2( 0.345753, 6.85661 )
+texture = ExtResource("8")
+offset = Vector2(0.345753, 6.85661)
 region_enabled = true
-region_rect = Rect2( 52, 95, 7, 12 )
+region_rect = Rect2(52, 95, 7, 12)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimRoot"]
 autoplay = "walk"
 playback_speed = 2.0
-anims/alive = SubResource( 3 )
-anims/trash = SubResource( 4 )
-anims/walk = SubResource( 5 )
+anims/alive = SubResource("3")
+anims/trash = SubResource("4")
+anims/walk = SubResource("5")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 10.2212, -6.86184 )
+position = Vector2(10.2212, -6.86184)
 enabled = true
-target_position = Vector2( 0, 30 )
+target_position = Vector2(0, 30)

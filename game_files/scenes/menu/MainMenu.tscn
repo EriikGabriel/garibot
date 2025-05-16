@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cbwwbhoempco0" path="res://assets/Images/UI/Misc/menuTile.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://4x1bea1fjvda" path="res://assets/Images/UI/MainMenu/PlayIcon.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://d1ehovhnuopye" path="res://assets/Images/Scenery/fundo0.png" id="7"]
-[ext_resource type="Script" path="res://scenes/menu/PlayButton.gd" id="8"]
-[ext_resource type="Script" path="res://scenes/GameScene.gd" id="9"]
+[ext_resource type="Script" uid="uid://24in8hc6ja3b" path="res://scenes/menu/PlayButton.gd" id="8"]
+[ext_resource type="Script" uid="uid://br2fqu5g8wyim" path="res://scenes/GameScene.gd" id="9"]
 [ext_resource type="StyleBox" uid="uid://4shotlrqt624" path="res://scenes/menu/buttons/IconButtonNormal.tres" id="10"]
 [ext_resource type="StyleBox" uid="uid://wire0mvxsx1g" path="res://scenes/menu/buttons/IconButtonPress.tres" id="11"]
 
@@ -38,7 +38,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e0sn6"]
 _data = {
-"move": SubResource("2")
+&"move": SubResource("2")
 }
 
 [node name="MainMenu" type="Control"]
@@ -124,7 +124,7 @@ script = ExtResource("8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_e0sn6")
+&"": SubResource("AnimationLibrary_e0sn6")
 }
 autoplay = "move"
 

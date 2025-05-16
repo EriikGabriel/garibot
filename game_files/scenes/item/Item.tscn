@@ -1,47 +1,47 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://b2tl213kd483e"]
 
-[ext_resource path="res://scenes/item/Item.gd" type="Script" id=1]
-[ext_resource path="res://assets/Images/Collectibles/celular.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Sounds/ui/ui_select.mp3" type="AudioStream" id=3]
-[ext_resource path="res://assets/Images/Effects/light.png" type="Texture2D" id=4]
+[ext_resource type="Script" uid="uid://4m15y5eett0l" path="res://scenes/item/Item.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bxbxa6vgtaiv1" path="res://assets/Images/Collectibles/celular.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://chv1gewpae2m2" path="res://assets/Sounds/ui/ui_select.mp3" id="3"]
+[ext_resource type="Texture2D" uid="uid://blnn863k3wtwy" path="res://assets/Images/Effects/light.png" id="4"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 19.9453
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "default"
 length = 5.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Light3D:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 360.0 ]
+"values": [0.0, 360.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Light3D:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 1.2, 2.5, 3.7, 5 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1.2, 2.5, 3.7, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
 }
 
 [node name="Item" type="Area2D"]
 z_index = 20
 monitoring = false
 collision_layer = 16
-script = ExtResource( 1 )
+script = ExtResource("1")
 itemName = "celular"
 
 [node name="Timer" type="Timer" parent="."]
@@ -50,7 +50,7 @@ one_shot = true
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 __meta__ = {
 "_edit_group_": true
 }
@@ -58,20 +58,20 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Light3D" type="Sprite2D" parent="."]
-self_modulate = Color( 1, 1, 1, 0.588648 )
+self_modulate = Color(1, 1, 1, 0.588648)
 rotation = 5.534
-scale = Vector2( 0.949474, 0.949474 )
-texture = ExtResource( 4 )
+scale = Vector2(0.949474, 0.949474)
+texture = ExtResource("4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource("3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "default"
-anims/default = SubResource( 2 )
+anims/default = SubResource("2")
 
 [connection signal="body_entered" from="." to="." method="_on_Item_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout" flags=6]

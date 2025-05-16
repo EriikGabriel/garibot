@@ -1,220 +1,238 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://cooiivh2p2gjw"]
 
-[ext_resource path="res://assets/Images/EnemiesRig/inimigoFogaoRig.png" type="Texture2D" id=1]
-[ext_resource path="res://assets/Images/Effects/virus_eyes1.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/Effects/virus_eyes.png" type="Texture2D" id=3]
-[ext_resource path="res://assets/Images/Effects/EnemyVirus1.png" type="Texture2D" id=4]
-[ext_resource path="res://assets/Images/Effects/EnemyVirus2.png" type="Texture2D" id=5]
-[ext_resource path="res://assets/Images/Effects/EnemyVirus3.png" type="Texture2D" id=6]
-[ext_resource path="res://assets/Images/Effects/EnemyVirus.png" type="Texture2D" id=7]
+[ext_resource type="Texture2D" uid="uid://cc601ga1xn367" path="res://assets/Images/EnemiesRig/inimigoFogaoRig.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d1tsb45yx56py" path="res://assets/Images/Effects/virus_eyes1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cn3qc3ytjumr1" path="res://assets/Images/Effects/virus_eyes.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bqgb8evn46o7x" path="res://assets/Images/Effects/EnemyVirus1.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://g6s2r7y06e0f" path="res://assets/Images/Effects/EnemyVirus2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bdrodfpov2p6r" path="res://assets/Images/Effects/EnemyVirus3.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://7or576qsfici" path="res://assets/Images/Effects/EnemyVirus.png" id="7"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "Andando"
 length = 1.2
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("corpo/perna2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 4.38404, 22.6101 ), Vector2( 4.38404, 22.6101 ), Vector2( 4.38404, 22.6101 ), Vector2( 4.38404, 22.6101 ) ]
+"values": [Vector2(4.38404, 22.6101), Vector2(4.38404, 22.6101), Vector2(4.38404, 22.6101), Vector2(4.38404, 22.6101)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("corpo/perna2:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, 31.5459, -33.6682, 0.0 ]
+"values": [0.0, 31.5459, -33.6682, 0.0]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("corpo/perna1:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 16.0071, 23.326 ), Vector2( 16.0071, 23.326 ), Vector2( 16.0071, 23.326 ), Vector2( 16.0071, 23.326 ) ]
+"values": [Vector2(16.0071, 23.326), Vector2(16.0071, 23.326), Vector2(16.0071, 23.326), Vector2(16.0071, 23.326)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("corpo/perna1:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, -20.8815, 36.7238, 0.0 ]
+"values": [0.0, -20.8815, 36.7238, 0.0]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("corpo/perna3:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( -3.49966, 23.1941 ), Vector2( -3.49966, 23.1941 ), Vector2( -3.49966, 23.1941 ), Vector2( -3.49966, 23.1941 ) ]
+"values": [Vector2(-3.49966, 23.1941), Vector2(-3.49966, 23.1941), Vector2(-3.49966, 23.1941), Vector2(-3.49966, 23.1941)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("corpo/perna3:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, 32.8611, -32.7155, 0.0 ]
+"values": [0.0, 32.8611, -32.7155, 0.0]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("corpo:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 26.8019, 31.6275 ), Vector2( 26.8019, 31.6275 ), Vector2( 26.8019, 31.6275 ), Vector2( 26.8019, 31.6275 ), Vector2( 26.8019, 31.6275 ) ]
+"values": [Vector2(26.8019, 31.6275), Vector2(26.8019, 31.6275), Vector2(26.8019, 31.6275), Vector2(26.8019, 31.6275), Vector2(26.8019, 31.6275)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("corpo:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.421294, -0.344168, 0.0 ]
+"values": [0.0, 0.421294, -0.344168, 0.0]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("corpo/perna4:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( -17.8071, 23.1941 ), Vector2( -17.8071, 23.1941 ), Vector2( -17.8071, 23.1941 ), Vector2( -17.8071, 23.1941 ) ]
+"values": [Vector2(-17.8071, 23.1941), Vector2(-17.8071, 23.1941), Vector2(-17.8071, 23.1941), Vector2(-17.8071, 23.1941)]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("corpo/perna4:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.9, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, -27.0202, 37.202, 0.0 ]
+"values": [0.0, -27.0202, 37.202, 0.0]
 }
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 4.0
-} ]
+}]
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 8.0
-} ]
+}]
 
 [node name="fogao" type="Node2D"]
-modulate = Color( 0.666667, 0.403922, 0.945098, 1 )
-position = Vector2( -23, -27 )
+modulate = Color(0.666667, 0.403922, 0.945098, 1)
+position = Vector2(-23, -27)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Andando"
-anims/Andando = SubResource( 1 )
+anims/Andando = SubResource("1")
 
 [node name="corpo" type="Polygon2D" parent="."]
-position = Vector2( 26.8019, 31.6275 )
+position = Vector2(26.8019, 31.6275)
 rotation = -0.000171492
-offset = Vector2( -26.7142, -31.9348 )
-texture = ExtResource( 1 )
-polygon = PackedVector2Array( 0.25, 55.5, 53.5, 55.5, 53.75, 0.25, 0, 0.25 )
-uv = PackedVector2Array( 0.25, 55.5, 53.5, 55.5, 53.75, 0.25, 0, 0.25 )
+offset = Vector2(-26.7142, -31.9348)
+texture = ExtResource("1")
+polygon = PackedVector2Array(0.25, 55.5, 53.5, 55.5, 53.75, 0.25, 0, 0.25)
+uv = PackedVector2Array(0.25, 55.5, 53.5, 55.5, 53.75, 0.25, 0, 0.25)
 
 [node name="Olhos" type="AnimatedSprite2D" parent="corpo"]
-position = Vector2( 7.1994, -7.62627 )
+position = Vector2(7.1994, -7.62627)
 rotation = 0.000171492
 z_index = 1
 z_as_relative = false
-frames = SubResource( 2 )
+frames = SubResource("2")
 frame = 1
 playing = true
 
 [node name="perna1" type="Polygon2D" parent="corpo"]
-position = Vector2( 16.0071, 23.326 )
+position = Vector2(16.0071, 23.326)
 rotation = 0.201807
-offset = Vector2( -42.8565, -57.8465 )
-texture = ExtResource( 1 )
-polygon = PackedVector2Array( 38.5, 55.75, 49.75, 55.75, 50, 63.5, 37.5, 64 )
-uv = PackedVector2Array( 38.5, 55.75, 49.75, 55.75, 50, 63.5, 37.5, 64 )
+offset = Vector2(-42.8565, -57.8465)
+texture = ExtResource("1")
+polygon = PackedVector2Array(38.5, 55.75, 49.75, 55.75, 50, 63.5, 37.5, 64)
+uv = PackedVector2Array(38.5, 55.75, 49.75, 55.75, 50, 63.5, 37.5, 64)
 
 [node name="perna2" type="Polygon2D" parent="corpo"]
-position = Vector2( 4.38404, 22.6101 )
+position = Vector2(4.38404, 22.6101)
 rotation = -0.0904721
 z_index = -1
-offset = Vector2( -43.2571, -57.1306 )
-texture = ExtResource( 1 )
-polygon = PackedVector2Array( 38.9845, 55.9072, 47.9845, 55.6572, 48.9845, 64.4072, 37.2345, 63.9072 )
-uv = PackedVector2Array( 38.9845, 55.9072, 47.9845, 55.6572, 48.9845, 64.4072, 37.2345, 63.9072 )
+offset = Vector2(-43.2571, -57.1306)
+texture = ExtResource("1")
+polygon = PackedVector2Array(38.9845, 55.9072, 47.9845, 55.6572, 48.9845, 64.4072, 37.2345, 63.9072)
+uv = PackedVector2Array(38.9845, 55.9072, 47.9845, 55.6572, 48.9845, 64.4072, 37.2345, 63.9072)
 
 [node name="perna3" type="Polygon2D" parent="corpo"]
-position = Vector2( -3.49966, 23.1941 )
+position = Vector2(-3.49966, 23.1941)
 rotation = -0.0710809
-offset = Vector2( -42.8263, -57.6921 )
-texture = ExtResource( 1 )
-polygon = PackedVector2Array( 38.9845, 55.9072, 50.2345, 56.1572, 50.2345, 66.1572, 36.4845, 65.1572 )
-uv = PackedVector2Array( 38.9845, 55.9072, 50.2345, 56.1572, 50.2345, 66.1572, 36.4845, 65.1572 )
+offset = Vector2(-42.8263, -57.6921)
+texture = ExtResource("1")
+polygon = PackedVector2Array(38.9845, 55.9072, 50.2345, 56.1572, 50.2345, 66.1572, 36.4845, 65.1572)
+uv = PackedVector2Array(38.9845, 55.9072, 50.2345, 56.1572, 50.2345, 66.1572, 36.4845, 65.1572)
 
 [node name="perna4" type="Polygon2D" parent="corpo"]
-position = Vector2( -17.8071, 23.1941 )
+position = Vector2(-17.8071, 23.1941)
 rotation = 0.15971
 z_index = -1
-offset = Vector2( -43.1435, -57.7372 )
-texture = ExtResource( 1 )
-polygon = PackedVector2Array( 38.2345, 55.9072, 50.2345, 56.1572, 50.2345, 56.1572, 49.2345, 63.4072, 37.4845, 64.9072 )
-uv = PackedVector2Array( 38.2345, 55.9072, 50.2345, 56.1572, 50.2345, 56.1572, 49.2345, 63.4072, 37.4845, 64.9072 )
+offset = Vector2(-43.1435, -57.7372)
+texture = ExtResource("1")
+polygon = PackedVector2Array(38.2345, 55.9072, 50.2345, 56.1572, 50.2345, 56.1572, 49.2345, 63.4072, 37.4845, 64.9072)
+uv = PackedVector2Array(38.2345, 55.9072, 50.2345, 56.1572, 50.2345, 56.1572, 49.2345, 63.4072, 37.4845, 64.9072)
 
 [node name="virus" type="AnimatedSprite2D" parent="corpo"]
-modulate = Color( 1, 1, 1, 0.686275 )
+modulate = Color(1, 1, 1, 0.686275)
 show_behind_parent = true
-position = Vector2( -33.8028, 5.3667 )
+position = Vector2(-33.8028, 5.3667)
 rotation = -1.5708
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2(0.7, 0.7)
 z_as_relative = false
-frames = SubResource( 3 )
+frames = SubResource("3")
 frame = 3
 playing = true

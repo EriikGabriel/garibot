@@ -11,7 +11,7 @@
 [ext_resource type="StyleBox" path="res://scenes/menu/painel_style_blue.tres" id="9"]
 [ext_resource type="Texture2D" uid="uid://857a510uer0m" path="res://assets/Images/Collectibles/geladeira.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://dny4y7qpl4204" path="res://assets/Images/Stage Elements/happy_emoji.png" id="11"]
-[ext_resource type="Script" path="res://scenes/minigame/MiniGameTest.gd" id="13"]
+[ext_resource type="Script" uid="uid://b3g16wnh3rguk" path="res://scenes/minigame/MiniGameTest.gd" id="13"]
 [ext_resource type="Texture2D" uid="uid://b0quamc8je8n4" path="res://assets/Images/Collectibles/garrafa.png" id="16"]
 [ext_resource type="Texture2D" uid="uid://vafbdxlrckgc" path="res://assets/Images/Collectibles/melancia.png" id="17"]
 

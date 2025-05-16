@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://d2jws2154udh"]
 
-[ext_resource path="res://assets/Images/Bar/Barra/barra-frente.png" type="Texture2D" id=1]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-vazia.png" type="Texture2D" id=2]
-[ext_resource path="res://scenes/enemies/FinalBossLife.gd" type="Script" id=3]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-verde.png" type="Texture2D" id=5]
+[ext_resource type="Texture2D" uid="uid://dciq74b6d2p45" path="res://assets/Images/Bar/Barra/barra-frente.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://8sdgnyu1mqgu" path="res://assets/Images/Bar/Barra/barra-vazia.png" id="2"]
+[ext_resource type="Script" uid="uid://dlgms85mfe8wg" path="res://scenes/enemies/FinalBossLife.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://bbe3r4rtblvrj" path="res://assets/Images/Bar/Barra/barra-verde.png" id="5"]
 
 [node name="Boss_life_control" type="Control"]
 offset_right = 40.0
@@ -17,12 +17,12 @@ offset_left = 8.0
 offset_top = 403.0
 offset_right = 520.0
 offset_bottom = 435.0
-scale = Vector2( 1.5, 0.5 )
+scale = Vector2(1.5, 0.5)
 value = 100.0
-texture_under = ExtResource( 2 )
-texture_over = ExtResource( 1 )
-texture_progress = ExtResource( 5 )
-script = ExtResource( 3 )
+texture_under = ExtResource("2")
+texture_over = ExtResource("1")
+texture_progress = ExtResource("5")
+script = ExtResource("3")
 __meta__ = {
 "_edit_use_anchors_": false
 }

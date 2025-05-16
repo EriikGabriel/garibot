@@ -1,40 +1,40 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://cdd4sn446jdqu"]
 
-[ext_resource path="res://scenes/tilesets/Elevator.gd" type="Script" id=1]
-[ext_resource path="res://assets/Images/Tilesets/elevator.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/Stage Elements/elevator_open.png" type="Texture2D" id=3]
-[ext_resource path="res://assets/Images/Stage Elements/elevator_close.png" type="Texture2D" id=4]
+[ext_resource type="Script" uid="uid://brt1kdlbgx2m2" path="res://scenes/tilesets/Elevator.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://d38j6banff6hq" path="res://assets/Images/Tilesets/elevator.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://c1il4b5qbfimw" path="res://assets/Images/Stage Elements/elevator_open.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c2nkydkystpg5" path="res://assets/Images/Stage Elements/elevator_close.png" id="4"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 47.9791, 4.09476 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(95.9582, 8.18952)
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 63.8246, 96.6628 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(127.649, 193.326)
 
 [node name="Elevator" type="Node2D"]
-script = ExtResource( 1 )
-open = ExtResource( 3 )
-closed = ExtResource( 4 )
+script = ExtResource("1")
+open = ExtResource("3")
+closed = ExtResource("4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2( 0, 1.08072 )
-texture = ExtResource( 2 )
+position = Vector2(0, 1.08072)
+texture = ExtResource("2")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 48.4138, 1.32038 )
+position = Vector2(48.4138, 1.32038)
 collision_layer = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -49.4009, 79.6825 )
-shape = SubResource( 1 )
+position = Vector2(-49.4009, 79.6825)
+shape = SubResource("1")
 
 [node name="ElevatorFloor" type="StaticBody2D" parent="."]
-scale = Vector2( 1, 0.082 )
+scale = Vector2(1, 0.082)
 collision_layer = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorFloor"]
-position = Vector2( 0.546967, 1072.31 )
-shape = SubResource( 2 )
+position = Vector2(0.546967, 1072.31)
+shape = SubResource("2")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

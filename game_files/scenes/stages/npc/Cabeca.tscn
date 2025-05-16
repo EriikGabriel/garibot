@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://cih6edy5173ve"]
 
-[ext_resource path="res://assets/Images/Stage Elements/disabled_emoji.png" type="Texture2D" id=1]
-[ext_resource path="res://scenes/stages/npc/Cabeca.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://buxmisd3rvnws" path="res://assets/Images/Stage Elements/disabled_emoji.png" id="1"]
+[ext_resource type="Script" uid="uid://cpmxxgrr4hkoh" path="res://scenes/stages/npc/Cabeca.gd" id="2"]
 
 [node name="Cabeca" type="CenterContainer"]
 offset_right = 48.0
 offset_bottom = 48.0
-custom_minimum_size = Vector2( 32, 32 )
-script = ExtResource( 2 )
+custom_minimum_size = Vector2(32, 32)
+script = ExtResource("2")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -15,4 +15,4 @@ __meta__ = {
 [node name="Sprite2D" type="TextureRect" parent="."]
 offset_right = 48.0
 offset_bottom = 48.0
-texture = ExtResource( 1 )
+texture = ExtResource("1")

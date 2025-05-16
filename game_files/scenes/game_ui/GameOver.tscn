@@ -1,69 +1,70 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://bhb72il4y333c"]
 
-[ext_resource path="res://scenes/game_ui/GameOverButton.gd" type="Script" id=1]
-[ext_resource path="res://scenes/game_ui/GameOver.gd" type="Script" id=3]
-[ext_resource path="res://scenes/menu/buttons/RedButtonNormal.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" type="FontFile" id=5]
-[ext_resource path="res://scenes/menu/buttons/GreenButtonNormal.tres" type="StyleBox" id=6]
-[ext_resource path="res://assets/Font/text_ui.tres" type="FontFile" id=7]
-[ext_resource path="res://assets/Images/UI/Storyboard/GameOver.png" type="Texture2D" id=8]
+[ext_resource type="Script" uid="uid://c6x117on6s35j" path="res://scenes/game_ui/GameOverButton.gd" id="1"]
+[ext_resource type="Script" uid="uid://cfp5q1074w2hb" path="res://scenes/game_ui/GameOver.gd" id="3"]
+[ext_resource type="StyleBox" path="res://scenes/menu/buttons/RedButtonNormal.tres" id="4"]
+[ext_resource type="FontFile" uid="uid://bt1im3pe2jshf" path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" id="5"]
+[ext_resource type="StyleBox" path="res://scenes/menu/buttons/GreenButtonNormal.tres" id="6"]
+[ext_resource type="FontFile" path="res://assets/Font/text_ui.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://cjnrbygqbpfpi" path="res://assets/Images/UI/Storyboard/GameOver.png" id="8"]
 
-[sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 800, 492 )
+[sub_resource type="StyleBoxTexture" id="1"]
+texture = ExtResource("8")
+region_rect = Rect2(0, 0, 800, 492)
 
-[sub_resource type="FontFile" id=2]
-size = 68
-outline_size = 3
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("5")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 length = 3.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 resource_name = "Hide"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0)]
 }
 
-[node name="GameOver" type="Control" groups=[
-"game_over",
-]]
+[node name="GameOver" type="Control" groups=["game_over"]]
 process_mode = 3
 visible = false
 mouse_filter = 1
-script = ExtResource( 3 )
+script = ExtResource("3")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
 offset_right = 802.0
 offset_bottom = 454.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource( 1 )
+theme_override_styles/panel = SubResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,16 +76,16 @@ offset_left = 10.0
 offset_top = -34.0
 offset_right = 170.0
 offset_bottom = 34.0
-theme_override_styles/hover = ExtResource( 4 )
-theme_override_styles/pressed = ExtResource( 4 )
-theme_override_styles/focus = ExtResource( 4 )
-theme_override_styles/disabled = ExtResource( 4 )
-theme_override_styles/normal = ExtResource( 4 )
-theme_override_fonts/font = ExtResource( 7 )
+theme_override_styles/hover = ExtResource("4")
+theme_override_styles/pressed = ExtResource("4")
+theme_override_styles/focus = ExtResource("4")
+theme_override_styles/disabled = ExtResource("4")
+theme_override_styles/normal = ExtResource("4")
+theme_override_fonts/font = ExtResource("7")
 disabled = true
 focus_mode = 0
 text = "BUTTON_EXIT"
-script = ExtResource( 1 )
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -100,18 +101,18 @@ offset_left = -182.0
 offset_top = -34.0
 offset_right = -10.0
 offset_bottom = 34.0
-pivot_offset = Vector2( 138.957, 0.545349 )
+pivot_offset = Vector2(138.957, 0.545349)
 focus_mode = 0
-theme_override_styles/hover = ExtResource( 6 )
-theme_override_styles/pressed = ExtResource( 6 )
-theme_override_styles/focus = ExtResource( 6 )
-theme_override_styles/disabled = ExtResource( 6 )
-theme_override_styles/normal = ExtResource( 6 )
-theme_override_fonts/font = ExtResource( 7 )
+theme_override_styles/hover = ExtResource("6")
+theme_override_styles/pressed = ExtResource("6")
+theme_override_styles/focus = ExtResource("6")
+theme_override_styles/disabled = ExtResource("6")
+theme_override_styles/normal = ExtResource("6")
+theme_override_fonts/font = ExtResource("7")
 disabled = true
 focus_mode = 0
 text = "BUTTON_BACK"
-script = ExtResource( 1 )
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -120,10 +121,10 @@ texto = "VOLTAR"
 [node name="Game Over" type="Label" parent="Panel"]
 anchor_right = 1.0
 offset_bottom = 114.0
-theme_override_fonts/font = SubResource( 2 )
-theme_override_colors/font_color = Color( 0.929412, 0.156863, 0.00392157, 1 )
-theme_override_colors/font_outline_color = Color( 0, 0, 0, 1 )
-theme_override_colors/font_shadow_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource("2")
+theme_override_colors/font_color = Color(0.929412, 0.156863, 0.00392157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 text = "GAME_OVER"
@@ -136,8 +137,8 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Panel")
 autoplay = "Hide"
-anims/GameOver = SubResource( 3 )
-anims/Hide = SubResource( 4 )
+anims/GameOver = SubResource("3")
+anims/Hide = SubResource("4")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

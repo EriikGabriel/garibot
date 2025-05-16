@@ -1,69 +1,67 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=18 format=3 uid="uid://bwdb0v41hm82d"]
 
-[ext_resource path="res://scenes/game_ui/TextureProgress.gd" type="Script" id=1]
-[ext_resource path="res://scenes/game_ui/Mission_Progress.gd" type="Script" id=2]
-[ext_resource path="res://scenes/game_ui/Healthbar.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-frente.png" type="Texture2D" id=4]
-[ext_resource path="res://assets/Images/check.png" type="Texture2D" id=5]
-[ext_resource path="res://assets/Images/Lixeira/lixeira_azul.png" type="Texture2D" id=6]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-vazia.png" type="Texture2D" id=7]
-[ext_resource path="res://assets/Images/Bar/Barra/barra-cheia.png" type="Texture2D" id=8]
-[ext_resource path="res://scenes/game_ui/BonusGameUI.gd" type="Script" id=9]
-[ext_resource path="res://assets/Images/Minigame/x_indicator.png" type="Texture2D" id=10]
-[ext_resource path="res://assets/Images/Minigame/z_indicator.png" type="Texture2D" id=11]
-[ext_resource path="res://assets/Font/text_ui.tres" type="FontFile" id=13]
-[ext_resource path="res://assets/Images/Lixeira/lixeira_verde.png" type="Texture2D" id=14]
-[ext_resource path="res://assets/Images/Lixeira/lixeira_amarela.png" type="Texture2D" id=15]
-[ext_resource path="res://assets/Images/Lixeira/lixeira_vermelha.png" type="Texture2D" id=16]
-[ext_resource path="res://assets/Images/Lixeira/lixeira_marrom.png" type="Texture2D" id=17]
+[ext_resource type="Script" uid="uid://c4i6qhtobgib6" path="res://scenes/game_ui/TextureProgress.gd" id="1"]
+[ext_resource type="Script" uid="uid://cb0jna861q3gn" path="res://scenes/game_ui/Mission_Progress.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/game_ui/Healthbar.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://dciq74b6d2p45" path="res://assets/Images/Bar/Barra/barra-frente.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://brutpysqb3etc" path="res://assets/Images/check.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cuupuavajnrol" path="res://assets/Images/Lixeira/lixeira_azul.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://8sdgnyu1mqgu" path="res://assets/Images/Bar/Barra/barra-vazia.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dbudrpw4gqmk2" path="res://assets/Images/Bar/Barra/barra-cheia.png" id="8"]
+[ext_resource type="Script" uid="uid://ia3yx5kkbncr" path="res://scenes/game_ui/BonusGameUI.gd" id="9"]
+[ext_resource type="Texture2D" uid="uid://btgo57auhk5qp" path="res://assets/Images/Minigame/x_indicator.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bnb8b1owy0lk8" path="res://assets/Images/Minigame/z_indicator.png" id="11"]
+[ext_resource type="FontFile" path="res://assets/Font/text_ui.tres" id="13"]
+[ext_resource type="Texture2D" uid="uid://pmxxgn8b05wc" path="res://assets/Images/Lixeira/lixeira_verde.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://bky6e7letaw5y" path="res://assets/Images/Lixeira/lixeira_amarela.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://btgq3bieuv6p2" path="res://assets/Images/Lixeira/lixeira_vermelha.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://cac4xeo13ogxc" path="res://assets/Images/Lixeira/lixeira_marrom.png" id="17"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "default"
 length = 1.5
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Trashbins/Z:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.9, 1.1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Trashbins/X:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.9, 1.1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[node name="GameUI" type="Control" groups=[
-"game_ui",
-]]
+[node name="GameUI" type="Control" groups=["game_ui"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "default"
-anims/default = SubResource( 1 )
+anims/default = SubResource("1")
 
 [node name="Trashbins" type="HBoxContainer" parent="."]
 offset_right = 800.0
 offset_bottom = 100.0
-custom_minimum_size = Vector2( 800, 100 )
+custom_minimum_size = Vector2(800, 100)
 theme_override_constants/separation = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,7 +70,7 @@ __meta__ = {
 [node name="Z" type="TextureRect" parent="Trashbins"]
 offset_right = 64.0
 offset_bottom = 100.0
-texture = ExtResource( 11 )
+texture = ExtResource("11")
 stretch_mode = 6
 
 [node name="Amarelo" type="ColorRect" parent="Trashbins"]
@@ -80,7 +78,7 @@ offset_left = 66.0
 offset_right = 198.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
-color = Color( 0, 0, 0, 0.423529 )
+color = Color(0, 0, 0, 0.423529)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,7 +107,7 @@ alignment = 1
 offset_left = 52.0
 offset_right = 84.0
 offset_bottom = 48.0
-texture = ExtResource( 15 )
+texture = ExtResource("15")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -118,7 +116,7 @@ __meta__ = {
 offset_top = 52.0
 offset_right = 136.0
 offset_bottom = 75.0
-theme_override_fonts/font = ExtResource( 13 )
+theme_override_fonts/font = ExtResource("13")
 text = "NOME_LATA"
 align = 1
 __meta__ = {
@@ -130,7 +128,7 @@ offset_left = 200.0
 offset_right = 332.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
-color = Color( 0, 0, 0, 0.423529 )
+color = Color(0, 0, 0, 0.423529)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -159,7 +157,7 @@ alignment = 1
 offset_left = 52.0
 offset_right = 84.0
 offset_bottom = 48.0
-texture = ExtResource( 6 )
+texture = ExtResource("6")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -168,7 +166,7 @@ __meta__ = {
 offset_top = 52.0
 offset_right = 136.0
 offset_bottom = 75.0
-theme_override_fonts/font = ExtResource( 13 )
+theme_override_fonts/font = ExtResource("13")
 text = "NOME_LATA"
 align = 1
 __meta__ = {
@@ -180,7 +178,7 @@ offset_left = 334.0
 offset_right = 466.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
-color = Color( 0, 0, 0, 0.423529 )
+color = Color(0, 0, 0, 0.423529)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -210,7 +208,7 @@ alignment = 1
 offset_left = 52.0
 offset_right = 84.0
 offset_bottom = 48.0
-texture = ExtResource( 17 )
+texture = ExtResource("17")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -219,7 +217,7 @@ __meta__ = {
 offset_top = 52.0
 offset_right = 136.0
 offset_bottom = 75.0
-theme_override_fonts/font = ExtResource( 13 )
+theme_override_fonts/font = ExtResource("13")
 text = "NOME_LATA"
 align = 1
 __meta__ = {
@@ -231,7 +229,7 @@ offset_left = 468.0
 offset_right = 600.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
-color = Color( 0, 0, 0, 0.423529 )
+color = Color(0, 0, 0, 0.423529)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -260,7 +258,7 @@ alignment = 1
 offset_left = 52.0
 offset_right = 84.0
 offset_bottom = 48.0
-texture = ExtResource( 14 )
+texture = ExtResource("14")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -269,7 +267,7 @@ __meta__ = {
 offset_top = 52.0
 offset_right = 136.0
 offset_bottom = 75.0
-theme_override_fonts/font = ExtResource( 13 )
+theme_override_fonts/font = ExtResource("13")
 text = "NOME_LATA"
 align = 1
 __meta__ = {
@@ -281,7 +279,7 @@ offset_left = 602.0
 offset_right = 734.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
-color = Color( 0, 0, 0, 0.423529 )
+color = Color(0, 0, 0, 0.423529)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -309,7 +307,7 @@ alignment = 1
 offset_left = 52.0
 offset_right = 84.0
 offset_bottom = 48.0
-texture = ExtResource( 16 )
+texture = ExtResource("16")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -318,7 +316,7 @@ __meta__ = {
 offset_top = 52.0
 offset_right = 136.0
 offset_bottom = 75.0
-theme_override_fonts/font = ExtResource( 13 )
+theme_override_fonts/font = ExtResource("13")
 text = "NOME_LATA"
 align = 1
 __meta__ = {
@@ -329,7 +327,7 @@ __meta__ = {
 offset_left = 736.0
 offset_right = 800.0
 offset_bottom = 100.0
-texture = ExtResource( 10 )
+texture = ExtResource("10")
 stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -351,11 +349,11 @@ theme_override_constants/separation = 0
 alignment = 1
 
 [node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
 offset_left = 132.0
 offset_right = 142.0
 offset_bottom = 32.0
-custom_minimum_size = Vector2( 10, 0 )
+custom_minimum_size = Vector2(10, 0)
 
 [node name="CenterContainer3" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
 visible = false
@@ -378,18 +376,16 @@ offset_right = 512.0
 offset_bottom = 32.0
 size_flags_horizontal = 0
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/CenterContainer/MarginContainer" groups=[
-"value_bar",
-]]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/CenterContainer/MarginContainer" groups=["value_bar"]]
 offset_right = 512.0
 offset_bottom = 32.0
-texture_under = ExtResource( 7 )
-texture_over = ExtResource( 4 )
-texture_progress = ExtResource( 8 )
-script = ExtResource( 1 )
+texture_under = ExtResource("7")
+texture_over = ExtResource("4")
+texture_progress = ExtResource("8")
+script = ExtResource("1")
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
 offset_left = 654.0
 offset_right = 658.0
 offset_bottom = 32.0
@@ -409,12 +405,12 @@ offset_bottom = 44.0
 offset_right = 32.0
 offset_bottom = 25.0
 size_flags_horizontal = 0
-texture = ExtResource( 5 )
-script = ExtResource( 2 )
+texture = ExtResource("5")
+script = ExtResource("2")
 
 [node name="VSeparator3" type="VSeparator" parent="MarginContainer/HBoxContainer"]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
 offset_left = 526.0
 offset_right = 530.0
 offset_bottom = 64.0
@@ -431,12 +427,13 @@ offset_right = 80.0
 offset_bottom = 64.0
 grow_vertical = 0
 
-[node name="Healthbar" parent="MarginContainer/HBoxContainer/CenterContainer2/MarginContainer2" instance=ExtResource( 3 )]
+[node name="Healthbar" parent="MarginContainer/HBoxContainer/CenterContainer2/MarginContainer2" instance=ExtResource("3")]
 
 [node name="VSeparator4" type="VSeparator" parent="MarginContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
 offset_left = 658.0
 offset_right = 668.0
 offset_bottom = 32.0
-custom_minimum_size = Vector2( 10, 0 )
+custom_minimum_size = Vector2(10, 0)
+
 [connection signal="value_changed" from="MarginContainer/HBoxContainer/CenterContainer/MarginContainer/TextureProgressBar" to="MarginContainer/HBoxContainer/Help/MarginContainer/Mission_Progress" method="_on_TextureProgress_value_changed"]

@@ -1,35 +1,35 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://llsuwhbhtkyt"]
 
-[ext_resource path="res://scenes/enemies/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://scenes/enemies/AnimPrinter.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/enemies/Sounds/EnemySfx.tscn" type="PackedScene" id=3]
+[ext_resource type="Script" uid="uid://37jtda7cmeqi" path="res://scenes/enemies/Enemy.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b8rnjwryw6y0e" path="res://scenes/enemies/AnimPrinter.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dp2i42vlnxbk" path="res://scenes/enemies/Sounds/EnemySfx.tscn" id="3"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 11.8517 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(20, 23.7034)
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id="2"]
 radius = 14.0849
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 15.5314, 4.04878 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(31.0628, 8.09756)
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 85, 12 )
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(170, 24)
 
 [node name="EnemyPrinter" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 14339
-script = ExtResource( 1 )
+script = ExtResource("1")
 enemyType = 3
 shoot_ability = true
 itemType = "impressora"
 sfxShoot_sound = "res://assets/Sounds/enemy_sfx/enemy_printer_shoot.mp3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 6 )
-shape = SubResource( 1 )
+position = Vector2(0, 6)
+shape = SubResource("1")
 
-[node name="Sprite2D" parent="." instance=ExtResource( 2 )]
+[node name="Sprite2D" parent="." instance=ExtResource("2")]
 
 [node name="HopTimer" type="Timer" parent="."]
 autostart = true
@@ -53,29 +53,30 @@ autostart = true
 [node name="DamageArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
-position = Vector2( 1, 3 )
-shape = SubResource( 2 )
+position = Vector2(1, 3)
+shape = SubResource("2")
 
 [node name="HitArea" type="Area2D" parent="."]
-position = Vector2( 21, 0 )
+position = Vector2(21, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
-position = Vector2( -18.9924, -11.369 )
-shape = SubResource( 3 )
+position = Vector2(-18.9924, -11.369)
+shape = SubResource("3")
 
 [node name="VisionArea" type="Area2D" parent="."]
-position = Vector2( 20, -10 )
+position = Vector2(20, -10)
 monitorable = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
 light_mask = 0
-position = Vector2( 80, 0 )
-shape = SubResource( 4 )
+position = Vector2(80, 0)
+shape = SubResource("4")
 
 [node name="DashTimer" type="Timer" parent="."]
 
-[node name="EnemySfx" parent="." instance=ExtResource( 3 )]
+[node name="EnemySfx" parent="." instance=ExtResource("3")]
+
 [connection signal="timeout" from="HopTimer" to="." method="_on_HopTimer_timeout"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
 [connection signal="timeout" from="RestTimer" to="." method="_on_RestTimer_timeout"]

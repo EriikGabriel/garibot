@@ -1,2208 +1,2209 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=39 format=3 uid="uid://b2apk2d3f65mr"]
 
-[ext_resource path="res://scenes/station/RecicleStation.gd" type="Script" id=1]
-[ext_resource path="res://assets/Images/Printer/porta_1.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/Printer/imp3d_helice0.png" type="Texture2D" id=3]
-[ext_resource path="res://assets/Images/Recycler/recic_painel_border_inf0.png" type="Texture2D" id=4]
-[ext_resource path="res://assets/Images/Printer/porta_2.png" type="Texture2D" id=5]
-[ext_resource path="res://assets/Images/RecicSprite.png" type="Texture2D" id=6]
-[ext_resource path="res://assets/Images/Printer/filamento.png" type="Texture2D" id=7]
-[ext_resource path="res://assets/Images/Recycler/recic_painel_back.png" type="Texture2D" id=8]
-[ext_resource path="res://scenes/minigame/MiniGameTest.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/Images/Printer/imp3d_comCores_semHelice_3d.png" type="Texture2D" id=10]
-[ext_resource path="res://assets/Images/Recycler/recic_painel_inf0.png" type="Texture2D" id=11]
-[ext_resource path="res://assets/Images/Recycler/caixa_reciclagem_3d.png" type="Texture2D" id=12]
-[ext_resource path="res://scenes/blasters/ItemBlaster.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/Font/text_ui_icon_button.tres" type="FontFile" id=14]
-[ext_resource path="res://assets/Sounds/recycle_anim/recycle_anim_consume.mp3" type="AudioStream" id=15]
-[ext_resource path="res://assets/Sounds/recycle_anim/recycle_anim_base.mp3" type="AudioStream" id=16]
-[ext_resource path="res://assets/Sounds/recycle_anim/recycle_anim_1.mp3" type="AudioStream" id=17]
-[ext_resource path="res://assets/Sounds/recycle_anim/recycle_anim_insert.mp3" type="AudioStream" id=18]
-[ext_resource path="res://assets/Sounds/recycle_anim/recycle_anim_2.mp3" type="AudioStream" id=19]
+[ext_resource type="Script" uid="uid://cy2o30job7yww" path="res://scenes/station/RecicleStation.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b6gsf3vye7to0" path="res://assets/Images/Printer/porta_1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://fvvuyu7yvrx4" path="res://assets/Images/Printer/imp3d_helice0.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://746j70kdjbuf" path="res://assets/Images/Recycler/recic_painel_border_inf0.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b7sftxc1xqxhg" path="res://assets/Images/Printer/porta_2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bustf5hsvtiqx" path="res://assets/Images/RecicSprite.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cbvqcg1brfmjt" path="res://assets/Images/Printer/filamento.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://de78gg4po3dmk" path="res://assets/Images/Recycler/recic_painel_back.png" id="8"]
+[ext_resource type="PackedScene" uid="uid://be74j7j7du61s" path="res://scenes/minigame/MiniGameTest.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://bo6mdkjo36b0p" path="res://assets/Images/Printer/imp3d_comCores_semHelice_3d.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bo2as4bqciwsd" path="res://assets/Images/Recycler/recic_painel_inf0.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://c2jok4gt7jvud" path="res://assets/Images/Recycler/caixa_reciclagem_3d.png" id="12"]
+[ext_resource type="PackedScene" uid="uid://6rm8f4l6up38" path="res://scenes/blasters/ItemBlaster.tscn" id="13"]
+[ext_resource type="FontFile" path="res://assets/Font/text_ui_icon_button.tres" id="14"]
+[ext_resource type="AudioStream" uid="uid://baw22vid7dd02" path="res://assets/Sounds/recycle_anim/recycle_anim_consume.mp3" id="15"]
+[ext_resource type="AudioStream" uid="uid://c6e7wxgud3fly" path="res://assets/Sounds/recycle_anim/recycle_anim_base.mp3" id="16"]
+[ext_resource type="AudioStream" uid="uid://dnd5a0ci3mp4i" path="res://assets/Sounds/recycle_anim/recycle_anim_1.mp3" id="17"]
+[ext_resource type="AudioStream" uid="uid://cnbafrxyynbl1" path="res://assets/Sounds/recycle_anim/recycle_anim_insert.mp3" id="18"]
+[ext_resource type="AudioStream" uid="uid://camuls1n0oagd" path="res://assets/Sounds/recycle_anim/recycle_anim_2.mp3" id="19"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40.0829, 16.0033 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(80.1658, 32.0066)
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "begin"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Recicler:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.001 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 0, 0 ]
+"values": [0, 0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Recicler:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, -1 ) ]
+"values": [Vector2(0, -1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("3DPrinter/Generator:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("3DPrinter:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Recicler/Polygon2D/DoorUp:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Recicler/Polygon2D/DoorUp:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -64, -95.5629 ) ]
+"values": [Vector2(-64, -95.5629)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Recicler/Polygon2D/BorderUp:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -64, -54 ) ]
+"values": [Vector2(-64, -54)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Recicler/Polygon2D/BorderUp:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1e-05)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Recicler/Polygon2D/BorderBottom:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -64, -51 ) ]
+"values": [Vector2(-64, -51)]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Recicler/Polygon2D/BorderBottom:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1e-05)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Recicler/Polygon2D/DoorBottom:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -64, -9.56292 ) ]
+"values": [Vector2(-64, -9.56292)]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Recicler/Polygon2D/DoorBottom:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 16, 0 ) ]
+"values": [Vector2(16, 0)]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
 tracks/14/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -16, 0 ) ]
+"values": [Vector2(-16, 0)]
 }
 tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:rotation_degrees")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
 tracks/15/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:rotation_degrees")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
 tracks/16/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
 tracks/17/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/path = NodePath("Recicler/Polygon2D/DoorUp:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
 tracks/18/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/path = NodePath("Recicler/Polygon2D/DoorBottom:modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
 tracks/19/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:z_index")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
 tracks/20/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 0 ]
+"values": [0]
 }
 tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:z_index")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
 tracks/21/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 0 ]
+"values": [0]
 }
 tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:z_index")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
 tracks/22/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 0 ]
+"values": [0]
 }
 tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/path = NodePath("3DPrinter/Polygon2D2/DoorUp:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
-tracks/23/imported = false
-tracks/23/enabled = true
 tracks/23/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 133, -94 ) ]
+"values": [Vector2(133, -94)]
 }
 tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/path = NodePath("3DPrinter/Polygon2D2/DoorUp:modulate")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
-tracks/24/imported = false
-tracks/24/enabled = true
 tracks/24/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/path = NodePath("3DPrinter/Polygon2D2/DoorUp:scale")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
-tracks/25/imported = false
-tracks/25/enabled = true
 tracks/25/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/path = NodePath("3DPrinter/Polygon2D2/BorderUp:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
-tracks/26/imported = false
-tracks/26/enabled = true
 tracks/26/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 133, -51 ) ]
+"values": [Vector2(133, -51)]
 }
 tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/path = NodePath("3DPrinter/Polygon2D2/BorderUp:scale")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
-tracks/27/imported = false
-tracks/27/enabled = true
 tracks/27/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1e-05)]
 }
 tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:modulate")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
-tracks/28/imported = false
-tracks/28/enabled = true
 tracks/28/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:scale")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
-tracks/29/imported = false
-tracks/29/enabled = true
 tracks/29/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
-tracks/30/imported = false
-tracks/30/enabled = true
 tracks/30/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 133, -8 ) ]
+"values": [Vector2(133, -8)]
 }
 tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/path = NodePath("3DPrinter/Polygon2D2/BorderBottom:position")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
-tracks/31/imported = false
-tracks/31/enabled = true
 tracks/31/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 133, -51 ) ]
+"values": [Vector2(133, -51)]
 }
 tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/path = NodePath("3DPrinter/Polygon2D2/BorderBottom:scale")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
-tracks/32/imported = false
-tracks/32/enabled = true
 tracks/32/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1e-05)]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 length = 1.2
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 20, 0 ), Vector2( 107, -100 ), Vector2( 107, -12 ), Vector2( 107, -12 ) ]
+"values": [Vector2(20, 0), Vector2(107, -100), Vector2(107, -12), Vector2(107, -12)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, -90.0, -90.0, -90.0 ]
+"values": [0.0, -90.0, -90.0, -90.0]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 107, -100 ), Vector2( 107, -24 ) ]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(107, -100), Vector2(107, -24)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, -90.0, -90.0 ]
+"values": [0.0, 0.0, -90.0, -90.0]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.6, 0.9, 1.1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.6, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( -20, 0 ), Vector2( -20, 0 ), Vector2( 107, -100 ), Vector2( 107, -36 ) ]
+"values": [Vector2(-20, 0), Vector2(-20, 0), Vector2(107, -100), Vector2(107, -36)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.6, 0.9, 1.1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.6, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, -90.0, -90.0 ]
+"values": [0.0, 0.0, -90.0, -90.0]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:z_index")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 0, -1 ]
+"values": [0, -1]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:z_index")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 0, -1 ]
+"values": [0, -1]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:z_index")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 0.6 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 0, -1 ]
+"values": [0, -1]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 resource_name = "open_printer"
 length = 0.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("3DPrinter/Polygon2D2/DoorUp:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("3DPrinter/Polygon2D2/DoorUp:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.192157, 0.192157, 0.192157, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.192157, 0.192157, 0.192157, 1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.192157, 0.192157, 0.192157, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.192157, 0.192157, 0.192157, 1)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("3DPrinter/Polygon2D2/BorderBottom:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 133, -51 ), Vector2( 133, -6 ) ]
+"values": [Vector2(133, -51), Vector2(133, -6)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("3DPrinter/Polygon2D2/BorderUp:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 133, -51 ), Vector2( 133, -95 ) ]
+"values": [Vector2(133, -51), Vector2(133, -95)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("3DPrinter/Polygon2D2/BorderUp:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 0), Vector2(1, 1)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("3DPrinter/Polygon2D2/BorderBottom:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 0), Vector2(1, 1)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("3DPrinter:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 length = 0.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Recicler/Polygon2D/DoorUp:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 0 ) ]
+"values": [Vector2(1, 1), Vector2(1, 0)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Recicler/Polygon2D/DoorBottom:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Recicler/Polygon2D/DoorUp:modulate")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.192157, 0.192157, 0.192157, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.192157, 0.192157, 0.192157, 1)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Recicler/Polygon2D/DoorBottom:modulate")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.192157, 0.192157, 0.192157, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.192157, 0.192157, 0.192157, 1)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Recicler/Polygon2D/BorderUp:scale")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 0), Vector2(1, 1)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Recicler/Polygon2D/BorderUp:position")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -64, -54 ), Vector2( -64, -96 ) ]
+"values": [Vector2(-64, -54), Vector2(-64, -96)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Recicler/Polygon2D/BorderBottom:position")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -64, -51 ), Vector2( -64, -7 ) ]
+"values": [Vector2(-64, -51), Vector2(-64, -7)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Recicler/Polygon2D/BorderBottom:scale")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 0), Vector2(1, 1)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 20, 0 ) ]
+"values": [Vector2(20, 0)]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -20, 0 ) ]
+"values": [Vector2(-20, 0)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Recicler/Polygon2D/Sprite7/Fil4:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -10, -24 ) ]
+"values": [Vector2(-10, -24)]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Recicler/Polygon2D/Sprite7/Fil3:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 10, -24 ) ]
+"values": [Vector2(10, -24)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Recicler/Polygon2D/Sprite7/Fil5:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, -48 ) ]
+"values": [Vector2(0, -48)]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/path = NodePath("3DPrinter:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
 tracks/14/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 length = 0.5
-loop = true
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("3DPrinter/Generator:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.25, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 180.0, 360.0 ]
+"values": [0.0, 180.0, 360.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("3DPrinter:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0.1, 0.15, 0.25, 0.35, 0.45, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.15, 0.25, 0.35, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -1, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0), Vector2(-1, 0), Vector2(0, 0), Vector2(0, 0), Vector2(1, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id="7"]
 resource_name = "reciclando_off"
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Reciclando:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ false ]
+"values": [false]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id="8"]
 resource_name = "reciclando_on"
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Reciclando:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Reciclando:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.5, 0.7, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0.8, 0.9, 0.95, 1.0, 1.0 ]
+"values": [0.8, 0.9, 0.95, 1.0, 1.0]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id="9"]
 length = 1.2
-loop = true
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Recicler:frame")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [ 0, 1, 2, 3, 4, 5, 0 ]
+"values": [0, 1, 2, 3, 4, 5, 0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Recicler:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0.4, 0.6, 1, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0.4, 0.6, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 0 ), Vector2( 0, -1 ) ]
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0), Vector2(0, -1)]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id="10"]
 resource_name = "begin"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Recicler:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.001 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 0, 0 ]
+"values": [0, 0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Recicler:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, -1 ) ]
+"values": [Vector2(0, -1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("3DPrinter/Generator:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("3DPrinter:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Recicler/Polygon2D/DoorUp:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Recicler/Polygon2D/DoorUp:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -64, -95.5629 ) ]
+"values": [Vector2(-64, -95.5629)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Recicler/Polygon2D/BorderUp:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -64, -54 ) ]
+"values": [Vector2(-64, -54)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Recicler/Polygon2D/BorderUp:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1e-05)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Recicler/Polygon2D/BorderBottom:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -64, -51 ) ]
+"values": [Vector2(-64, -51)]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Recicler/Polygon2D/BorderBottom:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1e-05)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Recicler/Polygon2D/DoorBottom:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -64, -9.56292 ) ]
+"values": [Vector2(-64, -9.56292)]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Recicler/Polygon2D/DoorBottom:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 16, 0 ) ]
+"values": [Vector2(16, 0)]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
 tracks/14/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -16, 0 ) ]
+"values": [Vector2(-16, 0)]
 }
 tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:rotation_degrees")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
 tracks/15/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:rotation_degrees")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
 tracks/16/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
 tracks/17/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.0 ]
+"values": [0.0]
 }
 tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/path = NodePath("Recicler/Polygon2D/DoorUp:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
 tracks/18/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/path = NodePath("Recicler/Polygon2D/DoorBottom:modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
 tracks/19/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:z_index")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
 tracks/20/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 0 ]
+"values": [0]
 }
 tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:z_index")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
 tracks/21/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 0 ]
+"values": [0]
 }
 tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:z_index")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
 tracks/22/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 0 ]
+"values": [0]
 }
 tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/path = NodePath("3DPrinter/Polygon2D2/DoorUp:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
-tracks/23/imported = false
-tracks/23/enabled = true
 tracks/23/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 133, -94 ) ]
+"values": [Vector2(133, -94)]
 }
 tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/path = NodePath("3DPrinter/Polygon2D2/DoorUp:modulate")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
-tracks/24/imported = false
-tracks/24/enabled = true
 tracks/24/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/path = NodePath("3DPrinter/Polygon2D2/DoorUp:scale")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
-tracks/25/imported = false
-tracks/25/enabled = true
 tracks/25/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/path = NodePath("3DPrinter/Polygon2D2/BorderUp:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
-tracks/26/imported = false
-tracks/26/enabled = true
 tracks/26/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 133, -51 ) ]
+"values": [Vector2(133, -51)]
 }
 tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/path = NodePath("3DPrinter/Polygon2D2/BorderUp:scale")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
-tracks/27/imported = false
-tracks/27/enabled = true
 tracks/27/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1e-05)]
 }
 tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:modulate")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
-tracks/28/imported = false
-tracks/28/enabled = true
 tracks/28/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:scale")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
-tracks/29/imported = false
-tracks/29/enabled = true
 tracks/29/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
-tracks/30/imported = false
-tracks/30/enabled = true
 tracks/30/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 133, -8 ) ]
+"values": [Vector2(133, -8)]
 }
 tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/path = NodePath("3DPrinter/Polygon2D2/BorderBottom:position")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
-tracks/31/imported = false
-tracks/31/enabled = true
 tracks/31/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 133, -51 ) ]
+"values": [Vector2(133, -51)]
 }
 tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/path = NodePath("3DPrinter/Polygon2D2/BorderBottom:scale")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
-tracks/32/imported = false
-tracks/32/enabled = true
 tracks/32/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1e-05)]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id="11"]
 length = 1.2
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 20, 0 ), Vector2( 107, -100 ), Vector2( 107, -12 ), Vector2( 107, -12 ) ]
+"values": [Vector2(20, 0), Vector2(107, -100), Vector2(107, -12), Vector2(107, -12)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, -90.0, -90.0, -90.0 ]
+"values": [0.0, -90.0, -90.0, -90.0]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 107, -100 ), Vector2( 107, -24 ) ]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(107, -100), Vector2(107, -24)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, -90.0, -90.0 ]
+"values": [0.0, 0.0, -90.0, -90.0]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.6, 0.9, 1.1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.6, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( -20, 0 ), Vector2( -20, 0 ), Vector2( 107, -100 ), Vector2( 107, -36 ) ]
+"values": [Vector2(-20, 0), Vector2(-20, 0), Vector2(107, -100), Vector2(107, -36)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.6, 0.9, 1.1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.6, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, -90.0, -90.0 ]
+"values": [0.0, 0.0, -90.0, -90.0]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:z_index")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 0, -1 ]
+"values": [0, -1]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:z_index")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 0, -1 ]
+"values": [0, -1]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:z_index")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 0.6 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 0, -1 ]
+"values": [0, -1]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id="12"]
 resource_name = "open_printer"
 length = 0.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("3DPrinter/Polygon2D2/DoorUp:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("3DPrinter/Polygon2D2/DoorUp:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.192157, 0.192157, 0.192157, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.192157, 0.192157, 0.192157, 1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("3DPrinter/Polygon2D2/DoorBottom:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.192157, 0.192157, 0.192157, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.192157, 0.192157, 0.192157, 1)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("3DPrinter/Polygon2D2/BorderBottom:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 133, -51 ), Vector2( 133, -6 ) ]
+"values": [Vector2(133, -51), Vector2(133, -6)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("3DPrinter/Polygon2D2/BorderUp:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 133, -51 ), Vector2( 133, -95 ) ]
+"values": [Vector2(133, -51), Vector2(133, -95)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("3DPrinter/Polygon2D2/BorderUp:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 0), Vector2(1, 1)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("3DPrinter/Polygon2D2/BorderBottom:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 0), Vector2(1, 1)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("3DPrinter:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id="13"]
 length = 0.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Recicler/Polygon2D/DoorUp:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 0 ) ]
+"values": [Vector2(1, 1), Vector2(1, 0)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Recicler/Polygon2D/DoorBottom:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Recicler/Polygon2D/DoorUp:modulate")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.192157, 0.192157, 0.192157, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.192157, 0.192157, 0.192157, 1)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Recicler/Polygon2D/DoorBottom:modulate")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.192157, 0.192157, 0.192157, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.192157, 0.192157, 0.192157, 1)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Recicler/Polygon2D/BorderUp:scale")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 0), Vector2(1, 1)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Recicler/Polygon2D/BorderUp:position")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -64, -54 ), Vector2( -64, -96 ) ]
+"values": [Vector2(-64, -54), Vector2(-64, -96)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Recicler/Polygon2D/BorderBottom:position")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -64, -51 ), Vector2( -64, -7 ) ]
+"values": [Vector2(-64, -51), Vector2(-64, -7)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Recicler/Polygon2D/BorderBottom:scale")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 0), Vector2(1, 1)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 20, 0 ) ]
+"values": [Vector2(20, 0)]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -20, 0 ) ]
+"values": [Vector2(-20, 0)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Recicler/Polygon2D/Sprite7/Fil4:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -10, -24 ) ]
+"values": [Vector2(-10, -24)]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Recicler/Polygon2D/Sprite7/Fil3:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 10, -24 ) ]
+"values": [Vector2(10, -24)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Recicler/Polygon2D/Sprite7/Fil5:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, -48 ) ]
+"values": [Vector2(0, -48)]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0.474417 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.474417),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/path = NodePath("3DPrinter:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
 tracks/14/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id="14"]
 length = 0.5
-loop = true
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("3DPrinter/Generator:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.25, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 180.0, 360.0 ]
+"values": [0.0, 180.0, 360.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("3DPrinter:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0.1, 0.15, 0.25, 0.35, 0.45, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.15, 0.25, 0.35, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -1, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0), Vector2(-1, 0), Vector2(0, 0), Vector2(0, 0), Vector2(1, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id="15"]
 resource_name = "reciclando_off"
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Reciclando:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ false ]
+"values": [false]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id="16"]
 resource_name = "reciclando_on"
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Reciclando:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Reciclando:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.5, 0.7, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0.8, 0.9, 0.95, 1.0, 1.0 ]
+"values": [0.8, 0.9, 0.95, 1.0, 1.0]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id="17"]
 length = 1.2
-loop = true
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Recicler:frame")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [ 0, 1, 2, 3, 4, 5, 0 ]
+"values": [0, 1, 2, 3, 4, 5, 0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Recicler:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0.4, 0.6, 1, 1.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0.4, 0.6, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 0 ), Vector2( 0, -1 ) ]
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0), Vector2(0, -1)]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id="18"]
+capture_included = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Animations:current_animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 2,
-"values": [ "begin" ]
+"values": ["begin"]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id="19"]
 length = 8.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Animations:current_animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.2, 1.6, 2.9, 4.6, 5.1, 6.3 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.2, 1.6, 2.9, 4.6, 5.1, 6.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ "begin", "working", "open_recicler", "move_fil", "printing", "printing", "open_printer" ]
+"values": ["begin", "working", "open_recicler", "move_fil", "printing", "printing", "open_printer"]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Animations:playback_speed")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0.2, 1.6 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0.2, 1.6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 1.0, 0.5 ]
+"values": [1.0, 0.5]
 }
 tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array(  ),
-"transitions": PackedFloat32Array(  ),
-"values": [  ]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Recicler/Polygon2D/Sprite7/Fil2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 4.8 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 4.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Recicler/Polygon2D/Sprite7/Fil1:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Recicler/Polygon2D/Sprite7/Fil0:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 5.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 5.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 7.5 ),
-"transitions": PackedFloat32Array( 1 ),
-"values": [ {
-"args": [  ],
-"method": "ending_animation"
-} ]
+"times": PackedFloat32Array(7.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ending_animation"
+}]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("sfx/base:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 7.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 7.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("sfx/first:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("sfx/insert:playing")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 2.9 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(2.9),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("sfx/insert2:playing")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 3.2 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(3.2),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("sfx/insert3:playing")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 3.5 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("sfx/second:playing")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 4.6, 6.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(4.6, 6.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("sfx/consume:playing")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 4.8, 5, 5.2 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(4.8, 5, 5.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ true, true, true ]
+"values": [true, true, true]
 }
 
 [node name="RecicleStation" type="Node2D"]
 z_index = -2
-script = ExtResource( 1 )
-minigame = ExtResource( 9 )
+script = ExtResource("1")
+minigame = ExtResource("9")
 
 [node name="3DPrinter" type="Sprite2D" parent="."]
-texture = ExtResource( 10 )
-offset = Vector2( 136, -96 )
+texture = ExtResource("10")
+offset = Vector2(136, -96)
 
 [node name="Polygon2D2" type="Polygon2D" parent="3DPrinter"]
-position = Vector2( 0, -0.437085 )
-color = Color( 0.164706, 0.160784, 0.156863, 0 )
-polygon = PackedVector2Array( -106, -95, -106, -9, -21, -9, -21, -95 )
+position = Vector2(0, -0.437085)
+color = Color(0.164706, 0.160784, 0.156863, 0)
+polygon = PackedVector2Array(-106, -95, -106, -9, -21, -9, -21, -95)
 
-[node name="ItemBlaster" parent="3DPrinter/Polygon2D2" instance=ExtResource( 13 )]
-position = Vector2( 136, -31.5629 )
+[node name="ItemBlaster" parent="3DPrinter/Polygon2D2" instance=ExtResource("13")]
+position = Vector2(136, -31.5629)
 monitoring = false
 monitorable = false
 blaster = "hydro"
 
 [node name="DoorUp" type="Sprite2D" parent="3DPrinter/Polygon2D2"]
-position = Vector2( 133, -94 )
-texture = ExtResource( 2 )
-offset = Vector2( 0, 21 )
+position = Vector2(133, -94)
+texture = ExtResource("2")
+offset = Vector2(0, 21)
 
 [node name="BorderUp" type="Sprite2D" parent="3DPrinter/Polygon2D2"]
-position = Vector2( 133, -51 )
-scale = Vector2( 1, 1e-05 )
-texture = ExtResource( 4 )
-offset = Vector2( 0, 2 )
+position = Vector2(133, -51)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("4")
+offset = Vector2(0, 2)
 
 [node name="DoorBottom" type="Sprite2D" parent="3DPrinter/Polygon2D2"]
-position = Vector2( 133, -8 )
-texture = ExtResource( 5 )
-offset = Vector2( 0, -21 )
+position = Vector2(133, -8)
+texture = ExtResource("5")
+offset = Vector2(0, -21)
 
 [node name="BorderBottom" type="Sprite2D" parent="3DPrinter/Polygon2D2"]
-position = Vector2( 133, -51 )
-scale = Vector2( 1, 1e-05 )
-texture = ExtResource( 4 )
-offset = Vector2( 0, -2 )
+position = Vector2(133, -51)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("4")
+offset = Vector2(0, -2)
 
 [node name="Generator" type="Sprite2D" parent="3DPrinter"]
-position = Vector2( 211, -132 )
-texture = ExtResource( 3 )
+position = Vector2(211, -132)
+texture = ExtResource("3")
 
 [node name="Polygon2D" type="Polygon2D" parent="3DPrinter"]
 show_behind_parent = true
 z_index = -10
-color = Color( 0.458824, 0.458824, 0.458824, 1 )
-polygon = PackedVector2Array( 13.2378, -109.314, 49.5496, -108.719, 50.7401, -5.33902, 11.452, -5.14059 )
+color = Color(0.458824, 0.458824, 0.458824, 1)
+polygon = PackedVector2Array(13.2378, -109.314, 49.5496, -108.719, 50.7401, -5.33902, 11.452, -5.14059)
 
 [node name="Recicler" type="Sprite2D" parent="."]
-position = Vector2( 0, -1 )
-texture = ExtResource( 6 )
-offset = Vector2( -76, -127 )
+position = Vector2(0, -1)
+texture = ExtResource("6")
+offset = Vector2(-76, -127)
 hframes = 6
-region_rect = Rect2( 0, 0, 1152, 258.19 )
+region_rect = Rect2(0, 0, 1152, 258.19)
 
 [node name="Sprite2D" type="Sprite2D" parent="Recicler"]
 show_behind_parent = true
-position = Vector2( -88, -52 )
-texture = ExtResource( 12 )
+position = Vector2(-88, -52)
+texture = ExtResource("12")
 
 [node name="Polygon2D" type="Polygon2D" parent="Recicler"]
-position = Vector2( 0, 0.562915 )
-color = Color( 0.164706, 0.160784, 0.156863, 0 )
-polygon = PackedVector2Array( -106, -95, -106, -9, -21, -9, -21, -95 )
+position = Vector2(0, 0.562915)
+color = Color(0.164706, 0.160784, 0.156863, 0)
+polygon = PackedVector2Array(-106, -95, -106, -9, -21, -9, -21, -95)
 
 [node name="Sprite7" type="Sprite2D" parent="Recicler/Polygon2D"]
 show_behind_parent = true
-position = Vector2( -64, -8 )
-texture = ExtResource( 8 )
-offset = Vector2( 0, -44 )
-region_rect = Rect2( 0, 0, 86, 86 )
+position = Vector2(-64, -8)
+texture = ExtResource("8")
+offset = Vector2(0, -44)
+region_rect = Rect2(0, 0, 86, 86)
 region_filter_clip_enabled = true
 
 [node name="Fil0" type="Sprite2D" parent="Recicler/Polygon2D/Sprite7"]
-position = Vector2( 20, 0 )
-texture = ExtResource( 7 )
-offset = Vector2( 0, -13 )
+position = Vector2(20, 0)
+texture = ExtResource("7")
+offset = Vector2(0, -13)
 
 [node name="Fil1" type="Sprite2D" parent="Recicler/Polygon2D/Sprite7"]
-texture = ExtResource( 7 )
-offset = Vector2( 0, -13 )
+texture = ExtResource("7")
+offset = Vector2(0, -13)
 
 [node name="Fil2" type="Sprite2D" parent="Recicler/Polygon2D/Sprite7"]
-position = Vector2( -20, 0 )
-texture = ExtResource( 7 )
-offset = Vector2( 0, -13 )
+position = Vector2(-20, 0)
+texture = ExtResource("7")
+offset = Vector2(0, -13)
 
 [node name="Fil3" type="Sprite2D" parent="Recicler/Polygon2D/Sprite7"]
 visible = false
-position = Vector2( 10, -24 )
-texture = ExtResource( 7 )
-offset = Vector2( 0, -13 )
+position = Vector2(10, -24)
+texture = ExtResource("7")
+offset = Vector2(0, -13)
 
 [node name="Fil4" type="Sprite2D" parent="Recicler/Polygon2D/Sprite7"]
 visible = false
-position = Vector2( -10, -24 )
-texture = ExtResource( 7 )
-offset = Vector2( 0, -13 )
+position = Vector2(-10, -24)
+texture = ExtResource("7")
+offset = Vector2(0, -13)
 
 [node name="Fil5" type="Sprite2D" parent="Recicler/Polygon2D/Sprite7"]
 visible = false
-position = Vector2( 0, -48 )
-texture = ExtResource( 7 )
-offset = Vector2( 0, -13 )
+position = Vector2(0, -48)
+texture = ExtResource("7")
+offset = Vector2(0, -13)
 
 [node name="DoorUp" type="Sprite2D" parent="Recicler/Polygon2D"]
-modulate = Color( 0.192157, 0.192157, 0.192157, 1 )
-position = Vector2( -64, -95.5629 )
-scale = Vector2( 1, 1e-05 )
-texture = ExtResource( 11 )
-offset = Vector2( 0, 21 )
+modulate = Color(0.192157, 0.192157, 0.192157, 1)
+position = Vector2(-64, -95.5629)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("11")
+offset = Vector2(0, 21)
 flip_v = true
 
 [node name="BorderUp" type="Sprite2D" parent="Recicler/Polygon2D"]
-position = Vector2( -64, -96 )
-texture = ExtResource( 4 )
-offset = Vector2( 0, 2 )
+position = Vector2(-64, -96)
+texture = ExtResource("4")
+offset = Vector2(0, 2)
 
 [node name="BorderBottom" type="Sprite2D" parent="Recicler/Polygon2D"]
-position = Vector2( -64, -7 )
-texture = ExtResource( 4 )
-offset = Vector2( 0, -2 )
+position = Vector2(-64, -7)
+texture = ExtResource("4")
+offset = Vector2(0, -2)
 
 [node name="DoorBottom" type="Sprite2D" parent="Recicler/Polygon2D"]
-modulate = Color( 0.192157, 0.192157, 0.192157, 1 )
-position = Vector2( -64, -9.56292 )
-scale = Vector2( 1, 1e-05 )
-texture = ExtResource( 11 )
-offset = Vector2( 0, -21 )
+modulate = Color(0.192157, 0.192157, 0.192157, 1)
+position = Vector2(-64, -9.56292)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("11")
+offset = Vector2(0, -21)
 
 [node name="Area2D" type="Area2D" parent="."]
 space_override = 1
 collision_layer = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 213.594, -20.408 )
-shape = SubResource( 1 )
+position = Vector2(213.594, -20.408)
+shape = SubResource("1")
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 autoplay = "begin"
 playback_speed = 0.5
-anims/begin = SubResource( 2 )
-anims/move_fil = SubResource( 3 )
-anims/open_printer = SubResource( 4 )
-anims/open_recicler = SubResource( 5 )
-anims/printing = SubResource( 6 )
-anims/reciclando_off = SubResource( 7 )
-anims/reciclando_on = SubResource( 8 )
-anims/working = SubResource( 9 )
+anims/begin = SubResource("2")
+anims/move_fil = SubResource("3")
+anims/open_printer = SubResource("4")
+anims/open_recicler = SubResource("5")
+anims/printing = SubResource("6")
+anims/reciclando_off = SubResource("7")
+anims/reciclando_on = SubResource("8")
+anims/working = SubResource("9")
 next/working = "open_recicler"
 
 [node name="RecyclingAnimation" type="AnimationPlayer" parent="."]
 playback_speed = 0.5
-anims/begin = SubResource( 10 )
-anims/move_fil = SubResource( 11 )
-anims/open_printer = SubResource( 12 )
-anims/open_recicler = SubResource( 13 )
-anims/printing = SubResource( 14 )
-anims/reciclando_off = SubResource( 15 )
-anims/reciclando_on = SubResource( 16 )
-anims/working = SubResource( 17 )
+anims/begin = SubResource("10")
+anims/move_fil = SubResource("11")
+anims/open_printer = SubResource("12")
+anims/open_recicler = SubResource("13")
+anims/printing = SubResource("14")
+anims/reciclando_off = SubResource("15")
+anims/reciclando_on = SubResource("16")
+anims/working = SubResource("17")
 next/working = "open_recicler"
 
 [node name="Controller" type="AnimationPlayer" parent="."]
 autoplay = "default"
 playback_speed = 0.5
-anims/default = SubResource( 18 )
-anims/print_scene = SubResource( 19 )
+anims/default = SubResource("18")
+anims/print_scene = SubResource("19")
 
 [node name="Reciclando" type="Label" parent="."]
 visible = false
 offset_top = -224.0
 offset_right = 192.0
 offset_bottom = -184.0
-theme_override_fonts/font = ExtResource( 14 )
-theme_override_colors/font_shadow_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = ExtResource("14")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Reciclando..."
 percent_visible = 0.8
 __meta__ = {
@@ -2213,31 +2214,31 @@ __meta__ = {
 [node name="sfx" type="Node2D" parent="."]
 
 [node name="first" type="AudioStreamPlayer2D" parent="sfx"]
-stream = ExtResource( 17 )
+stream = ExtResource("17")
 volume_db = -13.0
 
 [node name="insert" type="AudioStreamPlayer2D" parent="sfx"]
-stream = ExtResource( 18 )
+stream = ExtResource("18")
 volume_db = -12.0
 
 [node name="insert2" type="AudioStreamPlayer2D" parent="sfx"]
-stream = ExtResource( 18 )
+stream = ExtResource("18")
 volume_db = -12.0
 
 [node name="insert3" type="AudioStreamPlayer2D" parent="sfx"]
-stream = ExtResource( 18 )
+stream = ExtResource("18")
 volume_db = -12.0
 
 [node name="consume" type="AudioStreamPlayer2D" parent="sfx"]
-stream = ExtResource( 15 )
+stream = ExtResource("15")
 volume_db = -8.157
 
 [node name="second" type="AudioStreamPlayer2D" parent="sfx"]
-stream = ExtResource( 19 )
+stream = ExtResource("19")
 volume_db = -10.0
 
 [node name="base" type="AudioStreamPlayer" parent="sfx"]
-stream = ExtResource( 16 )
+stream = ExtResource("16")
 volume_db = -20.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered" flags=6]

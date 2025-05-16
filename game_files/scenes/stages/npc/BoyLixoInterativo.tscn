@@ -1,50 +1,50 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://bur3ky4dnvct3"]
 
-[ext_resource path="res://scenes/animation/BoyLixoBody.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/stages/npc/PessoaLixoInterativo.gd" type="Script" id=2]
-[ext_resource path="res://assets/Font/text.tres" type="FontFile" id=3]
-[ext_resource path="res://scenes/animation/Mosquinhas.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/stages/npc/IndicadorCabecas.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/animation/shader_trocar_cores.gdshader" type="Shader" id=6]
+[ext_resource type="PackedScene" uid="uid://bwyeafpmgclnp" path="res://scenes/animation/BoyLixoBody.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bat3s112ffatf" path="res://scenes/stages/npc/PessoaLixoInterativo.gd" id="2"]
+[ext_resource type="FontFile" path="res://assets/Font/text.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://bl0q7nvmwd2p2" path="res://scenes/animation/Mosquinhas.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/stages/npc/IndicadorCabecas.tscn" id="5"]
+[ext_resource type="Shader" uid="uid://b0cn5hhxmsycw" path="res://scenes/animation/shader_trocar_cores.gdshader" id="6"]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id="1"]
 resource_local_to_scene = true
-shader = ExtResource( 6 )
-shader_param/old_color = Color( 0.988235, 0.211765, 0.388235, 1 )
-shader_param/new_color = Color( 0, 0.832031, 0.662362, 1 )
+shader = ExtResource("6")
+shader_parameter/old_color = Color(0.988235, 0.211765, 0.388235, 1)
+shader_parameter/new_color = Color(0, 0.832031, 0.662362, 1)
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id="2"]
 resource_local_to_scene = true
-shader = ExtResource( 6 )
-shader_param/old_color = Color( 0.384314, 0.258824, 0, 1 )
-shader_param/new_color = Color( 0.803922, 0.694118, 0.313726, 1 )
+shader = ExtResource("6")
+shader_parameter/old_color = Color(0.384314, 0.258824, 0, 1)
+shader_parameter/new_color = Color(0.803922, 0.694118, 0.313726, 1)
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 55.9076, 36.1013 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(111.815, 72.2026)
 
 [node name="BoyLixoInterativo" type="Node2D"]
-position = Vector2( 498, 292 )
-script = ExtResource( 2 )
-color_hair_array = [ Color( 0.25098, 0.227451, 0.227451, 1 ), Color( 0.576471, 0.286275, 0.0745098, 1 ), Color( 1, 0.898039, 0.223529, 1 ), Color( 0.839216, 0.341176, 0.0431373, 1 ), Color( 0.341176, 0.286275, 0.211765, 1 ) ]
-color_shirt_array = [ Color( 0.619608, 1, 0.27451, 1 ), Color( 0, 0.396078, 0.686275, 1 ), Color( 1, 0.32549, 0.32549, 1 ), Color( 1, 0.901961, 0.254902, 1 ), Color( 0.94902, 0.364706, 1, 1 ), Color( 1, 0.694118, 0.258824, 1 ), Color( 0.101961, 0.564706, 0.0627451, 1 ) ]
+position = Vector2(498, 292)
+script = ExtResource("2")
+color_hair_array = [Color(0.25098, 0.227451, 0.227451, 1), Color(0.576471, 0.286275, 0.0745098, 1), Color(1, 0.898039, 0.223529, 1), Color(0.839216, 0.341176, 0.0431373, 1), Color(0.341176, 0.286275, 0.211765, 1)]
+color_shirt_array = [Color(0.619608, 1, 0.27451, 1), Color(0, 0.396078, 0.686275, 1), Color(1, 0.32549, 0.32549, 1), Color(1, 0.901961, 0.254902, 1), Color(0.94902, 0.364706, 1, 1), Color(1, 0.694118, 0.258824, 1), Color(0.101961, 0.564706, 0.0627451, 1)]
 person = NodePath("Boy")
 body_anim_player = NodePath("Boy/Bobo/Corpo/Animation")
 moscas_anim_player = NodePath("Mosquinhas/AnimationPlayer")
 
-[node name="Boy" parent="." instance=ExtResource( 1 )]
-material = SubResource( 1 )
+[node name="Boy" parent="." instance=ExtResource("1")]
+material = SubResource("1")
 
 [node name="Cabeça" parent="Boy/Bobo/Corpo" index="0"]
-material = SubResource( 2 )
+material = SubResource("2")
 
 [node name="Reaction" parent="Boy" index="2"]
 visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 0, -5 )
+position = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
 [node name="Timer_Anim_Vermelho" type="Timer" parent="."]
 wait_time = 3.0
@@ -58,9 +58,9 @@ offset_left = -43.727
 offset_top = -22.364
 offset_right = -3.72699
 offset_bottom = 11.636
-theme_override_fonts/font = ExtResource( 3 )
-theme_override_colors/font_color = Color( 1, 1, 1, 1 )
-theme_override_colors/font_shadow_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = ExtResource("3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 1
 text = "1"
 align = 1
@@ -69,19 +69,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mosquinhas" parent="." instance=ExtResource( 4 )]
+[node name="Mosquinhas" parent="." instance=ExtResource("4")]
 visible = false
 
-[node name="IndicadorCabecas" parent="." instance=ExtResource( 5 )]
+[node name="IndicadorCabecas" parent="." instance=ExtResource("5")]
 offset_left = -8.0
 offset_top = -78.0
 offset_right = 40.0
 offset_bottom = -50.0
+
 [connection signal="animation_finished" from="Boy/Bobo/Corpo/Animation" to="." method="_on_Animation_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer_Anim_Vermelho" to="." method="_on_Timer_Anim_Vermelho_timeout"]
 [connection signal="timeout" from="Timer_Anim_Verde" to="." method="_on_Timer_Anim_Verde_timeout"]
 
 [editable path="Boy"]
-
 [editable path="Mosquinhas"]

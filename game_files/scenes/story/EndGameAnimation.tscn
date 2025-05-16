@@ -1,45 +1,45 @@
 [gd_scene load_steps=220 format=3 uid="uid://ch03kpvu36uq"]
 
 [ext_resource type="Texture2D" uid="uid://cdq56xx81f5i3" path="res://assets/Images/Tilesets/TilePredio.png" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/boss/BossBody.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dlch44sro4rsl" path="res://scenes/boss/BossBody.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/story/Parede.tscn" id="3"]
 [ext_resource type="TileSet" path="res://scenes/tilesets/TilePipe.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://dxqx8mpajhjlk" path="res://assets/Images/Tilesets/TileParedeCinza.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://bbi013ao4xpak" path="res://assets/Images/Tilesets/TileParedeVermelha.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://ckmika1ovmutp" path="res://assets/Images/Tilesets/TileCiclovia.png" id="7"]
-[ext_resource type="PackedScene" path="res://scenes/stages/PlacaUsina.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://scenes/stages/UsinaVidro.tscn" id="9"]
-[ext_resource type="PackedScene" path="res://scenes/player/PlayerBody.tscn" id="10"]
-[ext_resource type="PackedScene" path="res://scenes/animation/GariDog.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://caxnfviqj587r" path="res://scenes/stages/PlacaUsina.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://c2yixyyey146g" path="res://scenes/stages/UsinaVidro.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://cctjqdgc66tqj" path="res://scenes/player/PlayerBody.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://bul5gv3clgadi" path="res://scenes/animation/GariDog.tscn" id="11"]
 [ext_resource type="FontFile" path="res://assets/Font/text.tres" id="12"]
 [ext_resource type="TileSet" path="res://scenes/tilesets/TileGrass.tres" id="13"]
 [ext_resource type="Texture2D" uid="uid://dkw76nwrd5ww5" path="res://assets/Images/Collectibles/monitor_m.png" id="14"]
 [ext_resource type="TileSet" path="res://scenes/tilesets/TileCity.tres" id="15"]
-[ext_resource type="PackedScene" path="res://scenes/stages/background/Background.tscn" id="16"]
+[ext_resource type="PackedScene" uid="uid://dperi682epocd" path="res://scenes/stages/background/Background.tscn" id="16"]
 [ext_resource type="Texture2D" uid="uid://chpot4rcbrntt" path="res://assets/Images/Collectibles/celular_m.png" id="17"]
 [ext_resource type="PackedScene" path="res://scenes/tilesets/Gate.tscn" id="18"]
 [ext_resource type="PackedScene" path="res://scenes/tilesets/PressurePlate.tscn" id="19"]
-[ext_resource type="PackedScene" path="res://scenes/animation/BoyBody.tscn" id="20"]
+[ext_resource type="PackedScene" uid="uid://dk8ch7jqhd6rd" path="res://scenes/animation/BoyBody.tscn" id="20"]
 [ext_resource type="PackedScene" path="res://scenes/tilesets/Esteira.tscn" id="22"]
-[ext_resource type="Script" path="res://scenes/tilesets/Esteira.gd" id="23"]
+[ext_resource type="Script" uid="uid://dwmf7i8vboqj8" path="res://scenes/tilesets/Esteira.gd" id="23"]
 [ext_resource type="Texture2D" uid="uid://ruj05p47jkel" path="res://assets/Images/Tilesets/esteira_right.png" id="24"]
-[ext_resource type="PackedScene" path="res://scenes/animation/BoyLixoBody.tscn" id="25"]
+[ext_resource type="PackedScene" uid="uid://bwyeafpmgclnp" path="res://scenes/animation/BoyLixoBody.tscn" id="25"]
 [ext_resource type="Texture2D" uid="uid://1i0xbr5bryyn" path="res://assets/Images/Tilesets/esteira.png" id="26"]
-[ext_resource type="PackedScene" path="res://scenes/station/RecicleStation.tscn" id="27"]
+[ext_resource type="PackedScene" uid="uid://b2apk2d3f65mr" path="res://scenes/station/RecicleStation.tscn" id="27"]
 [ext_resource type="Texture2D" uid="uid://kun3djwbsghf" path="res://assets/Images/Tilesets/esteira_left.png" id="28"]
-[ext_resource type="PackedScene" path="res://scenes/animation/GirlBody.tscn" id="29"]
-[ext_resource type="PackedScene" path="res://scenes/game_ui/GameOver.tscn" id="30"]
-[ext_resource type="PackedScene" path="res://scenes/game_ui/GameUI.tscn" id="31"]
-[ext_resource type="PackedScene" path="res://scenes/game_ui/LevelComplete.tscn" id="33"]
-[ext_resource type="PackedScene" path="res://scenes/animation/GirlLixoBody.tscn" id="34"]
-[ext_resource type="PackedScene" path="res://scenes/animation/WomanBody.tscn" id="35"]
-[ext_resource type="PackedScene" path="res://scenes/animation/WomanLixoBody.tscn" id="36"]
+[ext_resource type="PackedScene" uid="uid://ckyhwjl7q17oi" path="res://scenes/animation/GirlBody.tscn" id="29"]
+[ext_resource type="PackedScene" uid="uid://bhb72il4y333c" path="res://scenes/game_ui/GameOver.tscn" id="30"]
+[ext_resource type="PackedScene" uid="uid://dpvi2rrm52awk" path="res://scenes/game_ui/GameUI.tscn" id="31"]
+[ext_resource type="PackedScene" uid="uid://lfjelv3vn50s" path="res://scenes/game_ui/LevelComplete.tscn" id="33"]
+[ext_resource type="PackedScene" uid="uid://ca275lxbdms00" path="res://scenes/animation/GirlLixoBody.tscn" id="34"]
+[ext_resource type="PackedScene" uid="uid://deg6r2shd7b6o" path="res://scenes/animation/WomanBody.tscn" id="35"]
+[ext_resource type="PackedScene" uid="uid://dsrxxrbmtgt21" path="res://scenes/animation/WomanLixoBody.tscn" id="36"]
 [ext_resource type="Animation" path="res://scenes/animation/AnimationFear.tres" id="36_s5l8a"]
-[ext_resource type="PackedScene" path="res://scenes/animation/TimothyBody.tscn" id="37"]
+[ext_resource type="PackedScene" uid="uid://b1qp878s1meiq" path="res://scenes/animation/TimothyBody.tscn" id="37"]
 [ext_resource type="Animation" path="res://scenes/animation/AnimationIdle.tres" id="37_1auex"]
-[ext_resource type="PackedScene" path="res://scenes/animation/MayorBody.tscn" id="38"]
+[ext_resource type="PackedScene" uid="uid://vc8onmheqyu1" path="res://scenes/animation/MayorBody.tscn" id="38"]
 [ext_resource type="Animation" path="res://scenes/animation/AnimationRun.tres" id="38_u02i8"]
-[ext_resource type="PackedScene" path="res://scenes/animation/DialogBoss.tscn" id="39"]
+[ext_resource type="PackedScene" uid="uid://bii0svkh3ank1" path="res://scenes/animation/DialogBoss.tscn" id="39"]
 [ext_resource type="Animation" path="res://scenes/animation/AnimationTalk.tres" id="39_m8jkf"]
 [ext_resource type="AudioStream" uid="uid://rnrdctt1p5u4" path="res://assets/Sounds/story/story_intro2.mp3" id="40"]
 [ext_resource type="AudioStream" uid="uid://o0uf4xha60fk" path="res://assets/Sounds/story/story_intro1.mp3" id="41"]
@@ -49,18 +49,18 @@
 [ext_resource type="AudioStream" uid="uid://byhg5hlsjp6hd" path="res://assets/Sounds/sfx/garibot_jump.mp3" id="43"]
 [ext_resource type="Animation" path="res://scenes/animation/AnimationCorrer.tres" id="43_vif5k"]
 [ext_resource type="AudioStream" uid="uid://bldsh42ejqo2m" path="res://assets/Sounds/enemy_sfx/enemy_furadeira_dash.mp3" id="44"]
-[ext_resource type="Shader" path="res://scenes/animation/shader_trocar_cores.gdshader" id="45"]
-[ext_resource type="Script" path="res://scenes/stages/StageEnd/Minigame4.gd" id="46"]
-[ext_resource type="PackedScene" path="res://scenes/animation/DialogGaridogMirror.tscn" id="47"]
-[ext_resource type="Script" path="res://scenes/story/End/EndDialog.gd" id="48"]
-[ext_resource type="Script" path="res://scenes/tilesets/MovePlat.gd" id="49"]
-[ext_resource type="Script" path="res://scenes/story/EndGameAnimation.gd" id="50"]
-[ext_resource type="PackedScene" path="res://scenes/player/PlayerBodyFinal.tscn" id="51"]
-[ext_resource type="PackedScene" path="res://scenes/player/PlayerBodyFinal4.tscn" id="52"]
+[ext_resource type="Shader" uid="uid://b0cn5hhxmsycw" path="res://scenes/animation/shader_trocar_cores.gdshader" id="45"]
+[ext_resource type="Script" uid="uid://dbs6fuxiqqfiw" path="res://scenes/stages/StageEnd/Minigame4.gd" id="46"]
+[ext_resource type="PackedScene" uid="uid://dmrh2buyglcx2" path="res://scenes/animation/DialogGaridogMirror.tscn" id="47"]
+[ext_resource type="Script" uid="uid://dbp3le4vonbuy" path="res://scenes/story/End/EndDialog.gd" id="48"]
+[ext_resource type="Script" uid="uid://btykdlxi0hdus" path="res://scenes/tilesets/MovePlat.gd" id="49"]
+[ext_resource type="Script" uid="uid://dr2b7sg2xk36u" path="res://scenes/story/EndGameAnimation.gd" id="50"]
+[ext_resource type="PackedScene" uid="uid://dh3v6mqig617v" path="res://scenes/player/PlayerBodyFinal.tscn" id="51"]
+[ext_resource type="PackedScene" uid="uid://b3fin3x5avf7t" path="res://scenes/player/PlayerBodyFinal4.tscn" id="52"]
 [ext_resource type="Texture2D" uid="uid://chwk1f8v8ab0v" path="res://assets/Images/Boss/Engrenagens1.png" id="52_m67yh"]
-[ext_resource type="PackedScene" path="res://scenes/player/PlayerBodyFinal2.tscn" id="53"]
+[ext_resource type="PackedScene" uid="uid://dect2vb5pfdij" path="res://scenes/player/PlayerBodyFinal2.tscn" id="53"]
 [ext_resource type="Texture2D" uid="uid://i8r2xic8mfir" path="res://assets/Images/Boss/Engrenagens2.png" id="53_d1esw"]
-[ext_resource type="PackedScene" path="res://scenes/player/PlayerBodyFinal3.tscn" id="54"]
+[ext_resource type="PackedScene" uid="uid://c5wfste7fdju1" path="res://scenes/player/PlayerBodyFinal3.tscn" id="54"]
 [ext_resource type="Texture2D" uid="uid://bph2yr7lcuu14" path="res://assets/Images/Boss/Engrenagens3.png" id="54_bwja6"]
 [ext_resource type="Texture2D" uid="uid://comue4ipbga7e" path="res://assets/Images/Boss/Engrenagens4.png" id="55_nptuo"]
 [ext_resource type="Texture2D" uid="uid://dtsvt0uk1w7kn" path="res://assets/Images/Scenery/placa_fabrica.png" id="63"]
@@ -116,7 +116,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fyit6"]
 _data = {
-"Magnet": SubResource("1")
+&"Magnet": SubResource("1")
 }
 
 [sub_resource type="Animation" id="2"]
@@ -6242,30 +6242,30 @@ tracks/22/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4s31r"]
 _data = {
-"aim_hydro_old": SubResource("2"),
-"aim_magnet": SubResource("3"),
-"aim_shock": SubResource("4"),
-"aim_vaccum": SubResource("5"),
-"aim_vaccum_old": SubResource("6"),
-"bye": SubResource("7"),
-"fall": SubResource("8"),
-"fly_bubble": SubResource("9"),
-"fly_bubble_old": SubResource("Animation_3kjy4"),
-"hello": SubResource("Animation_pcihq"),
-"hurt": SubResource("Animation_nik8k"),
-"idle": SubResource("Animation_awy63"),
-"idle_surprise": SubResource("Animation_f4i45"),
-"jump": SubResource("15"),
-"jump_front": SubResource("16"),
-"jump_happy": SubResource("17"),
-"spin": SubResource("18"),
-"still": SubResource("19"),
-"turn_back": SubResource("20"),
-"turn_front": SubResource("21"),
-"walk": SubResource("22"),
-"walk_holding": SubResource("23"),
-"walk_holding_recicle": SubResource("24"),
-"walk_scaried": SubResource("25")
+&"aim_hydro_old": SubResource("2"),
+&"aim_magnet": SubResource("3"),
+&"aim_shock": SubResource("4"),
+&"aim_vaccum": SubResource("5"),
+&"aim_vaccum_old": SubResource("6"),
+&"bye": SubResource("7"),
+&"fall": SubResource("8"),
+&"fly_bubble": SubResource("9"),
+&"fly_bubble_old": SubResource("Animation_3kjy4"),
+&"hello": SubResource("Animation_pcihq"),
+&"hurt": SubResource("Animation_nik8k"),
+&"idle": SubResource("Animation_awy63"),
+&"idle_surprise": SubResource("Animation_f4i45"),
+&"jump": SubResource("15"),
+&"jump_front": SubResource("16"),
+&"jump_happy": SubResource("17"),
+&"spin": SubResource("18"),
+&"still": SubResource("19"),
+&"turn_back": SubResource("20"),
+&"turn_front": SubResource("21"),
+&"walk": SubResource("22"),
+&"walk_holding": SubResource("23"),
+&"walk_holding_recicle": SubResource("24"),
+&"walk_scaried": SubResource("25")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2y13x"]
@@ -6282,10 +6282,10 @@ shader_parameter/new_color = Color(0.238281, 0.238281, 0.238281, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6gjox"]
 _data = {
-"fear": ExtResource("36_s5l8a"),
-"idle": ExtResource("37_1auex"),
-"run": ExtResource("38_u02i8"),
-"talk": ExtResource("39_m8jkf")
+&"fear": ExtResource("36_s5l8a"),
+&"idle": ExtResource("37_1auex"),
+&"run": ExtResource("38_u02i8"),
+&"talk": ExtResource("39_m8jkf")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3thb7"]
@@ -6302,10 +6302,10 @@ shader_parameter/new_color = Color(0.803922, 0.694118, 0.313726, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j54l0"]
 _data = {
-"attack": ExtResource("41_qw4y8"),
-"idle": ExtResource("37_1auex"),
-"idle_no_balloon": ExtResource("42_xouo5"),
-"run": ExtResource("43_vif5k")
+&"attack": ExtResource("41_qw4y8"),
+&"idle": ExtResource("37_1auex"),
+&"idle_no_balloon": ExtResource("42_xouo5"),
+&"run": ExtResource("43_vif5k")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pcx6k"]
@@ -6322,10 +6322,10 @@ shader_parameter/new_color = Color(0.238281, 0.238281, 0.238281, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_585wn"]
 _data = {
-"fear": ExtResource("36_s5l8a"),
-"idle": ExtResource("37_1auex"),
-"run": ExtResource("38_u02i8"),
-"talk": ExtResource("39_m8jkf")
+&"fear": ExtResource("36_s5l8a"),
+&"idle": ExtResource("37_1auex"),
+&"run": ExtResource("38_u02i8"),
+&"talk": ExtResource("39_m8jkf")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w41yb"]
@@ -6348,10 +6348,10 @@ shader_parameter/new_color = Color(0.238281, 0.238281, 0.238281, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fkkpa"]
 _data = {
-"fear": ExtResource("36_s5l8a"),
-"idle": ExtResource("37_1auex"),
-"run": ExtResource("38_u02i8"),
-"talk": ExtResource("39_m8jkf")
+&"fear": ExtResource("36_s5l8a"),
+&"idle": ExtResource("37_1auex"),
+&"run": ExtResource("38_u02i8"),
+&"talk": ExtResource("39_m8jkf")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wy7bj"]
@@ -7593,10 +7593,10 @@ tracks/24/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q0hxq"]
 _data = {
-"fear": SubResource("Animation_wj3gh"),
-"idle": SubResource("Animation_2yjkp"),
-"run": SubResource("Animation_odauk"),
-"talk": SubResource("Animation_3ilul")
+&"fear": SubResource("Animation_wj3gh"),
+&"idle": SubResource("Animation_2yjkp"),
+&"run": SubResource("Animation_odauk"),
+&"talk": SubResource("Animation_3ilul")
 }
 
 [sub_resource type="ShaderMaterial" id="27"]
@@ -9746,13 +9746,13 @@ tracks/26/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uj65h"]
 _data = {
-"attack": SubResource("Animation_cywn3"),
-"attack_no_balloon": SubResource("Animation_r2ek7"),
-"idle": SubResource("Animation_d820h"),
-"idle_no_balloon": SubResource("Animation_njoyi"),
-"idle_no_trash": SubResource("Animation_fs74k"),
-"run": SubResource("Animation_l4xbw"),
-"run_no_balloon": SubResource("Animation_lf0xc")
+&"attack": SubResource("Animation_cywn3"),
+&"attack_no_balloon": SubResource("Animation_r2ek7"),
+&"idle": SubResource("Animation_d820h"),
+&"idle_no_balloon": SubResource("Animation_njoyi"),
+&"idle_no_trash": SubResource("Animation_fs74k"),
+&"run": SubResource("Animation_l4xbw"),
+&"run_no_balloon": SubResource("Animation_lf0xc")
 }
 
 [sub_resource type="ShaderMaterial" id="29"]
@@ -9769,10 +9769,10 @@ shader_parameter/new_color = Color(0.556863, 0.298039, 0.12549, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1pp1c"]
 _data = {
-"fear": SubResource("Animation_wj3gh"),
-"idle": SubResource("Animation_2yjkp"),
-"run": SubResource("Animation_odauk"),
-"talk": SubResource("Animation_3ilul")
+&"fear": SubResource("Animation_wj3gh"),
+&"idle": SubResource("Animation_2yjkp"),
+&"run": SubResource("Animation_odauk"),
+&"talk": SubResource("Animation_3ilul")
 }
 
 [sub_resource type="ShaderMaterial" id="31"]
@@ -11014,10 +11014,10 @@ tracks/24/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qa04c"]
 _data = {
-"fear": SubResource("34"),
-"idle": SubResource("35"),
-"run": SubResource("36"),
-"talk": SubResource("37")
+&"fear": SubResource("34"),
+&"idle": SubResource("35"),
+&"run": SubResource("36"),
+&"talk": SubResource("37")
 }
 
 [sub_resource type="ShaderMaterial" id="38"]
@@ -13195,13 +13195,13 @@ tracks/25/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n3jed"]
 _data = {
-"attack": SubResource("Animation_xb4fd"),
-"attack_no_balloon": SubResource("Animation_awavl"),
-"idle": SubResource("Animation_to21g"),
-"idle_no_balloon": SubResource("Animation_817lg"),
-"idle_no_trash": SubResource("Animation_upo6w"),
-"run": SubResource("Animation_f1ujd"),
-"run_no_balloon": SubResource("Animation_ysneh")
+&"attack": SubResource("Animation_xb4fd"),
+&"attack_no_balloon": SubResource("Animation_awavl"),
+&"idle": SubResource("Animation_to21g"),
+&"idle_no_balloon": SubResource("Animation_817lg"),
+&"idle_no_trash": SubResource("Animation_upo6w"),
+&"run": SubResource("Animation_f1ujd"),
+&"run_no_balloon": SubResource("Animation_ysneh")
 }
 
 [sub_resource type="ShaderMaterial" id="42"]
@@ -14437,10 +14437,10 @@ tracks/24/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mhty2"]
 _data = {
-"fear": SubResource("Animation_ptxw4"),
-"idle": SubResource("Animation_u38hr"),
-"run": SubResource("Animation_fh5r1"),
-"talk": SubResource("Animation_yru78")
+&"fear": SubResource("Animation_ptxw4"),
+&"idle": SubResource("Animation_u38hr"),
+&"run": SubResource("Animation_fh5r1"),
+&"talk": SubResource("Animation_yru78")
 }
 
 [sub_resource type="ShaderMaterial" id="44"]
@@ -15682,10 +15682,10 @@ tracks/24/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l65n5"]
 _data = {
-"fear": SubResource("47"),
-"idle": SubResource("48"),
-"run": SubResource("49"),
-"talk": SubResource("50")
+&"fear": SubResource("47"),
+&"idle": SubResource("48"),
+&"run": SubResource("49"),
+&"talk": SubResource("50")
 }
 
 [sub_resource type="ShaderMaterial" id="51"]
@@ -16035,9 +16035,9 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3f6eg"]
 _data = {
-"conversa": SubResource("Animation_0xltp"),
-"idle": SubResource("Animation_vvysu"),
-"talk": SubResource("Animation_ds55r")
+&"conversa": SubResource("Animation_0xltp"),
+&"idle": SubResource("Animation_vvysu"),
+&"talk": SubResource("Animation_ds55r")
 }
 
 [sub_resource type="Animation" id="Animation_qn1sx"]
@@ -16268,8 +16268,8 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5uyfa"]
 _data = {
-"conversa": SubResource("Animation_qn1sx"),
-"idle": SubResource("Animation_5jtk3")
+&"conversa": SubResource("Animation_qn1sx"),
+&"idle": SubResource("Animation_5jtk3")
 }
 
 [sub_resource type="Animation" id="Animation_cjynb"]
@@ -17280,11 +17280,11 @@ tracks/15/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vj0m1"]
 _data = {
-"fall": SubResource("Animation_cjynb"),
-"idle": SubResource("Animation_u8gko"),
-"jump": SubResource("Animation_jfgh4"),
-"talk": SubResource("Animation_u4t5b"),
-"walk": SubResource("Animation_up0pr")
+&"fall": SubResource("Animation_cjynb"),
+&"idle": SubResource("Animation_u8gko"),
+&"jump": SubResource("Animation_jfgh4"),
+&"talk": SubResource("Animation_u4t5b"),
+&"walk": SubResource("Animation_up0pr")
 }
 
 [sub_resource type="Animation" id="Animation_c2rhg"]
@@ -17485,9 +17485,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_udd58"]
 _data = {
-"idle": SubResource("Animation_c2rhg"),
-"move": SubResource("Animation_ewaiw"),
-"talk": SubResource("Animation_ua30e")
+&"idle": SubResource("Animation_c2rhg"),
+&"move": SubResource("Animation_ewaiw"),
+&"talk": SubResource("Animation_ua30e")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="80"]
@@ -19776,14 +19776,14 @@ tracks/83/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xkjsx"]
 _data = {
-"Go To Credits Scene": SubResource("72"),
-"Scene 1": SubResource("73"),
-"Scene 2": SubResource("74"),
-"Scene 3.1": SubResource("75"),
-"Scene 3.2": SubResource("76"),
-"Scene 3.3": SubResource("77"),
-"Scene 4": SubResource("78"),
-"Scene 5": SubResource("79")
+&"Go To Credits Scene": SubResource("72"),
+&"Scene 1": SubResource("73"),
+&"Scene 2": SubResource("74"),
+&"Scene 3.1": SubResource("75"),
+&"Scene 3.2": SubResource("76"),
+&"Scene 3.3": SubResource("77"),
+&"Scene 4": SubResource("78"),
+&"Scene 5": SubResource("79")
 }
 
 [node name="Stage" type="Node2D"]

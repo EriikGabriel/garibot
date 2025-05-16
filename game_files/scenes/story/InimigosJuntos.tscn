@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnntyayfbomqh"]
 
-[ext_resource type="PackedScene" path="res://scenes/enemies/Animgeladeira.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/Animmicroondas.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/BasicEnemySprite.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/Animfogao.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/Animfuradeira.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://1xmn4p50vo11" path="res://scenes/enemies/Animgeladeira.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://jf07gibmqoqi" path="res://scenes/enemies/Animmicroondas.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cnnuldniniiba" path="res://scenes/enemies/BasicEnemySprite.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cooiivh2p2gjw" path="res://scenes/enemies/Animfogao.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cm3entag0l2e" path="res://scenes/enemies/Animfuradeira.tscn" id="5"]
 
 [node name="InimigosJuntos" type="Node2D"]
 

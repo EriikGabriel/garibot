@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://cbrvkjxeekrqg"]
 
-[ext_resource path="res://assets/Images/Stage Elements/StageEnd/wall.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://xxpab7kwxigb" path="res://assets/Images/Stage Elements/StageEnd/wall.png" id="1"]
 
 [node name="Parede" type="Polygon2D"]
-texture = ExtResource( 1 )
-polygon = PackedVector2Array( 2500, 195, 2500, 715, 5000, 715, 5000, 195 )
+texture = ExtResource("1")
+polygon = PackedVector2Array(2500, 195, 2500, 715, 5000, 715, 5000, 195)

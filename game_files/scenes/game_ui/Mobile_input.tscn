@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://buf571tiu7tgr"]
 
-[ext_resource path="res://assets/Images/UI/Tutorial/Tecla.png" type="Texture2D" id=1]
-[ext_resource path="res://scenes/game_ui/TouchScreenButton_X.gd" type="Script" id=2]
-[ext_resource path="res://scenes/game_ui/TouchScreenButton_Z.gd" type="Script" id=3]
-[ext_resource path="res://scenes/game_ui/TouchScreenButton_Space.gd" type="Script" id=4]
+[ext_resource type="Texture2D" uid="uid://qsimo131kyr5" path="res://assets/Images/UI/Tutorial/Tecla.png" id="1"]
+[ext_resource type="Script" uid="uid://chtjbfhkuwm3w" path="res://scenes/game_ui/TouchScreenButton_X.gd" id="2"]
+[ext_resource type="Script" uid="uid://db1e1nddt8n78" path="res://scenes/game_ui/TouchScreenButton_Z.gd" id="3"]
+[ext_resource type="Script" uid="uid://cm3n4usyij8t7" path="res://scenes/game_ui/TouchScreenButton_Space.gd" id="4"]
 
 [node name="Mobile_input" type="Control"]
 mouse_filter = 1
@@ -12,25 +12,26 @@ __meta__ = {
 }
 
 [node name="TouchScreenButton_X" type="TouchScreenButton" parent="."]
-position = Vector2( 720.578, 281.106 )
-scale = Vector2( 1.60454, 1.64232 )
+position = Vector2(720.578, 281.106)
+scale = Vector2(1.60454, 1.64232)
 z_index = 50
-normal = ExtResource( 1 )
-script = ExtResource( 2 )
+normal = ExtResource("1")
+script = ExtResource("2")
 
 [node name="TouchScreenButton_Z" type="TouchScreenButton" parent="."]
-position = Vector2( 656.82, 360.605 )
-scale = Vector2( 1.61818, 1.49982 )
+position = Vector2(656.82, 360.605)
+scale = Vector2(1.61818, 1.49982)
 z_index = 50
-normal = ExtResource( 1 )
-script = ExtResource( 3 )
+normal = ExtResource("1")
+script = ExtResource("3")
 
 [node name="TouchScreenButton_accept" type="TouchScreenButton" parent="."]
-position = Vector2( 730.978, 357.402 )
-scale = Vector2( 1.86363, 1.9176 )
+position = Vector2(730.978, 357.402)
+scale = Vector2(1.86363, 1.9176)
 z_index = 50
-normal = ExtResource( 1 )
-script = ExtResource( 4 )
+normal = ExtResource("1")
+script = ExtResource("4")
+
 [connection signal="pressed" from="TouchScreenButton_X" to="TouchScreenButton_X" method="_on_TouchScreenButton_X_pressed"]
 [connection signal="released" from="TouchScreenButton_X" to="TouchScreenButton_X" method="_on_TouchScreenButton_X_released"]
 [connection signal="pressed" from="TouchScreenButton_Z" to="TouchScreenButton_Z" method="_on_TouchScreenButton_Z_pressed"]

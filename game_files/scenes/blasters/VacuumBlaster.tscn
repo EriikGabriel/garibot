@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://csr41rec3j8ev"]
 
-[ext_resource path="res://scenes/blasters/Aspire.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/blasters/VacuumBlaster.gd" type="Script" id=2]
-[ext_resource path="res://assets/Sounds/sfx/vaccum-sfx.mp3" type="AudioStream" id=3]
-[ext_resource path="res://assets/Images/Blasters/vaccum.png" type="Texture2D" id=4]
+[ext_resource type="PackedScene" uid="uid://dd4uw0dw4cvyj" path="res://scenes/blasters/Aspire.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cvh2oqs3ohu3p" path="res://scenes/blasters/VacuumBlaster.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://ctl72y5ge1qyx" path="res://assets/Sounds/sfx/vaccum-sfx.mp3" id="3"]
+[ext_resource type="Texture2D" uid="uid://byg31f70in51k" path="res://assets/Images/Blasters/vaccum.png" id="4"]
 
 [node name="Vacuum" type="Node2D"]
 rotation = -1.5708
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="Area2D" parent="." instance=ExtResource( 1 )]
+[node name="Area2D" parent="." instance=ExtResource("1")]
 rotation = 1.5708
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource( 4 )
-region_rect = Rect2( 6, 87, 26, 24 )
+texture = ExtResource("4")
+region_rect = Rect2(6, 87, 26, 24)
 
 [node name="TweenPos" type="Tween" parent="."]
 playback_process_mode = 0
@@ -27,7 +27,8 @@ playback_process_mode = 0
 playback_process_mode = 0
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource("3")
 autoplay = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="tween_completed" from="TweenScale" to="." method="_on_TweenScale_tween_completed"]

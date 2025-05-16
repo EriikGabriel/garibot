@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://cl8kt1ctdx4b"]
 
-[ext_resource path="res://assets/Font/tutorial_hint.tres" type="FontFile" id=1]
-[ext_resource path="res://assets/Images/Collectibles/monitor.png" type="Texture2D" id=2]
+[ext_resource type="FontFile" path="res://assets/Font/tutorial_hint.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://bcyiemorns10d" path="res://assets/Images/Collectibles/monitor.png" id="2"]
 
 [node name="Hint" type="CenterContainer"]
 anchor_left = 0.5
@@ -41,7 +41,7 @@ offset_right = 40.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -58,7 +58,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource( 1 )
+theme_override_fonts/font = ExtResource("1")
 text = "Itens"
 align = 1
 valign = 1

@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://d0nju7mhw6ysj"]
 
-[ext_resource path="res://scenes/menu/painel_style_blue.tres" type="StyleBox" id=1]
-[ext_resource path="res://assets/Images/Blasters/hydro.png" type="Texture2D" id=2]
-[ext_resource path="res://TutorialWindow.gd" type="Script" id=3]
-[ext_resource path="res://assets/Font/text_ui.tres" type="FontFile" id=5]
+[ext_resource type="StyleBox" path="res://scenes/menu/painel_style_blue.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://jmppqesqkf6m" path="res://assets/Images/Blasters/hydro.png" id="2"]
+[ext_resource type="Script" uid="uid://b6ah7yxvgynuh" path="res://TutorialWindow.gd" id="3"]
+[ext_resource type="FontFile" path="res://assets/Font/text_ui.tres" id="5"]
 
 [node name="TutorialWindow" type="Panel"]
 anchor_left = 0.5
@@ -14,10 +14,10 @@ offset_left = -400.0
 offset_top = -128.0
 offset_right = 100.0
 offset_bottom = 172.0
-custom_minimum_size = Vector2( 500, 300 )
+custom_minimum_size = Vector2(500, 300)
 mouse_filter = 2
-theme_override_styles/panel = ExtResource( 1 )
-script = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("1")
+script = ExtResource("3")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -39,7 +39,7 @@ __meta__ = {
 offset_top = 36.0
 offset_right = 480.0
 offset_bottom = 59.0
-theme_override_fonts/font = ExtResource( 5 )
+theme_override_fonts/font = ExtResource("5")
 text = "Você construiu a "
 align = 1
 valign = 1
@@ -60,9 +60,9 @@ __meta__ = {
 offset_left = 220.0
 offset_right = 260.0
 offset_bottom = 40.0
-custom_minimum_size = Vector2( 40, 40 )
-pivot_offset = Vector2( 250, 9 )
-texture = ExtResource( 2 )
+custom_minimum_size = Vector2(40, 40)
+pivot_offset = Vector2(250, 9)
+texture = ExtResource("2")
 stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,8 +72,8 @@ __meta__ = {
 offset_top = 119.0
 offset_right = 480.0
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource( 5 )
-theme_override_colors/font_shadow_color = Color( 0.945098, 1, 0.0392157, 1 )
+theme_override_fonts/font = ExtResource("5")
+theme_override_colors/font_shadow_color = Color(0.945098, 1, 0.0392157, 1)
 text = "ENGENHOCA ELÉTRICA"
 align = 1
 valign = 1
@@ -85,7 +85,7 @@ __meta__ = {
 offset_top = 152.0
 offset_right = 480.0
 offset_bottom = 201.0
-theme_override_fonts/font = ExtResource( 5 )
+theme_override_fonts/font = ExtResource("5")
 text = "COM ELA VOCÊ PODE ATIVAR CIRCUITOS DE ELEVADORES!"
 align = 1
 valign = 1
@@ -98,7 +98,7 @@ __meta__ = {
 offset_top = 211.0
 offset_right = 480.0
 offset_bottom = 260.0
-theme_override_fonts/font = ExtResource( 5 )
+theme_override_fonts/font = ExtResource("5")
 text = "APERTE X PARA USAR, SEGURE X PARA LANÇAR MAIS LONGE"
 align = 1
 valign = 1
@@ -109,5 +109,6 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
+
 [connection signal="focus_entered" from="." to="." method="_on_TutorialWindow_focus_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

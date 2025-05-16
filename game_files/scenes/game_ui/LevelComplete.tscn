@@ -1,50 +1,55 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://lfjelv3vn50s"]
 
-[ext_resource path="res://scenes/game_ui/LevelComplete.gd" type="Script" id=1]
-[ext_resource path="res://scenes/menu/painel_style_blue.tres" type="StyleBox" id=2]
-[ext_resource path="res://scenes/game_ui/LevelCompleteButton.gd" type="Script" id=3]
-[ext_resource path="res://scenes/menu/buttons/GreenButtonNormal.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" type="FontFile" id=5]
-[ext_resource path="res://assets/Font/JuanMikes.otf" type="FontFile" id=6]
-[ext_resource path="res://assets/Font/text_ui.tres" type="FontFile" id=7]
-[ext_resource path="res://assets/Images/UI/Storyboard/Cena5.png" type="Texture2D" id=9]
-[ext_resource path="res://assets/Images/UI/Storyboard/EmptyStar.png" type="Texture2D" id=10]
-[ext_resource path="res://assets/Images/UI/Storyboard/FullStar.png" type="Texture2D" id=11]
+[ext_resource type="Script" uid="uid://qp8sxv7euvb2" path="res://scenes/game_ui/LevelComplete.gd" id="1"]
+[ext_resource type="StyleBox" path="res://scenes/menu/painel_style_blue.tres" id="2"]
+[ext_resource type="Script" uid="uid://btq750g80wokr" path="res://scenes/game_ui/LevelCompleteButton.gd" id="3"]
+[ext_resource type="StyleBox" path="res://scenes/menu/buttons/GreenButtonNormal.tres" id="4"]
+[ext_resource type="FontFile" uid="uid://bt1im3pe2jshf" path="res://assets/Font/gomarice_shmup_in_the_zone.ttf" id="5"]
+[ext_resource type="FontFile" uid="uid://0a86om4x6b5b" path="res://assets/Font/JuanMikes.otf" id="6"]
+[ext_resource type="FontFile" path="res://assets/Font/text_ui.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://b6goetoagxjhe" path="res://assets/Images/UI/Storyboard/Cena5.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cu0x7uon4bmxk" path="res://assets/Images/UI/Storyboard/EmptyStar.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cgog4nthfpq6n" path="res://assets/Images/UI/Storyboard/FullStar.png" id="11"]
 
-[sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 800, 470 )
+[sub_resource type="StyleBoxTexture" id="1"]
+texture = ExtResource("9")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 800, 470)
 
-[sub_resource type="FontFile" id=2]
-size = 60
-outline_size = 3
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("5")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=3]
-size = 28
-font_data = ExtResource( 6 )
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[node name="LevelComplete" type="Control" groups=[
-"level_complete",
-]]
+[node name="LevelComplete" type="Control" groups=["level_complete"]]
 process_mode = 3
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
-script = ExtResource( 1 )
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
-full_star = ExtResource( 11 )
+full_star = ExtResource("11")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 800.0
 offset_bottom = 450.0
 mouse_filter = 1
-theme_override_styles/panel = SubResource( 1 )
+theme_override_styles/panel = SubResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,10 +61,10 @@ offset_left = -374.0
 offset_top = 29.0
 offset_right = 15.0
 offset_bottom = 154.0
-theme_override_fonts/font = SubResource( 2 )
-theme_override_colors/font_color = Color( 0.12549, 0.839216, 0, 1 )
-theme_override_colors/font_outline_color = Color( 0, 0, 0, 1 )
-theme_override_colors/font_shadow_color = Color( 0.92549, 0.898039, 0.760784, 1 )
+theme_override_fonts/font = SubResource("2")
+theme_override_colors/font_color = Color(0.12549, 0.839216, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.92549, 0.898039, 0.760784, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 text = "STAGE_COMPLETE"
@@ -79,9 +84,9 @@ offset_top = -127.0
 offset_right = 196.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 32, 32 )
+pivot_offset = Vector2(32, 32)
 mouse_filter = 1
-theme_override_styles/panel = ExtResource( 2 )
+theme_override_styles/panel = ExtResource("2")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -106,7 +111,7 @@ alignment = 1
 offset_top = 18.0
 offset_right = 204.0
 offset_bottom = 41.0
-theme_override_fonts/font = ExtResource( 7 )
+theme_override_fonts/font = ExtResource("7")
 text = "PONTUAÇÃO"
 valign = 1
 __meta__ = {
@@ -125,8 +130,8 @@ __meta__ = {
 [node name="Star1" type="TextureRect" parent="Panel/Pontos/HBoxContainer/VBoxContainer/HBoxContainer"]
 offset_right = 64.0
 offset_bottom = 64.0
-custom_minimum_size = Vector2( 64, 64 )
-texture = ExtResource( 11 )
+custom_minimum_size = Vector2(64, 64)
+texture = ExtResource("11")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -135,7 +140,7 @@ __meta__ = {
 offset_left = 68.0
 offset_right = 132.0
 offset_bottom = 64.0
-texture = ExtResource( 10 )
+texture = ExtResource("10")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -144,7 +149,7 @@ __meta__ = {
 offset_left = 136.0
 offset_right = 200.0
 offset_bottom = 64.0
-texture = ExtResource( 10 )
+texture = ExtResource("10")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -164,15 +169,15 @@ offset_top = 41.0
 offset_right = 379.0
 offset_bottom = 86.0
 size_flags_vertical = 4
-theme_override_styles/hover = ExtResource( 4 )
-theme_override_styles/pressed = ExtResource( 4 )
-theme_override_styles/focus = ExtResource( 4 )
-theme_override_styles/disabled = ExtResource( 4 )
-theme_override_styles/normal = ExtResource( 4 )
-theme_override_fonts/font = ExtResource( 7 )
+theme_override_styles/hover = ExtResource("4")
+theme_override_styles/pressed = ExtResource("4")
+theme_override_styles/focus = ExtResource("4")
+theme_override_styles/disabled = ExtResource("4")
+theme_override_styles/normal = ExtResource("4")
+theme_override_fonts/font = ExtResource("7")
 disabled = true
 text = "CONTINUAR"
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="Timer" type="Timer" parent="Panel/Pontos/HBoxContainer/LevelCompleteButton"]
 wait_time = 2.0
@@ -188,8 +193,8 @@ offset_left = -41.125
 offset_top = -0.212509
 offset_right = 91.875
 offset_bottom = 33.7875
-scale = Vector2( 0.3, 0.3 )
-theme_override_fonts/font = SubResource( 3 )
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = SubResource("3")
 text = "30 / 50"
 align = 1
 valign = 1

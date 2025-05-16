@@ -1,252 +1,250 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=13 format=3 uid="uid://dj46ixux8fwig"]
 
-[ext_resource path="res://assets/Font/text.tres" type="FontFile" id=1]
-[ext_resource path="res://assets/Images/Effects/baloon.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/UI/Misc/playIconSmall.png" type="Texture2D" id=3]
-[ext_resource path="res://scenes/animation/NewDialog.gd" type="Script" id=4]
+[ext_resource type="FontFile" path="res://assets/Font/text.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://su1ggmds3uq" path="res://assets/Images/Effects/baloon.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dbmkk4yvt6so0" path="res://assets/Images/UI/Misc/playIconSmall.png" id="3"]
+[ext_resource type="Script" uid="uid://27un8s2mptpv" path="res://scenes/animation/NewDialog.gd" id="4"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 length = 6.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Balao:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Balao/Texto:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 length = 7.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Balao:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Balao/Texto:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "conversa2"
 length = 7.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Balao:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Balao/Texto:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
 }
 tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 7 ),
-"transitions": PackedFloat32Array( 1 ),
-"values": [ {
-"args": [  ],
-"method": "stop"
-} ]
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 resource_name = "conversa_final"
 length = 5.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Balao:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Balao/Texto:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
 }
 tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 5 ),
-"transitions": PackedFloat32Array( 1 ),
-"values": [ {
-"args": [  ],
-"method": "show_level_complete"
-} ]
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_level_complete"
+}]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Balao:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, false ]
+"values": [false, false]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 resource_name = "play_line"
 length = 3.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Balao:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 6.1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 6.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Balao/Texto:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Balao/Texto:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 6 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, true ]
+"values": [true, true]
 }
 
-[sub_resource type="Animation" id=8]
-loop = true
+[sub_resource type="Animation" id="8"]
+loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.25, 0.5, 0.75, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=9]
-loop = true
+[sub_resource type="Animation" id="9"]
+loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.25, 0.5, 0.75, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[node name="Dialog" type="Node2D" groups=[
-"animation",
-]]
-script = ExtResource( 4 )
+[node name="Dialog" type="Node2D" groups=["animation"]]
+script = ExtResource("4")
 playing = true
-dialog = [ "Heehehe", "JoojjoojOooj", "Borala" ]
+dialog = ["Heehehe", "JoojjoojOooj", "Borala"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/conversa0 = SubResource( 1 )
-anims/conversa1 = SubResource( 2 )
-anims/conversa2 = SubResource( 3 )
-anims/conversa_final = SubResource( 4 )
-anims/default = SubResource( 5 )
-anims/play_line = SubResource( 6 )
+anims/conversa0 = SubResource("1")
+anims/conversa1 = SubResource("2")
+anims/conversa2 = SubResource("3")
+anims/conversa_final = SubResource("4")
+anims/default = SubResource("5")
+anims/play_line = SubResource("6")
 
 [node name="Balao" type="Sprite2D" parent="."]
-position = Vector2( 400.25, 195.25 )
-texture = ExtResource( 2 )
+position = Vector2(400.25, 195.25)
+texture = ExtResource("2")
 
 [node name="Texto" type="Label" parent="Balao"]
 anchor_left = 0.5
@@ -257,10 +255,10 @@ offset_left = -460.0
 offset_top = -151.5
 offset_right = 429.0
 offset_bottom = 96.5
-scale = Vector2( 0.5, 0.5 )
-theme_override_fonts/font = ExtResource( 1 )
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_colors/font_shadow_color = Color( 0.878431, 0.45098, 0.164706, 0.490196 )
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.878431, 0.45098, 0.164706, 0.490196)
 text = "OBRIGADO GARIBOT!
 VOCÊ RECICLOU O LIXO, AJUDOU AS PESSOAS E O MUNDO INTEIRO!"
 valign = 1
@@ -273,15 +271,15 @@ __meta__ = {
 
 [node name="FastForwardIcon" type="Sprite2D" parent="."]
 visible = false
-position = Vector2( 190, 239 )
-texture = ExtResource( 3 )
+position = Vector2(190, 239)
+texture = ExtResource("3")
 
 [node name="Sprite3" type="Sprite2D" parent="FastForwardIcon"]
-position = Vector2( 17, 0 )
-texture = ExtResource( 3 )
+position = Vector2(17, 0)
+texture = ExtResource("3")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="FastForwardIcon"]
-anims/default = SubResource( 8 )
+anims/default = SubResource("8")
 
 [node name="Space" type="Label" parent="."]
 visible = false
@@ -293,10 +291,10 @@ offset_left = 545.552
 offset_top = 228.376
 offset_right = 706.552
 offset_bottom = 276.377
-scale = Vector2( 0.5, 0.5 )
-theme_override_fonts/font = ExtResource( 1 )
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_colors/font_shadow_color = Color( 0.878431, 0.45098, 0.164706, 0.490196 )
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.878431, 0.45098, 0.164706, 0.490196)
 text = "[ESPAÇO]"
 align = 1
 valign = 1
@@ -308,5 +306,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Space"]
-anims/default = SubResource( 9 )
+anims/default = SubResource("9")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

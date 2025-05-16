@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://d1lqq666e1gml"]
 
-[ext_resource type="Script" path="res://scenes/story/Garra.gd" id="1"]
+[ext_resource type="Script" uid="uid://cvcsntajfnq7b" path="res://scenes/story/Garra.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://w4j5papkhy05" path="res://assets/Images/Main Recicler/garra.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://bmhsb418agtav" path="res://assets/Images/Tilesets/conveyor.png" id="3"]
 
@@ -88,9 +88,9 @@ resource_name = "stop"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f6s7x"]
 _data = {
-"close": SubResource("1"),
-"open": SubResource("2"),
-"stop": SubResource("3")
+&"close": SubResource("1"),
+&"open": SubResource("2"),
+&"stop": SubResource("3")
 }
 
 [node name="Garra" type="Node2D"]

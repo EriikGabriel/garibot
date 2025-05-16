@@ -1,29 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://ci8wdbwr3vdsb"]
 
-[ext_resource path="res://assets/Images/Usina/porta_usina.png" type="Texture2D" id=1]
-[ext_resource path="res://scenes/tilesets/Gate.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://bkwpyj5mloljq" path="res://assets/Images/Usina/porta_usina.png" id="1"]
+[ext_resource type="Script" uid="uid://cfjjnvkhdhcdn" path="res://scenes/tilesets/Gate.gd" id="2"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.5606, 74.9115 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(23.1212, 149.823)
 
 [node name="Gate" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Upper" type="CharacterBody2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Upper"]
-position = Vector2( 0, -75 )
-scale = Vector2( 1, -1 )
-shape = SubResource( 1 )
+position = Vector2(0, -75)
+scale = Vector2(1, -1)
+shape = SubResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="Upper"]
-position = Vector2( 0, -75 )
-scale = Vector2( 1, -1 )
-texture = ExtResource( 1 )
+position = Vector2(0, -75)
+scale = Vector2(1, -1)
+texture = ExtResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
@@ -32,15 +32,15 @@ __meta__ = {
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lower"]
-position = Vector2( 0, 75 )
-shape = SubResource( 1 )
+position = Vector2(0, 75)
+shape = SubResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="Lower"]
-position = Vector2( 0, 75 )
-texture = ExtResource( 1 )
+position = Vector2(0, 75)
+texture = ExtResource("1")
 __meta__ = {
 "_edit_lock_": true
 }

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://hcmrqcc6e0l5" path="res://assets/Images/Player/PlayerCharIcon.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://c37clpnwhun1t" path="res://assets/Images/Player/PlayerCharIcon3.png" id="8"]
 [ext_resource type="StyleBox" path="res://scenes/menu/painel_style_white.tres" id="9"]
-[ext_resource type="Script" path="res://scenes/menu/GameMenu.gd" id="11"]
+[ext_resource type="Script" uid="uid://d3m1vce3ban22" path="res://scenes/menu/GameMenu.gd" id="11"]
 [ext_resource type="StyleBox" path="res://scenes/menu/buttons/ButtonPress.tres" id="12"]
 [ext_resource type="StyleBox" path="res://scenes/menu/buttons/ButtonHover.tres" id="13"]
 

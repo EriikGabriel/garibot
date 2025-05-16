@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://1r50orpymvnv"]
 
-[ext_resource path="res://assets/Images/Recycler/complete.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://g8dqpe4hfk0i" path="res://assets/Images/Recycler/complete.png" id="1"]
 
 [node name="CenterContainer" type="CenterContainer"]
 anchor_left = 0.5
@@ -11,7 +11,7 @@ offset_left = -60.0
 offset_top = -41.0
 offset_right = 60.0
 offset_bottom = 41.0
-custom_minimum_size = Vector2( 80, 80 )
+custom_minimum_size = Vector2(80, 80)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -20,7 +20,7 @@ __meta__ = {
 offset_top = 11.0
 offset_right = 120.0
 offset_bottom = 71.0
-custom_minimum_size = Vector2( 120, 60 )
-texture = ExtResource( 1 )
+custom_minimum_size = Vector2(120, 60)
+texture = ExtResource("1")
 expand = true
 stretch_mode = 6

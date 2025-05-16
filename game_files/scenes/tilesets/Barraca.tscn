@@ -1,30 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://i3qhr1b0nst"]
 
-[ext_resource path="res://assets/Images/Stage Elements/Stage1/barraca_feira_completa.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://drfhyhufn1f4j" path="res://assets/Images/Stage Elements/Stage1/barraca_feira_completa.png" id="1"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 65.4134, 32.2441 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(130.827, 64.4882)
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 59.9791, 27.5377 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(119.958, 55.0754)
 
 [node name="Caixa" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4096
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, 47.3003 )
-shape = SubResource( 1 )
+position = Vector2(0, 47.3003)
+shape = SubResource("1")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 collision_layer = 4096
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 0, -52.689 )
-shape = SubResource( 2 )
+position = Vector2(0, -52.689)
+shape = SubResource("2")

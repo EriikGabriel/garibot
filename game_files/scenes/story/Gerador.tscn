@@ -22,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_65ons"]
 _data = {
-"girando": SubResource("1")
+&"girando": SubResource("1")
 }
 
 [node name="Gerador" type="Sprite2D"]

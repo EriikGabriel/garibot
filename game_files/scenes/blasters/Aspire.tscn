@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dd4uw0dw4cvyj"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 56.056, 42.0565 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(112.112, 84.113)
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id="2"]
 radius = 10.4451
 
 [node name="Area2D" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 45.2377, 0.514213 )
-shape = SubResource( 1 )
+position = Vector2(45.2377, 0.514213)
+shape = SubResource("1")
 
 [node name="Marker2D" type="Area2D" parent="."]
 __meta__ = {
@@ -18,4 +18,4 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D"]
-shape = SubResource( 2 )
+shape = SubResource("2")

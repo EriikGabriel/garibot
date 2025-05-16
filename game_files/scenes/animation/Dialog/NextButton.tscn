@@ -1,34 +1,37 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://b81dcn6elnjlp"]
 
-[ext_resource path="res://scenes/animation/Space.gd" type="Script" id=2]
-[ext_resource path="res://assets/Font/JuanMikes.otf" type="FontFile" id=3]
-[ext_resource path="res://scenes/animation/Mobile_button.tscn" type="PackedScene" id=4]
+[ext_resource type="Script" uid="uid://dxu5p0x17bso0" path="res://scenes/animation/Space.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://0a86om4x6b5b" path="res://assets/Font/JuanMikes.otf" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/animation/Mobile_button.tscn" id="4"]
 
-[sub_resource type="FontFile" id=1]
-size = 40
-use_filter = true
-font_data = ExtResource( 3 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="Animation" id=2]
-loop = true
+[sub_resource type="Animation" id="2"]
+loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.25, 0.5, 0.75, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [node name="NextButton" type="Node2D"]
 visible = false
-position = Vector2( 65, 22 )
-script = ExtResource( 2 )
+position = Vector2(65, 22)
+script = ExtResource("2")
 
 [node name="Space" type="Label" parent="."]
 visible = false
@@ -40,10 +43,10 @@ offset_left = 497.463
 offset_top = 211.848
 offset_right = 658.463
 offset_bottom = 259.849
-scale = Vector2( 0.3, 0.3 )
-theme_override_fonts/font = SubResource( 1 )
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_colors/font_shadow_color = Color( 0.878431, 0.45098, 0.164706, 0.490196 )
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = SubResource("1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.878431, 0.45098, 0.164706, 0.490196)
 text = "[ESPAÇO]"
 autowrap = true
 uppercase = true
@@ -54,7 +57,7 @@ __meta__ = {
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Space"]
 autoplay = "default"
-anims/default = SubResource( 2 )
+anims/default = SubResource("2")
 
-[node name="Mobile_button" parent="." instance=ExtResource( 4 )]
+[node name="Mobile_button" parent="." instance=ExtResource("4")]
 visible = false

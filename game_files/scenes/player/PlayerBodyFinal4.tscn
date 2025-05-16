@@ -1,51 +1,51 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://b3fin3x5avf7t"]
 
-[ext_resource path="res://assets/Images/Other Garibots/vidro.png" type="Texture2D" id=1]
-[ext_resource path="res://assets/Images/Other Garibots/METAL.png" type="Texture2D" id=2]
-[ext_resource path="res://scenes/player/PlayerBody.tscn" type="PackedScene" id=3]
+[ext_resource type="Texture2D" uid="uid://7aypvb7fw6to" path="res://assets/Images/Other Garibots/vidro.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dnvc5h30yxmwe" path="res://assets/Images/Other Garibots/METAL.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://cctjqdgc66tqj" path="res://scenes/player/PlayerBody.tscn" id="3"]
 
-[node name="PlayerBody" instance=ExtResource( 3 )]
+[node name="PlayerBody" instance=ExtResource("3")]
 change_skin_enabled = false
 
 [node name="Body" parent="Skeleton2D" index="0"]
 rotation = 0.0872665
-texture = ExtResource( 1 )
-region_rect = Rect2( 57, 50, 26, 29 )
+texture = ExtResource("1")
+region_rect = Rect2(57, 50, 26, 29)
 
 [node name="Head" parent="Skeleton2D/Body" index="0"]
-position = Vector2( 4, -15 )
+position = Vector2(4, -15)
 rotation = -0.0872665
-texture = ExtResource( 1 )
-offset = Vector2( -8, -14 )
+texture = ExtResource("1")
+offset = Vector2(-8, -14)
 
 [node name="Face" parent="Skeleton2D/Body/Head" index="0"]
-self_modulate = Color( 0.866667, 1, 0.443137, 1 )
-position = Vector2( 1.96673, -12.03 )
-scale = Vector2( 0.75, 0.75 )
+self_modulate = Color(0.866667, 1, 0.443137, 1)
+position = Vector2(1.96673, -12.03)
+scale = Vector2(0.75, 0.75)
 frame = 0
 
 [node name="Magnet" parent="Skeleton2D/Body/Head" index="1"]
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
 [node name="ShoulderR" parent="Skeleton2D/Body" index="1"]
 rotation = -0.785398
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 
 [node name="Effect" parent="Skeleton2D/Body/ShoulderR/ArmR/Blaster" index="0"]
-scale = Vector2( 0.431863, 0.431863 )
+scale = Vector2(0.431863, 0.431863)
 frame = 1
 
 [node name="ShoulderL" parent="Skeleton2D/Body" index="2"]
 rotation = 0.785398
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 
 [node name="LegL" parent="Skeleton2D/Body" index="3"]
-position = Vector2( 13, 7 )
+position = Vector2(13, 7)
 rotation = -0.0872665
-scale = Vector2( 1, 1.1 )
-texture = ExtResource( 1 )
+scale = Vector2(1, 1.1)
+texture = ExtResource("1")
 
 [node name="LegR" parent="Skeleton2D/Body" index="4"]
-position = Vector2( -11, 7 )
+position = Vector2(-11, 7)
 rotation = -0.0872665
-texture = ExtResource( 1 )
+texture = ExtResource("1")

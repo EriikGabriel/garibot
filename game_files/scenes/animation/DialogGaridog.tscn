@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://bqfdrraah35hp"]
 
-[ext_resource path="res://scenes/animation/Dialog.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/animation/GariDog.tscn" type="PackedScene" id=4]
+[ext_resource type="PackedScene" uid="uid://cgn6xs5boxnuu" path="res://scenes/animation/Dialog.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/animation/GariDog.tscn" id="4"]
 
-[node name="Dialog" instance=ExtResource( 3 )]
-dialog = [ "GALLERY_INSTRUCTIONS" ]
+[node name="Dialog" instance=ExtResource("3")]
+dialog = ["GALLERY_INSTRUCTIONS"]
 corpo_anim_override = NodePath("GariDog/Corpo/PersonAnimationPlayer")
 dialog_sound = "talk_garidog"
 
@@ -18,17 +18,17 @@ offset_right = 345.0
 offset_bottom = 99.5
 
 [node name="FastForwardIcon" parent="." index="2"]
-position = Vector2( 537, 242 )
+position = Vector2(537, 242)
 
-[node name="GariDog" parent="." index="3" instance=ExtResource( 4 )]
-position = Vector2( 484.532, 298.385 )
-scale = Vector2( -1, 1 )
+[node name="GariDog" parent="." index="3" instance=ExtResource("4")]
+position = Vector2(484.532, 298.385)
+scale = Vector2(-1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
-position = Vector2( 326.288, 316.407 )
-offset = Vector2( 75, -75 )
+position = Vector2(326.288, 316.407)
+offset = Vector2(75, -75)
 current = true
-zoom = Vector2( 0.65, 0.65 )
+zoom = Vector2(0.65, 0.65)
 limit_left = -400
 limit_right = 8000
 limit_bottom = 900

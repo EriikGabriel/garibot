@@ -1,22 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://dh5d071rwjyu2"]
 
-[ext_resource path="res://assets/Images/Stage Elements/StageEnd/plate.png" type="Texture2D" id=1]
-[ext_resource path="res://scenes/tilesets/PressurePlate.gd" type="Script" id=2]
-[ext_resource path="res://assets/Images/Stage Elements/StageEnd/pressure_plate.png" type="Texture2D" id=3]
+[ext_resource type="Texture2D" uid="uid://47fou3vpx1ns" path="res://assets/Images/Stage Elements/StageEnd/plate.png" id="1"]
+[ext_resource type="Script" uid="uid://bx1nxugsfssgv" path="res://scenes/tilesets/PressurePlate.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bqspmsjrf2phy" path="res://assets/Images/Stage Elements/StageEnd/pressure_plate.png" id="3"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.3445, 3.36299 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(42.689, 6.72598)
 
 [node name="PressurePlate" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false
 collision_layer = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -1.46007, -2.7223 )
-shape = SubResource( 1 )
+position = Vector2(-1.46007, -2.7223)
+shape = SubResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
@@ -27,31 +27,32 @@ monitorable = false
 collision_layer = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Plate"]
-modulate = Color( 0.164706, 0.392157, 1, 1 )
-position = Vector2( -1, -2.868 )
-texture = ExtResource( 1 )
+modulate = Color(0.164706, 0.392157, 1, 1)
+position = Vector2(-1, -2.868)
+texture = ExtResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plate"]
-position = Vector2( -1.46007, -2.7223 )
-shape = SubResource( 1 )
+position = Vector2(-1.46007, -2.7223)
+shape = SubResource("1")
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Block" type="StaticBody2D" parent="."]
-position = Vector2( 0, 7.755 )
+position = Vector2(0, 7.755)
 collision_layer = 4096
 collision_mask = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="Block"]
-position = Vector2( 0, -2.372 )
-texture = ExtResource( 3 )
+position = Vector2(0, -2.372)
+texture = ExtResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
-position = Vector2( -1.83742, -2.16514 )
-shape = SubResource( 1 )
+position = Vector2(-1.83742, -2.16514)
+shape = SubResource("1")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

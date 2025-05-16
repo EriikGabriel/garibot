@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmf2mlfonygmt"]
 
-[ext_resource type="Script" path="res://scenes/main/MainScene.gd" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/mobile_control/mobile_control.tscn" id="2"]
+[ext_resource type="Script" uid="uid://ekpfodhex0gw" path="res://scenes/main/MainScene.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bul01vpxabawl" path="res://scenes/mobile_control/mobile_control.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://dufcxykvj6mu7" path="res://scenes/stage_manager/LoadingScreen.tscn" id="3"]
 
 [node name="MainNode" type="Node"]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://cdxbyddi4sxxq"]
 
-[ext_resource path="res://scenes/stages/npc/IndicadorCabecas.gd" type="Script" id=1]
-[ext_resource path="res://assets/Images/Stage Elements/disabled_emoji.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/Stage Elements/happy_emoji.png" type="Texture2D" id=3]
-[ext_resource path="res://scenes/stages/npc/Cabeca.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/Images/Effects/baloon_clear.png" type="Texture2D" id=5]
-[ext_resource path="res://assets/Images/Effects/ballon_tail.png" type="Texture2D" id=6]
+[ext_resource type="Script" uid="uid://lwmwds0ct7cb" path="res://scenes/stages/npc/IndicadorCabecas.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://buxmisd3rvnws" path="res://assets/Images/Stage Elements/disabled_emoji.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dny4y7qpl4204" path="res://assets/Images/Stage Elements/happy_emoji.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://cih6edy5173ve" path="res://scenes/stages/npc/Cabeca.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://fkx8x0oh38bo" path="res://assets/Images/Effects/baloon_clear.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://yg68akqchcje" path="res://assets/Images/Effects/ballon_tail.png" id="6"]
 
 [node name="IndicadorCabecas" type="MarginContainer"]
 anchor_left = 0.5
@@ -19,18 +19,18 @@ offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-script = ExtResource( 1 )
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
-descontente = ExtResource( 2 )
-contente = ExtResource( 3 )
-cabeca = ExtResource( 4 )
+descontente = ExtResource("2")
+contente = ExtResource("3")
+cabeca = ExtResource("4")
 
 [node name="Balao" type="NinePatchRect" parent="."]
 offset_right = 67.0
 offset_bottom = 74.0
-texture = ExtResource( 5 )
+texture = ExtResource("5")
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
@@ -48,7 +48,7 @@ __meta__ = {
 offset_top = 48.0
 offset_right = 67.0
 offset_bottom = 52.0
-custom_minimum_size = Vector2( 0, 4 )
+custom_minimum_size = Vector2(0, 4)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 offset_left = 33.0
@@ -71,7 +71,7 @@ offset_bottom = 74.0
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/CenterContainer"]
 offset_right = 67.0
 offset_bottom = 14.0
-custom_minimum_size = Vector2( 10, 5 )
+custom_minimum_size = Vector2(10, 5)
 size_flags_horizontal = 0
-texture = ExtResource( 6 )
+texture = ExtResource("6")
 stretch_mode = 6

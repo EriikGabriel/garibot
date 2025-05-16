@@ -80,9 +80,8 @@ func change_stage_idx(idx : int):
 	var _new = stage.instantiate()
 	
 	self.add_child(_new);
-	for signall in _new.get_signal_list():
-		if "change_scene_to_file" == signall["name"]:
-			_new.connect("change_scene_to_file", Callable(self, "change_stage"))
+	if _new.has_signal("change_scene_to_file"):
+		_new.connect("change_scene_to_file", Callable(self, "change_stage"))
 	
 	hide_loading()
 

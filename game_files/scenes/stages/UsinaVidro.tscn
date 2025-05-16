@@ -1,7 +1,7 @@
-[gd_scene format=2]
+[gd_scene format=3 uid="uid://c2yixyyey146g"]
 
 [node name="Vidro2" type="Polygon2D"]
-position = Vector2( -2247.61, -117.36 )
+position = Vector2(-2247.61, -117.36)
 z_index = -10
-color = Color( 0.164706, 0.27451, 1, 0.411765 )
-polygon = PackedVector2Array( 2770.45, 730.497, 2772.31, 806.949, 4634.25, 805.779, 4635.62, 727.648 )
+color = Color(0.164706, 0.27451, 1, 0.411765)
+polygon = PackedVector2Array(2770.45, 730.497, 2772.31, 806.949, 4634.25, 805.779, 4635.62, 727.648)

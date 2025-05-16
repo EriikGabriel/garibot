@@ -1,33 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://dect2vb5pfdij"]
 
-[ext_resource path="res://assets/Images/Other Garibots/METAL.png" type="Texture2D" id=1]
-[ext_resource path="res://scenes/player/PlayerBody.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/Images/Other Garibots/papel.png" type="Texture2D" id=3]
+[ext_resource type="Texture2D" uid="uid://dnvc5h30yxmwe" path="res://assets/Images/Other Garibots/METAL.png" id="1"]
+[ext_resource type="PackedScene" uid="uid://cctjqdgc66tqj" path="res://scenes/player/PlayerBody.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://wnmof022bor5" path="res://assets/Images/Other Garibots/papel.png" id="3"]
 
-[node name="PlayerBody" instance=ExtResource( 2 )]
+[node name="PlayerBody" instance=ExtResource("2")]
 change_skin_enabled = false
 
 [node name="Body" parent="Skeleton2D" index="0"]
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 
 [node name="Head" parent="Skeleton2D/Body" index="0"]
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 
 [node name="Face" parent="Skeleton2D/Body/Head" index="0"]
-self_modulate = Color( 0.866667, 1, 0.443137, 1 )
-position = Vector2( 2.96673, -12.03 )
+self_modulate = Color(0.866667, 1, 0.443137, 1)
+position = Vector2(2.96673, -12.03)
 
 [node name="Magnet" parent="Skeleton2D/Body/Head" index="1"]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 
 [node name="ShoulderR" parent="Skeleton2D/Body" index="1"]
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 
 [node name="ShoulderL" parent="Skeleton2D/Body" index="2"]
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 
 [node name="LegL" parent="Skeleton2D/Body" index="3"]
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 
 [node name="LegR" parent="Skeleton2D/Body" index="4"]
-texture = ExtResource( 3 )
+texture = ExtResource("3")

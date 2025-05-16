@@ -1,479 +1,479 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=40 format=3 uid="uid://dperi682epocd"]
 
-[ext_resource path="res://assets/Images/Scenery/fundo2.0.png" type="Texture2D" id=1]
-[ext_resource path="res://assets/Images/Scenery/fundo2.2.png" type="Texture2D" id=2]
-[ext_resource path="res://assets/Images/Scenery/ceu1.png" type="Texture2D" id=3]
-[ext_resource path="res://assets/Images/Scenery/nuvens.png" type="Texture2D" id=4]
-[ext_resource path="res://assets/Images/Scenery/Stage1/fundo1_1.png" type="Texture2D" id=5]
-[ext_resource path="res://assets/Images/Scenery/arvores_fundo.png" type="Texture2D" id=6]
-[ext_resource path="res://assets/Images/Scenery/fundo2.1.png" type="Texture2D" id=7]
-[ext_resource path="res://scenes/stages/background/Background.gd" type="Script" id=8]
-[ext_resource path="res://assets/Images/Scenery/fundo1.png" type="Texture2D" id=9]
-[ext_resource path="res://assets/Images/Scenery/ceu1_bw.png" type="Texture2D" id=10]
+[ext_resource type="Texture2D" uid="uid://b4msdr1au412m" path="res://assets/Images/Scenery/fundo2.0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cwywft7a1qmja" path="res://assets/Images/Scenery/fundo2.2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://novtl17cewlc" path="res://assets/Images/Scenery/ceu1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c6xnqqo6qqytx" path="res://assets/Images/Scenery/nuvens.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dwbapljnhfnxl" path="res://assets/Images/Scenery/Stage1/fundo1_1.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dqawcwt2h3g6b" path="res://assets/Images/Scenery/arvores_fundo.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://brtmj1dr3ek4f" path="res://assets/Images/Scenery/fundo2.1.png" id="7"]
+[ext_resource type="Script" uid="uid://ov4opkicjbus" path="res://scenes/stages/background/Background.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://g4m7xflkwamx" path="res://assets/Images/Scenery/fundo1.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bt1adibnmtpdx" path="res://assets/Images/Scenery/ceu1_bw.png" id="10"]
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id="1"]
 blend_mode = 1
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 length = 5.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer2/CanvasModulate:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = false
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 2.5, 5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.67451, 1, 0.580392, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.67451, 1, 0.580392, 1), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer2/céu_cinza:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer2/céu:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 length = 5.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer2/CanvasModulate:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = false
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 2.5, 5 ),
-"transitions": PackedFloat32Array( 1, 0.757858, 1 ),
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 0.757858, 1),
 "update": 0,
-"values": [ Color( 0.356863, 0.356863, 0.356863, 1 ), Color( 0.615686, 0.615686, 0.615686, 1 ), Color( 0.356863, 0.356863, 0.356863, 1 ) ]
+"values": [Color(0.356863, 0.356863, 0.356863, 1), Color(0.615686, 0.615686, 0.615686, 1), Color(0.356863, 0.356863, 0.356863, 1)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer2/céu:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer2/céu_cinza:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ ExtResource( 7 ), ExtResource( 1 ) ]
+"values": [ExtResource("7"), ExtResource("1")]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 0.564706, 0.564706, 0.564706, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(0.564706, 0.564706, 0.564706, 1), Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -400, 250 ), Vector2( -400, 260 ) ]
+"values": [Vector2(-400, 250), Vector2(-400, 260)]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ ExtResource( 2 ), ExtResource( 7 ) ]
+"values": [ExtResource("2"), ExtResource("7")]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 0.34902, 0.34902, 0.34902, 1 ), Color( 0.564706, 0.564706, 0.564706, 1 ) ]
+"values": [Color(0.34902, 0.34902, 0.34902, 1), Color(0.564706, 0.564706, 0.564706, 1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -332.308, 101.538 ) ]
+"values": [Vector2(-332.308, 101.538)]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 2 ) ]
+"values": [ExtResource("2"), ExtResource("2")]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 0.34902, 0.34902, 0.34902, 1 ), Color( 0.34902, 0.34902, 0.34902, 1 ) ]
+"values": [Color(0.34902, 0.34902, 0.34902, 1), Color(0.34902, 0.34902, 0.34902, 1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer3/Lixo:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( -332.308, -9.23078 ) ]
+"values": [Vector2(-332.308, -9.23078)]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id="7"]
 length = 30.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/nuvens:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 30 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 520, 0 ) ]
+"values": [Vector2(0, 0), Vector2(520, 0)]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id="8"]
 length = 20.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/nuvens/nuvens2:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 20 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 500, 0 ) ]
+"values": [Vector2(0, 0), Vector2(500, 0)]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id="9"]
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Arvores:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -500, 620 ), Vector2( -500, 620 ) ]
+"values": [Vector2(-500, 620), Vector2(-500, 620)]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id="10"]
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Arvores:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.682353, 1, 0.501961, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(0.682353, 1, 0.501961, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id="11"]
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Arvores:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -500, 0 ), Vector2( -500, -120 ) ]
+"values": [Vector2(-500, 0), Vector2(-500, -120)]
 }
 
-[sub_resource type="AnimationNodeAdd2" id=12]
+[sub_resource type="AnimationNodeAdd2" id="12"]
 
-[sub_resource type="AnimationNodeAdd2" id=13]
+[sub_resource type="AnimationNodeAdd2" id="13"]
 
-[sub_resource type="AnimationNodeAdd2" id=14]
+[sub_resource type="AnimationNodeAdd2" id="14"]
 
-[sub_resource type="AnimationNodeAnimation" id=15]
-animation = "tree_up"
+[sub_resource type="AnimationNodeAnimation" id="15"]
+animation = &"tree_up"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
-animation = "lixo0"
+[sub_resource type="AnimationNodeAnimation" id="16"]
+animation = &"lixo0"
 
-[sub_resource type="AnimationNodeAnimation" id=17]
-animation = "lixo1"
+[sub_resource type="AnimationNodeAnimation" id="17"]
+animation = &"lixo1"
 
-[sub_resource type="AnimationNodeAnimation" id=18]
-animation = "lixo2"
+[sub_resource type="AnimationNodeAnimation" id="18"]
+animation = &"lixo2"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
-animation = "cor on"
+[sub_resource type="AnimationNodeAnimation" id="19"]
+animation = &"cor on"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
-animation = "cor off"
+[sub_resource type="AnimationNodeAnimation" id="20"]
+animation = &"cor off"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
-animation = "tree_down"
+[sub_resource type="AnimationNodeAnimation" id="21"]
+animation = &"tree_down"
 
-[sub_resource type="AnimationNodeBlend2" id=22]
+[sub_resource type="AnimationNodeBlend2" id="22"]
 
-[sub_resource type="AnimationNodeBlend3" id=23]
+[sub_resource type="AnimationNodeBlend3" id="23"]
 
-[sub_resource type="AnimationNodeBlend2" id=24]
+[sub_resource type="AnimationNodeBlend2" id="24"]
 
-[sub_resource type="AnimationNodeAdd2" id=25]
+[sub_resource type="AnimationNodeAdd2" id="25"]
 
-[sub_resource type="AnimationNodeAnimation" id=26]
-animation = "mover2"
+[sub_resource type="AnimationNodeAnimation" id="26"]
+animation = &"mover2"
 
-[sub_resource type="AnimationNodeAnimation" id=27]
-animation = "mover"
+[sub_resource type="AnimationNodeAnimation" id="27"]
+animation = &"mover"
 
-[sub_resource type="AnimationNodeBlendTree" id=28]
-graph_offset = Vector2( 0, 117.5 )
-nodes/Add2/node = SubResource( 25 )
-nodes/Add2/position = Vector2( 320, 140 )
-nodes/Animation/node = SubResource( 27 )
-nodes/Animation/position = Vector2( 40, 140 )
-"nodes/Animation 2/node" = SubResource( 26 )
-"nodes/Animation 2/position" = Vector2( 40, 260 )
-nodes/output/position = Vector2( 580, 140 )
-node_connections = [ "output", 0, "Add2", "Add2", 0, "Animation", "Add2", 1, "Animation 2" ]
+[sub_resource type="AnimationNodeBlendTree" id="28"]
+graph_offset = Vector2(0, 117.5)
+nodes/Add2/node = SubResource("25")
+nodes/Add2/position = Vector2(320, 140)
+nodes/Animation/node = SubResource("27")
+nodes/Animation/position = Vector2(40, 140)
+"nodes/Animation 2/node" = SubResource("26")
+"nodes/Animation 2/position" = Vector2(40, 260)
+nodes/output/position = Vector2(580, 140)
+node_connections = [&"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2", &"output", 0, &"Add2"]
 
-[sub_resource type="AnimationNodeBlendTree" id=29]
-graph_offset = Vector2( 60.3142, 15.75 )
-nodes/Add2/node = SubResource( 14 )
-nodes/Add2/position = Vector2( 420, 340 )
-"nodes/Add2 2/node" = SubResource( 12 )
-"nodes/Add2 2/position" = Vector2( 720, 420 )
-"nodes/Add2 3/node" = SubResource( 13 )
-"nodes/Add2 3/position" = Vector2( 1000, 440 )
-nodes/Animation/node = SubResource( 21 )
-nodes/Animation/position = Vector2( -100, 540 )
-"nodes/Animation 2/node" = SubResource( 15 )
-"nodes/Animation 2/position" = Vector2( -180, 720 )
-"nodes/Animation 3/node" = SubResource( 16 )
-"nodes/Animation 3/position" = Vector2( -20, 260 )
-"nodes/Animation 4/node" = SubResource( 17 )
-"nodes/Animation 4/position" = Vector2( -20, 140 )
-"nodes/Animation 5/node" = SubResource( 18 )
-"nodes/Animation 5/position" = Vector2( -20, 20 )
-"nodes/Animation 6/node" = SubResource( 19 )
-"nodes/Animation 6/position" = Vector2( 520, 620 )
-"nodes/Animation 7/node" = SubResource( 20 )
-"nodes/Animation 7/position" = Vector2( 520, 740 )
-nodes/blend_color/node = SubResource( 22 )
-nodes/blend_color/position = Vector2( 720, 640 )
-nodes/blend_trash/node = SubResource( 23 )
-nodes/blend_trash/position = Vector2( 280, 140 )
-nodes/blend_tree/node = SubResource( 24 )
-nodes/blend_tree/position = Vector2( 80, 620 )
-nodes/nuvens/node = SubResource( 28 )
-nodes/nuvens/position = Vector2( -20, 420 )
-nodes/output/position = Vector2( 1220, 440 )
-node_connections = [ "output", 0, "Add2 3", "Add2", 0, "blend_trash", "Add2", 1, "nuvens", "blend_color", 0, "Animation 6", "blend_color", 1, "Animation 7", "Add2 2", 0, "Add2", "Add2 2", 1, "blend_tree", "Add2 3", 0, "Add2 2", "Add2 3", 1, "blend_color", "blend_tree", 0, "Animation", "blend_tree", 1, "Animation 2", "blend_trash", 0, "Animation 5", "blend_trash", 1, "Animation 4", "blend_trash", 2, "Animation 3" ]
+[sub_resource type="AnimationNodeBlendTree" id="29"]
+graph_offset = Vector2(60.3142, 15.75)
+nodes/Add2/node = SubResource("14")
+nodes/Add2/position = Vector2(420, 340)
+"nodes/Add2 2/node" = SubResource("12")
+"nodes/Add2 2/position" = Vector2(720, 420)
+"nodes/Add2 3/node" = SubResource("13")
+"nodes/Add2 3/position" = Vector2(1000, 440)
+nodes/Animation/node = SubResource("21")
+nodes/Animation/position = Vector2(-100, 540)
+"nodes/Animation 2/node" = SubResource("15")
+"nodes/Animation 2/position" = Vector2(-180, 720)
+"nodes/Animation 3/node" = SubResource("16")
+"nodes/Animation 3/position" = Vector2(-20, 260)
+"nodes/Animation 4/node" = SubResource("17")
+"nodes/Animation 4/position" = Vector2(-20, 140)
+"nodes/Animation 5/node" = SubResource("18")
+"nodes/Animation 5/position" = Vector2(-20, 20)
+"nodes/Animation 6/node" = SubResource("19")
+"nodes/Animation 6/position" = Vector2(520, 620)
+"nodes/Animation 7/node" = SubResource("20")
+"nodes/Animation 7/position" = Vector2(520, 740)
+nodes/blend_color/node = SubResource("22")
+nodes/blend_color/position = Vector2(720, 640)
+nodes/blend_trash/node = SubResource("23")
+nodes/blend_trash/position = Vector2(280, 140)
+nodes/blend_tree/node = SubResource("24")
+nodes/blend_tree/position = Vector2(80, 620)
+nodes/nuvens/node = SubResource("28")
+nodes/nuvens/position = Vector2(-20, 420)
+nodes/output/position = Vector2(1220, 440)
+node_connections = [&"Add2", 0, &"blend_trash", &"Add2", 1, &"nuvens", &"Add2 2", 0, &"Add2", &"Add2 2", 1, &"blend_tree", &"Add2 3", 0, &"Add2 2", &"Add2 3", 1, &"blend_color", &"blend_color", 0, &"Animation 6", &"blend_color", 1, &"Animation 7", &"blend_trash", 0, &"Animation 5", &"blend_trash", 1, &"Animation 4", &"blend_trash", 2, &"Animation 3", &"blend_tree", 0, &"Animation", &"blend_tree", 1, &"Animation 2", &"output", 0, &"Add2 3"]
 
 [node name="Background" type="Node2D"]
-position = Vector2( -394.867, -22.0738 )
+position = Vector2(-394.867, -22.0738)
 z_index = -10
-script = ExtResource( 8 )
+script = ExtResource("8")
 __meta__ = {
 "_edit_lock_": true
 }
-back_texture = ExtResource( 9 )
+back_texture = ExtResource("9")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scale = Vector2( 1.3, 1.3 )
-transform = Transform2D( 1.3, 0, 0, 1.3, 0, 0 )
+scale = Vector2(1.3, 1.3)
+transform = Transform2D(1.3, 0, 0, 1.3, 0, 0)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 1
-motion_scale = Vector2( 1, 0.9 )
+motion_scale = Vector2(1, 0.9)
 
 [node name="Lixo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
-position = Vector2( -332.308, -9.23078 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
+self_modulate = Color(0.34902, 0.34902, 0.34902, 1)
+position = Vector2(-332.308, -9.23078)
+scale = Vector2(2, 2)
+texture = ExtResource("2")
 centered = false
-offset = Vector2( -100, 0 )
+offset = Vector2(-100, 0)
 region_enabled = true
-region_rect = Rect2( 0, 0, 15000, 500 )
+region_rect = Rect2(0, 0, 15000, 500)
 
 [node name="Lixo2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3/Lixo"]
-self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
-position = Vector2( -200, 61.538 )
-texture = ExtResource( 2 )
+self_modulate = Color(0.34902, 0.34902, 0.34902, 1)
+position = Vector2(-200, 61.538)
+texture = ExtResource("2")
 centered = false
-offset = Vector2( -100, 0 )
+offset = Vector2(-100, 0)
 region_enabled = true
-region_rect = Rect2( 0, 0, 15000, 500 )
+region_rect = Rect2(0, 0, 15000, 500)
 
 [node name="Arvores" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( -500, 79.8 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 6 )
+position = Vector2(-500, 79.8)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6")
 centered = false
-offset = Vector2( -100, 0 )
+offset = Vector2(-100, 0)
 region_enabled = true
-region_rect = Rect2( 0, 0, 15000, 500 )
+region_rect = Rect2(0, 0, 15000, 500)
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Arvores" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3/Arvores"]
-position = Vector2( -847.18, 47.6923 )
-texture = ExtResource( 6 )
+position = Vector2(-847.18, 47.6923)
+texture = ExtResource("6")
 centered = false
-offset = Vector2( -100, 0 )
+offset = Vector2(-100, 0)
 region_enabled = true
-region_rect = Rect2( 0, 0, 15000, 500 )
+region_rect = Rect2(0, 0, 15000, 500)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.1, 1.1 )
-motion_offset = Vector2( 0, -50 )
+motion_scale = Vector2(1.1, 1.1)
+motion_offset = Vector2(0, -50)
 
 [node name="casas" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color( 1, 1, 1, 0.941176 )
-position = Vector2( -400, 550 )
-texture = ExtResource( 5 )
+modulate = Color(1, 1, 1, 0.941176)
+position = Vector2(-400, 550)
+texture = ExtResource("5")
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 30000, 400 )
+region_rect = Rect2(0, 0, 30000, 400)
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="nuvens" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color( 1, 1, 1, 0.941176 )
-position = Vector2( -400, -1 )
-texture = ExtResource( 4 )
+modulate = Color(1, 1, 1, 0.941176)
+position = Vector2(-400, -1)
+texture = ExtResource("4")
 centered = false
-offset = Vector2( 193.018, 0 )
+offset = Vector2(193.018, 0)
 region_enabled = true
-region_rect = Rect2( 0, 0, 20000, 100 )
+region_rect = Rect2(0, 0, 20000, 100)
 
 [node name="nuvens2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/nuvens"]
-modulate = Color( 1, 1, 1, 0.941176 )
-position = Vector2( -200, -110 )
-texture = ExtResource( 4 )
+modulate = Color(1, 1, 1, 0.941176)
+position = Vector2(-200, -110)
+texture = ExtResource("4")
 centered = false
-offset = Vector2( 28.3993, 0 )
+offset = Vector2(28.3993, 0)
 region_enabled = true
-region_rect = Rect2( 0, 0, 20000, 100 )
+region_rect = Rect2(0, 0, 20000, 100)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.2, 1.2 )
-motion_offset = Vector2( 0, -25 )
+motion_scale = Vector2(1.2, 1.2)
+motion_offset = Vector2(0, -25)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground/ParallaxLayer2"]
 visible = false
-position = Vector2( -394.867, -22.0738 )
-color = Color( 0.474453, 0.474453, 0.474453, 1 )
+position = Vector2(-394.867, -22.0738)
+color = Color(0.474453, 0.474453, 0.474453, 1)
 
 [node name="céu" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -200, -4003.08 )
-scale = Vector2( 4, 4 )
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-200, -4003.08)
+scale = Vector2(4, 4)
 z_index = -10
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 centered = false
-offset = Vector2( -100, 580 )
+offset = Vector2(-100, 580)
 region_enabled = true
-region_rect = Rect2( 0, 0, 7500, 640 )
+region_rect = Rect2(0, 0, 7500, 640)
 __meta__ = {
 "_edit_lock_": true
 }
@@ -481,21 +481,21 @@ __meta__ = {
 [node name="Polygon2D" type="Polygon2D" parent="ParallaxBackground/ParallaxLayer2/céu"]
 visible = false
 show_behind_parent = true
-position = Vector2( 0, 300 )
-color = Color( 0.407843, 0.560784, 0.968627, 1 )
-offset = Vector2( -100, 0 )
-polygon = PackedVector2Array( 0, 300, 0, 0, 15000, 0, 15000, 300 )
+position = Vector2(0, 300)
+color = Color(0.407843, 0.560784, 0.968627, 1)
+offset = Vector2(-100, 0)
+polygon = PackedVector2Array(0, 300, 0, 0, 15000, 0, 15000, 300)
 
 [node name="céu_cinza" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-material = SubResource( 1 )
-position = Vector2( -200, -4003.08 )
-scale = Vector2( 4, 4 )
+material = SubResource("1")
+position = Vector2(-200, -4003.08)
+scale = Vector2(4, 4)
 z_index = -10
-texture = ExtResource( 10 )
+texture = ExtResource("10")
 centered = false
-offset = Vector2( -100, 580 )
+offset = Vector2(-100, 580)
 region_enabled = true
-region_rect = Rect2( 0, 0, 7500, 640 )
+region_rect = Rect2(0, 0, 7500, 640)
 __meta__ = {
 "_edit_lock_": true
 }
@@ -503,25 +503,25 @@ __meta__ = {
 [node name="Polygon2D" type="Polygon2D" parent="ParallaxBackground/ParallaxLayer2/céu_cinza"]
 visible = false
 show_behind_parent = true
-position = Vector2( 0, -420 )
-color = Color( 0.756863, 0.756863, 0.756863, 1 )
-offset = Vector2( -100, 0 )
-polygon = PackedVector2Array( 0, 1000, 0, 0, 15000, 0, 15000, 1000 )
+position = Vector2(0, -420)
+color = Color(0.756863, 0.756863, 0.756863, 1)
+offset = Vector2(-100, 0)
+polygon = PackedVector2Array(0, 1000, 0, 0, 15000, 0, 15000, 1000)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/cor off" = SubResource( 2 )
-"anims/cor on" = SubResource( 3 )
-anims/lixo0 = SubResource( 4 )
-anims/lixo1 = SubResource( 5 )
-anims/lixo2 = SubResource( 6 )
-anims/mover = SubResource( 7 )
-anims/mover2 = SubResource( 8 )
-anims/tree_down = SubResource( 9 )
-anims/tree_grow = SubResource( 10 )
-anims/tree_up = SubResource( 11 )
+"anims/cor off" = SubResource("2")
+"anims/cor on" = SubResource("3")
+anims/lixo0 = SubResource("4")
+anims/lixo1 = SubResource("5")
+anims/lixo2 = SubResource("6")
+anims/mover = SubResource("7")
+anims/mover2 = SubResource("8")
+anims/tree_down = SubResource("9")
+anims/tree_grow = SubResource("10")
+anims/tree_up = SubResource("11")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 29 )
+tree_root = SubResource("29")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/Add2/add_amount = 1.0
