@@ -26,7 +26,7 @@ var in_cutscene = false
 # SCRIPT VARIABLES
 var move_velocity = 0
 var jump_velocity = 0
-var velocity = Vector2(0, 0)
+var velocity_ = Vector2(0, 0)
 var floor_normal = Vector2(0, -1)
 var orientation
 var key_left
@@ -311,8 +311,8 @@ func calculate_velocity():
 			if state == STATE.IDLE or state == STATE.MOVE:
 				snap = Vector2(0, 31)
 			
-			velocity.x = move_velocity
-			velocity.y = jump_velocity
+			velocity_.x = move_velocity
+			velocity_.y = jump_velocity
 			floor_normal = Vector2(0, -1)
 		GRAVITY.RIGHT:
 			if gravity_on and state == STATE.AIR:
@@ -321,8 +321,8 @@ func calculate_velocity():
 			if state == STATE.IDLE or state == STATE.MOVE:
 				snap = Vector2(31, 0)
 			
-			velocity.y = move_velocity
-			velocity.x = jump_velocity
+			velocity_.y = move_velocity
+			velocity_.x = jump_velocity
 			floor_normal = Vector2(-1, 0)
 		GRAVITY.UP:
 			if gravity_on and state == STATE.AIR:
@@ -331,8 +331,8 @@ func calculate_velocity():
 			if state == STATE.IDLE or state == STATE.MOVE:
 				snap = Vector2(0, -31)
 			
-			velocity.x = move_velocity
-			velocity.y = -jump_velocity
+			velocity_.x = move_velocity
+			velocity_.y = -jump_velocity
 			floor_normal = Vector2(0, 1)
 		GRAVITY.LEFT:
 			if gravity_on and state == STATE.AIR:
@@ -341,18 +341,18 @@ func calculate_velocity():
 			if state == STATE.IDLE or state == STATE.MOVE:
 				snap = Vector2(-31, 0)
 			
-			velocity.y = move_velocity
-			velocity.x = -jump_velocity
+			velocity_.y = move_velocity
+			velocity_.x = -jump_velocity
 			floor_normal = Vector2(1, 0)
 				
-	set_velocity(velocity)
+	set_velocity(velocity_)
 	# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `snap`
 	set_up_direction(floor_normal)
 	set_floor_stop_on_slope_enabled(true)
 	set_max_slides(5)
 	set_floor_max_angle(0.85)
 	move_and_slide()
-	velocity = velocity
+	velocity_ = velocity_
 
 
 func calculate_cooldown():
@@ -495,7 +495,7 @@ func get_orientation():
 func set_in_cutscene(_new):
 	in_cutscene = _new
 
-func set_ctrl_pressed(_new):
+func set_ctrl(_new):
 	has_control = _new
 
 func get_has_control():
@@ -511,7 +511,7 @@ func set_air_final_speed(_new):
 	AIR_FINAL_SPEED = _new
 
 func set_camera_current(_new):
-	_get_camera().current = _new
+	_get_camera().enabled = _new
 
 func set_camera_position(_new):
 	_get_camera().set_global_position(_new)

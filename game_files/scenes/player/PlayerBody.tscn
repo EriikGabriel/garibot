@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cctjqdgc66tqj"]
+[gd_scene load_steps=37 format=3 uid="uid://cctjqdgc66tqj"]
 
 [ext_resource type="Texture2D" uid="uid://cumk8picbsbpk" path="res://assets/Images/Player/PlayerChar.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://c1r1ly312ed1" path="res://assets/Images/Scenery/saco2png.png" id="2"]
@@ -24,6 +24,11 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.75, 0.75), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8i3e8"]
+_data = {
+&"Magnet": SubResource("1")
 }
 
 [sub_resource type="Animation" id="2"]
@@ -6147,8 +6152,35 @@ tracks/22/keys = {
 "values": [Vector2(1, 1)]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0pty"]
+_data = {
+&"aim_hydro_old": SubResource("2"),
+&"aim_magnet": SubResource("3"),
+&"aim_shock": SubResource("4"),
+&"aim_vaccum": SubResource("5"),
+&"aim_vaccum_old": SubResource("6"),
+&"bye": SubResource("7"),
+&"fall": SubResource("8"),
+&"fly_bubble": SubResource("9"),
+&"fly_bubble_old": SubResource("10"),
+&"hello": SubResource("11"),
+&"hurt": SubResource("12"),
+&"idle": SubResource("13"),
+&"idle_surprise": SubResource("14"),
+&"jump": SubResource("15"),
+&"jump_front": SubResource("16"),
+&"jump_happy": SubResource("17"),
+&"spin": SubResource("18"),
+&"still": SubResource("19"),
+&"turn_back": SubResource("20"),
+&"turn_front": SubResource("21"),
+&"walk": SubResource("22"),
+&"walk_holding": SubResource("23"),
+&"walk_holding_recicle": SubResource("24"),
+&"walk_scaried": SubResource("25")
+}
+
 [node name="PlayerBody" type="Node2D"]
-position = Vector2(100, 100)
 z_index = 10
 z_as_relative = false
 script = ExtResource("3")
@@ -6183,13 +6215,15 @@ rotation = 3.14159
 texture = ExtResource("8")
 
 [node name="AnimationMagnet" type="AnimationPlayer" parent="Skeleton2D/Body/Head/Magnet"]
+libraries = {
+&"": SubResource("AnimationLibrary_8i3e8")
+}
 autoplay = "Magnet"
-anims/Magnet = SubResource("1")
 
 [node name="ShoulderR" type="Sprite2D" parent="Skeleton2D/Body"]
+z_index = 1
 position = Vector2(-13, -10)
 rotation = 2.61799
-z_index = 1
 texture = ExtResource("1")
 offset = Vector2(0, 6)
 region_enabled = true
@@ -6218,17 +6252,17 @@ frame = 1
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="ShoulderL" type="Sprite2D" parent="Skeleton2D/Body"]
-position = Vector2(16, -10)
 z_index = -1
+position = Vector2(16, -10)
 texture = ExtResource("1")
 offset = Vector2(0, 6)
 region_enabled = true
 region_rect = Rect2(103, 50, 12, 20)
 
 [node name="ArmL" type="Node2D" parent="Skeleton2D/Body/ShoulderL"]
+z_index = 1
 position = Vector2(4, 1)
 rotation = -1.16628
-z_index = 1
 
 [node name="Trash" type="Sprite2D" parent="Skeleton2D/Body/ShoulderL/ArmL"]
 visible = false
@@ -6242,16 +6276,16 @@ rotation = -0.596944
 texture = ExtResource("9")
 
 [node name="LegL" type="Sprite2D" parent="Skeleton2D/Body"]
-position = Vector2(10, 7)
 z_index = -1
+position = Vector2(10, 7)
 texture = ExtResource("1")
 offset = Vector2(0, 5)
 region_enabled = true
 region_rect = Rect2(75, 98, 12, 12)
 
 [node name="LegR" type="Sprite2D" parent="Skeleton2D/Body"]
-position = Vector2(-8, 7)
 z_index = -1
+position = Vector2(-8, 7)
 texture = ExtResource("1")
 offset = Vector2(0, 5)
 region_enabled = true
@@ -6259,30 +6293,9 @@ region_rect = Rect2(45, 98, 12, 12)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Skeleton2D")
+libraries = {
+&"": SubResource("AnimationLibrary_a0pty")
+}
 autoplay = "idle"
-anims/aim_hydro_old = SubResource("2")
-anims/aim_magnet = SubResource("3")
-anims/aim_shock = SubResource("4")
-anims/aim_vaccum = SubResource("5")
-anims/aim_vaccum_old = SubResource("6")
-anims/bye = SubResource("7")
-anims/fall = SubResource("8")
-anims/fly_bubble = SubResource("9")
-anims/fly_bubble_old = SubResource("10")
-anims/hello = SubResource("11")
-anims/hurt = SubResource("12")
-anims/idle = SubResource("13")
-anims/idle_surprise = SubResource("14")
-anims/jump = SubResource("15")
-anims/jump_front = SubResource("16")
-anims/jump_happy = SubResource("17")
-anims/spin = SubResource("18")
-anims/still = SubResource("19")
-anims/turn_back = SubResource("20")
-anims/turn_front = SubResource("21")
-anims/walk = SubResource("22")
-anims/walk_holding = SubResource("23")
-anims/walk_holding_recicle = SubResource("24")
-anims/walk_scaried = SubResource("25")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

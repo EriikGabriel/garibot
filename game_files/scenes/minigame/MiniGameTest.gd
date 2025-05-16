@@ -1,7 +1,7 @@
 extends Control
 
 var stage = 0
-var position = 1
+var position_ = 1
 var right_position = 1
 var input_enabled : bool = true
 var key_cd = 0
@@ -64,7 +64,7 @@ func change_items():
 func changed_button():
 	var alpha
 	for i in range(3):
-		if i == position:
+		if i == position_:
 			alpha = 1
 			$Panel/VBoxContainer/NomeDaOpcao.text = shown_item_names[i]
 		else:
@@ -73,19 +73,19 @@ func changed_button():
 
 
 func _on_left_button_up():
-	if position > 0:
-		position -= 1
+	if position_ > 0:
+		position_ -= 1
 	changed_button()
 
 
 func _on_right_button_up():
-	if position < 2:
-		position += 1
+	if position_ < 2:
+		position_ += 1
 	changed_button()
 
 
 func _on_BotaoOK_button_up():
-	if position == right_position:
+	if position_ == right_position:
 		stage += 1
 		_show_message_right($Panel/VBoxContainer/NomeDaOpcao.text)
 		
@@ -151,20 +151,20 @@ func _on_Timer_timeout():
 
 
 func _on_Button_button_up():
-	position = 0
+	position_ = 0
 	changed_button()
 	_on_BotaoOK_button_up()
 	DJ.play_sfx("ui_move")
 
 
 func _on_Button2_button_up():
-	position = 1
+	position_ = 1
 	changed_button()
 	_on_BotaoOK_button_up()
 	DJ.play_sfx("ui_move")
 
 func _on_Button3_button_up():
-	position = 2
+	position_ = 2
 	changed_button()
 	_on_BotaoOK_button_up()
 	DJ.play_sfx("ui_move")

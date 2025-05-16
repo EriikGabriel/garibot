@@ -1,8 +1,6 @@
-[gd_scene load_steps=69 format=3 uid="uid://bf336oqrwtojd"]
+[gd_scene load_steps=60 format=3 uid="uid://bf336oqrwtojd"]
 
-[ext_resource type="TileSet" path="res://scenes/tilesets/TileGrass.tres" id="1"]
-[ext_resource type="Texture2D" uid="uid://cdq56xx81f5i3" path="res://assets/Images/Tilesets/TilePredio.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://dxqx8mpajhjlk" path="res://assets/Images/Tilesets/TileParedeCinza.png" id="3"]
+[ext_resource type="TileSet" uid="uid://vuayjgm84phq" path="res://scenes/tilesets/TileGrass.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://b72ddgg0igcrb" path="res://scenes/story/Gerador.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://crbwgyim7h0l1" path="res://scenes/tilesets/Esteira.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dpvi2rrm52awk" path="res://scenes/game_ui/GameUI.tscn" id="6"]
@@ -28,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://dhvh1c7rbje67" path="res://assets/Images/Scenery/saco.png" id="26"]
 [ext_resource type="Texture2D" uid="uid://bmeom7oldsfp3" path="res://assets/Images/Collectibles/placas.png" id="27"]
 [ext_resource type="Script" uid="uid://cg0fsvf41sjt3" path="res://scenes/story/Begin.gd" id="28"]
-[ext_resource type="Texture2D" uid="uid://bbi013ao4xpak" path="res://assets/Images/Tilesets/TileParedeVermelha.png" id="29"]
 [ext_resource type="FontFile" uid="uid://dpk2uu8fs6q01" path="res://assets/Font/Langdon.otf" id="30"]
 [ext_resource type="Texture2D" uid="uid://cwywft7a1qmja" path="res://assets/Images/Scenery/fundo2.2.png" id="31"]
 [ext_resource type="Texture2D" uid="uid://bdx2n13ofy5du" path="res://assets/Images/Printer/printer_back.png" id="32"]
@@ -38,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://g4m7xflkwamx" path="res://assets/Images/Scenery/fundo1.png" id="36"]
 [ext_resource type="Texture2D" uid="uid://dqawcwt2h3g6b" path="res://assets/Images/Scenery/arvores_fundo.png" id="37"]
 [ext_resource type="FontFile" path="res://assets/Font/text_ui_gallery.tres" id="38"]
-[ext_resource type="Texture2D" uid="uid://ckmika1ovmutp" path="res://assets/Images/Tilesets/TileCiclovia.png" id="39"]
 [ext_resource type="PackedScene" uid="uid://1oboikaahh53" path="res://scenes/stages/UsinaPipe.tscn" id="40"]
 [ext_resource type="PackedScene" uid="uid://caxnfviqj587r" path="res://scenes/stages/PlacaUsina.tscn" id="41"]
 [ext_resource type="PackedScene" uid="uid://dg68hglmx8wsu" path="res://scenes/stages/UsinaFloor.tscn" id="42"]
@@ -55,25 +51,6 @@ colors = PackedColorArray(0.882353, 1, 0.243137, 1, 0.407843, 0.560784, 0.968627
 [sub_resource type="GradientTexture2D" id="2"]
 gradient = SubResource("1")
 width = 100
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7koyg"]
-texture = ExtResource("2")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rg32"]
-texture = ExtResource("29")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3odvn"]
-texture = ExtResource("3")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7lbnn"]
-texture = ExtResource("39")
-
-[sub_resource type="TileSet" id="12"]
-resource_local_to_scene = true
-sources/0 = SubResource("TileSetAtlasSource_7koyg")
-sources/1 = SubResource("TileSetAtlasSource_5rg32")
-sources/2 = SubResource("TileSetAtlasSource_3odvn")
-sources/3 = SubResource("TileSetAtlasSource_7lbnn")
 
 [sub_resource type="FontFile" id="13"]
 fallbacks = Array[Font]([ExtResource("30")])
@@ -369,19 +346,19 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Music/1:playing")
+tracks/22/path = NodePath("Scenery/Fade:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [true]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Scenery/Fade:visible")
+tracks/23/path = NodePath("Music/1:playing")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -521,7 +498,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("CameraMundo:position:y")
+tracks/10/path = NodePath("Scenery/Fade/Texto:modulate:a")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -532,7 +509,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Scenery/Fade/Texto:modulate:a")
+tracks/11/path = NodePath("CameraMundo:position:y")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -688,7 +665,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("CameraMundo:position:y")
+tracks/10/path = NodePath("Scenery/Fade/Texto:modulate:a")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -699,7 +676,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Scenery/Fade/Texto:modulate:a")
+tracks/11/path = NodePath("CameraMundo:position:y")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -899,7 +876,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Scenery/Fade:color:a")
+tracks/6/path = NodePath("Scenery/Fade/Texto:modulate:a")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -910,7 +887,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Scenery/Fade/Texto:modulate:a")
+tracks/7/path = NodePath("Scenery/Fade:color:a")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1178,7 +1155,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("CameraMundo:position:y")
+tracks/10/path = NodePath("Scenery/Fade/Texto:modulate:a")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -1189,7 +1166,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Scenery/Fade/Texto:modulate:a")
+tracks/11/path = NodePath("CameraMundo:position:y")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -1609,16 +1586,18 @@ region_rect = Rect2(0, 0, 8400, 600)
 [node name="Tiles" type="Node2D" parent="."]
 z_index = -5
 
-[node name="Grass" type="TileMap" parent="Tiles"]
+[node name="Grass" type="Node2D" parent="Tiles"]
+show_behind_parent = true
+
+[node name="Layer0" type="TileMapLayer" parent="Tiles/Grass"]
+use_parent_material = true
 tile_set = ExtResource("1")
-format = 2
 
 [node name="Floor" parent="Tiles" instance=ExtResource("42")]
-tile_set = SubResource("12")
-format = 2
+show_behind_parent = true
 
 [node name="Pipe" parent="Tiles" instance=ExtResource("40")]
-format = 2
+show_behind_parent = true
 
 [node name="Scenery" type="Node2D" parent="."]
 z_index = -4
@@ -1742,6 +1721,7 @@ position = Vector2(4350, 927)
 
 [node name="CameraMaquina" type="Camera2D" parent="NpcsAndItems/RecicladoraMestre"]
 position = Vector2(0, -200)
+enabled = false
 zoom = Vector2(0.5, 0.5)
 
 [node name="PilhaLixo" type="Sprite2D" parent="NpcsAndItems"]
@@ -1809,13 +1789,15 @@ position = Vector2(780, 770)
 rotation = 18.8496
 
 [node name="CameraPlayer" type="Camera2D" parent="Garibot/PlayerBody"]
-position = Vector2(32, -100)
-offset = Vector2(0, -30)
+position = Vector2(-500, 0)
 zoom = Vector2(0.5, 0.5)
 limit_bottom = 1000
 
 [node name="CameraMundo" type="Camera2D" parent="."]
-position = Vector2(820, 580)
+visible = false
+show_behind_parent = true
+position = Vector2(778, 703)
+enabled = false
 
 [node name="AnimacaoGeral" type="AnimationPlayer" parent="."]
 libraries = {

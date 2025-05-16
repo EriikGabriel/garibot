@@ -1,7 +1,7 @@
 @tool
 extends "res://scenes/item/ItemScript.gd"
 
-@export var blaster # (String, "magnet", "bubble", "shock")
+@export var blaster = null # (String, "magnet", "bubble", "shock")
 
 func _ready():
 	set_blaster(blaster)

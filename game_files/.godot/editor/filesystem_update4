@@ -173,3 +173,12 @@ res://scenes/menu/buttons/IconButtonPress.tres
 res://scenes/GameScene.gd
 res://scenes/stage_manager/StageManager.gd
 res://scenes/stage_manager/StageLoader.gd
+res://scenes/story/Begin.gd
+res://scenes/main/MainScene.gd
+res://scenes/tilesets/TileGrass.tres
+res://scenes/tilesets/TilePipe.tres
+res://scenes/animation/MissionAnimation.gd
+res://scenes/player/Player.gd
+res://scenes/stages/ControllerAnim.gd
+res://scenes/minigame/MiniGameTest.gd
+res://scenes/blasters/ItemBlaster.gd

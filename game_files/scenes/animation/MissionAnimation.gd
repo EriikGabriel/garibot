@@ -25,7 +25,7 @@ func _ready():
 
 func play_start():
 	current_state = STATE.START
-	player.set_ctrl_pressed(false)
+	player.set_ctrl(false)
 	initial_position = player.get_position()
 	player.set_camera_current(false)
 	camera.set_global_position(player.get_camera_position())
@@ -34,7 +34,7 @@ func play_start():
 
 func play_end():
 	current_state = STATE.END
-	player.set_ctrl_pressed(false)
+	player.set_ctrl(false)
 	player.set_position(initial_position)
 	player.change_orientation(1)
 	player.set_camera_current(false)
@@ -66,7 +66,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "zoom_out":
 		player.set_camera_current(true)
 		player.set_in_cutscene(false)
-		player.set_ctrl_pressed(true)
+		player.set_ctrl(true)
 
 
 func _on_RecicleStation_play_end():
@@ -76,4 +76,4 @@ func _on_RecicleStation_play_end():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		play_end()
-		player.set_ctrl_pressed(false)
+		player.set_ctrl(false)
