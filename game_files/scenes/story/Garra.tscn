@@ -155,5 +155,5 @@ region_rect = Rect2(0, 0, 32, 32)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_f6s7x")
+&"": SubResource("AnimationLibrary_f6s7x")
 }

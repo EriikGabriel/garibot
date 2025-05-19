@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://6t76q8i0paff"]
+[gd_scene load_steps=20 format=3 uid="uid://6t76q8i0paff"]
 
 [ext_resource type="Script" uid="uid://b0lqps10khmds" path="res://scenes/story/RecicladoraMestre.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://kmewvtekwdtw" path="res://assets/Images/Printer/gerador_eolico_sem_helice.png" id="2"]
@@ -11,10 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://cn3qc3ytjumr1" path="res://assets/Images/Effects/virus_eyes.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://dyfeeclmi0lqp" path="res://assets/Images/Boss/base.png" id="10"]
 [ext_resource type="PackedScene" uid="uid://hh84kmyqg4yd" path="res://scenes/story/Explosao.tscn" id="11"]
-[ext_resource type="PackedScene" uid="uid://bspymp8cbe88y" path="res://scenes/enemies/Virus.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://bspymp8cbe88y" path="res://scenes/enemies/virus.tscn" id="12"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("8")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -891,7 +894,17 @@ tracks/25/keys = {
 "values": [Vector2(15.8201, -194.622), Vector2(110.82, -158.622), Vector2(456.288, -168.257)]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqyv6"]
+_data = {
+&"happy": SubResource("2"),
+&"hello": SubResource("3"),
+&"msg": SubResource("4"),
+&"normal": SubResource("5"),
+&"virus": SubResource("6")
+}
+
 [node name="RecicladoraMestre" type="Node2D"]
+position = Vector2(433, 386)
 script = ExtResource("1")
 
 [node name="GeradorEsq" type="Sprite2D" parent="."]
@@ -906,9 +919,7 @@ texture = ExtResource("3")
 [node name="Estrutura2" type="TileMap" parent="."]
 position = Vector2(16, 0)
 tile_set = ExtResource("4")
-cell_size = Vector2(32, 32)
-format = 1
-tile_data = PackedInt32Array(-131076, 0, 0, -65540, 0, 65536, -6, 0, 0, -5, 0, 1, -4, 0, 0, 0, 537528842, 0, 1, -65533, 0, 65536, -131071, 0)
+format = 2
 
 [node name="EngrenagemEsq" type="Sprite2D" parent="."]
 position = Vector2(-96, -89)
@@ -929,6 +940,7 @@ vframes = 6
 frame = 4
 
 [node name="Texto" type="Label" parent="Cabeca"]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -937,18 +949,15 @@ offset_left = -141.0
 offset_top = -93.0
 offset_right = -29.0
 offset_bottom = -5.0
-theme_override_fonts/font = SubResource("1")
 theme_override_colors/font_color = Color(0.00784314, 1, 0.156863, 1)
 theme_override_colors/font_shadow_color = Color(0.0941176, 0.360784, 0, 1)
+theme_override_fonts/font = SubResource("1")
 text = "vírus
 detectado!"
-valign = 1
-autowrap = true
+vertical_alignment = 1
 uppercase = true
 max_lines_visible = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
+metadata/_edit_use_anchors_ = true
 
 [node name="Tela" type="Polygon2D" parent="Cabeca"]
 show_behind_parent = true
@@ -980,9 +989,7 @@ texture = ExtResource("3")
 [node name="Estrutura" type="TileMap" parent="."]
 position = Vector2(16, 0)
 tile_set = ExtResource("4")
-cell_size = Vector2(32, 32)
-format = 1
-tile_data = PackedInt32Array(-196607, 0, 0, -131071, 0, 65536, -65535, 0, 0, -65534, 0, 1, -65533, 0, 1, -65532, 0, 0)
+format = 2
 
 [node name="EngrenagemDir" type="Sprite2D" parent="."]
 position = Vector2(64, -89)
@@ -1007,8 +1014,8 @@ frame = 9
 
 [node name="Virus" parent="." instance=ExtResource("12")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-50, -100)
 z_index = 10
+position = Vector2(-50, -100)
 
 [node name="Virus2" parent="." instance=ExtResource("12")]
 modulate = Color(1, 1, 1, 0)
@@ -1031,11 +1038,9 @@ position = Vector2(456.288, -168.257)
 scale = Vector2(0.6, 0.6)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jqyv6")
+}
 autoplay = "normal"
-anims/happy = SubResource("2")
-anims/hello = SubResource("3")
-anims/msg = SubResource("4")
-anims/normal = SubResource("5")
-anims/virus = SubResource("6")
 
 [node name="Alerta" type="CanvasModulate" parent="."]

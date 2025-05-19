@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cdq56xx81f5i3" path="res://assets/Images/Tilesets/TilePredio.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://dlch44sro4rsl" path="res://scenes/boss/BossBody.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/story/Parede.tscn" id="3"]
-[ext_resource type="TileSet" path="res://scenes/tilesets/TilePipe.tres" id="4"]
+[ext_resource type="PackedScene" uid="uid://cbrvkjxeekrqg" path="res://scenes/story/Parede.tscn" id="3"]
+[ext_resource type="TileSet" uid="uid://cafcukl7x3gn2" path="res://scenes/tilesets/TilePipe.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://dxqx8mpajhjlk" path="res://assets/Images/Tilesets/TileParedeCinza.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://bbi013ao4xpak" path="res://assets/Images/Tilesets/TileParedeVermelha.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://ckmika1ovmutp" path="res://assets/Images/Tilesets/TileCiclovia.png" id="7"]
@@ -12,15 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://cctjqdgc66tqj" path="res://scenes/player/PlayerBody.tscn" id="10"]
 [ext_resource type="PackedScene" uid="uid://bul5gv3clgadi" path="res://scenes/animation/GariDog.tscn" id="11"]
 [ext_resource type="FontFile" path="res://assets/Font/text.tres" id="12"]
-[ext_resource type="TileSet" path="res://scenes/tilesets/TileGrass.tres" id="13"]
+[ext_resource type="TileSet" uid="uid://vuayjgm84phq" path="res://scenes/tilesets/TileGrass.tres" id="13"]
 [ext_resource type="Texture2D" uid="uid://dkw76nwrd5ww5" path="res://assets/Images/Collectibles/monitor_m.png" id="14"]
 [ext_resource type="TileSet" path="res://scenes/tilesets/TileCity.tres" id="15"]
 [ext_resource type="PackedScene" uid="uid://dperi682epocd" path="res://scenes/stages/background/Background.tscn" id="16"]
 [ext_resource type="Texture2D" uid="uid://chpot4rcbrntt" path="res://assets/Images/Collectibles/celular_m.png" id="17"]
-[ext_resource type="PackedScene" path="res://scenes/tilesets/Gate.tscn" id="18"]
-[ext_resource type="PackedScene" path="res://scenes/tilesets/PressurePlate.tscn" id="19"]
+[ext_resource type="PackedScene" uid="uid://ci8wdbwr3vdsb" path="res://scenes/tilesets/Gate.tscn" id="18"]
+[ext_resource type="PackedScene" uid="uid://dh5d071rwjyu2" path="res://scenes/tilesets/PressurePlate.tscn" id="19"]
 [ext_resource type="PackedScene" uid="uid://dk8ch7jqhd6rd" path="res://scenes/animation/BoyBody.tscn" id="20"]
-[ext_resource type="PackedScene" path="res://scenes/tilesets/Esteira.tscn" id="22"]
+[ext_resource type="PackedScene" uid="uid://crbwgyim7h0l1" path="res://scenes/tilesets/Esteira.tscn" id="22"]
 [ext_resource type="Script" uid="uid://dwmf7i8vboqj8" path="res://scenes/tilesets/Esteira.gd" id="23"]
 [ext_resource type="Texture2D" uid="uid://ruj05p47jkel" path="res://assets/Images/Tilesets/esteira_right.png" id="24"]
 [ext_resource type="PackedScene" uid="uid://bwyeafpmgclnp" path="res://scenes/animation/BoyLixoBody.tscn" id="25"]
@@ -19881,6 +19881,8 @@ offset_left = -398.97
 offset_top = -219.009
 offset_right = 401.03
 offset_bottom = 230.991
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" parent="UI/GameUI" index="0"]
 layout_mode = 0
@@ -19940,6 +19942,8 @@ anchors_preset = 0
 [node name="LevelComplete" parent="UI" instance=ExtResource("33")]
 layout_mode = 3
 anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BossRun" type="Node2D" parent="."]
 position = Vector2(6623.24, 398.338)
@@ -20261,7 +20265,6 @@ blaster = "bubble"
 scale = Vector2(1e-05, 1e-05)
 
 [node name="PlayerBody" parent="Animation/Player" instance=ExtResource("10")]
-position = Vector2(0, 0)
 scale = Vector2(-1, 1)
 
 [node name="Face" parent="Animation/Player/PlayerBody/Skeleton2D/Body/Head" index="0"]
@@ -20269,12 +20272,12 @@ visible = false
 
 [node name="AnimationMagnet" parent="Animation/Player/PlayerBody/Skeleton2D/Body/Head/Magnet" index="0"]
 libraries = {
-"": SubResource("AnimationLibrary_fyit6")
+&"": SubResource("AnimationLibrary_fyit6")
 }
 
 [node name="AnimationPlayer" parent="Animation/Player/PlayerBody" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_4s31r")
+&"": SubResource("AnimationLibrary_4s31r")
 }
 
 [node name="CameraPlayer" type="Camera2D" parent="Animation/Player/PlayerBody"]
@@ -20321,7 +20324,7 @@ material = SubResource("ShaderMaterial_aiwww")
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_b1/BoyBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_6gjox")
+&"": SubResource("AnimationLibrary_6gjox")
 }
 
 [node name="BoyLixoBody" parent="Animation/Pessoa_b1" instance=ExtResource("25")]
@@ -20357,7 +20360,7 @@ position = Vector2(-4.99997, 9.95306)
 
 [node name="Animation" parent="Animation/Pessoa_b1/BoyLixoBody/Bobo/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_j54l0")
+&"": SubResource("AnimationLibrary_j54l0")
 }
 
 [node name="Pessoa_b2" type="Node2D" parent="Animation"]
@@ -20372,7 +20375,7 @@ material = SubResource("ShaderMaterial_vl3wh")
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_b2/BoyBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_585wn")
+&"": SubResource("AnimationLibrary_585wn")
 }
 
 [node name="BoyLixoBody" parent="Animation/Pessoa_b2" instance=ExtResource("25")]
@@ -20393,7 +20396,7 @@ material = SubResource("ShaderMaterial_mbrvw")
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_b3/BoyBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_fkkpa")
+&"": SubResource("AnimationLibrary_fkkpa")
 }
 
 [node name="BoyLixoBody" parent="Animation/Pessoa_b3" instance=ExtResource("25")]
@@ -20432,7 +20435,7 @@ position = Vector2(-4.99997, 8.71248)
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_g1/GirlBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_q0hxq")
+&"": SubResource("AnimationLibrary_q0hxq")
 }
 
 [node name="GirlLixoBody" parent="Animation/Pessoa_g1" instance=ExtResource("34")]
@@ -20449,7 +20452,7 @@ visible = false
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_g1/GirlLixoBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_uj65h")
+&"": SubResource("AnimationLibrary_uj65h")
 }
 
 [node name="Pessoa_g2" type="Node2D" parent="Animation"]
@@ -20480,7 +20483,7 @@ position = Vector2(-4.99997, 9.51155)
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_g2/GirlBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_1pp1c")
+&"": SubResource("AnimationLibrary_1pp1c")
 }
 
 [node name="GirlLixoBody" parent="Animation/Pessoa_g2" instance=ExtResource("34")]
@@ -20501,7 +20504,7 @@ material = SubResource("33")
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_g3/GirlBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_qa04c")
+&"": SubResource("AnimationLibrary_qa04c")
 }
 
 [node name="GirlLixoBody" parent="Animation/Pessoa_g3" instance=ExtResource("34")]
@@ -20551,7 +20554,7 @@ position = Vector2(-7, 1.59366)
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_w1/WomanLixoBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_n3jed")
+&"": SubResource("AnimationLibrary_n3jed")
 }
 
 [node name="Reaction" parent="Animation/Pessoa_w1/WomanLixoBody" index="1"]
@@ -20572,7 +20575,7 @@ material = SubResource("43")
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_w2/WomanBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_mhty2")
+&"": SubResource("AnimationLibrary_mhty2")
 }
 
 [node name="WomanLixoBody" parent="Animation/Pessoa_w2" instance=ExtResource("36")]
@@ -20609,7 +20612,7 @@ position = Vector2(-7, 1.50518)
 
 [node name="PersonAnimationPlayer" parent="Animation/Pessoa_w3/WomanBody/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_l65n5")
+&"": SubResource("AnimationLibrary_l65n5")
 }
 
 [node name="WomanLixoBody" parent="Animation/Pessoa_w3" instance=ExtResource("36")]
@@ -20631,7 +20634,7 @@ rotation = -0.174533
 
 [node name="PersonAnimationPlayer" parent="Animation/Timoty/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_3f6eg")
+&"": SubResource("AnimationLibrary_3f6eg")
 }
 
 [node name="President" type="Node2D" parent="Animation"]
@@ -20652,7 +20655,7 @@ rotation = 0.0565003
 
 [node name="PersonAnimationPlayer" parent="Animation/President/Corpo" index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_5uyfa")
+&"": SubResource("AnimationLibrary_5uyfa")
 }
 
 [node name="Garidog" type="Node2D" parent="Animation"]
@@ -20672,7 +20675,7 @@ rotation = -0.0810172
 
 [node name="PersonAnimationPlayer" parent="Animation/Garidog/GariDog/Corpo" index="6"]
 libraries = {
-"": SubResource("AnimationLibrary_vj0m1")
+&"": SubResource("AnimationLibrary_vj0m1")
 }
 
 [node name="CameraDog" type="Camera2D" parent="Animation/Garidog/GariDog"]
@@ -20686,7 +20689,7 @@ scale = Vector2(1e-05, 1e-05)
 
 [node name="AnimationPlayer" parent="Animation/BossBody/BossBody" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_udd58")
+&"": SubResource("AnimationLibrary_udd58")
 }
 
 [node name="CameraBoss" type="Camera2D" parent="Animation/BossBody/BossBody"]
@@ -20802,7 +20805,7 @@ parameters/conditions/to_scene_3_3 = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 libraries = {
-"": SubResource("AnimationLibrary_xkjsx")
+&"": SubResource("AnimationLibrary_xkjsx")
 }
 
 [connection signal="body_entered" from="BossRun/Esteira4/Area2D" to="BossRun/Esteira4" method="_on_Area2D_body_entered"]

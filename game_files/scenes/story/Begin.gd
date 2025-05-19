@@ -21,6 +21,6 @@ func skip_anim_control(_delta) :
 
 
 func _show_mobile_button():
-	if Global_variable.mobile_control_node.buttons_visibile():
+	if Global_variable.mobile_control_node and Global_variable.mobile_control_node.buttons_visibile():
 		espaco.set_text("PRESSIONE      PARA PULAR A HISTÓRIA")
 		mobile_button.visible = true
