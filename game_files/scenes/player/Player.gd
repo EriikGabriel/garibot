@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 # PRELOADS
 # warning-ignore:unused_class_variable
@@ -313,6 +313,8 @@ func calculate_velocity():
 			
 			velocity_.x = move_velocity
 			velocity_.y = jump_velocity
+			velocity_.x = move_velocity
+			velocity_.y = jump_velocity
 			floor_normal = Vector2(0, -1)
 		GRAVITY.RIGHT:
 			if gravity_on and state == STATE.AIR:
@@ -321,6 +323,8 @@ func calculate_velocity():
 			if state == STATE.IDLE or state == STATE.MOVE:
 				snap = Vector2(31, 0)
 			
+			velocity_.y = move_velocity
+			velocity_.x = jump_velocity
 			velocity_.y = move_velocity
 			velocity_.x = jump_velocity
 			floor_normal = Vector2(-1, 0)
@@ -333,6 +337,8 @@ func calculate_velocity():
 			
 			velocity_.x = move_velocity
 			velocity_.y = -jump_velocity
+			velocity_.x = move_velocity
+			velocity_.y = -jump_velocity
 			floor_normal = Vector2(0, 1)
 		GRAVITY.LEFT:
 			if gravity_on and state == STATE.AIR:
@@ -341,6 +347,8 @@ func calculate_velocity():
 			if state == STATE.IDLE or state == STATE.MOVE:
 				snap = Vector2(-31, 0)
 			
+			velocity_.y = move_velocity
+			velocity_.x = -jump_velocity
 			velocity_.y = move_velocity
 			velocity_.x = -jump_velocity
 			floor_normal = Vector2(1, 0)
@@ -352,6 +360,7 @@ func calculate_velocity():
 	set_max_slides(5)
 	set_floor_max_angle(0.85)
 	move_and_slide()
+	velocity_ = velocity_
 	velocity_ = velocity_
 
 
@@ -511,6 +520,7 @@ func set_air_final_speed(_new):
 	AIR_FINAL_SPEED = _new
 
 func set_camera_current(_new):
+	_get_camera().enabled = _new
 	_get_camera().enabled = _new
 
 func set_camera_position(_new):

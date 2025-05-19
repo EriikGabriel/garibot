@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cx2ek34ionimc"]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -28,6 +28,6 @@ void fragment()
 }"
 
 [resource]
-shader = SubResource( 1 )
-shader_param/outLineSize = 0.02
-shader_param/outLineColor = Color( 0.0117647, 0.00784314, 0.00784314, 1 )
+shader = SubResource("1")
+shader_parameter/outLineSize = 0.02
+shader_parameter/outLineColor = Color(0.0117647, 0.00784314, 0.00784314, 1)
