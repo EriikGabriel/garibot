@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 # PRELOADS
 # warning-ignore:unused_class_variable

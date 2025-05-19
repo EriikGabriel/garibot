@@ -2,7 +2,7 @@ extends Node
 
 var initial_position
 
-@onready var player = get_tree().get_nodes_in_group("player").front()
+@onready var player : Player = get_tree().get_nodes_in_group("player").front()
 @onready var level_complete = get_tree().get_nodes_in_group("level_complete").front()
 
 @onready var dialog : ControllerAnim = $Dialog
