@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://crbwgyim7h0l1" path="res://scenes/tilesets/Esteira.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dpvi2rrm52awk" path="res://scenes/game_ui/GameUI.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://d1lqq666e1gml" path="res://scenes/story/Garra.tscn" id="7"]
-[ext_resource type="PackedScene" uid="uid://bspymp8cbe88y" path="res://scenes/enemies/virus.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/virus.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://cbrvkjxeekrqg" path="res://scenes/story/Parede.tscn" id="9"]
 [ext_resource type="PackedScene" uid="uid://cctjqdgc66tqj" path="res://scenes/player/PlayerBody.tscn" id="10"]
 [ext_resource type="PackedScene" uid="uid://bhb72il4y333c" path="res://scenes/game_ui/GameOver.tscn" id="11"]
@@ -82,6 +82,31 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+
+[sub_resource type="Animation" id="Animation_5h3es"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="14"]
 length = 20.0
@@ -1434,31 +1459,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(32, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_5h3es"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Garibot/PlayerBody/CameraPlayer:zoom:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_is35c"]
