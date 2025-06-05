@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://assets/Images/Stage Elements/StageEnd/wall.png" type="Texture" id=1]
-
-[node name="Parede" type="Polygon2D"]
-texture = ExtResource( 1 )
-polygon = PoolVector2Array( 2500, 195, 2500, 715, 5000, 715, 5000, 195 )
