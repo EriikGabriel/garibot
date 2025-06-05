@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cbyryjva5mu0m" path="res://scenes/animation/DialogThimothy.tscn" id="29"]
 [ext_resource type="FontFile" path="res://assets/Font/title.tres" id="31"]
 [ext_resource type="TileSet" path="res://scenes/tilesets/TileHouse.tres" id="32"]
-[ext_resource type="TileSet" path="res://scenes/tilesets/TileGrass.tres" id="33"]
+[ext_resource type="TileSet" uid="uid://vuayjgm84phq" path="res://scenes/tilesets/TileGrass.tres" id="33"]
 [ext_resource type="Script" uid="uid://b36nmdokhmnua" path="res://scenes/stages/MachineAnimation.gd" id="34"]
 
 [sub_resource type="Animation" id="1"]
@@ -706,6 +706,7 @@ position = Vector2(-622.785, 385.676)
 
 [node name="EnemyComputer" parent="." instance=ExtResource("26")]
 position = Vector2(2200, 320)
+itemType = null
 
 [node name="Quest" type="Node2D" parent="."]
 script = ExtResource("5")
@@ -917,6 +918,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Control" type="Control" parent="CanvasLayer/GameUI"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0

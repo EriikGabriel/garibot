@@ -35,4 +35,3 @@ func hide_stars():
 	else:
 		DJ.play("bonus_win_fanfare")
 	$Panel/Pontos/HBoxContainer/VBoxContainer.hide()
-

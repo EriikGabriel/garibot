@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dufcxykvj6mu7"]
 
 [ext_resource type="FontFile" path="res://assets/Font/text_ui.tres" id="1"]
-[ext_resource type="Texture2D" uid="uid://cbwwbhoempco0" path="res://assets/Images/UI/Misc/menuTile.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://si5vq70p8f0r" path="res://assets/Images/UI/Misc/menuTile.png" id="3"]
 [ext_resource type="Script" uid="uid://br2fqu5g8wyim" path="res://scenes/GameScene.gd" id="4"]
-[ext_resource type="Texture2D" uid="uid://hcmrqcc6e0l5" path="res://assets/Images/Player/PlayerCharIcon.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://jxf2aghi1p6j" path="res://assets/Images/Player/PlayerCharIcon.png" id="6"]
 [ext_resource type="Script" uid="uid://dtyy40ef23fsr" path="res://scenes/stage_manager/LoadingScreen.gd" id="7"]
 
 [sub_resource type="Animation" id="1"]

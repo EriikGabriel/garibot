@@ -5,7 +5,7 @@ var item
 @onready var value_bar = get_tree().get_nodes_in_group("value_bar").front()
 
 var _itemName
-@export (String, "celular", "monitor", "tv", "impressora",
+@export_enum("celular", "monitor", "tv", "impressora",
 		"furadeira", "fogao", "geladeira", "microondas","agua","garrafa","jornal",
 		"melancia","refri","sacola","radio","bateria") var itemName : get = getItemName, set = setItemName
 

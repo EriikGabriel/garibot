@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://4pq86yf6s3vj"]
 
-[ext_resource type="AudioStream" uid="uid://bfg4twpqxk5g" path="res://assets/Sounds/sfx/garibot_damage.mp3" id="1"]
+[ext_resource type="AudioStream" uid="uid://cttfp7wwg3vlk" path="res://assets/Sounds/sfx/garibot_damage.mp3" id="1"]
 [ext_resource type="Script" uid="uid://bg0ew20kyny53" path="res://scenes/player/Player.gd" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/player/PlayerBody.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cctjqdgc66tqj" path="res://scenes/player/PlayerBody.tscn" id="3"]
 [ext_resource type="Script" uid="uid://bwms31fyo444w" path="res://scenes/blasters/BlasterMaster.gd" id="4"]
-[ext_resource type="AudioStream" uid="uid://cuvpri8yra4xu" path="res://assets/Sounds/sfx/roll_garibot.mp3" id="5"]
-[ext_resource type="AudioStream" uid="uid://byhg5hlsjp6hd" path="res://assets/Sounds/sfx/garibot_jump.mp3" id="6"]
+[ext_resource type="AudioStream" uid="uid://ckwunvlpoeub6" path="res://assets/Sounds/sfx/roll_garibot.mp3" id="5"]
+[ext_resource type="AudioStream" uid="uid://dn23s6dctsd3x" path="res://assets/Sounds/sfx/garibot_jump.mp3" id="6"]
 [ext_resource type="PackedScene" uid="uid://cv4p403ke1ot6" path="res://scenes/player/FollowItems.tscn" id="7"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -23,9 +23,6 @@ script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Debug" type="Node2D" parent="."]
 visible = false
@@ -46,10 +43,7 @@ offset_bottom = -83.2431
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "state"
 
-[node name="Tween" type="Tween" parent="."]
-
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
 limit_left = -400
 limit_right = 20000
 limit_bottom = 900

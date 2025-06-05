@@ -12,16 +12,16 @@ var item = preload("res://scenes/item/Item.tscn")
 # Movement variables
 @export var speed := 100.0
 @export var gravity := 1500.0
-var velocity := Vector2(speed, 0.0)
+var velocity_ := Vector2(speed, 0.0)
 var orientation := 1.0
 var count = 0
 
 #Addicional features 
-@export var enemyType # (int,"Off", "Common", "Drill","Printer")
+@export_enum ("Off", "Common", "Drill","Printer") var enemyType # 
 @export var shoot_ability = false
 @export var dash_ability = false
 @export var jump_immunity = false
-@export (String,"celular", "monitor", "tv", "impressora",
+@export_enum ("celular", "monitor", "tv", "impressora",
 		"furadeira", "fogao", "geladeira", "microondas") var itemType
 		
 # Sound file for hop sound effect
@@ -60,8 +60,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	velocity.x = rest()
-	velocity.y += gravity * delta
+	velocity_.x = rest()
+	velocity_.y += gravity * delta
 	
 	hop()
 	jump()
@@ -75,14 +75,14 @@ func _process(delta):
 	if dash_ability and seeingPlayer:
 		dash()
 	
-	velocity.x *= orientation
-	set_velocity(velocity)
+	velocity_.x *= orientation
+	set_velocity(velocity_)
 	set_up_direction(Vector2.UP)
 	set_floor_stop_on_slope_enabled(true)
 	set_max_slides(4)
 	set_floor_max_angle(0.79)
 	move_and_slide()
-	velocity = velocity
+	velocity_ = velocity_
 
 
 func turn():
@@ -92,13 +92,13 @@ func turn():
 
 func hop():
 	if hopReady:
-		velocity = Vector2(100.0,-150.0)
+		velocity_ = Vector2(100.0,-150.0)
 		hopReady = false
 
 func jump():
-	if jumpReady and velocity.x != 0.0:
+	if jumpReady and velocity_.x != 0.0:
 		$EnemySfx/SfxHop.play(0)
-		velocity = Vector2(100.0,-400.0)
+		velocity_ = Vector2(100.0,-400.0)
 		jumpReady = false
 
 func rest():

@@ -1,17 +1,17 @@
 [gd_scene load_steps=20 format=3 uid="uid://6t76q8i0paff"]
 
 [ext_resource type="Script" uid="uid://b0lqps10khmds" path="res://scenes/story/RecicladoraMestre.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://kmewvtekwdtw" path="res://assets/Images/Printer/gerador_eolico_sem_helice.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://fvvuyu7yvrx4" path="res://assets/Images/Printer/imp3d_helice0.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bdfef6h6unccr" path="res://assets/Images/Printer/gerador_eolico_sem_helice.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cybrbkvb50s5b" path="res://assets/Images/Printer/imp3d_helice0.png" id="3"]
 [ext_resource type="TileSet" path="res://scenes/tilesets/TileMachine.tres" id="4"]
-[ext_resource type="Texture2D" uid="uid://s4icejbbi1m6" path="res://assets/Images/Boss/Engrenagem.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://jcam30qoacew" path="res://assets/Images/Main Recicler/tela_ligada.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://don68d6eitv3w" path="res://assets/Images/Main Recicler/face_maq.png" id="7"]
-[ext_resource type="FontFile" uid="uid://curtss46ro3p2" path="res://assets/Font/MKOCR.ttf" id="8"]
-[ext_resource type="Texture2D" uid="uid://cn3qc3ytjumr1" path="res://assets/Images/Effects/virus_eyes.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://dyfeeclmi0lqp" path="res://assets/Images/Boss/base.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cpn2ccfup1boj" path="res://assets/Images/Boss/Engrenagem.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dretlym6ul7v6" path="res://assets/Images/Main Recicler/tela_ligada.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b1y7e5v4dk6s5" path="res://assets/Images/Main Recicler/face_maq.png" id="7"]
+[ext_resource type="FontFile" uid="uid://cpy5oc7iypffi" path="res://assets/Font/MKOCR.ttf" id="8"]
+[ext_resource type="Texture2D" uid="uid://j1kfn7wrk8jf" path="res://assets/Images/Effects/virus_eyes.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dn47tyebne6a7" path="res://assets/Images/Boss/base.png" id="10"]
 [ext_resource type="PackedScene" uid="uid://hh84kmyqg4yd" path="res://scenes/story/Explosao.tscn" id="11"]
-[ext_resource type="PackedScene" uid="uid://bspymp8cbe88y" path="res://scenes/enemies/virus.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/virus.tscn" id="12"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("8")])
@@ -904,7 +904,6 @@ _data = {
 }
 
 [node name="RecicladoraMestre" type="Node2D"]
-position = Vector2(433, 386)
 script = ExtResource("1")
 
 [node name="GeradorEsq" type="Sprite2D" parent="."]
@@ -916,10 +915,10 @@ position = Vector2(0, -46)
 rotation = 0.610865
 texture = ExtResource("3")
 
-[node name="Estrutura2" type="TileMap" parent="."]
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
 position = Vector2(16, 0)
 tile_set = ExtResource("4")
-format = 2
 
 [node name="EngrenagemEsq" type="Sprite2D" parent="."]
 position = Vector2(-96, -89)
@@ -937,9 +936,10 @@ scale = Vector2(4, 4)
 texture = ExtResource("7")
 flip_h = true
 vframes = 6
-frame = 4
+frame = 2
 
 [node name="Texto" type="Label" parent="Cabeca"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -986,10 +986,10 @@ texture = ExtResource("2")
 position = Vector2(0, -46)
 texture = ExtResource("3")
 
-[node name="Estrutura" type="TileMap" parent="."]
-position = Vector2(16, 0)
+[node name="Layer0" type="TileMapLayer" parent="GeradorDir"]
+use_parent_material = true
+position = Vector2(-144, 79)
 tile_set = ExtResource("4")
-format = 2
 
 [node name="EngrenagemDir" type="Sprite2D" parent="."]
 position = Vector2(64, -89)

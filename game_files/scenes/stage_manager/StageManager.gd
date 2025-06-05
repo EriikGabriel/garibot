@@ -67,7 +67,6 @@ func change_stage(stage_name : String, keep_loading_hidden: bool = false):
 
 func change_stage_idx(idx : int):
 	show_loading()
-	
 	if self.get_child_count() > 0:
 		var old_stage = self.get_child(0);
 		# self.remove_child(old_stage);
@@ -76,9 +75,13 @@ func change_stage_idx(idx : int):
 	StageLoader.goto_scene(stages[idx])
 	await StageLoader.resource_loaded
 	var stage = StageLoader.resource
-	
-	var _new = stage.instantiate()
-	
+	var _new
+
+	if(stage is Tween):
+		_new = Node2D
+		stage.bind_node(_new)
+	else:
+		_new = stage.instantiate()
 	self.add_child(_new);
 	if _new.has_signal("change_scene_to_file"):
 		_new.connect("change_scene_to_file", Callable(self, "change_stage"))

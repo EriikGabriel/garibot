@@ -4,5 +4,3 @@ extends Node2D
 
 func play( st , spd = 1):
 	animPlayer.play(st, -1, spd)
-
-
