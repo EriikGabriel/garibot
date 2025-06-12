@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwq4c78slau6l"]
+[gd_scene load_steps=10 format=3 uid="uid://bwq4c78slau6l"]
 
 [ext_resource type="Script" uid="uid://c3mei83tcn8cd" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Script" uid="uid://wvmjnxbkvltn" path="res://Scripts/TextureButtonScript.gd" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://pgxwbogs7gdj" path="res://Sprites/MenuButton/JogarButtonGreen.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://ck00r83hnem80" path="res://Sprites/MenuButton/JogarButtonRed.png" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://cch0isjigu4nb" path="res://Sprites/MenuButton/SairButtonRed.png" id="5_opfnp"]
+[ext_resource type="Texture2D" uid="uid://bcc5jf21471x2" path="res://Sprites/MenuButton/SairButtonGreen.png" id="6_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://c0x1m2bchougi" path="res://Sounds/MenuButton/ButtonHover.mp3" id="7_cp0ys"]
+[ext_resource type="Script" uid="uid://d1n2u0oulnmdf" path="res://Scripts/audio_stream_player.gd" id="8_yhxw7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
-bg_color = Color(0.36167, 0.574003, 0.432654, 1)
+bg_color = Color(0.360784, 0.572549, 0.431373, 1)
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -13,7 +20,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
-next_phase = "res://Scenes/test_chamber.tscn"
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -25,28 +31,58 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rhts7")
 
-[node name="CenterButtons" type="VBoxContainer" parent="."]
+[node name="Jogar" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -54.0
-offset_top = -154.0
-offset_right = 54.0
-offset_bottom = -88.0
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 175.0
+offset_right = 312.0
+offset_bottom = 325.0
 grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_ce3w2")
+texture_pressed = ExtResource("3_n45e2")
+script = ExtResource("2_48xlc")
+next_scene = "res://Scenes/test_chamber.tscn"
 
-[node name="Jogar" type="Button" parent="CenterButtons"]
-layout_mode = 2
-text = "Jogar"
+[node name="Opcoes" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 293.0
+offset_right = 312.0
+offset_bottom = 443.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_n45e2")
+script = ExtResource("2_48xlc")
+next_scene = "res://Scenes/opcoes.tscn"
 
-[node name="Sair" type="Button" parent="CenterButtons"]
-layout_mode = 2
-text = "Sair"
+[node name="Sair" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 873.0
+offset_top = 955.0
+offset_right = 1273.0
+offset_bottom = 1105.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_opfnp")
+texture_pressed = ExtResource("6_cp0ys")
+script = ExtResource("2_48xlc")
 
-[connection signal="button_down" from="CenterButtons/Jogar" to="." method="_on_jogar_button_down"]
-[connection signal="button_down" from="CenterButtons/Sair" to="." method="_on_sair_button_down"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cp0ys")
+script = ExtResource("8_yhxw7")
+
+[connection signal="mouse_entered" from="Jogar" to="AudioStreamPlayer" method="_on_high_mouse_entered"]
+[connection signal="mouse_entered" from="Opcoes" to="AudioStreamPlayer" method="_on_high_mouse_entered"]
+[connection signal="mouse_entered" from="Sair" to="AudioStreamPlayer" method="_on_low_mouse_entered"]

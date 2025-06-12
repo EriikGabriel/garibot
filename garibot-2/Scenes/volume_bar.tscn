@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://yvlyye3xxcl0"]
+
+[ext_resource type="Texture2D" uid="uid://baipot2kglskl" path="res://Sprites/MenuButton/Opcoes/VolumeBar.png" id="1_clxd5"]
+[ext_resource type="Texture2D" uid="uid://cf5yonm4yf0j0" path="res://Sprites/MenuButton/Opcoes/VolumeBall.png" id="2_70y01"]
+[ext_resource type="Script" uid="uid://ekq25rubp64a" path="res://Scripts/VolumeBall.gd" id="2_v7fco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7fco"]
+size = Vector2(500, 60)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("2_v7fco")
+
+[node name="Bar" type="Sprite2D" parent="."]
+position = Vector2(200, 0)
+texture = ExtResource("1_clxd5")
+
+[node name="Ball" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_70y01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(187, 0)
+shape = SubResource("RectangleShape2D_v7fco")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

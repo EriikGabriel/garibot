@@ -1,4 +1,5 @@
-extends Control
+extends Node2D
+signal Changed(percent:float)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,4 +10,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-	
+
+func _on_area_2d_changed(percent: float) -> void:
+	emit_signal("Changed", percent)
