@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-
-# PRELOADS
-# warning-ignore:unused_class_variable
 @onready var body = $PlayerBody
 @onready var blaster_manager = $PlayerBody/Blasters
 @onready var health_bar = get_tree().get_nodes_in_group("health_bar").front()
@@ -17,8 +14,8 @@ extends CharacterBody2D
 @export var AIR_FINAL_SPEED: int = 700
 @export var GRAVITY_FORCE: int = 30
 @export var ROLL_SPEED: int = 1200
-@export var ROLL_DURATION: int = 15 # How far the dash goes
-@export var ROLL_COOLDOWN: int = 50 # How many frames to activate dash again
+@export var ROLL_DURATION: int = 15 
+@export var ROLL_COOLDOWN: int = 50
 @export var DAMAGE_DURATION: int = 15
 @export var has_control: bool = true
 var in_cutscene = false
@@ -60,7 +57,6 @@ enum STATE {
 	AIR,
 	ROLL,
 	DAMAGE,
-	HELLO
 }
 
 
@@ -248,9 +244,6 @@ func begin_state_machine():
 					change_state(STATE.MOVE)
 				elif move_velocity == 0:
 					change_state(STATE.IDLE)
-			pass
-			
-		STATE.HELLO:
 			pass
 	pass
 
