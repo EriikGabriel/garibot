@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx7u1tly2j5vh"]
+
+[ext_resource type="PackedScene" uid="uid://bqnyucq4jp3t6" path="res://Scenes/Garibot/PlayerBody.tscn" id="1_4sciu"]
+[ext_resource type="Script" uid="uid://cluxkeqrasb8l" path="res://Scenes/Garibot/Player.gd" id="1_lc87a"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(20, 59.9854)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(27.4384, 5.65632)
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(40.844, 60.2354)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 15388
+script = ExtResource("1_lc87a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Debug" type="Node2D" parent="."]
+visible = false
+
+[node name="State" type="Label" parent="Debug"]
+offset_left = -20.5334
+offset_top = -97.2431
+offset_right = 19.4666
+offset_bottom = -83.2431
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "state"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -400
+limit_right = 20000
+limit_bottom = 900
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+
+[node name="PlayerBody" parent="." instance=ExtResource("1_4sciu")]
+
+[node name="Blasters" type="Node2D" parent="PlayerBody"]
+position = Vector2(-92, -112)
+
+[node name="JumpHit" type="Area2D" parent="." groups=["player_hit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpHit"]
+position = Vector2(0, 26)
+shape = SubResource("2")
+
+[node name="SpinHit" type="Area2D" parent="." groups=["player_hit"]]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpinHit"]
+visible = false
+modulate = Color(0.482353, 0.705882, 0.121569, 1)
+z_index = 20
+shape = SubResource("3")
+
+[connection signal="body_entered" from="SpinHit" to="." method="_on_SpinHit_body_entered" flags=3]
