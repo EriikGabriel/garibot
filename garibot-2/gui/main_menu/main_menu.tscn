@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwq4c78slau6l"]
+
+[ext_resource type="Script" uid="uid://c3mei83tcn8cd" path="res://gui/main_menu/main_menu.gd" id="1_28flt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(0.360784, 0.572549, 0.431373, 1)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+next_phase = "res://levels/test_chamber.tscn"
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rhts7")
+
+[node name="Jogar" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 175.0
+offset_right = 312.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_ce3w2")
+texture_pressed = ExtResource("3_n45e2")
+script = ExtResource("2_48xlc")
+next_scene = "res://Scenes/test_chamber.tscn"
+
+[node name="Opcoes" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 293.0
+offset_right = 312.0
+offset_bottom = 443.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_n45e2")
+script = ExtResource("2_48xlc")
+next_scene = "res://Scenes/opcoes.tscn"
+
+[node name="Sair" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 873.0
+offset_top = 955.0
+offset_right = 1273.0
+offset_bottom = 1105.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_opfnp")
+texture_pressed = ExtResource("6_cp0ys")
+script = ExtResource("2_48xlc")
+
+[node name="GameController" type="Node" parent="."]
+
+[connection signal="button_down" from="CenterButtons/Jogar" to="." method="_on_jogar_button_down"]
+[connection signal="button_down" from="CenterButtons/Sair" to="." method="_on_sair_button_down"]
