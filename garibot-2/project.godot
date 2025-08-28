@@ -11,19 +11,19 @@ config_version=5
 [application]
 
 config/name="Garibot 2"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="uid://ch7hejmglxybj"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Assets/sprites/icon.svg"
+config/icon="res://assets/sprites/icon.svg"
 
 [autoload]
 
-WindowManager="*res://Scripts/WindowManager.gd"
+WindowManager="*res://scripts/window_manager.gd"
+SceneManager="*res://scripts/scene_manager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 
 [dotnet]
 
@@ -32,9 +32,13 @@ project/assembly_name="Garibot 2"
 [file_customization]
 
 folder_colors={
-"res://Assets/sprites/": "teal",
-"res://Scenes/": "red",
-"res://Scripts/": "orange"
+"res://assets/": "teal",
+"res://assets/sprites/": "teal",
+"res://dialogic/": "green",
+"res://gui/": "purple",
+"res://levels/": "gray",
+"res://scenes/": "red",
+"res://scripts/": "orange"
 }
 
 [input]
