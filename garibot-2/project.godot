@@ -23,11 +23,13 @@ buses/default_bus_layout="uid://cufek0cfg5h3d"
 
 WindowManager="*res://scripts/window_manager.gd"
 SceneManager="*res://scripts/scene_manager.gd"
+Toolkit="*res://toolkit.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=1
 
 [dotnet]
 
@@ -44,6 +46,10 @@ folder_colors={
 "res://scenes/": "red",
 "res://scripts/": "orange"
 }
+
+[global_group]
+
+DamageOnContact="Emit Damage On Contact"
 
 [input]
 

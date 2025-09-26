@@ -41,7 +41,7 @@ var gravity_on
 var magnet_on = false
 var damage
 var life = 5
-var invinc_duration = 0
+var invinc_duration :float= 0
 var invinc_fading = true
 
 # FRAMES COOLDOWN
@@ -101,6 +101,14 @@ func _physics_process(_delta):
 	invinc_frames(_delta)
 	
 	$Debug/State.text = str(state)
+	
+	var last_coll
+	if(get_last_slide_collision()): #se tiver ultima colisao
+		last_coll = get_last_slide_collision().get_collider() #pega quem colidiu
+	if last_coll and last_coll.is_in_group("DamageOnContact") and is_equal_approx(invinc_duration,0):#se for dano de contato
+		#print("damage")
+		$HitboxComponent.damage((last_coll.get_node("ContactDamage") as ContactDamage).contact_att) #pega a quantidade de dano atrelado e .damage na hitbox do player
+		#print("remaning health: "+str($HealthComponent.health))
 
 
 func invinc_frames(delta):

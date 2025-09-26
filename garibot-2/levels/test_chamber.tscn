@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://xovmuwecb7h8"]
+[gd_scene load_steps=9 format=4 uid="uid://xovmuwecb7h8"]
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/test_chamber.gd" id="1_j1k86"]
 [ext_resource type="PackedScene" uid="uid://dx7u1tly2j5vh" path="res://scenes/characters/Garibot/Player.tscn" id="1_v6jr0"]
 [ext_resource type="Texture2D" uid="uid://b67l71vi236u" path="res://assets/sprites/icon.svg" id="2_dj2jv"]
 [ext_resource type="AudioStream" uid="uid://lrhiv3nsuk85" path="res://Sound/MikiStayWithMe16bits.mp3" id="3_dj2jv"]
+[ext_resource type="PackedScene" uid="uid://1ie7mbenpr5h" path="res://scenes/characters/enemy_test.tscn" id="5_ia5te"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgse0"]
 texture = ExtResource("2_dj2jv")
@@ -167,5 +168,10 @@ shape = SubResource("RectangleShape2D_j1k86")
 [node name="Test" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_dj2jv")
 autoplay = true
+
+[node name="EnemyTest" parent="." instance=ExtResource("5_ia5te")]
+position = Vector2(427, 35)
+collision_layer = 5
+collision_mask = 5
 
 [connection signal="body_entered" from="NextPhase" to="." method="_on_pass_phase"]
