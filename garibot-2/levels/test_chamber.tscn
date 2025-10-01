@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://xovmuwecb7h8"]
+[gd_scene load_steps=13 format=4 uid="uid://xovmuwecb7h8"]
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/test_chamber.gd" id="1_j1k86"]
 [ext_resource type="PackedScene" uid="uid://dx7u1tly2j5vh" path="res://scenes/characters/Garibot/Player.tscn" id="1_v6jr0"]
-[ext_resource type="Texture2D" uid="uid://b67l71vi236u" path="res://assets/sprites/icon.svg" id="2_dj2jv"]
-[ext_resource type="AudioStream" uid="uid://lrhiv3nsuk85" path="res://Sound/MikiStayWithMe16bits.mp3" id="3_dj2jv"]
+[ext_resource type="Texture2D" uid="uid://7lmi4qf7nh45" path="res://assets/sprites/icon.svg" id="2_dj2jv"]
+[ext_resource type="AudioStream" uid="uid://bllpjer7toetq" path="res://assets/sounds/MikiStayWithMe16bits.mp3" id="3_dj2jv"]
 [ext_resource type="PackedScene" uid="uid://1ie7mbenpr5h" path="res://scenes/characters/enemy_test.tscn" id="5_ia5te"]
+[ext_resource type="PackedScene" uid="uid://bll5oj3kod3hn" path="res://scenes/collectable/collectable.tscn" id="6_38pdw"]
+[ext_resource type="Texture2D" uid="uid://cunkoc7okue4e" path="res://assets/sprites/collectibles/battery.png" id="7_8265f"]
+[ext_resource type="Texture2D" uid="uid://b5c8tahrhu2nk" path="res://assets/sprites/collectibles/celular.png" id="8_8265f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgse0"]
 texture = ExtResource("2_dj2jv")
@@ -144,6 +147,9 @@ sources/0 = SubResource("TileSetAtlasSource_xgse0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1k86"]
 size = Vector2(114, 64)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_38pdw"]
+radius = 21.3776
+
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_j1k86")
 next_phase = "res://scenes/options/options.tscn"
@@ -173,5 +179,23 @@ autoplay = true
 position = Vector2(427, 35)
 collision_layer = 5
 collision_mask = 5
+
+[node name="Collectable" parent="." instance=ExtResource("6_38pdw")]
+position = Vector2(162, 15)
+texture = ExtResource("7_8265f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable"]
+shape = SubResource("CircleShape2D_38pdw")
+debug_color = Color(0.653516, 0.517888, 0.0146319, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="Collectable2" parent="." instance=ExtResource("6_38pdw")]
+position = Vector2(277, 15)
+texture = ExtResource("8_8265f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable2"]
+shape = SubResource("CircleShape2D_38pdw")
+debug_color = Color(0.653516, 0.517888, 0.0146319, 0.42)
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="NextPhase" to="." method="_on_pass_phase"]

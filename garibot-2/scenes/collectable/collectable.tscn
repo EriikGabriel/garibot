@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bll5oj3kod3hn"]
+
+[ext_resource type="Script" uid="uid://cab68ro5bwpcq" path="res://scenes/collectable/collectable.gd" id="1_h1g3x"]
+
+[node name="Collectable" type="Area2D"]
+script = ExtResource("1_h1g3x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
