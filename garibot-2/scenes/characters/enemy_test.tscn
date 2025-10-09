@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://1ie7mbenpr5h"]
+[gd_scene load_steps=8 format=3 uid="uid://1ie7mbenpr5h"]
 
 [ext_resource type="Script" uid="uid://b1tnywmoffgi1" path="res://scenes/characters/enemy_base.gd" id="1_y24a4"]
 [ext_resource type="Script" uid="uid://tpsy72ck1prt" path="res://health_component.gd" id="2_t28a1"]
 [ext_resource type="Script" uid="uid://dkbuaxn46mbmk" path="res://scenes/characters/hitbox_component.gd" id="3_a2m14"]
 [ext_resource type="Script" uid="uid://bsyekh4io6ln2" path="res://scenes/characters/contact_damage.gd" id="4_t28a1"]
+[ext_resource type="Texture2D" uid="uid://c4wibnluw20sm" path="res://assets/sprites/enemies/blasters.png" id="5_a2m14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y24a4"]
 size = Vector2(20, 21)
@@ -31,3 +32,10 @@ shape = SubResource("RectangleShape2D_t28a1")
 [node name="ContactDamage" type="Node2D" parent="."]
 script = ExtResource("4_t28a1")
 metadata/_custom_type_script = "uid://bsyekh4io6ln2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.125)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("5_a2m14")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 17)

@@ -1,11 +1,12 @@
 class_name Player
 extends CharacterBody2D
 
-
 @onready var body = $PlayerBody
 @onready var blaster_manager = $PlayerBody/Blasters
-@onready var health_bar = get_tree().get_nodes_in_group("health_bar").front()
-@onready var game_over = get_tree().get_nodes_in_group("game_over").front()
+
+# Esses dois agora são inicializados de forma segura
+@onready var health_bar = _get_node_in_group_safe("health_bar")
+@onready var game_over = _get_node_in_group_safe("game_over")
 
 # EXPORT VARIABLES
 @export var MAXSPEED: int = 300
@@ -69,6 +70,12 @@ enum GRAVITY {
 	LEFT
 }
 
+func _get_node_in_group_safe(group_name: String):
+	var nodes = get_tree().get_nodes_in_group(group_name)
+	if nodes.size() > 0:
+		return nodes.front()
+	else:
+		return null
 
 func _ready():
 	state = STATE.IDLE

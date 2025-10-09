@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bqnyucq4jp3t6" path="res://scenes/characters/Garibot/PlayerBody.tscn" id="1_4sciu"]
 [ext_resource type="Script" uid="uid://cluxkeqrasb8l" path="res://scenes/characters/Garibot/Player.gd" id="1_lc87a"]
-[ext_resource type="AudioStream" uid="uid://dth1dtny4gci7" path="res://assets/sounds/roll_garibot.mp3" id="3_kfxqr"]
-[ext_resource type="AudioStream" uid="uid://21yqugtldb0s" path="res://assets/sounds/garibot_jump.mp3" id="4_7p27y"]
-[ext_resource type="AudioStream" uid="uid://cnjnxtrvy50ux" path="res://assets/sounds/garibot_damage.mp3" id="5_vhm43"]
+[ext_resource type="AudioStream" uid="uid://d1b8vbs518sa5" path="res://assets/sounds/roll_garibot.mp3" id="3_kfxqr"]
+[ext_resource type="AudioStream" uid="uid://b05pr2j5toft4" path="res://assets/sounds/garibot_jump.mp3" id="4_7p27y"]
+[ext_resource type="AudioStream" uid="uid://cid51ttdol7oa" path="res://assets/sounds/garibot_damage.mp3" id="5_vhm43"]
 [ext_resource type="PackedScene" uid="uid://db83e3ovnnsav" path="res://scenes/characters/health_component.tscn" id="6_radk4"]
 [ext_resource type="PackedScene" uid="uid://cm1qtuiv0aiag" path="res://scenes/characters/hitbox_component.tscn" id="7_6ijxl"]
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7vx7qwni8qi2" path="res://assets/sprites/player/PlayerChar.png" id="2_3tbbo"]
 [ext_resource type="Texture2D" uid="uid://cqnliehopdkg7" path="res://assets/sprites/player/face.png" id="2_7l276"]
 [ext_resource type="Script" uid="uid://dg1k6sqayiym3" path="res://scenes/characters/Garibot/Face.gd" id="4_7l276"]
-[ext_resource type="Texture2D" uid="uid://c4wibnluw20sm" path="res://assets/sprites/blasters.png" id="4_eftty"]
+[ext_resource type="Texture2D" uid="uid://c4wibnluw20sm" path="res://assets/sprites/enemies/blasters.png" id="4_eftty"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Magnet"

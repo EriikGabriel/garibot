@@ -4,5 +4,9 @@
 
 [node name="Collectable" type="Area2D"]
 script = ExtResource("1_h1g3x")
+repel_radius = null
+repel_strength = null
+orbit_radius = null
+orbit_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
