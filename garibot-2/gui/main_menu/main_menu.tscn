@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwq4c78slau6l"]
+
+[ext_resource type="Script" uid="uid://c3mei83tcn8cd" path="res://gui/main_menu/main_menu.gd" id="1_28flt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(0.36167, 0.574003, 0.432654, 1)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+next_phase = "res://levels/test_chamber.tscn"
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rhts7")
+
+[node name="CenterButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -154.0
+offset_right = 54.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Jogar" type="Button" parent="CenterButtons"]
+layout_mode = 2
+text = "Jogar"
+
+[node name="Sair" type="Button" parent="CenterButtons"]
+layout_mode = 2
+text = "Sair"
+
+[node name="GameController" type="Node" parent="."]
+
+[connection signal="button_down" from="CenterButtons/Jogar" to="." method="_on_jogar_button_down"]
+[connection signal="button_down" from="CenterButtons/Sair" to="." method="_on_sair_button_down"]

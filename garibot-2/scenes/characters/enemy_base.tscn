@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5yy3us50whpv"]
+
+[ext_resource type="Script" uid="uid://b1tnywmoffgi1" path="res://scenes/characters/enemy_base.gd" id="1_0tvau"]
+[ext_resource type="Script" uid="uid://tpsy72ck1prt" path="res://health_component.gd" id="1_36wbv"]
+[ext_resource type="Script" uid="uid://dkbuaxn46mbmk" path="res://scenes/characters/hitbox_component.gd" id="2_0tvau"]
+[ext_resource type="Script" uid="uid://bsyekh4io6ln2" path="res://scenes/characters/contact_damage.gd" id="4_435pf"]
+
+[node name="EnemyBase" type="CharacterBody2D" groups=["DamageOnContact"]]
+script = ExtResource("1_0tvau")
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("1_36wbv")
+metadata/_custom_type_script = "uid://tpsy72ck1prt"
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("2_0tvau")
+metadata/_custom_type_script = "uid://dkbuaxn46mbmk"
+
+[node name="ContactDamage" type="Node2D" parent="."]
+script = ExtResource("4_435pf")
+metadata/_custom_type_script = "uid://bsyekh4io6ln2"
