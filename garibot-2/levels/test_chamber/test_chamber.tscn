@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=4 uid="uid://xovmuwecb7h8"]
 
-[ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/test_chamber.gd" id="1_j1k86"]
+[ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/test_chamber/test_chamber.gd" id="1_j1k86"]
 [ext_resource type="PackedScene" uid="uid://dx7u1tly2j5vh" path="res://scenes/characters/Garibot/Player.tscn" id="1_v6jr0"]
 [ext_resource type="Texture2D" uid="uid://dn5kde2ws20mx" path="res://assets/sprites/icon.svg" id="2_dj2jv"]
 [ext_resource type="AudioStream" uid="uid://bdh17lumhhua1" path="res://assets/sounds/MikiStayWithMe16bits.mp3" id="3_dj2jv"]
-[ext_resource type="PackedScene" uid="uid://1ie7mbenpr5h" path="res://scenes/characters/enemy_test.tscn" id="5_ia5te"]
+[ext_resource type="PackedScene" uid="uid://1ie7mbenpr5h" path="res://scenes/characters/Enemy/enemy_test.tscn" id="5_ia5te"]
 [ext_resource type="PackedScene" uid="uid://bll5oj3kod3hn" path="res://scenes/collectable/collectable.tscn" id="6_38pdw"]
 [ext_resource type="Texture2D" uid="uid://d2d7o76pojm5w" path="res://assets/sprites/collectibles/battery.png" id="7_8265f"]
 [ext_resource type="Texture2D" uid="uid://smf7c54teekm" path="res://assets/sprites/collectibles/celular.png" id="8_8265f"]

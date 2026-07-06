@@ -41,7 +41,6 @@ func _process(delta: float) -> void:
 	if not collected or not player:
 		return
 
-	var player_pos = player.global_position
 	var player_velocity := Vector2.ZERO
 
 	if "velocity" in player:
