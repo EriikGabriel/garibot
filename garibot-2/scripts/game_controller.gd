@@ -25,7 +25,7 @@ func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool
 	current_gui_scene = new
 
 
-func change_2d_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
+func change_2d_scene(new_scene: PackedScene, delete: bool = true, keep_running: bool = false) -> void:
 	if current_2d_scene != null:
 		if delete:
 			current_2d_scene.queue_free() # Remove o nó inteiramente
@@ -34,7 +34,7 @@ func change_2d_scene(new_scene: String, delete: bool = true, keep_running: bool 
 		else:
 			world_2d.remove_child(current_2d_scene) # Mantém em memória, mas não roda
 
-	var new = load(new_scene).instantiate()
+	var new = load(new_scene.resource_path).instantiate()
 	world_2d.add_child(new)
 	current_2d_scene = new
 	

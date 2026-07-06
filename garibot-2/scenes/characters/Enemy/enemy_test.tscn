@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://1ie7mbenpr5h"]
 
-[ext_resource type="Script" uid="uid://b1tnywmoffgi1" path="res://scenes/characters/enemy_base.gd" id="1_y24a4"]
-[ext_resource type="Script" uid="uid://tpsy72ck1prt" path="res://health_component.gd" id="2_t28a1"]
-[ext_resource type="Script" uid="uid://dkbuaxn46mbmk" path="res://scenes/characters/hitbox_component.gd" id="3_a2m14"]
-[ext_resource type="Script" uid="uid://bsyekh4io6ln2" path="res://scenes/characters/contact_damage.gd" id="4_t28a1"]
-[ext_resource type="Texture2D" uid="uid://c4wibnluw20sm" path="res://assets/sprites/enemies/blasters.png" id="5_a2m14"]
+[ext_resource type="Script" uid="uid://b1tnywmoffgi1" path="res://scenes/characters/Enemy/enemy_base.gd" id="1_y24a4"]
+[ext_resource type="Script" uid="uid://tpsy72ck1prt" path="res://components/health/health_component.gd" id="2_t28a1"]
+[ext_resource type="Script" uid="uid://dkbuaxn46mbmk" path="res://components/hitbox/hitbox_component.gd" id="3_a2m14"]
+[ext_resource type="Script" uid="uid://bsyekh4io6ln2" path="res://components/contact_damage/contact_damage.gd" id="4_t28a1"]
+[ext_resource type="Texture2D" uid="uid://dn5wheydt0el8" path="res://assets/sprites/enemies/blasters.png" id="5_a2m14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y24a4"]
 size = Vector2(20, 21)
