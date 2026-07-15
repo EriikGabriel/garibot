@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 @onready var body = $PlayerBody
 @onready var blaster_manager = $PlayerBody/Blasters
+@onready var dialog_point: Marker2D = $"Dialog Point"
 
-# Esses dois agora são inicializados de forma segura
 @onready var health_bar = _get_node_in_group_safe("health_bar")
 @onready var game_over = _get_node_in_group_safe("game_over")
 

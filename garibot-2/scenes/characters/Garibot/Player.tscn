@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bqnyucq4jp3t6" path="res://scenes/characters/Garibot/PlayerBody.tscn" id="1_4sciu"]
 [ext_resource type="Script" uid="uid://cluxkeqrasb8l" path="res://scenes/characters/Garibot/Player.gd" id="1_lc87a"]
-[ext_resource type="AudioStream" uid="uid://r4ajsru4w1v1" path="res://assets/sounds/roll_garibot.mp3" id="3_kfxqr"]
-[ext_resource type="AudioStream" uid="uid://2snyn7xl0y10" path="res://assets/sounds/garibot_jump.mp3" id="4_7p27y"]
-[ext_resource type="AudioStream" uid="uid://c7j6vuldas8c1" path="res://assets/sounds/garibot_damage.mp3" id="5_vhm43"]
+[ext_resource type="AudioStream" uid="uid://b4c5nvvdujn2r" path="res://assets/sounds/roll_garibot.mp3" id="3_kfxqr"]
+[ext_resource type="AudioStream" uid="uid://d3626puuiaqj1" path="res://assets/sounds/garibot_jump.mp3" id="4_7p27y"]
+[ext_resource type="AudioStream" uid="uid://c0hgdbawtd1kc" path="res://assets/sounds/garibot_damage.mp3" id="5_vhm43"]
 [ext_resource type="PackedScene" uid="uid://db83e3ovnnsav" path="res://components/health/health_component.tscn" id="6_radk4"]
 [ext_resource type="PackedScene" uid="uid://cm1qtuiv0aiag" path="res://components/hitbox/hitbox_component.tscn" id="7_6ijxl"]
 
@@ -40,6 +40,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "state"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 limit_left = -400
 limit_right = 20000
 limit_bottom = 900
@@ -91,5 +92,8 @@ health = NodePath("../HealthComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_cvfcc")
+
+[node name="Dialog Point" type="Marker2D" parent="."]
+position = Vector2(28, -15)
 
 [connection signal="body_entered" from="SpinHit" to="." method="_on_SpinHit_body_entered" flags=3]

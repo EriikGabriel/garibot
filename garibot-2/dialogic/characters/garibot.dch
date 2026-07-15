@@ -2,17 +2,19 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(1, 1, 1, 1),
+&"color": Color(0.921875, 0.606781, 0.115234, 1),
 &"custom_info": {
+"prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "portrait"
+"style": "bubbles",
+"suffix": ""
 },
 &"default_portrait": "default",
 &"description": "O nosso robo garibot",
 &"display_name": "Garibot",
 &"mirror": false,
-&"nicknames": [""],
+&"nicknames": ["Garibot"],
 &"offset": Vector2(0, 0),
 &"portraits": {
 "default": {

@@ -1,10 +1,10 @@
 [gd_scene load_steps=33 format=3 uid="uid://bqnyucq4jp3t6"]
 
 [ext_resource type="Script" uid="uid://djas2xkprblsi" path="res://scenes/characters/Garibot/PlayerBody.gd" id="1_j6uc4"]
-[ext_resource type="Texture2D" uid="uid://7vx7qwni8qi2" path="res://assets/sprites/player/PlayerChar.png" id="2_3tbbo"]
-[ext_resource type="Texture2D" uid="uid://cqnliehopdkg7" path="res://assets/sprites/player/face.png" id="2_7l276"]
+[ext_resource type="Texture2D" uid="uid://bjf56yjxnl8pl" path="res://assets/sprites/player/PlayerChar.png" id="2_3tbbo"]
+[ext_resource type="Texture2D" uid="uid://cs581srexw0v7" path="res://assets/sprites/player/face.png" id="2_7l276"]
 [ext_resource type="Script" uid="uid://dg1k6sqayiym3" path="res://scenes/characters/Garibot/Face.gd" id="4_7l276"]
-[ext_resource type="Texture2D" uid="uid://c4wibnluw20sm" path="res://assets/sprites/enemies/blasters.png" id="4_eftty"]
+[ext_resource type="Texture2D" uid="uid://b3jdmttge4621" path="res://assets/sprites/enemies/blasters.png" id="4_eftty"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Magnet"
