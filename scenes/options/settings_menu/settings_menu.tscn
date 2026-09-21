@@ -1,0 +1,163 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/options/settings_menu/settings_menu.gd" id="1_menu"]
+[ext_resource type="PackedScene" path="res://scenes/options/setting_slider/setting_slider.tscn" id="2_ss"]
+[ext_resource type="PackedScene" path="res://scenes/options/setting_toggle/setting_toggle.tscn" id="3_st"]
+[ext_resource type="PackedScene" path="res://levels/test_chamber/test_chamber.tscn" id="4_phase"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+next_phase = ExtResource("4_phase")
+back_to_menu = "res://gui/main_menu/main_menu.tscn"
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 40.0
+offset_right = -80.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Configurações"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentVBox" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="SecDialog" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "Diálogo e Acessibilidade"
+theme_override_font_sizes/font_size = 24
+
+[node name="FontSize" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+layout_mode = 2
+label_text = "Tamanho da Fonte"
+settings_key = "dialog_font_size"
+min_value = 12.0
+max_value = 40.0
+step_value = 1.0
+
+[node name="TextSpeed" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+layout_mode = 2
+label_text = "Velocidade do Texto"
+settings_key = "text_speed"
+min_value = 50.0
+max_value = 200.0
+step_value = 10.0
+value_ratio = 100.0
+
+[node name="SkipOnClick" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("3_st")]
+layout_mode = 2
+label_text = "Exibir texto completo ao clicar"
+settings_key = "skip_on_click"
+
+[node name="SecAudio" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "Áudio"
+theme_override_font_sizes/font_size = 24
+
+[node name="MasterVolume" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+layout_mode = 2
+label_text = "Volume Geral"
+settings_key = "master_volume"
+min_value = 0.0
+max_value = 100.0
+step_value = 1.0
+value_ratio = 100.0
+
+[node name="MusicVolume" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+layout_mode = 2
+label_text = "Volume da Música"
+settings_key = "music_volume"
+min_value = 0.0
+max_value = 100.0
+step_value = 1.0
+value_ratio = 100.0
+
+[node name="SfxVolume" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+layout_mode = 2
+label_text = "Volume dos Efeitos"
+settings_key = "sfx_volume"
+min_value = 0.0
+max_value = 100.0
+step_value = 1.0
+value_ratio = 100.0
+
+[node name="SecVideo" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox"]
+layout_mode = 2
+text = "Vídeo"
+theme_override_font_sizes/font_size = 24
+
+[node name="Fullscreen" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("3_st")]
+layout_mode = 2
+label_text = "Tela Cheia"
+settings_key = "fullscreen"
+
+[node name="ScreenShake" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("3_st")]
+layout_mode = 2
+label_text = "Vibração da Tela"
+settings_key = "screen_shake"
+
+[node name="BottomBar" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Restaurar" type="Button" parent="Panel/MarginContainer/VBoxContainer/BottomBar"]
+layout_mode = 2
+text = "Restaurar Padrão"
+
+[node name="Voltar" type="Button" parent="Panel/MarginContainer/VBoxContainer/BottomBar"]
+layout_mode = 2
+text = "Voltar"
+
+[node name="Comecar" type="Button" parent="Panel/MarginContainer/VBoxContainer/BottomBar"]
+layout_mode = 2
+text = "Começar"
+
+[node name="Sair" type="Button" parent="Panel/MarginContainer/VBoxContainer/BottomBar"]
+layout_mode = 2
+text = "Sair"
+
+[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/BottomBar/Comecar" to="." method="_on_comecar_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/BottomBar/Voltar" to="." method="_on_voltar_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/BottomBar/Restaurar" to="." method="_on_restaurar_padrao_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/BottomBar/Sair" to="." method="_on_sair_button_down"]
