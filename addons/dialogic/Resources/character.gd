@@ -1,5 +1,5 @@
 @tool
-@icon("uid://bbea0efx0ybu7")
+@icon("res://addons/dialogic/Editor/Images/Resources/character.svg")
 extends "res://addons/dialogic/Resources/dialogic_identifiable_resource.gd"
 class_name DialogicCharacter
 

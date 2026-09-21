@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Garibot 2"
-run/main_scene="uid://ch7hejmglxybj"
+run/main_scene="res://levels/game.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/sprites/icon.svg"
 
 [audio]
 
-buses/default_bus_layout="uid://cufek0cfg5h3d"
+buses/default_bus_layout="res://assets/sounds/default_bus_layout.tres"
 
 [autoload]
 

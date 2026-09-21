@@ -9,7 +9,7 @@ extends Control
 func _on_comecar_button_down() -> void:
 	Settings.save_settings()
 	if SceneManager.game_controller:
-		SceneManager.game_controller.delete_currrent_gui_scene()
+		SceneManager.game_controller.delete_current_gui_scene()
 		SceneManager.game_controller.change_2d_scene(next_phase)
 
 func _on_voltar_button_down() -> void:

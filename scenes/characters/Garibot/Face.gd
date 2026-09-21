@@ -1,9 +1,8 @@
 extends Sprite2D
 
-func _ready():
-	set_face(0);
-	pass
+## Controla o quadro da spritesheet de expressões do Garibot.
+func _ready() -> void:
+	set_face(0)
 
-func set_face( idx ):
-	self.set_frame( idx );
-	pass
+func set_face(index: int) -> void:
+	frame = index
