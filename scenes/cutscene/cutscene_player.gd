@@ -1,25 +1,25 @@
 class_name CutscenePlayer
 extends Node
 
-## Diretor modular de cutscenes.
+## Modular cutscene director.
 ##
-## Adicione este nó a uma fase, preencha `steps` com dicionários de instrução
-## e chame `run()`. Durante a execução, ele controla temporariamente Garibot,
-## exibe barras cinematográficas, animações e diálogos, e depois devolve o
-## controle ao jogador.
+## Add this node to a level, fill `steps` with an array of instruction
+## dictionaries, and call `run()`. It temporarily takes control away from
+## Garibot (driving him like a player), plays optional cinematic black bars,
+## raw animations and Dialogic dialogs, then restores control.
 ##
-## Tipos de passo suportados (todos exigem a chave `type`):
-##   {"type": "bars_on",  "speed": 0.3}                 # mostra as barras cinematográficas
-##   {"type": "bars_off", "speed": 0.3}                 # oculta as barras cinematográficas
-##   {"type": "wait", "seconds": 1.0}                   # aguarda por N segundos
-##   {"type": "walk", "dir": 1, "duration": 1.5}        # move Garibot por N segundos
-##   {"type": "stop"}                                    # para o movimento
-##   {"type": "face", "dir": -1}                        # muda a direção em que Garibot olha
-##   {"type": "jump"}                                    # faz Garibot pular, se estiver no chão
-##   {"type": "roll", "dir": 1}                         # executa uma rolada/dash
-##   {"type": "animation", "name": "hello", "duration": 1.0} # toca animação do corpo
-##   {"type": "say", "timeline": "res://dialogic/...dl"}       # toca diálogo e aguarda o término
-##   {"type": "signal"}                                  # emite `step_reached`
+## Supported step types (a valid `type` is required for every step):
+##   {"type": "bars_on",  "speed": 0.3}                 # fade cinematic black bars in
+##   {"type": "bars_off", "speed": 0.3}                 # fade black bars out
+##   {"type": "wait", "seconds": 1.0}                   # do nothing for N seconds
+##   {"type": "walk", "dir": 1, "duration": 1.5}        # move Garibot in a direction for N seconds
+##   {"type": "stop"}                                   # stop walking
+##   {"type": "face", "dir": -1}                        # turn Garibot to face a direction
+##   {"type": "jump"}                                   # make Garibot jump (if on floor)
+##   {"type": "roll", "dir": 1}                         # make Garibot dash/roll in a direction
+##   {"type": "animation", "name": "hello", "duration": 1.0}  # play a raw body animation for N seconds
+##   {"type": "say", "timeline": "res://dialogic/...dl"}      # play a Dialogic dialog and wait for it
+##   {"type": "signal"}                                # emit the `step_reached` signal
 ##
 ## Example:
 ##   steps = [
@@ -38,8 +38,8 @@ signal finished
 
 @export var player_path: NodePath = NodePath("")
 
-## Recurso do personagem Dialogic exibido durante passos do tipo "say".
-## Quando vazio, usa o personagem Garibot do jogo.
+## Dialogic character resource shown in the speech bubble during "say" steps.
+## Defaults to the game's garibot character when left empty.
 @export var character_resource: Resource = null
 
 var _player: Player
@@ -53,7 +53,7 @@ const _BAR_HEIGHT := 140.0
 const _DEFAULT_BAR_SPEED := 0.4
 
 
-func _ready() -> void:
+func _ready():
 	_ensure_bars()
 
 
@@ -138,15 +138,22 @@ func _play_dialog(timeline: String) -> void:
 	if timeline.is_empty():
 		_advance()
 		return
+	if get_parent().is_in_group("phase1_level"):
+		if not Dialogic.timeline_ended.is_connected(_on_dialog_done):
+			Dialogic.timeline_ended.connect(_on_dialog_done)
+		Phase1Dialogue.start(timeline, get_parent())
+		return
 	if not Dialogic.timeline_ended.is_connected(_on_dialog_done):
 		Dialogic.timeline_ended.connect(_on_dialog_done)
 
-	# Mantém as preferências de acessibilidade iguais às dos gatilhos de diálogo.
+	# Apply accessibility settings (font size, text speed, etc.) as the normal
+	# dialog triggers do, so the cutscene speech matches the player's prefs.
 	Settings.apply_setting("dialog_font_size", Settings.get_setting("dialog_font_size", 18))
 	Settings.apply_setting("text_speed", Settings.get_setting("text_speed", 1.0))
 	Settings.apply_setting("skip_on_click", Settings.get_setting("skip_on_click", true))
 
-	# Vincula o balão ao ponto de diálogo do jogador, como faz DialogTrigger.
+	# Show the speech in a bubble attached to the player's bubble/dialog point,
+	# replicating how the in-game DialogTrigger links Dialogic to the character.
 	var char_res: Resource = character_resource
 	if char_res == null:
 		char_res = load("res://dialogic/characters/garibot.dch")
@@ -180,7 +187,7 @@ func _finish() -> void:
 	finished.emit()
 
 
-# ---- Barras cinematográficas ----
+# ---- Black bars ----
 
 func _ensure_bars() -> void:
 	if _bar_layer != null:
@@ -217,18 +224,18 @@ func _ensure_bars() -> void:
 
 func _set_bars_visibility(show: bool, step: Dictionary) -> void:
 	_ensure_bars()
-	# A visibilidade muda instantaneamente para funcionar também em modo headless.
-	# O campo "speed" apenas define quanto tempo o passo aguardará.
+	# Bars appear/disappear instantly (kept simple and headless-safe).
+	# The step's "speed" just paces how long the camera/bars settle.
 	_bar_top.visible = show
 	_bar_bottom.visible = show
 
 
 func _bar_time(step: Dictionary) -> float:
-	# Dá um pequeno intervalo para a transição ser percebida visualmente.
+	# Give a moment for the bar transition to read visually.
 	return step.get("speed", _DEFAULT_BAR_SPEED)
 
 
-# ---- Utilitários ----
+# ---- Helpers ----
 
 func _resolve_player() -> void:
 	if is_instance_valid(_player):

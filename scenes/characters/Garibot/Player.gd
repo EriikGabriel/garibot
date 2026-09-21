@@ -1,9 +1,9 @@
-class_name Player
 extends CharacterBody2D
+class_name Player
 
-@onready var body = $PlayerBody
+@onready var body: PlayerBody = $PlayerBody
 @onready var blaster_manager = $PlayerBody/Blasters
-@onready var dialog_point: Marker2D = $"Dialog Point"
+@onready var dialog_point: Marker2D = $bubble_point
 
 @onready var health_bar = _get_node_in_group_safe("health_bar")
 @onready var game_over = _get_node_in_group_safe("game_over")
@@ -95,6 +95,18 @@ func _ready():
 
 	# setup variables
 	body.setup(self, blaster_manager)
+	Settings.setting_changed.connect(_on_accessibility_setting_changed)
+	_apply_reduced_motion(bool(Settings.get_setting("reduced_motion", false)))
+
+func _on_accessibility_setting_changed(setting_name: String, value: Variant) -> void:
+	if setting_name == "reduced_motion":
+		_apply_reduced_motion(bool(value))
+
+func _apply_reduced_motion(enabled: bool) -> void:
+	# A câmera deixa de amortecer e perseguir o personagem, removendo o
+	# deslocamento extra que pode causar desconforto sem mudar os controles.
+	var camera: Camera2D = $Camera2D
+	camera.position_smoothing_enabled = not enabled
 
 
 func _physics_process(_delta):
@@ -189,7 +201,7 @@ func consume_cutscene_input():
 # ---- Cutscene command helpers (called by CutscenePlayer) ----
 
 func cutscene_move(direction: int):
-	cutscene_move_dir = signi(direction)
+	cutscene_move_dir = sign(direction)
 
 func cutscene_stop():
 	cutscene_move_dir = 0
@@ -204,7 +216,7 @@ func cutscene_roll():
 
 func cutscene_face(direction: int):
 	if direction != 0:
-		change_orientation(signi(direction))
+		change_orientation(sign(direction))
 
 
 func begin_state_machine():
@@ -432,13 +444,13 @@ func _on_SpinHit_body_entered(body_entered):
 
 # ---------- Setters/Getters ----------------------
 
-func get_body():
-	return $PlayerBody
-
 func change_state(new_state):
 	if new_state != state:
 		last_state = state
 		state = new_state
+
+func stop_cutscene_animation():
+	body.stop_cutscene_animation()
 
 func get_state():
 	return state
@@ -485,7 +497,7 @@ func change_blaster(blaster):
 func is_gravity_correct():
 	return gravity == GRAVITY.DOWN
 
-func checkpointed(new_position):
+func checkpointed(new_position: Vector2):
 	print_debug("checkpointed")
 	self.position = new_position
 	change_blaster("bubble")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/options/keybind_row/keybind_row.gd" id="1_script"]
+
+[node name="KeybindRow" type="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+script = ExtResource("1_script")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ação"
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+text = "Alterar"

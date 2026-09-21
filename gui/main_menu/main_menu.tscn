@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwq4c78slau6l"]
 
 [ext_resource type="Script" uid="uid://c3mei83tcn8cd" path="res://gui/main_menu/main_menu.gd" id="1_28flt"]
-[ext_resource type="PackedScene" uid="uid://xovmuwecb7h8" path="res://levels/test_chamber/test_chamber.tscn" id="2_85nol"]
+[ext_resource type="PackedScene" uid="uid://cuowvkcs5ru1v" path="res://levels/phase1/phase1.tscn" id="2_85nol"]
 [ext_resource type="PackedScene" path="res://scenes/options/settings_menu/settings_menu.tscn" id="3_setscene"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]

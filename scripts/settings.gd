@@ -25,6 +25,15 @@ const DEFAULTS := {
 	# Gameplay / Acessibilidade
 	"screen_shake": true,
 	"subtitles": true,
+	"high_contrast": false,
+	"reduced_motion": false,
+	# Cada ação guarda uma tecla física escolhida pelo jogador.
+	"keybinds": {
+		"move_left": KEY_A,
+		"move_right": KEY_D,
+		"move_up": KEY_SPACE,
+		"attack": KEY_SHIFT,
+	},
 }
 
 var settings: Dictionary = DEFAULTS.duplicate(true)
@@ -119,8 +128,10 @@ func apply_setting(key: String, value: Variant) -> void:
 			_set_bus_volume("Sfx", value)
 		"fullscreen":
 			_apply_fullscreen(value)
-		"screen_shake", "subtitles":
-			# Preferências reservadas: os sistemas consumidores ainda não existem.
+		"keybinds":
+			_apply_keybinds(value)
+		"screen_shake", "subtitles", "high_contrast", "reduced_motion":
+			# Os consumidores recebem a atualização pelo sinal setting_changed.
 			pass
 
 func _get_dialogic() -> Node:
@@ -170,6 +181,28 @@ func get_bus_volume(bus_name: String) -> float:
 func _apply_fullscreen(enabled: bool) -> void:
 	var mode := DisplayServer.WINDOW_MODE_FULLSCREEN if enabled else DisplayServer.WINDOW_MODE_WINDOWED
 	DisplayServer.window_set_mode(mode)
+
+func set_keybind(action: StringName, physical_keycode: int) -> void:
+	if not InputMap.has_action(action):
+		push_warning("Settings: ação de entrada inexistente: %s" % action)
+		return
+	var keybinds: Dictionary = settings["keybinds"].duplicate(true)
+	keybinds[String(action)] = physical_keycode
+	set_setting("keybinds", keybinds)
+
+func get_keybind(action: StringName) -> int:
+	var keybinds: Dictionary = settings.get("keybinds", {})
+	return int(keybinds.get(String(action), KEY_NONE))
+
+func _apply_keybinds(keybinds: Dictionary) -> void:
+	for action_name in keybinds:
+		var action := StringName(action_name)
+		if not InputMap.has_action(action):
+			continue
+		InputMap.action_erase_events(action)
+		var input := InputEventKey.new()
+		input.physical_keycode = int(keybinds[action_name])
+		InputMap.action_add_event(action, input)
 
 func get_default(key: String) -> Variant:
 	return DEFAULTS.get(key, null)

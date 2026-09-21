@@ -20,7 +20,10 @@ overrides = {}
 script = ExtResource("2_chprd")
 scene = ExtResource("4_qk1g4")
 overrides = {
-"name_label_padding": "Vector2(10, 5)"
+"box_corner_radius": "2",
+"box_wobble_amount": "0.0",
+"name_label_padding": "Vector2(10, 5)",
+"text_size": "18"
 }
 
 [resource]

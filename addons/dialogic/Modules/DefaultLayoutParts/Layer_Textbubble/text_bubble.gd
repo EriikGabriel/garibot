@@ -23,6 +23,8 @@ var bubble_rect: Rect2 = Rect2(0.0, 0.0, 2.0, 2.0)
 var base_position := Vector2.ZERO
 
 var base_direction := Vector2(1.0, -1.0).normalized()
+## Zero preserva o comportamento padrão; -1/1 mantém o balão do lado para onde o personagem olha.
+var facing_direction := 0
 var safe_zone := 50.0
 var padding := Vector2()
 
@@ -68,6 +70,9 @@ func _process(delta:float) -> void:
 	var edge_influence := Vector2(influence_x, influence_y)
 
 	var direction := (base_direction + edge_influence).normalized()
+	if facing_direction != 0:
+		direction.x = float(facing_direction) * maxf(absf(direction.x), 0.35)
+		direction = direction.normalized()
 
 	var p: Vector2 = base_position + direction * (
 		safe_zone + lerp(bubble_rect.size.y, bubble_rect.size.x, abs(direction.x)) * 0.4

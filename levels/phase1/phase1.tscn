@@ -1,0 +1,283 @@
+[gd_scene load_steps=11 format=3 uid="uid://cuowvkcs5ru1v"]
+
+[ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/phase1/phase1.gd" id="1_level"]
+[ext_resource type="Script" uid="uid://ci6q78ir854cp" path="res://levels/phase1/phase1_world.gd" id="2_world"]
+[ext_resource type="Script" uid="uid://dwjamc5guap84" path="res://levels/phase1/phase1_collectable.gd" id="3_collect"]
+[ext_resource type="Script" uid="uid://bgth0r2txmvh3" path="res://levels/phase1/phase1_npc.gd" id="4_npc"]
+[ext_resource type="PackedScene" uid="uid://dx7u1tly2j5vh" path="res://scenes/characters/Garibot/Player.tscn" id="5_player"]
+[ext_resource type="PackedScene" uid="uid://dojoph16grx0" path="res://scenes/cutscene/cutscene_player.tscn" id="6_cutscene"]
+[ext_resource type="Script" uid="uid://dawv7m6al0kl7" path="res://levels/phase1/phase1_hud.gd" id="7_hud"]
+
+[sub_resource type="RectangleShape2D" id="GroundShape"]
+size = Vector2(3600, 40)
+
+[sub_resource type="RectangleShape2D" id="SmallShape"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="NpcTalkShape"]
+size = Vector2(96, 80)
+
+[node name="VilaFase1" type="Node2D"]
+script = ExtResource("1_level")
+
+[node name="World" type="Node2D" parent="."]
+z_index = -5
+script = ExtResource("2_world")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(700, 60)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("GroundShape")
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+position = Vector2(100, 0)
+
+[node name="CutscenePlayer" parent="." instance=ExtResource("6_cutscene")]
+steps = Array[Dictionary]([{
+"speed": 0.35,
+"type": &"bars_on"
+}, {
+"dir": 1,
+"duration": 0.6,
+"type": &"walk"
+}, {
+"type": &"stop"
+}, {
+"timeline": &"res://dialogic/timelines/fase1/intro.dtl",
+"type": &"say"
+}, {
+"speed": 0.35,
+"type": &"bars_off"
+}])
+player_path = NodePath("../Player")
+
+[node name="OilPuddle" type="Polygon2D" parent="."]
+position = Vector2(420, 28)
+color = Color(0.12, 0.14, 0.12, 1)
+polygon = PackedVector2Array(-72, 0, -55, -8, -20, -10, 20, -5, 67, 0, 44, 11, -30, 10)
+
+[node name="REEE_Celular" type="Area2D" parent="." groups=["phase1_reee"]]
+position = Vector2(515, 0)
+collision_layer = 0
+script = ExtResource("3_collect")
+item_name = "celular quebrado"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Celular"]
+shape = SubResource("SmallShape")
+
+[node name="Visual" type="Polygon2D" parent="REEE_Celular"]
+color = Color(0.15, 0.22, 0.24, 1)
+polygon = PackedVector2Array(-13, -5, 13, -5, 13, 9, -13, 9)
+
+[node name="REEE_Fios" type="Area2D" parent="." groups=["phase1_reee"]]
+position = Vector2(675, 4)
+collision_layer = 0
+script = ExtResource("3_collect")
+item_name = "fios e cabos"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Fios"]
+shape = SubResource("SmallShape")
+
+[node name="Visual" type="Polygon2D" parent="REEE_Fios"]
+color = Color(0.75, 0.62, 0.26, 1)
+polygon = PackedVector2Array(-16, -3, 5, -8, 16, 2, 3, 7, -7, 4)
+
+[node name="REEE_Computador" type="Area2D" parent="." groups=["phase1_reee"]]
+position = Vector2(800, 0)
+collision_layer = 0
+script = ExtResource("3_collect")
+item_name = "peça de computador"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Computador"]
+shape = SubResource("SmallShape")
+
+[node name="Visual" type="Polygon2D" parent="REEE_Computador"]
+color = Color(0.38, 0.42, 0.4, 1)
+polygon = PackedVector2Array(-15, -8, 15, -8, 15, 8, -15, 8)
+
+[node name="REEE_Rio" type="Area2D" parent="." groups=["phase1_reee"]]
+position = Vector2(1080, 0)
+collision_layer = 0
+script = ExtResource("3_collect")
+item_name = "placa eletrônica"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Rio"]
+shape = SubResource("SmallShape")
+
+[node name="Visual" type="Polygon2D" parent="REEE_Rio"]
+color = Color(0.28, 0.48, 0.4, 1)
+polygon = PackedVector2Array(-15, -5, 14, -5, 14, 7, -15, 7)
+
+[node name="REEE_Fabrica" type="Area2D" parent="." groups=["phase1_reee"]]
+position = Vector2(1450, 0)
+collision_layer = 0
+script = ExtResource("3_collect")
+item_name = "componente de fábrica"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Fabrica"]
+shape = SubResource("SmallShape")
+
+[node name="Visual" type="Polygon2D" parent="REEE_Fabrica"]
+color = Color(0.48, 0.33, 0.22, 1)
+polygon = PackedVector2Array(-16, -9, 16, -9, 16, 8, -16, 8)
+
+[node name="Garidog" type="Node2D" parent="."]
+position = Vector2(620, 14)
+script = ExtResource("4_npc")
+timeline_path = "res://dialogic/timelines/fase1/garidog.dtl"
+
+[node name="Visual" type="ColorRect" parent="Garidog"]
+offset_left = -18.0
+offset_top = -40.0
+offset_right = 18.0
+offset_bottom = 26.0
+color = Color(0.57, 0.39, 0.3, 1)
+
+[node name="Eye" type="ColorRect" parent="Garidog"]
+offset_left = -13.0
+offset_top = -28.0
+offset_right = -9.0
+offset_bottom = -24.0
+color = Color(0.96, 0.91, 0.72, 1)
+
+[node name="TalkArea" type="Area2D" parent="Garidog"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garidog/TalkArea"]
+position = Vector2(0, -7)
+shape = SubResource("NpcTalkShape")
+
+[node name="BubblePoint" type="Marker2D" parent="Garidog"]
+position = Vector2(0, -44)
+
+[node name="CorreioBo" type="Node2D" parent="."]
+position = Vector2(980, 14)
+script = ExtResource("4_npc")
+timeline_path = "res://dialogic/timelines/fase1/correio_bo.dtl"
+
+[node name="Visual" type="ColorRect" parent="CorreioBo"]
+offset_left = -18.0
+offset_top = -40.0
+offset_right = 18.0
+offset_bottom = 26.0
+color = Color(0.34, 0.46, 0.5, 1)
+
+[node name="Eye" type="ColorRect" parent="CorreioBo"]
+offset_left = -13.0
+offset_top = -28.0
+offset_right = -9.0
+offset_bottom = -24.0
+color = Color(0.96, 0.91, 0.72, 1)
+
+[node name="TalkArea" type="Area2D" parent="CorreioBo"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorreioBo/TalkArea"]
+position = Vector2(0, -7)
+shape = SubResource("NpcTalkShape")
+
+[node name="BubblePoint" type="Marker2D" parent="CorreioBo"]
+position = Vector2(0, -44)
+
+[node name="Morador" type="Node2D" parent="."]
+position = Vector2(290, 14)
+script = ExtResource("4_npc")
+timeline_path = "res://dialogic/timelines/fase1/morador.dtl"
+
+[node name="Visual" type="ColorRect" parent="Morador"]
+offset_left = -18.0
+offset_top = -40.0
+offset_right = 18.0
+offset_bottom = 26.0
+color = Color(0.43, 0.43, 0.37, 1)
+
+[node name="Eye" type="ColorRect" parent="Morador"]
+offset_left = -13.0
+offset_top = -28.0
+offset_right = -9.0
+offset_bottom = -24.0
+color = Color(0.96, 0.91, 0.72, 1)
+
+[node name="TalkArea" type="Area2D" parent="Morador"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Morador/TalkArea"]
+position = Vector2(0, -7)
+shape = SubResource("NpcTalkShape")
+
+[node name="BubblePoint" type="Marker2D" parent="Morador"]
+position = Vector2(0, -44)
+
+[node name="Crianca" type="Node2D" parent="."]
+position = Vector2(345, 14)
+script = ExtResource("4_npc")
+
+[node name="Visual" type="ColorRect" parent="Crianca"]
+offset_left = -18.0
+offset_top = -40.0
+offset_right = 18.0
+offset_bottom = 26.0
+color = Color(0.73, 0.58, 0.38, 1)
+
+[node name="Eye" type="ColorRect" parent="Crianca"]
+offset_left = -13.0
+offset_top = -28.0
+offset_right = -9.0
+offset_bottom = -24.0
+color = Color(0.96, 0.91, 0.72, 1)
+
+[node name="TalkArea" type="Area2D" parent="Crianca"]
+collision_layer = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crianca/TalkArea"]
+position = Vector2(0, -7)
+shape = SubResource("NpcTalkShape")
+
+[node name="BubblePoint" type="Marker2D" parent="Crianca"]
+position = Vector2(0, -33)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="PixelPanels" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_hud")
+
+[node name="Title" type="Label" parent="HUD"]
+offset_left = 28.0
+offset_top = 27.0
+offset_right = 620.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.96, 0.93, 0.79, 1)
+theme_override_font_sizes/font_size = 21
+text = "FASE 1 — A VILA ESQUECIDA"
+
+[node name="Objective" type="Label" parent="HUD"]
+offset_left = 30.0
+offset_top = 65.0
+offset_right = 360.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0.84, 0.9, 0.78, 1)
+theme_override_font_sizes/font_size = 17
+text = "REEE recolhidos: 0/5"
+
+[node name="Tutorial" type="Label" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = -80.0
+offset_right = 916.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0.96, 0.93, 0.82, 1)
+theme_override_font_sizes/font_size = 18
+text = "Sinal de alerta recebido..."

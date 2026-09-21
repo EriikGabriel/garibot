@@ -30,10 +30,20 @@ Settings="*res://scripts/settings.gd"
 [dialogic]
 
 directories/dch_directory={
-"garibot": "res://dialogic/characters/garibot.dch"
+"correio_bo": "res://dialogic/characters/correio_bo.dch",
+"crianca": "res://dialogic/characters/crianca.dch",
+"garibot": "res://dialogic/characters/garibot.dch",
+"garidog": "res://dialogic/characters/garidog.dch",
+"morador": "res://dialogic/characters/morador.dch"
 }
 directories/dtl_directory={
+"conclusao": "res://dialogic/timelines/fase1/conclusao.dtl",
+"correio_bo": "res://dialogic/timelines/fase1/correio_bo.dtl",
+"garidog": "res://dialogic/timelines/fase1/garidog.dtl",
 "instructions": "res://dialogic/timelines/teste/instructions.dtl",
+"intro": "res://dialogic/timelines/fase1/intro.dtl",
+"morador": "res://dialogic/timelines/fase1/morador.dtl",
+"reee": "res://dialogic/timelines/fase1/reee.dtl",
 "teste": "res://dialogic/timelines/teste/teste.dtl"
 }
 variables={}

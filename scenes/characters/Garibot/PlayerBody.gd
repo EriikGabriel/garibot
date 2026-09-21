@@ -1,3 +1,4 @@
+class_name PlayerBody
 extends Node2D
 
 ## Controlador visual do Garibot: seleciona animações e atualiza acessórios.
