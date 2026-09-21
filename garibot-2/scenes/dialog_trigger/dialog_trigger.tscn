@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://deku6l3js5cxn"]
+
+[ext_resource type="Script" uid="uid://huoeycgaxq4w" path="res://scenes/dialog_trigger/dialog_trigger.gd" id="1_0r5yt"]
+
+[node name="DialogTrigger" type="Area2D"]
+script = ExtResource("1_0r5yt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
