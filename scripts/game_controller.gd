@@ -7,10 +7,24 @@ extends Node
 
 var current_2d_scene: Node
 var current_gui_scene: Node
+var brightness_modulate: CanvasModulate
 
 func _ready() -> void:
 	SceneManager.game_controller = self
 	current_gui_scene = $GUI/main_menu
+	brightness_modulate = CanvasModulate.new()
+	brightness_modulate.name = "BrightnessModulate"
+	world_2d.add_child(brightness_modulate)
+	Settings.setting_changed.connect(_on_setting_changed)
+	_apply_brightness(float(Settings.get_setting("brightness", 1.0)))
+
+func _on_setting_changed(setting_name: String, value: Variant) -> void:
+	if setting_name == "brightness":
+		_apply_brightness(float(value))
+
+func _apply_brightness(value: float) -> void:
+	var level := clampf(value, 0.5, 1.25)
+	brightness_modulate.color = Color(level, level, level, 1.0)
 
 ## Substitui a interface atual pelo PackedScene localizado em [param scene_path].
 func change_gui_scene(scene_path: String, delete: bool = true, keep_running: bool = false) -> void:
@@ -19,10 +33,12 @@ func change_gui_scene(scene_path: String, delete: bool = true, keep_running: boo
 		push_error("GameController: cena de interface inválida: %s" % scene_path)
 		return
 
+	var scene_instance := scene_resource.instantiate()
+	change_gui_scene_instance(scene_instance, delete, keep_running)
+
+func change_gui_scene_instance(scene_instance: Control, delete: bool = true, keep_running: bool = false) -> void:
 	if current_gui_scene != null:
 		_release_scene(current_gui_scene, gui, delete, keep_running)
-
-	var scene_instance := scene_resource.instantiate()
 	gui.add_child(scene_instance)
 	current_gui_scene = scene_instance
 

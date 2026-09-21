@@ -26,6 +26,7 @@ const DEFAULTS := {
 	"screen_shake": true,
 	"subtitles": true,
 	"high_contrast": false,
+	"brightness": 1.0,
 	"reduced_motion": false,
 	# Cada ação guarda uma tecla física escolhida pelo jogador.
 	"keybinds": {
@@ -130,7 +131,7 @@ func apply_setting(key: String, value: Variant) -> void:
 			_apply_fullscreen(value)
 		"keybinds":
 			_apply_keybinds(value)
-		"screen_shake", "subtitles", "high_contrast", "reduced_motion":
+		"screen_shake", "subtitles", "high_contrast", "reduced_motion", "brightness":
 			# Os consumidores recebem a atualização pelo sinal setting_changed.
 			pass
 

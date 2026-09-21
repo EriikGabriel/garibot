@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cuowvkcs5ru1v"]
+[gd_scene load_steps=12 format=3 uid="uid://cuowvkcs5ru1v"]
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/phase1/phase1.gd" id="1_level"]
 [ext_resource type="Script" uid="uid://ci6q78ir854cp" path="res://levels/phase1/phase1_world.gd" id="2_world"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dx7u1tly2j5vh" path="res://scenes/characters/Garibot/Player.tscn" id="5_player"]
 [ext_resource type="PackedScene" uid="uid://dojoph16grx0" path="res://scenes/cutscene/cutscene_player.tscn" id="6_cutscene"]
 [ext_resource type="Script" uid="uid://dawv7m6al0kl7" path="res://levels/phase1/phase1_hud.gd" id="7_hud"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu/pause_menu.tscn" id="8_pause"]
 
 [sub_resource type="RectangleShape2D" id="GroundShape"]
 size = Vector2(3600, 40)
@@ -241,6 +242,8 @@ position = Vector2(0, -33)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 20
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_pause")]
 
 [node name="PixelPanels" type="Control" parent="HUD"]
 layout_mode = 3

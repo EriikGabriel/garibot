@@ -1,57 +1,165 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwq4c78slau6l"]
+[gd_scene load_steps=7 format=3 uid="uid://bwq4c78slau6l"]
 
-[ext_resource type="Script" uid="uid://c3mei83tcn8cd" path="res://gui/main_menu/main_menu.gd" id="1_28flt"]
-[ext_resource type="PackedScene" uid="uid://cuowvkcs5ru1v" path="res://levels/phase1/phase1.tscn" id="2_85nol"]
-[ext_resource type="PackedScene" path="res://scenes/options/settings_menu/settings_menu.tscn" id="3_setscene"]
+[ext_resource type="Script" uid="uid://c3mei83tcn8cd" path="res://gui/main_menu/main_menu.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cuowvkcs5ru1v" path="res://levels/phase1/phase1.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/options/settings_menu/settings_menu.tscn" id="3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/icon.svg" id="4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
-bg_color = Color(0.36167, 0.574003, 0.432654, 1)
+[sub_resource type="StyleBoxFlat" id="Background"]
+bg_color = Color(0.055, 0.15, 0.16, 1)
 
-[node name="main_menu" type="Control"]
+[sub_resource type="StyleBoxFlat" id="Card"]
+bg_color = Color(0.1, 0.24, 0.23, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.75, 0.89, 0.54, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+content_margin_left = 40.0
+content_margin_top = 28.0
+content_margin_right = 40.0
+content_margin_bottom = 28.0
+
+[sub_resource type="StyleBoxFlat" id="Mission"]
+bg_color = Color(0.06, 0.18, 0.19, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.66, 0.56, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 20.0
+content_margin_top = 14.0
+content_margin_right = 20.0
+content_margin_bottom = 14.0
+
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_28flt")
-next_phase = ExtResource("2_85nol")
-settings_scene = ExtResource("3_setscene")
-metadata/_edit_lock_ = true
+script = ExtResource("1")
+next_phase = ExtResource("2")
+settings_scene = ExtResource("3")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/panel = SubResource("Background")
+mouse_filter = 2
 
-[node name="CenterButtons" type="VBoxContainer" parent="."]
+[node name="TopAccent" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -54.0
-offset_top = -154.0
-offset_right = 54.0
-offset_bottom = -88.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 12.0
 grow_horizontal = 2
-grow_vertical = 0
+color = Color(0.88, 0.72, 0.29, 1)
+mouse_filter = 2
+
+[node name="Card" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -315.0
+offset_right = 360.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Card")
+
+[node name="Content" type="VBoxContainer" parent="Card"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="Card/Content"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 18
+
+[node name="Logo" type="TextureRect" parent="Card/Content/Header"]
+custom_minimum_size = Vector2(82, 82)
+layout_mode = 2
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titles" type="VBoxContainer" parent="Card/Content/Header"]
+layout_mode = 2
 alignment = 1
 
-[node name="Jogar" type="Button" parent="CenterButtons"]
+[node name="Title" type="Label" parent="Card/Content/Header/Titles"]
 layout_mode = 2
-text = "Jogar"
+text = "GARIBOT 2"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.96, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 42
 
-[node name="Sair" type="Button" parent="CenterButtons"]
+[node name="Subtitle" type="Label" parent="Card/Content/Header/Titles"]
+layout_mode = 2
+text = "O Mundo dos Resíduos"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.75, 0.9, 0.78, 1)
+theme_override_font_sizes/font_size = 23
+
+[node name="Intro" type="Label" parent="Card/Content"]
+layout_mode = 2
+text = "Uma aventura educativa para descobrir, recolher e dar destino correto aos resíduos eletrônicos."
+horizontal_alignment = 1
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 19
+
+[node name="Mission" type="PanelContainer" parent="Card/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("Mission")
+
+[node name="Text" type="Label" parent="Card/Content/Mission"]
+layout_mode = 2
+text = "MISSÃO DA FASE 1\nAjude Garibot a limpar a vila e conhecer os REEE."
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.9, 0.96, 0.85, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="Jogar" type="Button" parent="Card/Content"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Começar aventura"
+theme_override_font_sizes/font_size = 22
+
+[node name="Configuracoes" type="Button" parent="Card/Content"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Configurações e acessibilidade"
+
+[node name="Sair" type="Button" parent="Card/Content"]
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 text = "Sair"
 
-[node name="GameController" type="Node" parent="."]
+[node name="Hint" type="Label" parent="Card/Content"]
+layout_mode = 2
+text = "Use Tab e Enter para navegar. Durante a fase, pressione Esc para pausar."
+horizontal_alignment = 1
+autowrap_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.79, 0.72, 1)
 
-[connection signal="button_down" from="CenterButtons/Jogar" to="." method="_on_jogar_button_down"]
-[connection signal="button_down" from="CenterButtons/Sair" to="." method="_on_sair_button_down"]
+[connection signal="pressed" from="Card/Content/Jogar" to="." method="_on_jogar_button_down"]
+[connection signal="pressed" from="Card/Content/Configuracoes" to="." method="_on_configuracoes_button_down"]
+[connection signal="pressed" from="Card/Content/Sair" to="." method="_on_sair_button_down"]

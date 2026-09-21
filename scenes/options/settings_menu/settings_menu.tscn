@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://scenes/options/settings_menu/settings_menu.gd" id="1_menu"]
-[ext_resource type="PackedScene" path="res://scenes/options/setting_slider/setting_slider.tscn" id="2_ss"]
-[ext_resource type="PackedScene" path="res://scenes/options/setting_toggle/setting_toggle.tscn" id="3_st"]
-[ext_resource type="PackedScene" path="res://levels/phase1/phase1.tscn" id="4_phase"]
-[ext_resource type="PackedScene" path="res://scenes/options/keybind_row/keybind_row.tscn" id="5_keybind"]
+[ext_resource type="Script" path="res://scenes/options/settings_menu/settings_menu.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/options/setting_slider/setting_slider.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/options/setting_toggle/setting_toggle.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/options/keybind_row/keybind_row.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://levels/phase1/phase1.tscn" id="5"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -13,187 +13,218 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_menu")
-next_phase = ExtResource("4_phase")
-back_to_menu = "res://gui/main_menu/main_menu.tscn"
+script = ExtResource("1")
+next_phase = ExtResource("5")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Overlay" type="CanvasLayer" parent="."]
+layer = 200
+
+[node name="Background" type="ColorRect" parent="Overlay"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.05, 0.08, 0.08, 1)
+mouse_filter = 2
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="Overlay"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = 40.0
-offset_right = -80.0
-offset_bottom = -90.0
+offset_left = 110.0
+offset_top = 70.0
+offset_right = -110.0
+offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="Margin" type="MarginContainer" parent="Overlay/Panel"]
 layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 30
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 36
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="Body" type="VBoxContainer" parent="Overlay/Panel/Margin"]
 layout_mode = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 14
 
-[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="Overlay/Panel/Margin/Body"]
 layout_mode = 2
-text = "Configurações"
+text = "Antes de começar"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 38
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Step" type="Label" parent="Overlay/Panel/Margin/Body"]
+layout_mode = 2
+text = "Etapa 1 de 3"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="Content" type="Control" parent="Overlay/Panel/Margin/Body"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ContentVBox" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Visual" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="SecDialog" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox"]
+[node name="Heading" type="Label" parent="Overlay/Panel/Margin/Body/Content/Visual"]
 layout_mode = 2
-text = "Diálogo e Acessibilidade"
-theme_override_font_sizes/font_size = 24
+text = "Imagem e conforto visual"
+theme_override_font_sizes/font_size = 26
 
-[node name="FontSize" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+[node name="Description" type="Label" parent="Overlay/Panel/Margin/Body/Content/Visual"]
 layout_mode = 2
-label_text = "Tamanho da Fonte"
+text = "Ajuste a tela antes de entrar na fase. Você pode mudar tudo depois pelo menu de pausa."
+autowrap_mode = 2
+
+[node name="Brightness" parent="Overlay/Panel/Margin/Body/Content/Visual" instance=ExtResource("2")]
+layout_mode = 2
+label_text = "Brilho"
+settings_key = "brightness"
+min_value = 50.0
+max_value = 125.0
+step_value = 5.0
+value_ratio = 100.0
+
+[node name="Contrast" parent="Overlay/Panel/Margin/Body/Content/Visual" instance=ExtResource("3")]
+layout_mode = 2
+label_text = "Alto contraste"
+settings_key = "high_contrast"
+
+[node name="Fullscreen" parent="Overlay/Panel/Margin/Body/Content/Visual" instance=ExtResource("3")]
+layout_mode = 2
+label_text = "Tela cheia"
+settings_key = "fullscreen"
+
+[node name="ReducedMotion" parent="Overlay/Panel/Margin/Body/Content/Visual" instance=ExtResource("3")]
+layout_mode = 2
+label_text = "Reduzir movimento da câmera"
+settings_key = "reduced_motion"
+
+[node name="Controls" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Content"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Heading" type="Label" parent="Overlay/Panel/Margin/Body/Content/Controls"]
+layout_mode = 2
+text = "Controles"
+theme_override_font_sizes/font_size = 26
+
+[node name="Description" type="Label" parent="Overlay/Panel/Margin/Body/Content/Controls"]
+layout_mode = 2
+text = "Selecione Alterar e pressione a tecla desejada. Esc cancela a escolha."
+
+[node name="MoveLeft" parent="Overlay/Panel/Margin/Body/Content/Controls" instance=ExtResource("4")]
+layout_mode = 2
+label_text = "Mover para a esquerda"
+action_name = &"move_left"
+
+[node name="MoveRight" parent="Overlay/Panel/Margin/Body/Content/Controls" instance=ExtResource("4")]
+layout_mode = 2
+label_text = "Mover para a direita"
+action_name = &"move_right"
+
+[node name="Jump" parent="Overlay/Panel/Margin/Body/Content/Controls" instance=ExtResource("4")]
+layout_mode = 2
+label_text = "Pular"
+action_name = &"move_up"
+
+[node name="Roll" parent="Overlay/Panel/Margin/Body/Content/Controls" instance=ExtResource("4")]
+layout_mode = 2
+label_text = "Rolamento"
+action_name = &"attack"
+
+[node name="Audio" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Content"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Heading" type="Label" parent="Overlay/Panel/Margin/Body/Content/Audio"]
+layout_mode = 2
+text = "Áudio e diálogo"
+theme_override_font_sizes/font_size = 26
+
+[node name="FontSize" parent="Overlay/Panel/Margin/Body/Content/Audio" instance=ExtResource("2")]
+layout_mode = 2
+label_text = "Tamanho da fonte"
 settings_key = "dialog_font_size"
 min_value = 12.0
 max_value = 40.0
 step_value = 1.0
 
-[node name="TextSpeed" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+[node name="TextSpeed" parent="Overlay/Panel/Margin/Body/Content/Audio" instance=ExtResource("2")]
 layout_mode = 2
-label_text = "Velocidade do Texto"
+label_text = "Velocidade do texto"
 settings_key = "text_speed"
 min_value = 50.0
 max_value = 200.0
 step_value = 10.0
 value_ratio = 100.0
 
-[node name="SkipOnClick" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("3_st")]
+[node name="Master" parent="Overlay/Panel/Margin/Body/Content/Audio" instance=ExtResource("2")]
 layout_mode = 2
-label_text = "Exibir texto completo ao clicar"
-settings_key = "skip_on_click"
-
-[node name="HighContrast" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("3_st")]
-layout_mode = 2
-label_text = "Alto contraste"
-settings_key = "high_contrast"
-
-[node name="ReducedMotion" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("3_st")]
-layout_mode = 2
-label_text = "Reduzir movimento da câmera"
-settings_key = "reduced_motion"
-
-[node name="SecControls" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox"]
-layout_mode = 2
-text = "Controles"
-theme_override_font_sizes/font_size = 24
-
-[node name="MoveLeft" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("5_keybind")]
-layout_mode = 2
-label_text = "Mover para a esquerda"
-action_name = &"move_left"
-
-[node name="MoveRight" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("5_keybind")]
-layout_mode = 2
-label_text = "Mover para a direita"
-action_name = &"move_right"
-
-[node name="Jump" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("5_keybind")]
-layout_mode = 2
-label_text = "Pular"
-action_name = &"move_up"
-
-[node name="Roll" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("5_keybind")]
-layout_mode = 2
-label_text = "Rolamento"
-action_name = &"attack"
-
-[node name="SecAudio" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox"]
-layout_mode = 2
-text = "Áudio"
-theme_override_font_sizes/font_size = 24
-
-[node name="MasterVolume" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
-layout_mode = 2
-label_text = "Volume Geral"
+label_text = "Volume geral"
 settings_key = "master_volume"
-min_value = 0.0
 max_value = 100.0
-step_value = 1.0
 value_ratio = 100.0
 
-[node name="MusicVolume" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+[node name="Music" parent="Overlay/Panel/Margin/Body/Content/Audio" instance=ExtResource("2")]
 layout_mode = 2
-label_text = "Volume da Música"
+label_text = "Volume da música"
 settings_key = "music_volume"
-min_value = 0.0
 max_value = 100.0
-step_value = 1.0
 value_ratio = 100.0
 
-[node name="SfxVolume" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("2_ss")]
+[node name="Effects" parent="Overlay/Panel/Margin/Body/Content/Audio" instance=ExtResource("2")]
 layout_mode = 2
-label_text = "Volume dos Efeitos"
+label_text = "Volume dos efeitos"
 settings_key = "sfx_volume"
-min_value = 0.0
 max_value = 100.0
-step_value = 1.0
 value_ratio = 100.0
 
-[node name="SecVideo" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox"]
+[node name="Navigation" type="HBoxContainer" parent="Overlay/Panel/Margin/Body"]
 layout_mode = 2
-text = "Vídeo"
-theme_override_font_sizes/font_size = 24
+theme_override_constants/separation = 14
 
-[node name="Fullscreen" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("3_st")]
+[node name="Restore" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
 layout_mode = 2
-label_text = "Tela Cheia"
-settings_key = "fullscreen"
+text = "Restaurar padrão"
 
-[node name="ScreenShake" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ContentVBox" instance=ExtResource("3_st")]
+[node name="Previous" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
 layout_mode = 2
-label_text = "Vibração da Tela"
-settings_key = "screen_shake"
-
-[node name="BottomBar" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-alignment = 1
-
-[node name="Restaurar" type="Button" parent="Panel/MarginContainer/VBoxContainer/BottomBar"]
-layout_mode = 2
-text = "Restaurar Padrão"
-
-[node name="Voltar" type="Button" parent="Panel/MarginContainer/VBoxContainer/BottomBar"]
-layout_mode = 2
+size_flags_horizontal = 3
 text = "Voltar"
 
-[node name="Comecar" type="Button" parent="Panel/MarginContainer/VBoxContainer/BottomBar"]
+[node name="Next" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
 layout_mode = 2
-text = "Começar"
+text = "Continuar"
 
-[node name="Sair" type="Button" parent="Panel/MarginContainer/VBoxContainer/BottomBar"]
+[node name="Finish" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
 layout_mode = 2
-text = "Sair"
+text = "Começar a jogar"
 
-[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/BottomBar/Comecar" to="." method="_on_comecar_button_down"]
-[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/BottomBar/Voltar" to="." method="_on_voltar_button_down"]
-[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/BottomBar/Restaurar" to="." method="_on_restaurar_padrao_button_down"]
-[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/BottomBar/Sair" to="." method="_on_sair_button_down"]
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Restore" to="." method="_on_restore_pressed"]
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Finish" to="." method="_on_finish_pressed"]
