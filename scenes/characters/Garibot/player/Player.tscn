@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dx7u1tly2j5vh"]
 
-[ext_resource type="PackedScene" uid="uid://bqnyucq4jp3t6" path="res://scenes/characters/Garibot/PlayerBody.tscn" id="1_4sciu"]
-[ext_resource type="Script" uid="uid://cluxkeqrasb8l" path="res://scenes/characters/Garibot/Player.gd" id="1_lc87a"]
+[ext_resource type="PackedScene" uid="uid://bqnyucq4jp3t6" path="res://scenes/characters/Garibot/player_body/PlayerBody.tscn" id="1_4sciu"]
+[ext_resource type="Script" uid="uid://cluxkeqrasb8l" path="res://scenes/characters/Garibot/player/Player.gd" id="1_lc87a"]
 [ext_resource type="AudioStream" uid="uid://be1331eiki1cs" path="res://assets/sounds/roll_garibot.mp3" id="3_kfxqr"]
 [ext_resource type="AudioStream" uid="uid://cqtn3gueryfv1" path="res://assets/sounds/garibot_jump.mp3" id="4_7p27y"]
 [ext_resource type="AudioStream" uid="uid://wqskqbnlavfu" path="res://assets/sounds/garibot_damage.mp3" id="5_vhm43"]

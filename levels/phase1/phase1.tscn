@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/phase1/phase1.gd" id="1_level"]
 [ext_resource type="Script" uid="uid://ci6q78ir854cp" path="res://levels/phase1/phase1_world.gd" id="2_world"]
-[ext_resource type="Script" uid="uid://dwjamc5guap84" path="res://levels/phase1/phase1_collectable.gd" id="3_collect"]
+[ext_resource type="PackedScene" path="res://components/collectables/area_collectable/area_collectable.tscn" id="3_collect"]
 [ext_resource type="Script" uid="uid://bgth0r2txmvh3" path="res://levels/phase1/phase1_npc.gd" id="4_npc"]
-[ext_resource type="PackedScene" uid="uid://dx7u1tly2j5vh" path="res://scenes/characters/Garibot/Player.tscn" id="5_player"]
+[ext_resource type="PackedScene" uid="uid://dx7u1tly2j5vh" path="res://scenes/characters/Garibot/player/Player.tscn" id="5_player"]
 [ext_resource type="PackedScene" uid="uid://dojoph16grx0" path="res://scenes/cutscene/cutscene_player.tscn" id="6_cutscene"]
-[ext_resource type="Script" uid="uid://dawv7m6al0kl7" path="res://levels/phase1/phase1_hud.gd" id="7_hud"]
+[ext_resource type="PackedScene" path="res://components/ui/collectible_progress_hud/collectible_progress_hud.tscn" id="7_hud"]
 [ext_resource type="PackedScene" path="res://scenes/pause_menu/pause_menu.tscn" id="8_pause"]
 
 [sub_resource type="RectangleShape2D" id="GroundShape"]
@@ -59,11 +59,11 @@ position = Vector2(420, 28)
 color = Color(0.12, 0.14, 0.12, 1)
 polygon = PackedVector2Array(-72, 0, -55, -8, -20, -10, 20, -5, 67, 0, 44, 11, -30, 10)
 
-[node name="REEE_Celular" type="Area2D" parent="." groups=["phase1_reee"]]
+[node name="REEE_Celular" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
 position = Vector2(515, 0)
 collision_layer = 0
-script = ExtResource("3_collect")
 item_name = "celular quebrado"
+collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Celular"]
 shape = SubResource("SmallShape")
@@ -72,11 +72,11 @@ shape = SubResource("SmallShape")
 color = Color(0.15, 0.22, 0.24, 1)
 polygon = PackedVector2Array(-13, -5, 13, -5, 13, 9, -13, 9)
 
-[node name="REEE_Fios" type="Area2D" parent="." groups=["phase1_reee"]]
+[node name="REEE_Fios" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
 position = Vector2(675, 4)
 collision_layer = 0
-script = ExtResource("3_collect")
 item_name = "fios e cabos"
+collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Fios"]
 shape = SubResource("SmallShape")
@@ -85,11 +85,11 @@ shape = SubResource("SmallShape")
 color = Color(0.75, 0.62, 0.26, 1)
 polygon = PackedVector2Array(-16, -3, 5, -8, 16, 2, 3, 7, -7, 4)
 
-[node name="REEE_Computador" type="Area2D" parent="." groups=["phase1_reee"]]
+[node name="REEE_Computador" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
 position = Vector2(800, 0)
 collision_layer = 0
-script = ExtResource("3_collect")
 item_name = "peça de computador"
+collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Computador"]
 shape = SubResource("SmallShape")
@@ -98,11 +98,11 @@ shape = SubResource("SmallShape")
 color = Color(0.38, 0.42, 0.4, 1)
 polygon = PackedVector2Array(-15, -8, 15, -8, 15, 8, -15, 8)
 
-[node name="REEE_Rio" type="Area2D" parent="." groups=["phase1_reee"]]
+[node name="REEE_Rio" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
 position = Vector2(1080, 0)
 collision_layer = 0
-script = ExtResource("3_collect")
 item_name = "placa eletrônica"
+collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Rio"]
 shape = SubResource("SmallShape")
@@ -111,11 +111,11 @@ shape = SubResource("SmallShape")
 color = Color(0.28, 0.48, 0.4, 1)
 polygon = PackedVector2Array(-15, -5, 14, -5, 14, 7, -15, 7)
 
-[node name="REEE_Fabrica" type="Area2D" parent="." groups=["phase1_reee"]]
+[node name="REEE_Fabrica" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
 position = Vector2(1450, 0)
 collision_layer = 0
-script = ExtResource("3_collect")
 item_name = "componente de fábrica"
+collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Fabrica"]
 shape = SubResource("SmallShape")
@@ -245,15 +245,13 @@ layer = 20
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_pause")]
 
-[node name="PixelPanels" type="Control" parent="HUD"]
+[node name="PixelPanels" parent="HUD" instance=ExtResource("7_hud")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("7_hud")
 
 [node name="Title" type="Label" parent="HUD"]
 offset_left = 28.0

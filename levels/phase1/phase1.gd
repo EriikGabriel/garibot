@@ -1,10 +1,13 @@
 extends Node2D
 
+const PHASE1_MINIGAMES := preload("res://levels/phase1/minigames/phase1_minigames/phase1_minigames.tscn")
+
 var _reee_count := 0
 var _intro_finished := false
 var _learned_walk := false
 var _learned_jump := false
 var _reee_total := 0
+var _phase_completed := false
 @onready var objective_label: Label = $HUD/Objective
 @onready var tutorial_label: Label = $HUD/Tutorial
 @onready var hud_panels = $HUD/PixelPanels
@@ -67,7 +70,17 @@ func _on_reee_collected(item_name: String) -> void:
 	elif _reee_count == _reee_total:
 		$Garidog.global_position = player.global_position + Vector2(-105, 14)
 		$Morador.global_position = player.global_position + Vector2(105, 14)
+		Dialogic.timeline_ended.connect(_on_conclusion_finished, CONNECT_ONE_SHOT)
 		_start_dialog("res://dialogic/timelines/fase1/conclusao.dtl")
+
+func _on_conclusion_finished() -> void:
+	var minigames := PHASE1_MINIGAMES.instantiate()
+	minigames.connect("finished", _on_minigames_finished)
+	add_child(minigames)
+
+func _on_minigames_finished() -> void:
+	_phase_completed = true
+	_update_hud()
 
 func _start_dialog(timeline_path: String) -> void:
 	Phase1Dialogue.start(timeline_path, self)
@@ -87,5 +100,7 @@ func _update_hud() -> void:
 		tutorial_label.text = "Recolha o primeiro celular para conhecer o lixo eletrônico."
 	elif _reee_count < _reee_total:
 		tutorial_label.text = "Continue limpando a vila: procure REEE nas ruas, no parque e no rio."
-	else:
+	elif not _phase_completed:
 		tutorial_label.text = "A vila está mais limpa! Converse com os moradores para continuar."
+	else:
+		tutorial_label.text = "Missão concluída: você encaminhou os REEE para reciclagem!"

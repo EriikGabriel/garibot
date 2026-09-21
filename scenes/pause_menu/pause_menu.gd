@@ -9,6 +9,8 @@ func _ready() -> void:
 	$Dim.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if get_tree().get_first_node_in_group("minigame_modal") != null:
+		return
 	if event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
 		if panel.visible:

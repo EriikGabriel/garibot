@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://components/collectables/area_collectable/area_collectable.gd" id="1"]
+
+[node name="AreaCollectable" type="Area2D"]
+script = ExtResource("1")

@@ -1,5 +1,6 @@
 extends Control
-class_name Phase1Hud
+## Painel de progresso reutilizável para qualquer fase baseada em coleta.
+class_name CollectibleProgressHud
 
 var ink := Color("#18252a")
 var edge := Color("#8d9b77")
