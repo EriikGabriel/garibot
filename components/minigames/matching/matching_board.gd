@@ -3,12 +3,12 @@ class_name MatchingBoard
 
 signal completed
 
-const BOARD_SIZE := Vector2(720, 300)
-const BUTTON_SIZE := Vector2(250, 46)
+const BOARD_SIZE := Vector2(720, 380)
+const BUTTON_SIZE := Vector2(250, 64)
 const LEFT_COLUMN_X := 20.0
 const RIGHT_COLUMN_X := 450.0
 const FIRST_ROW_Y := 52.0
-const ROW_SPACING := 62.0
+const ROW_SPACING := 84.0
 
 ## Dados da atividade. Cada posição em [member correct_targets] informa qual
 ## item da coluna direita corresponde ao item da mesma posição à esquerda.
@@ -99,24 +99,14 @@ func _build_board() -> void:
 		_style_card(button)
 
 	feedback = Label.new()
-	feedback.position = Vector2(LEFT_COLUMN_X, 246)
+	feedback.position = Vector2(LEFT_COLUMN_X, 314)
 	feedback.size = Vector2(BOARD_SIZE.x - LEFT_COLUMN_X * 2.0, 42)
 	feedback.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	feedback.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	add_child(feedback)
 
 func _style_card(button: Button) -> void:
-	var card := StyleBoxFlat.new()
-	card.bg_color = Color("#183e43")
-	card.border_color = Color("#8db9a0")
-	card.set_border_width_all(2)
-	card.set_corner_radius_all(10)
-	button.add_theme_stylebox_override("normal", card)
-	button.add_theme_font_size_override("font_size", 17)
-	var hover: StyleBoxFlat = card.duplicate()
-	hover.bg_color = Color("#30665e")
-	button.add_theme_stylebox_override("hover", hover)
-	button.add_theme_stylebox_override("pressed", hover)
+	button.add_theme_font_size_override("font_size", 18)
 
 func _select_left(index: int) -> void:
 	if matches.has(index):

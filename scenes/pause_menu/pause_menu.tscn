@@ -22,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -160.0
-offset_right = 200.0
-offset_bottom = 160.0
+offset_left = -270.0
+offset_top = -200.0
+offset_right = 270.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -42,12 +42,14 @@ theme_override_constants/separation = 16
 
 [node name="Title" type="Label" parent="Panel/Margin/Buttons"]
 layout_mode = 2
+theme_type_variation = &"TitleLabel"
 text = "Jogo pausado"
 horizontal_alignment = 1
 theme_override_font_sizes/font_size = 32
 
 [node name="Resume" type="Button" parent="Panel/Margin/Buttons"]
 layout_mode = 2
+theme_type_variation = &"PrimaryButton"
 text = "Continuar"
 
 [node name="Settings" type="Button" parent="Panel/Margin/Buttons"]

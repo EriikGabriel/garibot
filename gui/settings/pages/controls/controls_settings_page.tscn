@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv5xsvo1j5tg8"]
+
+[ext_resource type="PackedScene" uid="uid://blgiwrf8enm65" path="res://gui/settings/controls/keybind_row/keybind_row.tscn" id="1"]
+
+[node name="ControlsSettingsPage" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Controles"
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 2
+text = "Selecione Alterar e pressione a tecla desejada. Esc cancela a escolha."
+autowrap_mode = 2
+
+[node name="MoveLeft" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Mover para a esquerda"
+action_name = &"move_left"
+
+[node name="MoveRight" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Mover para a direita"
+action_name = &"move_right"
+
+[node name="Jump" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Pular"
+action_name = &"move_up"
+
+[node name="Roll" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Rolamento"
+action_name = &"attack"

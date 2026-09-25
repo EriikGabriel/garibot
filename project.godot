@@ -92,7 +92,10 @@ settings/text_speed=1.0
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=1
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -118,6 +121,11 @@ folder_colors={
 [global_group]
 
 DamageOnContact="Emit Damage On Contact"
+
+[gui]
+
+theme/custom="res://gui/themes/pixel_adventure/pixel_adventure_theme.tres"
+theme/custom_font="uid://whrkv8wrc5s5"
 
 [input]
 

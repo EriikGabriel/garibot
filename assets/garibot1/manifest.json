@@ -1,0 +1,2933 @@
+{
+  "repository": "https://github.com/EriikGabriel/garibot",
+  "branch": "Rick",
+  "commit": "e27bc34d2292cb4a03261a3f699de33bd5069e75",
+  "license": "No explicit license found in the source repository; imported at the project owner request. Not CC0.",
+  "assets": [
+    {
+      "source": "game_files/assets/Images/Bar/Barra/barra-cheia.png",
+      "git_blob_sha1": "a944b1ead2f68f51e7bb862218b3a907a8bb467f",
+      "size": 411,
+      "path": "assets/garibot1/sprites/bar/barra/barra-cheia.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Bar/Barra/barra-frente.png",
+      "git_blob_sha1": "89accb289dc9742fed04bcf8e4283b86c904d9aa",
+      "size": 288,
+      "path": "assets/garibot1/sprites/bar/barra/barra-frente.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Bar/Barra/barra-vazia.png",
+      "git_blob_sha1": "41a1aeedae97306c4e1560a89d933ac7b36579de",
+      "size": 329,
+      "path": "assets/garibot1/sprites/bar/barra/barra-vazia.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Bar/Barra/barra-verde.png",
+      "git_blob_sha1": "2697a3857f64417f8ecdbb8f356f5568560af3ee",
+      "size": 314,
+      "path": "assets/garibot1/sprites/bar/barra/barra-verde.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Bar/Barra/cheia.png",
+      "git_blob_sha1": "0366eca49ee1da2eda8e8e0446c12b3e066a5409",
+      "size": 131,
+      "path": "assets/garibot1/sprites/bar/barra/cheia.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Bar/Barra/verde.png",
+      "git_blob_sha1": "2ca257ffef7864d96aae3d6bf7a8f24fca6fb811",
+      "size": 139,
+      "path": "assets/garibot1/sprites/bar/barra/verde.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Bar/Lixo.png",
+      "git_blob_sha1": "309c7eed78ec5f9bb7af275e83368d0a62cefb58",
+      "size": 2998,
+      "path": "assets/garibot1/sprites/bar/lixo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Blasters/blasters.png",
+      "git_blob_sha1": "1c7005c8242726cee1dbb050efec44eaced95ccb",
+      "size": 1511,
+      "path": "assets/sprites/enemies/blasters.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Blasters/bubble.png",
+      "git_blob_sha1": "83274ce98165c93a462c42ece3319edbd554ec1e",
+      "size": 916,
+      "path": "assets/garibot1/sprites/blasters/bubble.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Blasters/effect.png",
+      "git_blob_sha1": "9394bdb246e3424e559ea158a202f9a4b788f1bc",
+      "size": 4043,
+      "path": "assets/garibot1/sprites/blasters/effect.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Blasters/hydro.png",
+      "git_blob_sha1": "33a41a0ad9f5bf858bf6d16e8c80b86f02e60637",
+      "size": 959,
+      "path": "assets/garibot1/sprites/blasters/hydro.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Blasters/magnet.png",
+      "git_blob_sha1": "585657be2dfb007b9c678106749361d6b1b657af",
+      "size": 919,
+      "path": "assets/garibot1/sprites/blasters/magnet.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Blasters/player_shoot4.png",
+      "git_blob_sha1": "d350953bd92255af0ed257e57419f23448d23d3b",
+      "size": 757,
+      "path": "assets/garibot1/sprites/blasters/player_shoot4.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Blasters/vaccum.png",
+      "git_blob_sha1": "0b805c074a9af1042fbe60dbbf6e889bbf45ffdc",
+      "size": 540,
+      "path": "assets/garibot1/sprites/blasters/vaccum.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/Engrenagem.png",
+      "git_blob_sha1": "5109499b93917123f7a000cc1c5ff0308cbd3059",
+      "size": 7380,
+      "path": "assets/garibot1/sprites/boss/engrenagem.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/Engrenagens1.png",
+      "git_blob_sha1": "5c1327f817c46de8106bf83a1cbd7f7a99d62f05",
+      "size": 5321,
+      "path": "assets/garibot1/sprites/boss/engrenagens1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/Engrenagens2.png",
+      "git_blob_sha1": "ca232da1f60296f9d104768761483b5109f0059d",
+      "size": 5458,
+      "path": "assets/garibot1/sprites/boss/engrenagens2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/Engrenagens3.png",
+      "git_blob_sha1": "90efe256692a6b7191af00454fa1bfdbb40941ba",
+      "size": 5317,
+      "path": "assets/garibot1/sprites/boss/engrenagens3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/Engrenagens4.png",
+      "git_blob_sha1": "7dcab202d3a96717d7c163f6bd1c6e46b6291b51",
+      "size": 5470,
+      "path": "assets/garibot1/sprites/boss/engrenagens4.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/base.png",
+      "git_blob_sha1": "26e55ea0bb144049ead54cac01967312ac64c730",
+      "size": 41167,
+      "path": "assets/garibot1/sprites/boss/base.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/boca.png",
+      "git_blob_sha1": "723ff2030d8d3923d2ef00054d0c379c099a1d7d",
+      "size": 16559,
+      "path": "assets/garibot1/sprites/boss/boca.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/cabeca_completa.png",
+      "git_blob_sha1": "f73ff8599c2209f30cc2c1a96d7da624ca9f1be2",
+      "size": 54030,
+      "path": "assets/garibot1/sprites/boss/cabeca_completa.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/detalhes.png",
+      "git_blob_sha1": "e64a9feb6eba1fea870098dfe8d9f58db95e7a0c",
+      "size": 899,
+      "path": "assets/garibot1/sprites/boss/detalhes.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/lasers.png",
+      "git_blob_sha1": "2bb589154274795dcb123eb587c1c8b90159b084",
+      "size": 625,
+      "path": "assets/garibot1/sprites/boss/lasers.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Boss/olhos.png",
+      "git_blob_sha1": "b8a5ce12209cdc75b372d097045960ea1eb055b7",
+      "size": 1342,
+      "path": "assets/garibot1/sprites/boss/olhos.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/agua.png",
+      "git_blob_sha1": "89ee6505a60c2015e0811cd3a765c6bddffb703b",
+      "size": 593,
+      "path": "assets/garibot1/sprites/collectibles/agua.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/battery.png",
+      "git_blob_sha1": "af6ccc157b401089c5c13d883d03e0e837a4cafb",
+      "size": 889,
+      "path": "assets/sprites/collectibles/battery.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/celular.png",
+      "git_blob_sha1": "e0f7337b3c1e1b9e237fdd8c8fba9c18d3d9b296",
+      "size": 1912,
+      "path": "assets/sprites/collectibles/celular.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/celular_d.png",
+      "git_blob_sha1": "5fdc5c4e169272159e14d6e9344d014818ad076c",
+      "size": 2280,
+      "path": "assets/garibot1/sprites/collectibles/celular_d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/celular_desmontado.png",
+      "git_blob_sha1": "f8ddb2f949a1a6c5af87cccb3564bb903fb4667d",
+      "size": 2371,
+      "path": "assets/garibot1/sprites/collectibles/celular_desmontado.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/celular_m.png",
+      "git_blob_sha1": "9cc4ee983895009a7b8ced4d11f574409af7e729",
+      "size": 935,
+      "path": "assets/garibot1/sprites/collectibles/celular_m.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/celular_quebrado.png",
+      "git_blob_sha1": "90362c8daf026397d49533febeedfaad07bbeec0",
+      "size": 2620,
+      "path": "assets/garibot1/sprites/collectibles/celular_quebrado.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/fogao.png",
+      "git_blob_sha1": "278deef4ebf9d4c0910a44aae4b56352c11a327e",
+      "size": 2543,
+      "path": "assets/garibot1/sprites/collectibles/fogao.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/fonte.png",
+      "git_blob_sha1": "07463eb7c948bbb3206556c466e1d10b40c90904",
+      "size": 202,
+      "path": "assets/garibot1/sprites/collectibles/fonte.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/furadeira.png",
+      "git_blob_sha1": "d9b2ebe85689d9d610b1e71f89216898ee1d5fa4",
+      "size": 1384,
+      "path": "assets/garibot1/sprites/collectibles/furadeira.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/garrafa.png",
+      "git_blob_sha1": "800cc3506e1ccd0d3d4dc45a4efc9fb682f2cccc",
+      "size": 594,
+      "path": "assets/garibot1/sprites/collectibles/garrafa.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/geladeira.png",
+      "git_blob_sha1": "69697eeb687924428f6f160eb0403b54eba74fc3",
+      "size": 1002,
+      "path": "assets/garibot1/sprites/collectibles/geladeira.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/impressora.png",
+      "git_blob_sha1": "729e304921dfc7f0e0c91904420a0dd082dc12ef",
+      "size": 616,
+      "path": "assets/garibot1/sprites/collectibles/impressora.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/items.png",
+      "git_blob_sha1": "c76cc02cba94aaa0b02dc87cda7ddd45f1be6242",
+      "size": 2298,
+      "path": "assets/garibot1/sprites/collectibles/items.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/jornal.png",
+      "git_blob_sha1": "9f5731565f3ed910da05628fba1fd963c4077742",
+      "size": 591,
+      "path": "assets/garibot1/sprites/collectibles/jornal.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/melancia.png",
+      "git_blob_sha1": "1bc858e72afd44d767e675136d7aa0e72f37a080",
+      "size": 611,
+      "path": "assets/garibot1/sprites/collectibles/melancia.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/microondas.png",
+      "git_blob_sha1": "ac9b947cf22b8626805dda3786e3ffaa98f4ec1e",
+      "size": 963,
+      "path": "assets/garibot1/sprites/collectibles/microondas.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/microondas_d.png",
+      "git_blob_sha1": "a40173083e994f7d11c46b6d16c7875726d27ef4",
+      "size": 2206,
+      "path": "assets/garibot1/sprites/collectibles/microondas_d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/microondas_m.png",
+      "git_blob_sha1": "0188fc40e55bf7d59c3d48398c79443710bf8d79",
+      "size": 1119,
+      "path": "assets/garibot1/sprites/collectibles/microondas_m.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/monitor.png",
+      "git_blob_sha1": "ea0b641e36ba0d2d0ec8a4e013510ed8a925f808",
+      "size": 663,
+      "path": "assets/garibot1/sprites/collectibles/monitor.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/monitor_d.png",
+      "git_blob_sha1": "7e2672d1701047092258dacf5f9b71077c3407b4",
+      "size": 1643,
+      "path": "assets/garibot1/sprites/collectibles/monitor_d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/monitor_m.png",
+      "git_blob_sha1": "bcf072b181b2c0d4a0f102452cb0305a23354cb1",
+      "size": 872,
+      "path": "assets/garibot1/sprites/collectibles/monitor_m.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/placas.png",
+      "git_blob_sha1": "4a43056a672062ea8b605566bdc47556c7d4adbb",
+      "size": 380,
+      "path": "assets/garibot1/sprites/collectibles/placas.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/radio.png",
+      "git_blob_sha1": "d72e630a3d6ab0f5c5d6cb814f59e5152b31442e",
+      "size": 289,
+      "path": "assets/garibot1/sprites/collectibles/radio.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/refri.png",
+      "git_blob_sha1": "640360c57da06d5bede8b6ee19ca840c15a9c406",
+      "size": 630,
+      "path": "assets/garibot1/sprites/collectibles/refri.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/sacola.png",
+      "git_blob_sha1": "fabc109646e5d4b51e09c2ca2bad4bd5f726dc42",
+      "size": 604,
+      "path": "assets/garibot1/sprites/collectibles/sacola.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/teclado.png",
+      "git_blob_sha1": "a7661bad6e0849268429ad7cb21d69663386a51a",
+      "size": 350,
+      "path": "assets/garibot1/sprites/collectibles/teclado.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/tv.png",
+      "git_blob_sha1": "ad29aa80e80370ae2f585dde2b19c1e8812eec46",
+      "size": 345,
+      "path": "assets/garibot1/sprites/collectibles/tv.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/tv_d.png",
+      "git_blob_sha1": "e247c67122df594dbf58e06c66d67a172990edc7",
+      "size": 2314,
+      "path": "assets/garibot1/sprites/collectibles/tv_d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Collectibles/tv_m.png",
+      "git_blob_sha1": "1cdee495f5064c91e73f3f056b30b5e51ced61db",
+      "size": 1354,
+      "path": "assets/garibot1/sprites/collectibles/tv_m.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Dog/DogNewConcept.png",
+      "git_blob_sha1": "276dfc152e1d3605096fedb3acb5c2f2d1a9b639",
+      "size": 1788,
+      "path": "assets/garibot1/sprites/dog/dog_new_concept.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Dog/DogSprite.png",
+      "git_blob_sha1": "71dc4992cbb4532ed0c21d50a2fe27290d3b1cbd",
+      "size": 2498,
+      "path": "assets/garibot1/sprites/dog/dog_sprite.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/EnemyVirus.png",
+      "git_blob_sha1": "2d266e5c977cd26feaaff980a00786f59bf101c5",
+      "size": 4123,
+      "path": "assets/garibot1/sprites/effects/enemy_virus.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/EnemyVirus1.png",
+      "git_blob_sha1": "3d29776fe72e1addc60ab6f17efbfab18a03d5a4",
+      "size": 2823,
+      "path": "assets/garibot1/sprites/effects/enemy_virus1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/EnemyVirus2.png",
+      "git_blob_sha1": "d37704e3623ac09f77fe54ce616e6cac1b4f0115",
+      "size": 2797,
+      "path": "assets/garibot1/sprites/effects/enemy_virus2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/EnemyVirus3.png",
+      "git_blob_sha1": "7bef6a69f82c2b3907132d1e4640469733ed8e5e",
+      "size": 2842,
+      "path": "assets/garibot1/sprites/effects/enemy_virus3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/ballon_tail.png",
+      "git_blob_sha1": "c9a5ffa31f8c41e5fcca4fceed889e0351b398e9",
+      "size": 551,
+      "path": "assets/garibot1/sprites/effects/ballon_tail.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/baloon.png",
+      "git_blob_sha1": "f6494c79a37292d1d5b18f8364b4ce652ef20fa0",
+      "size": 844,
+      "path": "assets/garibot1/sprites/effects/baloon.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/baloon_clear.png",
+      "git_blob_sha1": "7fa8a3b361462e62e53595169b7855e3b70b9ddb",
+      "size": 573,
+      "path": "assets/garibot1/sprites/effects/baloon_clear.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/baloon_mirror.png",
+      "git_blob_sha1": "504a2deb71c8934d6387f22f37a7796bf75c46ad",
+      "size": 763,
+      "path": "assets/garibot1/sprites/effects/baloon_mirror.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/light.png",
+      "git_blob_sha1": "5eaf5e1993f181725d9c37716b5086c992ab6af4",
+      "size": 2585,
+      "path": "assets/garibot1/sprites/effects/light.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/virus_eyes.png",
+      "git_blob_sha1": "868b7de2f0d7802b16f5707d26b0c238c99bded8",
+      "size": 293,
+      "path": "assets/garibot1/sprites/effects/virus_eyes.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Effects/virus_eyes1.png",
+      "git_blob_sha1": "2cc193027c0bd38b5207a680833da5fe70e8b227",
+      "size": 294,
+      "path": "assets/garibot1/sprites/effects/virus_eyes1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoCameraF1.png",
+      "git_blob_sha1": "c5da3985009358525bad55a5f1db8c1c541e51b8",
+      "size": 432,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_camera_f1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoCameraF2.png",
+      "git_blob_sha1": "b780fae030891b307d6592dbdeda7305fb12674e",
+      "size": 438,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_camera_f2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoCameraF3.png",
+      "git_blob_sha1": "59694439224597758b2c638d4826111101fa636e",
+      "size": 439,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_camera_f3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoCameraF4.png",
+      "git_blob_sha1": "b780fae030891b307d6592dbdeda7305fb12674e",
+      "size": 438,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_camera_f2.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoFuradeiraFrame0.png",
+      "git_blob_sha1": "24f4f92ed93d592483fc5a7e0a81f6462ab9fc5d",
+      "size": 2625,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_furadeira_frame0.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoFuradeiraFrame1.png",
+      "git_blob_sha1": "10b3c76d1115c2aea570061913a44ac2230a0a3d",
+      "size": 3380,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_furadeira_frame1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoFuradeiraFrame2.png",
+      "git_blob_sha1": "175f715669932167ebf4c16b4a49047b543c1032",
+      "size": 3329,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_furadeira_frame2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoFuradeiraFrame3.png",
+      "git_blob_sha1": "0c99ac1fa4808215fb597d1be0512ebe940527c1",
+      "size": 3227,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_furadeira_frame3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoRadio_F1.png",
+      "git_blob_sha1": "952b2c61eafe88961d5aa4d60d1ec63322a0c9d4",
+      "size": 464,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_radio_f1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoRadio_F2.png",
+      "git_blob_sha1": "e5acaea230f729009309e3371be91eb1c46dda08",
+      "size": 463,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_radio_f2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesFrames/inimigoRadio_F3.png",
+      "git_blob_sha1": "c0109fafb578a3e5ba966c26294174d2637293f0",
+      "size": 462,
+      "path": "assets/garibot1/sprites/enemies_frames/inimigo_radio_f3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/Furadeira.png",
+      "git_blob_sha1": "c4c9d3ec80a61b5395f6b1340a1dcaa52357add0",
+      "size": 11969,
+      "path": "assets/garibot1/sprites/enemies_rig/furadeira.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoCelularRig.png",
+      "git_blob_sha1": "e8e05f7b2091adeee035c822e127519d25dc872a",
+      "size": 3649,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_celular_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoControleRig.png",
+      "git_blob_sha1": "a884ce3194fe0305c60caff9de7f6fd49b7ec222",
+      "size": 355,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_controle_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoFogaoRig.png",
+      "git_blob_sha1": "1af6c7cacf2dbefd0913691d37bfa1f2fd61f656",
+      "size": 5281,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_fogao_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoFuradeiraRig.png",
+      "git_blob_sha1": "49d2ec2853b923a1ce6b488716eb21f05b07d71d",
+      "size": 10668,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_furadeira_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoGeladeiraRig.png",
+      "git_blob_sha1": "d8c78cd0a8acfd76cc7ad65433711bed43097d3e",
+      "size": 2061,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_geladeira_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoMicroondasRig.png",
+      "git_blob_sha1": "7a51620cdb70c273c96fb515bc2f7164fe15f30c",
+      "size": 2283,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_microondas_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoMoitorRig.png",
+      "git_blob_sha1": "5463dd8475fcd5bae3f96be84c442da28b3deb8b",
+      "size": 2293,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_moitor_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoMonitorRig.png",
+      "git_blob_sha1": "7aac12517e150739b2ea56f4bd2eaf6f38337f2b",
+      "size": 2752,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_monitor_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoMonitorRig2.png",
+      "git_blob_sha1": "8ca7bc470e928a36effb188c046fd5417e897f1b",
+      "size": 799,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_monitor_rig2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/inimigoTvRig.png",
+      "git_blob_sha1": "3c43d2f429db83638c42e70a85cb18ef43dbce35",
+      "size": 5645,
+      "path": "assets/garibot1/sprites/enemies_rig/inimigo_tv_rig.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/EnemiesRig/sujeira.png",
+      "git_blob_sha1": "dd39bcefa8b129fd9e17457b34294652e935a267",
+      "size": 820,
+      "path": "assets/garibot1/sprites/enemies_rig/sujeira.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/1.png",
+      "git_blob_sha1": "ab085f451cb52e9bb9b6414a6e2780ee78e00e30",
+      "size": 199,
+      "path": "assets/garibot1/sprites/grenade-bullet/1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/10.png",
+      "git_blob_sha1": "6c8352a586bbbb65d73556a657e40830d0a1f824",
+      "size": 244,
+      "path": "assets/garibot1/sprites/grenade-bullet/10.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/11.png",
+      "git_blob_sha1": "e1f5c010dad7efb3354397de6fe9f3ff454dbd0e",
+      "size": 123,
+      "path": "assets/garibot1/sprites/grenade-bullet/11.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/2.png",
+      "git_blob_sha1": "f270151195ad4d0010a1f27ec42b5a8a84a563ae",
+      "size": 330,
+      "path": "assets/garibot1/sprites/grenade-bullet/2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/3.png",
+      "git_blob_sha1": "e75cf82d34ef55a14d6c46eb55158a3dfdd552aa",
+      "size": 437,
+      "path": "assets/garibot1/sprites/grenade-bullet/3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/4.png",
+      "git_blob_sha1": "28e51de44eebf61bb376e35b2b0d66825ea748d1",
+      "size": 645,
+      "path": "assets/garibot1/sprites/grenade-bullet/4.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/5.png",
+      "git_blob_sha1": "f92b5bc47516502d0e2ac18b71391d73d10fd47c",
+      "size": 654,
+      "path": "assets/garibot1/sprites/grenade-bullet/5.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/6.png",
+      "git_blob_sha1": "85ca9977f042c874a85c16caf5816064bda75043",
+      "size": 883,
+      "path": "assets/garibot1/sprites/grenade-bullet/6.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/7.png",
+      "git_blob_sha1": "e355db6296bffe6bc92d724b6af8bf7ab9be33a3",
+      "size": 690,
+      "path": "assets/garibot1/sprites/grenade-bullet/7.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/8.png",
+      "git_blob_sha1": "25e320e823ba121deb66814a85d617fd0e7beaec",
+      "size": 533,
+      "path": "assets/garibot1/sprites/grenade-bullet/8.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Grenade-Bullet/9.png",
+      "git_blob_sha1": "17eae8aa15423964e19fd62e66b5b456cc559e23",
+      "size": 476,
+      "path": "assets/garibot1/sprites/grenade-bullet/9.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Icon.png",
+      "git_blob_sha1": "697a8a121c3c6a0c50dc0c1754e40645c6e85833",
+      "size": 3176,
+      "path": "assets/garibot1/sprites/icon.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/ImpressoraSprite.png",
+      "git_blob_sha1": "c3b2fed467096757e6c68f4c0ce96dff59973052",
+      "size": 7462,
+      "path": "assets/garibot1/sprites/impressora_sprite.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Lixeira/lixeira_amarela.png",
+      "git_blob_sha1": "cfc40f90c5b858b2f9e9b43161e91a808d74c5a9",
+      "size": 351,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_amarela.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Lixeira/lixeira_azul.png",
+      "git_blob_sha1": "e1fb5669d68d3b82d5eaaf6b3024d9299499f274",
+      "size": 368,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_azul.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Lixeira/lixeira_marrom.png",
+      "git_blob_sha1": "d418c6dc7d61aa4d875e980650501ea1beab173c",
+      "size": 763,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_marrom.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Lixeira/lixeira_verde.png",
+      "git_blob_sha1": "8914d688c8f2456553a8d5c979e36eecd10f3d07",
+      "size": 374,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_verde.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Lixeira/lixeira_vermelha.png",
+      "git_blob_sha1": "c65b9347be0bcfb60c02b02e6466bd92dff243d4",
+      "size": 377,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_vermelha.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Main Recicler/face_maq.png",
+      "git_blob_sha1": "bae870568fb0de0ed9e2fa927e958eb17cd45164",
+      "size": 797,
+      "path": "assets/garibot1/sprites/main_recicler/face_maq.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Main Recicler/garra.png",
+      "git_blob_sha1": "01172c94002524910334dbe431f17c60c014a719",
+      "size": 1077,
+      "path": "assets/garibot1/sprites/main_recicler/garra.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Main Recicler/tela.png",
+      "git_blob_sha1": "f48ed57d13e52d099969c789b6e73946447124ce",
+      "size": 8157,
+      "path": "assets/garibot1/sprites/main_recicler/tela.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Main Recicler/tela_ligada.png",
+      "git_blob_sha1": "a314801e6bfc932eb7967d7bfe42339df4d51d8d",
+      "size": 8165,
+      "path": "assets/garibot1/sprites/main_recicler/tela_ligada.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Map/TileAgua.png",
+      "git_blob_sha1": "4a7add88cf2c6a5c8c0b1efd600bbb7272f0b42b",
+      "size": 1316,
+      "path": "assets/garibot1/sprites/map/tile_agua.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Map/TileConcreto.png",
+      "git_blob_sha1": "257eec2e5bd7d19988c88ef9f79c800bdcf96583",
+      "size": 9790,
+      "path": "assets/garibot1/sprites/map/tile_concreto.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Map/TileGrama.png",
+      "git_blob_sha1": "183cb401eeda8aadb16f74a3810a458d64044ae1",
+      "size": 14073,
+      "path": "assets/garibot1/sprites/map/tile_grama.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Map/TileRua.png",
+      "git_blob_sha1": "7270100ecf73c13fe5ccd67bb2eb90b96517250a",
+      "size": 13354,
+      "path": "assets/garibot1/sprites/map/tile_rua.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Map/TileStage.png",
+      "git_blob_sha1": "eab7d5c17f06e3f5d0ba9f44fcbc5ae59904f9ed",
+      "size": 505,
+      "path": "assets/garibot1/sprites/map/tile_stage.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Map/TileTerra.png",
+      "git_blob_sha1": "decc26e30fd33d1e44ebcf56d9366d9dc3dcf3b0",
+      "size": 2121,
+      "path": "assets/garibot1/sprites/map/tile_terra.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Minigame/x_indicator.png",
+      "git_blob_sha1": "72020b70a09fa5a05b2e8b8f2f62e4cb4c877104",
+      "size": 667,
+      "path": "assets/garibot1/sprites/minigame/x_indicator.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Minigame/z_indicator.png",
+      "git_blob_sha1": "946ec8897802f03d2ff4de474c3ed205f4d3df83",
+      "size": 629,
+      "path": "assets/garibot1/sprites/minigame/z_indicator.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue.png",
+      "git_blob_sha1": "166c9cf28d80c6a6f5f264ff0274ae907c2f236b",
+      "size": 575,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_left.png",
+      "git_blob_sha1": "bb3f90e6d3f40d567f7dbbc5642c22f0191137fa",
+      "size": 631,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_left.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_left_pressed.png",
+      "git_blob_sha1": "9e1bef4e914c98b3b94f8cadb202cb96e19c7f1f",
+      "size": 628,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_left_pressed.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_pause.png",
+      "git_blob_sha1": "8226ffb230441956fc32db645e84e20e0d9d4a2a",
+      "size": 601,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_pause.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_pause_pressed.png",
+      "git_blob_sha1": "cca22df6114537e6675699b21fe40b8542cbd8c6",
+      "size": 599,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_pause_pressed.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_pressed.png",
+      "git_blob_sha1": "8a419eaf7009047f73b4c13dd46c1492e4e1555f",
+      "size": 585,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_pressed.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_right.png",
+      "git_blob_sha1": "e0b6b13d0933f75177ff01169433bc4c66c3a391",
+      "size": 633,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_right.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_right_pressed.png",
+      "git_blob_sha1": "75b6a10eac14fdf573e4c1db08b2fcf4d6b0cbf3",
+      "size": 630,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_right_pressed.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_up.png",
+      "git_blob_sha1": "369fad6252c395c20614581e369a10e5aef59057",
+      "size": 628,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_up.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_up_pressed.png",
+      "git_blob_sha1": "24e6155419e9f23cc9b804cb729c3eaa874e425b",
+      "size": 625,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_up_pressed.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_x.png",
+      "git_blob_sha1": "9b33866a7a5d15709ed96d47ae932371486a0561",
+      "size": 669,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_x.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_x_pressed.png",
+      "git_blob_sha1": "cdfa03bb9c045a5770b2f58e57a1ecea756b5a45",
+      "size": 667,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_x_pressed.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_z.png",
+      "git_blob_sha1": "f6206a5cb883172b4f75b7dc743ced1ceb4e74d6",
+      "size": 639,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_z.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/MobileButtons/key_blue_z_pressed.png",
+      "git_blob_sha1": "38c5592941371b0119f8251d17cc26da50085763",
+      "size": 636,
+      "path": "assets/garibot1/sprites/mobile_buttons/key_blue_z_pressed.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Other Garibots/METAL.png",
+      "git_blob_sha1": "bdbb271391d4110db68256c8297a9954089ba42d",
+      "size": 5290,
+      "path": "assets/garibot1/sprites/other_garibots/metal.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Other Garibots/papel.png",
+      "git_blob_sha1": "c06191e2f9b125619e567a1f68a1c42d6c437d68",
+      "size": 5750,
+      "path": "assets/garibot1/sprites/other_garibots/papel.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Other Garibots/plastico.png",
+      "git_blob_sha1": "4da9c71fc5c87d38d6ea39c2f986f0be3ad34ec0",
+      "size": 5191,
+      "path": "assets/garibot1/sprites/other_garibots/plastico.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Other Garibots/vidro.png",
+      "git_blob_sha1": "cdd8a38d483d8df09a2da768747b82d281e670ce",
+      "size": 5462,
+      "path": "assets/garibot1/sprites/other_garibots/vidro.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/boca.png",
+      "git_blob_sha1": "bb730f30488555d9a31f31f53d53e110e729d778",
+      "size": 538,
+      "path": "assets/garibot1/sprites/people/boca.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/boy.png",
+      "git_blob_sha1": "69edd4f06a6d59cd9b05d53b46b5735be79de039",
+      "size": 971,
+      "path": "assets/garibot1/sprites/people/boy.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/boy_complex.png",
+      "git_blob_sha1": "092e478777c28d8d3dfb1f4bfbb9ab22da0d6782",
+      "size": 690,
+      "path": "assets/garibot1/sprites/people/boy_complex.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/boy_full.png",
+      "git_blob_sha1": "aa28c52b0b9f8dbdf6ffccc4b7be94e7811b558b",
+      "size": 891,
+      "path": "assets/garibot1/sprites/people/boy_full.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/gariani.png",
+      "git_blob_sha1": "86230a2735d9016d41ba1c6bf5528aa755b3ae59",
+      "size": 5530,
+      "path": "assets/garibot1/sprites/people/gariani.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/gariani_body.png",
+      "git_blob_sha1": "23c8f2c9de81744ad36da0c03fc7ce965d3e56e4",
+      "size": 5858,
+      "path": "assets/garibot1/sprites/people/gariani_body.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/girl.png",
+      "git_blob_sha1": "34fee30707cfba02e95ff973495c03513d850ec2",
+      "size": 998,
+      "path": "assets/garibot1/sprites/people/girl.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/girl_complex.png",
+      "git_blob_sha1": "07f595592be7897ad267c4de4249aa603dfcd396",
+      "size": 732,
+      "path": "assets/garibot1/sprites/people/girl_complex.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/mayor.png",
+      "git_blob_sha1": "2a56c417a846a09457df5ea08b6275aaeff00d84",
+      "size": 7602,
+      "path": "assets/garibot1/sprites/people/mayor.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/scientist.png",
+      "git_blob_sha1": "1ebdfc1d33f0b8b59702f0edeab76f9ddb6897b1",
+      "size": 1420,
+      "path": "assets/garibot1/sprites/people/scientist.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/scientist_body.png",
+      "git_blob_sha1": "90ee771b4c31834f8589d232fbc3f6f6d1efce82",
+      "size": 5710,
+      "path": "assets/garibot1/sprites/people/scientist_body.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/woman.png",
+      "git_blob_sha1": "ee365dd42f0eff2377b2a3ac713b5366fe3dbf43",
+      "size": 1244,
+      "path": "assets/garibot1/sprites/people/woman.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/People/woman_complex.png",
+      "git_blob_sha1": "0c5b84d538267d5b01a82dc6c2a6246d344a84d8",
+      "size": 1401,
+      "path": "assets/garibot1/sprites/people/woman_complex.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Player/PlayerChar.png",
+      "git_blob_sha1": "8c70e866ab70677ae61ef6cabd307856fc9a2547",
+      "size": 6471,
+      "path": "assets/sprites/player/PlayerChar.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Player/PlayerCharBack.png",
+      "git_blob_sha1": "92c672f256bf2551ead263127724f6e9c850de9e",
+      "size": 4374,
+      "path": "assets/sprites/player/PlayerCharBack.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Player/PlayerCharIcon.png",
+      "git_blob_sha1": "c632867c793bfadad7dcfa20dda2977c234a948e",
+      "size": 1955,
+      "path": "assets/sprites/player/PlayerCharIcon.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Player/PlayerCharIcon2.png",
+      "git_blob_sha1": "4d23842e51ce4e2e5d45b558cb9eee4f5acef967",
+      "size": 1877,
+      "path": "assets/garibot1/sprites/player/player_char_icon2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Player/PlayerCharIcon3.png",
+      "git_blob_sha1": "6390de0b5471737acb1cb6db8a9783a623b66468",
+      "size": 1653,
+      "path": "assets/garibot1/sprites/player/player_char_icon3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Player/PlayerChar_alternative.png",
+      "git_blob_sha1": "92c5df61ed8edcf4ff4df504253b32fb1c04e21f",
+      "size": 5025,
+      "path": "assets/garibot1/sprites/player/player_char_alternative.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Player/PlayerChar_alternative2.png",
+      "git_blob_sha1": "6c9771673ec4144b7b38eaba7d855fa927a3b8e2",
+      "size": 4141,
+      "path": "assets/garibot1/sprites/player/player_char_alternative2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Player/face.png",
+      "git_blob_sha1": "4232423e38432acf64cbcfa02920bd021103cbce",
+      "size": 715,
+      "path": "assets/sprites/player/face.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Player/face_alternative.png",
+      "git_blob_sha1": "661684e06f6f9d99aa4d924d456f789cc0dcb566",
+      "size": 567,
+      "path": "assets/garibot1/sprites/player/face_alternative.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Player/face_alternative2.png",
+      "git_blob_sha1": "e2a17c858a94eda3f3f5f0386bf80aed32a9ebb0",
+      "size": 552,
+      "path": "assets/garibot1/sprites/player/face_alternative2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/caixa_impressão.png",
+      "git_blob_sha1": "286edc43a987ca76689e06d50cfee4762a124185",
+      "size": 1084,
+      "path": "assets/garibot1/sprites/printer/caixa_impressao.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/filamento.png",
+      "git_blob_sha1": "e360aac39a91a30f6d450bcf86893b04706bb42e",
+      "size": 300,
+      "path": "assets/garibot1/sprites/printer/filamento.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/gerador_eolico_sem_helice.png",
+      "git_blob_sha1": "a324684bc5d855788fdaf0ad52ba4fbea8549497",
+      "size": 689,
+      "path": "assets/garibot1/sprites/printer/gerador_eolico_sem_helice.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/gerador_eolico_sem_helice_3d.png",
+      "git_blob_sha1": "0e44b78e828f81b5f20866baa48818a1faf0b6fc",
+      "size": 2597,
+      "path": "assets/garibot1/sprites/printer/gerador_eolico_sem_helice_3d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/imp3d_back.png",
+      "git_blob_sha1": "09cb3b34f702160a8ff155d084635722c8e4f6ba",
+      "size": 180,
+      "path": "assets/garibot1/sprites/printer/imp3d_back.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/imp3d_comCores_semHelice_3d.png",
+      "git_blob_sha1": "f835ea101ddb56eb2adcc108efd18e5e9015db5b",
+      "size": 20152,
+      "path": "assets/garibot1/sprites/printer/imp3d_com_cores_sem_helice_3d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/imp3d_helice0.png",
+      "git_blob_sha1": "fcd610313c914232408423b483586810de51b04c",
+      "size": 858,
+      "path": "assets/garibot1/sprites/printer/imp3d_helice0.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/porta_1.png",
+      "git_blob_sha1": "4015821522165fd1535c8bf0e0bd6dcc7cbf580f",
+      "size": 273,
+      "path": "assets/garibot1/sprites/printer/porta_1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/porta_2.png",
+      "git_blob_sha1": "7790823a67816fc0ae887943be287fdf7cfbbefc",
+      "size": 277,
+      "path": "assets/garibot1/sprites/printer/porta_2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/printer_back.png",
+      "git_blob_sha1": "d561bab40ad0c970e7c01ef80dbdadfc2a70d522",
+      "size": 5926,
+      "path": "assets/garibot1/sprites/printer/printer_back.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Printer/printer_border.png",
+      "git_blob_sha1": "22c435517eeb2ba0baa84d614fd1bce88ae95cf8",
+      "size": 117,
+      "path": "assets/garibot1/sprites/printer/printer_border.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/RecicSprite.png",
+      "git_blob_sha1": "991ebf4935c9e9db8750884ecf886e6734cfe171",
+      "size": 6944,
+      "path": "assets/garibot1/sprites/recic_sprite.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/caixa_impressão_3d.png",
+      "git_blob_sha1": "0a3cf6e278bcb7b160d31e56487e205816d84a87",
+      "size": 10695,
+      "path": "assets/garibot1/sprites/recycler/caixa_impressao_3d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/caixa_reciclagem.png",
+      "git_blob_sha1": "dfe094db12f6b05cc7d90490085dbba02362f5bc",
+      "size": 1202,
+      "path": "assets/garibot1/sprites/recycler/caixa_reciclagem.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/caixa_reciclagem_3d.png",
+      "git_blob_sha1": "716ae07cfd74208ee9bd777ac278ff2557157b53",
+      "size": 10987,
+      "path": "assets/garibot1/sprites/recycler/caixa_reciclagem_3d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/complete.png",
+      "git_blob_sha1": "356a034e40e3150b09afe0724fcf688b6bfea1d4",
+      "size": 21171,
+      "path": "assets/garibot1/sprites/recycler/complete.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/polias.png",
+      "git_blob_sha1": "236d6b733b5dfad654c2aedc01da77f9f4498710",
+      "size": 779,
+      "path": "assets/garibot1/sprites/recycler/polias.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/recic_painel_back.png",
+      "git_blob_sha1": "56710521d6cf75a4b98e14d457d29efa18785925",
+      "size": 5966,
+      "path": "assets/garibot1/sprites/recycler/recic_painel_back.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/recic_painel_border_inf0.png",
+      "git_blob_sha1": "22c435517eeb2ba0baa84d614fd1bce88ae95cf8",
+      "size": 117,
+      "path": "assets/garibot1/sprites/printer/printer_border.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/recic_painel_inf0.png",
+      "git_blob_sha1": "0451e117b3805a5f3399e35e54edc3708a50c4df",
+      "size": 374,
+      "path": "assets/garibot1/sprites/recycler/recic_painel_inf0.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Recycler/recic_painel_sup0.png",
+      "git_blob_sha1": "a1ed3b763efe0e4570905524c1bd6ce2e4d81bf8",
+      "size": 400,
+      "path": "assets/garibot1/sprites/recycler/recic_painel_sup0.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/CheckpointOff.png",
+      "git_blob_sha1": "ee797417ac661c847142fadf03663329fab784cd",
+      "size": 5409,
+      "path": "assets/garibot1/sprites/scenery/checkpoint_off.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/CheckpointOn.png",
+      "git_blob_sha1": "83eb4f81578675503e9b2a8bf42d39b871bc2e36",
+      "size": 5514,
+      "path": "assets/garibot1/sprites/scenery/checkpoint_on.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/Stage1/casas.png",
+      "git_blob_sha1": "11268dcc5958373d8ef82a690303810a9d8108db",
+      "size": 151095,
+      "path": "assets/garibot1/sprites/scenery/stage1/casas.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/Stage1/chão.png",
+      "git_blob_sha1": "a07b72ed4aaff8aa6c533c6111cf1361c285db2a",
+      "size": 4392,
+      "path": "assets/garibot1/sprites/scenery/stage1/chao.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/Stage1/fundo1_1.png",
+      "git_blob_sha1": "2c34527ee56b3206df6dede6fcc07bb626d6f5f4",
+      "size": 52590,
+      "path": "assets/garibot1/sprites/scenery/stage1/fundo1_1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/Stage4/fundo1.png",
+      "git_blob_sha1": "16c0017e9acdccd297b940563342eb1c6e3ee13e",
+      "size": 117801,
+      "path": "assets/garibot1/sprites/scenery/stage4/fundo1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/TrashTile.png",
+      "git_blob_sha1": "cc0f391c3eb7263ab6de70fdbda062de8183f960",
+      "size": 2296,
+      "path": "assets/garibot1/sprites/scenery/trash_tile.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/arvore.png",
+      "git_blob_sha1": "d6e14ddc96c8a3b815d88c927f8b32ba5a211941",
+      "size": 832,
+      "path": "assets/garibot1/sprites/scenery/arvore.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/arvores_fundo.png",
+      "git_blob_sha1": "c88c5446dbf24e44850b80e0e7560f7beddfc223",
+      "size": 232793,
+      "path": "assets/garibot1/sprites/scenery/arvores_fundo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/bana.png",
+      "git_blob_sha1": "af5da6df8491acfc9260d03ce010f2ec6dd55bde",
+      "size": 203,
+      "path": "assets/garibot1/sprites/scenery/bana.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/bana2.png",
+      "git_blob_sha1": "d44d4033bf04fcaff4b3d147f83654566403b721",
+      "size": 194,
+      "path": "assets/garibot1/sprites/scenery/bana2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/ceu1.png",
+      "git_blob_sha1": "3f8cbaa24f5c029f11b74e992df6548932710fb0",
+      "size": 22614,
+      "path": "assets/garibot1/sprites/scenery/ceu1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/ceu1_bw.png",
+      "git_blob_sha1": "32aa786c556467bd85a84f27c4c38dd01408d85d",
+      "size": 7883,
+      "path": "assets/garibot1/sprites/scenery/ceu1_bw.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/ceu3.png",
+      "git_blob_sha1": "5f36bca26e22b1b02e4eb26200d46960673f572f",
+      "size": 4840,
+      "path": "assets/garibot1/sprites/scenery/ceu3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/fonte.png",
+      "git_blob_sha1": "07463eb7c948bbb3206556c466e1d10b40c90904",
+      "size": 202,
+      "path": "assets/garibot1/sprites/collectibles/fonte.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/fundo0.png",
+      "git_blob_sha1": "77f6605a233bcd9167e8f25cc3a849f1c8062895",
+      "size": 31224,
+      "path": "assets/garibot1/sprites/scenery/fundo0.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/fundo1.png",
+      "git_blob_sha1": "9776bb87c98e44490c0461f2fea20f2e858bded6",
+      "size": 53893,
+      "path": "assets/garibot1/sprites/scenery/fundo1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/fundo2.0.png",
+      "git_blob_sha1": "b2a9356f4eb992c55f615d0192eaac2423501950",
+      "size": 34304,
+      "path": "assets/garibot1/sprites/scenery/fundo2.0.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/fundo2.1.png",
+      "git_blob_sha1": "6313a40460d625285ee16531024f75a0afbe264b",
+      "size": 91510,
+      "path": "assets/garibot1/sprites/scenery/fundo2.1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/fundo2.2.png",
+      "git_blob_sha1": "a28b51acfe9b8b8dc34ad884861675717d9793e0",
+      "size": 126580,
+      "path": "assets/garibot1/sprites/scenery/fundo2.2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/fundo2.png",
+      "git_blob_sha1": "01969807784d5b06838c2e48546ff2bf1658e394",
+      "size": 120073,
+      "path": "assets/garibot1/sprites/scenery/fundo2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/impressora.png",
+      "git_blob_sha1": "c92e7815d0900db2cdd65e55b176c02799c8be64",
+      "size": 234,
+      "path": "assets/garibot1/sprites/scenery/impressora.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/labwall.png",
+      "git_blob_sha1": "8f3afd8bc3100683204078574392dc9cf87ca019",
+      "size": 1594,
+      "path": "assets/garibot1/sprites/scenery/labwall.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/lata.png",
+      "git_blob_sha1": "1a4055c403fffb9318a75faaef0c67c1ce5d8ab3",
+      "size": 218,
+      "path": "assets/garibot1/sprites/scenery/lata.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/lixo.png",
+      "git_blob_sha1": "f68964809ebba12f9fcd417f7d52f2d2e05a45ae",
+      "size": 260,
+      "path": "assets/garibot1/sprites/scenery/lixo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/lixo1.png",
+      "git_blob_sha1": "8914d688c8f2456553a8d5c979e36eecd10f3d07",
+      "size": 374,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_verde.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/lixo2.png",
+      "git_blob_sha1": "cfc40f90c5b858b2f9e9b43161e91a808d74c5a9",
+      "size": 351,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_amarela.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/lixo3.png",
+      "git_blob_sha1": "c65b9347be0bcfb60c02b02e6466bd92dff243d4",
+      "size": 377,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_vermelha.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/lixo4.png",
+      "git_blob_sha1": "e1fb5669d68d3b82d5eaaf6b3024d9299499f274",
+      "size": 368,
+      "path": "assets/garibot1/sprites/lixeira/lixeira_azul.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/monitor.png",
+      "git_blob_sha1": "c2c9cdff500a61130583ef19e2b4d8ffb6bec04b",
+      "size": 285,
+      "path": "assets/garibot1/sprites/scenery/monitor.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/nuvens.png",
+      "git_blob_sha1": "bfbeb21c1d93cdc0f1a5ab5030041833c92bae58",
+      "size": 25302,
+      "path": "assets/garibot1/sprites/scenery/nuvens.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/papel.png",
+      "git_blob_sha1": "44fb0bec2645c571d1c6dda6fc0934dfecf82ba7",
+      "size": 202,
+      "path": "assets/garibot1/sprites/scenery/papel.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/papel2.png",
+      "git_blob_sha1": "c2815622f2d7c7e092357ab44379f4559288ab04",
+      "size": 202,
+      "path": "assets/garibot1/sprites/scenery/papel2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/placa.png",
+      "git_blob_sha1": "e5b89c32543d05b3a7ab49b07da6130723bf3a3a",
+      "size": 7602,
+      "path": "assets/garibot1/sprites/scenery/placa.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/placa_fabrica.png",
+      "git_blob_sha1": "5215c50f190a2a25b1341931f70da96404eb0b71",
+      "size": 969,
+      "path": "assets/garibot1/sprites/scenery/placa_fabrica.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/placa_fabrica_metal.png",
+      "git_blob_sha1": "6531b0d3b15b5bb9b4785d28f9dc41d4c1126c56",
+      "size": 540,
+      "path": "assets/garibot1/sprites/scenery/placa_fabrica_metal.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/placa_fabrica_plastico.png",
+      "git_blob_sha1": "41bca95dba7d448ad75ccead95e96138d579c261",
+      "size": 527,
+      "path": "assets/garibot1/sprites/scenery/placa_fabrica_plastico.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/placas.png",
+      "git_blob_sha1": "4a43056a672062ea8b605566bdc47556c7d4adbb",
+      "size": 380,
+      "path": "assets/garibot1/sprites/collectibles/placas.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/poste.png",
+      "git_blob_sha1": "f7093238ed96240c896aa647433608e290a1216f",
+      "size": 954,
+      "path": "assets/garibot1/sprites/scenery/poste.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/posteD.png",
+      "git_blob_sha1": "344823b55ebf66f3666bab3dc2ec1eccc99ae24c",
+      "size": 895,
+      "path": "assets/garibot1/sprites/scenery/poste_d.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/posteE.png",
+      "git_blob_sha1": "52f35ae5c7d99ae66f767b4a640ba5c33dd9bbe6",
+      "size": 907,
+      "path": "assets/garibot1/sprites/scenery/poste_e.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/radio.png",
+      "git_blob_sha1": "d72e630a3d6ab0f5c5d6cb814f59e5152b31442e",
+      "size": 289,
+      "path": "assets/garibot1/sprites/collectibles/radio.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/saco.png",
+      "git_blob_sha1": "0952f1f7902222711574940f21ccf733d3eff2e3",
+      "size": 294,
+      "path": "assets/garibot1/sprites/scenery/saco.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/saco21.png",
+      "git_blob_sha1": "e9d6d7480b3aeaf9510dcbdc945acbb0340938fb",
+      "size": 264,
+      "path": "assets/garibot1/sprites/scenery/saco21.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/saco22png.png",
+      "git_blob_sha1": "9ecc922f237e07fd4c1172e32efb0b3e4d034e41",
+      "size": 271,
+      "path": "assets/garibot1/sprites/scenery/saco22png.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/saco2png.png",
+      "git_blob_sha1": "ed9438190d7c9b92b7d54f0a47a6e763b54e5b6e",
+      "size": 300,
+      "path": "assets/garibot1/sprites/scenery/saco2png.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/teclado.png",
+      "git_blob_sha1": "a7661bad6e0849268429ad7cb21d69663386a51a",
+      "size": 350,
+      "path": "assets/garibot1/sprites/collectibles/teclado.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Scenery/tv.png",
+      "git_blob_sha1": "ad29aa80e80370ae2f585dde2b19c1e8812eec46",
+      "size": 345,
+      "path": "assets/garibot1/sprites/collectibles/tv.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/Stage1/barraca_feira_completa.png",
+      "git_blob_sha1": "e2c2c511c31753b374dba185465816b52a9d1845",
+      "size": 18496,
+      "path": "assets/garibot1/sprites/stage_elements/stage1/barraca_feira_completa.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/Stage1/base_barraca_feira.png",
+      "git_blob_sha1": "f7ad70c7ff6fa02ffc945bb9ba630c49944e49bd",
+      "size": 8293,
+      "path": "assets/garibot1/sprites/stage_elements/stage1/base_barraca_feira.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/Stage1/colunas_barraca_feira.png",
+      "git_blob_sha1": "a9dc863db158a0da7dc16c6100511c6161560b57",
+      "size": 2030,
+      "path": "assets/garibot1/sprites/stage_elements/stage1/colunas_barraca_feira.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/Stage1/teto_barraca_feira.png",
+      "git_blob_sha1": "8a909a9c7714fb5eb569b6a086622f49cb55143a",
+      "size": 6806,
+      "path": "assets/garibot1/sprites/stage_elements/stage1/teto_barraca_feira.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/Stage2/lixo.png",
+      "git_blob_sha1": "448e9a210d5878abb51834b03e57e9e6a957ad72",
+      "size": 791,
+      "path": "assets/garibot1/sprites/stage_elements/stage2/lixo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/Stage2/lixo_aberto.png",
+      "git_blob_sha1": "a80e8117d12d9244f36ef239bb784d36ce4e21c4",
+      "size": 701,
+      "path": "assets/garibot1/sprites/stage_elements/stage2/lixo_aberto.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/Stage2/tampa.png",
+      "git_blob_sha1": "eafff9827982bf40c1d4620a9272f19bf31aa4f7",
+      "size": 597,
+      "path": "assets/garibot1/sprites/stage_elements/stage2/tampa.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/StageEnd/carimbo.png",
+      "git_blob_sha1": "442604363f4676bb67fb172fe38d107229f4c744",
+      "size": 1762,
+      "path": "assets/garibot1/sprites/stage_elements/stage_end/carimbo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/StageEnd/fundo_carimbo.png",
+      "git_blob_sha1": "8beffc7a28c96e6a399c827743c69dc94a6b0506",
+      "size": 580,
+      "path": "assets/garibot1/sprites/stage_elements/stage_end/fundo_carimbo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/StageEnd/plate light.png",
+      "git_blob_sha1": "e379fa5e3ac7a5b6d0d2bce6759ff1bb1e7d07f4",
+      "size": 590,
+      "path": "assets/garibot1/sprites/stage_elements/stage_end/plate_light.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/StageEnd/plate.png",
+      "git_blob_sha1": "ca976dea9b2db06616fab4262f6070a332e8d09d",
+      "size": 545,
+      "path": "assets/garibot1/sprites/stage_elements/stage_end/plate.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/StageEnd/pressure_plate.png",
+      "git_blob_sha1": "47a564d54b86f3e92921f3d82ddf7d2c1ecf5bab",
+      "size": 717,
+      "path": "assets/garibot1/sprites/stage_elements/stage_end/pressure_plate.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/StageEnd/wall.png",
+      "git_blob_sha1": "479912b31be0496c18d0508fec9ab4c4940d1da9",
+      "size": 11417,
+      "path": "assets/garibot1/sprites/stage_elements/stage_end/wall.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/angry_emoji.png",
+      "git_blob_sha1": "9d51eff63f794ad170bb49624ba8b0ff6b30452c",
+      "size": 787,
+      "path": "assets/garibot1/sprites/stage_elements/angry_emoji.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/check_off.png",
+      "git_blob_sha1": "885a08b83001026a36f2c5df21b134d801a37f9d",
+      "size": 2074,
+      "path": "assets/garibot1/sprites/stage_elements/check_off.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/check_on.png",
+      "git_blob_sha1": "baa32f1a0d78de35ae8ae1789f28e04baa3f59ee",
+      "size": 2057,
+      "path": "assets/garibot1/sprites/stage_elements/check_on.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/disabled_emoji.png",
+      "git_blob_sha1": "775bb2e81ad5d8149f000dd5daf4c5ed08ab8b40",
+      "size": 766,
+      "path": "assets/garibot1/sprites/stage_elements/disabled_emoji.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/elevator_close.png",
+      "git_blob_sha1": "10d3befc09c76ee8254c2991cd42bfc198912b2e",
+      "size": 37057,
+      "path": "assets/garibot1/sprites/stage_elements/elevator_close.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/elevator_open.png",
+      "git_blob_sha1": "ed8dd40248d4b508241232bc6afa59df118fff45",
+      "size": 37894,
+      "path": "assets/garibot1/sprites/stage_elements/elevator_open.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/emoji_think.png",
+      "git_blob_sha1": "7e5b20733551510851d49e88eec5aff0ace725e9",
+      "size": 872,
+      "path": "assets/garibot1/sprites/stage_elements/emoji_think.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/guincho.png",
+      "git_blob_sha1": "f9ff59ed57f8ad4d558b7238f8343496714d4522",
+      "size": 1071,
+      "path": "assets/garibot1/sprites/stage_elements/guincho.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/guindaste.png",
+      "git_blob_sha1": "087da765b3e23150caf94cb49588c2c099f778bb",
+      "size": 1560,
+      "path": "assets/garibot1/sprites/stage_elements/guindaste.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/happy_emoji.png",
+      "git_blob_sha1": "086ca081d762440d40baf86c2cfade33e01494d6",
+      "size": 798,
+      "path": "assets/garibot1/sprites/stage_elements/happy_emoji.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Stage Elements/talk.png",
+      "git_blob_sha1": "6ca4305f6c82b803ed7a92db3a1ac5c015b0c653",
+      "size": 940,
+      "path": "assets/garibot1/sprites/stage_elements/talk.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileCiclovia.png",
+      "git_blob_sha1": "653bc28b14c9526ad2b719172d7ffd5fd599f503",
+      "size": 14223,
+      "path": "assets/garibot1/sprites/tilesets/tile_ciclovia.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileGrama.png",
+      "git_blob_sha1": "201b5bd343b4d90d223d5df6daa8c25416837159",
+      "size": 19539,
+      "path": "assets/garibot1/sprites/tilesets/tile_grama.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileGramaEscura.png",
+      "git_blob_sha1": "e211e4d2c13ad14b6f4b26d514c2fd891e599b90",
+      "size": 16652,
+      "path": "assets/garibot1/sprites/tilesets/tile_grama_escura.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileGramaInterno.png",
+      "git_blob_sha1": "bfe87432d0730a9b979ee5298c2969f72f581ff0",
+      "size": 7798,
+      "path": "assets/garibot1/sprites/tilesets/tile_grama_interno.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileLixo.png",
+      "git_blob_sha1": "9069beea7949f16b63d6ca58d2bec168a27403de",
+      "size": 9287,
+      "path": "assets/garibot1/sprites/tilesets/tile_lixo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileParedeCinza.png",
+      "git_blob_sha1": "6934194d5beefbd6afda950d5e03166a1ae04016",
+      "size": 10614,
+      "path": "assets/garibot1/sprites/tilesets/tile_parede_cinza.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileParedeShopping.png",
+      "git_blob_sha1": "a4699066bb7306f67ffa30cd31cb287962ab1032",
+      "size": 16667,
+      "path": "assets/garibot1/sprites/tilesets/tile_parede_shopping.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileParedeVermelha.png",
+      "git_blob_sha1": "7fcc011cd1eb97e52b173901f1d8f425c65a142b",
+      "size": 7759,
+      "path": "assets/garibot1/sprites/tilesets/tile_parede_vermelha.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileParedeVermelhaSolido.png",
+      "git_blob_sha1": "cef5f732bbc80a64b2fe60c1a4a5fd8a462966c5",
+      "size": 7723,
+      "path": "assets/garibot1/sprites/tilesets/tile_parede_vermelha_solido.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TilePedra.png",
+      "git_blob_sha1": "d11bb2ef96b5d5b97eac6aa4201c472557127ed7",
+      "size": 13759,
+      "path": "assets/garibot1/sprites/tilesets/tile_pedra.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TilePredio.png",
+      "git_blob_sha1": "0807095ac22854b4164da1a7ff0f57ef5ae91a09",
+      "size": 14184,
+      "path": "assets/garibot1/sprites/tilesets/tile_predio.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TilePredioSolido.png",
+      "git_blob_sha1": "52d086062d1a35fc8db9f3a03bb7deffcd0574fe",
+      "size": 14888,
+      "path": "assets/garibot1/sprites/tilesets/tile_predio_solido.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileRua.png",
+      "git_blob_sha1": "6c0cdc2780214fa44bf0a3988d4559340c40745a",
+      "size": 25281,
+      "path": "assets/garibot1/sprites/tilesets/tile_rua.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/TileShopping.png",
+      "git_blob_sha1": "dd30da3eba85fadbbb04d00547adec0294a6d60f",
+      "size": 10113,
+      "path": "assets/garibot1/sprites/tilesets/tile_shopping.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/arvore2.png",
+      "git_blob_sha1": "ac84b3381def2a40ac91ee792c6afc4257810e65",
+      "size": 42868,
+      "path": "assets/garibot1/sprites/tilesets/arvore2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/arvore3.png",
+      "git_blob_sha1": "9bb04f5c0a96298b879933f413a06d7629a1ec8a",
+      "size": 12538,
+      "path": "assets/garibot1/sprites/tilesets/arvore3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/arvore4.png",
+      "git_blob_sha1": "b5a40e3d2e949f28c9c74832c0f442a1671464e0",
+      "size": 4259,
+      "path": "assets/garibot1/sprites/tilesets/arvore4.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/arvore5.png",
+      "git_blob_sha1": "8527b7ef2dde1cf367ee65fb747821da7e5053be",
+      "size": 13936,
+      "path": "assets/garibot1/sprites/tilesets/arvore5.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/arvore6.png",
+      "git_blob_sha1": "3fec0b23c72a76e3eb78056570e8541e8aa5b86c",
+      "size": 53370,
+      "path": "assets/garibot1/sprites/tilesets/arvore6.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/arvore7.png",
+      "git_blob_sha1": "f78d6873adfc49b3e12ffeb4c6fe1f78877421c8",
+      "size": 49395,
+      "path": "assets/garibot1/sprites/tilesets/arvore7.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/caixa.png",
+      "git_blob_sha1": "83a98c970fcfc3a379a3a241edfa154d70c70258",
+      "size": 7501,
+      "path": "assets/garibot1/sprites/tilesets/caixa.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/casa_amarela.png",
+      "git_blob_sha1": "01bbc67f1f433347f0e1120e5c81cb28a4b900f3",
+      "size": 9440,
+      "path": "assets/garibot1/sprites/tilesets/casa_amarela.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/casa_azul.png",
+      "git_blob_sha1": "625137e26a684833215df203a1b67ae310d95105",
+      "size": 9578,
+      "path": "assets/garibot1/sprites/tilesets/casa_azul.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/casa_janela.png",
+      "git_blob_sha1": "3d369991905ac1235264f8321153dc3a715c1f13",
+      "size": 3011,
+      "path": "assets/garibot1/sprites/tilesets/casa_janela.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/casa_preta.png",
+      "git_blob_sha1": "2939cee6bed397e3080753ba7a4d444f2b0477f0",
+      "size": 8547,
+      "path": "assets/garibot1/sprites/tilesets/casa_preta.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/conveyor.png",
+      "git_blob_sha1": "4f43857d712bef48fddc692e76066df2147e8e9d",
+      "size": 888,
+      "path": "assets/garibot1/sprites/tilesets/conveyor.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/conveyor2.png",
+      "git_blob_sha1": "900322503b4fbfab6f329b533c7fdd5b1c66ab4d",
+      "size": 726,
+      "path": "assets/garibot1/sprites/tilesets/conveyor2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/elevator.png",
+      "git_blob_sha1": "874d55259624f36bfb4dc471325bfba245c1dfb9",
+      "size": 28440,
+      "path": "assets/garibot1/sprites/tilesets/elevator.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/esteira.png",
+      "git_blob_sha1": "f36c9fc637fea172c91a416590107901b06babca",
+      "size": 622,
+      "path": "assets/garibot1/sprites/tilesets/esteira.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/esteira_begin.png",
+      "git_blob_sha1": "630506b184e09be5817df8983ec2d9500f713522",
+      "size": 601,
+      "path": "assets/garibot1/sprites/tilesets/esteira_begin.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/esteira_left.png",
+      "git_blob_sha1": "630506b184e09be5817df8983ec2d9500f713522",
+      "size": 601,
+      "path": "assets/garibot1/sprites/tilesets/esteira_begin.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/esteira_right.png",
+      "git_blob_sha1": "0450c83c77286705e3b5dc2a654f22ef8ce3b6b4",
+      "size": 601,
+      "path": "assets/garibot1/sprites/tilesets/esteira_right.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/face.png",
+      "git_blob_sha1": "dfad8ef4abca6a242b276afa08d59195f4b1b626",
+      "size": 497,
+      "path": "assets/garibot1/sprites/tilesets/face.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/pipe.png",
+      "git_blob_sha1": "9ff4a04f495f176c7bea80f0270b8eae321adbb0",
+      "size": 733,
+      "path": "assets/garibot1/sprites/tilesets/pipe.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/tronco.png",
+      "git_blob_sha1": "3fd033c391c5793317a6944ac5d60e0794ad3910",
+      "size": 2768,
+      "path": "assets/garibot1/sprites/tilesets/tronco.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/tronco2.png",
+      "git_blob_sha1": "eb6dd9e4dbf2abd1bb22f6a112d90df3a38197b6",
+      "size": 2957,
+      "path": "assets/garibot1/sprites/tilesets/tronco2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Tilesets/tronco3.png",
+      "git_blob_sha1": "139fc7d3c85fcc38a4b6055197408c1ad567fe7e",
+      "size": 2627,
+      "path": "assets/garibot1/sprites/tilesets/tronco3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/AboutButton1.png",
+      "git_blob_sha1": "2775c07d710bf46b9bcfe476a2d9b7af9560a7d2",
+      "size": 5710,
+      "path": "assets/garibot1/sprites/ui/main_menu/about_button1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/AboutButton2.png",
+      "git_blob_sha1": "66d9f9b7d63107d0ff2ac35a0e3710717a8500de",
+      "size": 5856,
+      "path": "assets/garibot1/sprites/ui/main_menu/about_button2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/AboutButton3.png",
+      "git_blob_sha1": "5bf9c8ca71185800f30d767109146f559ad1cada",
+      "size": 5569,
+      "path": "assets/garibot1/sprites/ui/main_menu/about_button3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Button1.png",
+      "git_blob_sha1": "8c06f6392aacd8238f527d74ea4bf63b81d8fd3a",
+      "size": 2474,
+      "path": "assets/garibot1/sprites/ui/main_menu/button1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Button2.png",
+      "git_blob_sha1": "51d98a09011de295f79e81e3b18ae960be3b7c10",
+      "size": 2494,
+      "path": "assets/garibot1/sprites/ui/main_menu/button2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Button3.png",
+      "git_blob_sha1": "30aa0633f6cc1b306836318773f446dc55a28d2b",
+      "size": 2313,
+      "path": "assets/garibot1/sprites/ui/main_menu/button3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/ConfigButton1.png",
+      "git_blob_sha1": "caf2c8efe216cf1a105dc7c5f076aeb9bb00efd1",
+      "size": 5695,
+      "path": "assets/garibot1/sprites/ui/main_menu/config_button1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/ConfigButton2.png",
+      "git_blob_sha1": "f8ab1fa63519e7b70cfc3f1c8803491b8b94e0be",
+      "size": 5849,
+      "path": "assets/garibot1/sprites/ui/main_menu/config_button2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/ConfigButton3.png",
+      "git_blob_sha1": "7c559d66e5bc931a75b18cb35f1906b3c8085204",
+      "size": 5547,
+      "path": "assets/garibot1/sprites/ui/main_menu/config_button3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/EmptyButton1.png",
+      "git_blob_sha1": "57c0bcf8c5982ac26f157135de8c8e56d43d6e29",
+      "size": 5921,
+      "path": "assets/garibot1/sprites/ui/main_menu/empty_button1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/EmptyButton2.png",
+      "git_blob_sha1": "14ff61217ed9a562b8661a53c5450efa103f73f3",
+      "size": 6352,
+      "path": "assets/garibot1/sprites/ui/main_menu/empty_button2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/EmptyButton3.png",
+      "git_blob_sha1": "1c2c5e8b53779bdcab9ad8b7bbb7bd706608f853",
+      "size": 6047,
+      "path": "assets/garibot1/sprites/ui/main_menu/empty_button3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/PlayButton1.png",
+      "git_blob_sha1": "3333f52e967cb61f0e94e9392bbe824b9b8c2acc",
+      "size": 5656,
+      "path": "assets/garibot1/sprites/ui/main_menu/play_button1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/PlayButton2.png",
+      "git_blob_sha1": "89234cea98362c0953286facbec87424b9589f17",
+      "size": 5818,
+      "path": "assets/garibot1/sprites/ui/main_menu/play_button2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/PlayButton3.png",
+      "git_blob_sha1": "77af8b5ca798dc9536dd3e6a171153a1a3b135b9",
+      "size": 5536,
+      "path": "assets/garibot1/sprites/ui/main_menu/play_button3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/PlayIcon.png",
+      "git_blob_sha1": "a5e01cd193504837ec5a9a9a3342c958af415615",
+      "size": 2659,
+      "path": "assets/garibot1/sprites/ui/main_menu/play_icon.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/PlayIcon2.png",
+      "git_blob_sha1": "3dfc52ddba41f6cdd015e63a424c0b08a50b20e4",
+      "size": 2983,
+      "path": "assets/garibot1/sprites/ui/main_menu/play_icon2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Sair.png",
+      "git_blob_sha1": "4c45bcfbda883431dc0f776bb08d7cc0478f2b7c",
+      "size": 1372,
+      "path": "assets/garibot1/sprites/ui/main_menu/sair.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Sair02.png",
+      "git_blob_sha1": "acab4b399a8812e8cff7521364fdbecc21e7c012",
+      "size": 1372,
+      "path": "assets/garibot1/sprites/ui/main_menu/sair02.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Sair03.png",
+      "git_blob_sha1": "753a196d5091e984b2f6a30b5921a8674e2dbb21",
+      "size": 1286,
+      "path": "assets/garibot1/sprites/ui/main_menu/sair03.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Tabela.png",
+      "git_blob_sha1": "f21e7db2e86f19178d91e969e38311de79c2947e",
+      "size": 502,
+      "path": "assets/garibot1/sprites/ui/main_menu/tabela.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Tabela2.png",
+      "git_blob_sha1": "e36075c03e7c32bd339b73d721fcb53057304c0b",
+      "size": 772,
+      "path": "assets/garibot1/sprites/ui/main_menu/tabela2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Tabelafundo.png",
+      "git_blob_sha1": "3c642404cbff2b97dffc938d4654c0ee4c9ea07a",
+      "size": 10657,
+      "path": "assets/garibot1/sprites/ui/main_menu/tabelafundo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/Titulo.png",
+      "git_blob_sha1": "ece832448fcf835bf749f75b242cf099a9463ce5",
+      "size": 135649,
+      "path": "assets/garibot1/sprites/ui/main_menu/titulo.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/MainMenu/voltar.png",
+      "git_blob_sha1": "49d0116bdc7d3592a42f5a793445c371894cadb4",
+      "size": 961,
+      "path": "assets/garibot1/sprites/ui/main_menu/voltar.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/Configuracao.png",
+      "git_blob_sha1": "c60bb40a63f3a9ca9027e5ae97ee15bd170d1496",
+      "size": 2760,
+      "path": "assets/garibot1/sprites/ui/misc/configuracao.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/Fundo_2.png",
+      "git_blob_sha1": "670650dae03cff4600c526329d3505a02fa620b1",
+      "size": 486,
+      "path": "assets/garibot1/sprites/ui/misc/fundo_2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/Fundo_3.png",
+      "git_blob_sha1": "6aa3cf2aa754705fd62c7b63e7fe80d6b7df2327",
+      "size": 711,
+      "path": "assets/garibot1/sprites/ui/misc/fundo_3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/PLay 1.png",
+      "git_blob_sha1": "75da931071960911e81295856fe7e501fc7a014b",
+      "size": 506,
+      "path": "assets/garibot1/sprites/ui/misc/play_1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/cogIcon.png",
+      "git_blob_sha1": "bf243303b5ffc6e8e7be33ff78087bac7193a7fd",
+      "size": 885,
+      "path": "assets/garibot1/sprites/ui/misc/cog_icon.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/menuTile.png",
+      "git_blob_sha1": "c53fd2fb56e49889846a11f4402873d158368b02",
+      "size": 1541,
+      "path": "assets/garibot1/sprites/ui/misc/menu_tile.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/next-dialog-2.png",
+      "git_blob_sha1": "dcaa2c6c9319045a707160cbcf730febce0ddd3f",
+      "size": 213,
+      "path": "assets/garibot1/sprites/ui/misc/next-dialog-2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/next-dialog.png",
+      "git_blob_sha1": "f684ed86d3dae8fe1b2fcefea09101581c12261f",
+      "size": 212,
+      "path": "assets/garibot1/sprites/ui/misc/next-dialog.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/playIcon.png",
+      "git_blob_sha1": "6e72ab2d7ff1a111b742909c7830cb59a8fa4d6a",
+      "size": 631,
+      "path": "assets/garibot1/sprites/ui/misc/play_icon.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Misc/playIconSmall.png",
+      "git_blob_sha1": "939eb7631a0dc7b44b38eb278ca6ba9be89c874e",
+      "size": 454,
+      "path": "assets/garibot1/sprites/ui/misc/play_icon_small.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Storyboard/Cena4.png",
+      "git_blob_sha1": "b92e94304e3706a082160c9581926115cc675d82",
+      "size": 488065,
+      "path": "assets/garibot1/sprites/ui/storyboard/cena4.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Storyboard/Cena5.png",
+      "git_blob_sha1": "d4d846b4db66e07f3904fd79abeef5badf1bdf7d",
+      "size": 559450,
+      "path": "assets/garibot1/sprites/ui/storyboard/cena5.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Storyboard/EmptyStar.png",
+      "git_blob_sha1": "086f1a0853e0f2abda70cc42c79dc765c0009302",
+      "size": 721,
+      "path": "assets/garibot1/sprites/ui/storyboard/empty_star.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Storyboard/FullStar.png",
+      "git_blob_sha1": "515972e1c4aac38a387d7f050eca7965b9ffbc7a",
+      "size": 866,
+      "path": "assets/garibot1/sprites/ui/storyboard/full_star.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Storyboard/GameOver.png",
+      "git_blob_sha1": "d7030c4a8069651cbb384683e6c3f6d653b9e22d",
+      "size": 497452,
+      "path": "assets/garibot1/sprites/ui/storyboard/game_over.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Storyboard/LevelComplete.png",
+      "git_blob_sha1": "d4d846b4db66e07f3904fd79abeef5badf1bdf7d",
+      "size": 559450,
+      "path": "assets/garibot1/sprites/ui/storyboard/cena5.png",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Tutorial/2_Teclas.png",
+      "git_blob_sha1": "4df9d731f26a2085141d799151d32baf9f51b89f",
+      "size": 606,
+      "path": "assets/garibot1/sprites/ui/tutorial/2_teclas.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Tutorial/Tecla.png",
+      "git_blob_sha1": "76907384dc31587e836840e587ea063e46b999ce",
+      "size": 554,
+      "path": "assets/garibot1/sprites/ui/tutorial/tecla.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/UI/Tutorial/Tecla_Grande.png",
+      "git_blob_sha1": "b03343b641febac420443f098b5ac3481543aa61",
+      "size": 563,
+      "path": "assets/garibot1/sprites/ui/tutorial/tecla_grande.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Usina/ima1x1.png",
+      "git_blob_sha1": "f3b8e0972990a444a1a8d927e3fff546061fb266",
+      "size": 665,
+      "path": "assets/garibot1/sprites/usina/ima1x1.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Usina/ima2x2.png",
+      "git_blob_sha1": "815188bc96471bef79402987ce090b98d6409239",
+      "size": 738,
+      "path": "assets/garibot1/sprites/usina/ima2x2.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Usina/ima3x3.png",
+      "git_blob_sha1": "2b717f9128b7fa946bd177b90fb25554f46bc3c8",
+      "size": 853,
+      "path": "assets/garibot1/sprites/usina/ima3x3.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/Usina/porta_usina.png",
+      "git_blob_sha1": "8e72a05922d22ae63f5acca72fc6a7756468d3b3",
+      "size": 546,
+      "path": "assets/garibot1/sprites/usina/porta_usina.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/check.png",
+      "git_blob_sha1": "a47758133faf092f23c5343f0ca8482fce072089",
+      "size": 610,
+      "path": "assets/garibot1/sprites/check.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/gameUI/battery.png",
+      "git_blob_sha1": "7a2799a2734195be5d56a82c2ac6e0de03e00e3a",
+      "size": 224,
+      "path": "assets/garibot1/sprites/game_ui/battery.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/gameUI/battery_block.png",
+      "git_blob_sha1": "2eae50a41f48f0f91e76672a7df5f13688c211d6",
+      "size": 132,
+      "path": "assets/garibot1/sprites/game_ui/battery_block.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/gameUI/battery_full.png",
+      "git_blob_sha1": "dd1837e0eb2540e973cb59e216b50c81cc167d7b",
+      "size": 163,
+      "path": "assets/garibot1/sprites/game_ui/battery_full.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Images/splashscreen/Logo_Nome_Fundo_escuro.png",
+      "git_blob_sha1": "7dc77ae44fa61ce21603a77d2731f0a3c7bc19c3",
+      "size": 136471,
+      "path": "assets/garibot1/sprites/splashscreen/logo_nome_fundo_escuro.png",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/dialogs/talk_boss.mp3",
+      "git_blob_sha1": "26ef964542c3820c200978f86261b3509ec16c58",
+      "size": 31050,
+      "path": "assets/garibot1/audio/dialogs/talk_boss.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/dialogs/talk_garidog.mp3",
+      "git_blob_sha1": "4547ce3dc7e7caba19ae6337426c88132f9480f9",
+      "size": 25965,
+      "path": "assets/garibot1/audio/dialogs/talk_garidog.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/dialogs/talk_kid.mp3",
+      "git_blob_sha1": "a30ad5ddac1d3f334e3ad9ba4aaf03e041695517",
+      "size": 10649,
+      "path": "assets/garibot1/audio/dialogs/talk_kid.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/dialogs/talk_mayor.mp3",
+      "git_blob_sha1": "93ecb0ce0345f60f09100e83a00ee87dee4c3b25",
+      "size": 11659,
+      "path": "assets/garibot1/audio/dialogs/talk_mayor.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/dialogs/talk_tim.mp3",
+      "git_blob_sha1": "baff5fc77bb8ef213fe82b8d7e08411bcb23920b",
+      "size": 10337,
+      "path": "assets/garibot1/audio/dialogs/talk_tim.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/dialogs/talk_tim_holo.mp3",
+      "git_blob_sha1": "e8ffcea3f6a8cbbc6e4f4b4578575b2a8a4e67b6",
+      "size": 23998,
+      "path": "assets/garibot1/audio/dialogs/talk_tim_holo.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_computer.mp3",
+      "git_blob_sha1": "599700e9dfcefa971d423c5038721018d474c670",
+      "size": 10422,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_computer.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_fogao.mp3",
+      "git_blob_sha1": "20e0a0765eeaf427ce77dbcf71a0bf7400296c92",
+      "size": 8441,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_fogao.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_furadeira_dash.mp3",
+      "git_blob_sha1": "2c9cce9b986b2401748f09a8a91e2be0f6b2c65d",
+      "size": 14391,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_furadeira_dash.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_furadeira_hop.mp3",
+      "git_blob_sha1": "75ca464363b23f66c01af28306aabb57ca56dbbf",
+      "size": 12517,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_furadeira_hop.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_geladeira.mp3",
+      "git_blob_sha1": "d84de04ec957a7733ed1e7c10a682f11eecc004c",
+      "size": 25722,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_geladeira.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_microwave.mp3",
+      "git_blob_sha1": "bf9356ef07fffbd66f29f1e7a4147d66e0ca7047",
+      "size": 9696,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_microwave.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_printer_hop.mp3",
+      "git_blob_sha1": "cde46a89f8c6b500ef504c4b3a4240f6284319db",
+      "size": 20971,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_printer_hop.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_printer_shoot.mp3",
+      "git_blob_sha1": "6f9ca50c3150a71e6ce1aa587e61667bccf2c2a3",
+      "size": 4301,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_printer_shoot.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/enemy_sfx/enemy_tv.mp3",
+      "git_blob_sha1": "19f3ff4c4dfab64a8d5d174d9b3957c17356aa06",
+      "size": 9113,
+      "path": "assets/garibot1/audio/enemy_sfx/enemy_tv.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/recycle_anim/GaribotTheme_LastVersionipromise.mp3",
+      "git_blob_sha1": "94be0e485ff81a3ece73e85fcab1644a7c968db0",
+      "size": 1629233,
+      "path": "assets/garibot1/audio/recycle_anim/garibot_theme_last_versionipromise.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/recycle_anim/recycle_anim_1.mp3",
+      "git_blob_sha1": "e9124226fe43b9cc66bcd00dcef307fa20974cba",
+      "size": 90479,
+      "path": "assets/garibot1/audio/recycle_anim/recycle_anim_1.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/recycle_anim/recycle_anim_2.mp3",
+      "git_blob_sha1": "6235ddb283865585ddac49dd92ff49ae9ab8bbb8",
+      "size": 79103,
+      "path": "assets/garibot1/audio/recycle_anim/recycle_anim_2.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/recycle_anim/recycle_anim_base.mp3",
+      "git_blob_sha1": "6af569df405027ddc9c4e412d592ab39208d3628",
+      "size": 223562,
+      "path": "assets/garibot1/audio/recycle_anim/recycle_anim_base.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/recycle_anim/recycle_anim_consume.mp3",
+      "git_blob_sha1": "d948fd55ee538b47f3d9d13b9af7f2eff2d1e976",
+      "size": 9701,
+      "path": "assets/garibot1/audio/recycle_anim/recycle_anim_consume.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/recycle_anim/recycle_anim_insert.mp3",
+      "git_blob_sha1": "91658fc7138444159dcf46f3c9182154ed294202",
+      "size": 21508,
+      "path": "assets/garibot1/audio/recycle_anim/recycle_anim_insert.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/blaster_bubble.mp3",
+      "git_blob_sha1": "b6e6c889010e608678a44bd9970449fd328da242",
+      "size": 31055,
+      "path": "assets/garibot1/audio/sfx/blaster_bubble.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/blaster_magnet_off.mp3",
+      "git_blob_sha1": "4c53bbb1b0e6a84439c72ae66e6b15ff5bca4b8f",
+      "size": 14115,
+      "path": "assets/garibot1/audio/sfx/blaster_magnet_off.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/blaster_magnet_on.mp3",
+      "git_blob_sha1": "b0005908ce660badd49b2a5235611bcb1d1a59be",
+      "size": 14882,
+      "path": "assets/garibot1/audio/sfx/blaster_magnet_on.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/enemy_stomp.mp3",
+      "git_blob_sha1": "907c8eaf4d5af071cbc0708dbbabf5aa88524925",
+      "size": 9500,
+      "path": "assets/garibot1/audio/sfx/enemy_stomp.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/garibot_damage.mp3",
+      "git_blob_sha1": "49822441e8896c402167a40f5ee51db45d517a7c",
+      "size": 13055,
+      "path": "assets/sounds/garibot_damage.mp3",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/garibot_jump.mp3",
+      "git_blob_sha1": "a4defa30edefde1896a02b39e044cb65c1874d43",
+      "size": 13101,
+      "path": "assets/sounds/garibot_jump.mp3",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/magnet-off.mp3",
+      "git_blob_sha1": "101a4fda5265584a5a09c884377ecb7fcd5419f8",
+      "size": 14347,
+      "path": "assets/garibot1/audio/sfx/magnet-off.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/magnet-on.mp3",
+      "git_blob_sha1": "70f5fe07be9865bee8e93d5abbb69cdd56fee9a1",
+      "size": 8322,
+      "path": "assets/garibot1/audio/sfx/magnet-on.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/roll_garibot.mp3",
+      "git_blob_sha1": "1b1421770dcf8a17ffe1ae66b59b27b534354e2e",
+      "size": 8518,
+      "path": "assets/sounds/roll_garibot.mp3",
+      "status": "reused_identical"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/shot_garibot.mp3",
+      "git_blob_sha1": "d3d441e0044940a23fd810fdac1e8093999fbb8b",
+      "size": 12214,
+      "path": "assets/garibot1/audio/sfx/shot_garibot.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/sfx/vaccum-sfx.mp3",
+      "git_blob_sha1": "eebb9f59b63f81914ab75bf6cde3bf1697254d51",
+      "size": 46748,
+      "path": "assets/garibot1/audio/sfx/vaccum-sfx.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/songs/bonus.mp3",
+      "git_blob_sha1": "0f1cbe5d1c3004925bba2df889d98be56e037fdc",
+      "size": 933806,
+      "path": "assets/garibot1/audio/songs/bonus.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/songs/bonus_win_fanfare.mp3",
+      "git_blob_sha1": "11912e92eb835693c53ac287ca3983be4fcc23c4",
+      "size": 117146,
+      "path": "assets/garibot1/audio/songs/bonus_win_fanfare.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/songs/fase-1.mp3",
+      "git_blob_sha1": "425e7c33ec66ece68ab80ec117556d5c8d36e8f6",
+      "size": 1608807,
+      "path": "assets/garibot1/audio/songs/fase-1.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/songs/lose-fanfare.mp3",
+      "git_blob_sha1": "c5a34724e9f59a5e8e1a6fe3b0bc591269edf7f4",
+      "size": 124414,
+      "path": "assets/garibot1/audio/songs/lose-fanfare.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/songs/menu-mapa.mp3",
+      "git_blob_sha1": "4c4d8551a4c4a75825dd5ebbecf60a75c61d1e8c",
+      "size": 1126795,
+      "path": "assets/garibot1/audio/songs/menu-mapa.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/songs/win-fanfare.mp3",
+      "git_blob_sha1": "8abe31d1f72b6c37de7e3947c801659db401ddc2",
+      "size": 110061,
+      "path": "assets/garibot1/audio/songs/win-fanfare.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/claw_move.mp3",
+      "git_blob_sha1": "4a583995b94688c464fa47e8e4b461496c627add",
+      "size": 40626,
+      "path": "assets/garibot1/audio/stage_3/claw_move.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/claw_move_continuous.mp3",
+      "git_blob_sha1": "d0ad823cbdd955dbca95d69790ea07e4558baec6",
+      "size": 13205,
+      "path": "assets/garibot1/audio/stage_3/claw_move_continuous.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/claw_open.mp3",
+      "git_blob_sha1": "cf80796fb4aaee2bade673c87f571f58193cdbf1",
+      "size": 16122,
+      "path": "assets/garibot1/audio/stage_3/claw_open.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/gate_close.mp3",
+      "git_blob_sha1": "bec3dad5af8bc4575599aac907ba83cd0dd84658",
+      "size": 18091,
+      "path": "assets/garibot1/audio/stage_3/gate_close.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/gate_open.mp3",
+      "git_blob_sha1": "164a3d90f5fe799c851edde316ed70aa8b58425b",
+      "size": 18186,
+      "path": "assets/garibot1/audio/stage_3/gate_open.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/hammer_close.mp3",
+      "git_blob_sha1": "fa5e25674827474cea0f4cf9baf967799dd95b46",
+      "size": 9909,
+      "path": "assets/garibot1/audio/stage_3/hammer_close.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/hammer_open.mp3",
+      "git_blob_sha1": "64f4e610a57a139ce8477615680feda522608a99",
+      "size": 9980,
+      "path": "assets/garibot1/audio/stage_3/hammer_open.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/pp_down.mp3",
+      "git_blob_sha1": "10497117c90810a59ca52dfaa8d8d187f35f0bec",
+      "size": 2248,
+      "path": "assets/garibot1/audio/stage_3/pp_down.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/stage_3/pp_up.mp3",
+      "git_blob_sha1": "1ca4a085edb1f49b110f42f5dcde1f5297b70c43",
+      "size": 2294,
+      "path": "assets/garibot1/audio/stage_3/pp_up.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/blaster_get.mp3",
+      "git_blob_sha1": "19d4067e09fda67ac9a677cd14f49df89a5cb85b",
+      "size": 40844,
+      "path": "assets/garibot1/audio/ui/blaster_get.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/correct_answer_1.mp3",
+      "git_blob_sha1": "c8145bd5945e0edb7bec5a0c5fb913fa20e615b3",
+      "size": 12528,
+      "path": "assets/garibot1/audio/ui/correct_answer_1.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/correct_answer_2.mp3",
+      "git_blob_sha1": "3830adc2f298d6eff7d7810b9eb1c2564f070c97",
+      "size": 14689,
+      "path": "assets/garibot1/audio/ui/correct_answer_2.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/correct_answer_3.mp3",
+      "git_blob_sha1": "ad577ed75ef89482aa79cb5164f586b0883a2413",
+      "size": 15985,
+      "path": "assets/garibot1/audio/ui/correct_answer_3.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/ui_deselect.mp3",
+      "git_blob_sha1": "571e2b5341a2055c18e6dd24b493dc06b41dc499",
+      "size": 18956,
+      "path": "assets/garibot1/audio/ui/ui_deselect.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/ui_main_menu_select.mp3",
+      "git_blob_sha1": "f66205280563d51f83b074578520eadc54a24ec5",
+      "size": 28516,
+      "path": "assets/garibot1/audio/ui/ui_main_menu_select.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/ui_move.mp3",
+      "git_blob_sha1": "19a8ecd7377d36544792ad1d79abe8539d5ec611",
+      "size": 17800,
+      "path": "assets/garibot1/audio/ui/ui_move.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/ui_select.mp3",
+      "git_blob_sha1": "f87a30ccd53c008f55c0faf138a31ad688512417",
+      "size": 16794,
+      "path": "assets/garibot1/audio/ui/ui_select.mp3",
+      "status": "imported"
+    },
+    {
+      "source": "game_files/assets/Sounds/ui/wrong_answer.mp3",
+      "git_blob_sha1": "23c6eb24d35287f97346e5601660558ad84ec106",
+      "size": 15885,
+      "path": "assets/garibot1/audio/ui/wrong_answer.mp3",
+      "status": "imported"
+    }
+  ],
+  "not_imported": [
+    "Font/Boogaloo-Regular.ttf",
+    "Font/Comic Book.otf",
+    "Font/JuanMikes.otf",
+    "Font/Langdon.otf",
+    "Font/MKOCR.ttf",
+    "Font/gomarice_shmup_in_the_zone.ttf",
+    "Font/text.tres",
+    "Font/text_ui.tres",
+    "Font/text_ui_gallery.tres",
+    "Font/text_ui_icon_button.tres",
+    "Font/text_ui_small.tres",
+    "Font/text_ui_small_window.tres",
+    "Font/title.tres",
+    "Font/tutorial_hint.tres",
+    "Font/window_title.tres",
+    "Images/Bar/Barra/barra.kra",
+    "Images/Blasters/bubble.kra",
+    "Images/Boss/Engrenagens.kra",
+    "Images/Boss/cabeca.kra",
+    "Images/Collectibles/agua.kra",
+    "Images/Collectibles/garrafa.kra",
+    "Images/Collectibles/jornal.kra",
+    "Images/Collectibles/melancia.kra",
+    "Images/Collectibles/refri.kra",
+    "Images/Collectibles/sacola.kra",
+    "Images/Dog/DogSprite.kra",
+    "Images/Effects/baloon.kra",
+    "Images/Effects/virus_eyes.kra",
+    "Images/Effects/virus_fire.kra",
+    "Images/EnemiesRig/inimigoMoitorRig.kra",
+    "Images/Main Recicler/garra.kra",
+    "Images/Main Recicler/tela.kra",
+    "Images/Map/Tile.kra",
+    "Images/People/boy.kra",
+    "Images/People/boy_complex.kra",
+    "Images/People/gariani.kra",
+    "Images/People/gariani.png.import~RF906a75.TMP",
+    "Images/People/girl.kra",
+    "Images/People/girl_complex.kra",
+    "Images/People/mayor.kra",
+    "Images/People/old_men.kra",
+    "Images/People/person.kra",
+    "Images/People/scientist.kra",
+    "Images/People/woman.kra",
+    "Images/People/woman_complex.kra",
+    "Images/Player/PlayerChaBack.kra",
+    "Images/Player/PlayerChar_alternative.kra",
+    "Images/Player/PlayerChar_alternative2.kra",
+    "Images/Player/face.kra",
+    "Images/Printer/caixa_impressão_3d.kra",
+    "Images/Printer/filamento.kra",
+    "Images/Printer/imp3d_comCores_semHelice.kra",
+    "Images/Printer/imp3d_comCores_semHelice_3d.kra",
+    "Images/Printer/painel.kra",
+    "Images/RecicSprite.kra",
+    "Images/Recycler/caixa_reciclagem_3d.kra",
+    "Images/Recycler/drive-download-20191013T115931Z-001.zip",
+    "Images/Recycler/polias.kra",
+    "Images/Scenery/arvore.kra",
+    "Images/Scenery/ceu1.kra",
+    "Images/Scenery/engrenagem.kra",
+    "Images/Scenery/garra.kra",
+    "Images/Scenery/houses/door.kra",
+    "Images/Scenery/houses/house.kra",
+    "Images/Scenery/labwall.kra",
+    "Images/Scenery/nuvens.kra",
+    "Images/Scenery/placa.kra",
+    "Images/Scenery/placa_fabrica.kra",
+    "Images/Scenery/placa_fabrica_metal.kra",
+    "Images/Scenery/placa_fabrica_plastico.kra",
+    "Images/Stage Elements/.check_off.png-autosave.kra",
+    "Images/Stage Elements/Stage1/barraca_feira.kra",
+    "Images/Stage Elements/StageEnd/carimbo.kra",
+    "Images/Stage Elements/StageEnd/pressure_plate.kra",
+    "Images/Stage Elements/StageEnd/wall.kra",
+    "Images/Stage Elements/check.kra",
+    "Images/Stage Elements/emoji_talk.kra",
+    "Images/Tilesets/.caixa.png-autosave.kra",
+    "Images/Tilesets/.pipe.png-autosave.kra",
+    "Images/Tilesets/.tronco.png-autosave.kra",
+    "Images/Tilesets/TileBlocos.kra",
+    "Images/Tilesets/TileLixo.kra",
+    "Images/Tilesets/TileRua.kra",
+    "Images/Tilesets/TileShopping.kra",
+    "Images/Tilesets/Tileparede.kra",
+    "Images/Tilesets/arvore.kra",
+    "Images/Tilesets/arvores_fundo.kra",
+    "Images/Tilesets/caixa.kra",
+    "Images/Tilesets/casa.kra",
+    "Images/Tilesets/casa_amarela.kra",
+    "Images/Tilesets/casa_azul.kra",
+    "Images/Tilesets/casa_janela.kra",
+    "Images/Tilesets/casa_preta.kra",
+    "Images/Tilesets/elevator.kra",
+    "Images/Tilesets/esteira.kra",
+    "Images/Tilesets/pipe.kra",
+    "Images/Tilesets/tronco.kra",
+    "Images/Usina/ima1x1.kra",
+    "Images/Usina/ima2x2.kra",
+    "Images/Usina/ima3x3.kra",
+    "Images/gameUI/battery.kra",
+    "MovePlat.gd",
+    "MovePlat.gd.uid",
+    "Sounds/songs/dameDaNe.mp3",
+    "Sounds/songs/fase-2.mp3",
+    "Sounds/songs/fase-3.mp3",
+    "Sounds/songs/fase-3_chase.mp3",
+    "Sounds/songs/fase-3_inside.mp3",
+    "Sounds/songs/fase-3_outside-inside.mp3",
+    "Sounds/songs/fase-3_outside.mp3",
+    "Sounds/songs/fase-3_v2.mp3",
+    "Sounds/songs/fase-5.mp3",
+    "Sounds/story/story_intro1.mp3",
+    "Sounds/story/story_intro2.mp3",
+    "Sounds/story/story_intro3.mp3",
+    "Test/icon.png"
+  ]
+}

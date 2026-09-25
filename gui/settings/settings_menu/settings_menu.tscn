@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://yqy045o8mtt3"]
+
+[ext_resource type="Script" uid="uid://dllceelus7w87" path="res://gui/settings/settings_menu/settings_menu.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://ciw3yckcdcfvh" path="res://gui/settings/pages/visual/visual_settings_page.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dv5xsvo1j5tg8" path="res://gui/settings/pages/controls/controls_settings_page.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://blf5273uinck8" path="res://gui/settings/pages/audio_dialogue/audio_dialogue_settings_page.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cuowvkcs5ru1v" path="res://levels/phase1/phase1.tscn" id="5"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+next_phase = ExtResource("5")
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+layer = 200
+
+[node name="Background" type="ColorRect" parent="Overlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.05, 0.08, 0.08, 1)
+
+[node name="Panel" type="PanelContainer" parent="Overlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 24.0
+offset_right = -40.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Overlay/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="Body" type="VBoxContainer" parent="Overlay/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Overlay/Panel/Margin/Body"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 38
+text = "Antes de começar"
+horizontal_alignment = 1
+
+[node name="Step" type="Label" parent="Overlay/Panel/Margin/Body"]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+theme_override_font_sizes/font_size = 18
+text = "Etapa 1 de 3"
+horizontal_alignment = 1
+
+[node name="Content" type="ScrollContainer" parent="Overlay/Panel/Margin/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Pages" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VisualPage" parent="Overlay/Panel/Margin/Body/Content/Pages" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="ControlsPage" parent="Overlay/Panel/Margin/Body/Content/Pages" instance=ExtResource("3")]
+visible = false
+layout_mode = 2
+
+[node name="AudioDialoguePage" parent="Overlay/Panel/Margin/Body/Content/Pages" instance=ExtResource("4")]
+visible = false
+layout_mode = 2
+
+[node name="Navigation" type="HBoxContainer" parent="Overlay/Panel/Margin/Body"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Restore" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
+layout_mode = 2
+text = "Restaurar padrão"
+
+[node name="Previous" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
+layout_mode = 2
+text = "Voltar"
+
+[node name="Next" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+text = "Continuar"
+
+[node name="Finish" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+text = "Começar a jogar"
+
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Restore" to="." method="_on_restore_pressed"]
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Finish" to="." method="_on_finish_pressed"]

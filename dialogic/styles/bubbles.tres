@@ -20,9 +20,19 @@ overrides = {}
 script = ExtResource("2_chprd")
 scene = ExtResource("4_qk1g4")
 overrides = {
+"bold_font": "\"res://assets/fonts/pixelify_sans/PixelifySans.ttf\"",
 "box_corner_radius": "2",
+"box_modulate": "Color(0.07, 0.14, 0.18, 1)",
+"box_padding": "Vector2(18, 14)",
 "box_wobble_amount": "0.0",
+"choices_text_font": "\"res://assets/fonts/pixelify_sans/PixelifySans.ttf\"",
+"name_label_box_modulate": "Color(0.07, 0.14, 0.18, 1)",
+"name_label_color": "Color(1, 0.84, 0.48, 1)",
+"name_label_font": "\"res://assets/fonts/pixelify_sans/PixelifySans.ttf\"",
 "name_label_padding": "Vector2(10, 5)",
+"name_label_use_character_color": "false",
+"normal_font": "\"res://assets/fonts/pixelify_sans/PixelifySans.ttf\"",
+"text_color": "Color(0.94, 0.96, 0.91, 1)",
 "text_size": "18"
 }
 

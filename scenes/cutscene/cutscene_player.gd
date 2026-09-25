@@ -9,8 +9,8 @@ extends Node
 ## raw animations and Dialogic dialogs, then restores control.
 ##
 ## Supported step types (a valid `type` is required for every step):
-##   {"type": "bars_on",  "speed": 0.3}                 # fade cinematic black bars in
-##   {"type": "bars_off", "speed": 0.3}                 # fade black bars out
+##   {"type": "bars_on",  "speed": 0.3}                 # slide cinematic black bars in
+##   {"type": "bars_off", "speed": 0.3}                 # slide black bars out
 ##   {"type": "wait", "seconds": 1.0}                   # do nothing for N seconds
 ##   {"type": "walk", "dir": 1, "duration": 1.5}        # move Garibot in a direction for N seconds
 ##   {"type": "stop"}                                   # stop walking
@@ -41,6 +41,7 @@ signal finished
 ## Dialogic character resource shown in the speech bubble during "say" steps.
 ## Defaults to the game's garibot character when left empty.
 @export var character_resource: Resource = null
+@export_range(48.0, 120.0, 4.0) var cinematic_bar_height := 84.0
 
 var _player: Player
 var _index: int = 0
@@ -48,8 +49,9 @@ var _active: bool = false
 var _bar_layer: CanvasLayer
 var _bar_top: ColorRect
 var _bar_bottom: ColorRect
+var _bars_were_visible_before_dialog := false
+var _bar_tween: Tween
 
-const _BAR_HEIGHT := 140.0
 const _DEFAULT_BAR_SPEED := 0.4
 
 
@@ -87,11 +89,9 @@ func _advance() -> void:
 
 	match step.get("type", ""):
 		"bars_on":
-			_set_bars_visibility(true, step)
-			_await(_bar_time(step), _advance)
+			_set_bars_visibility(true, step, _advance)
 		"bars_off":
-			_set_bars_visibility(false, step)
-			_await(_bar_time(step), _advance)
+			_set_bars_visibility(false, step, _advance)
 		"wait":
 			_await(float(step.get("seconds", 1.0)), _advance)
 		"walk":
@@ -138,6 +138,7 @@ func _play_dialog(timeline: String) -> void:
 	if timeline.is_empty():
 		_advance()
 		return
+	
 	if get_parent().is_in_group("phase1_level"):
 		if not Dialogic.timeline_ended.is_connected(_on_dialog_done):
 			Dialogic.timeline_ended.connect(_on_dialog_done)
@@ -175,10 +176,12 @@ func _play_dialog(timeline: String) -> void:
 func _on_dialog_done() -> void:
 	if Dialogic.timeline_ended.is_connected(_on_dialog_done):
 		Dialogic.timeline_ended.disconnect(_on_dialog_done)
+	_restore_bars_after_dialog()
 	_advance()
 
 
 func _finish() -> void:
+	_restore_bars_after_dialog()
 	_player.cutscene_stop()
 	_player.body.stop_cutscene_animation()
 	_player.in_cutscene = false
@@ -203,7 +206,7 @@ func _ensure_bars() -> void:
 	_bar_top.anchor_right = 1.0
 	_bar_top.anchor_bottom = 0.0
 	_bar_top.offset_top = 0.0
-	_bar_top.offset_bottom = _BAR_HEIGHT
+	_bar_top.offset_bottom = cinematic_bar_height
 
 	_bar_bottom = ColorRect.new()
 	_bar_bottom.color = Color.BLACK
@@ -211,28 +214,92 @@ func _ensure_bars() -> void:
 	_bar_bottom.anchor_top = 1.0
 	_bar_bottom.anchor_right = 1.0
 	_bar_bottom.anchor_bottom = 1.0
-	_bar_bottom.offset_top = -_BAR_HEIGHT
+	_bar_bottom.offset_top = -cinematic_bar_height
 	_bar_bottom.offset_bottom = 0.0
 
 	_bar_layer.add_child(_bar_top)
 	_bar_layer.add_child(_bar_bottom)
 	add_child(_bar_layer)
 
+	_set_bar_offsets(false)
 	_bar_top.visible = false
 	_bar_bottom.visible = false
 
 
-func _set_bars_visibility(show: bool, step: Dictionary) -> void:
+func _set_bars_visibility(show: bool, step: Dictionary, on_finished: Callable = Callable()) -> void:
 	_ensure_bars()
-	# Bars appear/disappear instantly (kept simple and headless-safe).
-	# The step's "speed" just paces how long the camera/bars settle.
-	_bar_top.visible = show
-	_bar_bottom.visible = show
+	_stop_bar_animation()
+	var duration := _bar_time(step)
+	_bar_layer.show()
+
+	if show:
+		_set_bar_offsets(false)
+		_bar_top.show()
+		_bar_bottom.show()
+	elif not _bar_top.visible and not _bar_bottom.visible:
+		_set_bar_offsets(false)
+		_finish_bar_animation(false, on_finished)
+		return
+
+	if duration <= 0.0:
+		_set_bar_offsets(show)
+		_finish_bar_animation(show, on_finished)
+		return
+
+	_bar_tween = create_tween()
+	_bar_tween.set_parallel(true)
+	_bar_tween.set_trans(Tween.TRANS_CUBIC)
+	_bar_tween.set_ease(Tween.EASE_OUT if show else Tween.EASE_IN)
+	_bar_tween.tween_property(_bar_top, "offset_top", 0.0 if show else -cinematic_bar_height, duration)
+	_bar_tween.tween_property(_bar_top, "offset_bottom", cinematic_bar_height if show else 0.0, duration)
+	_bar_tween.tween_property(_bar_bottom, "offset_top", -cinematic_bar_height if show else 0.0, duration)
+	_bar_tween.tween_property(_bar_bottom, "offset_bottom", 0.0 if show else cinematic_bar_height, duration)
+	_bar_tween.finished.connect(_finish_bar_animation.bind(show, on_finished))
+
+
+func _set_bar_offsets(shown: bool) -> void:
+	_bar_top.offset_top = 0.0 if shown else -cinematic_bar_height
+	_bar_top.offset_bottom = cinematic_bar_height if shown else 0.0
+	_bar_bottom.offset_top = -cinematic_bar_height if shown else 0.0
+	_bar_bottom.offset_bottom = 0.0 if shown else cinematic_bar_height
+
+
+func _finish_bar_animation(shown: bool, on_finished: Callable) -> void:
+	_bar_tween = null
+	if not shown:
+		_bar_top.hide()
+		_bar_bottom.hide()
+	if on_finished.is_valid():
+		on_finished.call()
+
+
+func _stop_bar_animation() -> void:
+	if _bar_tween != null and _bar_tween.is_valid():
+		_bar_tween.kill()
+	_bar_tween = null
+
+
+
+
+
+func _restore_bars_after_dialog() -> void:
+	if not is_instance_valid(_bar_layer):
+		return
+	_bar_layer.show()
+	if _bars_were_visible_before_dialog:
+		_set_bar_offsets(true)
+		_bar_top.show()
+		_bar_bottom.show()
+	else:
+		_bar_top.hide()
+		_bar_bottom.hide()
+	_bars_were_visible_before_dialog = false
 
 
 func _bar_time(step: Dictionary) -> float:
-	# Give a moment for the bar transition to read visually.
-	return step.get("speed", _DEFAULT_BAR_SPEED)
+	if Settings.get_setting("reduced_motion", false):
+		return 0.0
+	return maxf(float(step.get("speed", _DEFAULT_BAR_SPEED)), 0.0)
 
 
 # ---- Helpers ----

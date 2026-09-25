@@ -1,0 +1,173 @@
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://gcivgar7cgpx"]
+
+[ext_resource type="Texture2D" uid="uid://d0kf4bx525fqf" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0002.png" id="1_normal"]
+[ext_resource type="Texture2D" uid="uid://dqdsluur0ymfk" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0015.png" id="2_hover"]
+[ext_resource type="Texture2D" uid="uid://850j03pqffep" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0003.png" id="4_panel"]
+[ext_resource type="FontFile" uid="uid://whrkv8wrc5s5" path="res://assets/fonts/pixelify_sans/PixelifySans.ttf" id="5_font"]
+[ext_resource type="Texture2D" uid="uid://orsp4b8bt7c3" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0001.png" id="6_gold"]
+[ext_resource type="Texture2D" uid="uid://dcen60ja8rowd" path="res://gui/themes/pixel_adventure/icons/slider_grabber.svg" id="7_grabber"]
+[ext_resource type="Texture2D" uid="uid://bcmdrfd5008ii" path="res://gui/themes/pixel_adventure/icons/unchecked.svg" id="8_unchecked"]
+[ext_resource type="Texture2D" uid="uid://c8xtu8kqlefs8" path="res://gui/themes/pixel_adventure/icons/checked.svg" id="9_checked"]
+
+[sub_resource type="StyleBoxTexture" id="Pressed"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+texture = ExtResource("4_panel")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="Focus"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.85, 0.3, 1)
+
+[sub_resource type="StyleBoxTexture" id="Hover"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+texture = ExtResource("2_hover")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="Normal"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+texture = ExtResource("1_normal")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="Empty"]
+
+[sub_resource type="StyleBoxFlat" id="Cell"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.94, 0.93, 0.83, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.46, 0.65, 0.68, 1)
+
+[sub_resource type="StyleBoxFlat" id="Fill"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.33, 0.72, 0.65, 1)
+
+[sub_resource type="StyleBoxFlat" id="Track"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.09, 0.15, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="Input"]
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+bg_color = Color(0.09, 0.15, 0.19, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.57, 0.66, 1)
+
+[sub_resource type="StyleBoxTexture" id="Panel"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+texture = ExtResource("4_panel")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+modulate_color = Color(0.23, 0.37, 0.4, 1)
+
+[sub_resource type="StyleBoxTexture" id="Primary"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("6_gold")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(1.25, 1.2, 0.95, 1)
+
+[resource]
+default_font = ExtResource("5_font")
+default_font_size = 22
+Button/colors/font_color = Color(0.07, 0.12, 0.15, 1)
+Button/colors/font_disabled_color = Color(0.64, 0.68, 0.69, 1)
+Button/colors/font_focus_color = Color(0.07, 0.12, 0.15, 1)
+Button/colors/font_hover_color = Color(0.07, 0.12, 0.15, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("Pressed")
+Button/styles/focus = SubResource("Focus")
+Button/styles/hover = SubResource("Hover")
+Button/styles/normal = SubResource("Normal")
+Button/styles/pressed = SubResource("Pressed")
+CheckBox/colors/font_color = Color(0.93, 0.96, 0.91, 1)
+CheckBox/colors/font_hover_color = Color(0.93, 0.96, 0.91, 1)
+CheckBox/colors/font_pressed_color = Color(0.93, 0.96, 0.91, 1)
+CheckBox/constants/h_separation = 12
+CheckBox/icons/checked = ExtResource("9_checked")
+CheckBox/icons/checked_disabled = ExtResource("9_checked")
+CheckBox/icons/unchecked = ExtResource("8_unchecked")
+CheckBox/icons/unchecked_disabled = ExtResource("8_unchecked")
+CheckBox/styles/focus = SubResource("Focus")
+CheckBox/styles/hover = SubResource("Empty")
+CheckBox/styles/normal = SubResource("Empty")
+CheckBox/styles/pressed = SubResource("Empty")
+CrosswordCell/base_type = &"LineEdit"
+CrosswordCell/colors/caret_color = Color(0.06, 0.12, 0.15, 1)
+CrosswordCell/colors/font_color = Color(0.06, 0.12, 0.15, 1)
+CrosswordCell/constants/minimum_character_width = 1
+CrosswordCell/font_sizes/font_size = 28
+CrosswordCell/styles/focus = SubResource("Focus")
+CrosswordCell/styles/normal = SubResource("Cell")
+HBoxContainer/constants/separation = 16
+HSlider/icons/grabber = ExtResource("7_grabber")
+HSlider/icons/grabber_disabled = ExtResource("7_grabber")
+HSlider/icons/grabber_highlight = ExtResource("7_grabber")
+HSlider/styles/grabber_area = SubResource("Fill")
+HSlider/styles/grabber_area_highlight = SubResource("Fill")
+HSlider/styles/slider = SubResource("Track")
+Label/colors/font_color = Color(0.93, 0.96, 0.91, 1)
+LineEdit/colors/font_color = Color(1, 1, 1, 1)
+LineEdit/styles/focus = SubResource("Focus")
+LineEdit/styles/normal = SubResource("Input")
+MutedLabel/base_type = &"Label"
+MutedLabel/colors/font_color = Color(0.68, 0.81, 0.82, 1)
+MutedLabel/font_sizes/font_size = 18
+Panel/styles/panel = SubResource("Panel")
+PanelContainer/styles/panel = SubResource("Panel")
+PrimaryButton/base_type = &"Button"
+PrimaryButton/colors/font_color = Color(0.1, 0.13, 0.14, 1)
+PrimaryButton/colors/font_focus_color = Color(0.07, 0.12, 0.15, 1)
+PrimaryButton/styles/normal = SubResource("Primary")
+ProgressBar/styles/background = SubResource("Track")
+ProgressBar/styles/fill = SubResource("Fill")
+RichTextLabel/colors/default_color = Color(0.93, 0.96, 0.91, 1)
+TitleLabel/base_type = &"Label"
+TitleLabel/colors/font_color = Color(1, 0.84, 0.48, 1)
+TitleLabel/font_sizes/font_size = 36
+TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
+TooltipPanel/styles/panel = SubResource("Input")
+VBoxContainer/constants/separation = 12

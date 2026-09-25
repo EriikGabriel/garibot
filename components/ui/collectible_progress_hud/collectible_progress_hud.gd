@@ -8,6 +8,8 @@ var paper := Color("#e9e4ca")
 var active := Color("#e0b75f")
 var empty := Color("#475453")
 
+var _high_contrast := false
+
 var collected := 0
 var total := 5
 
@@ -22,6 +24,7 @@ func _on_setting_changed(setting_name: String, value: Variant) -> void:
 		_apply_contrast(bool(value))
 
 func _apply_contrast(enabled: bool) -> void:
+	_high_contrast = enabled
 	if enabled:
 		ink = Color.BLACK
 		edge = Color.WHITE
@@ -56,6 +59,9 @@ func _draw() -> void:
 	draw_rect(Rect2(38, view.y - 76, 4, 4), paper)
 
 func _draw_panel(rect: Rect2) -> void:
+	if not _high_contrast:
+		draw_style_box(get_theme_stylebox("panel", "PanelContainer"), rect)
+		return
 	draw_rect(rect, ink)
 	draw_rect(rect, edge, false, 2.0)
 	draw_rect(Rect2(rect.position + Vector2(4, 4), Vector2(rect.size.x - 8, 2)), paper)

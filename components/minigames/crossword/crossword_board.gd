@@ -63,23 +63,12 @@ func _ready() -> void:
 			var field := LineEdit.new()
 			field.alignment = HORIZONTAL_ALIGNMENT_CENTER
 			field.max_length = 1
-			field.add_theme_font_size_override("font_size", 26)
-			field.add_theme_color_override("font_color", Color("#172c30"))
-			var tile := StyleBoxFlat.new()
-			tile.bg_color = Color("#f4efda")
-			tile.set_corner_radius_all(4)
-			tile.set_border_width_all(2)
-			tile.border_color = Color("#86aca0")
-			field.add_theme_stylebox_override("normal", tile)
+			field.expand_to_text_length = false
+			field.theme_type_variation = &"CrosswordCell"
 			slot.add_child(field)
 			field.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 			field.offset_top = 18
 			slot.custom_minimum_size = Vector2(maxf(cell_size, field.get_combined_minimum_size().x), maxf(cell_size, field.get_combined_minimum_size().y + 18))
-			var focus := StyleBoxFlat.new()
-			focus.bg_color = Color.TRANSPARENT
-			focus.border_color = Color("#ffce57")
-			focus.set_border_width_all(3)
-			field.add_theme_stylebox_override("focus", focus)
 			cells[point] = field
 			field.focus_entered.connect(_focus_cell.bind(point))
 			field.text_changed.connect(_edit_cell.bind(point))

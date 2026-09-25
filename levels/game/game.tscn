@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch7hejmglxybj"]
+[gd_scene load_steps=4 format=3 uid="uid://ch7hejmglxybj"]
 
 [ext_resource type="Script" uid="uid://c2d6x4qqjxt3a" path="res://levels/game/game_controller.gd" id="1_od3m6"]
 [ext_resource type="PackedScene" uid="uid://bwq4c78slau6l" path="res://gui/main_menu/main_menu.tscn" id="2_748nt"]
+[ext_resource type="PackedScene" path="res://gui/settings/filters/brightness_filter/brightness_filter.tscn" id="3_brightness"]
 
 [node name="GameController" type="Node" node_paths=PackedStringArray("world_2d", "gui")]
 script = ExtResource("1_od3m6")
@@ -20,3 +21,5 @@ grow_vertical = 2
 
 [node name="main_menu" parent="GUI" instance=ExtResource("2_748nt")]
 layout_mode = 1
+
+[node name="BrightnessFilter" parent="." instance=ExtResource("3_brightness")]

@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=3 uid="uid://v66i8wu1kqel"]
+
+[ext_resource type="Theme" uid="uid://gcivgar7cgpx" path="res://gui/themes/pixel_adventure/pixel_adventure_theme.tres" id="1_theme"]
+[ext_resource type="Texture2D" uid="uid://c7rld0666v3pc" path="res://assets/garibot1/sprites/collectibles/celular_desmontado.png" id="2_phone"]
+[ext_resource type="Texture2D" uid="uid://40pmcctwng37" path="res://assets/garibot1/sprites/collectibles/monitor.png" id="3_monitor"]
+[ext_resource type="Texture2D" uid="uid://sslfcfo4gxxc" path="res://assets/garibot1/sprites/lixeira/lixeira_verde.png" id="4_bin"]
+[ext_resource type="Texture2D" uid="uid://yv67qvyay681" path="res://assets/garibot1/sprites/recycler/complete.png" id="5_recycler"]
+[ext_resource type="Texture2D" uid="uid://cyvnl7k6phko1" path="res://assets/gui/kenney_pixel_adventure/sample.png" id="6_sample"]
+[ext_resource type="Texture2D" uid="uid://cm07ggijq03kt" path="res://assets/gui/kenney_pixel_adventure/preview.png" id="7_preview"]
+
+[node name="AssetPreview" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.07, 0.12, 0.15, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Panel" type="PanelContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Margin/Panel"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Content" type="VBoxContainer" parent="Margin/Panel/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Margin/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Biblioteca visual — Garibot"
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="Margin/Panel/Scroll/Content"]
+layout_mode = 2
+text = "Recursos para coleta, desmontagem, reciclagem e interfaces. Esta cena pode ser editada no Godot ou executada com F6."
+autowrap_mode = 2
+
+[node name="Examples" type="HFlowContainer" parent="Margin/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+
+[node name="Phone" type="TextureRect" parent="Margin/Panel/Scroll/Content/Examples"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+tooltip_text = "Celular desmontado — Garibot original"
+texture = ExtResource("2_phone")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Monitor" type="TextureRect" parent="Margin/Panel/Scroll/Content/Examples"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+tooltip_text = "Monitor — Garibot original"
+texture = ExtResource("3_monitor")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bin" type="TextureRect" parent="Margin/Panel/Scroll/Content/Examples"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+tooltip_text = "Lixeira — Garibot original"
+texture = ExtResource("4_bin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Recycler" type="TextureRect" parent="Margin/Panel/Scroll/Content/Examples"]
+custom_minimum_size = Vector2(180, 128)
+layout_mode = 2
+tooltip_text = "Máquina de reciclagem — Garibot original"
+texture = ExtResource("5_recycler")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Buttons" type="HFlowContainer" parent="Margin/Panel/Scroll/Content"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 12
+
+[node name="Normal" type="Button" parent="Margin/Panel/Scroll/Content/Buttons"]
+layout_mode = 2
+text = "Reciclar"
+
+[node name="Toggle" type="Button" parent="Margin/Panel/Scroll/Content/Buttons"]
+layout_mode = 2
+toggle_mode = true
+text = "Selecionar"
+
+[node name="Disabled" type="Button" parent="Margin/Panel/Scroll/Content/Buttons"]
+layout_mode = 2
+disabled = true
+text = "Indisponível"
+
+[node name="Check" type="CheckBox" parent="Margin/Panel/Scroll/Content"]
+layout_mode = 2
+text = "Mostrar dicas de reciclagem"
+
+[node name="Slider" type="HSlider" parent="Margin/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+value = 65.0
+
+[node name="Input" type="LineEdit" parent="Margin/Panel/Scroll/Content"]
+layout_mode = 2
+placeholder_text = "Resposta do minigame"
+
+[node name="Sample" type="TextureRect" parent="Margin/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("6_sample")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Preview" type="TextureRect" parent="Margin/Panel/Scroll/Content"]
+custom_minimum_size = Vector2(0, 460)
+layout_mode = 2
+texture = ExtResource("7_preview")
+expand_mode = 1
+stretch_mode = 5

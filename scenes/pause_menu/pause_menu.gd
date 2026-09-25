@@ -34,7 +34,7 @@ func open_settings() -> void:
 	$Dim.hide()
 	# Carregado sob demanda para evitar dependência circular com a fase,
 	# que também instancia este menu de pausa.
-	var settings_scene := load("res://scenes/options/settings_menu/settings_menu.tscn") as PackedScene
+	var settings_scene := load("res://gui/settings/settings_menu/settings_menu.tscn") as PackedScene
 	if settings_scene == null:
 		push_error("PauseMenu: não foi possível carregar as configurações.")
 		panel.show()

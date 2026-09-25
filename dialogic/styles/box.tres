@@ -35,7 +35,15 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_kpyum"]
 script = ExtResource("2_jwae3")
 scene = ExtResource("6_oj44s")
-overrides = {}
+overrides = {
+"box_color_custom": "Color(1, 1, 1, 1)",
+"box_color_use_global": "false",
+"box_panel": "\"res://gui/themes/pixel_adventure/dialogue_panel.tres\"",
+"box_size": "Vector2(800, 150)",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_panel": "\"res://gui/themes/pixel_adventure/dialogue_panel.tres\"",
+"name_label_box_use_global_color": "false"
+}
 
 [sub_resource type="Resource" id="Resource_dxr0o"]
 script = ExtResource("2_jwae3")
@@ -72,6 +80,10 @@ layer_info = {
 "16": SubResource("Resource_m1ld7"),
 "17": SubResource("Resource_bqbih")
 }
-base_overrides = {}
+base_overrides = {
+"global_bg_color": "Color(0.07, 0.14, 0.18, 0.98)",
+"global_font": "\"res://assets/fonts/pixelify_sans/PixelifySans.ttf\"",
+"global_font_color": "Color(0.94, 0.96, 0.91, 1)"
+}
 layers = Array[ExtResource("2_jwae3")]([])
 metadata/_latest_layer = ""

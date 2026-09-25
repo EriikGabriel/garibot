@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://blf5273uinck8"]
+
+[ext_resource type="PackedScene" path="res://gui/settings/controls/setting_slider/setting_slider.tscn" id="1"]
+
+[node name="AudioDialogueSettingsPage" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Áudio e diálogo"
+
+[node name="FontSize" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Tamanho da fonte"
+settings_key = "dialog_font_size"
+min_value = 12.0
+max_value = 40.0
+
+[node name="TextSpeed" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Velocidade do texto"
+settings_key = "text_speed"
+min_value = 50.0
+max_value = 200.0
+step_value = 10.0
+value_ratio = 100.0
+
+[node name="Master" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Volume geral"
+settings_key = "master_volume"
+value_ratio = 100.0
+
+[node name="Music" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Volume da música"
+settings_key = "music_volume"
+value_ratio = 100.0
+
+[node name="Effects" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Volume dos efeitos"
+settings_key = "sfx_volume"
+value_ratio = 100.0
