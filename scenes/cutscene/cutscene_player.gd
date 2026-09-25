@@ -279,9 +279,6 @@ func _stop_bar_animation() -> void:
 	_bar_tween = null
 
 
-
-
-
 func _restore_bars_after_dialog() -> void:
 	if not is_instance_valid(_bar_layer):
 		return
@@ -294,7 +291,7 @@ func _restore_bars_after_dialog() -> void:
 		_bar_top.hide()
 		_bar_bottom.hide()
 	_bars_were_visible_before_dialog = false
-
+	
 
 func _bar_time(step: Dictionary) -> float:
 	if Settings.get_setting("reduced_motion", false):

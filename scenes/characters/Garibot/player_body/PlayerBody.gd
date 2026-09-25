@@ -13,6 +13,7 @@ var player: Player
 signal anim_finished
 
 @export var change_skin_enabled := true
+@export_range(0.0, 0.3, 0.01) var locomotion_blend_time := 0.08
 var playing_cutscene_anim := false
 
 var animation_details = {"vacuum":["aim_vaccum", 1], "bubble":["fly_bubble", 2], "shock":["aim_shock", 0], "magnet":["aim_magnet", 3],}
@@ -38,7 +39,8 @@ func _process(_delta: float) -> void:
 		return
 	if playing_cutscene_anim:
 		return
-	var current_anim = anim_player.current_animation if anim_player.is_playing() else ""
+	# Mantém a pose final de animações não cíclicas até mudar de estado.
+	var current_anim: StringName = anim_player.assigned_animation
 	# Estados específicos (como giro) sobrescrevem a velocidade abaixo.
 	# O reset impede que a velocidade do estado anterior vaze para a caminhada.
 	anim_player.speed_scale = 1.0
@@ -48,15 +50,15 @@ func _process(_delta: float) -> void:
 				anim_player.play("hurt")
 		player.STATE.IDLE:
 			if current_anim != "idle":
-				anim_player.play("idle")
+				anim_player.play("idle", locomotion_blend_time)
 		player.STATE.MOVE:
 			# A animação usa o módulo da velocidade para funcionar igual nos dois lados.
 			var speed_factor = 3.0 * absf(player.move_velocity) / maxf(float(player.get_max_speed()), 1.0)
 			var speed = clampf(speed_factor, 1.0, 3.0)
+			# Usa apenas speed_scale: custom_speed seria multiplicado por ele.
+			anim_player.speed_scale = speed
 			if current_anim != "walk":
-				anim_player.play("walk", -1, speed)
-			else:
-				anim_player.speed_scale = speed
+				anim_player.play("walk", locomotion_blend_time)
 		player.STATE.AIR:
 			if player.jump_velocity < 0:
 				if current_anim != "jump":
@@ -86,12 +88,13 @@ func change_skin(index: int) -> bool:
 	return true
 
 func play(animation_name: String, speed: float = 1.0) -> void:
-	anim_player.play(animation_name, -1, speed)
+	anim_player.speed_scale = speed
+	anim_player.play(animation_name)
 
 func play_cutscene_animation(animation_name: String, speed: float = 1.0) -> void:
 	# Bloqueia o controle automático para uma animação roteirizada tocar livremente.
 	playing_cutscene_anim = true
-	anim_player.play(animation_name, -1, speed)
+	play(animation_name, speed)
 
 func stop_cutscene_animation() -> void:
 	playing_cutscene_anim = false

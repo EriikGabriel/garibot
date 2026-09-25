@@ -23,5 +23,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if _spoke or not body is Player or timeline_path.is_empty():
 		return
 	_spoke = true
-	$TalkArea.monitoring = false
+	$TalkArea.set_deferred("monitoring", false)
 	Phase1Dialogue.start(timeline_path, get_parent())

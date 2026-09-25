@@ -40,6 +40,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "state"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 zoom = Vector2(2, 2)
 limit_left = -400
 limit_right = 20000

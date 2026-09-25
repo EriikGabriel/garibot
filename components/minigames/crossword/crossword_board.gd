@@ -1,6 +1,7 @@
 extends ScrollContainer
 ## Cada entrada define answer, clue, start (Vector2i) e vertical.
 signal completed
+signal answer_checked(correct: bool)
 @export var entries: Array[Dictionary] = []
 @export_file("*.json") var puzzle_file := ""
 @export_range(56, 96) var cell_size := 64
@@ -148,9 +149,11 @@ func check_answers() -> void:
 		if cells[point].text == solution[point]:
 			correct += 1
 	if correct == solution.size():
+		answer_checked.emit(true)
 		status.text = "Tudo certo! Cruzadinha concluída."
 		if not solved:
 			solved = true
 			completed.emit()
 	else:
+		answer_checked.emit(false)
 		status.text = "%d de %d letras corretas. Revise as pistas e tente novamente." % [correct, solution.size()]

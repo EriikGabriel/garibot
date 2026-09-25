@@ -91,5 +91,6 @@ func _on_back_pressed() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if opened_from_pause and event.is_action_pressed("ui_cancel"):
+		GameAudio.play_sound(&"ui_back")
 		get_viewport().set_input_as_handled()
 		_on_finish_pressed()

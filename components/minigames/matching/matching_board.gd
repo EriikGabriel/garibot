@@ -2,6 +2,7 @@ extends Control
 class_name MatchingBoard
 
 signal completed
+signal answer_checked(correct: bool)
 
 const BOARD_SIZE := Vector2(720, 380)
 const BUTTON_SIZE := Vector2(250, 64)
@@ -89,6 +90,7 @@ func _build_board() -> void:
 
 	for index in right_items.size():
 		var button := Button.new()
+		button.set_meta("audio_cue", &"")
 		button.text = right_items[index]
 		button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		button.position = Vector2(RIGHT_COLUMN_X, FIRST_ROW_Y + index * ROW_SPACING)
@@ -122,9 +124,11 @@ func _select_right(index: int) -> void:
 		feedback.text = "Primeiro escolha uma etapa na coluna da esquerda."
 		return
 	if correct_targets[selected_left] != index:
+		answer_checked.emit(false)
 		feedback.text = "Essa função pertence a outra etapa. Tente novamente."
 		return
 	matches[selected_left] = index
+	answer_checked.emit(true)
 	left_buttons[selected_left].disabled = true
 	right_buttons[index].disabled = true
 	feedback.text = "Correto! Etapa e função conectadas."

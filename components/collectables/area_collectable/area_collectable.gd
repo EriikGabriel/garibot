@@ -20,6 +20,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if _collected or not body.is_in_group(collector_group):
 		return
 	_collected = true
-	monitoring = false
+	set_deferred("monitoring", false)
 	collected.emit(item_name)
 	queue_free()

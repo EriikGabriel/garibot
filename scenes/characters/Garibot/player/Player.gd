@@ -236,6 +236,7 @@ func begin_state_machine():
 				ledgedrop_cooldown = 0
 				change_state(STATE.AIR)
 			elif dir != 0:
+				move_velocity = approach(move_velocity, get_max_speed() * dir, FLOOR_ACC)
 				change_state(STATE.MOVE)
 		STATE.MOVE:
 			move_velocity = approach(move_velocity, get_max_speed() * dir, FLOOR_ACC)

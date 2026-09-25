@@ -26,6 +26,7 @@ SceneManager="*res://scripts/scene_manager.gd"
 Toolkit="*res://scripts/toolkit.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Settings="*res://scripts/settings.gd"
+GameAudio="*res://components/audio/game_audio/game_audio.tscn"
 
 [dialogic]
 
@@ -175,5 +176,4 @@ dialogic_default_action={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-2d/snap/snap_2d_vertices_to_pixel=true
 2d/snap/#Keeppixel-artspritesalignedtowholescreenpixelswhiletheymoveand#whiletheiranimationtracksapplyrotationsandoffsets.snap_2d_transforms_to_pixel=true

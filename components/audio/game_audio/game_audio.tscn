@@ -1,0 +1,51 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://components/audio/game_audio/game_audio.gd" id="1_script"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/ui/ui_move.mp3" id="ui_move"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/ui/ui_select.mp3" id="ui_select"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/ui/ui_deselect.mp3" id="ui_back"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/ui/ui_main_menu_select.mp3" id="ui_start"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/recycle_anim/recycle_anim_insert.mp3" id="collect"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/ui/correct_answer_1.mp3" id="correct"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/ui/wrong_answer.mp3" id="incorrect"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/ui/correct_answer_3.mp3" id="completed"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/songs/win-fanfare.mp3" id="victory"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/dialogs/talk_garidog.mp3" id="garidog"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/dialogs/talk_kid.mp3" id="crianca"]
+[ext_resource type="AudioStream" path="res://assets/garibot1/audio/recycle_anim/garibot_theme_last_versionipromise.mp3" id="theme"]
+
+[node name="GameAudio" type="Node"]
+process_mode = 3
+script = ExtResource("1_script")
+sounds = {
+"ui_move": ExtResource("ui_move"),
+"ui_select": ExtResource("ui_select"),
+"ui_back": ExtResource("ui_back"),
+"ui_start": ExtResource("ui_start"),
+"collect": ExtResource("collect"),
+"correct": ExtResource("correct"),
+"incorrect": ExtResource("incorrect"),
+"completed": ExtResource("completed"),
+"victory": ExtResource("victory")
+}
+voices = {
+"garidog": ExtResource("garidog"),
+"crianca": ExtResource("crianca")
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+volume_db = -14.0
+stream = ExtResource("theme")
+
+[node name="UI" type="AudioStreamPlayer" parent="."]
+bus = &"Sfx"
+volume_db = -12.0
+
+[node name="Feedback" type="AudioStreamPlayer" parent="."]
+bus = &"Sfx"
+volume_db = -6.0
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+bus = &"Sfx"
+volume_db = -12.0
