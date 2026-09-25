@@ -69,7 +69,6 @@ os pixels; o projeto já usa esse filtro por padrão.
 4. Ao procurar um arquivo reaproveitado, consulte `garibot1/manifest.json`: o campo
    `path` indica o recurso canônico, mesmo quando ele está fora de `garibot1/`.
 
-O tema agora está aplicado globalmente pelo `project.godot`, com a fonte Pixelify
-Sans (licença SIL OFL em `fonts/pixelify_sans/`). As telas compartilham os estilos;
+O tema agora está aplicado globalmente pelo `project.godot`, com a fonte VT323 (licença SIL OFL em `fonts/VT323/`). As telas compartilham os estilos;
 consulte `gui/themes/pixel_adventure/README.md` para editar as variações no Godot.
 Nenhuma lógica do jogo original foi importada.

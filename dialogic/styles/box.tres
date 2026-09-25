@@ -82,7 +82,7 @@ layer_info = {
 }
 base_overrides = {
 "global_bg_color": "Color(0.07, 0.14, 0.18, 0.98)",
-"global_font": "\"res://assets/fonts/pixelify_sans/PixelifySans.ttf\"",
+"global_font": "\"res://assets/fonts/VT323/VT323-Regular.ttf\"",
 "global_font_color": "Color(0.94, 0.96, 0.91, 1)"
 }
 layers = Array[ExtResource("2_jwae3")]([])

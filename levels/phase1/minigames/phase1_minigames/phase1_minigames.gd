@@ -8,8 +8,8 @@ signal finished
 @onready var match_page: Control = $Backdrop/Panel/Margin/Body/MatchPage
 @onready var final_page: Control = $Backdrop/Panel/Margin/Body/FinalPage
 @onready var word_feedback: Label = $Backdrop/Panel/Margin/Body/WordPage/Feedback
-@onready var check_button: Button = $Backdrop/Panel/Margin/Body/WordPage/Check
-@onready var next_button: Button = $Backdrop/Panel/Margin/Body/WordPage/Next
+@onready var check_button: Button = $Backdrop/Panel/Margin/Body/WordPage/Actions/Check
+@onready var next_button: Button = $Backdrop/Panel/Margin/Body/WordPage/Actions/Next
 @onready var matching_board: MatchingBoard = $Backdrop/Panel/Margin/Body/MatchPage/MatchingBoard
 @onready var finish_button: Button = $Backdrop/Panel/Margin/Body/FinalPage/Finish
 
@@ -25,6 +25,7 @@ func _on_check_pressed() -> void:
 	crossword.check_answers()
 
 func _on_crossword_completed() -> void:
+	word_feedback.show()
 	word_feedback.text = "Muito bem! Agora vamos conhecer o caminho da reciclagem."
 	check_button.hide()
 	next_button.show()
@@ -42,7 +43,9 @@ func _on_matching_completed() -> void:
 	finish_button.grab_focus()
 
 func _on_skip_pressed() -> void:
-	word_page.hide()
+	if word_page.visible:
+		_on_next_pressed()
+		return
 	match_page.hide()
 	final_page.show()
 	finish_button.grab_focus()

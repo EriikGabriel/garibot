@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0kf4bx525fqf" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0002.png" id="1_normal"]
 [ext_resource type="Texture2D" uid="uid://dqdsluur0ymfk" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0015.png" id="2_hover"]
 [ext_resource type="Texture2D" uid="uid://850j03pqffep" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0003.png" id="4_panel"]
-[ext_resource type="FontFile" uid="uid://whrkv8wrc5s5" path="res://assets/fonts/pixelify_sans/PixelifySans.ttf" id="5_font"]
+[ext_resource type="FontFile" uid="uid://d1qm0bk13ojf7" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="5_font"]
 [ext_resource type="Texture2D" uid="uid://orsp4b8bt7c3" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0001.png" id="6_gold"]
 [ext_resource type="Texture2D" uid="uid://dcen60ja8rowd" path="res://gui/themes/pixel_adventure/icons/slider_grabber.svg" id="7_grabber"]
 [ext_resource type="Texture2D" uid="uid://bcmdrfd5008ii" path="res://gui/themes/pixel_adventure/icons/unchecked.svg" id="8_unchecked"]

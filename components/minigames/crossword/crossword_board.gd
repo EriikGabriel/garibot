@@ -4,6 +4,9 @@ signal completed
 @export var entries: Array[Dictionary] = []
 @export_file("*.json") var puzzle_file := ""
 @export_range(56, 96) var cell_size := 64
+@export_range(36, 56) var minimum_cell_size := 36
+@export_range(160, 300) var clue_minimum_width := 200
+@export_range(1, 4) var maximum_clue_columns := 2
 const GENERATOR = preload("res://components/minigames/crossword/crossword_generator.gd")
 var cells: Dictionary = {}
 var solution: Dictionary = {}
@@ -11,6 +14,11 @@ var paths: Array = []
 var active_word := 0
 var solved := false
 var status: Label
+@onready var layout: BoxContainer = $Layout
+@onready var grid: GridContainer = $Layout/Grid
+@onready var clue_panel: VBoxContainer = $Layout/CluePanel
+@onready var clues: GridContainer = $Layout/CluePanel/Clues
+var grid_height := 0
 
 func _ready() -> void:
 	follow_focus = true
@@ -29,11 +37,6 @@ func _ready() -> void:
 			push_warning(warning)
 	if entries.is_empty():
 		return
-	var layout := HBoxContainer.new()
-	layout.add_theme_constant_override("separation", 28)
-	add_child(layout)
-	var grid := GridContainer.new()
-	grid.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	var width := 0
 	var height := 0
 	for entry in entries:
@@ -49,9 +52,7 @@ func _ready() -> void:
 			height = maxi(height, point.y + 1)
 		paths.append(path)
 	grid.columns = width
-	grid.add_theme_constant_override("h_separation", 6)
-	grid.add_theme_constant_override("v_separation", 6)
-	layout.add_child(grid)
+	grid_height = height
 	for y in height:
 		for x in width:
 			var point := Vector2i(x, y)
@@ -67,8 +68,8 @@ func _ready() -> void:
 			field.theme_type_variation = &"CrosswordCell"
 			slot.add_child(field)
 			field.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-			field.offset_top = 18
-			slot.custom_minimum_size = Vector2(maxf(cell_size, field.get_combined_minimum_size().x), maxf(cell_size, field.get_combined_minimum_size().y + 18))
+			field.add_theme_font_size_override("font_size", 22)
+			field.offset_top = 10
 			cells[point] = field
 			field.focus_entered.connect(_focus_cell.bind(point))
 			field.text_changed.connect(_edit_cell.bind(point))
@@ -80,22 +81,38 @@ func _ready() -> void:
 					number.add_theme_color_override("font_color", Color("#ffdf8c"))
 					number.mouse_filter = Control.MOUSE_FILTER_IGNORE
 					slot.add_child(number)
-	var clues := VBoxContainer.new()
-	clues.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	clues.add_theme_constant_override("separation", 14)
-	clues.custom_minimum_size.x = 290
-	layout.add_child(clues)
 	for i in entries.size():
 		var clue := Button.new()
 		clue.text = "%d. %s • %d letras\n%s" % [i + 1, "Vertical" if entries[i]["vertical"] else "Horizontal", str(entries[i]["answer"]).length(), entries[i]["clue"]]
 		clue.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		clue.custom_minimum_size = Vector2(250, 76)
+		clue.custom_minimum_size = Vector2(clue_minimum_width, 76)
+		clue.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		clue.add_theme_font_size_override("font_size", 18)
 		clue.pressed.connect(select_word.bind(i))
 		clues.add_child(clue)
-	status = Label.new()
-	status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	status.text = warning if not warning.is_empty() else "Escolha uma pista e preencha uma letra por casa. Role a grade se necessário."
-	clues.add_child(status)
+	status = $Layout/CluePanel/Status
+	status.text = warning if not warning.is_empty() else "Escolha uma pista e preencha uma letra por casa."
+	resized.connect(_fit_layout)
+	_fit_layout.call_deferred()
+
+func _fit_layout() -> void:
+	if grid_height == 0:
+		return
+	var gap := layout.get_theme_constant("separation")
+	var cell_gap := grid.get_theme_constant("h_separation")
+	var minimum_grid_width := grid.columns * minimum_cell_size + (grid.columns - 1) * cell_gap
+	var side_by_side := size.x >= minimum_grid_width + clue_minimum_width * 2 + gap + 24
+	layout.vertical = not side_by_side
+	var grid_width := maxf(minimum_grid_width, size.x * 0.48) if side_by_side else size.x
+	var clue_width := size.x - grid_width - gap if side_by_side else size.x
+	clues.columns = clampi(int((clue_width + 12) / (clue_minimum_width + 12)), 1, maximum_clue_columns)
+	# Reserve room for the clue cards when the screen requires a stacked layout.
+	var grid_available_height := size.y if side_by_side else size.y - clue_panel.get_combined_minimum_size().y - gap
+	var fitted := minf((grid_width - (grid.columns - 1) * cell_gap) / grid.columns,
+		(grid_available_height - (grid_height - 1) * cell_gap) / grid_height)
+	var side := clampf(floorf(fitted), minimum_cell_size, cell_size)
+	for slot in grid.get_children():
+		slot.custom_minimum_size = Vector2(side, side)
 
 func select_word(index: int) -> void:
 	if index < 0 or index >= paths.size():

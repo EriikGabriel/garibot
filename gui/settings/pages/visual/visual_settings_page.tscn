@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://gui/settings/controls/setting_slider/setting_slider.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://bxgc0ijwy5jqy" path="res://gui/settings/controls/setting_toggle/setting_toggle.tscn" id="2"]
-[ext_resource type="FontFile" uid="uid://whrkv8wrc5s5" path="res://assets/fonts/pixelify_sans/PixelifySans.ttf" id="2_jnu6v"]
+[ext_resource type="FontFile" uid="uid://d1qm0bk13ojf7" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="2_jnu6v"]
 [ext_resource type="Theme" uid="uid://gcivgar7cgpx" path="res://gui/themes/pixel_adventure/pixel_adventure_theme.tres" id="3_8jy20"]
 [ext_resource type="Texture2D" uid="uid://cvbcdv4ixiy7y" path="res://assets/sprites/player/PlayerCharIcon.png" id="3_hty3n"]
 
@@ -48,18 +48,6 @@ value_ratio = 100.0
 layout_mode = 2
 label_text = "Alto contraste"
 settings_key = "high_contrast"
-
-[node name="Fullscreen" parent="." instance=ExtResource("2")]
-visible = false
-layout_mode = 2
-label_text = "Tela cheia"
-settings_key = "fullscreen"
-
-[node name="ReducedMotion" parent="." instance=ExtResource("2")]
-visible = false
-layout_mode = 2
-label_text = "Reduzir movimento da câmera"
-settings_key = "reduced_motion"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2

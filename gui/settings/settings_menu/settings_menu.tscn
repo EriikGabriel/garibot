@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://yqy045o8mtt3"]
+[gd_scene load_steps=7 format=3 uid="uid://yqy045o8mtt3"]
 
 [ext_resource type="Script" uid="uid://dllceelus7w87" path="res://gui/settings/settings_menu/settings_menu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://ciw3yckcdcfvh" path="res://gui/settings/pages/visual/visual_settings_page.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://dv5xsvo1j5tg8" path="res://gui/settings/pages/controls/controls_settings_page.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://blf5273uinck8" path="res://gui/settings/pages/audio_dialogue/audio_dialogue_settings_page.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://cuowvkcs5ru1v" path="res://levels/phase1/phase1.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://gui/settings/pages/display_motion/display_motion_settings_page.tscn" id="6_display_motion"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -61,26 +62,86 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_type_variation = &"MutedLabel"
 theme_override_font_sizes/font_size = 18
-text = "Etapa 1 de 3"
+text = "Etapa 1 de 4"
 horizontal_alignment = 1
 
-[node name="Content" type="ScrollContainer" parent="Overlay/Panel/Margin/Body"]
+[node name="Layout" type="HBoxContainer" parent="Overlay/Panel/Margin/Body"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 24
 
-[node name="Pages" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Content"]
+[node name="Sidebar" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Layout"]
+visible = false
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Visual" type="Button" parent="Overlay/Panel/Margin/Body/Layout/Sidebar"]
+layout_mode = 2
+toggle_mode = true
+text = "Imagem"
+alignment = 0
+
+[node name="Controls" type="Button" parent="Overlay/Panel/Margin/Body/Layout/Sidebar"]
+layout_mode = 2
+toggle_mode = true
+text = "Controles"
+alignment = 0
+
+[node name="AudioDialogue" type="Button" parent="Overlay/Panel/Margin/Body/Layout/Sidebar"]
+layout_mode = 2
+toggle_mode = true
+text = "Áudio e diálogo"
+alignment = 0
+
+[node name="DisplayMotion" type="Button" parent="Overlay/Panel/Margin/Body/Layout/Sidebar"]
+layout_mode = 2
+toggle_mode = true
+text = "Tela e movimento"
+alignment = 0
+
+[node name="Spacer" type="Control" parent="Overlay/Panel/Margin/Body/Layout/Sidebar"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Hint" type="Label" parent="Overlay/Panel/Margin/Body/Layout/Sidebar"]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+text = "Alterações salvas
+automaticamente"
+
+[node name="Restore" type="Button" parent="Overlay/Panel/Margin/Body/Layout/Sidebar"]
+layout_mode = 2
+text = "Restaurar padrão"
+
+[node name="Return" type="Button" parent="Overlay/Panel/Margin/Body/Layout/Sidebar"]
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+text = "Voltar ao jogo"
+
+[node name="Content" type="ScrollContainer" parent="Overlay/Panel/Margin/Body/Layout"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VisualPage" parent="Overlay/Panel/Margin/Body/Content/Pages" instance=ExtResource("2")]
+[node name="Pages" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Layout/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VisualPage" parent="Overlay/Panel/Margin/Body/Layout/Content/Pages" instance=ExtResource("2")]
 layout_mode = 2
 
-[node name="ControlsPage" parent="Overlay/Panel/Margin/Body/Content/Pages" instance=ExtResource("3")]
+[node name="ControlsPage" parent="Overlay/Panel/Margin/Body/Layout/Content/Pages" instance=ExtResource("3")]
 visible = false
 layout_mode = 2
 
-[node name="AudioDialoguePage" parent="Overlay/Panel/Margin/Body/Content/Pages" instance=ExtResource("4")]
+[node name="AudioDialoguePage" parent="Overlay/Panel/Margin/Body/Layout/Content/Pages" instance=ExtResource("4")]
+visible = false
+layout_mode = 2
+
+[node name="DisplayMotionPage" parent="Overlay/Panel/Margin/Body/Layout/Content/Pages" instance=ExtResource("6_display_motion")]
 visible = false
 layout_mode = 2
 
@@ -107,6 +168,8 @@ layout_mode = 2
 theme_type_variation = &"PrimaryButton"
 text = "Começar a jogar"
 
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Layout/Sidebar/Restore" to="." method="_on_restore_pressed"]
+[connection signal="pressed" from="Overlay/Panel/Margin/Body/Layout/Sidebar/Return" to="." method="_on_finish_pressed"]
 [connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Restore" to="." method="_on_restore_pressed"]
 [connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Overlay/Panel/Margin/Body/Navigation/Next" to="." method="_on_next_pressed"]

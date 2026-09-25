@@ -1,7 +1,7 @@
 # Tema global do Garibot 2
 
 `pixel_adventure_theme.tres` é o tema padrão em `project.godot` → GUI → Theme.
-Controles novos e criados por scripts herdam a fonte Pixelify Sans e os estilos.
+Controles novos e criados por scripts herdam a fonte VT323 e os estilos.
 Os menus, a HUD e os minigames usam os mesmos painéis; o Dialogic recebe a fonte
 e a paleta por `dialogic/styles/`, sem alterações nos arquivos do plugin.
 
@@ -23,4 +23,4 @@ navegação visíveis.
 O brilho global continua aplicado por cima de todas as interfaces.
 
 Amostras: `gui/asset_preview/asset_preview.tscn`. Execute com F6 ou edite a cena
-no editor. A fonte e sua licença estão em `assets/fonts/pixelify_sans/`.
+no editor. A fonte e sua licença estão em `assets/fonts/VT323/`.

@@ -23,19 +23,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Margin" type="MarginContainer" parent="Backdrop/Panel"]
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
 
 [node name="Body" type="Control" parent="Backdrop/Panel/Margin"]
 layout_mode = 2
@@ -67,25 +67,29 @@ size_flags_vertical = 3
 puzzle_file = "res://levels/phase1/minigames/phase1_minigames/reee_crossword.json"
 
 [node name="Feedback" type="Label" parent="Backdrop/Panel/Margin/Body/WordPage"]
-custom_minimum_size = Vector2(0, 48)
+visible = false
 layout_mode = 2
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Check" type="Button" parent="Backdrop/Panel/Margin/Body/WordPage"]
+[node name="Actions" type="HBoxContainer" parent="Backdrop/Panel/Margin/Body/WordPage"]
+layout_mode = 2
+alignment = 1
+
+[node name="Check" type="Button" parent="Backdrop/Panel/Margin/Body/WordPage/Actions"]
 layout_mode = 2
 theme_type_variation = &"PrimaryButton"
 text = "Verificar respostas"
 
-[node name="Next" type="Button" parent="Backdrop/Panel/Margin/Body/WordPage"]
+[node name="Next" type="Button" parent="Backdrop/Panel/Margin/Body/WordPage/Actions"]
 visible = false
 layout_mode = 2
 theme_type_variation = &"PrimaryButton"
 text = "Próxima atividade"
 
-[node name="Skip" type="Button" parent="Backdrop/Panel/Margin/Body/WordPage"]
+[node name="Skip" type="Button" parent="Backdrop/Panel/Margin/Body/WordPage/Actions"]
 layout_mode = 2
-text = "Pular atividades"
+text = "Pular atividade"
 
 [node name="MatchPage" type="VBoxContainer" parent="Backdrop/Panel/Margin/Body"]
 visible = false
@@ -147,8 +151,8 @@ layout_mode = 2
 theme_type_variation = &"PrimaryButton"
 text = "Concluir fase"
 
-[connection signal="pressed" from="Backdrop/Panel/Margin/Body/WordPage/Check" to="." method="_on_check_pressed"]
-[connection signal="pressed" from="Backdrop/Panel/Margin/Body/WordPage/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="Backdrop/Panel/Margin/Body/WordPage/Skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="Backdrop/Panel/Margin/Body/WordPage/Actions/Check" to="." method="_on_check_pressed"]
+[connection signal="pressed" from="Backdrop/Panel/Margin/Body/WordPage/Actions/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Backdrop/Panel/Margin/Body/WordPage/Actions/Skip" to="." method="_on_skip_pressed"]
 [connection signal="pressed" from="Backdrop/Panel/Margin/Body/MatchPage/Skip" to="." method="_on_skip_pressed"]
 [connection signal="pressed" from="Backdrop/Panel/Margin/Body/FinalPage/Finish" to="." method="_on_finish_pressed"]

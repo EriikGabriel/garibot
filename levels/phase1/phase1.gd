@@ -61,7 +61,7 @@ func _on_intro_finished() -> void:
 		npc.get_node("TalkArea").monitoring = true
 	_update_hud()
 
-func _on_reee_collected(item_name: String) -> void:
+func _on_reee_collected(_item_name: String) -> void:
 	_reee_count += 1
 	$World.register_reee()
 	_update_hud()

@@ -40,11 +40,9 @@ directories/dtl_directory={
 "conclusao": "res://dialogic/timelines/fase1/conclusao.dtl",
 "correio_bo": "res://dialogic/timelines/fase1/correio_bo.dtl",
 "garidog": "res://dialogic/timelines/fase1/garidog.dtl",
-"instructions": "res://dialogic/timelines/teste/instructions.dtl",
 "intro": "res://dialogic/timelines/fase1/intro.dtl",
 "morador": "res://dialogic/timelines/fase1/morador.dtl",
-"reee": "res://dialogic/timelines/fase1/reee.dtl",
-"teste": "res://dialogic/timelines/teste/teste.dtl"
+"reee": "res://dialogic/timelines/fase1/reee.dtl"
 }
 variables={}
 layout/style_list=["res://dialogic/styles/bubbles.tres", "res://dialogic/styles/box.tres"]
@@ -125,7 +123,7 @@ DamageOnContact="Emit Damage On Contact"
 [gui]
 
 theme/custom="res://gui/themes/pixel_adventure/pixel_adventure_theme.tres"
-theme/custom_font="uid://whrkv8wrc5s5"
+theme/custom_font="uid://d1qm0bk13ojf7"
 
 [input]
 
