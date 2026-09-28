@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=20 format=3 uid="uid://gcivgar7cgpx"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://gcivgar7cgpx"]
 
 [ext_resource type="Texture2D" uid="uid://d0kf4bx525fqf" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0002.png" id="1_normal"]
 [ext_resource type="Texture2D" uid="uid://dqdsluur0ymfk" path="res://assets/gui/kenney_pixel_adventure/tiles/large_tiles/thick_outline/tile_0015.png" id="2_hover"]
@@ -63,6 +63,62 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.46, 0.65, 0.68, 1)
+
+[sub_resource type="Gradient" id="TransparentGradient"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="ScrollEmptyIcon"]
+gradient = SubResource("TransparentGradient")
+width = 1
+height = 1
+
+[sub_resource type="StyleBoxFlat" id="ScrollThumb"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.33, 0.72, 0.65, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.57, 0.66, 1)
+
+[sub_resource type="StyleBoxFlat" id="ScrollHover"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.56, 0.82, 0.73, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.85, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="ScrollPressed"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.84, 0.48, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.57, 0.66, 1)
+
+[sub_resource type="StyleBoxFlat" id="ScrollTrack"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.09, 0.15, 0.19, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.23, 0.37, 0.4, 1)
 
 [sub_resource type="StyleBoxFlat" id="Fill"]
 content_margin_top = 5.0
@@ -143,6 +199,17 @@ CrosswordCell/font_sizes/font_size = 28
 CrosswordCell/styles/focus = SubResource("Focus")
 CrosswordCell/styles/normal = SubResource("Cell")
 HBoxContainer/constants/separation = 16
+HScrollBar/icons/decrement = SubResource("ScrollEmptyIcon")
+HScrollBar/icons/decrement_highlight = SubResource("ScrollEmptyIcon")
+HScrollBar/icons/decrement_pressed = SubResource("ScrollEmptyIcon")
+HScrollBar/icons/increment = SubResource("ScrollEmptyIcon")
+HScrollBar/icons/increment_highlight = SubResource("ScrollEmptyIcon")
+HScrollBar/icons/increment_pressed = SubResource("ScrollEmptyIcon")
+HScrollBar/styles/grabber = SubResource("ScrollThumb")
+HScrollBar/styles/grabber_highlight = SubResource("ScrollHover")
+HScrollBar/styles/grabber_pressed = SubResource("ScrollPressed")
+HScrollBar/styles/scroll = SubResource("ScrollTrack")
+HScrollBar/styles/scroll_focus = SubResource("ScrollHover")
 HSlider/icons/grabber = ExtResource("7_grabber")
 HSlider/icons/grabber_disabled = ExtResource("7_grabber")
 HSlider/icons/grabber_highlight = ExtResource("7_grabber")
@@ -171,3 +238,16 @@ TitleLabel/font_sizes/font_size = 36
 TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
 TooltipPanel/styles/panel = SubResource("Input")
 VBoxContainer/constants/separation = 12
+VScrollBar/icons/decrement = SubResource("ScrollEmptyIcon")
+VScrollBar/icons/decrement_highlight = SubResource("ScrollEmptyIcon")
+VScrollBar/icons/decrement_pressed = SubResource("ScrollEmptyIcon")
+VScrollBar/icons/increment = SubResource("ScrollEmptyIcon")
+VScrollBar/icons/increment_highlight = SubResource("ScrollEmptyIcon")
+VScrollBar/icons/increment_pressed = SubResource("ScrollEmptyIcon")
+VScrollBar/styles/grabber = SubResource("ScrollThumb")
+VScrollBar/styles/grabber_highlight = SubResource("ScrollHover")
+VScrollBar/styles/grabber_pressed = SubResource("ScrollPressed")
+VScrollBar/styles/scroll = SubResource("ScrollTrack")
+VScrollBar/styles/scroll_focus = SubResource("ScrollHover")
+VoiceListButton/base_type = &"Button"
+VoiceListButton/font_sizes/font_size = 20

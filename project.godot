@@ -18,6 +18,8 @@ config/icon="res://assets/sprites/icon.svg"
 [audio]
 
 buses/default_bus_layout="res://assets/sounds/default_bus_layout.tres"
+general/text_to_speech=true
+general/text_to_speech.linux=false
 
 [autoload]
 
@@ -26,6 +28,7 @@ SceneManager="*res://scripts/scene_manager.gd"
 Toolkit="*res://scripts/toolkit.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Settings="*res://scripts/settings.gd"
+Speech="*res://scripts/speech.gd"
 GameAudio="*res://components/audio/game_audio/game_audio.tscn"
 
 [dialogic]

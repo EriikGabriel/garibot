@@ -242,6 +242,7 @@ position = Vector2(0, -33)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 20
+visible = false
 
 [node name="PixelPanels" parent="HUD" instance=ExtResource("7_hud")]
 
@@ -276,3 +277,4 @@ theme_override_font_sizes/font_size = 18
 text = "Sinal de alerta recebido..."
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_pause")]
+visible = false

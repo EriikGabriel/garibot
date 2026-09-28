@@ -80,6 +80,8 @@ func _build_board() -> void:
 	for index in left_items.size():
 		var button := Button.new()
 		button.text = left_items[index]
+		button.set_meta("speech_managed", true)
+		button.focus_entered.connect(_announce_left.bind(index))
 		button.toggle_mode = true
 		button.position = Vector2(LEFT_COLUMN_X, FIRST_ROW_Y + index * ROW_SPACING)
 		button.size = BUTTON_SIZE
@@ -92,6 +94,8 @@ func _build_board() -> void:
 		var button := Button.new()
 		button.set_meta("audio_cue", &"")
 		button.text = right_items[index]
+		button.set_meta("speech_managed", true)
+		button.focus_entered.connect(_announce_right.bind(index))
 		button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		button.position = Vector2(RIGHT_COLUMN_X, FIRST_ROW_Y + index * ROW_SPACING)
 		button.size = BUTTON_SIZE
@@ -110,22 +114,32 @@ func _build_board() -> void:
 func _style_card(button: Button) -> void:
 	button.add_theme_font_size_override("font_size", 18)
 
+func _announce_left(index: int) -> void:
+	Speech.speak("Etapa: %s. Selecione e depois escolha a função correspondente." % left_items[index], "minigame")
+
+func _announce_right(index: int) -> void:
+	var context := "Escolha primeiro uma etapa." if selected_left < 0 else "Etapa selecionada: %s." % left_items[selected_left]
+	Speech.speak("Função: %s. %s" % [right_items[index], context], "minigame")
+
 func _select_left(index: int) -> void:
 	if matches.has(index):
 		return
 	selected_left = index
 	feedback.text = "Conecte: %s" % left_items[index]
 	for button in left_buttons:
-		button.button_pressed = false
-	left_buttons[index].button_pressed = true
+		button.set_pressed_no_signal(false)
+	left_buttons[index].set_pressed_no_signal(true)
+	Speech.speak(feedback.text + ". Agora escolha a função na coluna da direita.", "minigame")
 
 func _select_right(index: int) -> void:
 	if selected_left == -1:
 		feedback.text = "Primeiro escolha uma etapa na coluna da esquerda."
+		Speech.speak(feedback.text, "minigame")
 		return
 	if correct_targets[selected_left] != index:
 		answer_checked.emit(false)
 		feedback.text = "Essa função pertence a outra etapa. Tente novamente."
+		Speech.speak(feedback.text, "minigame")
 		return
 	matches[selected_left] = index
 	answer_checked.emit(true)
@@ -137,6 +151,7 @@ func _select_right(index: int) -> void:
 	if matches.size() == left_items.size():
 		feedback.text = "Todas as associações foram concluídas corretamente!"
 		completed.emit()
+	Speech.speak(feedback.text, "minigame")
 
 func _draw() -> void:
 	for button in left_buttons:

@@ -51,6 +51,7 @@ func _on_matching_completed() -> void:
 	match_page.hide()
 	final_page.show()
 	finish_button.grab_focus()
+	_announce_final_page()
 
 func _on_skip_pressed() -> void:
 	if word_page.visible:
@@ -59,8 +60,13 @@ func _on_skip_pressed() -> void:
 	match_page.hide()
 	final_page.show()
 	finish_button.grab_focus()
+	_announce_final_page()
+
+func _announce_final_page() -> void:
+	Speech.speak("Missão concluída! " + $Backdrop/Panel/Margin/Body/FinalPage/Message.text + " Selecione Concluir fase para continuar.", "minigame")
 
 func _on_finish_pressed() -> void:
+	Speech.stop()
 	get_tree().paused = false
 	finished.emit()
 	queue_free()

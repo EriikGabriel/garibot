@@ -36,6 +36,61 @@ godot4 --path .
 Caso o executável tenha outro nome no sistema, substitua `godot4` pelo comando
 equivalente.
 
+## Leitura em voz alta
+
+Em **Configurações → Áudio e diálogo**, habilite **Leitura em voz alta**.
+**Ctrl + Shift + R** também alterna a leitura em qualquer tela, inclusive na pausa.
+Use Tab / Shift + Tab para navegar e Enter / Espaço para selecionar. Controles
+focados são narrados com seus nomes e valores. A opção **Ler falas dos personagens**
+inclui o nome do personagem e o texto dos diálogos do Dialogic.
+
+A voz, velocidade e volume são configuráveis e persistidos em `user://settings.cfg`.
+**Testar voz** funciona mesmo com a leitura desativada e atualiza a lista de vozes.
+A seleção automática usa somente português brasileiro (pt-BR). Se essa voz não
+estiver instalada, a tela avisa; outro idioma pode ser escolhido explicitamente.
+O seletor tem busca por idioma, código ou nome da voz e uma lista com rolagem
+de altura limitada. O volume da leitura também respeita o volume geral do jogo.
+As vozes ficam em cache durante a sessão, inclusive quando não há vozes disponíveis.
+A lista é criada ao abrir o seletor e reutilizada na busca; trocar de página não
+consulta novamente o serviço de voz. Use **Testar voz** para atualizar esse cache.
+
+No Linux, a síntese roda em um processo separado com **eSpeak NG** (ou eSpeak)
+instalado no PATH. O áudio WAV é reproduzido pelo Godot, respeitando a pausa da
+atividade e os volumes configurados. O TTS nativo fica desabilitado nesse sistema
+para evitar bloqueios do Speech Dispatcher. Vozes da seleção correspondem às
+disponíveis no eSpeak. Arquivos temporários são removidos após a leitura.
+Se o processo não responder em 5 segundos, ele é encerrado e a narração suspensa;
+o jogo permanece interativo. O aviso aparece acima dos minigames e o motivo fica
+nas configurações. **Testar voz** permite tentar novamente.
+
+Nos demais sistemas, permanece o TTS nativo: chamadas de 1,5 segundo ou mais
+suspendem novas chamadas, e a ausência de início da voz em 5 segundos também.
+Uma sessão nativa interrompida deixa uma marca de recuperação para a próxima
+abertura. Nesse caminho, uma chamada nativa bloqueada só pode ser detectada
+após retornar; a proteção não consegue interromper a chamada em andamento.
+
+**Texto dos balões de fala** ajusta separadamente as falas, nomes e escolhas dos
+balões (18 a 40 px), com preferência salva e aplicação ao balão aberto. Os balões
+usam fundo branco e texto escuro. O controle geral de fonte continua independente.
+
+Se não houver sintetizador ou voz disponível, a página mostra instruções,
+sem impedir o uso do jogo. Reinicie o editor após mudar as configurações de TTS.
+
+A integração fica em `scripts/speech.gd` e `scripts/speech_linux.gd`, sem alterações no plugin Dialogic.
+Falas com dublagem reproduzida pelo subsistema Voice têm prioridade sobre a
+síntese. Para controles sem texto, defina o metadado `speech_label`.
+Mudanças rápidas de foco são agrupadas em 120 ms, sem filas crescentes de falas.
+Na cruzadinha, a leitura inclui pista, direção, quantidade de letras, posição
+da célula e resultado da verificação. Na associação, inclui seleção, função,
+erros e acertos. Controles narrados pela própria atividade usam `speech_managed`
+para evitar duplicidade com o foco global. Isso não inclui orientação espacial
+para obstáculos nem integração com NVDA/Orca.
+
+Verificação manual: ativar pelo atalho; navegar nos menus com Tab; alterar valores;
+testar voz; ouvir e avançar uma fala; abrir e fechar a pausa; desativar durante a
+leitura; reabrir o jogo para conferir persistência. Testar também sem vozes
+instaladas e com uma fala dublada no Dialogic.
+
 ## Convenções de manutenção
 
 - Use `@export` para valores ajustáveis pelo editor, evitando números mágicos.

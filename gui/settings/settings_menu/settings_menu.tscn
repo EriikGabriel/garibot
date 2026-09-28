@@ -124,24 +124,32 @@ text = "Voltar ao jogo"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
+follow_focus = true
 
-[node name="Pages" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Layout/Content"]
+[node name="ContentMargin" type="MarginContainer" parent="Overlay/Panel/Margin/Body/Layout/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 24
+
+[node name="Pages" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VisualPage" parent="Overlay/Panel/Margin/Body/Layout/Content/Pages" instance=ExtResource("2")]
+[node name="VisualPage" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages" instance=ExtResource("2")]
 layout_mode = 2
 
-[node name="ControlsPage" parent="Overlay/Panel/Margin/Body/Layout/Content/Pages" instance=ExtResource("3")]
+[node name="ControlsPage" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages" instance=ExtResource("3")]
 visible = false
 layout_mode = 2
 
-[node name="AudioDialoguePage" parent="Overlay/Panel/Margin/Body/Layout/Content/Pages" instance=ExtResource("4")]
+[node name="AudioDialoguePage" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages" instance=ExtResource("4")]
 visible = false
 layout_mode = 2
 
-[node name="DisplayMotionPage" parent="Overlay/Panel/Margin/Body/Layout/Content/Pages" instance=ExtResource("6_display_motion")]
+[node name="DisplayMotionPage" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages" instance=ExtResource("6_display_motion")]
 visible = false
 layout_mode = 2
 

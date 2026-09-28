@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://blf5273uinck8"]
+[gd_scene load_steps=4 format=3 uid="uid://blf5273uinck8"]
 
 [ext_resource type="PackedScene" path="res://gui/settings/controls/setting_slider/setting_slider.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bxgc0ijwy5jqy" path="res://gui/settings/controls/setting_toggle/setting_toggle.tscn" id="2"]
+[ext_resource type="Script" uid="uid://dvhmdlbtkq0eq" path="res://gui/settings/pages/audio_dialogue/audio_dialogue_settings_page.gd" id="3"]
 
 [node name="AudioDialogueSettingsPage" type="VBoxContainer"]
 anchors_preset = 15
@@ -9,17 +11,100 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 14
+script = ExtResource("3")
 
 [node name="Heading" type="Label" parent="."]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Áudio e diálogo"
 
+[node name="ScreenReader" parent="." instance=ExtResource("2")]
+layout_mode = 2
+label_text = "Leitura em voz alta"
+settings_key = "screen_reader"
+
+[node name="SpeechHelp" type="Label" parent="."]
+layout_mode = 2
+text = "Ctrl + Shift + R ativa ou desativa a leitura em qualquer tela. Use Tab para navegar pelos controles. A leitura inclui menus e, se habilitado abaixo, diálogos."
+autowrap_mode = 2
+
+[node name="NarrateDialogue" parent="." instance=ExtResource("2")]
+layout_mode = 2
+label_text = "Ler falas dos personagens"
+settings_key = "narrate_dialogue"
+
+[node name="Voice" type="Button" parent="."]
+layout_mode = 2
+text = "Voz: Português (Brasil) — automático"
+alignment = 0
+clip_text = true
+metadata/speech_label = "Voz da leitura"
+
+[node name="VoicePicker" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="Search" type="LineEdit" parent="VoicePicker"]
+layout_mode = 2
+placeholder_text = "Buscar idioma ou voz: pt-BR, Brasil, inglês..."
+metadata/speech_label = "Buscar idioma ou voz"
+
+[node name="Results" type="ScrollContainer" parent="VoicePicker"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="ContentMargin" type="MarginContainer" parent="VoicePicker/Results"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 20
+
+[node name="List" type="VBoxContainer" parent="VoicePicker/Results/ContentMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="ResultCount" type="Label" parent="VoicePicker"]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+autowrap_mode = 2
+
+[node name="SpeechRate" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Velocidade da voz (%)"
+settings_key = "speech_rate"
+min_value = 50.0
+max_value = 200.0
+step_value = 10.0
+value_ratio = 100.0
+
+[node name="SpeechVolume" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Volume da voz (%)"
+settings_key = "speech_volume"
+value_ratio = 100.0
+
+[node name="TestVoice" type="Button" parent="."]
+layout_mode = 2
+text = "Testar voz"
+
+[node name="SpeechStatus" type="Label" parent="."]
+layout_mode = 2
+autowrap_mode = 2
+
 [node name="FontSize" parent="." instance=ExtResource("1")]
 layout_mode = 2
-label_text = "Tamanho da fonte"
+label_text = "Tamanho da fonte da interface"
 settings_key = "dialog_font_size"
 min_value = 12.0
+max_value = 40.0
+
+[node name="BubbleFontSize" parent="." instance=ExtResource("1")]
+layout_mode = 2
+label_text = "Tamanho do texto dos balões de fala"
+settings_key = "bubble_font_size"
+min_value = 18.0
 max_value = 40.0
 
 [node name="TextSpeed" parent="." instance=ExtResource("1")]

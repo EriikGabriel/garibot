@@ -20,6 +20,7 @@ var status: Label
 @onready var clue_panel: VBoxContainer = $Layout/CluePanel
 @onready var clues: GridContainer = $Layout/CluePanel/Clues
 var grid_height := 0
+var _last_announced_word := -1
 
 func _ready() -> void:
 	follow_focus = true
@@ -63,6 +64,7 @@ func _ready() -> void:
 			if not solution.has(point):
 				continue
 			var field := LineEdit.new()
+			field.set_meta("speech_managed", true)
 			field.alignment = HORIZONTAL_ALIGNMENT_CENTER
 			field.max_length = 1
 			field.expand_to_text_length = false
@@ -120,6 +122,7 @@ func select_word(index: int) -> void:
 		return
 	active_word = index
 	cells[paths[index][0]].grab_focus()
+	_announce_cell(paths[index][0], true)
 
 func _focus_cell(point: Vector2i) -> void:
 	if not paths[active_word].has(point):
@@ -130,6 +133,20 @@ func _focus_cell(point: Vector2i) -> void:
 	for key in cells:
 		cells[key].modulate = Color("#ffe29b") if paths[active_word].has(key) else Color.WHITE
 	cells[point].select_all()
+	_announce_cell(point, _last_announced_word != active_word)
+
+func _announce_cell(point: Vector2i, include_clue: bool) -> void:
+	_last_announced_word = active_word
+	var path: Array = paths[active_word]
+	var position := path.find(point) + 1
+	var value: String = cells[point].text
+	var message := "Letra %d de %d. %s." % [position, path.size(), "Vazia" if value.is_empty() else value]
+	if include_clue:
+		var entry: Dictionary = entries[active_word]
+		message = "Pista %d. %s. %s. %d letras. %s" % [
+			active_word + 1, "Vertical" if entry["vertical"] else "Horizontal",
+			entry["clue"], path.size(), message]
+	Speech.speak(message, "minigame")
 
 func _edit_cell(value: String, point: Vector2i) -> void:
 	var letter := value.to_upper()
@@ -140,6 +157,8 @@ func _edit_cell(value: String, point: Vector2i) -> void:
 		var index: int = paths[active_word].find(point)
 		if index + 1 < paths[active_word].size():
 			cells[paths[active_word][index + 1]].grab_focus()
+		else:
+			Speech.speak("Última letra: %s. Palavra preenchida. Use Verificar respostas." % letter, "minigame")
 
 func check_answers() -> void:
 	if solution.is_empty():
@@ -157,3 +176,4 @@ func check_answers() -> void:
 	else:
 		answer_checked.emit(false)
 		status.text = "%d de %d letras corretas. Revise as pistas e tente novamente." % [correct, solution.size()]
+	Speech.speak(status.text, "minigame")

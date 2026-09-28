@@ -12,6 +12,8 @@ Edite no Inspector do recurso Theme:
 - `TitleLabel` e `MutedLabel`: títulos e texto de apoio.
 - `CrosswordCell`: campo compacto para uma letra; mantenha as margens pequenas.
 - `PanelContainer`, `HSlider`, `CheckBox` e `LineEdit`: componentes básicos.
+- `HScrollBar` e `VScrollBar`: trilho escuro, puxador verde e destaque dourado.
+- `VoiceListButton`: opções compactas da lista pesquisável de vozes.
 
 Selecione **Theme Type Variation** no Control para usar uma variação. Overrides
 locais ainda têm prioridade. As texturas de painel/botão são da Kenney (CC0);

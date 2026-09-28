@@ -1,8 +1,13 @@
+@tool
 extends CanvasLayer
 
 @onready var panel: Control = $Panel
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		hide()
+		return
+	show()
 	add_to_group("pause_menu")
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	panel.hide()

@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 const PHASE1_MINIGAMES := preload("res://levels/phase1/minigames/phase1_minigames/phase1_minigames.tscn")
@@ -14,6 +15,10 @@ var _phase_completed := false
 @onready var player = $Player
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		$HUD.hide()
+		return
+	$HUD.show()
 	add_to_group("phase1_level")
 	Settings.setting_changed.connect(_on_accessibility_setting_changed)
 	_apply_accessibility_preferences()

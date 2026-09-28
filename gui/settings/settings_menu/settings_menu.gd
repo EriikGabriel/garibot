@@ -7,10 +7,10 @@ var opened_from_pause := false
 
 var current_step := 0
 @onready var pages: Array[Control] = [
-	$Overlay/Panel/Margin/Body/Layout/Content/Pages/VisualPage,
-	$Overlay/Panel/Margin/Body/Layout/Content/Pages/ControlsPage,
-	$Overlay/Panel/Margin/Body/Layout/Content/Pages/AudioDialoguePage,
-	$Overlay/Panel/Margin/Body/Layout/Content/Pages/DisplayMotionPage,
+	$Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages/VisualPage,
+	$Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages/ControlsPage,
+	$Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages/AudioDialoguePage,
+	$Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages/DisplayMotionPage,
 ]
 @onready var step_label: Label = $Overlay/Panel/Margin/Body/Step
 @onready var title: Label = $Overlay/Panel/Margin/Body/Title

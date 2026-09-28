@@ -11,12 +11,18 @@ const SAVE_SECTION := "settings"
 const DEFAULTS := {
 	# Diálogo / Acessibilidade
 	"dialog_font_size": 18,
+	"bubble_font_size": 18,
 	"text_speed": 1.0,
 	"skip_on_click": true,
+	"screen_reader": false,
+	"narrate_dialogue": true,
+	"speech_voice": "",
+	"speech_rate": 1.0,
+	"speech_volume": 1.0,
 
 	# Áudio (0.0 a 1.0)
 	"master_volume": 1.0,
-	"music_volume": 1.0,
+	"music_volume": 0.5,
 	"sfx_volume": 1.0,
 
 	# Vídeo / Janela
@@ -65,6 +71,7 @@ func _setup_dialogic_hooks() -> void:
 		dialogic.Styles.style_changed.connect(_on_dialogic_style_changed)
 	# Reaplica as preferências de diálogo após o carregamento do plugin.
 	apply_setting("dialog_font_size", settings["dialog_font_size"])
+	apply_setting("bubble_font_size", settings["bubble_font_size"])
 	apply_setting("text_speed", settings["text_speed"])
 	apply_setting("skip_on_click", settings["skip_on_click"])
 
@@ -117,6 +124,8 @@ func apply_setting(key: String, value: Variant) -> void:
 	match key:
 		"dialog_font_size":
 			_apply_dialog_font_size(value)
+		"bubble_font_size":
+			_apply_bubble_font_size(int(value))
 		"text_speed":
 			_apply_text_speed(value)
 		"skip_on_click":
@@ -131,7 +140,7 @@ func apply_setting(key: String, value: Variant) -> void:
 			_apply_fullscreen(value)
 		"keybinds":
 			_apply_keybinds(value)
-		"screen_shake", "subtitles", "high_contrast", "reduced_motion", "brightness":
+		"screen_shake", "subtitles", "high_contrast", "reduced_motion", "brightness", "screen_reader", "narrate_dialogue", "speech_voice", "speech_rate", "speech_volume":
 			# Os consumidores recebem a atualização pelo sinal setting_changed.
 			pass
 
@@ -149,9 +158,50 @@ func _apply_dialog_font_size(size: int) -> void:
 			if layout.has_method("apply_export_overrides"):
 				layout.apply_export_overrides()
 
+func _apply_bubble_font_size(size: int) -> void:
+	var dialogic := _get_dialogic()
+	if not dialogic or not dialogic.has_subsystem("Styles"):
+		return
+	if not dialogic.Styles.has_active_layout_node():
+		return
+	var layout: Node = dialogic.Styles.get_layout_node()
+	var layer := layout.get_node_or_null("TextBubbleLayer")
+	if layer == null:
+		return
+	layer.text_size = clampi(size, 18, 40)
+	layer.name_label_font_size = clampi(size, 18, 40)
+	layer.choices_text_size = clampi(size, 18, 40)
+	for bubble in layer.bubbles:
+		if is_instance_valid(bubble):
+			layer.bubble_apply_overrides(bubble)
+			if bubble.is_visible_in_tree():
+				_resize_bubble_text(bubble)
+
+func _resize_bubble_text(bubble: Control) -> void:
+	# Recalcula o fundo sem reiniciar a fala ou sua animação.
+	var text: RichTextLabel = bubble.text
+	var font := text.get_theme_font("normal_font")
+	var width := font.get_multiline_string_size(text.get_parsed_text(),
+		HORIZONTAL_ALIGNMENT_LEFT, bubble.max_width,
+		text.get_theme_font_size("normal_font_size")).x
+	text.size = Vector2(width, 0)
+	await get_tree().process_frame
+	if not is_instance_valid(bubble):
+		return
+	text.size.y = 0
+	await get_tree().process_frame
+	if not is_instance_valid(bubble):
+		return
+	var content_size := text.size
+	if is_instance_valid(bubble.choice_container) and bubble.choice_container.visible:
+		content_size.y += bubble.choice_container.size.y
+		content_size.x = maxf(content_size.x, bubble.choice_container.size.x)
+	bubble._resize_bubble(content_size)
+
 func _on_dialogic_style_changed(_info: Dictionary) -> void:
 	# Quando um estilo de diálogo é (re)criado, reaplica o tamanho da fonte.
 	_apply_dialog_font_size(settings["dialog_font_size"])
+	_apply_bubble_font_size(int(settings["bubble_font_size"]))
 
 func _apply_text_speed(speed: float) -> void:
 	var dialogic := _get_dialogic()
