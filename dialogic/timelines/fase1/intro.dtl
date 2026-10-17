@@ -1,5 +1,12 @@
+[voice path="res://assets/dubs/fase01_garibot01.mp3" volume="0.0"]
 garibot: Nossa! A antiga fábrica espalhou lixo eletrônico por toda a vila.
-morador: Verdade! Os rios estão poluídos e as crianças não podem mais brincar no parquinho.
+[voice path="res://assets/dubs/fase01_morador01.mp3" volume="0.0"]
+morador: Verdade! Os rios estão poluídos.
+[voice path="res://assets/dubs/fase01_morador02.mp3" volume="0.0"]
+morador: As crianças não podem mais brincar no parquinho.
+[voice path="res://assets/dubs/fase01_criança01.mp3" volume="0.0"]
 crianca: Só tem fios e celulares quebrados por toda parte!
-crianca: Está tudo feio... antes tinha muito mais natureza.
-morador: Nos ajude, Garibot!
+[voice path="res://assets/dubs/fase01_criança02.mp3" volume="0.0"]
+crianca: Está tudo feio... antes tinha mais natureza.
+[voice path="res://assets/dubs/fase01_morador03.mp3" volume="0.0"]
+morador: Nos ajude!

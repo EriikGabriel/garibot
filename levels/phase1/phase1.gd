@@ -13,6 +13,7 @@ var _phase_completed := false
 @onready var tutorial_label: Label = $HUD/Tutorial
 @onready var hud_panels = $HUD/PixelPanels
 @onready var player = $Player
+@onready var reee_cutscene: CutscenePlayer = $ReeeCutscene
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -72,7 +73,7 @@ func _on_reee_collected(_item_name: String) -> void:
 	$World.register_reee()
 	_update_hud()
 	if _reee_count == 1:
-		_start_dialog("res://dialogic/timelines/fase1/reee.dtl")
+		reee_cutscene.run()
 	elif _reee_count == _reee_total:
 		$Garidog.global_position = player.global_position + Vector2(-105, 14)
 		$Morador.global_position = player.global_position + Vector2(105, 14)

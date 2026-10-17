@@ -138,7 +138,12 @@ func _play_dialog(timeline: String) -> void:
 	if timeline.is_empty():
 		_advance()
 		return
-	
+
+	# Lembra se as barras já estavam visíveis (por um passo "bars_on" anterior)
+	# para que o fim do diálogo não as esconda de repente; quem deve escondê-las
+	# com animação é um passo "bars_off" explícito, se houver.
+	_bars_were_visible_before_dialog = is_instance_valid(_bar_top) and (_bar_top.visible or _bar_bottom.visible)
+
 	if get_parent().is_in_group("phase1_level"):
 		if not Dialogic.timeline_ended.is_connected(_on_dialog_done):
 			Dialogic.timeline_ended.connect(_on_dialog_done)
@@ -291,7 +296,7 @@ func _restore_bars_after_dialog() -> void:
 		_bar_top.hide()
 		_bar_bottom.hide()
 	_bars_were_visible_before_dialog = false
-	
+
 
 func _bar_time(step: Dictionary) -> float:
 	if Settings.get_setting("reduced_motion", false):

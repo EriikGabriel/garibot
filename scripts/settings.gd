@@ -16,6 +16,7 @@ const DEFAULTS := {
 	"skip_on_click": true,
 	"screen_reader": false,
 	"narrate_dialogue": true,
+	"dubbed_dialogue": true,
 	"speech_voice": "",
 	"speech_rate": 1.0,
 	"speech_volume": 1.0,
@@ -140,7 +141,7 @@ func apply_setting(key: String, value: Variant) -> void:
 			_apply_fullscreen(value)
 		"keybinds":
 			_apply_keybinds(value)
-		"screen_shake", "subtitles", "high_contrast", "reduced_motion", "brightness", "screen_reader", "narrate_dialogue", "speech_voice", "speech_rate", "speech_volume":
+		"screen_shake", "subtitles", "high_contrast", "reduced_motion", "brightness", "screen_reader", "narrate_dialogue", "dubbed_dialogue", "speech_voice", "speech_rate", "speech_volume":
 			# Os consumidores recebem a atualização pelo sinal setting_changed.
 			pass
 

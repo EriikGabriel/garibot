@@ -245,10 +245,26 @@ func _try_play_current_line_voice() -> void:
 	and dialogic.Inputs.auto_skip.skip_voice):
 		return
 
+	# Personalização do projeto Garibot 2: a dublagem pode ser desativada nas
+	# configurações (chave "dubbed_dialogue"). Quando desligada, a fala segue
+	# apenas como texto (e leitura por voz sintética, se habilitada à parte).
+	var settings := _get_project_settings_autoload()
+	if settings and not bool(settings.get_setting("dubbed_dialogue", true)):
+		return
+
 	# Plays the audio region for the current line.
 	if (dialogic.has_subsystem('Voice')
 	and dialogic.Voice.is_voiced(dialogic.current_event_idx)):
 		dialogic.Voice.play_voice()
+
+
+## Retorna o autoload "Settings" do projeto, se disponível (não existe
+## durante a execução dentro do editor, apenas em jogo).
+func _get_project_settings_autoload() -> Node:
+	var loop := Engine.get_main_loop()
+	if loop is SceneTree:
+		return loop.root.get_node_or_null("Settings")
+	return null
 
 
 func _on_dialogic_input_action() -> void:

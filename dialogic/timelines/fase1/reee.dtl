@@ -1,9 +1,27 @@
+[voice path="res://assets/dubs/fase01_garidog01.mp3" volume="0.0"]
 garidog: Eita! Um celular velho jogado no chão!
-garibot: Ele virou lixo eletrônico. Aparelhos eletrônicos não são como casca de banana.
+[voice path="res://assets/dubs/fase01_garibot02.mp3" volume="0.0"]
+garibot: Ele virou lixo eletrônico.
+[voice path="res://assets/dubs/fase01_garibot03.mp3" volume="0.0"]
+garibot: Aparelhos eletrônicos não são como casca de banana!
+[voice path="res://assets/dubs/fase01_garidog02.mp3" volume="0.0"]
 garidog: Por que não?
-garibot: Alguns resíduos podem sujar a terra e a água e fazer mal para a natureza.
+[voice path="res://assets/dubs/fase01_garibot04.mp3" volume="0.0"]
+garibot: Alguns resíduos que jogamos no chão podem sujar a terra e a água de um jeito que faz mal para a natureza!
+[voice path="res://assets/dubs/fase01_garibot05.mp3" volume="0.0"]
 garibot: O lugar certo é o cesto especial da coleta seletiva.
-garidog: E depois?
-garibot: Eles vão para uma usina de reciclagem, onde são desmontados e separados por materiais.
-garibot: Metais e plásticos são retirados com segurança e viram matéria-prima para aparelhos novos.
-garidog: Entendi! Vamos coletar?
+[voice path="res://assets/dubs/fase01_garibot06.mp3" volume="0.0"]
+garibot: e  lá, eles são levados para uma usina de reciclagem!
+[voice path="res://assets/dubs/fase01_garidog03.mp3" volume="0.0"]
+[voice path="res://assets/dubs/fase01_garidog04.mp3" volume="0.0"]
+garidog: O que é uma usina de reciclagem?
+[voice path="res://assets/dubs/fase01_garibot07.mp3" volume="0.0"]
+garibot: É um local onde aparelhos são desmontados e separados por materiais.
+[voice path="res://assets/dubs/fase01_garidog05.mp3" volume="0.0"]
+garidog: Entendi!
+[voice path="res://assets/dubs/fase01_garibot08.mp3" volume="0.0"]
+garibot: A usina retira os metais e os plásticos com muita segurança e eles viram matéria prima
+[voice path="res://assets/dubs/fase01_garibot09.mp3" volume="0.0"]
+garibot: Eles que viram peças novas para construir outros aparelhos!
+[voice path="res://assets/dubs/fase01_garibot10.mp3" volume="0.0"]
+garibot: Vamos coletar?

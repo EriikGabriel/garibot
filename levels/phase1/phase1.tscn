@@ -40,6 +40,19 @@ steps = Array[Dictionary]([{
 }])
 player_path = NodePath("../Player")
 
+[node name="ReeeCutscene" parent="." instance=ExtResource("6_cutscene")]
+steps = Array[Dictionary]([{
+"speed": 0.35,
+"type": &"bars_on"
+}, {
+"timeline": &"res://dialogic/timelines/fase1/reee.dtl",
+"type": &"say"
+}, {
+"speed": 0.35,
+"type": &"bars_off"
+}])
+player_path = NodePath("../Player")
+
 [node name="World" type="Node2D" parent="."]
 z_index = -5
 script = ExtResource("2_world")

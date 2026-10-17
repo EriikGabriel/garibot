@@ -33,6 +33,17 @@ layout_mode = 2
 label_text = "Ler falas dos personagens"
 settings_key = "narrate_dialogue"
 
+[node name="DubbedDialogue" parent="." instance=ExtResource("2")]
+layout_mode = 2
+label_text = "Dublagem das falas da fase"
+settings_key = "dubbed_dialogue"
+
+[node name="DubbedDialogueHelp" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+text = "Toca o áudio dublado das falas quando disponível. Falas sem dublagem continuam usando a leitura em voz alta, se ativada."
+autowrap_mode = 2
+
 [node name="Voice" type="Button" parent="."]
 layout_mode = 2
 text = "Voz: Português (Brasil) — automático"
