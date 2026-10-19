@@ -36,6 +36,10 @@ godot4 --path .
 Caso o executável tenha outro nome no sistema, substitua `godot4` pelo comando
 equivalente.
 
+O protótipo da fase 1 está em `levels/phase1/phase1.tscn`, com base, rua,
+residências, parque, rio e praça final. Veja o [mapa de fluxo e guia de edição](docs/phase1-level-design.md)
+para ajustar plataformas, coletáveis, marcos e pontos de retorno no editor.
+
 ## Leitura em voz alta
 
 Em **Configurações → Áudio e diálogo**, habilite **Leitura em voz alta**.

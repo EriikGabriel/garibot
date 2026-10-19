@@ -3,8 +3,10 @@ class_name Phase1Npc
 
 ## NPC atravessável com área própria para iniciar conversa.
 @export_file("*.dtl") var timeline_path := ""
+@export_file("*.dtl") var restored_timeline_path := ""
 @export var facing_direction := -1
 var _spoke := false
+var _spoke_restored := false
 var _player: Player
 
 func _ready() -> void:
@@ -20,8 +22,16 @@ func _process(_delta: float) -> void:
 	$Eye.position.x = 9.0 if facing_direction > 0 else -13.0
 
 func _on_body_entered(body: Node2D) -> void:
-	if _spoke or not body is Player or timeline_path.is_empty():
+	if not body is Player or body.in_cutscene or not body.has_control or Dialogic.current_timeline != null:
 		return
-	_spoke = true
-	$TalkArea.set_deferred("monitoring", false)
-	Phase1Dialogue.start(timeline_path, get_parent())
+	var world := get_parent().get_node_or_null("World") as Phase1World
+	var restored := world != null and world.pollution_ratio() >= 0.6 and not restored_timeline_path.is_empty()
+	if restored:
+		if _spoke_restored:
+			return
+		_spoke_restored = true
+	elif _spoke or timeline_path.is_empty():
+		return
+	else:
+		_spoke = true
+	Phase1Dialogue.start(restored_timeline_path if restored else timeline_path, get_parent())

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="390" viewBox="0 0 1440 390">
+<rect width="1440" height="390" fill="#18252a"/>
+<g font-family="sans-serif" fill="#f0eddb">
+<text x="32" y="45" font-size="26">MAPA A — FASE 1 / A VILA ESQUECIDA</text>
+<text x="32" y="78" font-size="16">Fluxo da experiência · protótipo de progressão, sem escala</text>
+<rect x="32" y="115" width="208" height="145" rx="5" fill="#35474d" stroke="#dabb6b"/>
+<text x="44" y="145" font-size="17">00 · BASE</text>
+<text x="44" y="181" font-size="14">Cutscene · contexto</text>
+<text x="44" y="206" font-size="14">Objetivo da missão</text>
+<text x="44" y="240" font-size="12">INTRODUZIR</text>
+<path d="M243 185h18m-6 -6 6 6-6 6" fill="none" stroke="#dabb6b" stroke-width="2"/>
+<rect x="266" y="115" width="208" height="145" rx="5" fill="#35474d" stroke="#dabb6b"/>
+<text x="278" y="145" font-size="17">01 · RUA</text>
+<text x="278" y="181" font-size="14">Movimento · salto</text>
+<text x="278" y="206" font-size="14">Primeiro REEE</text>
+<text x="278" y="240" font-size="12">INTRODUZIR</text>
+<path d="M477 185h18m-6 -6 6 6-6 6" fill="none" stroke="#dabb6b" stroke-width="2"/>
+<rect x="500" y="115" width="208" height="145" rx="5" fill="#35474d" stroke="#dabb6b"/>
+<text x="512" y="145" font-size="17">02 · RESIDÊNCIAS</text>
+<text x="512" y="181" font-size="14">Exploração · NPCs</text>
+<text x="512" y="206" font-size="14">Varandas e telhado</text>
+<text x="512" y="240" font-size="12">PRATICAR</text>
+<path d="M711 185h18m-6 -6 6 6-6 6" fill="none" stroke="#dabb6b" stroke-width="2"/>
+<rect x="734" y="115" width="208" height="145" rx="5" fill="#35474d" stroke="#dabb6b"/>
+<text x="746" y="145" font-size="17">03 · PARQUE</text>
+<text x="746" y="181" font-size="14">Plataformas em alturas</text>
+<text x="746" y="206" font-size="14">Mirante · chão seguro</text>
+<text x="746" y="240" font-size="12">COMBINAR</text>
+<path d="M945 185h18m-6 -6 6 6-6 6" fill="none" stroke="#dabb6b" stroke-width="2"/>
+<rect x="968" y="115" width="208" height="145" rx="5" fill="#35474d" stroke="#dabb6b"/>
+<text x="980" y="145" font-size="17">04 · RIO</text>
+<text x="980" y="181" font-size="14">Saltos entre pedras</text>
+<text x="980" y="206" font-size="14">2 REEE · retorno seguro</text>
+<text x="980" y="240" font-size="12">TESTAR</text>
+<path d="M1179 185h18m-6 -6 6 6-6 6" fill="none" stroke="#dabb6b" stroke-width="2"/>
+<rect x="1202" y="115" width="208" height="145" rx="5" fill="#35474d" stroke="#dabb6b"/>
+<text x="1214" y="145" font-size="17">05 · PRAÇA</text>
+<text x="1214" y="181" font-size="14">Diálogo · minigames</text>
+<text x="1214" y="206" font-size="14">Vila recuperada</text>
+<text x="1214" y="240" font-size="12">RECOMPENSAR</text>
+<text x="32" y="305" font-size="16">Cada coleta → água mais clara · vegetação e flores · novas falas dos moradores</text>
+<text x="32" y="340" font-size="16">Retorno livre para procurar itens esquecidos. Conclusão: 5 REEE + chegada à praça.</text>
+</g></svg>

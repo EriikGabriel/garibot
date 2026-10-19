@@ -12,6 +12,12 @@ var _high_contrast := false
 
 var collected := 0
 var total := 5
+var tutorial_visible := true
+
+func set_tutorial_visible(value: bool) -> void:
+	if tutorial_visible != value:
+		tutorial_visible = value
+		queue_redraw()
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -47,7 +53,8 @@ func set_progress(value: int, maximum: int) -> void:
 func _draw() -> void:
 	var view := get_viewport_rect().size
 	_draw_panel(Rect2(16, 16, 468, 92))
-	_draw_panel(Rect2(16, view.y - 96, minf(view.x - 32.0, 940.0), 78))
+	if tutorial_visible:
+		_draw_panel(Rect2(16, view.y - 96, minf(view.x - 32.0, 940.0), 78))
 	# Pequenos blocos em grade substituem ícones ornamentais no contador.
 	for index in range(total):
 		var x := 308.0 + float(index) * 30.0
@@ -55,8 +62,9 @@ func _draw() -> void:
 		draw_rect(Rect2(x + 2, 75, 18, 12), active if index < collected else empty)
 		draw_rect(Rect2(x + 6, 77, 4, 4), ink if index < collected else edge)
 	# Marcador de instrução na borda inferior.
-	draw_rect(Rect2(28, view.y - 80, 8, 8), active)
-	draw_rect(Rect2(38, view.y - 76, 4, 4), paper)
+	if tutorial_visible:
+		draw_rect(Rect2(28, view.y - 80, 8, 8), active)
+		draw_rect(Rect2(38, view.y - 76, 4, 4), paper)
 
 func _draw_panel(rect: Rect2) -> void:
 	if not _high_contrast:

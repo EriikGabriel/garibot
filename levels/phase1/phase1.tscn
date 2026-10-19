@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuowvkcs5ru1v"]
+[gd_scene load_steps=31 format=3 uid="uid://cuowvkcs5ru1v"]
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/phase1/phase1.gd" id="1_level"]
 [ext_resource type="Script" uid="uid://ci6q78ir854cp" path="res://levels/phase1/phase1_world.gd" id="2_world"]
@@ -9,14 +9,71 @@
 [ext_resource type="PackedScene" path="res://components/ui/collectible_progress_hud/collectible_progress_hud.tscn" id="7_hud"]
 [ext_resource type="PackedScene" path="res://scenes/pause_menu/pause_menu.tscn" id="8_pause"]
 
-[sub_resource type="RectangleShape2D" id="GroundShape"]
-size = Vector2(3600, 40)
-
-[sub_resource type="RectangleShape2D" id="SmallShape"]
-size = Vector2(34, 34)
+[sub_resource type="CircleShape2D" id="CollectibleCircle"]
+radius = 17.0
 
 [sub_resource type="RectangleShape2D" id="NpcTalkShape"]
 size = Vector2(96, 80)
+
+[sub_resource type="RectangleShape2D" id="BlockShape0"]
+size = Vector2(650, 280)
+
+[sub_resource type="RectangleShape2D" id="BlockShape1"]
+size = Vector2(800, 280)
+
+[sub_resource type="RectangleShape2D" id="BlockShape2"]
+size = Vector2(1150, 280)
+
+[sub_resource type="RectangleShape2D" id="BlockShape3"]
+size = Vector2(1280, 280)
+
+[sub_resource type="RectangleShape2D" id="BlockShape4"]
+size = Vector2(810, 280)
+
+[sub_resource type="RectangleShape2D" id="BlockShape5"]
+size = Vector2(80, 40)
+
+[sub_resource type="RectangleShape2D" id="BlockShape6"]
+size = Vector2(120, 55)
+
+[sub_resource type="RectangleShape2D" id="BlockShape7"]
+size = Vector2(120, 20)
+
+[sub_resource type="RectangleShape2D" id="BlockShape8"]
+size = Vector2(190, 20)
+
+[sub_resource type="RectangleShape2D" id="BlockShape9"]
+size = Vector2(150, 60)
+
+[sub_resource type="RectangleShape2D" id="BlockShape10"]
+size = Vector2(150, 20)
+
+[sub_resource type="RectangleShape2D" id="BlockShape11"]
+size = Vector2(150, 20)
+
+[sub_resource type="RectangleShape2D" id="BlockShape12"]
+size = Vector2(180, 20)
+
+[sub_resource type="RectangleShape2D" id="BlockShape13"]
+size = Vector2(130, 20)
+
+[sub_resource type="RectangleShape2D" id="BlockShape14"]
+size = Vector2(140, 30)
+
+[sub_resource type="RectangleShape2D" id="BlockShape15"]
+size = Vector2(140, 30)
+
+[sub_resource type="RectangleShape2D" id="BlockShape16"]
+size = Vector2(150, 30)
+
+[sub_resource type="RectangleShape2D" id="BlockShape17"]
+size = Vector2(150, 30)
+
+[sub_resource type="RectangleShape2D" id="BlockShape18"]
+size = Vector2(40, 840)
+
+[sub_resource type="RectangleShape2D" id="BlockShape19"]
+size = Vector2(40, 840)
 
 [node name="VilaFase1" type="Node2D"]
 script = ExtResource("1_level")
@@ -57,13 +114,6 @@ player_path = NodePath("../Player")
 z_index = -5
 script = ExtResource("2_world")
 
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(700, 60)
-collision_layer = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-shape = SubResource("GroundShape")
-
 [node name="Player" parent="." instance=ExtResource("5_player")]
 position = Vector2(100, 0)
 
@@ -73,74 +123,75 @@ color = Color(0.12, 0.14, 0.12, 1)
 polygon = PackedVector2Array(-72, 0, -55, -8, -20, -10, 20, -5, 67, 0, 44, 11, -30, 10)
 
 [node name="REEE_Celular" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(515, 0)
+position = Vector2(688, -18)
 collision_layer = 0
 item_name = "celular quebrado"
 collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Celular"]
-shape = SubResource("SmallShape")
+shape = SubResource("CollectibleCircle")
 
 [node name="Visual" type="Polygon2D" parent="REEE_Celular"]
-color = Color(0.15, 0.22, 0.24, 1)
-polygon = PackedVector2Array(-13, -5, 13, -5, 13, 9, -13, 9)
+color = Color(1, 0.79, 0.27, 1)
+polygon = PackedVector2Array(13, 0, 12.36, 4.02, 10.52, 7.64, 7.64, 10.52, 4.02, 12.36, 0, 13, -4.02, 12.36, -7.64, 10.52, -10.52, 7.64, -12.36, 4.02, -13, 0, -12.36, -4.02, -10.52, -7.64, -7.64, -10.52, -4.02, -12.36, 0, -13, 4.02, -12.36, 7.64, -10.52, 10.52, -7.64, 12.36, -4.02)
 
 [node name="REEE_Fios" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(675, 4)
+position = Vector2(1870, -175)
 collision_layer = 0
 item_name = "fios e cabos"
 collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Fios"]
-shape = SubResource("SmallShape")
+shape = SubResource("CollectibleCircle")
 
 [node name="Visual" type="Polygon2D" parent="REEE_Fios"]
-color = Color(0.75, 0.62, 0.26, 1)
-polygon = PackedVector2Array(-16, -3, 5, -8, 16, 2, 3, 7, -7, 4)
+color = Color(1, 0.79, 0.27, 1)
+polygon = PackedVector2Array(13, 0, 12.36, 4.02, 10.52, 7.64, 7.64, 10.52, 4.02, 12.36, 0, 13, -4.02, 12.36, -7.64, 10.52, -10.52, 7.64, -12.36, 4.02, -13, 0, -12.36, -4.02, -10.52, -7.64, -7.64, -10.52, -4.02, -12.36, 0, -13, 4.02, -12.36, 7.64, -10.52, 10.52, -7.64, 12.36, -4.02)
 
 [node name="REEE_Computador" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(800, 0)
+position = Vector2(3110, -220)
 collision_layer = 0
 item_name = "peça de computador"
 collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Computador"]
-shape = SubResource("SmallShape")
+shape = SubResource("CollectibleCircle")
 
 [node name="Visual" type="Polygon2D" parent="REEE_Computador"]
-color = Color(0.38, 0.42, 0.4, 1)
-polygon = PackedVector2Array(-15, -8, 15, -8, 15, 8, -15, 8)
+color = Color(1, 0.79, 0.27, 1)
+polygon = PackedVector2Array(13, 0, 12.36, 4.02, 10.52, 7.64, 7.64, 10.52, 4.02, 12.36, 0, 13, -4.02, 12.36, -7.64, 10.52, -10.52, 7.64, -12.36, 4.02, -13, 0, -12.36, -4.02, -10.52, -7.64, -7.64, -10.52, -4.02, -12.36, 0, -13, 4.02, -12.36, 7.64, -10.52, 10.52, -7.64, 12.36, -4.02)
 
 [node name="REEE_Rio" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(1080, 0)
+position = Vector2(4010, -100)
 collision_layer = 0
 item_name = "placa eletrônica"
 collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Rio"]
-shape = SubResource("SmallShape")
+shape = SubResource("CollectibleCircle")
 
 [node name="Visual" type="Polygon2D" parent="REEE_Rio"]
-color = Color(0.28, 0.48, 0.4, 1)
-polygon = PackedVector2Array(-15, -5, 14, -5, 14, 7, -15, 7)
+color = Color(1, 0.79, 0.27, 1)
+polygon = PackedVector2Array(13, 0, 12.36, 4.02, 10.52, 7.64, 7.64, 10.52, 4.02, 12.36, 0, 13, -4.02, 12.36, -7.64, 10.52, -10.52, 7.64, -12.36, 4.02, -13, 0, -12.36, -4.02, -10.52, -7.64, -7.64, -10.52, -4.02, -12.36, 0, -13, 4.02, -12.36, 7.64, -10.52, 10.52, -7.64, 12.36, -4.02)
 
 [node name="REEE_Fabrica" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(1450, 0)
+position = Vector2(4510, -80)
 collision_layer = 0
 item_name = "componente de fábrica"
 collection_group = &"phase1_reee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REEE_Fabrica"]
-shape = SubResource("SmallShape")
+shape = SubResource("CollectibleCircle")
 
 [node name="Visual" type="Polygon2D" parent="REEE_Fabrica"]
-color = Color(0.48, 0.33, 0.22, 1)
-polygon = PackedVector2Array(-16, -9, 16, -9, 16, 8, -16, 8)
+color = Color(1, 0.79, 0.27, 1)
+polygon = PackedVector2Array(13, 0, 12.36, 4.02, 10.52, 7.64, 7.64, 10.52, 4.02, 12.36, 0, 13, -4.02, 12.36, -7.64, 10.52, -10.52, 7.64, -12.36, 4.02, -13, 0, -12.36, -4.02, -10.52, -7.64, -7.64, -10.52, -4.02, -12.36, 0, -13, 4.02, -12.36, 7.64, -10.52, 10.52, -7.64, 12.36, -4.02)
 
 [node name="Garidog" type="Node2D" parent="."]
-position = Vector2(620, 14)
+position = Vector2(820, 14)
 script = ExtResource("4_npc")
 timeline_path = "res://dialogic/timelines/fase1/garidog.dtl"
+restored_timeline_path = "res://dialogic/timelines/fase1/garidog_recuperado.dtl"
 
 [node name="Visual" type="ColorRect" parent="Garidog"]
 offset_left = -18.0
@@ -167,9 +218,10 @@ shape = SubResource("NpcTalkShape")
 position = Vector2(0, -44)
 
 [node name="CorreioBo" type="Node2D" parent="."]
-position = Vector2(980, 14)
+position = Vector2(3460, 14)
 script = ExtResource("4_npc")
 timeline_path = "res://dialogic/timelines/fase1/correio_bo.dtl"
+restored_timeline_path = "res://dialogic/timelines/fase1/correio_bo_recuperado.dtl"
 
 [node name="Visual" type="ColorRect" parent="CorreioBo"]
 offset_left = -18.0
@@ -199,6 +251,7 @@ position = Vector2(0, -44)
 position = Vector2(290, 14)
 script = ExtResource("4_npc")
 timeline_path = "res://dialogic/timelines/fase1/morador.dtl"
+restored_timeline_path = "res://dialogic/timelines/fase1/morador_recuperado.dtl"
 
 [node name="Visual" type="ColorRect" parent="Morador"]
 offset_left = -18.0
@@ -288,6 +341,307 @@ offset_bottom = -24.0
 theme_override_colors/font_color = Color(0.96, 0.93, 0.82, 1)
 theme_override_font_sizes/font_size = 18
 text = "Sinal de alerta recebido..."
+autowrap_mode = 3
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_pause")]
 visible = false
+
+[node name="Blockout" type="Node2D" parent="."]
+
+[node name="Base" type="StaticBody2D" parent="Blockout"]
+position = Vector2(-300, 40)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/Base"]
+position = Vector2(325, 140)
+shape = SubResource("BlockShape0")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/Base"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 650, 0, 650, 280, 0, 280)
+
+[node name="Rua" type="StaticBody2D" parent="Blockout"]
+position = Vector2(350, 40)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/Rua"]
+position = Vector2(400, 140)
+shape = SubResource("BlockShape1")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/Rua"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 800, 0, 800, 280, 0, 280)
+
+[node name="Residencias" type="StaticBody2D" parent="Blockout"]
+position = Vector2(1150, 40)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/Residencias"]
+position = Vector2(575, 140)
+shape = SubResource("BlockShape2")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/Residencias"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 1150, 0, 1150, 280, 0, 280)
+
+[node name="Parque" type="StaticBody2D" parent="Blockout"]
+position = Vector2(2300, 40)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/Parque"]
+position = Vector2(640, 140)
+shape = SubResource("BlockShape3")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/Parque"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 280, 0, 280)
+
+[node name="MargemFinal" type="StaticBody2D" parent="Blockout"]
+position = Vector2(4590, 40)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/MargemFinal"]
+position = Vector2(405, 140)
+shape = SubResource("BlockShape4")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/MargemFinal"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 810, 0, 810, 280, 0, 280)
+
+[node name="SaltoInicial" type="StaticBody2D" parent="Blockout"]
+position = Vector2(660, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/SaltoInicial"]
+position = Vector2(40, 20)
+shape = SubResource("BlockShape5")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/SaltoInicial"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 80, 0, 80, 40, 0, 40)
+
+[node name="DegrauQuintal" type="StaticBody2D" parent="Blockout"]
+position = Vector2(1490, -15)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/DegrauQuintal"]
+position = Vector2(60, 27.5)
+shape = SubResource("BlockShape6")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/DegrauQuintal"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 120, 0, 120, 55, 0, 55)
+
+[node name="Varanda" type="StaticBody2D" parent="Blockout"]
+position = Vector2(1660, -80)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/Varanda"]
+position = Vector2(60, 10)
+shape = SubResource("BlockShape7")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/Varanda"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 120, 0, 120, 20, 0, 20)
+
+[node name="TelhadoBusca" type="StaticBody2D" parent="Blockout"]
+position = Vector2(1810, -140)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/TelhadoBusca"]
+position = Vector2(95, 10)
+shape = SubResource("BlockShape8")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/TelhadoBusca"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 190, 0, 190, 20, 0, 20)
+
+[node name="EntradaParque" type="StaticBody2D" parent="Blockout"]
+position = Vector2(2450, -20)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/EntradaParque"]
+position = Vector2(75, 30)
+shape = SubResource("BlockShape9")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/EntradaParque"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 60, 0, 60)
+
+[node name="PlataformaParque1" type="StaticBody2D" parent="Blockout"]
+position = Vector2(2660, -80)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/PlataformaParque1"]
+position = Vector2(75, 10)
+shape = SubResource("BlockShape10")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/PlataformaParque1"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 20, 0, 20)
+
+[node name="PlataformaParque2" type="StaticBody2D" parent="Blockout"]
+position = Vector2(2870, -130)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/PlataformaParque2"]
+position = Vector2(75, 10)
+shape = SubResource("BlockShape11")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/PlataformaParque2"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 20, 0, 20)
+
+[node name="MiranteParque" type="StaticBody2D" parent="Blockout"]
+position = Vector2(3060, -180)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/MiranteParque"]
+position = Vector2(90, 10)
+shape = SubResource("BlockShape12")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/MiranteParque"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 180, 0, 180, 20, 0, 20)
+
+[node name="DescidaParque" type="StaticBody2D" parent="Blockout"]
+position = Vector2(3270, -70)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/DescidaParque"]
+position = Vector2(65, 10)
+shape = SubResource("BlockShape13")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/DescidaParque"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 130, 0, 130, 20, 0, 20)
+
+[node name="PedraRio1" type="StaticBody2D" parent="Blockout"]
+position = Vector2(3680, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/PedraRio1"]
+position = Vector2(70, 15)
+shape = SubResource("BlockShape14")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/PedraRio1"]
+color = Color(0.33, 0.45, 0.43, 1)
+polygon = PackedVector2Array(0, 0, 140, 0, 140, 30, 0, 30)
+
+[node name="PedraRio2" type="StaticBody2D" parent="Blockout"]
+position = Vector2(3940, -60)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/PedraRio2"]
+position = Vector2(70, 15)
+shape = SubResource("BlockShape15")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/PedraRio2"]
+color = Color(0.33, 0.45, 0.43, 1)
+polygon = PackedVector2Array(0, 0, 140, 0, 140, 30, 0, 30)
+
+[node name="PedraRio3" type="StaticBody2D" parent="Blockout"]
+position = Vector2(4200, -120)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/PedraRio3"]
+position = Vector2(75, 15)
+shape = SubResource("BlockShape16")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/PedraRio3"]
+color = Color(0.33, 0.45, 0.43, 1)
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 30, 0, 30)
+
+[node name="PedraRio4" type="StaticBody2D" parent="Blockout"]
+position = Vector2(4440, -40)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/PedraRio4"]
+position = Vector2(75, 15)
+shape = SubResource("BlockShape17")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/PedraRio4"]
+color = Color(0.33, 0.45, 0.43, 1)
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 30, 0, 30)
+
+[node name="LimiteEsquerdo" type="StaticBody2D" parent="Blockout"]
+position = Vector2(-340, -520)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/LimiteEsquerdo"]
+position = Vector2(20, 420)
+shape = SubResource("BlockShape18")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/LimiteEsquerdo"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 40, 0, 40, 840, 0, 840)
+
+[node name="LimiteDireito" type="StaticBody2D" parent="Blockout"]
+position = Vector2(5400, -520)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="Blockout/LimiteDireito"]
+position = Vector2(20, 420)
+shape = SubResource("BlockShape19")
+
+[node name="Visual" type="Polygon2D" parent="Blockout/LimiteDireito"]
+color = Color(0.36, 0.39, 0.39, 1)
+polygon = PackedVector2Array(0, 0, 40, 0, 40, 840, 0, 840)
+
+[node name="Flow" type="Node2D" parent="."]
+
+[node name="Base" type="Marker2D" parent="Flow"]
+position = Vector2(-200, 0)
+metadata/title = "00 · BASE DO GARIBOT"
+metadata/hint = "Saia da base e siga para a rua da vila."
+
+[node name="Street" type="Marker2D" parent="Flow"]
+position = Vector2(350, 0)
+metadata/title = "01 · RUA DA VILA"
+metadata/hint = "Pule o pequeno bloqueio e recolha o celular à frente."
+
+[node name="Residential" type="Marker2D" parent="Flow"]
+position = Vector2(1150, 0)
+metadata/title = "02 · ÁREA RESIDENCIAL"
+metadata/hint = "Explore as varandas: há fios no telhado. Os blocos formam uma escada."
+
+[node name="Park" type="Marker2D" parent="Flow"]
+position = Vector2(2300, 0)
+metadata/title = "03 · PARQUE CONTAMINADO"
+metadata/hint = "Pratique saltos entre as plataformas até o resíduo no mirante."
+
+[node name="River" type="Marker2D" parent="Flow"]
+position = Vector2(3500, 0)
+metadata/title = "04 · REGIÃO DO RIO"
+metadata/hint = "Combine saltos curtos e longos nas pedras. Há dois REEE sobre o rio."
+
+[node name="Finish" type="Marker2D" parent="Flow"]
+position = Vector2(4750, 0)
+metadata/title = "05 · PRAÇA DA RECICLAGEM"
+metadata/hint = "Reúna todos os REEE e encontre os moradores nesta praça."
+
+[node name="RiverCheckpoint" type="Marker2D" parent="."]
+position = Vector2(3530, 0)
+
+[node name="FinishPoint" type="Marker2D" parent="."]
+position = Vector2(4950, 0)

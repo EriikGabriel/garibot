@@ -1,25 +1,15 @@
+@tool
 extends Node2D
 class_name Phase1World
 
-## Cenário desenhado por código para manter a fase jogável mesmo sem os sprites
-## finais. A paleta muda gradualmente conforme Garibot recolhe REEE.
-var reee_collected: int = 0
-var _smoke_time := 0.0
-
-const SKY := Color("#73787a")
-const SKY_POLLUTED := Color("#464b4e")
-const BRICK := Color("#6d6862")
-const ROAD := Color("#4a4c4b")
-const GRASS := Color("#657052")
-const DEAD_GRASS := Color("#867c4b")
-const RIVER := Color("#4f7070")
-
-func _ready() -> void:
-	add_to_group("phase1_level")
-	queue_redraw()
+## Fundo do blockout. As plataformas e os marcos editáveis ficam em Blockout/Flow.
+@export var reee_total := 5
+var reee_collected := 0
+var _water_time := 0.0
 
 func _process(delta: float) -> void:
-	_smoke_time += delta
+	if not Engine.is_editor_hint():
+		_water_time += delta
 	queue_redraw()
 
 func register_reee() -> void:
@@ -27,66 +17,48 @@ func register_reee() -> void:
 	queue_redraw()
 
 func pollution_ratio() -> float:
-	return clampf(float(reee_collected) / 5.0, 0.0, 1.0)
+	return clampf(float(reee_collected) / maxi(reee_total, 1), 0.0, 1.0)
 
 func _draw() -> void:
-	# A limpeza reduz o chumbo visual e recupera gradualmente a vegetação.
-	var pollution := 1.0 - pollution_ratio()
-	var sky := SKY.lerp(SKY_POLLUTED, pollution)
-	draw_rect(Rect2(-1000, -520, 4400, 560), sky)
+	var clean := pollution_ratio()
+	draw_rect(Rect2(-900, -900, 7000, 1600), Color("#434e55").lerp(Color("#9bbbc1"), clean))
+	# Base, bairro, parque, rio e praça têm silhuetas distintas já no protótipo.
+	draw_rect(Rect2(-180, -170, 370, 210), Color("#376d70"))
+	draw_rect(Rect2(-100, -115, 90, 155), Color("#203e49"))
+	for x in [1190, 1510, 1830, 2120]:
+		_draw_house(Vector2(x, 40), clean)
+	for x in [2340, 2630, 2960, 3300, 4770, 5180]:
+		_draw_tree(Vector2(x, 40), clean)
+	# Rio abaixo da rota; cair devolve o jogador à margem, sem perder coletas.
+	draw_rect(Rect2(3580, 130, 1010, 440), Color("#494b38").lerp(Color("#4ca6ad"), clean))
+	for x in range(3590, 4580, 65):
+		var wave := sin(_water_time * 1.5 + float(x) * 0.02) * 3.0
+		draw_line(Vector2(x, 142 + wave), Vector2(x + 35, 142 + wave), Color("#91bab3"), 2.0)
+	# Recompensa legível: água, folhas, flores e bandeira recuperam a cor.
+	for x in range(400, 5300, 85):
+		if x > 3550 and x < 4600:
+			continue
+		var grass := Color("#8a7a52").lerp(Color("#66a86e"), clean)
+		draw_line(Vector2(x, 40), Vector2(x - 5, 26), grass, 3.0)
+		if clean >= 0.4:
+			draw_circle(Vector2(x - 5, 23), 4.0, Color("#efd47d"))
+	draw_line(Vector2(5020, 40), Vector2(5020, -150), Color("#c6d2c3"), 5)
+	draw_rect(Rect2(5020, -150, 115, 60), Color("#67716b").lerp(Color("#78b993"), clean))
+	# Sinalização dos desafios; plataformas são retângulos, REEE são círculos.
+	for point in [Vector2(685, -35), Vector2(2480, -55), Vector2(3710, -35)]:
+		_label(point, "!", Color("#f1d985"), 28)
 
-	# Fábrica antiga e fumaça densa ao fundo.
-	draw_rect(Rect2(1390, -220, 470, 260), Color("#34383a"))
-	draw_rect(Rect2(1450, -360, 52, 145), Color("#292d2f"))
-	draw_rect(Rect2(1650, -430, 66, 215), Color("#292d2f"))
-	draw_rect(Rect2(1785, -315, 45, 100), Color("#292d2f"))
-	for chimney in [Vector2(1475, -365), Vector2(1680, -435), Vector2(1807, -320)]:
-		for puff in range(4):
-			var drift: float = sin(_smoke_time * 0.35 + puff) * 20.0 + puff * 34.0
-			var p: Vector2 = chimney + Vector2(drift, -40.0 - puff * 35.0)
-			draw_circle(p, 38.0 + puff * 8.0, Color(0.12, 0.14, 0.15, (0.58 - puff * 0.08) * pollution))
+func _label(at: Vector2, text: String, color: Color, font_size: int) -> void:
+	draw_string(ThemeDB.fallback_font, at, text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, color)
 
-	# Casas desgastadas e rua de paralelepípedos.
-	# for house in [Vector2(-260, -75), Vector2(380, -95), Vector2(1020, -90)]:
-	# 	_draw_house(house)
-	draw_rect(Rect2(-900, 40, 3600, 260), ROAD)
-	for x in range(-880, 2600, 42):
-		draw_line(Vector2(x, 42), Vector2(x + 15, 300), Color(0.18, 0.19, 0.18, 0.45), 1.0)
-	for y in range(70, 300, 32):
-		draw_line(Vector2(-900, y), Vector2(2600, y), Color(0.2, 0.2, 0.19, 0.35), 1.0)
+func _draw_house(at: Vector2, clean: float) -> void:
+	draw_rect(Rect2(at + Vector2(0, -210), Vector2(245, 210)), Color("#675f59").lerp(Color("#a18e74"), clean))
+	draw_colored_polygon(PackedVector2Array([at + Vector2(-12, -210), at + Vector2(122, -290), at + Vector2(257, -210)]), Color("#554f4a"))
+	draw_rect(Rect2(at + Vector2(30, -95), Vector2(52, 95)), Color("#3b4b51"))
+	draw_rect(Rect2(at + Vector2(140, -155), Vector2(60, 65)), Color("#847d60").lerp(Color("#c4d6b3"), clean))
 
-	# Parque, rio e vegetação em transição: verde no início, amarelada no fim.
-	draw_rect(Rect2(720, -10, 640, 48), RIVER.lerp(Color("#354344"), pollution))
-	draw_rect(Rect2(720, 28, 640, 12), Color("#302f2d"))
-	# Parquinho interditado, cercado pela água escura do rio.
-	# draw_line(Vector2(865, 32), Vector2(865, -42), Color("#665c4d"), 5.0)
-	# draw_line(Vector2(970, 32), Vector2(970, -42), Color("#665c4d"), 5.0)
-	# draw_line(Vector2(865, -42), Vector2(970, -42), Color("#665c4d"), 5.0)
-	# draw_line(Vector2(885, -8), Vector2(915, 22), Color("#8a765a"), 3.0)
-	# draw_line(Vector2(945, -8), Vector2(915, 22), Color("#8a765a"), 3.0)
-	for tree in [Vector2(650, 24), Vector2(780, 20), Vector2(1230, 20), Vector2(1320, 22)]:
-		_draw_tree(tree, pollution * clampf((tree.x - 550.0) / 700.0, 0.25, 1.0))
-	for x in range(700, 1360, 70):
-		var grass_color := GRASS.lerp(DEAD_GRASS, pollution * clampf((x - 600.0) / 700.0, 0.2, 1.0))
-		draw_line(Vector2(x, 38), Vector2(x - 4, 28), grass_color, 3.0)
-		draw_line(Vector2(x + 5, 38), Vector2(x + 10, 30), grass_color, 2.0)
-
-	# Base recicladora limpa, contrastando com a vila.
-	# draw_rect(Rect2(-160, -145, 250, 145), Color("#356b69"))
-	# draw_rect(Rect2(-135, -125, 62, 52), Color("#a5c2b4"))
-	# draw_string(ThemeDB.fallback_font, Vector2(-120, -95), "BASE", HORIZONTAL_ALIGNMENT_LEFT, -1, 17, Color("#d8ead5"))
-	# draw_circle(Vector2(45, -160), 10.0 + sin(_smoke_time * 5.0) * 3.0, Color("#f2c95c"))
-
-func _draw_house(origin: Vector2) -> void:
-	draw_rect(Rect2(origin, Vector2(230, 115)), BRICK)
-	draw_colored_polygon(PackedVector2Array([origin + Vector2(-14, 0), origin + Vector2(112, -78), origin + Vector2(244, 0)]), Color("#403e3b"))
-	draw_rect(Rect2(origin + Vector2(32, 35), Vector2(43, 80)), Color("#3e494b"))
-	draw_rect(Rect2(origin + Vector2(140, 35), Vector2(48, 38)), Color("#9c8c65"))
-
-func _draw_tree(origin: Vector2, pollution: float) -> void:
-	var leaf := Color("#68754b").lerp(Color("#81723f"), pollution)
-	draw_rect(Rect2(origin + Vector2(-6, -90), Vector2(12, 92)), Color("#494237"))
-	draw_line(origin + Vector2(0, -58), origin + Vector2(-30, -96), Color("#494237"), 5.0)
-	draw_line(origin + Vector2(2, -49), origin + Vector2(34, -83), Color("#494237"), 4.0)
-	draw_circle(origin + Vector2(-25, -105), 32.0, leaf)
-	draw_circle(origin + Vector2(18, -110), 38.0, leaf.darkened(0.08))
+func _draw_tree(at: Vector2, clean: float) -> void:
+	draw_rect(Rect2(at + Vector2(-7, -160), Vector2(14, 160)), Color("#625c48"))
+	var leaf := Color("#827749").lerp(Color("#5d995f"), clean)
+	draw_circle(at + Vector2(-28, -165), 45, leaf)
+	draw_circle(at + Vector2(24, -190), 55, leaf.lightened(0.08))

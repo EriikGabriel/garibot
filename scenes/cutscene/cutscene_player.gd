@@ -32,6 +32,7 @@ extends Node
 ##   ]
 
 signal step_reached(step: Dictionary, index: int)
+signal started
 signal finished
 
 @export_storage var steps: Array[Dictionary] = []
@@ -71,6 +72,7 @@ func run() -> void:
 	_player.in_cutscene = true
 	_player.has_control = false
 	_player.cutscene_stop()
+	started.emit()
 	_advance()
 
 

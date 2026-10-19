@@ -43,9 +43,12 @@ directories/dch_directory={
 directories/dtl_directory={
 "conclusao": "res://dialogic/timelines/fase1/conclusao.dtl",
 "correio_bo": "res://dialogic/timelines/fase1/correio_bo.dtl",
+"correio_bo_recuperado": "res://dialogic/timelines/fase1/correio_bo_recuperado.dtl",
 "garidog": "res://dialogic/timelines/fase1/garidog.dtl",
+"garidog_recuperado": "res://dialogic/timelines/fase1/garidog_recuperado.dtl",
 "intro": "res://dialogic/timelines/fase1/intro.dtl",
 "morador": "res://dialogic/timelines/fase1/morador.dtl",
+"morador_recuperado": "res://dialogic/timelines/fase1/morador_recuperado.dtl",
 "reee": "res://dialogic/timelines/fase1/reee.dtl"
 }
 variables={}
