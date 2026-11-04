@@ -20,7 +20,7 @@ A exploração é reversível: é possível voltar para buscar qualquer REEE esq
 
 ## Edição no Godot
 
-- `Blockout`: cada retângulo é um `StaticBody2D` nomeado, com colisão e visual próprios. Altere o tamanho do `RectangleShape2D` e o polígono juntos.
+- `Blockout`: cada bloco é um `StaticBody2D` nomeado. A arte de tijolos (nó `Tijolos`) segue sozinha o `RectangleShape2D` do nó `Shape`; para mudar um bloco, altere só a colisão. Veja "Blocos de tijolo".
 - `Flow`: marcos das áreas, nomes e dicas no metadata. Mantenha a ordem horizontal dos marcos. As dicas acompanham esses marcos.
 - `REEE_*`: círculos amarelos coletáveis. As posições em altura tornam a exploração necessária.
 - `RiverCheckpoint`: retorno seguro após cair no rio. A queda não apaga coletas.
@@ -34,6 +34,7 @@ As plataformas ficam dentro do alcance do salto atual (velocidade inicial 750, g
 Cada coleta clareia o céu, recupera a água e colore a vegetação. Flores aparecem a partir de 40% da coleta. A partir de 60%, os NPCs têm uma nova fala de recuperação, ouvida ao se aproximar novamente.
 
 O quadro de instruções e sua narração ficam suspensos durante cutscenes, conversas e minigames. Ao voltar ao jogo, a dica vigente reaparece. A conclusão inicia apenas uma vez, na praça, após todas as coletas.
+
 
 ## Próximas iterações
 

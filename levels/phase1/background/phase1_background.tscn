@@ -1,0 +1,274 @@
+[gd_scene load_steps=26 format=3 uid="uid://b2gm3s63uib7j"]
+
+[ext_resource type="Script" uid="uid://cfa16vt60jhp4" path="res://levels/phase1/background/phase1_background.gd" id="1_bg"]
+[ext_resource type="Script" uid="uid://c20mp7ukwn5sa" path="res://levels/phase1/background/phase1_parallax_layer.gd" id="2_layer"]
+[ext_resource type="Script" uid="uid://bxkckpoaysa5p" path="res://levels/phase1/background/phase1_background_ambient.gd" id="3_ambient"]
+[ext_resource type="Shader" uid="uid://b5eg7tqxtio8q" path="res://levels/phase1/background/pollution_blend.gdshader" id="4_shader"]
+[ext_resource type="Texture2D" uid="uid://tn8lcp278iol" path="res://assets/sprites/backgrounds/phase1/anim_fumaca.png" id="t_anim_fumaca"]
+[ext_resource type="Texture2D" uid="uid://dpa1mlqnilw0w" path="res://assets/sprites/backgrounds/phase1/anim_passaros.png" id="t_anim_passaros"]
+[ext_resource type="Texture2D" uid="uid://mb3x0f3ulv2u" path="res://assets/sprites/backgrounds/phase1/anim_rotor.png" id="t_anim_rotor"]
+[ext_resource type="Texture2D" uid="uid://cd48syr1tehv3" path="res://assets/sprites/backgrounds/phase1/ceu_limpo.png" id="t_ceu_limpo"]
+[ext_resource type="Texture2D" uid="uid://d16xg1n3o80ri" path="res://assets/sprites/backgrounds/phase1/ceu_sujo.png" id="t_ceu_sujo"]
+[ext_resource type="Texture2D" uid="uid://bf7w0pngdtaxo" path="res://assets/sprites/backgrounds/phase1/longe_limpo.png" id="t_longe_limpo"]
+[ext_resource type="Texture2D" uid="uid://dhmc7yh263" path="res://assets/sprites/backgrounds/phase1/longe_mascara.png" id="t_longe_mascara"]
+[ext_resource type="Texture2D" uid="uid://d23ypdl047s3a" path="res://assets/sprites/backgrounds/phase1/longe_sujo.png" id="t_longe_sujo"]
+[ext_resource type="Texture2D" uid="uid://beyjpxuuj1xrh" path="res://assets/sprites/backgrounds/phase1/meio_limpo.png" id="t_meio_limpo"]
+[ext_resource type="Texture2D" uid="uid://d4iyvxgxy4e7a" path="res://assets/sprites/backgrounds/phase1/meio_mascara.png" id="t_meio_mascara"]
+[ext_resource type="Texture2D" uid="uid://hcy5idwxkx7t" path="res://assets/sprites/backgrounds/phase1/meio_sujo.png" id="t_meio_sujo"]
+[ext_resource type="Texture2D" uid="uid://deu1ec7g77e48" path="res://assets/sprites/backgrounds/phase1/nuvens_limpo.png" id="t_nuvens_limpo"]
+[ext_resource type="Texture2D" uid="uid://bgekla4ox208v" path="res://assets/sprites/backgrounds/phase1/nuvens_sujo.png" id="t_nuvens_sujo"]
+[ext_resource type="Texture2D" uid="uid://cdhd7q66emp4s" path="res://assets/sprites/backgrounds/phase1/perto_limpo.png" id="t_perto_limpo"]
+[ext_resource type="Texture2D" uid="uid://dmagrmhf5j4im" path="res://assets/sprites/backgrounds/phase1/perto_mascara.png" id="t_perto_mascara"]
+[ext_resource type="Texture2D" uid="uid://dg6aw8df68fgm" path="res://assets/sprites/backgrounds/phase1/perto_sujo.png" id="t_perto_sujo"]
+
+[sub_resource type="ShaderMaterial" id="mat_ceu"]
+shader = ExtResource("4_shader")
+shader_parameter/clean_texture = ExtResource("t_ceu_limpo")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
+[sub_resource type="ShaderMaterial" id="mat_nuvens"]
+shader = ExtResource("4_shader")
+shader_parameter/clean_texture = ExtResource("t_nuvens_limpo")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
+[sub_resource type="ShaderMaterial" id="mat_longe"]
+shader = ExtResource("4_shader")
+shader_parameter/clean_texture = ExtResource("t_longe_limpo")
+shader_parameter/progress_mask = ExtResource("t_longe_mascara")
+shader_parameter/use_mask = true
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
+[sub_resource type="ShaderMaterial" id="mat_meio"]
+shader = ExtResource("4_shader")
+shader_parameter/clean_texture = ExtResource("t_meio_limpo")
+shader_parameter/progress_mask = ExtResource("t_meio_mascara")
+shader_parameter/use_mask = true
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
+[sub_resource type="ShaderMaterial" id="mat_perto"]
+shader = ExtResource("4_shader")
+shader_parameter/clean_texture = ExtResource("t_perto_limpo")
+shader_parameter/progress_mask = ExtResource("t_perto_mascara")
+shader_parameter/use_mask = true
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
+[node name="Phase1Background" type="Node2D"]
+process_priority = 100
+z_index = -20
+script = ExtResource("1_bg")
+
+[node name="Ceu" type="Node2D" parent="."]
+position = Vector2(160, 0)
+script = ExtResource("2_layer")
+scroll_factor = Vector2(0, 0)
+
+[node name="Imagem" type="Sprite2D" parent="Ceu"]
+material = SubResource("mat_ceu")
+position = Vector2(-360, -210)
+texture = ExtResource("t_ceu_sujo")
+centered = false
+
+[node name="Nuvens" type="Node2D" parent="."]
+position = Vector2(152, 0)
+script = ExtResource("2_layer")
+scroll_factor = Vector2(0.05, 0.05)
+drift_speed = 6.0
+
+[node name="Imagem" type="Sprite2D" parent="Nuvens"]
+texture_repeat = 2
+material = SubResource("mat_nuvens")
+position = Vector2(-959, -205)
+texture = ExtResource("t_nuvens_sujo")
+centered = false
+region_enabled = true
+region_rect = Rect2(611, 0, 2237, 200)
+
+[node name="Longe" type="Node2D" parent="."]
+position = Vector2(128, 0)
+script = ExtResource("2_layer")
+scroll_factor = Vector2(0.2, 0.2)
+
+[node name="Imagem" type="Sprite2D" parent="Longe"]
+material = SubResource("mat_longe")
+position = Vector2(-348, -250)
+texture = ExtResource("t_longe_sujo")
+centered = false
+
+[node name="Fumaca1" type="Sprite2D" parent="Longe"]
+position = Vector2(1227, -62)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("t_anim_fumaca")
+centered = false
+hframes = 8
+frame = 6
+script = ExtResource("3_ambient")
+restore_step = 0.4
+
+[node name="Fumaca2" type="Sprite2D" parent="Longe"]
+position = Vector2(1277, -62)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("t_anim_fumaca")
+centered = false
+hframes = 8
+frame = 7
+script = ExtResource("3_ambient")
+start_frame = 1
+restore_step = 0.8
+
+[node name="Fumaca3" type="Sprite2D" parent="Longe"]
+position = Vector2(1328, -62)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("t_anim_fumaca")
+centered = false
+hframes = 8
+script = ExtResource("3_ambient")
+start_frame = 2
+restore_step = 0.2
+
+[node name="Passaros1" type="Sprite2D" parent="Longe"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(60, -150)
+texture = ExtResource("t_anim_passaros")
+hframes = 4
+script = ExtResource("3_ambient")
+fps = 6.0
+restore_step = 0.6
+visible_when_clean = true
+drift = Vector2(8, 0)
+drift_range = 260.0
+
+[node name="Passaros2" type="Sprite2D" parent="Longe"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(300, -128)
+texture = ExtResource("t_anim_passaros")
+hframes = 4
+frame = 1
+script = ExtResource("3_ambient")
+fps = 6.0
+start_frame = 1
+restore_step = 0.6
+visible_when_clean = true
+drift = Vector2(11, 0)
+drift_range = 260.0
+
+[node name="Passaros3" type="Sprite2D" parent="Longe"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(820, -160)
+texture = ExtResource("t_anim_passaros")
+hframes = 4
+frame = 2
+script = ExtResource("3_ambient")
+fps = 6.0
+start_frame = 2
+restore_step = 0.6
+visible_when_clean = true
+drift = Vector2(14, 0)
+drift_range = 260.0
+
+[node name="Meio" type="Node2D" parent="."]
+position = Vector2(88, 0)
+script = ExtResource("2_layer")
+scroll_factor = Vector2(0.45, 0.45)
+
+[node name="Imagem" type="Sprite2D" parent="Meio"]
+material = SubResource("mat_meio")
+position = Vector2(-343, -250)
+texture = ExtResource("t_meio_sujo")
+centered = false
+
+[node name="Fumaca1" type="Sprite2D" parent="Meio"]
+position = Vector2(1883, -170)
+texture = ExtResource("t_anim_fumaca")
+centered = false
+hframes = 8
+frame = 6
+script = ExtResource("3_ambient")
+restore_step = 0.8
+
+[node name="Fumaca2" type="Sprite2D" parent="Meio"]
+position = Vector2(1923, -184)
+texture = ExtResource("t_anim_fumaca")
+centered = false
+hframes = 8
+frame = 7
+script = ExtResource("3_ambient")
+start_frame = 1
+restore_step = 0.8
+
+[node name="Fumaca3" type="Sprite2D" parent="Meio"]
+position = Vector2(1981, -170)
+texture = ExtResource("t_anim_fumaca")
+centered = false
+hframes = 8
+script = ExtResource("3_ambient")
+start_frame = 2
+restore_step = 0.8
+
+[node name="Rotor4" type="Sprite2D" parent="Meio"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2468, -118)
+texture = ExtResource("t_anim_rotor")
+centered = false
+hframes = 4
+frame = 3
+script = ExtResource("3_ambient")
+fps = 10.0
+start_frame = 3
+restore_step = 0.2
+visible_when_clean = true
+
+[node name="Fumaca5" type="Sprite2D" parent="Meio"]
+position = Vector2(2474, -141)
+texture = ExtResource("t_anim_fumaca")
+centered = false
+hframes = 8
+frame = 2
+script = ExtResource("3_ambient")
+start_frame = 4
+restore_step = 0.2
+
+[node name="Rotor6" type="Sprite2D" parent="Meio"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2548, -102)
+texture = ExtResource("t_anim_rotor")
+centered = false
+hframes = 4
+frame = 1
+script = ExtResource("3_ambient")
+fps = 10.0
+start_frame = 1
+restore_step = 0.4
+visible_when_clean = true
+
+[node name="Fumaca7" type="Sprite2D" parent="Meio"]
+position = Vector2(2554, -125)
+texture = ExtResource("t_anim_fumaca")
+centered = false
+hframes = 8
+frame = 4
+script = ExtResource("3_ambient")
+start_frame = 6
+restore_step = 0.4
+
+[node name="Perto" type="Node2D" parent="."]
+position = Vector2(48, 0)
+script = ExtResource("2_layer")
+scroll_factor = Vector2(0.7, 0.7)
+
+[node name="Imagem" type="Sprite2D" parent="Perto"]
+material = SubResource("mat_perto")
+position = Vector2(-338, -250)
+texture = ExtResource("t_perto_sujo")
+centered = false

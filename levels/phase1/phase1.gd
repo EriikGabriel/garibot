@@ -40,6 +40,7 @@ func _ready() -> void:
 	var items := get_tree().get_nodes_in_group("phase1_reee")
 	_reee_total = items.size()
 	$World.reee_total = _reee_total
+	$Background.set_progress(0.0, false)
 	for item in items:
 		item.monitoring = false
 		item.collected.connect(_on_reee_collected)
@@ -141,6 +142,7 @@ func _on_reee_collected(_item_name: String) -> void:
 	GameAudio.play_sound(&"collect")
 	_reee_count += 1
 	$World.register_reee()
+	$Background.set_progress($World.pollution_ratio())
 	if _reee_count == 1:
 		reee_cutscene.run()
 	_update_hud()

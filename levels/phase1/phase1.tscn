@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cuowvkcs5ru1v"]
+[gd_scene load_steps=58 format=3 uid="uid://cuowvkcs5ru1v"]
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/phase1/phase1.gd" id="1_level"]
 [ext_resource type="Script" uid="uid://ci6q78ir854cp" path="res://levels/phase1/phase1_world.gd" id="2_world"]
@@ -8,6 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://dojoph16grx0" path="res://scenes/cutscene/cutscene_player.tscn" id="6_cutscene"]
 [ext_resource type="PackedScene" path="res://components/ui/collectible_progress_hud/collectible_progress_hud.tscn" id="7_hud"]
 [ext_resource type="PackedScene" path="res://scenes/pause_menu/pause_menu.tscn" id="8_pause"]
+[ext_resource type="PackedScene" uid="uid://b2gm3s63uib7j" path="res://levels/phase1/background/phase1_background.tscn" id="9_background"]
+[ext_resource type="PackedScene" uid="uid://cpcysgvh386kq" path="res://levels/phase1/front/phase1_front.tscn" id="10_front"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Villagers/morador_body.tscn" id="11_morador"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Villagers/crianca_body.tscn" id="12_crianca"]
+[ext_resource type="Script" uid="uid://5m2xctfyx04m" path="res://levels/phase1/blocks/phase1_brick_surface.gd" id="13_brick"]
+[ext_resource type="Shader" uid="uid://b5eg7tqxtio8q" path="res://levels/phase1/background/pollution_blend.gdshader" id="13_ht4ra"]
+[ext_resource type="Texture2D" uid="uid://dvof8t6fi7d7r" path="res://assets/sprites/scenery/phase1/tijolo_muro_sujo.png" id="14_muro_d"]
+[ext_resource type="Texture2D" uid="uid://8ddwmqacwm3x" path="res://assets/sprites/scenery/phase1/tijolo_muro_limpo.png" id="15_muro_c"]
+[ext_resource type="Texture2D" uid="uid://en27g2rfdaey" path="res://assets/sprites/scenery/phase1/tijolo_plataforma_sujo.png" id="16_plat_d"]
+[ext_resource type="Texture2D" uid="uid://u1m6rrgug6sg" path="res://assets/sprites/scenery/phase1/tijolo_plataforma_limpo.png" id="17_plat_c"]
 
 [sub_resource type="CircleShape2D" id="CollectibleCircle"]
 radius = 17.0
@@ -18,20 +28,62 @@ size = Vector2(96, 80)
 [sub_resource type="RectangleShape2D" id="BlockShape0"]
 size = Vector2(650, 280)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hnet"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape1"]
 size = Vector2(800, 280)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nskyw"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
 
 [sub_resource type="RectangleShape2D" id="BlockShape2"]
 size = Vector2(1150, 280)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ggh6h"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape3"]
 size = Vector2(1280, 280)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6a6x7"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
 
 [sub_resource type="RectangleShape2D" id="BlockShape4"]
 size = Vector2(810, 280)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rmhg"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape5"]
 size = Vector2(80, 40)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3lhwd"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
 
 [sub_resource type="RectangleShape2D" id="BlockShape6"]
 size = Vector2(120, 55)
@@ -45,35 +97,112 @@ size = Vector2(190, 20)
 [sub_resource type="RectangleShape2D" id="BlockShape9"]
 size = Vector2(150, 60)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icm82"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape10"]
 size = Vector2(150, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxeh3"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("17_plat_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
 
 [sub_resource type="RectangleShape2D" id="BlockShape11"]
 size = Vector2(150, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g650l"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("17_plat_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape12"]
 size = Vector2(180, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fc6o"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("17_plat_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
 
 [sub_resource type="RectangleShape2D" id="BlockShape13"]
 size = Vector2(130, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31fqh"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("17_plat_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape14"]
 size = Vector2(140, 30)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5bks"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("17_plat_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
 
 [sub_resource type="RectangleShape2D" id="BlockShape15"]
 size = Vector2(140, 30)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctp25"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("17_plat_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape16"]
 size = Vector2(150, 30)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlqex"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("17_plat_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
 
 [sub_resource type="RectangleShape2D" id="BlockShape17"]
 size = Vector2(150, 30)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmh41"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("17_plat_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape18"]
 size = Vector2(40, 840)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpruw"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
+
 [sub_resource type="RectangleShape2D" id="BlockShape19"]
 size = Vector2(40, 840)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_86ok5"]
+shader = ExtResource("13_ht4ra")
+shader_parameter/clean_texture = ExtResource("15_muro_c")
+shader_parameter/use_mask = false
+shader_parameter/progress = 0.0
+shader_parameter/step_softness = 0.2
 
 [node name="VilaFase1" type="Node2D"]
 script = ExtResource("1_level")
@@ -110,17 +239,16 @@ steps = Array[Dictionary]([{
 }])
 player_path = NodePath("../Player")
 
+[node name="Background" parent="." instance=ExtResource("9_background")]
+
+[node name="Frente" parent="." instance=ExtResource("10_front")]
+
 [node name="World" type="Node2D" parent="."]
 z_index = -5
 script = ExtResource("2_world")
 
 [node name="Player" parent="." instance=ExtResource("5_player")]
 position = Vector2(100, 0)
-
-[node name="OilPuddle" type="Polygon2D" parent="."]
-position = Vector2(420, 28)
-color = Color(0.12, 0.14, 0.12, 1)
-polygon = PackedVector2Array(-72, 0, -55, -8, -20, -10, 20, -5, 67, 0, 44, 11, -30, 10)
 
 [node name="REEE_Celular" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
 position = Vector2(688, -18)
@@ -253,19 +381,7 @@ script = ExtResource("4_npc")
 timeline_path = "res://dialogic/timelines/fase1/morador.dtl"
 restored_timeline_path = "res://dialogic/timelines/fase1/morador_recuperado.dtl"
 
-[node name="Visual" type="ColorRect" parent="Morador"]
-offset_left = -18.0
-offset_top = -40.0
-offset_right = 18.0
-offset_bottom = 26.0
-color = Color(0.43, 0.43, 0.37, 1)
-
-[node name="Eye" type="ColorRect" parent="Morador"]
-offset_left = -13.0
-offset_top = -28.0
-offset_right = -9.0
-offset_bottom = -24.0
-color = Color(0.96, 0.91, 0.72, 1)
+[node name="Body" parent="Morador" instance=ExtResource("11_morador")]
 
 [node name="TalkArea" type="Area2D" parent="Morador"]
 collision_layer = 0
@@ -275,25 +391,13 @@ position = Vector2(0, -7)
 shape = SubResource("NpcTalkShape")
 
 [node name="BubblePoint" type="Marker2D" parent="Morador"]
-position = Vector2(0, -44)
+position = Vector2(0, -51)
 
 [node name="Crianca" type="Node2D" parent="."]
 position = Vector2(345, 14)
 script = ExtResource("4_npc")
 
-[node name="Visual" type="ColorRect" parent="Crianca"]
-offset_left = -18.0
-offset_top = -40.0
-offset_right = 18.0
-offset_bottom = 26.0
-color = Color(0.73, 0.58, 0.38, 1)
-
-[node name="Eye" type="ColorRect" parent="Crianca"]
-offset_left = -13.0
-offset_top = -28.0
-offset_right = -9.0
-offset_bottom = -24.0
-color = Color(0.96, 0.91, 0.72, 1)
+[node name="Body" parent="Crianca" instance=ExtResource("12_crianca")]
 
 [node name="TalkArea" type="Area2D" parent="Crianca"]
 collision_layer = 0
@@ -304,7 +408,7 @@ position = Vector2(0, -7)
 shape = SubResource("NpcTalkShape")
 
 [node name="BubblePoint" type="Marker2D" parent="Crianca"]
-position = Vector2(0, -33)
+position = Vector2(0, -46)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 20
@@ -357,9 +461,20 @@ collision_mask = 0
 position = Vector2(325, 140)
 shape = SubResource("BlockShape0")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/Base"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 650, 0, 650, 280, 0, 280)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/Base"]
+z_index = -1
+material = SubResource("ShaderMaterial_3hnet")
+offset_right = 650.0
+offset_bottom = 280.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(0, 0, 100, 60)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="Rua" type="StaticBody2D" parent="Blockout"]
 position = Vector2(350, 40)
@@ -370,9 +485,19 @@ collision_mask = 0
 position = Vector2(400, 140)
 shape = SubResource("BlockShape1")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/Rua"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 800, 0, 800, 280, 0, 280)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/Rua"]
+z_index = -1
+material = SubResource("ShaderMaterial_nskyw")
+offset_right = 800.0
+offset_bottom = 280.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(4, 0, 96, 60)
+patch_margin_top = 8
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="Residencias" type="StaticBody2D" parent="Blockout"]
 position = Vector2(1150, 40)
@@ -383,9 +508,19 @@ collision_mask = 0
 position = Vector2(575, 140)
 shape = SubResource("BlockShape2")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/Residencias"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 1150, 0, 1150, 280, 0, 280)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/Residencias"]
+z_index = -1
+material = SubResource("ShaderMaterial_ggh6h")
+offset_right = 1150.0
+offset_bottom = 280.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(4, 0, 96, 60)
+patch_margin_top = 8
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="Parque" type="StaticBody2D" parent="Blockout"]
 position = Vector2(2300, 40)
@@ -396,9 +531,20 @@ collision_mask = 0
 position = Vector2(640, 140)
 shape = SubResource("BlockShape3")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/Parque"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 280, 0, 280)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/Parque"]
+z_index = -1
+material = SubResource("ShaderMaterial_6a6x7")
+offset_right = 1280.0
+offset_bottom = 280.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(4, 0, 100, 60)
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="MargemFinal" type="StaticBody2D" parent="Blockout"]
 position = Vector2(4590, 40)
@@ -409,9 +555,21 @@ collision_mask = 0
 position = Vector2(405, 140)
 shape = SubResource("BlockShape4")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/MargemFinal"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 810, 0, 810, 280, 0, 280)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/MargemFinal"]
+z_index = -1
+material = SubResource("ShaderMaterial_2rmhg")
+offset_right = 810.0
+offset_bottom = 280.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(0, 0, 104, 60)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="SaltoInicial" type="StaticBody2D" parent="Blockout"]
 position = Vector2(660, 0)
@@ -422,9 +580,21 @@ collision_mask = 0
 position = Vector2(40, 20)
 shape = SubResource("BlockShape5")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/SaltoInicial"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 80, 0, 80, 40, 0, 40)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/SaltoInicial"]
+z_index = -1
+material = SubResource("ShaderMaterial_3lhwd")
+offset_right = 80.0
+offset_bottom = 40.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(0, 0, 104, 60)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="DegrauQuintal" type="StaticBody2D" parent="Blockout"]
 position = Vector2(1490, -15)
@@ -435,10 +605,6 @@ collision_mask = 0
 position = Vector2(60, 27.5)
 shape = SubResource("BlockShape6")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/DegrauQuintal"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 120, 0, 120, 55, 0, 55)
-
 [node name="Varanda" type="StaticBody2D" parent="Blockout"]
 position = Vector2(1660, -80)
 collision_layer = 8
@@ -447,10 +613,6 @@ collision_mask = 0
 [node name="Shape" type="CollisionShape2D" parent="Blockout/Varanda"]
 position = Vector2(60, 10)
 shape = SubResource("BlockShape7")
-
-[node name="Visual" type="Polygon2D" parent="Blockout/Varanda"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 120, 0, 120, 20, 0, 20)
 
 [node name="TelhadoBusca" type="StaticBody2D" parent="Blockout"]
 position = Vector2(1810, -140)
@@ -461,10 +623,6 @@ collision_mask = 0
 position = Vector2(95, 10)
 shape = SubResource("BlockShape8")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/TelhadoBusca"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 190, 0, 190, 20, 0, 20)
-
 [node name="EntradaParque" type="StaticBody2D" parent="Blockout"]
 position = Vector2(2450, -20)
 collision_layer = 8
@@ -474,9 +632,21 @@ collision_mask = 0
 position = Vector2(75, 30)
 shape = SubResource("BlockShape9")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/EntradaParque"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 150, 0, 150, 60, 0, 60)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/EntradaParque"]
+z_index = -1
+material = SubResource("ShaderMaterial_icm82")
+offset_right = 150.0
+offset_bottom = 60.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(0, 0, 104, 60)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="PlataformaParque1" type="StaticBody2D" parent="Blockout"]
 position = Vector2(2660, -80)
@@ -487,9 +657,21 @@ collision_mask = 0
 position = Vector2(75, 10)
 shape = SubResource("BlockShape10")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/PlataformaParque1"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 150, 0, 150, 20, 0, 20)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/PlataformaParque1"]
+z_index = -1
+material = SubResource("ShaderMaterial_dxeh3")
+offset_right = 150.0
+offset_bottom = 20.0
+texture = ExtResource("16_plat_d")
+region_rect = Rect2(0, 0, 104, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("17_plat_c")
 
 [node name="PlataformaParque2" type="StaticBody2D" parent="Blockout"]
 position = Vector2(2870, -130)
@@ -500,9 +682,21 @@ collision_mask = 0
 position = Vector2(75, 10)
 shape = SubResource("BlockShape11")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/PlataformaParque2"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 150, 0, 150, 20, 0, 20)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/PlataformaParque2"]
+z_index = -1
+material = SubResource("ShaderMaterial_g650l")
+offset_right = 150.0
+offset_bottom = 20.0
+texture = ExtResource("16_plat_d")
+region_rect = Rect2(0, 0, 104, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("17_plat_c")
 
 [node name="MiranteParque" type="StaticBody2D" parent="Blockout"]
 position = Vector2(3060, -180)
@@ -513,9 +707,21 @@ collision_mask = 0
 position = Vector2(90, 10)
 shape = SubResource("BlockShape12")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/MiranteParque"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 180, 0, 180, 20, 0, 20)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/MiranteParque"]
+z_index = -1
+material = SubResource("ShaderMaterial_4fc6o")
+offset_right = 180.0
+offset_bottom = 20.0
+texture = ExtResource("16_plat_d")
+region_rect = Rect2(0, 0, 104, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("17_plat_c")
 
 [node name="DescidaParque" type="StaticBody2D" parent="Blockout"]
 position = Vector2(3270, -70)
@@ -526,9 +732,21 @@ collision_mask = 0
 position = Vector2(65, 10)
 shape = SubResource("BlockShape13")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/DescidaParque"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 130, 0, 130, 20, 0, 20)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/DescidaParque"]
+z_index = -1
+material = SubResource("ShaderMaterial_31fqh")
+offset_right = 130.0
+offset_bottom = 20.0
+texture = ExtResource("16_plat_d")
+region_rect = Rect2(0, 0, 104, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("17_plat_c")
 
 [node name="PedraRio1" type="StaticBody2D" parent="Blockout"]
 position = Vector2(3680, 0)
@@ -539,9 +757,21 @@ collision_mask = 0
 position = Vector2(70, 15)
 shape = SubResource("BlockShape14")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/PedraRio1"]
-color = Color(0.33, 0.45, 0.43, 1)
-polygon = PackedVector2Array(0, 0, 140, 0, 140, 30, 0, 30)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/PedraRio1"]
+z_index = -1
+material = SubResource("ShaderMaterial_c5bks")
+offset_right = 140.0
+offset_bottom = 30.0
+texture = ExtResource("16_plat_d")
+region_rect = Rect2(0, 0, 104, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("17_plat_c")
 
 [node name="PedraRio2" type="StaticBody2D" parent="Blockout"]
 position = Vector2(3940, -60)
@@ -552,9 +782,21 @@ collision_mask = 0
 position = Vector2(70, 15)
 shape = SubResource("BlockShape15")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/PedraRio2"]
-color = Color(0.33, 0.45, 0.43, 1)
-polygon = PackedVector2Array(0, 0, 140, 0, 140, 30, 0, 30)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/PedraRio2"]
+z_index = -1
+material = SubResource("ShaderMaterial_ctp25")
+offset_right = 140.0
+offset_bottom = 30.0
+texture = ExtResource("16_plat_d")
+region_rect = Rect2(0, 0, 104, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("17_plat_c")
 
 [node name="PedraRio3" type="StaticBody2D" parent="Blockout"]
 position = Vector2(4200, -120)
@@ -565,9 +807,21 @@ collision_mask = 0
 position = Vector2(75, 15)
 shape = SubResource("BlockShape16")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/PedraRio3"]
-color = Color(0.33, 0.45, 0.43, 1)
-polygon = PackedVector2Array(0, 0, 150, 0, 150, 30, 0, 30)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/PedraRio3"]
+z_index = -1
+material = SubResource("ShaderMaterial_nlqex")
+offset_right = 150.0
+offset_bottom = 30.0
+texture = ExtResource("16_plat_d")
+region_rect = Rect2(0, 0, 104, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("17_plat_c")
 
 [node name="PedraRio4" type="StaticBody2D" parent="Blockout"]
 position = Vector2(4440, -40)
@@ -578,9 +832,21 @@ collision_mask = 0
 position = Vector2(75, 15)
 shape = SubResource("BlockShape17")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/PedraRio4"]
-color = Color(0.33, 0.45, 0.43, 1)
-polygon = PackedVector2Array(0, 0, 150, 0, 150, 30, 0, 30)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/PedraRio4"]
+z_index = -1
+material = SubResource("ShaderMaterial_bmh41")
+offset_right = 150.0
+offset_bottom = 30.0
+texture = ExtResource("16_plat_d")
+region_rect = Rect2(0, 0, 104, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("17_plat_c")
 
 [node name="LimiteEsquerdo" type="StaticBody2D" parent="Blockout"]
 position = Vector2(-340, -520)
@@ -591,9 +857,21 @@ collision_mask = 0
 position = Vector2(20, 420)
 shape = SubResource("BlockShape18")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/LimiteEsquerdo"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 40, 0, 40, 840, 0, 840)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/LimiteEsquerdo"]
+z_index = -1
+material = SubResource("ShaderMaterial_hpruw")
+offset_right = 40.0
+offset_bottom = 840.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(0, 0, 104, 60)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="LimiteDireito" type="StaticBody2D" parent="Blockout"]
 position = Vector2(5400, -520)
@@ -604,9 +882,21 @@ collision_mask = 0
 position = Vector2(20, 420)
 shape = SubResource("BlockShape19")
 
-[node name="Visual" type="Polygon2D" parent="Blockout/LimiteDireito"]
-color = Color(0.36, 0.39, 0.39, 1)
-polygon = PackedVector2Array(0, 0, 40, 0, 40, 840, 0, 840)
+[node name="Tijolos" type="NinePatchRect" parent="Blockout/LimiteDireito"]
+z_index = -1
+material = SubResource("ShaderMaterial_86ok5")
+offset_right = 40.0
+offset_bottom = 840.0
+texture = ExtResource("14_muro_d")
+region_rect = Rect2(0, 0, 104, 60)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("13_brick")
+clean_texture = ExtResource("15_muro_c")
 
 [node name="Flow" type="Node2D" parent="."]
 

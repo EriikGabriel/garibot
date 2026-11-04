@@ -8,10 +8,14 @@ class_name Phase1Npc
 var _spoke := false
 var _spoke_restored := false
 var _player: Player
+var _world: Phase1World
+## Corpo animado (moradores). NPCs ainda sem arte usam o retângulo Visual/Eye.
+@onready var _body := get_node_or_null("Body") as VillagerBody
 
 func _ready() -> void:
 	$TalkArea.body_entered.connect(_on_body_entered)
 	_player = get_tree().get_first_node_in_group("player") as Player
+	_world = get_parent().get_node_or_null("World") as Phase1World
 
 func _process(_delta: float) -> void:
 	if not is_instance_valid(_player):
@@ -19,7 +23,12 @@ func _process(_delta: float) -> void:
 	var difference: float = _player.global_position.x - global_position.x
 	if absf(difference) > 2.0:
 		facing_direction = 1 if difference > 0.0 else -1
-	$Eye.position.x = 9.0 if facing_direction > 0 else -13.0
+	if _body:
+		_body.facing = facing_direction
+		# Mesmo limiar das falas de recuperação: a vila limpa deixa o morador feliz.
+		_body.happy = _world != null and _world.pollution_ratio() >= 0.6
+	elif has_node("Eye"):
+		$Eye.position.x = 9.0 if facing_direction > 0 else -13.0
 
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player or body.in_cutscene or not body.has_control or Dialogic.current_timeline != null:

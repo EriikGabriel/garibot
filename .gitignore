@@ -12,5 +12,6 @@ data_*/
 # Ferramentas locais de desenvolvimento.
 .codegraph
 .omo
+tools
 
 AGENTS.md
