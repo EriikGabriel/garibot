@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ddwmqacwm3x"
-path="res://.godot/imported/tijolo_muro_limpo.png-702930e59a69e379d46cd81e26a79319.ctex"
+uid="uid://batbe66mgf5mr"
+path="res://.godot/imported/bricks_limpo.png-02fb41af3a1ac06531dd31ef912f3083.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/scenery/phase1/tijolo_muro_limpo.png"
-dest_files=["res://.godot/imported/tijolo_muro_limpo.png-702930e59a69e379d46cd81e26a79319.ctex"]
+source_file="res://assets/tilesets/bricks_limpo.png"
+dest_files=["res://.godot/imported/bricks_limpo.png-02fb41af3a1ac06531dd31ef912f3083.ctex"]
 
 [params]
 

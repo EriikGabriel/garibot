@@ -4,7 +4,7 @@ extends Node2D
 
 ## Água do rio abaixo das pedras. Fica mais limpa conforme os REEE são coletados.
 
-const WATER_RECT := Rect2(3580, 130, 1010, 440)
+const WATER_RECT := Rect2(3584, 130, 1008, 440)
 const DIRTY_COLOR := Color("#494b38")
 const CLEAN_COLOR := Color("#4ca6ad")
 const WAVE_COLOR := Color("#91bab3")

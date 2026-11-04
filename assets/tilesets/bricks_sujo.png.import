@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://en27g2rfdaey"
-path="res://.godot/imported/tijolo_plataforma_sujo.png-493ed7a563ef5a12054892ccd8beee94.ctex"
+uid="uid://cg0a4ol2gwiu2"
+path="res://.godot/imported/bricks_sujo.png-e7f7eef21d6714cc3bbd2cfd827a9cb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/scenery/phase1/tijolo_plataforma_sujo.png"
-dest_files=["res://.godot/imported/tijolo_plataforma_sujo.png-493ed7a563ef5a12054892ccd8beee94.ctex"]
+source_file="res://assets/tilesets/bricks_sujo.png"
+dest_files=["res://.godot/imported/bricks_sujo.png-e7f7eef21d6714cc3bbd2cfd827a9cb0.ctex"]
 
 [params]
 

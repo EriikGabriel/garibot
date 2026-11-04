@@ -20,7 +20,8 @@ A exploração é reversível: é possível voltar para buscar qualquer REEE esq
 
 ## Edição no Godot
 
-- `Blockout`: cada bloco é um `StaticBody2D` nomeado. A arte de tijolos (nó `Surface`, `BlockSurface`) segue sozinha o `RectangleShape2D` do nó `Shape`; para mudar um bloco, altere só a colisão.
+- `Bricks`: chão, blocos e plataformas, pintados com o tileset de tijolos (veja "Tiles").
+- `HouseColliders`: muro do quintal, varanda e laje. Só colisão: a arte está nas casas, então mover um deles exige ajustar a casa.
 - `Flow`: marcos das áreas, nomes e dicas no metadata. Mantenha a ordem horizontal dos marcos. As dicas acompanham esses marcos.
 - `Reee*`: círculos amarelos coletáveis. As posições em altura tornam a exploração necessária.
 - `RiverCheckpoint`: retorno seguro após cair no rio. A queda não apaga coletas.
@@ -28,6 +29,21 @@ A exploração é reversível: é possível voltar para buscar qualquer REEE esq
 - `Restoration`: progresso de limpeza (REEE coletados ÷ total). `Background`, `Scenery`, os tijolos, a `RiverWater` e os moradores reagem a ele.
 
 As plataformas ficam dentro do alcance do salto atual (velocidade inicial 750, gravidade aplicada por quadro). Segurar o botão permite o salto mais alto. A rua e o parque têm chão de recuperação; no rio, a queda abaixo de `fall_reset_y` retorna à margem inicial. Os caminhos também permitem a travessia no sentido contrário.
+
+## Tiles
+
+Tileset: `assets/tilesets/bricks_tileset.tres`, tiles de **16×16 px** (tijolo de 16×8). Tem dois terrenos:
+*Muro de tijolos* (capa de concreto no topo) e *Plataforma de tijolos* (fiada em pé no topo, dentículos embaixo).
+
+- Para construir, selecione `Bricks`, abra a aba **TileMap > Terrains**, escolha o terreno e pinte. Bordas, cantos e
+  emendas são escolhidos automaticamente; os tiles mais repetidos variam sozinhos (sujeira e musgo).
+- A colisão vem nos tiles. Plataformas têm 1 tile de altura; pedras e blocos, 2 ou mais.
+- A camada fica em `y = 8`: assim as linhas da grade passam em `y = 40`, a altura do chão da fase.
+  Em fases novas, mantenha esse deslocamento se o chão continuar em `y = 40`.
+- Para outra camada de tiles restaurável, use `RestorableTileMapLayer` com `clean_texture = bricks_limpo.png`.
+- Arte: `assets/tilesets/aseprite/bricks.aseprite` (grade de 16 já configurada). Mantenha a posição de cada tile no atlas;
+  o `bricks_tiles.json` descreve terreno e vizinhos de cada um. Para regenerar:
+  `python3 tools/tiles/build_bricks_tileset.py` e depois `godot --headless --path . -s res://tools/tiles/build_bricks_tileset.gd`.
 
 ## Recompensa e narrativa
 
