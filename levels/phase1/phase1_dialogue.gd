@@ -1,43 +1,40 @@
-extends RefCounted
 class_name Phase1Dialogue
+extends RefCounted
 
-const CHARACTERS := {
-	"garibot": "res://dialogic/characters/garibot.dch",
-	"garidog": "res://dialogic/characters/garidog.dch",
-	"correio_bo": "res://dialogic/characters/correio_bo.dch",
-	"morador": "res://dialogic/characters/morador.dch",
-	"crianca": "res://dialogic/characters/crianca.dch",
+## Inicia diálogos da Fase 1 no estilo de balões, ligando cada personagem ao seu ponto de fala.
+
+const SPEAKERS := {
+	"res://dialogic/characters/garibot.dch": "Player/BubblePoint",
+	"res://dialogic/characters/garidog.dch": "Garidog/BubblePoint",
+	"res://dialogic/characters/correio_bo.dch": "CorreioBo/BubblePoint",
+	"res://dialogic/characters/morador.dch": "Morador/BubblePoint",
+	"res://dialogic/characters/crianca.dch": "Crianca/BubblePoint",
 }
-const BUBBLE_DIRECTION = preload("res://levels/phase1/phase1_bubble_direction.gd")
+
 
 static func start(timeline_path: String, level: Node) -> void:
+	# O layout é registrado antes e depois do start: o Dialogic pode recriá-lo.
 	var prepared_layout: Node = Dialogic.Styles.load_style("bubbles")
 	if prepared_layout == null or not prepared_layout.has_method("register_character"):
 		push_error("A fase 1 precisa do estilo de diálogo 'bubbles'.")
 		return
-	var points := {
-		"garibot": level.get_node_or_null("Player/bubble_point"),
-		"garidog": level.get_node_or_null("Garidog/BubblePoint"),
-		"correio_bo": level.get_node_or_null("CorreioBo/BubblePoint"),
-		"morador": level.get_node_or_null("Morador/BubblePoint"),
-		"crianca": level.get_node_or_null("Crianca/BubblePoint"),
-	}
-	_register_points(prepared_layout, points)
+	_register_speakers(prepared_layout, level)
 	var layout: Node = Dialogic.start(timeline_path)
 	if layout == null or not layout.has_method("register_character"):
 		push_error("O Dialogic não retornou um layout de balões.")
 		return
-	_register_points(layout, points)
+	_register_speakers(layout, level)
 	if not layout.has_node("Phase1BubbleDirection"):
-		var direction_controller = BUBBLE_DIRECTION.new()
-		direction_controller.name = "Phase1BubbleDirection"
-		direction_controller.layout = layout
-		layout.add_child(direction_controller)
+		var direction := Phase1BubbleDirection.new()
+		direction.name = "Phase1BubbleDirection"
+		direction.layout = layout
+		layout.add_child(direction)
 
-static func _register_points(layout: Node, points: Dictionary) -> void:
-	for id in CHARACTERS:
-		var point: Node = points[id]
+
+static func _register_speakers(layout: Node, level: Node) -> void:
+	for character_path: String in SPEAKERS:
+		var point := level.get_node_or_null(SPEAKERS[character_path])
 		if point == null:
-			push_error("Ponto de fala ausente: %s" % id)
+			push_error("Ponto de fala ausente: %s" % SPEAKERS[character_path])
 			continue
-		layout.register_character(load(CHARACTERS[id]), point)
+		layout.register_character(load(character_path), point)

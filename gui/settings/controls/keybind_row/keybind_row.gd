@@ -1,14 +1,16 @@
 extends HBoxContainer
+
 ## Linha de remapeamento por teclado. Clique em "Alterar" e pressione a tecla
 ## desejada; Esc cancela a captura sem modificar a preferência.
 
 @export var label_text := "Ação"
 @export var action_name: StringName
 
+var _capturing := false
+
 @onready var label: Label = %Label
 @onready var button: Button = %Button
 
-var _capturing := false
 
 func _ready() -> void:
 	label.text = label_text
@@ -16,10 +18,12 @@ func _ready() -> void:
 	Settings.setting_changed.connect(_on_setting_changed)
 	_update_button()
 
+
 func _start_capture() -> void:
 	_capturing = true
 	button.text = "Pressione uma tecla…"
 	button.grab_focus()
+
 
 func _input(event: InputEvent) -> void:
 	# Captura antes do botão focado processar Espaço/Enter como ativação.
@@ -38,9 +42,11 @@ func _input(event: InputEvent) -> void:
 			Settings.set_keybind(action_name, selected_key)
 	_update_button()
 
+
 func _on_setting_changed(setting_name: String, _value: Variant) -> void:
 	if setting_name == "keybinds":
 		_update_button()
+
 
 func _update_button() -> void:
 	if not _capturing:

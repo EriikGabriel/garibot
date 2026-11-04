@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwq4c78slau6l"]
+[gd_scene load_steps=7 format=3 uid="uid://bwq4c78slau6l"]
 
 [ext_resource type="Script" uid="uid://c3mei83tcn8cd" path="res://gui/main_menu/main_menu.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://cuowvkcs5ru1v" path="res://levels/phase1/phase1.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://yqy045o8mtt3" path="res://gui/settings/settings_menu/settings_menu.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://cvbcdv4ixiy7y" path="res://assets/sprites/player/PlayerCharIcon.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cvbcdv4ixiy7y" path="res://assets/sprites/player/player_char_icon.png" id="4"]
 [ext_resource type="Theme" uid="uid://gcivgar7cgpx" path="res://gui/themes/pixel_adventure/pixel_adventure_theme.tres" id="5_theme"]
 [ext_resource type="Texture2D" uid="uid://cjfi678h7bccg" path="res://assets/garibot1/sprites/scenery/stage1/fundo1_1.png" id="6_village"]
 
@@ -19,7 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_theme")
 script = ExtResource("1")
-next_phase = ExtResource("2")
 settings_scene = ExtResource("3")
 
 [node name="Background" type="Panel" parent="."]
@@ -120,19 +118,19 @@ Ajude Garibot a limpar a vila e conhecer os REEE."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Jogar" type="Button" parent="Card/Content"]
+[node name="Play" type="Button" parent="Card/Content"]
 custom_minimum_size = Vector2(0, 54)
 layout_mode = 2
 theme_type_variation = &"PrimaryButton"
 theme_override_font_sizes/font_size = 22
 text = "Começar aventura"
 
-[node name="Configuracoes" type="Button" parent="Card/Content"]
+[node name="Settings" type="Button" parent="Card/Content"]
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 text = "Configurações e acessibilidade"
 
-[node name="Sair" type="Button" parent="Card/Content"]
+[node name="Quit" type="Button" parent="Card/Content"]
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 text = "Sair"
@@ -145,6 +143,6 @@ text = "Use Tab e Enter para navegar. Ctrl + Shift + R ativa a leitura em voz al
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="Card/Content/Jogar" to="." method="_on_jogar_button_down"]
-[connection signal="pressed" from="Card/Content/Configuracoes" to="." method="_on_configuracoes_button_down"]
-[connection signal="pressed" from="Card/Content/Sair" to="." method="_on_sair_button_down"]
+[connection signal="pressed" from="Card/Content/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Card/Content/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Card/Content/Quit" to="." method="_on_quit_pressed"]

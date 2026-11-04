@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bxgc0ijwy5jqy" path="res://gui/settings/controls/setting_toggle/setting_toggle.tscn" id="2"]
 [ext_resource type="FontFile" uid="uid://d1qm0bk13ojf7" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="2_jnu6v"]
 [ext_resource type="Theme" uid="uid://gcivgar7cgpx" path="res://gui/themes/pixel_adventure/pixel_adventure_theme.tres" id="3_8jy20"]
-[ext_resource type="Texture2D" uid="uid://cvbcdv4ixiy7y" path="res://assets/sprites/player/PlayerCharIcon.png" id="3_hty3n"]
+[ext_resource type="Texture2D" uid="uid://cvbcdv4ixiy7y" path="res://assets/sprites/player/player_char_icon.png" id="3_hty3n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hty3n"]
 bg_color = Color(0, 0, 0, 1)

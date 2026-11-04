@@ -1,0 +1,104 @@
+[gd_scene load_steps=22 format=3 uid="uid://cpcysgvh386kq"]
+
+[ext_resource type="Script" uid="uid://c7m6liiu1it7q" path="res://components/restoration/restorable_sprite.gd" id="1_rs"]
+[ext_resource type="Texture2D" uid="uid://r356bkfw1rv1" path="res://assets/sprites/scenery/phase1/arvore_1_limpo.png" id="arvore_1_c"]
+[ext_resource type="Texture2D" uid="uid://dgqxpkhnx6i4b" path="res://assets/sprites/scenery/phase1/arvore_1_sujo.png" id="arvore_1_d"]
+[ext_resource type="Texture2D" uid="uid://182wul4bskhg" path="res://assets/sprites/scenery/phase1/arvore_2_limpo.png" id="arvore_2_c"]
+[ext_resource type="Texture2D" uid="uid://4ejibwbps2ie" path="res://assets/sprites/scenery/phase1/arvore_2_sujo.png" id="arvore_2_d"]
+[ext_resource type="Texture2D" uid="uid://bl1el1fwwnees" path="res://assets/sprites/scenery/phase1/arvore_3_limpo.png" id="arvore_3_c"]
+[ext_resource type="Texture2D" uid="uid://jfsaw42nu4bb" path="res://assets/sprites/scenery/phase1/arvore_3_sujo.png" id="arvore_3_d"]
+[ext_resource type="Texture2D" uid="uid://b0536snerefmg" path="res://assets/sprites/scenery/phase1/arvore_4_limpo.png" id="arvore_4_c"]
+[ext_resource type="Texture2D" uid="uid://b3suaq04jiped" path="res://assets/sprites/scenery/phase1/arvore_4_sujo.png" id="arvore_4_d"]
+[ext_resource type="Texture2D" uid="uid://dgib3q5lj80ub" path="res://assets/sprites/scenery/phase1/arvore_5_limpo.png" id="arvore_5_c"]
+[ext_resource type="Texture2D" uid="uid://cuvhyc8v1gora" path="res://assets/sprites/scenery/phase1/arvore_5_sujo.png" id="arvore_5_d"]
+[ext_resource type="Texture2D" uid="uid://dgj3qugjmt54x" path="res://assets/sprites/scenery/phase1/arvore_6_limpo.png" id="arvore_6_c"]
+[ext_resource type="Texture2D" uid="uid://460jgr7n23rk" path="res://assets/sprites/scenery/phase1/arvore_6_sujo.png" id="arvore_6_d"]
+[ext_resource type="Texture2D" uid="uid://ck516n5haoise" path="res://assets/sprites/scenery/phase1/casa_1_limpo.png" id="casa_1_c"]
+[ext_resource type="Texture2D" uid="uid://bqrxru8nhp2sf" path="res://assets/sprites/scenery/phase1/casa_1_sujo.png" id="casa_1_d"]
+[ext_resource type="Texture2D" uid="uid://bh5fxcr41clns" path="res://assets/sprites/scenery/phase1/casa_2_limpo.png" id="casa_2_c"]
+[ext_resource type="Texture2D" uid="uid://bly5cqmdm3wnb" path="res://assets/sprites/scenery/phase1/casa_2_sujo.png" id="casa_2_d"]
+[ext_resource type="Texture2D" uid="uid://bjjfbq5jd71j4" path="res://assets/sprites/scenery/phase1/casa_3_limpo.png" id="casa_3_c"]
+[ext_resource type="Texture2D" uid="uid://dn7usqxsob73c" path="res://assets/sprites/scenery/phase1/casa_3_sujo.png" id="casa_3_d"]
+[ext_resource type="Texture2D" uid="uid://c8vimhr6espkq" path="res://assets/sprites/scenery/phase1/casa_4_limpo.png" id="casa_4_c"]
+[ext_resource type="Texture2D" uid="uid://cn2g2wjiedh8y" path="res://assets/sprites/scenery/phase1/casa_4_sujo.png" id="casa_4_d"]
+
+[node name="Phase1Scenery" type="Node2D"]
+z_index = -6
+
+[node name="Casa1" type="Sprite2D" parent="."]
+position = Vector2(1174, -202)
+texture = ExtResource("casa_1_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("casa_1_c")
+
+[node name="Casa2" type="Sprite2D" parent="."]
+position = Vector2(1474, -250)
+texture = ExtResource("casa_2_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("casa_2_c")
+restore_step = 0.4
+
+[node name="Casa3" type="Sprite2D" parent="."]
+position = Vector2(1802, -200)
+texture = ExtResource("casa_3_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("casa_3_c")
+restore_step = 0.6
+
+[node name="Casa4" type="Sprite2D" parent="."]
+position = Vector2(2104, -192)
+texture = ExtResource("casa_4_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("casa_4_c")
+restore_step = 0.8
+
+[node name="Arvore1" type="Sprite2D" parent="."]
+position = Vector2(2250, -176)
+texture = ExtResource("arvore_1_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("arvore_1_c")
+
+[node name="Arvore2" type="Sprite2D" parent="."]
+position = Vector2(2532, -202)
+texture = ExtResource("arvore_2_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("arvore_2_c")
+restore_step = 0.4
+
+[node name="Arvore3" type="Sprite2D" parent="."]
+position = Vector2(2874, -166)
+texture = ExtResource("arvore_3_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("arvore_3_c")
+restore_step = 0.6
+
+[node name="Arvore4" type="Sprite2D" parent="."]
+position = Vector2(3206, -192)
+texture = ExtResource("arvore_4_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("arvore_4_c")
+restore_step = 0.8
+
+[node name="Arvore5" type="Sprite2D" parent="."]
+position = Vector2(4680, -180)
+texture = ExtResource("arvore_5_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("arvore_5_c")
+restore_step = 1.0
+
+[node name="Arvore6" type="Sprite2D" parent="."]
+position = Vector2(5084, -188)
+texture = ExtResource("arvore_6_d")
+centered = false
+script = ExtResource("1_rs")
+clean_texture = ExtResource("arvore_6_c")
+restore_step = 1.0

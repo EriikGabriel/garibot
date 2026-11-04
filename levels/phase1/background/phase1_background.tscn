@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2gm3s63uib7j"]
+[gd_scene load_steps=20 format=3 uid="uid://b2gm3s63uib7j"]
 
-[ext_resource type="Script" uid="uid://cfa16vt60jhp4" path="res://levels/phase1/background/phase1_background.gd" id="1_bg"]
-[ext_resource type="Script" uid="uid://c20mp7ukwn5sa" path="res://levels/phase1/background/phase1_parallax_layer.gd" id="2_layer"]
-[ext_resource type="Script" uid="uid://bxkckpoaysa5p" path="res://levels/phase1/background/phase1_background_ambient.gd" id="3_ambient"]
-[ext_resource type="Shader" uid="uid://b5eg7tqxtio8q" path="res://levels/phase1/background/pollution_blend.gdshader" id="4_shader"]
+[ext_resource type="Script" uid="uid://c20mp7ukwn5sa" path="res://components/parallax/background_layer.gd" id="2_layer"]
+[ext_resource type="Script" uid="uid://bxkckpoaysa5p" path="res://components/parallax/background_ambient.gd" id="3_ambient"]
+[ext_resource type="Script" uid="uid://c7m6liiu1it7q" path="res://components/restoration/restorable_sprite.gd" id="4_restorable"]
 [ext_resource type="Texture2D" uid="uid://tn8lcp278iol" path="res://assets/sprites/backgrounds/phase1/anim_fumaca.png" id="t_anim_fumaca"]
 [ext_resource type="Texture2D" uid="uid://dpa1mlqnilw0w" path="res://assets/sprites/backgrounds/phase1/anim_passaros.png" id="t_anim_passaros"]
 [ext_resource type="Texture2D" uid="uid://mb3x0f3ulv2u" path="res://assets/sprites/backgrounds/phase1/anim_rotor.png" id="t_anim_rotor"]
@@ -21,108 +20,73 @@
 [ext_resource type="Texture2D" uid="uid://dmagrmhf5j4im" path="res://assets/sprites/backgrounds/phase1/perto_mascara.png" id="t_perto_mascara"]
 [ext_resource type="Texture2D" uid="uid://dg6aw8df68fgm" path="res://assets/sprites/backgrounds/phase1/perto_sujo.png" id="t_perto_sujo"]
 
-[sub_resource type="ShaderMaterial" id="mat_ceu"]
-shader = ExtResource("4_shader")
-shader_parameter/clean_texture = ExtResource("t_ceu_limpo")
-shader_parameter/use_mask = false
-shader_parameter/progress = 0.0
-shader_parameter/step_softness = 0.2
-
-[sub_resource type="ShaderMaterial" id="mat_nuvens"]
-shader = ExtResource("4_shader")
-shader_parameter/clean_texture = ExtResource("t_nuvens_limpo")
-shader_parameter/use_mask = false
-shader_parameter/progress = 0.0
-shader_parameter/step_softness = 0.2
-
-[sub_resource type="ShaderMaterial" id="mat_longe"]
-shader = ExtResource("4_shader")
-shader_parameter/clean_texture = ExtResource("t_longe_limpo")
-shader_parameter/progress_mask = ExtResource("t_longe_mascara")
-shader_parameter/use_mask = true
-shader_parameter/progress = 0.0
-shader_parameter/step_softness = 0.2
-
-[sub_resource type="ShaderMaterial" id="mat_meio"]
-shader = ExtResource("4_shader")
-shader_parameter/clean_texture = ExtResource("t_meio_limpo")
-shader_parameter/progress_mask = ExtResource("t_meio_mascara")
-shader_parameter/use_mask = true
-shader_parameter/progress = 0.0
-shader_parameter/step_softness = 0.2
-
-[sub_resource type="ShaderMaterial" id="mat_perto"]
-shader = ExtResource("4_shader")
-shader_parameter/clean_texture = ExtResource("t_perto_limpo")
-shader_parameter/progress_mask = ExtResource("t_perto_mascara")
-shader_parameter/use_mask = true
-shader_parameter/progress = 0.0
-shader_parameter/step_softness = 0.2
-
 [node name="Phase1Background" type="Node2D"]
-process_priority = 100
 z_index = -20
-script = ExtResource("1_bg")
 
-[node name="Ceu" type="Node2D" parent="."]
+[node name="Sky" type="Node2D" parent="."]
 position = Vector2(160, 0)
 script = ExtResource("2_layer")
 scroll_factor = Vector2(0, 0)
 
-[node name="Imagem" type="Sprite2D" parent="Ceu"]
-material = SubResource("mat_ceu")
+[node name="Art" type="Sprite2D" parent="Sky"]
 position = Vector2(-360, -210)
 texture = ExtResource("t_ceu_sujo")
 centered = false
+script = ExtResource("4_restorable")
+clean_texture = ExtResource("t_ceu_limpo")
+restore_step = 0.0
 
-[node name="Nuvens" type="Node2D" parent="."]
+[node name="Clouds" type="Node2D" parent="."]
 position = Vector2(152, 0)
 script = ExtResource("2_layer")
 scroll_factor = Vector2(0.05, 0.05)
 drift_speed = 6.0
 
-[node name="Imagem" type="Sprite2D" parent="Nuvens"]
+[node name="Art" type="Sprite2D" parent="Clouds"]
 texture_repeat = 2
-material = SubResource("mat_nuvens")
 position = Vector2(-959, -205)
 texture = ExtResource("t_nuvens_sujo")
 centered = false
 region_enabled = true
 region_rect = Rect2(611, 0, 2237, 200)
+script = ExtResource("4_restorable")
+clean_texture = ExtResource("t_nuvens_limpo")
+restore_step = 0.0
 
-[node name="Longe" type="Node2D" parent="."]
+[node name="Far" type="Node2D" parent="."]
 position = Vector2(128, 0)
 script = ExtResource("2_layer")
 scroll_factor = Vector2(0.2, 0.2)
 
-[node name="Imagem" type="Sprite2D" parent="Longe"]
-material = SubResource("mat_longe")
+[node name="Art" type="Sprite2D" parent="Far"]
 position = Vector2(-348, -250)
 texture = ExtResource("t_longe_sujo")
 centered = false
+script = ExtResource("4_restorable")
+clean_texture = ExtResource("t_longe_limpo")
+progress_mask = ExtResource("t_longe_mascara")
+restore_step = 0.0
 
-[node name="Fumaca1" type="Sprite2D" parent="Longe"]
+[node name="Smoke1" type="Sprite2D" parent="Far"]
 position = Vector2(1227, -62)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("t_anim_fumaca")
 centered = false
 hframes = 8
-frame = 6
 script = ExtResource("3_ambient")
 restore_step = 0.4
 
-[node name="Fumaca2" type="Sprite2D" parent="Longe"]
+[node name="Smoke2" type="Sprite2D" parent="Far"]
 position = Vector2(1277, -62)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("t_anim_fumaca")
 centered = false
 hframes = 8
-frame = 7
 script = ExtResource("3_ambient")
 start_frame = 1
 restore_step = 0.8
 
-[node name="Fumaca3" type="Sprite2D" parent="Longe"]
+[node name="Smoke3" type="Sprite2D" parent="Far"]
 position = Vector2(1328, -62)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("t_anim_fumaca")
@@ -132,7 +96,7 @@ script = ExtResource("3_ambient")
 start_frame = 2
 restore_step = 0.2
 
-[node name="Passaros1" type="Sprite2D" parent="Longe"]
+[node name="Birds1" type="Sprite2D" parent="Far"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(60, -150)
@@ -145,13 +109,12 @@ visible_when_clean = true
 drift = Vector2(8, 0)
 drift_range = 260.0
 
-[node name="Passaros2" type="Sprite2D" parent="Longe"]
+[node name="Birds2" type="Sprite2D" parent="Far"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(300, -128)
 texture = ExtResource("t_anim_passaros")
 hframes = 4
-frame = 1
 script = ExtResource("3_ambient")
 fps = 6.0
 start_frame = 1
@@ -160,13 +123,12 @@ visible_when_clean = true
 drift = Vector2(11, 0)
 drift_range = 260.0
 
-[node name="Passaros3" type="Sprite2D" parent="Longe"]
+[node name="Birds3" type="Sprite2D" parent="Far"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(820, -160)
 texture = ExtResource("t_anim_passaros")
 hframes = 4
-frame = 2
 script = ExtResource("3_ambient")
 fps = 6.0
 start_frame = 2
@@ -175,37 +137,38 @@ visible_when_clean = true
 drift = Vector2(14, 0)
 drift_range = 260.0
 
-[node name="Meio" type="Node2D" parent="."]
+[node name="Mid" type="Node2D" parent="."]
 position = Vector2(88, 0)
 script = ExtResource("2_layer")
 scroll_factor = Vector2(0.45, 0.45)
 
-[node name="Imagem" type="Sprite2D" parent="Meio"]
-material = SubResource("mat_meio")
+[node name="Art" type="Sprite2D" parent="Mid"]
 position = Vector2(-343, -250)
 texture = ExtResource("t_meio_sujo")
 centered = false
+script = ExtResource("4_restorable")
+clean_texture = ExtResource("t_meio_limpo")
+progress_mask = ExtResource("t_meio_mascara")
+restore_step = 0.0
 
-[node name="Fumaca1" type="Sprite2D" parent="Meio"]
+[node name="Smoke1" type="Sprite2D" parent="Mid"]
 position = Vector2(1883, -170)
 texture = ExtResource("t_anim_fumaca")
 centered = false
 hframes = 8
-frame = 6
 script = ExtResource("3_ambient")
 restore_step = 0.8
 
-[node name="Fumaca2" type="Sprite2D" parent="Meio"]
+[node name="Smoke2" type="Sprite2D" parent="Mid"]
 position = Vector2(1923, -184)
 texture = ExtResource("t_anim_fumaca")
 centered = false
 hframes = 8
-frame = 7
 script = ExtResource("3_ambient")
 start_frame = 1
 restore_step = 0.8
 
-[node name="Fumaca3" type="Sprite2D" parent="Meio"]
+[node name="Smoke3" type="Sprite2D" parent="Mid"]
 position = Vector2(1981, -170)
 texture = ExtResource("t_anim_fumaca")
 centered = false
@@ -214,61 +177,60 @@ script = ExtResource("3_ambient")
 start_frame = 2
 restore_step = 0.8
 
-[node name="Rotor4" type="Sprite2D" parent="Meio"]
+[node name="Rotor1" type="Sprite2D" parent="Mid"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(2468, -118)
 texture = ExtResource("t_anim_rotor")
 centered = false
 hframes = 4
-frame = 3
 script = ExtResource("3_ambient")
 fps = 10.0
 start_frame = 3
 restore_step = 0.2
 visible_when_clean = true
 
-[node name="Fumaca5" type="Sprite2D" parent="Meio"]
+[node name="Smoke4" type="Sprite2D" parent="Mid"]
 position = Vector2(2474, -141)
 texture = ExtResource("t_anim_fumaca")
 centered = false
 hframes = 8
-frame = 2
 script = ExtResource("3_ambient")
 start_frame = 4
 restore_step = 0.2
 
-[node name="Rotor6" type="Sprite2D" parent="Meio"]
+[node name="Rotor2" type="Sprite2D" parent="Mid"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(2548, -102)
 texture = ExtResource("t_anim_rotor")
 centered = false
 hframes = 4
-frame = 1
 script = ExtResource("3_ambient")
 fps = 10.0
 start_frame = 1
 restore_step = 0.4
 visible_when_clean = true
 
-[node name="Fumaca7" type="Sprite2D" parent="Meio"]
+[node name="Smoke5" type="Sprite2D" parent="Mid"]
 position = Vector2(2554, -125)
 texture = ExtResource("t_anim_fumaca")
 centered = false
 hframes = 8
-frame = 4
 script = ExtResource("3_ambient")
 start_frame = 6
 restore_step = 0.4
 
-[node name="Perto" type="Node2D" parent="."]
+[node name="Near" type="Node2D" parent="."]
 position = Vector2(48, 0)
 script = ExtResource("2_layer")
 scroll_factor = Vector2(0.7, 0.7)
 
-[node name="Imagem" type="Sprite2D" parent="Perto"]
-material = SubResource("mat_perto")
+[node name="Art" type="Sprite2D" parent="Near"]
 position = Vector2(-338, -250)
 texture = ExtResource("t_perto_sujo")
 centered = false
+script = ExtResource("4_restorable")
+clean_texture = ExtResource("t_perto_limpo")
+progress_mask = ExtResource("t_perto_mascara")
+restore_step = 0.0

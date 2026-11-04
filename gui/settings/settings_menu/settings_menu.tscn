@@ -52,6 +52,7 @@ layout_mode = 2
 theme_override_constants/separation = 14
 
 [node name="Title" type="Label" parent="Overlay/Panel/Margin/Body"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"TitleLabel"
 theme_override_font_sizes/font_size = 38
@@ -59,6 +60,7 @@ text = "Antes de começar"
 horizontal_alignment = 1
 
 [node name="Step" type="Label" parent="Overlay/Panel/Margin/Body"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"MutedLabel"
 theme_override_font_sizes/font_size = 18
@@ -71,6 +73,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 24
 
 [node name="Sidebar" type="VBoxContainer" parent="Overlay/Panel/Margin/Body/Layout"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
@@ -121,6 +124,7 @@ theme_type_variation = &"PrimaryButton"
 text = "Voltar ao jogo"
 
 [node name="Content" type="ScrollContainer" parent="Overlay/Panel/Margin/Body/Layout"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -139,21 +143,26 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VisualPage" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages" instance=ExtResource("2")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="ControlsPage" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages" instance=ExtResource("3")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
 [node name="AudioDialoguePage" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages" instance=ExtResource("4")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
 [node name="DisplayMotionPage" parent="Overlay/Panel/Margin/Body/Layout/Content/ContentMargin/Pages" instance=ExtResource("6_display_motion")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
 [node name="Navigation" type="HBoxContainer" parent="Overlay/Panel/Margin/Body"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 14
 alignment = 1
@@ -163,15 +172,18 @@ layout_mode = 2
 text = "Restaurar padrão"
 
 [node name="Previous" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Voltar"
 
 [node name="Next" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"PrimaryButton"
 text = "Continuar"
 
 [node name="Finish" type="Button" parent="Overlay/Panel/Margin/Body/Navigation"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"PrimaryButton"
 text = "Começar a jogar"

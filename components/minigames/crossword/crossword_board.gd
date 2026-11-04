@@ -1,26 +1,35 @@
+class_name CrosswordBoard
 extends ScrollContainer
-## Cada entrada define answer, clue, start (Vector2i) e vertical.
+
+## Cruzadinha acessível. Cada entrada define answer, clue, start (Vector2i) e vertical;
+## com `puzzle_file`, as entradas são geradas a partir de uma lista de palavras.
+
 signal completed
 signal answer_checked(correct: bool)
+
+const GENERATOR := preload("res://components/minigames/crossword/crossword_generator.gd")
+
 @export var entries: Array[Dictionary] = []
 @export_file("*.json") var puzzle_file := ""
 @export_range(56, 96) var cell_size := 64
 @export_range(36, 56) var minimum_cell_size := 36
 @export_range(160, 300) var clue_minimum_width := 200
 @export_range(1, 4) var maximum_clue_columns := 2
-const GENERATOR = preload("res://components/minigames/crossword/crossword_generator.gd")
+
 var cells: Dictionary = {}
 var solution: Dictionary = {}
 var paths: Array = []
 var active_word := 0
 var solved := false
 var status: Label
+var grid_height := 0
+var _last_announced_word := -1
+
 @onready var layout: BoxContainer = $Layout
 @onready var grid: GridContainer = $Layout/Grid
 @onready var clue_panel: VBoxContainer = $Layout/CluePanel
 @onready var clues: GridContainer = $Layout/CluePanel/Clues
-var grid_height := 0
-var _last_announced_word := -1
+
 
 func _ready() -> void:
 	follow_focus = true
@@ -47,7 +56,9 @@ func _ready() -> void:
 		var direction := Vector2i.DOWN if entry["vertical"] else Vector2i.RIGHT
 		for i in answer.length():
 			var point: Vector2i = entry["start"] + direction * i
-			assert(not solution.has(point) or solution[point] == answer[i], "Cruzamento incompatível")
+			assert(
+				not solution.has(point) or solution[point] == answer[i], "Cruzamento incompatível"
+			)
 			solution[point] = answer[i]
 			path.append(point)
 			width = maxi(width, point.x + 1)
@@ -86,7 +97,15 @@ func _ready() -> void:
 					slot.add_child(number)
 	for i in entries.size():
 		var clue := Button.new()
-		clue.text = "%d. %s • %d letras\n%s" % [i + 1, "Vertical" if entries[i]["vertical"] else "Horizontal", str(entries[i]["answer"]).length(), entries[i]["clue"]]
+		clue.text = (
+			"%d. %s • %d letras\n%s"
+			% [
+				i + 1,
+				"Vertical" if entries[i]["vertical"] else "Horizontal",
+				str(entries[i]["answer"]).length(),
+				entries[i]["clue"]
+			]
+		)
 		clue.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		clue.custom_minimum_size = Vector2(clue_minimum_width, 76)
 		clue.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -94,9 +113,12 @@ func _ready() -> void:
 		clue.pressed.connect(select_word.bind(i))
 		clues.add_child(clue)
 	status = $Layout/CluePanel/Status
-	status.text = warning if not warning.is_empty() else "Escolha uma pista e preencha uma letra por casa."
+	status.text = (
+		warning if not warning.is_empty() else "Escolha uma pista e preencha uma letra por casa."
+	)
 	resized.connect(_fit_layout)
 	_fit_layout.call_deferred()
+
 
 func _fit_layout() -> void:
 	if grid_height == 0:
@@ -108,14 +130,21 @@ func _fit_layout() -> void:
 	layout.vertical = not side_by_side
 	var grid_width := maxf(minimum_grid_width, size.x * 0.48) if side_by_side else size.x
 	var clue_width := size.x - grid_width - gap if side_by_side else size.x
-	clues.columns = clampi(int((clue_width + 12) / (clue_minimum_width + 12)), 1, maximum_clue_columns)
-	# Reserve room for the clue cards when the screen requires a stacked layout.
-	var grid_available_height := size.y if side_by_side else size.y - clue_panel.get_combined_minimum_size().y - gap
-	var fitted := minf((grid_width - (grid.columns - 1) * cell_gap) / grid.columns,
-		(grid_available_height - (grid_height - 1) * cell_gap) / grid_height)
+	clues.columns = clampi(
+		int((clue_width + 12) / (clue_minimum_width + 12)), 1, maximum_clue_columns
+	)
+	# No layout empilhado, reserva espaço para as pistas abaixo da grade.
+	var grid_available_height := (
+		size.y if side_by_side else size.y - clue_panel.get_combined_minimum_size().y - gap
+	)
+	var fitted := minf(
+		(grid_width - (grid.columns - 1) * cell_gap) / grid.columns,
+		(grid_available_height - (grid_height - 1) * cell_gap) / grid_height
+	)
 	var side := clampf(floorf(fitted), minimum_cell_size, cell_size)
 	for slot in grid.get_children():
 		slot.custom_minimum_size = Vector2(side, side)
+
 
 func select_word(index: int) -> void:
 	if index < 0 or index >= paths.size():
@@ -123,6 +152,7 @@ func select_word(index: int) -> void:
 	active_word = index
 	cells[paths[index][0]].grab_focus()
 	_announce_cell(paths[index][0], true)
+
 
 func _focus_cell(point: Vector2i) -> void:
 	if not paths[active_word].has(point):
@@ -135,18 +165,29 @@ func _focus_cell(point: Vector2i) -> void:
 	cells[point].select_all()
 	_announce_cell(point, _last_announced_word != active_word)
 
+
 func _announce_cell(point: Vector2i, include_clue: bool) -> void:
 	_last_announced_word = active_word
 	var path: Array = paths[active_word]
 	var position := path.find(point) + 1
 	var value: String = cells[point].text
-	var message := "Letra %d de %d. %s." % [position, path.size(), "Vazia" if value.is_empty() else value]
+	var message := (
+		"Letra %d de %d. %s." % [position, path.size(), "Vazia" if value.is_empty() else value]
+	)
 	if include_clue:
 		var entry: Dictionary = entries[active_word]
-		message = "Pista %d. %s. %s. %d letras. %s" % [
-			active_word + 1, "Vertical" if entry["vertical"] else "Horizontal",
-			entry["clue"], path.size(), message]
+		message = (
+			"Pista %d. %s. %s. %d letras. %s"
+			% [
+				active_word + 1,
+				"Vertical" if entry["vertical"] else "Horizontal",
+				entry["clue"],
+				path.size(),
+				message
+			]
+		)
 	Speech.speak(message, "minigame")
+
 
 func _edit_cell(value: String, point: Vector2i) -> void:
 	var letter := value.to_upper()
@@ -158,7 +199,11 @@ func _edit_cell(value: String, point: Vector2i) -> void:
 		if index + 1 < paths[active_word].size():
 			cells[paths[active_word][index + 1]].grab_focus()
 		else:
-			Speech.speak("Última letra: %s. Palavra preenchida. Use Verificar respostas." % letter, "minigame")
+			Speech.speak(
+				"Última letra: %s. Palavra preenchida. Use Verificar respostas." % letter,
+				"minigame"
+			)
+
 
 func check_answers() -> void:
 	if solution.is_empty():
@@ -175,5 +220,8 @@ func check_answers() -> void:
 			completed.emit()
 	else:
 		answer_checked.emit(false)
-		status.text = "%d de %d letras corretas. Revise as pistas e tente novamente." % [correct, solution.size()]
+		status.text = (
+			"%d de %d letras corretas. Revise as pistas e tente novamente."
+			% [correct, solution.size()]
+		)
 	Speech.speak(status.text, "minigame")

@@ -1,41 +1,37 @@
-extends Node
 class_name HealthComponent
+extends Node
 
-## Componente reutilizável de vida e feedback visual de dano.
-@export var max_health: float = 100.0
-@export var damage_flash_duration: float = 0.5
+## Vida de um personagem, com um piscar vermelho ao levar dano.
 
-var health: float = 0.0
-var parent_node: Node2D
+@export var max_health := 100.0
+@export var damage_flash_duration := 0.5
 
-# Controle interno do flash de dano.
-var flash_timer: float = 0
-var is_flashing: bool = false
+var health := 0.0
+
+var _flash_left := 0.0
+@onready var _owner_body := get_parent() as CanvasItem
+
 
 func _ready() -> void:
 	health = max_health
-	parent_node = get_parent() as Node2D
-	if not parent_node:
-		push_error("HealthComponent precisa de um Node2D como pai.")
+
 
 func _process(delta: float) -> void:
-	if is_flashing and parent_node:
-		flash_timer -= delta
-		
-		if flash_timer <= 0:
-			parent_node.modulate = Color(1, 1, 1, 1)
-			is_flashing = false
+	if _flash_left <= 0.0:
+		return
+	_flash_left -= delta
+	if _flash_left <= 0.0 and _owner_body:
+		_owner_body.modulate = Color.WHITE
+
 
 func damage(amount: float) -> void:
-	if health <= 0:
+	if health <= 0.0:
 		return
-
 	health = maxf(health - amount, 0.0)
+	if _owner_body:
+		_owner_body.modulate = Color(1, 0.4, 0.4)
+		_flash_left = damage_flash_duration
 
-	if parent_node:
-		parent_node.modulate = Color(1, 0.4, 0.4, 1)
-		is_flashing = true
-		flash_timer = damage_flash_duration
 
 func heal(amount: float) -> void:
 	health = minf(health + amount, max_health)

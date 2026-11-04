@@ -19,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="main_menu" parent="GUI" instance=ExtResource("2_748nt")]
+[node name="MainMenu" parent="GUI" instance=ExtResource("2_748nt")]
 layout_mode = 1
 
 [node name="BrightnessFilter" parent="." instance=ExtResource("3_brightness")]

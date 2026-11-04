@@ -19,7 +19,7 @@
 &"portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://Assets/sprites/player/PlayerCharIcon.png\""
+"image": "\"res://assets/sprites/player/player_char_icon.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

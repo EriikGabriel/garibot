@@ -1,7 +1,9 @@
 extends Node
-## Autoload central das preferências do jogador.
-## DEFAULTS é a fonte única dos valores iniciais; `settings` contém o estado
-## atual e é persistido em user://settings.cfg.
+
+## Preferências do jogador. DEFAULTS guarda os valores iniciais; `settings`, o estado
+## atual, salvo em user://settings.cfg. Também trata o atalho de tela cheia (window_mode).
+
+signal setting_changed(setting_name: String, value: Variant)
 
 const SAVE_PATH := "user://settings.cfg"
 const SAVE_SECTION := "settings"
@@ -20,15 +22,12 @@ const DEFAULTS := {
 	"speech_voice": "",
 	"speech_rate": 1.0,
 	"speech_volume": 1.0,
-
 	# Áudio (0.0 a 1.0)
 	"master_volume": 1.0,
 	"music_volume": 0.5,
 	"sfx_volume": 1.0,
-
 	# Vídeo / Janela
 	"fullscreen": true,
-
 	# Gameplay / Acessibilidade
 	"screen_shake": true,
 	"subtitles": true,
@@ -36,7 +35,8 @@ const DEFAULTS := {
 	"brightness": 1.0,
 	"reduced_motion": false,
 	# Cada ação guarda uma tecla física escolhida pelo jogador.
-	"keybinds": {
+	"keybinds":
+	{
 		"move_left": KEY_A,
 		"move_right": KEY_D,
 		"move_up": KEY_SPACE,
@@ -46,9 +46,8 @@ const DEFAULTS := {
 
 var settings: Dictionary = DEFAULTS.duplicate(true)
 
-signal setting_changed(setting_name: String, value: Variant)
-
 var _save_timer: Timer
+
 
 func _ready() -> void:
 	load_settings()
@@ -64,17 +63,28 @@ func _ready() -> void:
 	# Dialogic é carregado depois deste autoload; aguarda um frame para conectá-lo.
 	get_tree().process_frame.connect(_setup_dialogic_hooks, CONNECT_ONE_SHOT)
 
+
 func _setup_dialogic_hooks() -> void:
 	if not has_node("/root/Dialogic"):
 		return
 	var dialogic: Node = get_node("/root/Dialogic")
 	if dialogic.has_subsystem("Styles"):
 		dialogic.Styles.style_changed.connect(_on_dialogic_style_changed)
-	# Reaplica as preferências de diálogo após o carregamento do plugin.
-	apply_setting("dialog_font_size", settings["dialog_font_size"])
-	apply_setting("bubble_font_size", settings["bubble_font_size"])
-	apply_setting("text_speed", settings["text_speed"])
-	apply_setting("skip_on_click", settings["skip_on_click"])
+	apply_dialogue_settings()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("window_mode"):
+		var fullscreen := DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN
+		_apply_fullscreen(fullscreen)
+		set_setting("fullscreen", fullscreen)
+
+
+## Reaplica fonte, velocidade do texto e avanço por clique ao Dialogic.
+func apply_dialogue_settings() -> void:
+	for key in ["dialog_font_size", "bubble_font_size", "text_speed", "skip_on_click"]:
+		apply_setting(key, settings[key])
+
 
 func load_settings() -> void:
 	var cfg := ConfigFile.new()
@@ -86,6 +96,7 @@ func load_settings() -> void:
 		if cfg.has_section_key(SAVE_SECTION, key):
 			settings[key] = cfg.get_value(SAVE_SECTION, key)
 
+
 func save_settings() -> void:
 	var cfg := ConfigFile.new()
 	for key in settings.keys():
@@ -94,19 +105,20 @@ func save_settings() -> void:
 	if error != OK:
 		push_warning("Settings: não foi possível salvar as preferências (erro %d)." % error)
 
+
 func reset_settings() -> void:
 	for key in DEFAULTS:
 		set_setting(key, DEFAULTS[key])
+
 
 func get_setting(key: String, default: Variant = null) -> Variant:
 	if settings.has(key):
 		return settings[key]
 	return default
 
+
 func set_setting(key: String, value: Variant) -> void:
-	if not settings.has(key):
-		settings[key] = value
-	elif settings[key] == value:
+	if settings.get(key) == value:
 		return
 	settings[key] = value
 	apply_setting(key, value)
@@ -115,10 +127,12 @@ func set_setting(key: String, value: Variant) -> void:
 	if _save_timer:
 		_save_timer.start()
 
+
 ## Aplica todas as configurações atuais.
 func apply_all() -> void:
 	for key in settings.keys():
 		apply_setting(key, settings[key])
+
 
 ## Aplica uma configuração. Inclua aqui toda nova chave que tenha efeito imediato.
 func apply_setting(key: String, value: Variant) -> void:
@@ -141,12 +155,12 @@ func apply_setting(key: String, value: Variant) -> void:
 			_apply_fullscreen(value)
 		"keybinds":
 			_apply_keybinds(value)
-		"screen_shake", "subtitles", "high_contrast", "reduced_motion", "brightness", "screen_reader", "narrate_dialogue", "dubbed_dialogue", "speech_voice", "speech_rate", "speech_volume":
-			# Os consumidores recebem a atualização pelo sinal setting_changed.
-			pass
+		# As demais chaves são aplicadas por quem escuta setting_changed.
+
 
 func _get_dialogic() -> Node:
 	return get_node_or_null("/root/Dialogic")
+
 
 func _apply_dialog_font_size(size: int) -> void:
 	var dialogic := _get_dialogic()
@@ -158,6 +172,7 @@ func _apply_dialog_font_size(size: int) -> void:
 			layout.set("global_font_size", int(size))
 			if layout.has_method("apply_export_overrides"):
 				layout.apply_export_overrides()
+
 
 func _apply_bubble_font_size(size: int) -> void:
 	var dialogic := _get_dialogic()
@@ -178,13 +193,21 @@ func _apply_bubble_font_size(size: int) -> void:
 			if bubble.is_visible_in_tree():
 				_resize_bubble_text(bubble)
 
+
 func _resize_bubble_text(bubble: Control) -> void:
 	# Recalcula o fundo sem reiniciar a fala ou sua animação.
 	var text: RichTextLabel = bubble.text
 	var font := text.get_theme_font("normal_font")
-	var width := font.get_multiline_string_size(text.get_parsed_text(),
-		HORIZONTAL_ALIGNMENT_LEFT, bubble.max_width,
-		text.get_theme_font_size("normal_font_size")).x
+	var width := (
+		font
+		. get_multiline_string_size(
+			text.get_parsed_text(),
+			HORIZONTAL_ALIGNMENT_LEFT,
+			bubble.max_width,
+			text.get_theme_font_size("normal_font_size")
+		)
+		. x
+	)
 	text.size = Vector2(width, 0)
 	await get_tree().process_frame
 	if not is_instance_valid(bubble):
@@ -199,10 +222,12 @@ func _resize_bubble_text(bubble: Control) -> void:
 		content_size.x = maxf(content_size.x, bubble.choice_container.size.x)
 	bubble._resize_bubble(content_size)
 
+
 func _on_dialogic_style_changed(_info: Dictionary) -> void:
 	# Quando um estilo de diálogo é (re)criado, reaplica o tamanho da fonte.
 	_apply_dialog_font_size(settings["dialog_font_size"])
 	_apply_bubble_font_size(int(settings["bubble_font_size"]))
+
 
 func _apply_text_speed(speed: float) -> void:
 	var dialogic := _get_dialogic()
@@ -212,11 +237,13 @@ func _apply_text_speed(speed: float) -> void:
 	var letter_speed := 0.01 / maxf(speed, 0.05)
 	dialogic.Text.update_text_speed(letter_speed)
 
+
 func _apply_skip_on_click(skippable: bool) -> void:
 	var dialogic := _get_dialogic()
 	if not dialogic or not dialogic.has_subsystem("Text"):
 		return
 	dialogic.Text.set_text_reveal_skippable(skippable, true)
+
 
 func _set_bus_volume(bus_name: String, linear: float) -> void:
 	var index := AudioServer.get_bus_index(bus_name)
@@ -224,15 +251,20 @@ func _set_bus_volume(bus_name: String, linear: float) -> void:
 		return
 	AudioServer.set_bus_volume_db(index, linear_to_db(clampf(linear, 0.0, 1.0)))
 
+
 func get_bus_volume(bus_name: String) -> float:
 	var index := AudioServer.get_bus_index(bus_name)
 	if index == -1:
 		return 0.0
 	return db_to_linear(AudioServer.get_bus_volume_db(index))
 
+
 func _apply_fullscreen(enabled: bool) -> void:
-	var mode := DisplayServer.WINDOW_MODE_FULLSCREEN if enabled else DisplayServer.WINDOW_MODE_WINDOWED
+	var mode := (
+		DisplayServer.WINDOW_MODE_FULLSCREEN if enabled else DisplayServer.WINDOW_MODE_WINDOWED
+	)
 	DisplayServer.window_set_mode(mode)
+
 
 func set_keybind(action: StringName, physical_keycode: int) -> void:
 	if not InputMap.has_action(action):
@@ -242,9 +274,11 @@ func set_keybind(action: StringName, physical_keycode: int) -> void:
 	keybinds[String(action)] = physical_keycode
 	set_setting("keybinds", keybinds)
 
+
 func get_keybind(action: StringName) -> int:
 	var keybinds: Dictionary = settings.get("keybinds", {})
 	return int(keybinds.get(String(action), KEY_NONE))
+
 
 func _apply_keybinds(keybinds: Dictionary) -> void:
 	for action_name in keybinds:
@@ -255,6 +289,7 @@ func _apply_keybinds(keybinds: Dictionary) -> void:
 		var input := InputEventKey.new()
 		input.physical_keycode = int(keybinds[action_name])
 		InputMap.action_add_event(action, input)
+
 
 func get_default(key: String) -> Variant:
 	return DEFAULTS.get(key, null)

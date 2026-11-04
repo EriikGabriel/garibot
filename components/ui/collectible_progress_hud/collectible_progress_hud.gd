@@ -1,7 +1,11 @@
-extends Control
-## Painel de progresso reutilizável para qualquer fase baseada em coleta.
 class_name CollectibleProgressHud
+extends Control
 
+## Painel de progresso reutilizável para qualquer fase baseada em coleta.
+
+var collected := 0
+var total := 5
+var tutorial_visible := true
 var ink := Color("#18252a")
 var edge := Color("#8d9b77")
 var paper := Color("#e9e4ca")
@@ -10,14 +14,12 @@ var empty := Color("#475453")
 
 var _high_contrast := false
 
-var collected := 0
-var total := 5
-var tutorial_visible := true
 
 func set_tutorial_visible(value: bool) -> void:
 	if tutorial_visible != value:
 		tutorial_visible = value
 		queue_redraw()
+
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -25,9 +27,11 @@ func _ready() -> void:
 	Settings.setting_changed.connect(_on_setting_changed)
 	_apply_contrast(bool(Settings.get_setting("high_contrast", false)))
 
+
 func _on_setting_changed(setting_name: String, value: Variant) -> void:
 	if setting_name == "high_contrast":
 		_apply_contrast(bool(value))
+
 
 func _apply_contrast(enabled: bool) -> void:
 	_high_contrast = enabled
@@ -45,10 +49,12 @@ func _apply_contrast(enabled: bool) -> void:
 		empty = Color("#475453")
 	queue_redraw()
 
+
 func set_progress(value: int, maximum: int) -> void:
 	collected = value
 	total = maximum
 	queue_redraw()
+
 
 func _draw() -> void:
 	var view := get_viewport_rect().size
@@ -65,6 +71,7 @@ func _draw() -> void:
 	if tutorial_visible:
 		draw_rect(Rect2(28, view.y - 80, 8, 8), active)
 		draw_rect(Rect2(38, view.y - 76, 4, 4), paper)
+
 
 func _draw_panel(rect: Rect2) -> void:
 	if not _high_contrast:

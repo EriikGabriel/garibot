@@ -1,6 +1,9 @@
 extends RefCounted
+
 ## Gerador determinístico: tenta cruzar todas as palavras, sem vizinhos laterais.
 ## Retorna entradas posicionadas e palavras que não couberam.
+
+
 static func generate(words: Array) -> Dictionary:
 	var pending: Array[Dictionary] = []
 	var rejected: Array[String] = []
@@ -12,7 +15,10 @@ static func generate(words: Array) -> Dictionary:
 			rejected.append(answer)
 			continue
 		pending.append({"answer": answer, "clue": str(item["clue"])})
-	pending.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return a["answer"].length() > b["answer"].length())
+	pending.sort_custom(
+		func(a: Dictionary, b: Dictionary) -> bool:
+			return a["answer"].length() > b["answer"].length()
+	)
 	var placed: Array[Dictionary] = []
 	var grid: Dictionary = {}
 	while not pending.is_empty():
@@ -62,6 +68,7 @@ static func generate(words: Array) -> Dictionary:
 		entry["start"] -= origin
 	return {"entries": placed, "unplaced": rejected}
 
+
 static func normalize(value: String) -> String:
 	var result := value.strip_edges().to_upper()
 	var accents := "ÁÀÂÃÉÊÍÓÔÕÚÜÇ"
@@ -74,7 +81,10 @@ static func normalize(value: String) -> String:
 			letters += result[i]
 	return letters
 
-static func fits(word: String, start: Vector2i, axis: Vector2i, grid: Dictionary, placed: Array[Dictionary]) -> bool:
+
+static func fits(
+	word: String, start: Vector2i, axis: Vector2i, grid: Dictionary, placed: Array[Dictionary]
+) -> bool:
 	if grid.has(start - axis) or grid.has(start + axis * word.length()):
 		return false
 	var side := Vector2i(axis.y, axis.x)

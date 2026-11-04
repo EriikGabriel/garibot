@@ -1,10 +1,12 @@
-extends Node2D
 class_name ContactDamage
+extends Node2D
 
-## Dano entregue a uma HitboxComponent quando o corpo entra em contato.
-@export var contact_damage: float = 20.0
+## Dano causado a quem encosta no corpo pai (o pai deve estar no grupo "DamageOnContact").
 
-var contact_att: Toolkit.Attack
+@export var amount := 20.0
+
+var attack: Attack
+
 
 func _ready() -> void:
-	contact_att = Toolkit.Attack.new(contact_damage)
+	attack = Attack.new(amount)

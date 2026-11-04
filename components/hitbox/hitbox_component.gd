@@ -1,14 +1,11 @@
-extends Area2D
 class_name HitboxComponent
+extends Area2D
 
-## Encaminha dano recebido ao componente de vida configurado na cena.
+## Recebe golpes e repassa o dano ao componente de vida configurado.
+
 @export var health: HealthComponent
 
-func damage(attack: Variant) -> void:
-	if health == null:
-		return
 
-	if attack is float or attack is int:
-		health.damage(float(attack))
-	elif attack is Toolkit.Attack:
+func damage(attack: Attack) -> void:
+	if health:
 		health.damage(attack.damage)

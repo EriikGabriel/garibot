@@ -1,5 +1,7 @@
-extends Control
 class_name MatchingBoard
+extends Control
+
+## Associação de itens: escolha um item à esquerda e o destino correspondente à direita.
 
 signal completed
 signal answer_checked(correct: bool)
@@ -26,6 +28,7 @@ var feedback: Label
 var dragging := false
 var pointer := Vector2.ZERO
 
+
 func _input(event: InputEvent) -> void:
 	if not is_visible_in_tree():
 		dragging = false
@@ -33,7 +36,12 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			for i in left_buttons.size():
-				if not matches.has(i) and left_buttons[i].get_global_rect().grow(12).has_point(get_global_mouse_position()):
+				if (
+					not matches.has(i)
+					and left_buttons[i].get_global_rect().grow(12).has_point(
+						get_global_mouse_position()
+					)
+				):
 					_select_left(i)
 					dragging = true
 					pointer = get_local_mouse_position()
@@ -43,7 +51,9 @@ func _input(event: InputEvent) -> void:
 		elif dragging:
 			dragging = false
 			for i in right_buttons.size():
-				if right_buttons[i].get_global_rect().grow(12).has_point(get_global_mouse_position()):
+				if right_buttons[i].get_global_rect().grow(12).has_point(
+					get_global_mouse_position()
+				):
 					_select_right(i)
 					break
 			get_viewport().set_input_as_handled()
@@ -51,6 +61,7 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and dragging:
 		pointer = get_local_mouse_position()
 		queue_redraw()
+
 
 func _ready() -> void:
 	custom_minimum_size = BOARD_SIZE
@@ -60,6 +71,7 @@ func _ready() -> void:
 		return
 	_build_board()
 
+
 func _has_valid_data() -> bool:
 	if left_items.is_empty() or left_items.size() != correct_targets.size():
 		return false
@@ -67,6 +79,7 @@ func _has_valid_data() -> bool:
 		if target < 0 or target >= right_items.size():
 			return false
 	return true
+
 
 func _build_board() -> void:
 	var instruction := Label.new()
@@ -111,15 +124,26 @@ func _build_board() -> void:
 	feedback.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	add_child(feedback)
 
+
 func _style_card(button: Button) -> void:
 	button.add_theme_font_size_override("font_size", 18)
 
+
 func _announce_left(index: int) -> void:
-	Speech.speak("Etapa: %s. Selecione e depois escolha a função correspondente." % left_items[index], "minigame")
+	Speech.speak(
+		"Etapa: %s. Selecione e depois escolha a função correspondente." % left_items[index],
+		"minigame"
+	)
+
 
 func _announce_right(index: int) -> void:
-	var context := "Escolha primeiro uma etapa." if selected_left < 0 else "Etapa selecionada: %s." % left_items[selected_left]
+	var context := (
+		"Escolha primeiro uma etapa."
+		if selected_left < 0
+		else "Etapa selecionada: %s." % left_items[selected_left]
+	)
 	Speech.speak("Função: %s. %s" % [right_items[index], context], "minigame")
+
 
 func _select_left(index: int) -> void:
 	if matches.has(index):
@@ -130,6 +154,7 @@ func _select_left(index: int) -> void:
 		button.set_pressed_no_signal(false)
 	left_buttons[index].set_pressed_no_signal(true)
 	Speech.speak(feedback.text + ". Agora escolha a função na coluna da direita.", "minigame")
+
 
 func _select_right(index: int) -> void:
 	if selected_left == -1:
@@ -153,16 +178,31 @@ func _select_right(index: int) -> void:
 		completed.emit()
 	Speech.speak(feedback.text, "minigame")
 
+
 func _draw() -> void:
 	for button in left_buttons:
-		draw_circle(button.position + Vector2(button.size.x + 8, button.size.y / 2.0), 6, Color("#e0b75f"))
+		draw_circle(
+			button.position + Vector2(button.size.x + 8, button.size.y / 2.0), 6, Color("#e0b75f")
+		)
 	for button in right_buttons:
 		draw_circle(button.position + Vector2(-8, button.size.y / 2.0), 6, Color("#e0b75f"))
 	if dragging and selected_left >= 0:
 		var button: Button = left_buttons[selected_left]
-		draw_line(button.position + Vector2(button.size.x, button.size.y / 2.0), pointer, Color("#ffe29b"), 4.0, true)
+		draw_line(
+			button.position + Vector2(button.size.x, button.size.y / 2.0),
+			pointer,
+			Color("#ffe29b"),
+			4.0,
+			true
+		)
 	for left_index in matches:
 		var right_index := int(matches[left_index])
-		var from := left_buttons[left_index].position + Vector2(left_buttons[left_index].size.x, left_buttons[left_index].size.y / 2.0)
-		var to := right_buttons[right_index].position + Vector2(0, right_buttons[right_index].size.y / 2.0)
+		var from := (
+			left_buttons[left_index].position
+			+ Vector2(left_buttons[left_index].size.x, left_buttons[left_index].size.y / 2.0)
+		)
+		var to := (
+			right_buttons[right_index].position
+			+ Vector2(0, right_buttons[right_index].size.y / 2.0)
+		)
 		draw_line(from, to, Color("#e0b75f"), 4.0, true)

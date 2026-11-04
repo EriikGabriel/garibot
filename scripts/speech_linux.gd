@@ -16,6 +16,7 @@ var _wave_path := ""
 var _id := 0
 var _player: AudioStreamPlayer
 
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_player = AudioStreamPlayer.new()
@@ -27,10 +28,13 @@ func _ready() -> void:
 				executable = path
 				return
 
+
 func load_voices() -> void:
 	stop()
 	if executable.is_empty():
-		failed.emit("Instale o eSpeak NG para leitura sem bloqueios no Linux. Depois, reinicie o jogo.")
+		failed.emit(
+			"Instale o eSpeak NG para leitura sem bloqueios no Linux. Depois, reinicie o jogo."
+		)
 		return
 	var process := OS.execute_with_pipe(executable, PackedStringArray(["--voices"]), false)
 	if process.is_empty():
@@ -42,57 +46,71 @@ func load_voices() -> void:
 	_listing = true
 	_deadline = Time.get_ticks_msec() + TIMEOUT_MS
 
+
 func speak(text: String, voice: String, volume: float, rate: float, id: int) -> void:
 	stop()
 	_id = id
 	_player.volume_db = linear_to_db(clampf(volume, 0.0, 1.0))
-	_wave_path = ProjectSettings.globalize_path("user://speech_%d_%d.wav" % [OS.get_process_id(), id])
-	_pid = OS.create_process(executable, PackedStringArray([
-		"-v", voice.trim_prefix("espeak:"), "-s", str(int(175 * rate)),
-		"-w", _wave_path, "--", text
-	]))
+	_wave_path = ProjectSettings.globalize_path(
+		"user://speech_%d_%d.wav" % [OS.get_process_id(), id]
+	)
+	var args := PackedStringArray(["-v", voice.trim_prefix("espeak:"), "-s", str(int(175 * rate))])
+	args.append_array(["-w", _wave_path, "--", text])
+	_pid = OS.create_process(executable, args)
 	if _pid <= 0:
 		_fail("Não foi possível preparar a leitura em voz alta.")
 		return
 	_deadline = Time.get_ticks_msec() + TIMEOUT_MS
 
+
 func _process(_delta: float) -> void:
 	if _pid <= 0:
 		return
 	if _listing:
-		# Pipe não bloqueante e leitura limitada por frame.
+		# Pipe não bloqueante e leitura limitada por quadro.
 		_output.append_array(_pipe.get_buffer(8192))
 		if _output.size() > 131072:
 			_fail("O serviço de voz retornou uma lista inválida.")
 			return
 	if Time.get_ticks_msec() >= _deadline:
-		_fail("A voz demorou mais de 5 segundos. O processo foi cancelado; você pode continuar jogando e usar Testar voz para tentar novamente.")
-		return
-	if OS.is_process_running(_pid):
-		return
+		_fail(
+			(
+				"A voz demorou mais de 5 segundos. O processo foi cancelado; você pode continuar"
+				+ " jogando e usar Testar voz para tentar novamente."
+			)
+		)
+	elif not OS.is_process_running(_pid):
+		_on_process_exited()
+
+
+func _on_process_exited() -> void:
 	var exit_code := OS.get_process_exit_code(_pid)
 	_pid = -1
 	if exit_code != 0:
 		_fail("O serviço de voz falhou. Use Testar voz nas configurações para tentar novamente.")
-		return
-	if _listing:
-		# Drena somente os bytes restantes, sem esperar novos dados.
+	elif _listing:
+		# Drena só os bytes restantes, sem esperar novos dados.
 		_output.append_array(_pipe.get_buffer(131072))
 		_pipe.close()
 		_pipe = null
 		_listing = false
 		voices_ready.emit(parse_voices(_output.get_string_from_utf8()))
 	else:
-		if not FileAccess.file_exists(_wave_path):
-			_fail("O serviço de voz não produziu áudio.")
-			return
-		_player.stream = AudioStreamWAV.load_from_file(_wave_path)
-		_remove_wave()
-		if _player.stream == null:
-			_fail("Não foi possível ler o áudio da narração.")
-			return
-		_player.play()
-		started.emit(_id)
+		_play_wave()
+
+
+func _play_wave() -> void:
+	if not FileAccess.file_exists(_wave_path):
+		_fail("O serviço de voz não produziu áudio.")
+		return
+	_player.stream = AudioStreamWAV.load_from_file(_wave_path)
+	_remove_wave()
+	if _player.stream == null:
+		_fail("Não foi possível ler o áudio da narração.")
+		return
+	_player.play()
+	started.emit(_id)
+
 
 func parse_voices(output: String) -> Array[Dictionary]:
 	var available: Array[Dictionary] = []
@@ -102,9 +120,15 @@ func parse_voices(output: String) -> Array[Dictionary]:
 		var columns := whitespace.sub(line.strip_edges(), " ", true).split(" ", false)
 		if columns.size() < 5 or not columns[0].is_valid_int():
 			continue
-		available.append({"id": "espeak:" + columns[1], "language": columns[1],
-			"name": columns[3].replace("_", " ")})
+		available.append(
+			{
+				"id": "espeak:" + columns[1],
+				"language": columns[1],
+				"name": columns[3].replace("_", " ")
+			}
+		)
 	return available
+
 
 func stop() -> void:
 	if _pid > 0 and OS.is_process_running(_pid):
@@ -119,15 +143,18 @@ func stop() -> void:
 		_player.stream = null
 	_remove_wave()
 
+
 func _remove_wave() -> void:
 	if not _wave_path.is_empty():
 		if FileAccess.file_exists(_wave_path):
 			DirAccess.remove_absolute(_wave_path)
 		_wave_path = ""
 
+
 func _fail(message: String) -> void:
 	stop()
 	failed.emit(message)
+
 
 func _exit_tree() -> void:
 	stop()

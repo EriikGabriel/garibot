@@ -11,6 +11,7 @@ var _labels: Dictionary = {}
 @onready var result_count: Label = $VoicePicker/ResultCount
 @onready var speech_status: Label = $SpeechStatus
 
+
 func _ready() -> void:
 	voice_button.pressed.connect(_toggle_picker)
 	search.text_changed.connect(_filter_voices)
@@ -22,6 +23,7 @@ func _ready() -> void:
 	visibility_changed.connect(_on_visibility_changed)
 	if is_visible_in_tree():
 		_refresh_voices()
+
 
 func _refresh_voices() -> void:
 	Speech.refresh_voices()
@@ -36,6 +38,7 @@ func _refresh_voices() -> void:
 	speech_status.text = Speech.status_text
 	if picker.visible:
 		_filter_voices(search.text)
+
 
 func _voice_label(voice: Dictionary) -> String:
 	var id := str(voice["id"])
@@ -55,11 +58,25 @@ func _voice_label(voice: Dictionary) -> String:
 	_labels[id] = label
 	return label
 
+
 func _search_key(value: String) -> String:
 	value = value.to_lower().replace("_", "-")
-	for pair in [["á", "a"], ["ã", "a"], ["â", "a"], ["é", "e"], ["ê", "e"], ["í", "i"], ["ó", "o"], ["õ", "o"], ["ô", "o"], ["ú", "u"], ["ç", "c"]]:
+	for pair in [
+		["á", "a"],
+		["ã", "a"],
+		["â", "a"],
+		["é", "e"],
+		["ê", "e"],
+		["í", "i"],
+		["ó", "o"],
+		["õ", "o"],
+		["ô", "o"],
+		["ú", "u"],
+		["ç", "c"]
+	]:
 		value = value.replace(pair[0], pair[1])
 	return value.strip_edges()
+
 
 func _filter_voices(query: String) -> void:
 	_ensure_voice_rows()
@@ -71,8 +88,13 @@ func _filter_voices(query: String) -> void:
 		button.set_pressed_no_signal(str(button.get_meta("voice_id")) == preferred)
 		if button.visible and str(button.get_meta("voice_id")) != "":
 			count += 1
-	result_count.text = "%d vozes encontradas" % count if count > 0 else "Nenhuma voz encontrada. Tente outro idioma ou instale uma voz no sistema."
+	result_count.text = (
+		"%d vozes encontradas" % count
+		if count > 0
+		else "Nenhuma voz encontrada. Tente outro idioma ou instale uma voz no sistema."
+	)
 	$VoicePicker/Results.scroll_vertical = 0
+
 
 func _ensure_voice_rows() -> void:
 	if _rows_revision == Speech.voices_revision:
@@ -85,6 +107,7 @@ func _ensure_voice_rows() -> void:
 	_add_voice_button(AUTO_LABEL, "")
 	for voice in Speech.voices:
 		_add_voice_button(_voice_label(voice), str(voice["id"]))
+
 
 func _add_voice_button(label: String, id: String) -> void:
 	var button := Button.new()
@@ -100,11 +123,13 @@ func _add_voice_button(label: String, id: String) -> void:
 	button.pressed.connect(_select_voice.bind(id))
 	results.add_child(button)
 
+
 func _toggle_picker() -> void:
 	picker.visible = not picker.visible
 	if picker.visible:
 		_refresh_voices()
 		search.grab_focus()
+
 
 func _focus_first_result(_text: String) -> void:
 	for button in results.get_children():
@@ -112,9 +137,11 @@ func _focus_first_result(_text: String) -> void:
 			button.grab_focus()
 			return
 
+
 func _select_voice(id: String) -> void:
 	# Deferir evita remover o botão enquanto seu sinal ainda está sendo emitido.
 	_commit_voice.call_deferred(id)
+
 
 func _commit_voice(id: String) -> void:
 	picker.hide()
@@ -123,16 +150,19 @@ func _commit_voice(id: String) -> void:
 	voice_button.grab_focus()
 	Speech.test_voice()
 
+
 func _input(event: InputEvent) -> void:
 	if is_visible_in_tree() and picker.visible and event.is_action_pressed("ui_cancel"):
 		picker.hide()
 		voice_button.grab_focus()
 		get_viewport().set_input_as_handled()
 
+
 func _on_test_voice() -> void:
 	Speech.test_voice(true)
 	_labels.clear()
 	_refresh_voices()
+
 
 func _on_visibility_changed() -> void:
 	if is_node_ready():
@@ -140,12 +170,15 @@ func _on_visibility_changed() -> void:
 		if is_visible_in_tree():
 			_refresh_voices()
 
+
 func _on_setting_changed(key: String, _value: Variant) -> void:
 	if key in ["speech_voice", "screen_reader"]:
 		_refresh_voices()
 
+
 func _on_speech_status_changed(message: String) -> void:
 	speech_status.text = message
+
 
 func _on_voices_changed() -> void:
 	_labels.clear()

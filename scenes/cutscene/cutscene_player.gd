@@ -1,72 +1,53 @@
 class_name CutscenePlayer
 extends Node
 
-## Modular cutscene director.
+## Diretor de cutscenes: executa `steps` em ordem, controlando o Garibot como se fosse o jogador.
 ##
-## Add this node to a level, fill `steps` with an array of instruction
-## dictionaries, and call `run()`. It temporarily takes control away from
-## Garibot (driving him like a player), plays optional cinematic black bars,
-## raw animations and Dialogic dialogs, then restores control.
+## Passos aceitos (o campo "type" é obrigatório):
+##   {"type": "bars_on", "speed": 0.3}           barras de cinema entram
+##   {"type": "bars_off", "speed": 0.3}          barras saem
+##   {"type": "wait", "seconds": 1.0}
+##   {"type": "walk", "dir": 1, "duration": 1.5}
+##   {"type": "stop"}
+##   {"type": "face", "dir": -1}
+##   {"type": "jump"}
+##   {"type": "roll", "dir": 1}
+##   {"type": "animation", "name": "hello", "speed": 1.0, "duration": 1.0}
+##   {"type": "say", "timeline": "res://dialogic/..."}   espera o diálogo terminar
+##   {"type": "signal"}                          só emite `step_reached`
 ##
-## Supported step types (a valid `type` is required for every step):
-##   {"type": "bars_on",  "speed": 0.3}                 # slide cinematic black bars in
-##   {"type": "bars_off", "speed": 0.3}                 # slide black bars out
-##   {"type": "wait", "seconds": 1.0}                   # do nothing for N seconds
-##   {"type": "walk", "dir": 1, "duration": 1.5}        # move Garibot in a direction for N seconds
-##   {"type": "stop"}                                   # stop walking
-##   {"type": "face", "dir": -1}                        # turn Garibot to face a direction
-##   {"type": "jump"}                                   # make Garibot jump (if on floor)
-##   {"type": "roll", "dir": 1}                         # make Garibot dash/roll in a direction
-##   {"type": "animation", "name": "hello", "duration": 1.0}  # play a raw body animation for N seconds
-##   {"type": "say", "timeline": "res://dialogic/...dl"}      # play a Dialogic dialog and wait for it
-##   {"type": "signal"}                                # emit the `step_reached` signal
-##
-## Example:
-##   steps = [
-##       {"type": "bars_on", "speed": 0.3},
-##       {"type": "walk", "dir": 1, "duration": 1.5},
-##       {"type": "jump"},
-##       {"type": "roll", "dir": 1},
-##       {"type": "say", "timeline": "res://dialogic/timelines/teste/teste.dtl"},
-##       {"type": "bars_off", "speed": 0.3},
-##   ]
+## No passo "say", se a cena pai tiver `start_dialogue(timeline)`, ela abre o diálogo.
 
-signal step_reached(step: Dictionary, index: int)
 signal started
 signal finished
+signal step_reached(step: Dictionary, index: int)
+
+const DEFAULT_BAR_TIME := 0.4
+const GARIBOT_CHARACTER := "res://dialogic/characters/garibot.dch"
 
 @export_storage var steps: Array[Dictionary] = []
-
-@export var player_path: NodePath = NodePath("")
-
-## Dialogic character resource shown in the speech bubble during "say" steps.
-## Defaults to the game's garibot character when left empty.
-@export var character_resource: Resource = null
+@export var player_path: NodePath
 @export_range(48.0, 120.0, 4.0) var cinematic_bar_height := 84.0
 
 var _player: Player
-var _index: int = 0
-var _active: bool = false
-var _bar_layer: CanvasLayer
-var _bar_top: ColorRect
-var _bar_bottom: ColorRect
-var _bars_were_visible_before_dialog := false
+var _index := 0
+var _active := false
+var _bars_before_dialog := false
 var _bar_tween: Tween
 
-const _DEFAULT_BAR_SPEED := 0.4
-
-
-func _ready():
-	_ensure_bars()
+@onready var _bar_layer := _create_bar_layer()
+@onready var _bar_top: ColorRect = _bar_layer.get_child(0)
+@onready var _bar_bottom: ColorRect = _bar_layer.get_child(1)
 
 
 func run() -> void:
-	_resolve_player()
+	_player = get_node_or_null(player_path) as Player
 	if _player == null:
-		push_warning("CutscenePlayer: no player found, cannot run.")
+		_player = get_tree().get_first_node_in_group("player") as Player
+	if _player == null:
+		push_warning("CutscenePlayer: nenhum Player encontrado.")
 		finished.emit()
 		return
-
 	_active = true
 	_index = 0
 	_player.in_cutscene = true
@@ -84,45 +65,41 @@ func _advance() -> void:
 	if _index >= steps.size():
 		_finish()
 		return
-
-	var step: Dictionary = steps[_index]
+	var step := steps[_index]
 	_index += 1
 	step_reached.emit(step, _index - 1)
-
 	match step.get("type", ""):
 		"bars_on":
-			_set_bars_visibility(true, step, _advance)
+			_animate_bars(true, step, _advance)
 		"bars_off":
-			_set_bars_visibility(false, step, _advance)
+			_animate_bars(false, step, _advance)
 		"wait":
-			_await(float(step.get("seconds", 1.0)), _advance)
+			_after(step.get("seconds", 1.0), _advance)
 		"walk":
-			_player.cutscene_move(int(step.get("dir", 1)))
-			_await(float(step.get("duration", 1.0)), _on_walk_done)
+			_player.cutscene_move(step.get("dir", 1))
+			_after(step.get("duration", 1.0), _on_walk_done)
 		"stop":
 			_player.cutscene_stop()
 			_advance()
 		"face":
-			_player.cutscene_face(int(step.get("dir", 1)))
+			_player.cutscene_face(step.get("dir", 1))
 			_advance()
 		"jump":
 			_player.cutscene_jump()
-			_await(0.35, _advance)
+			_after(0.35, _advance)
 		"roll":
-			_player.cutscene_face(int(step.get("dir", 1)))
+			_player.cutscene_face(step.get("dir", 1))
 			_player.cutscene_roll()
-			_await(0.5, _advance)
+			_after(0.5, _advance)
 		"animation":
-			var name: String = step.get("name", "hello")
-			var speed: float = step.get("speed", 1.0)
-			_player.body.play_cutscene_animation(name, speed)
-			_await(float(step.get("duration", 1.0)), _on_animation_done)
+			_player.body.play_cutscene_animation(step.get("name", "hello"), step.get("speed", 1.0))
+			_after(step.get("duration", 1.0), _on_animation_done)
 		"say":
-			_play_dialog(String(step.get("timeline", "")))
+			_play_dialog(step.get("timeline", ""))
 		"signal":
 			_advance()
-		_:
-			push_warning("CutscenePlayer: unknown step type '%s'" % step.get("type", ""))
+		var unknown:
+			push_warning("CutscenePlayer: passo desconhecido '%s'." % unknown)
 			_advance()
 
 
@@ -140,49 +117,20 @@ func _play_dialog(timeline: String) -> void:
 	if timeline.is_empty():
 		_advance()
 		return
-
-	# Lembra se as barras já estavam visíveis (por um passo "bars_on" anterior)
-	# para que o fim do diálogo não as esconda de repente; quem deve escondê-las
-	# com animação é um passo "bars_off" explícito, se houver.
-	_bars_were_visible_before_dialog = is_instance_valid(_bar_top) and (_bar_top.visible or _bar_bottom.visible)
-
-	if get_parent().is_in_group("phase1_level"):
-		if not Dialogic.timeline_ended.is_connected(_on_dialog_done):
-			Dialogic.timeline_ended.connect(_on_dialog_done)
-		Phase1Dialogue.start(timeline, get_parent())
+	# Só um passo "bars_off" explícito esconde as barras que já estavam na tela.
+	_bars_before_dialog = _bar_top.visible
+	Dialogic.timeline_ended.connect(_on_dialog_done, CONNECT_ONE_SHOT)
+	if get_parent().has_method("start_dialogue"):
+		get_parent().start_dialogue(timeline)
 		return
-	if not Dialogic.timeline_ended.is_connected(_on_dialog_done):
-		Dialogic.timeline_ended.connect(_on_dialog_done)
-
-	# Apply accessibility settings (font size, text speed, etc.) as the normal
-	# dialog triggers do, so the cutscene speech matches the player's prefs.
-	Settings.apply_setting("dialog_font_size", Settings.get_setting("dialog_font_size", 18))
-	Settings.apply_setting("text_speed", Settings.get_setting("text_speed", 1.0))
-	Settings.apply_setting("skip_on_click", Settings.get_setting("skip_on_click", true))
-
-	# Show the speech in a bubble attached to the player's bubble/dialog point,
-	# replicating how the in-game DialogTrigger links Dialogic to the character.
-	var char_res: Resource = character_resource
-	if char_res == null:
-		char_res = load("res://dialogic/characters/garibot.dch")
-
-	var bubble_point: Node2D = null
-	if _player != null:
-		bubble_point = _player.get_node_or_null("bubble_point")
-		if bubble_point == null:
-			bubble_point = _player.dialog_point
-
-	if bubble_point != null and char_res != null:
-		var bubble_layout: Node = Dialogic.Styles.load_style("bubbles")
-		if bubble_layout != null and bubble_layout.has_method("register_character"):
-			bubble_layout.register_character(char_res, bubble_point)
-
+	Settings.apply_dialogue_settings()
+	var layout: Node = Dialogic.Styles.load_style("bubbles")
+	if layout and layout.has_method("register_character"):
+		layout.register_character(load(GARIBOT_CHARACTER), _player.bubble_point)
 	Dialogic.start(timeline)
 
 
 func _on_dialog_done() -> void:
-	if Dialogic.timeline_ended.is_connected(_on_dialog_done):
-		Dialogic.timeline_ended.disconnect(_on_dialog_done)
 	_restore_bars_after_dialog()
 	_advance()
 
@@ -197,132 +145,76 @@ func _finish() -> void:
 	finished.emit()
 
 
-# ---- Black bars ----
-
-func _ensure_bars() -> void:
-	if _bar_layer != null:
-		return
-	_bar_layer = CanvasLayer.new()
-	_bar_layer.layer = 100
-	_bar_layer.name = "CinematicBars"
-
-	_bar_top = ColorRect.new()
-	_bar_top.color = Color.BLACK
-	_bar_top.anchor_left = 0.0
-	_bar_top.anchor_top = 0.0
-	_bar_top.anchor_right = 1.0
-	_bar_top.anchor_bottom = 0.0
-	_bar_top.offset_top = 0.0
-	_bar_top.offset_bottom = cinematic_bar_height
-
-	_bar_bottom = ColorRect.new()
-	_bar_bottom.color = Color.BLACK
-	_bar_bottom.anchor_left = 0.0
-	_bar_bottom.anchor_top = 1.0
-	_bar_bottom.anchor_right = 1.0
-	_bar_bottom.anchor_bottom = 1.0
-	_bar_bottom.offset_top = -cinematic_bar_height
-	_bar_bottom.offset_bottom = 0.0
-
-	_bar_layer.add_child(_bar_top)
-	_bar_layer.add_child(_bar_bottom)
-	add_child(_bar_layer)
-
-	_set_bar_offsets(false)
-	_bar_top.visible = false
-	_bar_bottom.visible = false
+func _after(seconds: float, callback: Callable) -> void:
+	get_tree().create_timer(maxf(seconds, 0.0)).timeout.connect(callback)
 
 
-func _set_bars_visibility(show: bool, step: Dictionary, on_finished: Callable = Callable()) -> void:
-	_ensure_bars()
-	_stop_bar_animation()
-	var duration := _bar_time(step)
-	_bar_layer.show()
+# Barras de cinema ---------------------------------------------------------------
 
+
+func _create_bar_layer() -> CanvasLayer:
+	var layer := CanvasLayer.new()
+	layer.name = "CinematicBars"
+	layer.layer = 100
+	for preset in [Control.PRESET_TOP_WIDE, Control.PRESET_BOTTOM_WIDE]:
+		var bar := ColorRect.new()
+		bar.color = Color.BLACK
+		bar.set_anchors_preset(preset)
+		bar.hide()
+		layer.add_child(bar)
+	add_child(layer)
+	return layer
+
+
+func _animate_bars(show: bool, step: Dictionary, on_finished: Callable) -> void:
+	if _bar_tween and _bar_tween.is_valid():
+		_bar_tween.kill()
 	if show:
-		_set_bar_offsets(false)
+		_set_bars_shown(false)
 		_bar_top.show()
 		_bar_bottom.show()
-	elif not _bar_top.visible and not _bar_bottom.visible:
-		_set_bar_offsets(false)
-		_finish_bar_animation(false, on_finished)
+	elif not _bar_top.visible:
+		_on_bars_done(false, on_finished)
 		return
-
+	var duration := _bar_time(step)
 	if duration <= 0.0:
-		_set_bar_offsets(show)
-		_finish_bar_animation(show, on_finished)
+		_set_bars_shown(show)
+		_on_bars_done(show, on_finished)
 		return
-
-	_bar_tween = create_tween()
-	_bar_tween.set_parallel(true)
-	_bar_tween.set_trans(Tween.TRANS_CUBIC)
+	var height := cinematic_bar_height
+	_bar_tween = create_tween().set_parallel().set_trans(Tween.TRANS_CUBIC)
 	_bar_tween.set_ease(Tween.EASE_OUT if show else Tween.EASE_IN)
-	_bar_tween.tween_property(_bar_top, "offset_top", 0.0 if show else -cinematic_bar_height, duration)
-	_bar_tween.tween_property(_bar_top, "offset_bottom", cinematic_bar_height if show else 0.0, duration)
-	_bar_tween.tween_property(_bar_bottom, "offset_top", -cinematic_bar_height if show else 0.0, duration)
-	_bar_tween.tween_property(_bar_bottom, "offset_bottom", 0.0 if show else cinematic_bar_height, duration)
-	_bar_tween.finished.connect(_finish_bar_animation.bind(show, on_finished))
+	_bar_tween.tween_property(_bar_top, "offset_top", 0.0 if show else -height, duration)
+	_bar_tween.tween_property(_bar_top, "offset_bottom", height if show else 0.0, duration)
+	_bar_tween.tween_property(_bar_bottom, "offset_top", -height if show else 0.0, duration)
+	_bar_tween.tween_property(_bar_bottom, "offset_bottom", 0.0 if show else height, duration)
+	_bar_tween.finished.connect(_on_bars_done.bind(show, on_finished))
 
 
-func _set_bar_offsets(shown: bool) -> void:
-	_bar_top.offset_top = 0.0 if shown else -cinematic_bar_height
-	_bar_top.offset_bottom = cinematic_bar_height if shown else 0.0
-	_bar_bottom.offset_top = -cinematic_bar_height if shown else 0.0
-	_bar_bottom.offset_bottom = 0.0 if shown else cinematic_bar_height
+func _set_bars_shown(shown: bool) -> void:
+	var height := cinematic_bar_height
+	_bar_top.offset_top = 0.0 if shown else -height
+	_bar_top.offset_bottom = height if shown else 0.0
+	_bar_bottom.offset_top = -height if shown else 0.0
+	_bar_bottom.offset_bottom = 0.0 if shown else height
 
 
-func _finish_bar_animation(shown: bool, on_finished: Callable) -> void:
+func _on_bars_done(shown: bool, on_finished: Callable) -> void:
 	_bar_tween = null
 	if not shown:
 		_bar_top.hide()
 		_bar_bottom.hide()
-	if on_finished.is_valid():
-		on_finished.call()
-
-
-func _stop_bar_animation() -> void:
-	if _bar_tween != null and _bar_tween.is_valid():
-		_bar_tween.kill()
-	_bar_tween = null
+	on_finished.call()
 
 
 func _restore_bars_after_dialog() -> void:
-	if not is_instance_valid(_bar_layer):
-		return
-	_bar_layer.show()
-	if _bars_were_visible_before_dialog:
-		_set_bar_offsets(true)
-		_bar_top.show()
-		_bar_bottom.show()
-	else:
-		_bar_top.hide()
-		_bar_bottom.hide()
-	_bars_were_visible_before_dialog = false
+	_set_bars_shown(_bars_before_dialog)
+	_bar_top.visible = _bars_before_dialog
+	_bar_bottom.visible = _bars_before_dialog
+	_bars_before_dialog = false
 
 
 func _bar_time(step: Dictionary) -> float:
 	if Settings.get_setting("reduced_motion", false):
 		return 0.0
-	return maxf(float(step.get("speed", _DEFAULT_BAR_SPEED)), 0.0)
-
-
-# ---- Helpers ----
-
-func _resolve_player() -> void:
-	if is_instance_valid(_player):
-		return
-	var p = get_node_or_null(player_path) if not player_path.is_empty() else null
-	if p is Player:
-		_player = p
-		return
-	var in_group = get_tree().get_first_node_in_group("player")
-	if in_group is Player:
-		_player = in_group
-
-
-func _await(duration: float, callback: Callable) -> void:
-	var timer := get_tree().create_timer(maxf(duration, 0.0))
-	timer.timeout.connect(func():
-		if callback.is_valid():
-			callback.call()
-	)
+	return maxf(step.get("speed", DEFAULT_BAR_TIME), 0.0)

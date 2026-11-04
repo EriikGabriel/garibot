@@ -23,9 +23,6 @@ general/text_to_speech.linux=false
 
 [autoload]
 
-WindowManager="*res://scripts/window_manager.gd"
-SceneManager="*res://scripts/scene_manager.gd"
-Toolkit="*res://scripts/toolkit.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Settings="*res://scripts/settings.gd"
 Speech="*res://scripts/speech.gd"

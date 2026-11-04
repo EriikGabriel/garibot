@@ -13,13 +13,13 @@ de jogo.
 | `assets/gui/kenney_pixel_adventure/` | Pacote CC0 de interface em pixel art. |
 | `gui/asset_preview/` | Cena editável de amostras e controles com o tema pixel art. |
 | `gui/themes/` | Temas reutilizáveis de interface. |
-| `components/` | Componentes reutilizáveis, como vida, hitbox e dano de contato. |
-| `scenes/characters/` | Cenas e scripts de personagens, incluindo Garibot. |
+| `components/` | Componentes reutilizáveis: vida, hitbox, coletáveis, minigames, parallax e restauração do cenário. |
+| `scenes/characters/` | Personagens: `garibot/`, `villagers/` (moradores) e `enemies/`. |
 | `scenes/cutscene/` | Diretor de cutscenes reutilizável. |
 | `gui/settings/` | Telas e controles modulares de configurações. |
-| `levels/` | Fases jogáveis e scripts específicos de fase. |
+| `levels/` | `game/` (cena raiz e `GameController`) e as fases, como `phase1/`. |
 | `gui/` | Interface principal do jogo. |
-| `scripts/` | Autoloads e serviços globais, como configurações e troca de cenas. |
+| `scripts/` | Autoloads: `Settings` (preferências e atalho de tela cheia) e `Speech` (leitura em voz alta). |
 | `addons/dialogic/` | Plugin de diálogos de terceiros; evite editar sem necessidade. |
 
 ## Execução
@@ -97,6 +97,12 @@ instaladas e com uma fala dublada no Dialogic.
 
 ## Convenções de manutenção
 
+- Arquivos e pastas em `snake_case`; `class_name` e nós em `PascalCase`. Código, nós e
+  scripts em inglês; conteúdo do jogo (timelines, personagens, arte) pode usar pt-BR.
+- Siga o guia de estilo do Godot. `gdformat` e `gdlint` (pacote `gdtoolkit`) devem passar
+  em todos os scripts fora de `addons/`.
+- Scripts `@tool` não devem alterar propriedades salvas na cena (material, frame,
+  posição), para o editor não gerar mudanças a cada vez que salva.
 - Use `@export` para valores ajustáveis pelo editor, evitando números mágicos.
 - Mantenha uma cena por componente reutilizável em `components/`.
 - Preserve os caminhos dos recursos `.tscn`, `.gd` e `.tres`: eles são usados
