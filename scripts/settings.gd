@@ -34,6 +34,8 @@ const DEFAULTS := {
 	"high_contrast": false,
 	"brightness": 1.0,
 	"reduced_motion": false,
+	# Privacidade: permite enviar dados anônimos de uso (só se o envio remoto existir).
+	"analytics_consent": true,
 	# Cada ação guarda uma tecla física escolhida pelo jogador.
 	"keybinds":
 	{

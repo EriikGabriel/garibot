@@ -19,6 +19,8 @@ const PAGE_SORTING := &"triagem"
 @export var final_button_text := "Concluir fase"
 
 var _active_pages: Array[Control] = []
+## Nome de cada página na telemetria.
+var _page_ids := {}
 var _index := -1
 var _perfect := true
 
@@ -56,6 +58,7 @@ func _ready() -> void:
 	for page_name in pages:
 		if by_name.has(page_name):
 			_active_pages.append(by_name[page_name])
+			_page_ids[by_name[page_name]] = str(page_name)
 	$Backdrop/Panel/Margin/Body/FinalPage/Title.text = final_title
 	$Backdrop/Panel/Margin/Body/FinalPage/Message.text = final_message
 	finish_button.text = final_button_text
@@ -87,6 +90,7 @@ func _on_check_pressed() -> void:
 
 func _on_answer_checked(correct: bool) -> void:
 	GameAudio.play_sound(&"correct" if correct else &"incorrect")
+	Analytics.track("minigame_resposta", {"atividade": _current_page_id(), "correta": correct})
 
 
 func _on_crossword_completed() -> void:
@@ -111,6 +115,7 @@ func _on_board_completed(page: Control) -> void:
 
 
 func _on_skip_pressed() -> void:
+	Analytics.track("minigame_pulou", {"atividade": _current_page_id()})
 	_perfect = false
 	_advance()
 
@@ -132,3 +137,9 @@ func _on_finish_pressed() -> void:
 	get_tree().paused = false
 	finished.emit(_perfect)
 	queue_free()
+
+
+func _current_page_id() -> String:
+	if _index >= 0 and _index < _active_pages.size():
+		return _page_ids.get(_active_pages[_index], "")
+	return ""

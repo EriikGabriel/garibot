@@ -27,6 +27,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Settings="*res://scripts/settings.gd"
 Speech="*res://scripts/speech.gd"
 GameAudio="*res://components/audio/game_audio/game_audio.tscn"
+Analytics="*res://scripts/analytics/analytics.gd"
 
 [dialogic]
 

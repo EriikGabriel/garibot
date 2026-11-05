@@ -113,6 +113,7 @@ func _ready() -> void:
 			cells[point] = field
 			field.focus_entered.connect(_focus_cell.bind(point))
 			field.text_changed.connect(_edit_cell.bind(point))
+			field.gui_input.connect(_on_cell_input.bind(point))
 			for i in entries.size():
 				if entries[i]["start"] == point:
 					var number := Label.new()
@@ -248,6 +249,27 @@ func _edit_cell(value: String, point: Vector2i) -> void:
 				"Última letra: %s. Palavra preenchida. Use Verificar respostas." % letter,
 				"minigame"
 			)
+
+
+## Backspace apaga a letra da casa; numa casa vazia, volta para a anterior da
+## palavra e apaga a letra dela (segurar a tecla apaga a palavra para trás).
+func _on_cell_input(event: InputEvent, point: Vector2i) -> void:
+	if not (event is InputEventKey and event.pressed and event.keycode == KEY_BACKSPACE):
+		return
+	var field: LineEdit = cells[point]
+	field.accept_event()
+	if not field.text.is_empty():
+		field.text = ""
+		_announce_cell(point, false)
+		return
+	var path: Array = paths[active_word]
+	var index := path.find(point)
+	if index <= 0:
+		return
+	var previous: Vector2i = path[index - 1]
+	cells[previous].text = ""
+	# O foco anuncia a casa (agora vazia) pelo leitor de tela.
+	cells[previous].grab_focus()
 
 
 func check_answers() -> void:

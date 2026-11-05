@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		return
 	for body in get_overlapping_bodies():
 		if body is Player:
-			body.take_damage(damage, global_position)
+			body.take_damage(damage, global_position, "poca_acida")
 	queue_redraw()
 
 

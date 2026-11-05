@@ -29,3 +29,8 @@ settings_key = "fullscreen"
 layout_mode = 2
 label_text = "Reduzir movimento"
 settings_key = "reduced_motion"
+
+[node name="AnalyticsConsent" parent="." instance=ExtResource("1_toggle")]
+layout_mode = 2
+label_text = "Compartilhar dados anônimos de uso"
+settings_key = "analytics_consent"

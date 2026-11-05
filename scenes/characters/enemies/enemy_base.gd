@@ -23,6 +23,8 @@ signal defeated
 @export var max_fall_speed := 700.0
 
 @export_group("Combate")
+## Nome do tipo de inimigo na telemetria (ex.: "patrulha").
+@export var enemy_type := "inimigo"
 ## Empurrão ao levar um golpe que não derrota (px/s).
 @export var hit_knockback := 160.0
 @export var defeat_duration := 0.25
@@ -115,7 +117,7 @@ func _hurt_overlapping_player() -> void:
 		return
 	for body in contact_area.get_overlapping_bodies():
 		if body is Player:
-			body.take_damage(contact_damage.attack.damage, global_position)
+			body.take_damage(contact_damage.attack.damage, global_position, enemy_type)
 
 
 func _defeat() -> void:
@@ -127,6 +129,7 @@ func _defeat() -> void:
 	if contact_area:
 		contact_area.set_deferred("monitoring", false)
 	defeated.emit()
+	Analytics.track("inimigo_derrotado", {"tipo": enemy_type, "x": roundi(global_position.x), "y": roundi(global_position.y)})
 	var tween := create_tween().set_parallel(true)
 	tween.tween_property(self, "scale", Vector2(1.4, 0.2), defeat_duration)
 	tween.tween_property(self, "modulate:a", 0.0, defeat_duration)

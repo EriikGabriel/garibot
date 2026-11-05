@@ -36,6 +36,11 @@ var _bonus := 0.0
 ## Último ponto seguro: início da fase ou marcador da zona mais avançada alcançada.
 var _respawn_point := Vector2.ZERO
 var _respawn_zone := 0
+## Telemetria: início da fase, mortes e atividade (minigame) em andamento.
+var _phase_start_ms := 0
+var _deaths := 0
+var _activity_id := ""
+var _activity_start_ms := 0
 var _pending_minigame := ""
 var _pending_tutorial_speech := false
 var _last_narrated_tutorial := ""
@@ -58,6 +63,11 @@ func _ready() -> void:
 	_respawn_zone = _current_zone()
 	player.health.health_changed.connect(_on_player_health_changed)
 	player.died.connect(_on_player_died)
+	player.damaged.connect(_on_player_damaged)
+	_phase_start_ms = Time.get_ticks_msec()
+	Analytics.set_context({"fase": "fase1", "zona": _zone_title(_respawn_zone)})
+	Analytics.set_tracked_node(player)
+	Analytics.track("fase_inicio")
 	battery_hud.set_charge(int(player.health.health), int(player.health.max_health))
 	var items := get_tree().get_nodes_in_group("phase1_reee")
 	_reee_total = items.size()
@@ -96,6 +106,8 @@ func _process(_delta: float) -> void:
 	if zone != _zone_index:
 		_zone_index = zone
 		_update_hud()
+		Analytics.set_context({"zona": _zone_title(zone)})
+		Analytics.track("zona_entrou")
 	if zone > _respawn_zone and player.is_on_floor():
 		_respawn_zone = zone
 		_respawn_point = $Flow.get_child(zone).position
@@ -140,11 +152,23 @@ func _can_conclude() -> bool:
 
 ## Cair no rio devolve o Garibot à margem, sem perder as coletas.
 func _return_to_river_bank() -> void:
+	Analytics.track("queda_rio")
 	player.position = $RiverCheckpoint.position
 	player.velocity = Vector2.ZERO
 	player.move_velocity = 0.0
 	player.jump_velocity = 0.0
 	player.get_node("Camera2D").reset_smoothing()
+
+
+func _zone_title(index: int) -> String:
+	var marker := $Flow.get_child(index)
+	return str(marker.get_meta("title", marker.name))
+
+
+func _on_player_damaged(amount: float, source: String) -> void:
+	Analytics.track(
+		"dano", {"quantidade": amount, "fonte": source, "bateria": int(player.health.health)}
+	)
 
 
 func _on_player_health_changed(health: float, max_health: float) -> void:
@@ -154,10 +178,14 @@ func _on_player_health_changed(health: float, max_health: float) -> void:
 ## Bateria zerada: o Garibot "recarrega" e volta ao último ponto seguro,
 ## sem perder os REEE coletados.
 func _on_player_died() -> void:
+	_deaths += 1
+	# Adiado: a morte é avisada no meio do dano; assim o "dano" fatal vem antes na planilha.
+	Analytics.track.call_deferred("morte", {"mortes": _deaths})
 	_set_tutorial_visible(false)
 	Speech.speak("O Garibot ficou sem bateria! Recarregando no último ponto seguro.", "instruction")
 	await get_tree().create_timer(respawn_delay).timeout
 	player.revive(_respawn_point)
+	Analytics.track("renascimento")
 	_resume_tutorial()
 
 
@@ -239,6 +267,7 @@ func _open_minigame(minigame_id: String) -> void:
 	if not MINIGAME_PAGES.has(minigame_id):
 		push_error("Minigame desconhecido: %s" % minigame_id)
 		return
+	_track_activity_start(minigame_id)
 	_minigames_active = true
 	player.has_control = false
 	var minigames: Phase1Minigames = MINIGAMES_SCENE.instantiate()
@@ -251,6 +280,7 @@ func _open_minigame(minigame_id: String) -> void:
 
 
 func _on_activity_finished(perfect: bool) -> void:
+	_track_activity_end(perfect)
 	_minigames_active = false
 	if perfect:
 		_add_bonus()
@@ -258,9 +288,10 @@ func _on_activity_finished(perfect: bool) -> void:
 	_resume_tutorial()
 
 
-func _on_reee_collected(_item_name: String) -> void:
+func _on_reee_collected(item_name: String) -> void:
 	GameAudio.play_sound(&"collect")
 	_reee_count += 1
+	Analytics.track("reee_coletado", {"item": item_name, "total": _reee_count})
 	_refresh_restoration()
 	if _reee_count == 1:
 		reee_cutscene.run()
@@ -287,11 +318,22 @@ func _on_conclusion_finished() -> void:
 	_minigames_active = true
 	var minigames: Phase1Minigames = MINIGAMES_SCENE.instantiate()
 	minigames.pages.assign([Phase1Minigames.PAGE_CROSSWORD])
+	_track_activity_start("cruzadinha")
 	minigames.finished.connect(_on_minigames_finished)
 	add_child(minigames)
 
 
-func _on_minigames_finished(_perfect: bool) -> void:
+func _on_minigames_finished(perfect: bool) -> void:
+	_track_activity_end(perfect)
+	Analytics.track(
+		"fase_concluida",
+		{
+			"tempo_total_s": snappedf((Time.get_ticks_msec() - _phase_start_ms) / 1000.0, 0.1),
+			"mortes": _deaths,
+		}
+	)
+	# Cópia automática da planilha a cada fase concluída (sobrescreve a anterior).
+	Analytics.export_data(false, "ultima_fase_concluida")
 	_phase_completed = true
 	_minigames_active = false
 	player.has_control = true
@@ -364,3 +406,20 @@ func _narrate_tutorial_when_ready() -> void:
 	if tutorial_label.text != _last_narrated_tutorial:
 		_last_narrated_tutorial = tutorial_label.text
 		Speech.speak(tutorial_label.text, "instruction")
+
+
+func _track_activity_start(activity: String) -> void:
+	_activity_id = activity
+	_activity_start_ms = Time.get_ticks_msec()
+	Analytics.track("minigame_inicio", {"atividade": activity})
+
+
+func _track_activity_end(perfect: bool) -> void:
+	Analytics.track(
+		"minigame_fim",
+		{
+			"atividade": _activity_id,
+			"perfeito": perfect,
+			"duracao_s": snappedf((Time.get_ticks_msec() - _activity_start_ms) / 1000.0, 0.1),
+		}
+	)

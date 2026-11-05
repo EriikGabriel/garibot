@@ -4,7 +4,7 @@ extends CharacterBody2D
 ## Garibot: entrada, máquina de estados e movimento. Velocidades em px/s,
 ## durações em quadros de física. Cutscenes o controlam pelos métodos `cutscene_*`.
 
-signal damaged(amount: float)
+signal damaged(amount: float, source: String)
 ## Emitido quando a bateria (vida) acaba. A fase decide como renascer.
 signal died
 
@@ -141,12 +141,13 @@ func can_be_hurt() -> bool:
 
 
 ## Ponto único de dano: inimigos, projéteis e poças chamam este método.
-## `source_position` define a direção do recuo. Retorna true se o dano foi aplicado.
-func take_damage(amount: float, source_position: Vector2) -> bool:
+## `source_position` define a direção do recuo; `source_name` identifica a origem
+## (ex.: "patrulha") para a telemetria. Retorna true se o dano foi aplicado.
+func take_damage(amount: float, source_position: Vector2, source_name := "") -> bool:
 	if not can_be_hurt():
 		return false
 	hitbox.damage(Attack.new(amount))
-	damaged.emit(amount)
+	damaged.emit(amount, source_name)
 	if is_dead():
 		return true
 	var away := signf(global_position.x - source_position.x)
@@ -294,7 +295,7 @@ func _check_contact_damage() -> void:
 	var collider := collision.get_collider() as Node
 	if collider and collider.is_in_group("DamageOnContact"):
 		var contact := collider.get_node("ContactDamage") as ContactDamage
-		take_damage(contact.attack.damage, (collider as Node2D).global_position)
+		take_damage(contact.attack.damage, (collider as Node2D).global_position, "contato")
 
 
 func _take_hit() -> void:

@@ -7,10 +7,14 @@ const MAIN_MENU_SCENE_PATH := "res://gui/main_menu/main_menu.tscn"
 
 @onready var panel: Control = $Panel
 @onready var dim: Control = $Dim
+@onready var export_button: Button = $Panel/Margin/Buttons/ExportAnalytics
+
+var _opened_ms := 0
 
 
 func _ready() -> void:
 	add_to_group("pause_menu")
+	export_button.visible = Analytics.ENABLED
 	show()
 
 
@@ -31,6 +35,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func open() -> void:
+	_opened_ms = Time.get_ticks_msec()
+	Analytics.track("pausa_aberta")
+	export_button.text = "Exportar dados de análise"
 	get_tree().paused = true
 	dim.show()
 	panel.show()
@@ -38,6 +45,9 @@ func open() -> void:
 
 
 func resume() -> void:
+	Analytics.track(
+		"pausa_fechada", {"duracao_s": snappedf((Time.get_ticks_msec() - _opened_ms) / 1000.0, 0.1)}
+	)
 	panel.hide()
 	dim.hide()
 	get_tree().paused = false
@@ -60,3 +70,10 @@ func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
 	GameController.instance.delete_current_2d_scene()
 	GameController.instance.change_gui_scene(MAIN_MENU_SCENE_PATH)
+
+
+## Gera a planilha de análise e abre a pasta (no navegador, baixa o arquivo).
+func _on_export_analytics_pressed() -> void:
+	var folder := Analytics.export_data()
+	export_button.text = "Dados exportados!" if not folder.is_empty() else "Nenhum dado para exportar"
+	Speech.speak(export_button.text)

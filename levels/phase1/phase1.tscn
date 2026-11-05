@@ -37,6 +37,10 @@ size = Vector2(190, 20)
 
 [node name="Phase1" type="Node2D"]
 script = ExtResource("1_level")
+fall_reset_y = null
+camera_limits = null
+bonus_per_reward = null
+respawn_delay = null
 
 [node name="CutscenePlayer" parent="." instance=ExtResource("6_cutscene")]
 steps = Array[Dictionary]([{
@@ -288,14 +292,15 @@ position = Vector2(0, -48)
 
 [node name="PatrolRua" parent="Enemies" instance=ExtResource("41_patrol")]
 position = Vector2(1022, 25)
-patrol_points = PackedVector2Array(-123, 0, 124, 0)
+script = null
 
 [node name="PatrolParque" parent="Enemies" instance=ExtResource("41_patrol")]
 position = Vector2(2520, -80)
-patrol_points = PackedVector2Array(-52, 0, 52, 0)
+script = null
 
 [node name="PilhaParque" parent="Enemies" instance=ExtResource("42_acid")]
 position = Vector2(2916, 22)
+script = null
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 20
