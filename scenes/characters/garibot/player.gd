@@ -4,7 +4,11 @@ extends CharacterBody2D
 ## Garibot: entrada, máquina de estados e movimento. Velocidades em px/s,
 ## durações em quadros de física. Cutscenes o controlam pelos métodos `cutscene_*`.
 
-enum State { IDLE, MOVE, AIR, ROLL, DAMAGE }
+signal damaged(amount: float)
+## Emitido quando a bateria (vida) acaba. A fase decide como renascer.
+signal died
+
+enum State { IDLE, MOVE, AIR, ROLL, DAMAGE, DEAD }
 
 const INVINCIBILITY_TIME := 1.5
 ## Quadros após sair de uma borda em que o pulo ainda é aceito.
@@ -23,6 +27,10 @@ const COYOTE_FRAMES := 10
 @export var roll_frames := 15
 @export var roll_cooldown_frames := 50
 @export var damage_frames := 15
+## Recuo ao levar dano (px/s): horizontal, para longe da fonte, e vertical, para cima.
+@export var knockback := Vector2(260, 280)
+## Dano do rolamento contra inimigos.
+@export var roll_damage := 1.0
 @export var has_control := true
 
 var in_cutscene := false
@@ -51,6 +59,8 @@ var _cutscene_roll := false
 @onready var body: PlayerBody = $PlayerBody
 @onready var bubble_point: Marker2D = $BubblePoint
 @onready var camera: Camera2D = $Camera2D
+@onready var health: HealthComponent = $HealthComponent
+@onready var hitbox: HitboxComponent = $HitboxComponent
 
 
 func _ready() -> void:
@@ -60,6 +70,7 @@ func _ready() -> void:
 	max_slides = 5
 	floor_max_angle = 0.85
 	body.player = self
+	health.died.connect(_on_died)
 	Settings.setting_changed.connect(_on_setting_changed)
 	_apply_reduced_motion(Settings.get_setting("reduced_motion", false))
 
@@ -68,6 +79,9 @@ func _physics_process(delta: float) -> void:
 	_dir = 0
 	_jump = false
 	_roll = false
+	if state == State.DEAD:
+		_move()
+		return
 	if in_cutscene:
 		_read_cutscene_input()
 	elif has_control:
@@ -109,6 +123,51 @@ func cutscene_roll() -> void:
 
 func cutscene_face(direction: int) -> void:
 	change_orientation(signi(direction))
+
+
+func is_dead() -> bool:
+	return state == State.DEAD
+
+
+## Garibot está vulnerável? Rolando, em cutscene/diálogo ou piscando, ele não leva dano.
+func can_be_hurt() -> bool:
+	return (
+		not is_dead()
+		and not in_cutscene
+		and has_control
+		and state != State.ROLL
+		and _invincible_time <= 0.0
+	)
+
+
+## Ponto único de dano: inimigos, projéteis e poças chamam este método.
+## `source_position` define a direção do recuo. Retorna true se o dano foi aplicado.
+func take_damage(amount: float, source_position: Vector2) -> bool:
+	if not can_be_hurt():
+		return false
+	hitbox.damage(Attack.new(amount))
+	damaged.emit(amount)
+	if is_dead():
+		return true
+	var away := signf(global_position.x - source_position.x)
+	move_velocity = knockback.x * (away if away != 0.0 else -float(orientation))
+	jump_velocity = -knockback.y
+	_take_hit()
+	return true
+
+
+## Renasce com a bateria cheia na posição indicada.
+func revive(at: Vector2) -> void:
+	global_position = at
+	velocity = Vector2.ZERO
+	move_velocity = 0.0
+	jump_velocity = 0.0
+	health.restore()
+	state = State.IDLE
+	_gravity_on = true
+	_set_spin_hit(false)
+	_invincible_time = INVINCIBILITY_TIME
+	camera.reset_smoothing()
 
 
 func _read_input() -> void:
@@ -168,6 +227,7 @@ func _update_state() -> void:
 		State.DAMAGE:
 			if not $SFX/Damage.playing:
 				$SFX/Damage.play()
+			move_velocity = move_toward(move_velocity, 0.0, air_acceleration * 0.25)
 			if _damage_frames == damage_frames and not _start_ground_action():
 				state = State.MOVE if _dir != 0 else State.IDLE
 
@@ -221,7 +281,7 @@ func _update_roll() -> void:
 
 
 func _move() -> void:
-	if _gravity_on and state == State.AIR:
+	if _gravity_on and state in [State.AIR, State.DAMAGE, State.DEAD]:
 		jump_velocity = move_toward(jump_velocity, max_fall_speed, gravity_step)
 	velocity = Vector2(move_velocity, jump_velocity)
 	move_and_slide()
@@ -229,12 +289,12 @@ func _move() -> void:
 
 func _check_contact_damage() -> void:
 	var collision := get_last_slide_collision()
-	if collision == null or _invincible_time > 0.0:
+	if collision == null or not can_be_hurt():
 		return
 	var collider := collision.get_collider() as Node
 	if collider and collider.is_in_group("DamageOnContact"):
-		$HitboxComponent.damage((collider.get_node("ContactDamage") as ContactDamage).attack)
-		_take_hit()
+		var contact := collider.get_node("ContactDamage") as ContactDamage
+		take_damage(contact.attack.damage, (collider as Node2D).global_position)
 
 
 func _take_hit() -> void:
@@ -268,8 +328,21 @@ func _set_spin_hit(enabled: bool) -> void:
 
 
 func _on_spin_hit_body_entered(other: Node2D) -> void:
-	if other.is_in_group("enemies"):
-		other.destroy()
+	# Qualquer corpo que aceite golpes (inimigos) reage ao rolamento; o Player não
+	# depende da classe Enemy, evitando dependência circular entre os scripts.
+	if other.has_method("receive_attack"):
+		other.receive_attack(Attack.new(roll_damage), global_position)
+
+
+func _on_died() -> void:
+	state = State.DEAD
+	has_control = false
+	move_velocity = 0.0
+	_invincible_time = 0.0
+	body.modulate = Color.WHITE
+	_set_spin_hit(false)
+	$SFX/Damage.play()
+	died.emit()
 
 
 func _on_setting_changed(setting_name: String, value: Variant) -> void:

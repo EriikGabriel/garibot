@@ -23,3 +23,17 @@ Os contêineres Layout, Grid e CluePanel/Clues podem ser estilizados na cena
 crossword_board.tscn; casas e pistas são preenchidas a partir do puzzle.
 Chame check_answers() no botão Verificar e conecte completed para avançar.
 Inclua arquivos JSON na exportação do Godot (filtro de arquivos não recurso: *.json).
+
+Estilo (grupo "Estilo" no Inspector): number_color, number_font_size,
+cell_top_padding (0 = número sobreposto no canto), active_word_tint,
+clue_type_variation e block_type_variation (casas fora das palavras viram
+painéis pretos). prefer_landscape transpõe grades mais altas que largas.
+
+# Jornal de fim de fase
+
+components/minigames/newspaper/newspaper_crossword.tscn embala a cruzadinha
+num jornal (cabeçalho, manchete com foto e o passatempo). Em cada fase,
+instancie a cena e configure newspaper_name, edition, headline, article,
+photo, photo_caption, puzzle_title, puzzle_hint e puzzle_file. Ela expõe
+check_answers(), select_word(), completed e answer_checked, como a cruzadinha.
+A arte vem de tools/ui/build_newspaper.py (fontes em assets/sprites/ui/newspaper/aseprite).

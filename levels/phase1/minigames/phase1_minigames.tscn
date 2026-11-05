@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4s1esl3v8acc"]
+[gd_scene load_steps=5 format=3 uid="uid://b4s1esl3v8acc"]
 
 [ext_resource type="Script" uid="uid://dv3xbf8dbywsx" path="res://levels/phase1/minigames/phase1_minigames.gd" id="1"]
 [ext_resource type="PackedScene" path="res://components/minigames/matching/matching_board.tscn" id="2"]
-[ext_resource type="PackedScene" uid="uid://c6q5e2w85j8mw" path="res://components/minigames/crossword/crossword_board.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://4gc1craibxog" path="res://components/minigames/newspaper/newspaper_crossword.tscn" id="4_news"]
+[ext_resource type="Texture2D" uid="uid://bk0lt6uhhdhb1" path="res://assets/sprites/ui/newspaper/photo_garibot.png" id="5_photo"]
 
 [node name="Phase1Minigames" type="CanvasLayer"]
 process_mode = 3
@@ -48,21 +49,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
 
-[node name="Title" type="Label" parent="Backdrop/Panel/Margin/Body/WordPage"]
-layout_mode = 2
-theme_type_variation = &"TitleLabel"
-theme_override_font_sizes/font_size = 32
-text = "Cruzadinha da reciclagem"
-horizontal_alignment = 1
-
-[node name="Intro" type="Label" parent="Backdrop/Panel/Margin/Body/WordPage"]
-layout_mode = 2
-text = "Complete as palavras usando as pistas. Não há limite de tempo."
-horizontal_alignment = 1
-
-[node name="Crossword" parent="Backdrop/Panel/Margin/Body/WordPage" instance=ExtResource("3")]
+[node name="Newspaper" parent="Backdrop/Panel/Margin/Body/WordPage" instance=ExtResource("4_news")]
 layout_mode = 2
 size_flags_vertical = 3
+edition = "Edição nº 1 · Fase 1"
+headline = "Garibot recolhe o lixo eletrônico da vila!"
+article = "Com a ajuda do Garidog, o robô Garibot encontrou celulares, fios e computadores jogados pela vila. Os REEE foram levados para a coleta seletiva e vão virar matéria-prima na usina de reciclagem. O rio e o parque já estão voltando a ficar limpos."
+photo = ExtResource("5_photo")
+photo_caption = "Garibot, o herói da reciclagem."
+puzzle_title = "Cruzadinha da reciclagem"
+puzzle_hint = "Complete as palavras usando as pistas. Não há limite de tempo."
 puzzle_file = "res://levels/phase1/minigames/phase1_minigames/reee_crossword.json"
 
 [node name="Feedback" type="Label" parent="Backdrop/Panel/Margin/Body/WordPage"]

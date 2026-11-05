@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bna4fbht7r62d"]
+[gd_scene load_steps=25 format=4 uid="uid://bna4fbht7r62d"]
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/phase1/phase1.gd" id="1_level"]
 [ext_resource type="Script" uid="uid://ci6q78ir854cp" path="res://levels/phase1/phase1_river.gd" id="2_river"]
@@ -16,6 +16,9 @@
 [ext_resource type="Script" uid="uid://djiny4e236pci" path="res://components/restoration/restorable_tile_map_layer.gd" id="15_4ex4s"]
 [ext_resource type="Texture2D" uid="uid://batbe66mgf5mr" path="res://assets/tilesets/bricks_limpo.png" id="16_ht4ra"]
 [ext_resource type="Script" uid="uid://b6x2newv05ur5" path="res://components/restoration/restoration_progress.gd" id="18_restoration"]
+[ext_resource type="PackedScene" uid="uid://isxjcesoqq6i" path="res://components/ui/battery_health_hud/battery_health_hud.tscn" id="40_battery"]
+[ext_resource type="PackedScene" uid="uid://b8n08nluxoeqp" path="res://scenes/characters/enemies/patrol/patrol_enemy.tscn" id="41_patrol"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/acid_battery/acid_battery_enemy.tscn" id="42_acid"]
 
 [sub_resource type="CircleShape2D" id="CollectibleCircle"]
 radius = 17.0
@@ -281,11 +284,26 @@ shape = SubResource("NpcTalkShape")
 [node name="BubblePoint" type="Marker2D" parent="Pipa"]
 position = Vector2(0, -48)
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="PatrolRua" parent="Enemies" instance=ExtResource("41_patrol")]
+position = Vector2(1022, 25)
+patrol_points = PackedVector2Array(-123, 0, 124, 0)
+
+[node name="PatrolParque" parent="Enemies" instance=ExtResource("41_patrol")]
+position = Vector2(2520, -80)
+patrol_points = PackedVector2Array(-52, 0, 52, 0)
+
+[node name="PilhaParque" parent="Enemies" instance=ExtResource("42_acid")]
+position = Vector2(2916, 22)
+
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 20
 visible = false
 
 [node name="PixelPanels" parent="HUD" instance=ExtResource("7_hud")]
+
+[node name="Battery" parent="HUD" instance=ExtResource("40_battery")]
 
 [node name="Title" type="Label" parent="HUD"]
 offset_left = 28.0

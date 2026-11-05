@@ -48,6 +48,8 @@ position = Vector2(0, 26)
 shape = SubResource("2")
 
 [node name="SpinHit" type="Area2D" parent="." groups=["player_hit"]]
+collision_layer = 0
+collision_mask = 32
 monitoring = false
 monitorable = false
 
@@ -72,6 +74,7 @@ stream = ExtResource("5_vhm43")
 bus = &"Sfx"
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_radk4")]
+max_health = 5.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health") instance=ExtResource("7_6ijxl")]
 health = NodePath("../HealthComponent")

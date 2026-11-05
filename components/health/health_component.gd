@@ -3,6 +3,9 @@ extends Node
 
 ## Vida de um personagem, com um piscar vermelho ao levar dano.
 
+signal health_changed(health: float, max_health: float)
+signal died
+
 @export var max_health := 100.0
 @export var damage_flash_duration := 0.5
 
@@ -24,14 +27,27 @@ func _process(delta: float) -> void:
 		_owner_body.modulate = Color.WHITE
 
 
+func is_dead() -> bool:
+	return health <= 0.0
+
+
 func damage(amount: float) -> void:
-	if health <= 0.0:
+	if is_dead():
 		return
 	health = maxf(health - amount, 0.0)
 	if _owner_body:
 		_owner_body.modulate = Color(1, 0.4, 0.4)
 		_flash_left = damage_flash_duration
+	health_changed.emit(health, max_health)
+	if is_dead():
+		died.emit()
 
 
 func heal(amount: float) -> void:
 	health = minf(health + amount, max_health)
+	health_changed.emit(health, max_health)
+
+
+## Volta à vida cheia (ex.: ao renascer no checkpoint).
+func restore() -> void:
+	heal(max_health)

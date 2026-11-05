@@ -15,6 +15,23 @@ const GENERATOR := preload("res://components/minigames/crossword/crossword_gener
 @export_range(36, 56) var minimum_cell_size := 36
 @export_range(160, 300) var clue_minimum_width := 200
 @export_range(1, 4) var maximum_clue_columns := 2
+@export_range(0, 120) var clue_minimum_height := 76
+## Se a grade gerada for mais alta que larga, transpõe (horizontais viram verticais),
+## aproveitando melhor telas largas. A cruzadinha continua válida.
+@export var prefer_landscape := false
+
+@export_group("Estilo")
+## Cor do número da palavra no canto da casa.
+@export var number_color := Color("#ffdf8c")
+@export var number_font_size := 14
+## Espaço reservado acima da letra para o número (0 = número sobreposto no canto).
+@export var cell_top_padding := 10
+## Tom aplicado às casas da palavra ativa.
+@export var active_word_tint := Color("#ffe29b")
+## Variação de tema dos botões de pista (vazio = Button padrão).
+@export var clue_type_variation := &""
+## Se definido, as casas fora das palavras viram painéis desta variação (ex.: casa preta).
+@export var block_type_variation := &""
 
 var cells: Dictionary = {}
 var solution: Dictionary = {}
@@ -48,6 +65,8 @@ func _ready() -> void:
 			push_warning(warning)
 	if entries.is_empty():
 		return
+	if prefer_landscape:
+		_transpose_if_tall()
 	var width := 0
 	var height := 0
 	for entry in entries:
@@ -71,8 +90,15 @@ func _ready() -> void:
 			var point := Vector2i(x, y)
 			var slot := Control.new()
 			slot.custom_minimum_size = Vector2(cell_size, cell_size)
+			slot.clip_contents = true
 			grid.add_child(slot)
 			if not solution.has(point):
+				if not block_type_variation.is_empty():
+					var block := Panel.new()
+					block.theme_type_variation = block_type_variation
+					block.mouse_filter = Control.MOUSE_FILTER_IGNORE
+					slot.add_child(block)
+					block.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 				continue
 			var field := LineEdit.new()
 			field.set_meta("speech_managed", true)
@@ -83,7 +109,7 @@ func _ready() -> void:
 			slot.add_child(field)
 			field.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 			field.add_theme_font_size_override("font_size", 22)
-			field.offset_top = 10
+			field.offset_top = cell_top_padding
 			cells[point] = field
 			field.focus_entered.connect(_focus_cell.bind(point))
 			field.text_changed.connect(_edit_cell.bind(point))
@@ -91,8 +117,9 @@ func _ready() -> void:
 				if entries[i]["start"] == point:
 					var number := Label.new()
 					number.text = str(i + 1)
-					number.add_theme_font_size_override("font_size", 14)
-					number.add_theme_color_override("font_color", Color("#ffdf8c"))
+					number.add_theme_font_size_override("font_size", number_font_size)
+					number.add_theme_color_override("font_color", number_color)
+					number.position = Vector2(3, -1)
 					number.mouse_filter = Control.MOUSE_FILTER_IGNORE
 					slot.add_child(number)
 	for i in entries.size():
@@ -107,9 +134,12 @@ func _ready() -> void:
 			]
 		)
 		clue.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		clue.custom_minimum_size = Vector2(clue_minimum_width, 76)
+		clue.custom_minimum_size = Vector2(clue_minimum_width, clue_minimum_height)
 		clue.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		clue.add_theme_font_size_override("font_size", 18)
+		if not clue_type_variation.is_empty():
+			clue.theme_type_variation = clue_type_variation
+			clue.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		clue.pressed.connect(select_word.bind(i))
 		clues.add_child(clue)
 	status = $Layout/CluePanel/Status
@@ -120,13 +150,28 @@ func _ready() -> void:
 	_fit_layout.call_deferred()
 
 
+func _transpose_if_tall() -> void:
+	var extent := Vector2i.ZERO
+	for entry in entries:
+		var length: int = str(entry["answer"]).length() - 1
+		var end: Vector2i = entry["start"] + (Vector2i(0, length) if entry["vertical"] else Vector2i(length, 0))
+		extent = extent.max(end)
+	if extent.y <= extent.x:
+		return
+	for entry in entries:
+		var start: Vector2i = entry["start"]
+		entry["start"] = Vector2i(start.y, start.x)
+		entry["vertical"] = not entry["vertical"]
+
+
 func _fit_layout() -> void:
 	if grid_height == 0:
 		return
 	var gap := layout.get_theme_constant("separation")
 	var cell_gap := grid.get_theme_constant("h_separation")
 	var minimum_grid_width := grid.columns * minimum_cell_size + (grid.columns - 1) * cell_gap
-	var side_by_side := size.x >= minimum_grid_width + clue_minimum_width * 2 + gap + 24
+	# Lado a lado se couber ao menos uma coluna de pistas ao lado da grade.
+	var side_by_side := size.x >= minimum_grid_width + clue_minimum_width + gap + 24
 	layout.vertical = not side_by_side
 	var grid_width := maxf(minimum_grid_width, size.x * 0.48) if side_by_side else size.x
 	var clue_width := size.x - grid_width - gap if side_by_side else size.x
@@ -161,7 +206,7 @@ func _focus_cell(point: Vector2i) -> void:
 				active_word = i
 				break
 	for key in cells:
-		cells[key].modulate = Color("#ffe29b") if paths[active_word].has(key) else Color.WHITE
+		cells[key].modulate = active_word_tint if paths[active_word].has(key) else Color.WHITE
 	cells[point].select_all()
 	_announce_cell(point, _last_announced_word != active_word)
 

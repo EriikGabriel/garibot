@@ -9,7 +9,7 @@ const SPEAKERS := {
 	"res://dialogic/characters/correio_bo.dch": "CorreioBo/BubblePoint",
 	"res://dialogic/characters/morador.dch": "Morador/BubblePoint",
 	"res://dialogic/characters/crianca.dch": "Crianca/BubblePoint",
-	"res://dialogic/characters/dona_lia.dch": "DonaLia/BubblePoint",
+	"res://dialogic/characters/lia.dch": "DonaLia/BubblePoint",
 	"res://dialogic/characters/pipa.dch": "Pipa/BubblePoint",
 }
 

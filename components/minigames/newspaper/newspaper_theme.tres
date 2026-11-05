@@ -1,0 +1,120 @@
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://dv06w20hgj4jn"]
+
+[ext_resource type="Texture2D" uid="uid://bm8oj5raxn6fr" path="res://assets/sprites/ui/newspaper/paper.png" id="1_paper"]
+[ext_resource type="Texture2D" uid="uid://4eedg0qhou66" path="res://assets/sprites/ui/newspaper/cell.png" id="2_cell"]
+[ext_resource type="Texture2D" uid="uid://dsnvyvstt4bce" path="res://assets/sprites/ui/newspaper/cell_focus.png" id="3_focus"]
+[ext_resource type="Texture2D" uid="uid://cy8g1jec4qn1k" path="res://assets/sprites/ui/newspaper/block.png" id="4_block"]
+[ext_resource type="Texture2D" uid="uid://bwscqq3w2ugp8" path="res://assets/sprites/ui/newspaper/marker.png" id="5_marker"]
+[ext_resource type="FontFile" uid="uid://d1qm0bk13ojf7" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="6_body"]
+[ext_resource type="FontFile" uid="uid://whrkv8wrc5s5" path="res://assets/fonts/pixelify_sans/PixelifySans.ttf" id="7_print"]
+
+[sub_resource type="StyleBoxTexture" id="Block"]
+texture = ExtResource("4_block")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="CellFocus"]
+content_margin_left = 0.0
+content_margin_top = 2.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_focus")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="Cell"]
+content_margin_left = 0.0
+content_margin_top = 2.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("2_cell")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="Marker"]
+content_margin_left = 8.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 3.0
+texture = ExtResource("5_marker")
+texture_margin_left = 6.0
+texture_margin_top = 4.0
+texture_margin_right = 6.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="ClueNormal"]
+content_margin_left = 8.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="Kicker"]
+content_margin_left = 6.0
+content_margin_top = 0.0
+content_margin_right = 6.0
+content_margin_bottom = 0.0
+bg_color = Color(0.12, 0.14, 0.16, 1)
+
+[sub_resource type="StyleBoxTexture" id="Paper"]
+content_margin_left = 30.0
+content_margin_top = 20.0
+content_margin_right = 30.0
+content_margin_bottom = 18.0
+texture = ExtResource("1_paper")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[resource]
+default_font = ExtResource("6_body")
+default_font_size = 20
+CrosswordBlock/base_type = &"Panel"
+CrosswordBlock/styles/panel = SubResource("Block")
+CrosswordCell/base_type = &"LineEdit"
+CrosswordCell/colors/caret_color = Color(0.12, 0.14, 0.16, 1)
+CrosswordCell/colors/font_color = Color(0.12, 0.14, 0.16, 1)
+CrosswordCell/colors/selection_color = Color(0.85, 0.7, 0.23, 0.45)
+CrosswordCell/constants/minimum_character_width = 1
+CrosswordCell/font_sizes/font_size = 26
+CrosswordCell/fonts/font = ExtResource("7_print")
+CrosswordCell/styles/focus = SubResource("CellFocus")
+CrosswordCell/styles/normal = SubResource("Cell")
+Label/colors/font_color = Color(0.12, 0.14, 0.16, 1)
+NewspaperClue/base_type = &"Button"
+NewspaperClue/colors/font_color = Color(0.12, 0.14, 0.16, 1)
+NewspaperClue/colors/font_focus_color = Color(0.12, 0.14, 0.16, 1)
+NewspaperClue/colors/font_hover_color = Color(0.12, 0.14, 0.16, 1)
+NewspaperClue/colors/font_hover_pressed_color = Color(0.12, 0.14, 0.16, 1)
+NewspaperClue/colors/font_pressed_color = Color(0.12, 0.14, 0.16, 1)
+NewspaperClue/styles/focus = SubResource("Marker")
+NewspaperClue/styles/hover = SubResource("Marker")
+NewspaperClue/styles/normal = SubResource("ClueNormal")
+NewspaperClue/styles/pressed = SubResource("Marker")
+NewspaperHeadline/base_type = &"Label"
+NewspaperHeadline/colors/font_color = Color(0.12, 0.14, 0.16, 1)
+NewspaperHeadline/font_sizes/font_size = 24
+NewspaperHeadline/fonts/font = ExtResource("7_print")
+NewspaperKicker/base_type = &"Label"
+NewspaperKicker/colors/font_color = Color(0.97, 0.95, 0.89, 1)
+NewspaperKicker/font_sizes/font_size = 17
+NewspaperKicker/styles/normal = SubResource("Kicker")
+NewspaperMasthead/base_type = &"Label"
+NewspaperMasthead/colors/font_color = Color(0.12, 0.14, 0.16, 1)
+NewspaperMasthead/font_sizes/font_size = 38
+NewspaperMasthead/fonts/font = ExtResource("7_print")
+NewspaperPage/base_type = &"PanelContainer"
+NewspaperPage/styles/panel = SubResource("Paper")
+NewspaperSmall/base_type = &"Label"
+NewspaperSmall/colors/font_color = Color(0.29, 0.31, 0.33, 1)
+NewspaperSmall/font_sizes/font_size = 17

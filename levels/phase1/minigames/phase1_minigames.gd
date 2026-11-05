@@ -22,7 +22,7 @@ var _active_pages: Array[Control] = []
 var _index := -1
 var _perfect := true
 
-@onready var crossword = $Backdrop/Panel/Margin/Body/WordPage/Crossword
+@onready var crossword: NewspaperCrossword = $Backdrop/Panel/Margin/Body/WordPage/Newspaper
 @onready var word_page: Control = $Backdrop/Panel/Margin/Body/WordPage
 @onready var match_page: Control = $Backdrop/Panel/Margin/Body/MatchPage
 @onready var sort_page: Control = $Backdrop/Panel/Margin/Body/SortPage

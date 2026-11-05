@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8n08nluxoeqp"]
+
+[ext_resource type="Script" uid="uid://byadys77kw381" path="res://scenes/characters/enemies/patrol/patrol_enemy.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://db83e3ovnnsav" path="res://components/health/health_component.tscn" id="2_health"]
+[ext_resource type="PackedScene" uid="uid://cm1qtuiv0aiag" path="res://components/hitbox/hitbox_component.tscn" id="3_hitbox"]
+[ext_resource type="Script" uid="uid://bsyekh4io6ln2" path="res://components/contact_damage/contact_damage.gd" id="4_contact"]
+
+[sub_resource type="RectangleShape2D" id="BodyShape"]
+size = Vector2(26, 26)
+
+[sub_resource type="RectangleShape2D" id="HurtShape"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="ContactShape"]
+size = Vector2(22, 22)
+
+[node name="PatrolEnemy" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 8
+script = ExtResource("1_script")
+patrol_points = PackedVector2Array(-80, 0, 80, 0)
+placeholder_size = Vector2(26, 26)
+placeholder_color = Color(0.76, 0.31, 0.3, 1)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("BodyShape")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_health")]
+max_health = 1.0
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_hitbox")]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+health = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("HurtShape")
+
+[node name="ContactDamage" type="Node2D" parent="."]
+script = ExtResource("4_contact")
+amount = 1.0
+
+[node name="ContactArea" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactArea"]
+shape = SubResource("ContactShape")

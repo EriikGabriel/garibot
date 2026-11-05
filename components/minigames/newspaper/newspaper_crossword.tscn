@@ -1,0 +1,183 @@
+[gd_scene load_steps=7 format=3 uid="uid://4gc1craibxog"]
+
+[ext_resource type="Script" uid="uid://djgmn5gj3xtd5" path="res://components/minigames/newspaper/newspaper_crossword.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://dv06w20hgj4jn" path="res://components/minigames/newspaper/newspaper_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://yu7rf2esnb7c" path="res://assets/sprites/ui/newspaper/emblem.png" id="3_emblem"]
+[ext_resource type="Texture2D" uid="uid://dh4k08e2lwwjp" path="res://assets/sprites/ui/newspaper/coffee_stain.png" id="5_coffee"]
+[ext_resource type="PackedScene" uid="uid://c6q5e2w85j8mw" path="res://components/minigames/crossword/crossword_board.tscn" id="6_board"]
+[ext_resource type="Texture2D" uid="uid://dwjwebtcpadkh" path="res://assets/sprites/ui/newspaper/rule_double.png" id="7_rule2"]
+
+[node name="NewspaperCrossword" type="PanelContainer"]
+theme = ExtResource("2_theme")
+theme_type_variation = &"NewspaperPage"
+script = ExtResource("1_script")
+
+[node name="Decor" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CoffeeStain" type="TextureRect" parent="Decor"]
+modulate = Color(1, 1, 1, 0.8)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -64.0
+offset_right = -14.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("5_coffee")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Masthead" type="HBoxContainer" parent="Page"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="EmblemLeft" type="TextureRect" parent="Page/Masthead"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_emblem")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Page/Masthead"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"NewspaperMasthead"
+text = "A Gazeta da Vila"
+horizontal_alignment = 1
+
+[node name="EmblemRight" type="TextureRect" parent="Page/Masthead"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_emblem")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RuleTop" type="TextureRect" parent="Page"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+texture = ExtResource("7_rule2")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Dateline" type="HBoxContainer" parent="Page"]
+layout_mode = 2
+
+[node name="Edition" type="Label" parent="Page/Dateline"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"NewspaperSmall"
+text = "Edição nº 1"
+
+[node name="Tagline" type="Label" parent="Page/Dateline"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"NewspaperSmall"
+text = "Notícias "
+horizontal_alignment = 2
+
+[node name="RuleBottom" type="TextureRect" parent="Page"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+texture = ExtResource("7_rule2")
+expand_mode = 1
+stretch_mode = 1
+flip_v = true
+
+[node name="Body" type="HBoxContainer" parent="Page"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Story" type="VBoxContainer" parent="Page/Body"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Kicker" type="Label" parent="Page/Body/Story"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"NewspaperKicker"
+text = "MANCHETE"
+
+[node name="Headline" type="Label" parent="Page/Body/Story"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_type_variation = &"NewspaperHeadline"
+autowrap_mode = 3
+
+[node name="Photo" type="TextureRect" parent="Page/Body/Story"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(108, 108)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Caption" type="Label" parent="Page/Body/Story"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_type_variation = &"NewspaperSmall"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Article" type="Label" parent="Page/Body/Story"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+size_flags_vertical = 3
+autowrap_mode = 3
+
+[node name="ColumnRule" type="ColorRect" parent="Page/Body"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.12, 0.14, 0.16, 1)
+
+[node name="Puzzle" type="VBoxContainer" parent="Page/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Header" type="HBoxContainer" parent="Page/Body/Puzzle"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Kicker" type="Label" parent="Page/Body/Puzzle/Header"]
+layout_mode = 2
+theme_type_variation = &"NewspaperKicker"
+text = "PASSATEMPO"
+
+[node name="PuzzleTitle" type="Label" parent="Page/Body/Puzzle/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"NewspaperHeadline"
+
+[node name="Board" parent="Page/Body/Puzzle" instance=ExtResource("6_board")]
+layout_mode = 2
+size_flags_vertical = 3
+cell_size = 56
+clue_minimum_height = 0
+prefer_landscape = true
+number_color = Color(0.12, 0.14, 0.16, 1)
+number_font_size = 13
+cell_top_padding = 0
+active_word_tint = Color(1, 0.95, 0.72, 1)
+clue_type_variation = &"NewspaperClue"
+block_type_variation = &"CrosswordBlock"

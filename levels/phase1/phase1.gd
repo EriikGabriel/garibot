@@ -18,6 +18,8 @@ const MINIGAME_PAGES := {
 @export var camera_limits := Rect2i(-300, -650, 5700, 1030)
 ## Bônus de restauração por resposta certa ou atividade concluída (máx. 1 - peso dos REEE).
 @export var bonus_per_reward := 0.04
+## Pausa entre a bateria acabar e o Garibot renascer (s).
+@export var respawn_delay := 1.4
 
 var _reee_count := 0
 var _reee_total := 0
@@ -31,6 +33,9 @@ var _conclusion_dialogue_active := false
 var _minigames_active := false
 var _phase_completed := false
 var _bonus := 0.0
+## Último ponto seguro: início da fase ou marcador da zona mais avançada alcançada.
+var _respawn_point := Vector2.ZERO
+var _respawn_zone := 0
 var _pending_minigame := ""
 var _pending_tutorial_speech := false
 var _last_narrated_tutorial := ""
@@ -42,12 +47,18 @@ var _last_narrated_tutorial := ""
 @onready var objective_label: Label = $HUD/Objective
 @onready var tutorial_label: Label = $HUD/Tutorial
 @onready var hud_panels: CollectibleProgressHud = $HUD/PixelPanels
+@onready var battery_hud: BatteryHealthHud = $HUD/Battery
 @onready var talking_npcs: Array[Phase1Npc] = [$Garidog, $CorreioBo, $Morador, $Crianca, $DonaLia, $Pipa]
 
 
 func _ready() -> void:
 	$HUD.show()
 	_setup_camera()
+	_respawn_point = player.position
+	_respawn_zone = _current_zone()
+	player.health.health_changed.connect(_on_player_health_changed)
+	player.died.connect(_on_player_died)
+	battery_hud.set_charge(int(player.health.health), int(player.health.max_health))
 	var items := get_tree().get_nodes_in_group("phase1_reee")
 	_reee_total = items.size()
 	for item: AreaCollectible in items:
@@ -85,6 +96,9 @@ func _process(_delta: float) -> void:
 	if zone != _zone_index:
 		_zone_index = zone
 		_update_hud()
+	if zone > _respawn_zone and player.is_on_floor():
+		_respawn_zone = zone
+		_respawn_point = $Flow.get_child(zone).position
 	if _can_conclude():
 		_begin_conclusion()
 
@@ -131,6 +145,20 @@ func _return_to_river_bank() -> void:
 	player.move_velocity = 0.0
 	player.jump_velocity = 0.0
 	player.get_node("Camera2D").reset_smoothing()
+
+
+func _on_player_health_changed(health: float, max_health: float) -> void:
+	battery_hud.set_charge(ceili(health), int(max_health))
+
+
+## Bateria zerada: o Garibot "recarrega" e volta ao último ponto seguro,
+## sem perder os REEE coletados.
+func _on_player_died() -> void:
+	_set_tutorial_visible(false)
+	Speech.speak("O Garibot ficou sem bateria! Recarregando no último ponto seguro.", "instruction")
+	await get_tree().create_timer(respawn_delay).timeout
+	player.revive(_respawn_point)
+	_resume_tutorial()
 
 
 func _set_npcs_listening(enabled: bool) -> void:
@@ -273,6 +301,7 @@ func _on_minigames_finished(_perfect: bool) -> void:
 func _tutorial_blocked() -> bool:
 	return (
 		not _intro_finished
+		or player.is_dead()
 		or intro_cutscene.is_running()
 		or reee_cutscene.is_running()
 		or _dialogue_active

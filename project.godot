@@ -33,9 +33,9 @@ GameAudio="*res://components/audio/game_audio/game_audio.tscn"
 directories/dch_directory={
 "correio_bo": "res://dialogic/characters/correio_bo.dch",
 "crianca": "res://dialogic/characters/crianca.dch",
-"dona_lia": "res://dialogic/characters/dona_lia.dch",
 "garibot": "res://dialogic/characters/garibot.dch",
 "garidog": "res://dialogic/characters/garidog.dch",
+"lia": "res://dialogic/characters/lia.dch",
 "morador": "res://dialogic/characters/morador.dch",
 "pipa": "res://dialogic/characters/pipa.dch"
 }
@@ -113,7 +113,7 @@ project/assembly_name="Garibot 2"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/garibot_enemy_tools/plugin.cfg")
 
 [file_customization]
 
@@ -183,6 +183,12 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_4="world"
+2d_physics/layer_6="enemies"
 
 [rendering]
 

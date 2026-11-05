@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 		return
 	anim_player.speed_scale = 1.0
 	match player.state:
-		Player.State.DAMAGE:
+		Player.State.DAMAGE, Player.State.DEAD:
 			_play_once("hurt")
 		Player.State.IDLE:
 			_play_once("idle", locomotion_blend_time)
