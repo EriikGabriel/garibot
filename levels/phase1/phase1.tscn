@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bna4fbht7r62d"]
+[gd_scene load_steps=27 format=4 uid="uid://bna4fbht7r62d"]
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/phase1/phase1.gd" id="1_level"]
 [ext_resource type="Script" uid="uid://ci6q78ir854cp" path="res://levels/phase1/phase1_river.gd" id="2_river"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cpcysgvh386kq" path="res://levels/phase1/scenery/phase1_scenery.tscn" id="10_scenery"]
 [ext_resource type="PackedScene" path="res://scenes/characters/villagers/morador_body.tscn" id="11_morador"]
 [ext_resource type="PackedScene" path="res://scenes/characters/villagers/crianca_body.tscn" id="12_crianca"]
+[ext_resource type="PackedScene" path="res://scenes/characters/villagers/lia_body.tscn" id="13_lia"]
 [ext_resource type="TileSet" uid="uid://caogq4pub11xl" path="res://assets/tilesets/bricks_tileset.tres" id="14_t8xaa"]
 [ext_resource type="Script" uid="uid://djiny4e236pci" path="res://components/restoration/restorable_tile_map_layer.gd" id="15_4ex4s"]
 [ext_resource type="Texture2D" uid="uid://batbe66mgf5mr" path="res://assets/tilesets/bricks_limpo.png" id="16_ht4ra"]
@@ -35,12 +36,11 @@ size = Vector2(120, 20)
 [sub_resource type="RectangleShape2D" id="BlockShape8"]
 size = Vector2(190, 20)
 
+[sub_resource type="RectangleShape2D" id="TutorialGateShape"]
+size = Vector2(16, 600)
+
 [node name="Phase1" type="Node2D"]
 script = ExtResource("1_level")
-fall_reset_y = null
-camera_limits = null
-bonus_per_reward = null
-respawn_delay = null
 
 [node name="CutscenePlayer" parent="." instance=ExtResource("6_cutscene")]
 steps = Array[Dictionary]([{
@@ -256,7 +256,7 @@ script = ExtResource("4_npc")
 timeline_path = "res://dialogic/timelines/fase1/dona_lia.dtl"
 restored_timeline_path = "res://dialogic/timelines/fase1/dona_lia_recuperado.dtl"
 
-[node name="Body" parent="DonaLia" instance=ExtResource("11_morador")]
+[node name="Body" parent="DonaLia" instance=ExtResource("13_lia")]
 
 [node name="TalkArea" type="Area2D" parent="DonaLia"]
 collision_layer = 0
@@ -292,11 +292,9 @@ position = Vector2(0, -48)
 
 [node name="PatrolRua" parent="Enemies" instance=ExtResource("41_patrol")]
 position = Vector2(1022, 25)
-script = null
 
 [node name="PatrolParque" parent="Enemies" instance=ExtResource("41_patrol")]
 position = Vector2(2520, -80)
-script = null
 
 [node name="PilhaParque" parent="Enemies" instance=ExtResource("42_acid")]
 position = Vector2(2916, 22)
@@ -380,6 +378,14 @@ collision_mask = 0
 [node name="Shape" type="CollisionShape2D" parent="HouseColliders/TelhadoBusca"]
 position = Vector2(95, 10)
 shape = SubResource("BlockShape8")
+
+[node name="TutorialGate" type="StaticBody2D" parent="."]
+position = Vector2(900, -260)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="TutorialGate"]
+shape = SubResource("TutorialGateShape")
 
 [node name="Flow" type="Node2D" parent="."]
 

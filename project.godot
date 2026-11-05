@@ -48,6 +48,7 @@ directories/dtl_directory={
 "crianca_recuperado": "res://dialogic/timelines/fase1/crianca_recuperado.dtl",
 "dona_lia": "res://dialogic/timelines/fase1/dona_lia.dtl",
 "dona_lia_recuperado": "res://dialogic/timelines/fase1/dona_lia_recuperado.dtl",
+"garibot_celular": "res://dialogic/timelines/fase1/garibot_celular.dtl",
 "garidog": "res://dialogic/timelines/fase1/garidog.dtl",
 "garidog_recuperado": "res://dialogic/timelines/fase1/garidog_recuperado.dtl",
 "intro": "res://dialogic/timelines/fase1/intro.dtl",

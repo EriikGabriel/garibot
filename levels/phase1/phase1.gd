@@ -4,6 +4,8 @@ extends Node2D
 
 const MINIGAMES_SCENE := preload("res://levels/phase1/minigames/phase1_minigames.tscn")
 const CONCLUSION_TIMELINE := "res://dialogic/timelines/fase1/conclusao.dtl"
+## Fala do Garibot ao encostar na barreira sem o REEE do tutorial.
+const GATE_REMARK_TIMELINE := "res://dialogic/timelines/fase1/garibot_celular.dtl"
 ## Peso dos REEE na restauração; o restante vem do bônus de atenção e atividades.
 const REEE_RESTORATION_WEIGHT := 0.8
 ## Atividades chamadas pelos diálogos via `[signal arg="minigame:<id>"]`.
@@ -20,6 +22,17 @@ const MINIGAME_PAGES := {
 @export var bonus_per_reward := 0.04
 ## Pausa entre a bateria acabar e o Garibot renascer (s).
 @export var respawn_delay := 1.4
+## Ao abrir um diálogo, ignora o botão de avançar por este tempo (s). O Espaço também
+## é o pulo: sem isso, quem chega pulando no NPC pula as primeiras falas.
+@export var dialogue_input_block := 0.5
+## Intervalo mínimo entre o fim de um diálogo/atividade e a próxima conversa com NPC (s).
+@export var npc_dialogue_cooldown := 0.6
+## Distância depois do REEE do tutorial a partir da qual o tutorial pede para voltar (px).
+@export var tutorial_reee_hint_distance := 40.0
+## Distância da barreira em que encostar nela conta como "tentar passar" (px).
+@export var gate_remark_distance := 24.0
+## Intervalo mínimo entre duas falas do Garibot na barreira (s).
+@export var gate_remark_cooldown := 8.0
 
 var _reee_count := 0
 var _reee_total := 0
@@ -42,6 +55,13 @@ var _deaths := 0
 var _activity_id := ""
 var _activity_start_ms := 0
 var _pending_minigame := ""
+## A explicação do primeiro REEE espera o diálogo ou a atividade em andamento terminar.
+var _pending_reee_cutscene := false
+var _npc_dialogue_ready_ms := 0
+var _tutorial_reee_collected := false
+## O Garibot passou do REEE do tutorial sem pegá-lo.
+var _passed_tutorial_reee := false
+var _gate_remark_ready_ms := 0
 var _pending_tutorial_speech := false
 var _last_narrated_tutorial := ""
 
@@ -53,6 +73,11 @@ var _last_narrated_tutorial := ""
 @onready var tutorial_label: Label = $HUD/Tutorial
 @onready var hud_panels: CollectibleProgressHud = $HUD/PixelPanels
 @onready var battery_hud: BatteryHealthHud = $HUD/Battery
+## REEE do tutorial, ao lado do Garidog: só ele abre a explicação (o Garidog não sai do
+## lugar, então com outro REEE a conversa aconteceria fora da tela).
+@onready var tutorial_reee: AreaCollectible = $ReeeCelular
+## Barreira invisível depois do Garidog; abre quando o REEE do tutorial é coletado.
+@onready var tutorial_gate: StaticBody2D = $TutorialGate
 @onready var talking_npcs: Array[Phase1Npc] = [$Garidog, $CorreioBo, $Morador, $Crianca, $DonaLia, $Pipa]
 
 
@@ -73,7 +98,7 @@ func _ready() -> void:
 	_reee_total = items.size()
 	for item: AreaCollectible in items:
 		item.monitoring = false
-		item.collected.connect(_on_reee_collected)
+		item.collected.connect(_on_reee_collected.bind(item == tutorial_reee))
 	_set_npcs_listening(false)
 	restoration.set_value(0.0, false)
 	Settings.setting_changed.connect(_on_setting_changed)
@@ -102,6 +127,15 @@ func _process(_delta: float) -> void:
 	if _learned_walk and not _learned_jump and Input.is_action_just_pressed("move_up"):
 		_learned_jump = true
 		_update_hud()
+	var passed := (
+		not _tutorial_reee_collected
+		and player.position.x > tutorial_reee.position.x + tutorial_reee_hint_distance
+	)
+	if passed != _passed_tutorial_reee:
+		_passed_tutorial_reee = passed
+		_update_hud()
+	if passed:
+		_check_gate_remark()
 	var zone := _current_zone()
 	if zone != _zone_index:
 		_zone_index = zone
@@ -123,6 +157,47 @@ func _physics_process(_delta: float) -> void:
 ## Usada pelo CutscenePlayer para abrir diálogos nos balões da fase.
 func start_dialogue(timeline_path: String) -> void:
 	Phase1Dialogue.start(timeline_path, self)
+
+
+## Chamado pelos NPCs. Só abre a conversa quando nada mais está acontecendo e
+## devolve `true` se ela começou.
+func try_start_npc_dialogue(timeline_path: String) -> bool:
+	if not _can_start_npc_dialogue():
+		return false
+	# Reserva já: o Dialogic só emite `timeline_started` quando o layout fica pronto,
+	# e outro NPC (as áreas do Morador e da Criança se sobrepõem) poderia abrir junto.
+	_dialogue_active = true
+	player.has_control = false
+	player.move_velocity = 0.0
+	if not Phase1Dialogue.start(timeline_path, self):
+		_dialogue_active = false
+		player.has_control = true
+		return false
+	return true
+
+
+## O Garibot comenta quando empurra a barreira sem ter pegado o REEE do tutorial.
+func _check_gate_remark() -> void:
+	var at_gate := (
+		player.is_on_wall()
+		and absf(player.position.x - tutorial_gate.position.x) <= gate_remark_distance
+	)
+	if not at_gate or Time.get_ticks_msec() < _gate_remark_ready_ms:
+		return
+	if try_start_npc_dialogue(GATE_REMARK_TIMELINE):
+		_gate_remark_ready_ms = Time.get_ticks_msec() + int(gate_remark_cooldown * 1000.0)
+
+
+func _can_start_npc_dialogue() -> bool:
+	return (
+		not _tutorial_blocked()
+		and not _pending_reee_cutscene
+		and Dialogic.current_timeline == null
+		and Time.get_ticks_msec() >= _npc_dialogue_ready_ms
+		and player.has_control
+		and not player.in_cutscene
+		and player.is_on_floor()
+	)
 
 
 func _setup_camera() -> void:
@@ -228,14 +303,18 @@ func _on_cinematic_started() -> void:
 func _on_dialogue_started() -> void:
 	_dialogue_active = true
 	player.has_control = false
+	Dialogic.Inputs.block_input(dialogue_input_block)
 	_on_cinematic_started()
 
 
 func _on_dialogue_ended() -> void:
 	_dialogue_active = false
+	_delay_next_npc_dialogue()
 	if not _pending_minigame.is_empty() and not _conclusion_dialogue_active:
 		var minigame_id := _pending_minigame
 		_pending_minigame = ""
+		# Já bloqueia o tutorial e os NPCs: a atividade só abre no fim do quadro.
+		_minigames_active = true
 		_open_minigame.call_deferred(minigame_id)
 		return
 	# Espera o Dialogic e a cutscene terminarem a limpeza antes de retomar o HUD.
@@ -266,6 +345,8 @@ func _refresh_restoration() -> void:
 func _open_minigame(minigame_id: String) -> void:
 	if not MINIGAME_PAGES.has(minigame_id):
 		push_error("Minigame desconhecido: %s" % minigame_id)
+		_minigames_active = false
+		_resume_tutorial()
 		return
 	_track_activity_start(minigame_id)
 	_minigames_active = true
@@ -282,20 +363,39 @@ func _open_minigame(minigame_id: String) -> void:
 func _on_activity_finished(perfect: bool) -> void:
 	_track_activity_end(perfect)
 	_minigames_active = false
+	_delay_next_npc_dialogue()
 	if perfect:
 		_add_bonus()
 	player.has_control = true
 	_resume_tutorial()
 
 
-func _on_reee_collected(item_name: String) -> void:
+func _delay_next_npc_dialogue() -> void:
+	_npc_dialogue_ready_ms = Time.get_ticks_msec() + int(npc_dialogue_cooldown * 1000.0)
+
+
+func _on_reee_collected(item_name: String, is_tutorial: bool) -> void:
 	GameAudio.play_sound(&"collect")
 	_reee_count += 1
 	Analytics.track("reee_coletado", {"item": item_name, "total": _reee_count})
 	_refresh_restoration()
-	if _reee_count == 1:
-		reee_cutscene.run()
+	if is_tutorial:
+		_tutorial_reee_collected = true
+		_passed_tutorial_reee = false
+		tutorial_gate.queue_free()
+		_pending_reee_cutscene = true
+		_run_pending_reee_cutscene()
 	_update_hud()
+
+
+## Abre a explicação do primeiro REEE só quando nenhum diálogo, cutscene ou atividade
+## está em andamento; senão o diálogo dela substituiria o que está na tela.
+func _run_pending_reee_cutscene() -> bool:
+	if not _pending_reee_cutscene or _tutorial_blocked():
+		return false
+	_pending_reee_cutscene = false
+	reee_cutscene.run()
+	return true
 
 
 func _begin_conclusion() -> void:
@@ -358,7 +458,7 @@ func _set_tutorial_visible(value: bool) -> void:
 
 
 func _resume_tutorial() -> void:
-	if _tutorial_blocked():
+	if _tutorial_blocked() or _run_pending_reee_cutscene():
 		return
 	player.has_control = true
 	_set_tutorial_visible(true)
@@ -385,6 +485,12 @@ func _tutorial_text() -> String:
 		return "Primeiro, ande pela rua: A/D ou setas esquerda/direita."
 	if not _learned_jump:
 		return "Pule os bloqueios: Espaço, W ou seta para cima. Segure para pular mais alto."
+	if _passed_tutorial_reee:
+		return "Ficou um celular para trás! Volte e recolha-o perto do Garidog para seguir."
+	return _collection_tutorial_text()
+
+
+func _collection_tutorial_text() -> String:
 	if _reee_count == _reee_total:
 		return "Todos os REEE recolhidos! Siga para a praça de reciclagem, depois do rio."
 	if _zone_index == $Flow/Finish.get_index():
@@ -415,11 +521,14 @@ func _track_activity_start(activity: String) -> void:
 
 
 func _track_activity_end(perfect: bool) -> void:
-	Analytics.track(
-		"minigame_fim",
-		{
-			"atividade": _activity_id,
-			"perfeito": perfect,
-			"duracao_s": snappedf((Time.get_ticks_msec() - _activity_start_ms) / 1000.0, 0.1),
-		}
+	(
+		Analytics
+		. track(
+			"minigame_fim",
+			{
+				"atividade": _activity_id,
+				"perfeito": perfect,
+				"duracao_s": snappedf((Time.get_ticks_msec() - _activity_start_ms) / 1000.0, 0.1),
+			}
+		)
 	)

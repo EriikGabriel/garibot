@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4s1esl3v8acc"]
+[gd_scene load_steps=13 format=3 uid="uid://b4s1esl3v8acc"]
 
 [ext_resource type="Script" uid="uid://dv3xbf8dbywsx" path="res://levels/phase1/minigames/phase1_minigames.gd" id="1"]
 [ext_resource type="PackedScene" path="res://components/minigames/matching/matching_board.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://4gc1craibxog" path="res://components/minigames/newspaper/newspaper_crossword.tscn" id="4_news"]
 [ext_resource type="Texture2D" uid="uid://bk0lt6uhhdhb1" path="res://assets/sprites/ui/newspaper/photo_garibot.png" id="5_photo"]
+[ext_resource type="Texture2D" uid="uid://cxhdfwptno8pj" path="res://assets/sprites/ui/sorting/casca_banana.png" id="sort_casca_banana"]
+[ext_resource type="Texture2D" uid="uid://dbw273m0rxrh7" path="res://assets/sprites/ui/sorting/celular_quebrado.png" id="sort_celular_quebrado"]
+[ext_resource type="Texture2D" uid="uid://cfsx3je2gr7xn" path="res://assets/sprites/ui/sorting/coletor_pilhas.png" id="sort_coletor_pilhas"]
+[ext_resource type="Texture2D" uid="uid://btdnni3uslua1" path="res://assets/sprites/ui/sorting/folha_papel.png" id="sort_folha_papel"]
+[ext_resource type="Texture2D" uid="uid://mct7tpfurjlt" path="res://assets/sprites/ui/sorting/lixeira_organico.png" id="sort_lixeira_organico"]
+[ext_resource type="Texture2D" uid="uid://ort1iqh1yipn" path="res://assets/sprites/ui/sorting/lixeira_papel.png" id="sort_lixeira_papel"]
+[ext_resource type="Texture2D" uid="uid://ofmvlhklxseb" path="res://assets/sprites/ui/sorting/pilhas.png" id="sort_pilhas"]
+[ext_resource type="Texture2D" uid="uid://dym6wyyt2kmnd" path="res://assets/sprites/ui/sorting/ponto_reee.png" id="sort_ponto_reee"]
 
 [node name="Phase1Minigames" type="CanvasLayer"]
 process_mode = 3
@@ -133,14 +141,20 @@ horizontal_alignment = 1
 [node name="SortBoard" parent="Backdrop/Panel/Margin/Body/SortPage" instance=ExtResource("2")]
 size_flags_horizontal = 4
 size_flags_vertical = 3
-left_items = PackedStringArray("Celular quebrado", "Casca de banana", "Folha de papel")
-right_items = PackedStringArray("Lixo orgânico", "Ponto de coleta de REEE", "Reciclagem de papel")
-correct_targets = PackedInt32Array(1, 0, 2)
-instruction_text = "Leve cada item ao lugar certo. Arraste ou selecione os dois cartões."
+left_items = PackedStringArray("Pilhas velhas", "Celular quebrado", "Casca de banana", "Folha de papel")
+right_items = PackedStringArray("Lixo orgânico", "Coletor de pilhas", "Reciclagem de papel", "Ponto de coleta de REEE")
+correct_targets = PackedInt32Array(1, 3, 0, 2)
+left_icons = Array[Texture2D]([ExtResource("sort_pilhas"), ExtResource("sort_celular_quebrado"), ExtResource("sort_casca_banana"), ExtResource("sort_folha_papel")])
+right_icons = Array[Texture2D]([ExtResource("sort_lixeira_organico"), ExtResource("sort_coletor_pilhas"), ExtResource("sort_lixeira_papel"), ExtResource("sort_ponto_reee")])
+instruction_text = "Leve cada objeto da gaveta ao lugar certo. Arraste ou selecione os cartões."
 wrong_text = "Esse não é o lugar certo para o item. Tente de novo!"
 right_text = "Isso! Esse é o lugar certo."
 done_text = "Muito bem! Cada coisa no seu lugar."
 pick_destination_hint = "Agora escolha o lugar certo na coluna da direita."
+left_announce = "Item: %s. Selecione e depois escolha o lugar certo."
+right_announce = "Destino: %s."
+selected_left_text = "Item selecionado: %s."
+pick_left_first_text = "Primeiro escolha um item na coluna da esquerda."
 
 [node name="Skip" type="Button" parent="Backdrop/Panel/Margin/Body/SortPage"]
 layout_mode = 2
