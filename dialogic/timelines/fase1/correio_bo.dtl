@@ -1,2 +1,5 @@
 correio_bo: O rio está recebendo lixo da rua. Cada peça que você recolhe ajuda a vila.
 correio_bo: Quando terminarmos, as crianças poderão voltar ao parque.
+correio_bo: Depois da coleta, o lixo eletrônico vai para a usina de reciclagem.
+correio_bo: Vamos montar o caminho da reciclagem?
+[signal arg="minigame:associacao"]

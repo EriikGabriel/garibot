@@ -19,6 +19,11 @@ const ROW_SPACING := 84.0
 @export var right_items: PackedStringArray
 @export var correct_targets: PackedInt32Array
 @export_multiline var instruction_text := "Escolha um item e depois o destino correto."
+## Textos de feedback; permitem reaproveitar o tabuleiro em outras atividades.
+@export var wrong_text := "Essa função pertence a outra etapa. Tente novamente."
+@export var right_text := "Correto! Etapa e função conectadas."
+@export var done_text := "Todas as associações foram concluídas corretamente!"
+@export var pick_destination_hint := "Agora escolha a função na coluna da direita."
 
 var selected_left := -1
 var matches: Dictionary = {}
@@ -153,7 +158,7 @@ func _select_left(index: int) -> void:
 	for button in left_buttons:
 		button.set_pressed_no_signal(false)
 	left_buttons[index].set_pressed_no_signal(true)
-	Speech.speak(feedback.text + ". Agora escolha a função na coluna da direita.", "minigame")
+	Speech.speak("%s. %s" % [feedback.text, pick_destination_hint], "minigame")
 
 
 func _select_right(index: int) -> void:
@@ -163,18 +168,18 @@ func _select_right(index: int) -> void:
 		return
 	if correct_targets[selected_left] != index:
 		answer_checked.emit(false)
-		feedback.text = "Essa função pertence a outra etapa. Tente novamente."
+		feedback.text = wrong_text
 		Speech.speak(feedback.text, "minigame")
 		return
 	matches[selected_left] = index
 	answer_checked.emit(true)
 	left_buttons[selected_left].disabled = true
 	right_buttons[index].disabled = true
-	feedback.text = "Correto! Etapa e função conectadas."
+	feedback.text = right_text
 	selected_left = -1
 	queue_redraw()
 	if matches.size() == left_items.size():
-		feedback.text = "Todas as associações foram concluídas corretamente!"
+		feedback.text = done_text
 		completed.emit()
 	Speech.speak(feedback.text, "minigame")
 

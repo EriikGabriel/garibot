@@ -1,0 +1,4 @@
+dona_lia: Boa tarde, Garibot! Guardei estas pilhas velhas numa gaveta.
+dona_lia: Pilhas e aparelhos velhos não vão no lixo comum. Cada coisa tem seu lugar certo!
+dona_lia: Me ajuda a separar?
+[signal arg="minigame:triagem"]

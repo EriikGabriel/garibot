@@ -33,19 +33,27 @@ GameAudio="*res://components/audio/game_audio/game_audio.tscn"
 directories/dch_directory={
 "correio_bo": "res://dialogic/characters/correio_bo.dch",
 "crianca": "res://dialogic/characters/crianca.dch",
+"dona_lia": "res://dialogic/characters/dona_lia.dch",
 "garibot": "res://dialogic/characters/garibot.dch",
 "garidog": "res://dialogic/characters/garidog.dch",
-"morador": "res://dialogic/characters/morador.dch"
+"morador": "res://dialogic/characters/morador.dch",
+"pipa": "res://dialogic/characters/pipa.dch"
 }
 directories/dtl_directory={
 "conclusao": "res://dialogic/timelines/fase1/conclusao.dtl",
 "correio_bo": "res://dialogic/timelines/fase1/correio_bo.dtl",
 "correio_bo_recuperado": "res://dialogic/timelines/fase1/correio_bo_recuperado.dtl",
+"crianca": "res://dialogic/timelines/fase1/crianca.dtl",
+"crianca_recuperado": "res://dialogic/timelines/fase1/crianca_recuperado.dtl",
+"dona_lia": "res://dialogic/timelines/fase1/dona_lia.dtl",
+"dona_lia_recuperado": "res://dialogic/timelines/fase1/dona_lia_recuperado.dtl",
 "garidog": "res://dialogic/timelines/fase1/garidog.dtl",
 "garidog_recuperado": "res://dialogic/timelines/fase1/garidog_recuperado.dtl",
 "intro": "res://dialogic/timelines/fase1/intro.dtl",
 "morador": "res://dialogic/timelines/fase1/morador.dtl",
 "morador_recuperado": "res://dialogic/timelines/fase1/morador_recuperado.dtl",
+"pipa": "res://dialogic/timelines/fase1/pipa.dtl",
+"pipa_recuperado": "res://dialogic/timelines/fase1/pipa_recuperado.dtl",
 "reee": "res://dialogic/timelines/fase1/reee.dtl"
 }
 variables={}

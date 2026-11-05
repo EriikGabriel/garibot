@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" path="res://scenes/characters/villagers/morador_body.tscn" id="11_morador"]
 [ext_resource type="PackedScene" path="res://scenes/characters/villagers/crianca_body.tscn" id="12_crianca"]
 [ext_resource type="TileSet" uid="uid://caogq4pub11xl" path="res://assets/tilesets/bricks_tileset.tres" id="14_t8xaa"]
-[ext_resource type="Script" path="res://components/restoration/restorable_tile_map_layer.gd" id="15_4ex4s"]
+[ext_resource type="Script" uid="uid://djiny4e236pci" path="res://components/restoration/restorable_tile_map_layer.gd" id="15_4ex4s"]
 [ext_resource type="Texture2D" uid="uid://batbe66mgf5mr" path="res://assets/tilesets/bricks_limpo.png" id="16_ht4ra"]
 [ext_resource type="Script" uid="uid://b6x2newv05ur5" path="res://components/restoration/restoration_progress.gd" id="18_restoration"]
 
@@ -227,6 +227,8 @@ position = Vector2(0, -51)
 [node name="Crianca" type="Node2D" parent="."]
 position = Vector2(345, 14)
 script = ExtResource("4_npc")
+timeline_path = "res://dialogic/timelines/fase1/crianca.dtl"
+restored_timeline_path = "res://dialogic/timelines/fase1/crianca_recuperado.dtl"
 
 [node name="Body" parent="Crianca" instance=ExtResource("12_crianca")]
 
@@ -240,6 +242,44 @@ shape = SubResource("NpcTalkShape")
 
 [node name="BubblePoint" type="Marker2D" parent="Crianca"]
 position = Vector2(0, -46)
+
+[node name="DonaLia" type="Node2D" parent="."]
+position = Vector2(1330, 14)
+script = ExtResource("4_npc")
+timeline_path = "res://dialogic/timelines/fase1/dona_lia.dtl"
+restored_timeline_path = "res://dialogic/timelines/fase1/dona_lia_recuperado.dtl"
+
+[node name="Body" parent="DonaLia" instance=ExtResource("11_morador")]
+
+[node name="TalkArea" type="Area2D" parent="DonaLia"]
+collision_layer = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DonaLia/TalkArea"]
+position = Vector2(0, -7)
+shape = SubResource("NpcTalkShape")
+
+[node name="BubblePoint" type="Marker2D" parent="DonaLia"]
+position = Vector2(0, -48)
+
+[node name="Pipa" type="Node2D" parent="."]
+position = Vector2(2650, 14)
+script = ExtResource("4_npc")
+timeline_path = "res://dialogic/timelines/fase1/pipa.dtl"
+restored_timeline_path = "res://dialogic/timelines/fase1/pipa_recuperado.dtl"
+
+[node name="Body" parent="Pipa" instance=ExtResource("12_crianca")]
+
+[node name="TalkArea" type="Area2D" parent="Pipa"]
+collision_layer = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipa/TalkArea"]
+position = Vector2(0, -7)
+shape = SubResource("NpcTalkShape")
+
+[node name="BubblePoint" type="Marker2D" parent="Pipa"]
+position = Vector2(0, -48)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 20

@@ -4,10 +4,20 @@ extends Node2D
 
 const MINIGAMES_SCENE := preload("res://levels/phase1/minigames/phase1_minigames.tscn")
 const CONCLUSION_TIMELINE := "res://dialogic/timelines/fase1/conclusao.dtl"
+## Peso dos REEE na restauração; o restante vem do bônus de atenção e atividades.
+const REEE_RESTORATION_WEIGHT := 0.8
+## Atividades chamadas pelos diálogos via `[signal arg="minigame:<id>"]`.
+const MINIGAME_PAGES := {
+	"triagem": [Phase1Minigames.PAGE_SORTING],
+	"associacao": [Phase1Minigames.PAGE_MATCHING],
+	"cruzadinha": [Phase1Minigames.PAGE_CROSSWORD],
+}
 
 @export var fall_reset_y := 380.0
 ## Limites da câmera do Garibot (esquerda, topo, largura, altura).
 @export var camera_limits := Rect2i(-300, -650, 5700, 1030)
+## Bônus de restauração por resposta certa ou atividade concluída (máx. 1 - peso dos REEE).
+@export var bonus_per_reward := 0.04
 
 var _reee_count := 0
 var _reee_total := 0
@@ -20,6 +30,8 @@ var _conclusion_started := false
 var _conclusion_dialogue_active := false
 var _minigames_active := false
 var _phase_completed := false
+var _bonus := 0.0
+var _pending_minigame := ""
 var _pending_tutorial_speech := false
 var _last_narrated_tutorial := ""
 
@@ -30,7 +42,7 @@ var _last_narrated_tutorial := ""
 @onready var objective_label: Label = $HUD/Objective
 @onready var tutorial_label: Label = $HUD/Tutorial
 @onready var hud_panels: CollectibleProgressHud = $HUD/PixelPanels
-@onready var talking_npcs: Array[Phase1Npc] = [$Garidog, $CorreioBo, $Morador]
+@onready var talking_npcs: Array[Phase1Npc] = [$Garidog, $CorreioBo, $Morador, $Crianca, $DonaLia, $Pipa]
 
 
 func _ready() -> void:
@@ -46,6 +58,7 @@ func _ready() -> void:
 	Settings.setting_changed.connect(_on_setting_changed)
 	Dialogic.timeline_started.connect(_on_dialogue_started)
 	Dialogic.timeline_ended.connect(_on_dialogue_ended)
+	Dialogic.signal_event.connect(_on_dialogue_signal)
 	intro_cutscene.started.connect(_on_cinematic_started)
 	intro_cutscene.finished.connect(_on_intro_finished)
 	reee_cutscene.started.connect(_on_cinematic_started)
@@ -164,14 +177,63 @@ func _on_dialogue_started() -> void:
 
 func _on_dialogue_ended() -> void:
 	_dialogue_active = false
+	if not _pending_minigame.is_empty() and not _conclusion_dialogue_active:
+		var minigame_id := _pending_minigame
+		_pending_minigame = ""
+		_open_minigame.call_deferred(minigame_id)
+		return
 	# Espera o Dialogic e a cutscene terminarem a limpeza antes de retomar o HUD.
 	_resume_tutorial.call_deferred()
+
+
+## Sinais emitidos pelas timelines: `acerto` premia a resposta certa e
+## `minigame:<id>` abre a atividade quando o diálogo terminar.
+func _on_dialogue_signal(argument: String) -> void:
+	if argument == "acerto":
+		_add_bonus()
+	elif argument.begins_with("minigame:"):
+		_pending_minigame = argument.trim_prefix("minigame:")
+
+
+func _add_bonus() -> void:
+	GameAudio.play_sound(&"correct")
+	_bonus = minf(_bonus + bonus_per_reward, 1.0 - REEE_RESTORATION_WEIGHT)
+	_refresh_restoration()
+
+
+func _refresh_restoration() -> void:
+	var base := float(_reee_count) / maxi(_reee_total, 1) * REEE_RESTORATION_WEIGHT
+	# Com todos os REEE a vila fica 100% recuperada, independentemente do bônus.
+	restoration.set_value(1.0 if _reee_count == _reee_total else base + _bonus)
+
+
+func _open_minigame(minigame_id: String) -> void:
+	if not MINIGAME_PAGES.has(minigame_id):
+		push_error("Minigame desconhecido: %s" % minigame_id)
+		return
+	_minigames_active = true
+	player.has_control = false
+	var minigames: Phase1Minigames = MINIGAMES_SCENE.instantiate()
+	minigames.pages.assign(MINIGAME_PAGES[minigame_id])
+	minigames.final_title = "Muito bem!"
+	minigames.final_message = "Você está cada vez mais perto de salvar a vila."
+	minigames.final_button_text = "Continuar"
+	minigames.finished.connect(_on_activity_finished)
+	add_child(minigames)
+
+
+func _on_activity_finished(perfect: bool) -> void:
+	_minigames_active = false
+	if perfect:
+		_add_bonus()
+	player.has_control = true
+	_resume_tutorial()
 
 
 func _on_reee_collected(_item_name: String) -> void:
 	GameAudio.play_sound(&"collect")
 	_reee_count += 1
-	restoration.set_value(float(_reee_count) / _reee_total)
+	_refresh_restoration()
 	if _reee_count == 1:
 		reee_cutscene.run()
 	_update_hud()
@@ -195,12 +257,13 @@ func _begin_conclusion() -> void:
 func _on_conclusion_finished() -> void:
 	_conclusion_dialogue_active = false
 	_minigames_active = true
-	var minigames := MINIGAMES_SCENE.instantiate()
+	var minigames: Phase1Minigames = MINIGAMES_SCENE.instantiate()
+	minigames.pages.assign([Phase1Minigames.PAGE_CROSSWORD])
 	minigames.finished.connect(_on_minigames_finished)
 	add_child(minigames)
 
 
-func _on_minigames_finished() -> void:
+func _on_minigames_finished(_perfect: bool) -> void:
 	_phase_completed = true
 	_minigames_active = false
 	player.has_control = true

@@ -118,6 +118,38 @@ instruction_text = "Arraste de uma etapa até sua função. Ou selecione os dois
 layout_mode = 2
 text = "Pular atividade"
 
+[node name="SortPage" type="VBoxContainer" parent="Backdrop/Panel/Margin/Body"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Backdrop/Panel/Margin/Body/SortPage"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 32
+text = "Qual é o lugar certo?"
+horizontal_alignment = 1
+
+[node name="SortBoard" parent="Backdrop/Panel/Margin/Body/SortPage" instance=ExtResource("2")]
+size_flags_horizontal = 4
+size_flags_vertical = 3
+left_items = PackedStringArray("Celular quebrado", "Casca de banana", "Folha de papel")
+right_items = PackedStringArray("Lixo orgânico", "Ponto de coleta de REEE", "Reciclagem de papel")
+correct_targets = PackedInt32Array(1, 0, 2)
+instruction_text = "Leve cada item ao lugar certo. Arraste ou selecione os dois cartões."
+wrong_text = "Esse não é o lugar certo para o item. Tente de novo!"
+right_text = "Isso! Esse é o lugar certo."
+done_text = "Muito bem! Cada coisa no seu lugar."
+pick_destination_hint = "Agora escolha o lugar certo na coluna da direita."
+
+[node name="Skip" type="Button" parent="Backdrop/Panel/Margin/Body/SortPage"]
+layout_mode = 2
+text = "Pular atividade"
+
 [node name="FinalPage" type="VBoxContainer" parent="Backdrop/Panel/Margin/Body"]
 visible = false
 layout_mode = 1
@@ -153,4 +185,5 @@ text = "Concluir fase"
 [connection signal="pressed" from="Backdrop/Panel/Margin/Body/WordPage/Actions/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Backdrop/Panel/Margin/Body/WordPage/Actions/Skip" to="." method="_on_skip_pressed"]
 [connection signal="pressed" from="Backdrop/Panel/Margin/Body/MatchPage/Skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="Backdrop/Panel/Margin/Body/SortPage/Skip" to="." method="_on_skip_pressed"]
 [connection signal="pressed" from="Backdrop/Panel/Margin/Body/FinalPage/Finish" to="." method="_on_finish_pressed"]

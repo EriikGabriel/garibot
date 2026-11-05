@@ -9,6 +9,8 @@ const SPEAKERS := {
 	"res://dialogic/characters/correio_bo.dch": "CorreioBo/BubblePoint",
 	"res://dialogic/characters/morador.dch": "Morador/BubblePoint",
 	"res://dialogic/characters/crianca.dch": "Crianca/BubblePoint",
+	"res://dialogic/characters/dona_lia.dch": "DonaLia/BubblePoint",
+	"res://dialogic/characters/pipa.dch": "Pipa/BubblePoint",
 }
 
 
@@ -29,6 +31,11 @@ static func start(timeline_path: String, level: Node) -> void:
 		direction.name = "Phase1BubbleDirection"
 		direction.layout = layout
 		layout.add_child(direction)
+	if not layout.has_node("Phase1ChoiceRow"):
+		var choice_row := Phase1ChoiceRow.new()
+		choice_row.name = "Phase1ChoiceRow"
+		choice_row.layout = layout
+		layout.add_child(choice_row)
 
 
 static func _register_speakers(layout: Node, level: Node) -> void:

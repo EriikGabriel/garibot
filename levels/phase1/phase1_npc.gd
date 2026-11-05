@@ -4,7 +4,7 @@ extends Node2D
 ## Morador com quem o Garibot conversa ao passar pela área `TalkArea`.
 ## Com a vila recuperada (60% dos REEE), usa a fala de recuperação.
 
-const RESTORED_THRESHOLD := 0.6
+const RESTORED_THRESHOLD := 0.45
 
 @export_file("*.dtl") var timeline_path := ""
 @export_file("*.dtl") var restored_timeline_path := ""

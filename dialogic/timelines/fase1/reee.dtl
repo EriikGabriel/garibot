@@ -8,11 +8,11 @@ garibot: Aparelhos eletrônicos não são como casca de banana!
 garidog: Por que não?
 [voice path="res://assets/dubs/fase01_garibot04.mp3" volume="0.0"]
 garibot: Alguns resíduos que jogamos no chão podem sujar a terra e a água de um jeito que faz mal para a natureza!
+label explicacao
 [voice path="res://assets/dubs/fase01_garibot05.mp3" volume="0.0"]
 garibot: O lugar certo é o cesto especial da coleta seletiva.
 [voice path="res://assets/dubs/fase01_garibot06.mp3" volume="0.0"]
 garibot: e  lá, eles são levados para uma usina de reciclagem!
-[voice path="res://assets/dubs/fase01_garidog03.mp3" volume="0.0"]
 [voice path="res://assets/dubs/fase01_garidog04.mp3" volume="0.0"]
 garidog: O que é uma usina de reciclagem?
 [voice path="res://assets/dubs/fase01_garibot07.mp3" volume="0.0"]
@@ -23,5 +23,15 @@ garidog: Entendi!
 garibot: A usina retira os metais e os plásticos com muita segurança e eles viram matéria prima
 [voice path="res://assets/dubs/fase01_garibot09.mp3" volume="0.0"]
 garibot: Eles que viram peças novas para construir outros aparelhos!
+label pergunta
+garidog: Então onde devo jogar este celular velho?
+- No lixo comum
+	garibot: Ainda não! Aparelhos eletrônicos precisam de cuidado.
+	jump pergunta
+- No ponto de coleta
+	garibot: Isso mesmo!
+	[signal arg="acerto"]
+- Ouvir de novo
+	jump explicacao
 [voice path="res://assets/dubs/fase01_garibot10.mp3" volume="0.0"]
 garibot: Vamos coletar?
