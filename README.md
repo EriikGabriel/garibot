@@ -9,7 +9,7 @@ de jogo.
 | Caminho | Responsabilidade |
 | --- | --- |
 | `assets/` | Sprites, sons e demais recursos brutos. |
-| `assets/garibot1/` | Sprites e sons importados do Garibot original, com manifesto de origem. |
+| `assets/garibot/` | Sprites e sons importados do Garibot original, com manifesto de origem. |
 | `assets/gui/kenney_pixel_adventure/` | Pacote CC0 de interface em pixel art. |
 | `gui/asset_preview/` | Cena editável de amostras e controles com o tema pixel art. |
 | `gui/themes/` | Temas reutilizáveis de interface. |

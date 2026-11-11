@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://c5fctol5uoe3d"]
 
-[ext_resource type="Script" path="res://components/collectibles/area_collectible.gd" id="1"]
+[ext_resource type="Script" uid="uid://dwjamc5guap84" path="res://components/collectibles/area_collectible.gd" id="1"]
 
 [node name="AreaCollectible" type="Area2D"]
 script = ExtResource("1")

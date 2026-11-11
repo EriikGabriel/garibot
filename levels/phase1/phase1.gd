@@ -17,7 +17,7 @@ const MINIGAME_PAGES := {
 
 @export var fall_reset_y := 380.0
 ## Limites da câmera do Garibot (esquerda, topo, largura, altura).
-@export var camera_limits := Rect2i(-300, -650, 5700, 1030)
+@export var camera_limits := Rect2i(-300, -650, 6500, 1030)
 ## Bônus de restauração por resposta certa ou atividade concluída (máx. 1 - peso dos REEE).
 @export var bonus_per_reward := 0.04
 ## Pausa entre a bateria acabar e o Garibot renascer (s).

@@ -4,7 +4,7 @@
 players pelo Inspector. A música continua entre menus, fase e pausa; usa o bus
 `Music`. Interface, coleta, respostas e vozes usam `Sfx` e respeitam as preferências.
 
-| Evento | Asset de `assets/garibot1/audio/` |
+| Evento | Asset de `assets/garibot/audio/` |
 | --- | --- |
 | Tema em loop | `recycle_anim/garibot_theme_last_versionipromise.mp3` |
 | Navegação por mouse/teclado | `ui/ui_move.mp3` |

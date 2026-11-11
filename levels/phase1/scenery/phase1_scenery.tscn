@@ -88,7 +88,7 @@ clean_texture = ExtResource("arvore_4_c")
 restore_step = 0.8
 
 [node name="Arvore5" type="Sprite2D" parent="."]
-position = Vector2(4680, -180)
+position = Vector2(5480, -180)
 texture = ExtResource("arvore_5_d")
 centered = false
 script = ExtResource("1_rs")
@@ -96,7 +96,7 @@ clean_texture = ExtResource("arvore_5_c")
 restore_step = 1.0
 
 [node name="Arvore6" type="Sprite2D" parent="."]
-position = Vector2(5084, -188)
+position = Vector2(5884, -188)
 texture = ExtResource("arvore_6_d")
 centered = false
 script = ExtResource("1_rs")

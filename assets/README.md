@@ -5,12 +5,12 @@
 Origem: [EriikGabriel/garibot, branch Rick](https://github.com/EriikGabriel/garibot/tree/Rick/game_files/assets).
 Snapshot: `e27bc34d2292cb4a03261a3f699de33bd5069e75`.
 
-Os recursos novos estão em `garibot1/`. Foram importados 378 arquivos (aproximadamente
+Os recursos novos estão em `garibot/`. Foram importados 378 arquivos (aproximadamente
 10,9 MB); 23 entradas idênticas reutilizam arquivos já presentes ou outra entrada
-do pacote. O `garibot1/manifest.json` relaciona cada caminho original ao caminho
+do pacote. O `garibot/manifest.json` relaciona cada caminho original ao caminho
 local, tamanho e hash Git SHA-1 verificado durante o download.
 
-| Pasta em `garibot1/` | Uso sugerido |
+| Pasta em `garibot/` | Uso sugerido |
 | --- | --- |
 | `sprites/collectibles/` | Eletrônicos, placas, materiais e versões desmontadas para coleta e minigames de REEE. |
 | `sprites/lixeira/` | Separação de materiais por lixeira. |
@@ -66,8 +66,8 @@ os pixels; o projeto já usa esse filtro por padrão.
    pelo Inspector. Os estilos locais de controles existentes têm prioridade sobre o tema.
 3. Para imagens do Garibot, arraste PNGs para TextureRect ou Sprite2D. Os spritesheets
    precisam de regiões/frames apropriados; os sons podem ser arrastados para AudioStreamPlayer.
-4. Ao procurar um arquivo reaproveitado, consulte `garibot1/manifest.json`: o campo
-   `path` indica o recurso canônico, mesmo quando ele está fora de `garibot1/`.
+4. Ao procurar um arquivo reaproveitado, consulte `garibot/manifest.json`: o campo
+   `path` indica o recurso canônico, mesmo quando ele está fora de `garibot/`.
 
 O tema agora está aplicado globalmente pelo `project.godot`, com a fonte VT323 (licença SIL OFL em `fonts/VT323/`). As telas compartilham os estilos;
 consulte `gui/themes/pixel_adventure/README.md` para editar as variações no Godot.

@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://v66i8wu1kqel"]
 
 [ext_resource type="Theme" uid="uid://gcivgar7cgpx" path="res://gui/themes/pixel_adventure/pixel_adventure_theme.tres" id="1_theme"]
-[ext_resource type="Texture2D" uid="uid://c7rld0666v3pc" path="res://assets/garibot1/sprites/collectibles/celular_desmontado.png" id="2_phone"]
-[ext_resource type="Texture2D" uid="uid://40pmcctwng37" path="res://assets/garibot1/sprites/collectibles/monitor.png" id="3_monitor"]
-[ext_resource type="Texture2D" uid="uid://sslfcfo4gxxc" path="res://assets/garibot1/sprites/lixeira/lixeira_verde.png" id="4_bin"]
-[ext_resource type="Texture2D" uid="uid://yv67qvyay681" path="res://assets/garibot1/sprites/recycler/complete.png" id="5_recycler"]
+[ext_resource type="Texture2D" uid="uid://c7rld0666v3pc" path="res://assets/garibot/sprites/collectibles/celular_desmontado.png" id="2_phone"]
+[ext_resource type="Texture2D" uid="uid://40pmcctwng37" path="res://assets/garibot/sprites/collectibles/monitor.png" id="3_monitor"]
+[ext_resource type="Texture2D" uid="uid://sslfcfo4gxxc" path="res://assets/garibot/sprites/lixeira/lixeira_verde.png" id="4_bin"]
+[ext_resource type="Texture2D" uid="uid://yv67qvyay681" path="res://assets/garibot/sprites/recycler/complete.png" id="5_recycler"]
 [ext_resource type="Texture2D" uid="uid://cyvnl7k6phko1" path="res://assets/gui/kenney_pixel_adventure/sample.png" id="6_sample"]
 [ext_resource type="Texture2D" uid="uid://cm07ggijq03kt" path="res://assets/gui/kenney_pixel_adventure/preview.png" id="7_preview"]
 

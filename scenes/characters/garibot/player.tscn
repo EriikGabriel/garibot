@@ -29,8 +29,8 @@ roll_speed = 900
 shape = SubResource("1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-process_callback = 0
 zoom = Vector2(2, 2)
+process_callback = 0
 limit_left = -400
 limit_right = 20000
 limit_bottom = 900

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://yqy045o8mtt3" path="res://gui/settings/settings_menu/settings_menu.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://cvbcdv4ixiy7y" path="res://assets/sprites/player/player_char_icon.png" id="4"]
 [ext_resource type="Theme" uid="uid://gcivgar7cgpx" path="res://gui/themes/pixel_adventure/pixel_adventure_theme.tres" id="5_theme"]
-[ext_resource type="Texture2D" uid="uid://cjfi678h7bccg" path="res://assets/garibot1/sprites/scenery/stage1/fundo1_1.png" id="6_village"]
+[ext_resource type="Texture2D" uid="uid://cjfi678h7bccg" path="res://assets/garibot/sprites/scenery/stage1/fundo1_1.png" id="6_village"]
 
 [sub_resource type="StyleBoxFlat" id="Background"]
 bg_color = Color(0.055, 0.15, 0.16, 1)

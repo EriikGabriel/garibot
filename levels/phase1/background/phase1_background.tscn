@@ -56,7 +56,7 @@ restore_step = 0.0
 [node name="Far" type="Node2D" parent="."]
 position = Vector2(128, 0)
 script = ExtResource("2_layer")
-scroll_factor = Vector2(0.2, 0.2)
+scroll_factor = Vector2(0.195, 0.195)
 
 [node name="Art" type="Sprite2D" parent="Far"]
 position = Vector2(-348, -250)
@@ -140,7 +140,7 @@ drift_range = 260.0
 [node name="Mid" type="Node2D" parent="."]
 position = Vector2(88, 0)
 script = ExtResource("2_layer")
-scroll_factor = Vector2(0.45, 0.45)
+scroll_factor = Vector2(0.4, 0.4)
 
 [node name="Art" type="Sprite2D" parent="Mid"]
 position = Vector2(-343, -250)
@@ -224,7 +224,7 @@ restore_step = 0.4
 [node name="Near" type="Node2D" parent="."]
 position = Vector2(48, 0)
 script = ExtResource("2_layer")
-scroll_factor = Vector2(0.7, 0.7)
+scroll_factor = Vector2(0.6, 0.6)
 
 [node name="Art" type="Sprite2D" parent="Near"]
 position = Vector2(-338, -250)
