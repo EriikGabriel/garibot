@@ -32,7 +32,8 @@ var _perfect := true
 @onready var word_feedback: Label = $Backdrop/Panel/Margin/Body/WordPage/Feedback
 @onready var check_button: Button = $Backdrop/Panel/Margin/Body/WordPage/Actions/Check
 @onready var next_button: Button = $Backdrop/Panel/Margin/Body/WordPage/Actions/Next
-@onready var matching_board: MatchingBoard = $Backdrop/Panel/Margin/Body/MatchPage/MatchingBoard
+## "O caminho dos REEE": coleta → triagem → reciclagem, com sprites.
+@onready var path_board: RecyclingPathBoard = $Backdrop/Panel/Margin/Body/MatchPage/PathBoard
 @onready var sort_board: MatchingBoard = $Backdrop/Panel/Margin/Body/SortPage/SortBoard
 @onready var finish_button: Button = $Backdrop/Panel/Margin/Body/FinalPage/Finish
 
@@ -41,8 +42,8 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
 	add_to_group("minigame_modal")
-	matching_board.completed.connect(_on_board_completed.bind(match_page))
-	matching_board.answer_checked.connect(_on_answer_checked)
+	path_board.completed.connect(_on_board_completed.bind(match_page))
+	path_board.answer_checked.connect(_on_answer_checked)
 	sort_board.completed.connect(_on_board_completed.bind(sort_page))
 	sort_board.answer_checked.connect(_on_answer_checked)
 	crossword.answer_checked.connect(_on_answer_checked)
@@ -79,7 +80,7 @@ func _advance() -> void:
 	if page == word_page:
 		crossword.select_word.call_deferred(0)
 	elif page == match_page:
-		matching_board.left_buttons[0].grab_focus()
+		path_board.focus_first()
 	elif page == sort_page:
 		sort_board.left_buttons[0].grab_focus()
 

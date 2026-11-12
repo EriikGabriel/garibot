@@ -51,6 +51,7 @@ directories/dtl_directory={
 "garibot_celular": "res://dialogic/timelines/fase1/garibot_celular.dtl",
 "garidog": "res://dialogic/timelines/fase1/garidog.dtl",
 "garidog_recuperado": "res://dialogic/timelines/fase1/garidog_recuperado.dtl",
+"inimigo_tv": "res://dialogic/timelines/fase1/inimigo_tv.dtl",
 "intro": "res://dialogic/timelines/fase1/intro.dtl",
 "morador": "res://dialogic/timelines/fase1/morador.dtl",
 "morador_recuperado": "res://dialogic/timelines/fase1/morador_recuperado.dtl",

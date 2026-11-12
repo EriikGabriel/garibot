@@ -33,6 +33,10 @@ const MINIGAME_PAGES := {
 @export var gate_remark_distance := 24.0
 ## Intervalo mínimo entre duas falas do Garibot na barreira (s).
 @export var gate_remark_cooldown := 8.0
+## Distância (px) do primeiro inimigo em que a cutscene de apresentação começa.
+@export var enemy_intro_distance := 190.0
+## Depois de passar o inimigo por esta distância (px), a dica do dash some.
+@export var dash_hint_pass_distance := 260.0
 
 var _reee_count := 0
 var _reee_total := 0
@@ -64,11 +68,17 @@ var _passed_tutorial_reee := false
 var _gate_remark_ready_ms := 0
 var _pending_tutorial_speech := false
 var _last_narrated_tutorial := ""
+var _enemy_intro_done := false
+## Dica "use o dash" no HUD, ativa da apresentação até derrotar ou passar o inimigo.
+var _dash_hint_active := false
 
 @onready var player: Player = $Player
 @onready var restoration: RestorationProgress = $Restoration
 @onready var intro_cutscene: CutscenePlayer = $CutscenePlayer
 @onready var reee_cutscene: CutscenePlayer = $ReeeCutscene
+## Apresenta o primeiro inimigo (a TV da rua) e ensina o dash.
+@onready var enemy_cutscene: CutscenePlayer = $EnemyCutscene
+@onready var intro_enemy: Enemy = $Enemies/TelevisaoRua
 @onready var objective_label: Label = $HUD/Objective
 @onready var tutorial_label: Label = $HUD/Tutorial
 @onready var hud_panels: CollectibleProgressHud = $HUD/PixelPanels
@@ -95,10 +105,16 @@ func _ready() -> void:
 	Analytics.track("fase_inicio")
 	battery_hud.set_charge(int(player.health.health), int(player.health.max_health))
 	var items := get_tree().get_nodes_in_group("phase1_reee")
+	# Na ordem do percurso, para o HUD mostrar os ícones como aparecem na fase.
+	items.sort_custom(func(a: Node2D, b: Node2D) -> bool: return a.global_position.x < b.global_position.x)
 	_reee_total = items.size()
-	for item: AreaCollectible in items:
+	var icons: Array[Texture2D] = []
+	for index in items.size():
+		var item: AreaCollectible = items[index]
 		item.monitoring = false
-		item.collected.connect(_on_reee_collected.bind(item == tutorial_reee))
+		item.collected.connect(_on_reee_collected.bind(item == tutorial_reee, index))
+		icons.append(item.get_icon())
+	hud_panels.set_items(icons)
 	_set_npcs_listening(false)
 	restoration.set_value(0.0, false)
 	Settings.setting_changed.connect(_on_setting_changed)
@@ -109,6 +125,9 @@ func _ready() -> void:
 	intro_cutscene.finished.connect(_on_intro_finished)
 	reee_cutscene.started.connect(_on_cinematic_started)
 	reee_cutscene.finished.connect(_resume_tutorial)
+	enemy_cutscene.started.connect(_on_cinematic_started)
+	enemy_cutscene.finished.connect(_on_enemy_intro_finished)
+	intro_enemy.defeated.connect(_on_intro_enemy_defeated)
 	_apply_accessibility_preferences()
 	_set_tutorial_visible(false)
 	_update_hud()
@@ -136,6 +155,10 @@ func _process(_delta: float) -> void:
 		_update_hud()
 	if passed:
 		_check_gate_remark()
+	if _check_enemy_intro():
+		return
+	if _dash_hint_active and player.position.x > intro_enemy.global_position.x + dash_hint_pass_distance:
+		_set_dash_hint(false)
 	var zone := _current_zone()
 	if zone != _zone_index:
 		_zone_index = zone
@@ -272,6 +295,10 @@ func _set_npcs_listening(enabled: bool) -> void:
 func _on_setting_changed(setting_name: String, _value: Variant) -> void:
 	if setting_name in ["high_contrast", "dialog_font_size"]:
 		_apply_accessibility_preferences()
+	elif setting_name == "keybinds" and _dash_hint_active:
+		# Tecla trocada no menu de pausa: a dica mostra a nova.
+		hud_panels.set_key_hint(_attack_key_name())
+		_update_hud()
 
 
 func _apply_accessibility_preferences() -> void:
@@ -374,9 +401,10 @@ func _delay_next_npc_dialogue() -> void:
 	_npc_dialogue_ready_ms = Time.get_ticks_msec() + int(npc_dialogue_cooldown * 1000.0)
 
 
-func _on_reee_collected(item_name: String, is_tutorial: bool) -> void:
+func _on_reee_collected(item_name: String, is_tutorial: bool, hud_index: int) -> void:
 	GameAudio.play_sound(&"collect")
 	_reee_count += 1
+	hud_panels.mark_collected(hud_index)
 	Analytics.track("reee_coletado", {"item": item_name, "total": _reee_count})
 	_refresh_restoration()
 	if is_tutorial:
@@ -446,6 +474,7 @@ func _tutorial_blocked() -> bool:
 		or player.is_dead()
 		or intro_cutscene.is_running()
 		or reee_cutscene.is_running()
+		or enemy_cutscene.is_running()
 		or _dialogue_active
 		or _conclusion_dialogue_active
 		or _minigames_active
@@ -487,6 +516,11 @@ func _tutorial_text() -> String:
 		return "Pule os bloqueios: Espaço, W ou seta para cima. Segure para pular mais alto."
 	if _passed_tutorial_reee:
 		return "Ficou um celular para trás! Volte e recolha-o perto do Garidog para seguir."
+	if _dash_hint_active:
+		return (
+			"Inimigo à frente! Não encoste nele: aperte %s para dar o dash e derrubá-lo."
+			% _attack_key_name()
+		)
 	return _collection_tutorial_text()
 
 
@@ -499,6 +533,63 @@ func _collection_tutorial_text() -> String:
 			% (_reee_total - _reee_count)
 		)
 	return str($Flow.get_child(_zone_index).get_meta("hint", ""))
+
+
+## Começa a apresentação do primeiro inimigo quando o Garibot chega perto dele.
+## Devolve `true` se a cutscene começou neste quadro.
+func _check_enemy_intro() -> bool:
+	if (
+		_enemy_intro_done
+		or not _tutorial_reee_collected
+		or not is_instance_valid(intro_enemy)
+		or intro_enemy.is_defeated()
+		or not player.is_on_floor()
+		or Dialogic.current_timeline != null
+		or absf(intro_enemy.global_position.x - player.position.x) > enemy_intro_distance
+	):
+		return false
+	_enemy_intro_done = true
+	Analytics.track("inimigo_apresentado", {"tipo": intro_enemy.enemy_type})
+	_freeze_intro_enemy(true)
+	enemy_cutscene.run()
+	return true
+
+
+func _on_enemy_intro_finished() -> void:
+	_freeze_intro_enemy(false)
+	if is_instance_valid(intro_enemy) and not intro_enemy.is_defeated():
+		_set_dash_hint(true)
+	_resume_tutorial()
+
+
+## Durante a apresentação o inimigo fica parado (só animando), para não chegar
+## em cima do Garibot enquanto ele não pode reagir.
+func _freeze_intro_enemy(frozen: bool) -> void:
+	if not is_instance_valid(intro_enemy):
+		return
+	intro_enemy.set_physics_process(not frozen)
+	intro_enemy.velocity = Vector2.ZERO
+	var sprite := intro_enemy.get_node_or_null("Body/Sprite") as AnimatedSprite2D
+	if frozen and sprite:
+		sprite.play(&"idle")
+
+
+func _on_intro_enemy_defeated() -> void:
+	_set_dash_hint(false)
+
+
+func _set_dash_hint(active: bool) -> void:
+	if _dash_hint_active == active:
+		return
+	_dash_hint_active = active
+	hud_panels.set_key_hint(_attack_key_name() if active else "")
+	_update_hud()
+
+
+## Nome da tecla do dash, respeitando a configuração de controles do jogador.
+func _attack_key_name() -> String:
+	var key := Settings.get_keybind(&"attack")
+	return OS.get_keycode_string(key) if key != KEY_NONE else "o botão de ataque"
 
 
 func _narrate_tutorial_when_ready() -> void:

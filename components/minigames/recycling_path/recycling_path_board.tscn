@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://components/minigames/recycling_path/recycling_path_board.gd" id="1"]
+
+[node name="RecyclingPathBoard" type="Control"]
+custom_minimum_size = Vector2(1100, 460)
+layout_mode = 2
+script = ExtResource("1")

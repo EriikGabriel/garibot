@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://ch7yiw5t3iubo"]
 
-[ext_resource type="Script" path="res://scenes/characters/enemies/acid_battery/acid_battery_enemy.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://4fc08lysfpi0" path="res://scenes/characters/enemies/acid_battery/acid_battery_enemy.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://db83e3ovnnsav" path="res://components/health/health_component.tscn" id="2_health"]
 [ext_resource type="PackedScene" uid="uid://cm1qtuiv0aiag" path="res://components/hitbox/hitbox_component.tscn" id="3_hitbox"]
 [ext_resource type="Script" uid="uid://bsyekh4io6ln2" path="res://components/contact_damage/contact_damage.gd" id="4_contact"]
+[ext_resource type="SpriteFrames" uid="uid://dkm2jryh7vtbr" path="res://scenes/characters/enemies/acid_battery/pilha_corroida_frames.tres" id="5_frames"]
 
 [sub_resource type="RectangleShape2D" id="BodyShape"]
 size = Vector2(22, 32)
@@ -18,10 +19,18 @@ size = Vector2(18, 28)
 collision_layer = 32
 collision_mask = 8
 script = ExtResource("1_script")
-placeholder_size = Vector2(22, 32)
 enemy_type = "pilha_corroida"
+placeholder_size = Vector2(22, 32)
 placeholder_color = Color(0.36, 0.42, 0.33, 1)
 placeholder_outline = Color(0.12, 0.16, 0.1, 1)
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Body"]
+position = Vector2(0, -8)
+sprite_frames = ExtResource("5_frames")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("BodyShape")
@@ -44,11 +53,10 @@ amount = 1.0
 
 [node name="ContactArea" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 1
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactArea"]
 shape = SubResource("ContactShape")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, -22)

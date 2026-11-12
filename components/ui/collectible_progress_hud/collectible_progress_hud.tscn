@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://3r61e3k0cuyj"]
 
-[ext_resource type="Script" path="res://components/ui/collectible_progress_hud/collectible_progress_hud.gd" id="1"]
+[ext_resource type="Script" uid="uid://dawv7m6al0kl7" path="res://components/ui/collectible_progress_hud/collectible_progress_hud.gd" id="1"]
 
 [node name="CollectibleProgressHud" type="Control"]
 layout_mode = 3

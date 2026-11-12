@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://bna4fbht7r62d"]
+[gd_scene load_steps=78 format=4 uid="uid://bna4fbht7r62d"]
 
 [ext_resource type="Script" uid="uid://bvv1n82ct5rv1" path="res://levels/phase1/phase1.gd" id="1_level"]
 [ext_resource type="Script" uid="uid://ci6q78ir854cp" path="res://levels/phase1/phase1_river.gd" id="2_river"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bgth0r2txmvh3" path="res://levels/phase1/phase1_npc.gd" id="4_npc"]
 [ext_resource type="PackedScene" uid="uid://dx7u1tly2j5vh" path="res://scenes/characters/garibot/player.tscn" id="5_player"]
 [ext_resource type="PackedScene" uid="uid://dojoph16grx0" path="res://scenes/cutscene/cutscene_player.tscn" id="6_cutscene"]
-[ext_resource type="PackedScene" path="res://components/ui/collectible_progress_hud/collectible_progress_hud.tscn" id="7_hud"]
+[ext_resource type="PackedScene" uid="uid://3r61e3k0cuyj" path="res://components/ui/collectible_progress_hud/collectible_progress_hud.tscn" id="7_hud"]
 [ext_resource type="PackedScene" path="res://scenes/pause_menu/pause_menu.tscn" id="8_pause"]
 [ext_resource type="PackedScene" uid="uid://b2gm3s63uib7j" path="res://levels/phase1/background/phase1_background.tscn" id="9_background"]
 [ext_resource type="Texture2D" uid="uid://6wc3b038hvtm" path="res://assets/sprites/collectibles/phone.png" id="9_ggh6h"]
@@ -23,8 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://batbe66mgf5mr" path="res://assets/tilesets/bricks_limpo.png" id="16_ht4ra"]
 [ext_resource type="Script" uid="uid://b6x2newv05ur5" path="res://components/restoration/restoration_progress.gd" id="18_restoration"]
 [ext_resource type="PackedScene" uid="uid://isxjcesoqq6i" path="res://components/ui/battery_health_hud/battery_health_hud.tscn" id="40_battery"]
-[ext_resource type="PackedScene" uid="uid://b8n08nluxoeqp" path="res://scenes/characters/enemies/patrol/patrol_enemy.tscn" id="41_patrol"]
-[ext_resource type="PackedScene" path="res://scenes/characters/enemies/acid_battery/acid_battery_enemy.tscn" id="42_acid"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/televisao/televisao_enemy.tscn" id="41_televisao"]
+[ext_resource type="PackedScene" uid="uid://ch7yiw5t3iubo" path="res://scenes/characters/enemies/acid_battery/acid_battery_enemy.tscn" id="42_acid"]
+[ext_resource type="PackedScene" path="res://scenes/characters/enemies/rolling_steal/rolling_steal_enemy.tscn" id="43_rolling_steal"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6a6x7"]
 atlas = ExtResource("9_ggh6h")
@@ -399,6 +400,34 @@ steps = Array[Dictionary]([{
 }])
 player_path = NodePath("../Player")
 
+[node name="EnemyCutscene" parent="." instance=ExtResource("6_cutscene")]
+steps = Array[Dictionary]([{
+"speed": 0.35,
+"type": &"bars_on"
+}, {
+"type": &"stop"
+}, {
+"dir": 1,
+"type": &"face"
+}, {
+"duration": 0.9,
+"target": "../Enemies/TelevisaoRua",
+"type": &"focus"
+}, {
+"seconds": 0.6,
+"type": &"wait"
+}, {
+"timeline": &"res://dialogic/timelines/fase1/inimigo_tv.dtl",
+"type": &"say"
+}, {
+"duration": 0.6,
+"type": &"unfocus"
+}, {
+"speed": 0.35,
+"type": &"bars_off"
+}])
+player_path = NodePath("../Player")
+
 [node name="Restoration" type="Node" parent="."]
 script = ExtResource("18_restoration")
 
@@ -441,7 +470,7 @@ autoplay = "default"
 frame_progress = 0.0330045
 
 [node name="ReeeComputador" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(3110, -220)
+position = Vector2(3140, -219)
 collision_layer = 0
 item_name = "peça de computador"
 collection_group = &"phase1_reee"
@@ -455,7 +484,7 @@ autoplay = "default"
 frame_progress = 0.0821314
 
 [node name="ReeeRio" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(4010, -100)
+position = Vector2(4005, -83)
 collision_layer = 0
 item_name = "placa eletrônica"
 collection_group = &"phase1_reee"
@@ -468,7 +497,7 @@ sprite_frames = SubResource("SpriteFrames_10tw1")
 autoplay = "default"
 
 [node name="ReeeFabrica" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(4510, -80)
+position = Vector2(4521, -68)
 collision_layer = 0
 item_name = "componente de fábrica"
 collection_group = &"phase1_reee"
@@ -617,15 +646,16 @@ position = Vector2(0, -48)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="PatrolRua" parent="Enemies" instance=ExtResource("41_patrol")]
-position = Vector2(1022, 25)
+[node name="TelevisaoRua" parent="Enemies" instance=ExtResource("41_televisao")]
+position = Vector2(1022, 23)
+patrol_points = PackedVector2Array(-123, 0, 124, 0)
 
-[node name="PatrolParque" parent="Enemies" instance=ExtResource("41_patrol")]
-position = Vector2(2520, -80)
+[node name="RollingStealParque" parent="Enemies" instance=ExtResource("43_rolling_steal")]
+position = Vector2(2520, -94)
+patrol_points = PackedVector2Array(-52, 0, 52, 0)
 
 [node name="PilhaParque" parent="Enemies" instance=ExtResource("42_acid")]
 position = Vector2(2916, 22)
-script = null
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 20

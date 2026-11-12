@@ -14,7 +14,12 @@ extends Node
 ##   {"type": "roll", "dir": 1}
 ##   {"type": "animation", "name": "hello", "speed": 1.0, "duration": 1.0}
 ##   {"type": "say", "timeline": "res://dialogic/..."}   espera o diálogo terminar
+##   {"type": "focus", "target": "../Inimigo", "duration": 0.8}  câmera desliza até o nó
+##   {"type": "unfocus", "duration": 0.6}        câmera volta para o Garibot
 ##   {"type": "signal"}                          só emite `step_reached`
+##
+## No "focus", `target` é um caminho relativo a este nó. A câmera só se move na
+## horizontal (os limites da câmera continuam valendo) e volta sozinha no fim.
 ##
 ## No passo "say", se a cena pai tiver `start_dialogue(timeline)`, ela abre o diálogo.
 
@@ -34,6 +39,7 @@ var _index := 0
 var _active := false
 var _bars_before_dialog := false
 var _bar_tween: Tween
+var _camera_tween: Tween
 
 @onready var _bar_layer := _create_bar_layer()
 @onready var _bar_top: ColorRect = _bar_layer.get_child(0)
@@ -96,6 +102,10 @@ func _advance() -> void:
 			_after(step.get("duration", 1.0), _on_animation_done)
 		"say":
 			_play_dialog(step.get("timeline", ""))
+		"focus":
+			_focus_camera(get_node_or_null(NodePath(str(step.get("target", "")))), step)
+		"unfocus":
+			_focus_camera(null, step)
 		"signal":
 			_advance()
 		var unknown:
@@ -137,6 +147,7 @@ func _on_dialog_done() -> void:
 
 func _finish() -> void:
 	_restore_bars_after_dialog()
+	_reset_camera()
 	_player.cutscene_stop()
 	_player.body.stop_cutscene_animation()
 	_player.in_cutscene = false
@@ -147,6 +158,45 @@ func _finish() -> void:
 
 func _after(seconds: float, callback: Callable) -> void:
 	get_tree().create_timer(maxf(seconds, 0.0)).timeout.connect(callback)
+
+
+# Câmera -------------------------------------------------------------------------
+
+
+func _player_camera() -> Camera2D:
+	return _player.get_node_or_null("Camera2D") as Camera2D
+
+
+## Desliza a câmera do Garibot até `target` (ou de volta, com `target` nulo).
+func _focus_camera(target: Node, step: Dictionary) -> void:
+	var camera := _player_camera()
+	if camera == null or (str(step.get("type")) == "focus" and not (target is Node2D)):
+		push_warning("CutscenePlayer: 'focus' sem câmera ou alvo válido.")
+		_advance()
+		return
+	var offset_x := 0.0
+	if target:
+		offset_x = (target as Node2D).global_position.x - _player.global_position.x
+	if _camera_tween and _camera_tween.is_valid():
+		_camera_tween.kill()
+	# Movimento reduzido: corte seco em vez de deslizar.
+	var duration := 0.0 if Settings.get_setting("reduced_motion", false) else float(step.get("duration", 0.8))
+	if duration <= 0.0:
+		camera.offset.x = offset_x
+		_advance()
+		return
+	_camera_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_camera_tween.tween_property(camera, "offset:x", offset_x, duration)
+	_camera_tween.finished.connect(_advance)
+
+
+func _reset_camera() -> void:
+	if _camera_tween and _camera_tween.is_valid():
+		_camera_tween.kill()
+	_camera_tween = null
+	var camera := _player_camera()
+	if camera:
+		camera.offset.x = 0.0
 
 
 # Barras de cinema ---------------------------------------------------------------

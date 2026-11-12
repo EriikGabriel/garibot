@@ -1,9 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4s1esl3v8acc"]
+[gd_scene load_steps=18 format=3 uid="uid://b4s1esl3v8acc"]
 
 [ext_resource type="Script" uid="uid://dv3xbf8dbywsx" path="res://levels/phase1/minigames/phase1_minigames.gd" id="1"]
 [ext_resource type="PackedScene" path="res://components/minigames/matching/matching_board.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://4gc1craibxog" path="res://components/minigames/newspaper/newspaper_crossword.tscn" id="4_news"]
 [ext_resource type="Texture2D" uid="uid://bk0lt6uhhdhb1" path="res://assets/sprites/ui/newspaper/photo_garibot.png" id="5_photo"]
+[ext_resource type="PackedScene" path="res://components/minigames/recycling_path/recycling_path_board.tscn" id="path_board"]
+[ext_resource type="Texture2D" uid="uid://0yodxf6foj1x" path="res://assets/sprites/ui/recycling_path/coleta.png" id="path_coleta"]
+[ext_resource type="Texture2D" uid="uid://b3m35r0dnkfkj" path="res://assets/sprites/ui/recycling_path/pecas_novas.png" id="path_pecas_novas"]
+[ext_resource type="Texture2D" uid="uid://0o21x1kw4byd" path="res://assets/sprites/ui/recycling_path/reciclagem.png" id="path_reciclagem"]
+[ext_resource type="Texture2D" uid="uid://fypi45mh0bs2" path="res://assets/sprites/ui/recycling_path/triagem.png" id="path_triagem"]
 [ext_resource type="Texture2D" uid="uid://cxhdfwptno8pj" path="res://assets/sprites/ui/sorting/casca_banana.png" id="sort_casca_banana"]
 [ext_resource type="Texture2D" uid="uid://dbw273m0rxrh7" path="res://assets/sprites/ui/sorting/celular_quebrado.png" id="sort_celular_quebrado"]
 [ext_resource type="Texture2D" uid="uid://cfsx3je2gr7xn" path="res://assets/sprites/ui/sorting/coletor_pilhas.png" id="sort_coletor_pilhas"]
@@ -110,13 +115,19 @@ theme_override_font_sizes/font_size = 32
 text = "O caminho dos REEE"
 horizontal_alignment = 1
 
-[node name="MatchingBoard" parent="Backdrop/Panel/Margin/Body/MatchPage" instance=ExtResource("2")]
+[node name="PathBoard" parent="Backdrop/Panel/Margin/Body/MatchPage" instance=ExtResource("path_board")]
 size_flags_horizontal = 4
-size_flags_vertical = 3
-left_items = PackedStringArray("1. Coleta", "2. Triagem", "3. Reciclagem")
-right_items = PackedStringArray("Recuperar matérias-primas", "Receber REEE nos pontos de entrega", "Separar os resíduos por tipo")
-correct_targets = PackedInt32Array(1, 2, 0)
-instruction_text = "Arraste de uma etapa até sua função. Ou selecione os dois cartões."
+size_flags_vertical = 6
+start_icon = ExtResource("sort_celular_quebrado")
+end_icon = ExtResource("path_pecas_novas")
+step_names = PackedStringArray("Coleta", "Triagem", "Reciclagem")
+step_descriptions = PackedStringArray("O celular vai para um ponto de entrega de REEE.", "As peças são separadas: metal, plástico e placa.", "Na usina, as peças viram matéria-prima de novo.")
+step_icons = Array[Texture2D]([ExtResource("path_coleta"), ExtResource("path_triagem"), ExtResource("path_reciclagem")])
+step_success = PackedStringArray("Isso! Primeiro a coleta: o celular é levado a um ponto de entrega.", "Muito bem! Na triagem, as peças são separadas por material.", "Perfeito! Na usina, as peças viram matéria-prima para aparelhos novos.")
+step_too_early = PackedStringArray("", "Ainda não! Antes de separar as peças, o celular precisa ser levado para a coleta.", "Calma! A usina só recebe as peças depois que elas forem separadas na triagem.")
+card_order = PackedInt32Array(2, 0, 1)
+instruction_text = "Para onde vai o celular quebrado? Toque no próximo passo (ou arraste o cartão até o caminho)."
+done_text = "Caminho completo! O celular quebrado virou peças novas."
 
 [node name="Skip" type="Button" parent="Backdrop/Panel/Margin/Body/MatchPage"]
 layout_mode = 2

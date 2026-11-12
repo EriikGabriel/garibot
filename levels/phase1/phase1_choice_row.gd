@@ -3,6 +3,11 @@ extends Node
 
 ## Deixa as alternativas lado a lado dentro do balão. Sem isso, o contêiner de
 ## escolhas do Dialogic fica com a largura do texto e empilha os botões.
+##
+## Também garante que as alternativas vão para o balão de quem está falando: ao trocar
+## de personagem, o balão anterior leva 0,2 s fechando e continua "visível". Se a
+## pergunta aparecesse nesse intervalo (texto pulado rápido), o Dialogic usaria os
+## botões do balão que está sumindo e o diálogo travaria sem opções na tela.
 
 const SPACER_NAME := &"ChoiceGap"
 
@@ -15,7 +20,19 @@ var layout: Node
 
 
 func _ready() -> void:
+	# Conectado depois do layout: quando roda, o balão da fala já foi escolhido.
+	Dialogic.Text.about_to_show_text.connect(_on_text_about_to_show)
 	Dialogic.Choices.question_shown.connect(_on_question_shown)
+
+
+## Só o balão de quem fala mantém o contêiner de escolhas visível; o Dialogic
+## ignora botões de contêineres ocultos ao montar a pergunta.
+func _on_text_about_to_show(info: Dictionary) -> void:
+	if not is_instance_valid(layout):
+		return
+	for bubble in layout.bubbles:
+		if is_instance_valid(bubble) and bubble.choice_container:
+			bubble.choice_container.visible = bubble.current_character == info.get("character")
 
 
 func _on_question_shown(_info: Dictionary) -> void:
@@ -25,7 +42,7 @@ func _on_question_shown(_info: Dictionary) -> void:
 		if not is_instance_valid(bubble) or not bubble.is_visible_in_tree():
 			continue
 		var container: Container = bubble.choice_container
-		if container == null:
+		if container == null or not container.visible:
 			continue
 		var separation := container.get_theme_constant(&"h_separation")
 		var width := 0.0

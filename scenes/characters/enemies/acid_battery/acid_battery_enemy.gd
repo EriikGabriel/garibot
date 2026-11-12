@@ -45,8 +45,33 @@ const MIN_DETECTION_RANGE := 32.0
 
 var attack_state := AttackState.IDLE
 var _timer := 0.0
+var _hurting := false
 
 @onready var muzzle := get_node_or_null("Muzzle") as Marker2D
+## Visual: `Body` (espelhado para virar) com o `AnimatedSprite2D` da pilha corroída.
+## Sem eles, a pilha volta a usar o placeholder.
+@onready var body := get_node_or_null("Body") as Node2D
+@onready var sprite := get_node_or_null("Body/Sprite") as AnimatedSprite2D
+
+
+func _ready() -> void:
+	super()
+	if Engine.is_editor_hint() or sprite == null:
+		return
+	if health:
+		health.health_changed.connect(_on_health_changed)
+	sprite.animation_finished.connect(_on_animation_finished)
+	defeated.connect(_on_defeated)
+
+
+func face(direction: int) -> void:
+	super(direction)
+	if body == null:
+		return
+	# O desenho olha para a esquerda; só espelha quando a direção muda.
+	var scale_x := -1.0 if facing > 0 else 1.0
+	if body.scale.x != scale_x:
+		body.scale.x = scale_x
 
 
 func _enemy_physics(delta: float) -> void:
@@ -102,12 +127,47 @@ func _throw_at(target: Vector2) -> void:
 	# Na fase (e não na pilha), para a gota continuar se a pilha for derrotada.
 	get_parent().add_child(projectile)
 	projectile.global_position = start
+	if sprite and not _hurting:
+		sprite.play(&"throw")
 
 
 func _set_attack_state(new_state: AttackState, duration: float) -> void:
 	attack_state = new_state
 	_timer = duration
 	queue_redraw()
+	_update_animation()
+
+
+## Parada/recarregando = "idle"; aviso = "windup". O "throw" e o "hurt" terminam sozinhos.
+func _update_animation() -> void:
+	if sprite == null or _hurting or _defeated:
+		return
+	if sprite.animation == &"throw" and sprite.is_playing():
+		return
+	if attack_state == AttackState.WINDUP:
+		if sprite.animation != &"windup":
+			sprite.play(&"windup")
+			if Settings.get_setting("reduced_motion", false):
+				# Aviso parado (com o brilho) em vez de tremer.
+				sprite.pause()
+	elif sprite.animation != &"idle" or not sprite.is_playing():
+		sprite.play(&"idle")
+
+
+func _on_health_changed(current: float, maximum: float) -> void:
+	if current > 0.0 and current < maximum:
+		_hurting = true
+		sprite.play(&"hurt")
+
+
+func _on_animation_finished() -> void:
+	if sprite.animation == &"hurt":
+		_hurting = false
+	_update_animation()
+
+
+func _on_defeated() -> void:
+	sprite.play(&"hurt")
 
 
 func _process(_delta: float) -> void:
@@ -115,6 +175,14 @@ func _process(_delta: float) -> void:
 		return
 	if attack_state == AttackState.WINDUP:
 		queue_redraw()
+
+
+func _draw() -> void:
+	if sprite == null:
+		super()
+	elif guides_visible():
+		# Com sprite, só o alcance aparece (no editor ou com `show_guides_in_game`).
+		_draw_editor_guides()
 
 
 func _draw_details(rect: Rect2) -> void:
