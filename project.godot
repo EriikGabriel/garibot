@@ -38,9 +38,14 @@ directories/dch_directory={
 "garidog": "res://dialogic/characters/garidog.dch",
 "lia": "res://dialogic/characters/lia.dch",
 "morador": "res://dialogic/characters/morador.dch",
+"nuvem": "res://dialogic/characters/nuvem.dch",
 "pipa": "res://dialogic/characters/pipa.dch"
 }
 directories/dtl_directory={
+"chefe_acorda": "res://dialogic/timelines/fase1/chefe_acorda.dtl",
+"chefe_derrota": "res://dialogic/timelines/fase1/chefe_derrota.dtl",
+"chefe_intro": "res://dialogic/timelines/fase1/chefe_intro.dtl",
+"chefe_reee": "res://dialogic/timelines/fase1/chefe_reee.dtl",
 "conclusao": "res://dialogic/timelines/fase1/conclusao.dtl",
 "correio_bo": "res://dialogic/timelines/fase1/correio_bo.dtl",
 "correio_bo_recuperado": "res://dialogic/timelines/fase1/correio_bo_recuperado.dtl",

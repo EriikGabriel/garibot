@@ -3,6 +3,11 @@ extends RefCounted
 
 ## Inicia diálogos da Fase 1 no estilo de balões, ligando cada personagem ao seu ponto de fala.
 
+## Camada dos balões: acima do HUD (20), da barra do chefe e das barras de cinema das
+## cutscenes (100); abaixo do menu de pausa (150), das configurações (200) e dos
+## minigames (250).
+const DIALOGUE_LAYER := 110
+
 const SPEAKERS := {
 	"res://dialogic/characters/garibot.dch": "Player/BubblePoint",
 	"res://dialogic/characters/garidog.dch": "Garidog/BubblePoint",
@@ -11,6 +16,7 @@ const SPEAKERS := {
 	"res://dialogic/characters/crianca.dch": "Crianca/BubblePoint",
 	"res://dialogic/characters/lia.dch": "DonaLia/BubblePoint",
 	"res://dialogic/characters/pipa.dch": "Pipa/BubblePoint",
+	"res://dialogic/characters/nuvem.dch": "BossArena/Boss/BubblePoint",
 }
 
 
@@ -22,11 +28,13 @@ static func start(timeline_path: String, level: Node) -> bool:
 		push_error("A fase 1 precisa do estilo de diálogo 'bubbles'.")
 		return false
 	_register_speakers(prepared_layout, level)
+	_raise_layer(prepared_layout)
 	var layout: Node = Dialogic.start(timeline_path)
 	if layout == null or not layout.has_method("register_character"):
 		push_error("O Dialogic não retornou um layout de balões.")
 		return false
 	_register_speakers(layout, level)
+	_raise_layer(layout)
 	if not layout.has_node("Phase1BubbleDirection"):
 		var direction := Phase1BubbleDirection.new()
 		direction.name = "Phase1BubbleDirection"
@@ -47,3 +55,11 @@ static func _register_speakers(layout: Node, level: Node) -> void:
 			push_error("Ponto de fala ausente: %s" % SPEAKERS[character_path])
 			continue
 		layout.register_character(load(character_path), point)
+
+
+## O layout de balões é um `CanvasLayer` na camada 1: sem isto, o HUD e as barras de
+## cinema ficam por cima e cortam os balões.
+static func _raise_layer(layout: Node) -> void:
+	var canvas := layout as CanvasLayer
+	if canvas:
+		canvas.layer = DIALOGUE_LAYER

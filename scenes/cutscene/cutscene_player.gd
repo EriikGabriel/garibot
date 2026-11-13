@@ -135,6 +135,9 @@ func _play_dialog(timeline: String) -> void:
 		return
 	Settings.apply_dialogue_settings()
 	var layout: Node = Dialogic.Styles.load_style("bubbles")
+	# Balões acima das barras de cinema (camada 100), senão elas os cortam.
+	if layout is CanvasLayer:
+		(layout as CanvasLayer).layer = _bar_layer.layer + 10
 	if layout and layout.has_method("register_character"):
 		layout.register_character(load(GARIBOT_CHARACTER), _player.bubble_point)
 	Dialogic.start(timeline)

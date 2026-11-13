@@ -63,6 +63,9 @@ Toda linha tem `jogador`, `sessao`, `momento` (data/hora local), `t_sessao` (s d
 | `dano` | quantidade, fonte (`patrulha`, `pilha_corroida`, `eletrolito`, `poca_acida`, `contato`), bateria |
 | `morte` | mortes |
 | `inimigo_derrotado` | tipo |
+| `chefe_inicio` / `chefe_derrotado` | chefe / duracao_s |
+| `chefe_etapa` | etapa (`acordou`: guardas derrotados) |
+| `chefe_planta_pronta` / `chefe_progresso` | planta / atual, total |
 | `pausa_aberta` / `pausa_fechada` | — / duracao_s |
 | `fase_concluida` | tempo_total_s, mortes |
 

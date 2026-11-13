@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://isxjcesoqq6i" path="res://components/ui/battery_health_hud/battery_health_hud.tscn" id="40_battery"]
 [ext_resource type="PackedScene" path="res://scenes/characters/enemies/televisao/televisao_enemy.tscn" id="41_televisao"]
 [ext_resource type="PackedScene" uid="uid://ch7yiw5t3iubo" path="res://scenes/characters/enemies/acid_battery/acid_battery_enemy.tscn" id="42_acid"]
-[ext_resource type="PackedScene" path="res://scenes/characters/enemies/rolling_steal/rolling_steal_enemy.tscn" id="43_rolling_steal"]
+[ext_resource type="PackedScene" path="res://scenes/bosses/pollution_cloud/pollution_cloud_arena.tscn" id="44_boss_arena"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6a6x7"]
 atlas = ExtResource("9_ggh6h")
@@ -222,70 +222,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i0vkf"]
-atlas = ExtResource("12_3lhwd")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e7fpt"]
-atlas = ExtResource("12_3lhwd")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dq5ad"]
-atlas = ExtResource("12_3lhwd")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bc0ob"]
-atlas = ExtResource("12_3lhwd")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlhib"]
-atlas = ExtResource("12_3lhwd")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bd8u1"]
-atlas = ExtResource("12_3lhwd")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yv7o"]
-atlas = ExtResource("12_3lhwd")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ndiyb"]
-atlas = ExtResource("12_3lhwd")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_10tw1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i0vkf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e7fpt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dq5ad")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bc0ob")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nlhib")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bd8u1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2yv7o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ndiyb")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fan0"]
 atlas = ExtResource("13_fan")
 region = Rect2(0, 0, 32, 32)
@@ -364,6 +300,70 @@ size = Vector2(190, 20)
 
 [sub_resource type="RectangleShape2D" id="TutorialGateShape"]
 size = Vector2(16, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0vkf"]
+atlas = ExtResource("12_3lhwd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7fpt"]
+atlas = ExtResource("12_3lhwd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq5ad"]
+atlas = ExtResource("12_3lhwd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc0ob"]
+atlas = ExtResource("12_3lhwd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlhib"]
+atlas = ExtResource("12_3lhwd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd8u1"]
+atlas = ExtResource("12_3lhwd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yv7o"]
+atlas = ExtResource("12_3lhwd")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndiyb"]
+atlas = ExtResource("12_3lhwd")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10tw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0vkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7fpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq5ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc0ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlhib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd8u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yv7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndiyb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Phase1" type="Node2D"]
 script = ExtResource("1_level")
@@ -482,19 +482,6 @@ shape = SubResource("CollectibleCircle")
 sprite_frames = SubResource("SpriteFrames_i0vkf")
 autoplay = "default"
 frame_progress = 0.0821314
-
-[node name="ReeeRio" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
-position = Vector2(4005, -83)
-collision_layer = 0
-item_name = "placa eletrônica"
-collection_group = &"phase1_reee"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ReeeRio"]
-shape = SubResource("CollectibleCircle")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ReeeRio"]
-sprite_frames = SubResource("SpriteFrames_10tw1")
-autoplay = "default"
 
 [node name="ReeeFabrica" parent="." groups=["phase1_reee"] instance=ExtResource("3_collect")]
 position = Vector2(4521, -68)
@@ -650,10 +637,6 @@ position = Vector2(0, -48)
 position = Vector2(1022, 23)
 patrol_points = PackedVector2Array(-123, 0, 124, 0)
 
-[node name="RollingStealParque" parent="Enemies" instance=ExtResource("43_rolling_steal")]
-position = Vector2(2520, -94)
-patrol_points = PackedVector2Array(-52, 0, 52, 0)
-
 [node name="PilhaParque" parent="Enemies" instance=ExtResource("42_acid")]
 position = Vector2(2916, 22)
 
@@ -769,7 +752,7 @@ metadata/hint = "Pratique saltos entre as plataformas até o resíduo no mirante
 [node name="River" type="Marker2D" parent="Flow"]
 position = Vector2(3500, 0)
 metadata/title = "04 · REGIÃO DO RIO"
-metadata/hint = "Combine saltos curtos e longos nas pedras. Há dois REEE sobre o rio."
+metadata/hint = "Combine saltos curtos e longos nas pedras. Ainda há um REEE nesta região."
 
 [node name="Boss" type="Marker2D" parent="Flow"]
 position = Vector2(4640, 0)
@@ -787,14 +770,24 @@ position = Vector2(3530, 0)
 [node name="FinishPoint" type="Marker2D" parent="."]
 position = Vector2(5750, 0)
 
-[node name="BossArena" type="Node2D" parent="."]
-metadata/_note = "Espaço reservado para a luta contra a Nuvem de Poluição."
+[node name="BossArena" parent="." instance=ExtResource("44_boss_arena")]
+position = Vector2(5040, 40)
+reward_path = NodePath("ReeePilha")
 
-[node name="Start" type="Marker2D" parent="BossArena"]
-position = Vector2(4640, 0)
+[node name="ReeePilha" parent="BossArena" groups=["phase1_reee"] instance=ExtResource("3_collect")]
+position = Vector2(0, -20)
+collision_layer = 0
+item_name = "pilha usada"
+collection_group = &"phase1_reee"
+hidden_until_revealed = true
 
-[node name="End" type="Marker2D" parent="BossArena"]
-position = Vector2(5440, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossArena/ReeePilha"]
+shape = SubResource("CollectibleCircle")
 
-[node name="BossSpawn" type="Marker2D" parent="BossArena"]
-position = Vector2(5040, -150)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BossArena/ReeePilha"]
+sprite_frames = SubResource("SpriteFrames_10tw1")
+autoplay = "default"
+
+[node name="TelevisaoEnemy" parent="." instance=ExtResource("41_televisao")]
+position = Vector2(2523, -41)
+patrol_points = PackedVector2Array(-72, 0, 63, 0)

@@ -1,0 +1,143 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" uid="uid://dcfwp8b4irflf" path="res://scenes/bosses/boss_arena.gd" id="1_arena"]
+[ext_resource type="Script" uid="uid://p53y5tfvvuqt" path="res://scenes/bosses/pollution_cloud/pollution_cloud.gd" id="2_boss"]
+[ext_resource type="Script" uid="uid://cgiwn2wf4bryo" path="res://scenes/bosses/pollution_cloud/attacks/acid_rain_attack.gd" id="3_rain"]
+[ext_resource type="Script" uid="uid://blw2q7lf8c4pq" path="res://scenes/bosses/pollution_cloud/attacks/battery_summon_attack.gd" id="5_summon"]
+[ext_resource type="Script" uid="uid://q207rfdkglmv" path="res://scenes/bosses/pollution_cloud/healing_plant.gd" id="6_plant"]
+[ext_resource type="Script" uid="uid://bfvm70vooj6jp" path="res://scenes/bosses/boss_health_bar.gd" id="7_bar"]
+[ext_resource type="PackedScene" uid="uid://dojoph16grx0" path="res://scenes/cutscene/cutscene_player.tscn" id="8_cutscene"]
+
+[node name="PollutionCloudArena" type="Node2D"]
+script = ExtResource("1_arena")
+fight_hint = "Os rolling steal protegem a nuvem! Derrube os dois com o dash."
+interlude_hint = "Desvie da chuva ácida e dê o dash nas pilhas. Quando um broto brilhar, encoste nele para a planta limpar a nuvem!"
+defeat_pause = 1.0
+
+[node name="Boss" type="Node2D" parent="."]
+position = Vector2(0, -130)
+script = ExtResource("2_boss")
+
+[node name="BubblePoint" type="Marker2D" parent="Boss"]
+position = Vector2(0, -40)
+
+[node name="Attacks" type="Node2D" parent="Boss"]
+
+[node name="AcidRain" type="Node2D" parent="Boss/Attacks"]
+script = ExtResource("3_rain")
+attack_id = "chuva_acida"
+
+[node name="BatterySummon" type="Node2D" parent="Boss/Attacks"]
+script = ExtResource("5_summon")
+attack_id = "pilhas"
+
+[node name="Plants" type="Node2D" parent="."]
+
+[node name="PlantLeft" type="Area2D" parent="Plants"]
+position = Vector2(-280, 0)
+script = ExtResource("6_plant")
+
+[node name="PlantCenter" type="Area2D" parent="Plants"]
+script = ExtResource("6_plant")
+
+[node name="PlantRight" type="Area2D" parent="Plants"]
+position = Vector2(280, 0)
+script = ExtResource("6_plant")
+
+[node name="IntroCutscene" parent="." instance=ExtResource("8_cutscene")]
+steps = Array[Dictionary]([{
+"speed": 0.35,
+"type": &"bars_on"
+}, {
+"type": &"stop"
+}, {
+"dir": 1,
+"type": &"face"
+}, {
+"duration": 0.9,
+"target": "../Boss",
+"type": &"focus"
+}, {
+"seconds": 0.4,
+"type": &"wait"
+}, {
+"timeline": &"res://dialogic/timelines/fase1/chefe_intro.dtl",
+"type": &"say"
+}, {
+"boss_call": "call_guards",
+"type": &"signal"
+}, {
+"seconds": 2.2,
+"type": &"wait"
+}, {
+"duration": 0.6,
+"type": &"unfocus"
+}, {
+"speed": 0.35,
+"type": &"bars_off"
+}])
+
+[node name="InterludeCutscene" parent="." instance=ExtResource("8_cutscene")]
+steps = Array[Dictionary]([{
+"speed": 0.35,
+"type": &"bars_on"
+}, {
+"type": &"stop"
+}, {
+"duration": 0.8,
+"target": "../Boss",
+"type": &"focus"
+}, {
+"timeline": &"res://dialogic/timelines/fase1/chefe_acorda.dtl",
+"type": &"say"
+}, {
+"duration": 0.6,
+"type": &"unfocus"
+}, {
+"speed": 0.35,
+"type": &"bars_off"
+}])
+
+[node name="OutroCutscene" parent="." instance=ExtResource("8_cutscene")]
+steps = Array[Dictionary]([{
+"speed": 0.35,
+"type": &"bars_on"
+}, {
+"type": &"stop"
+}, {
+"duration": 0.8,
+"target": "../Boss",
+"type": &"focus"
+}, {
+"timeline": &"res://dialogic/timelines/fase1/chefe_derrota.dtl",
+"type": &"say"
+}, {
+"boss_call": "die",
+"type": &"signal"
+}, {
+"seconds": 2.8,
+"type": &"wait"
+}, {
+"timeline": &"res://dialogic/timelines/fase1/chefe_reee.dtl",
+"type": &"say"
+}, {
+"duration": 0.6,
+"type": &"unfocus"
+}, {
+"speed": 0.35,
+"type": &"bars_off"
+}])
+
+[node name="BossBarLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="BossHealthBar" type="Control" parent="BossBarLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_bar")
+title = "NUVEM DE POLUIÇÃO"

@@ -14,6 +14,8 @@ const SPARKLE_COUNT := 3
 @export var item_name := "resíduo eletrônico"
 @export var collection_group := &"collectibles"
 @export var collector_group := &"player"
+## Começa invisível e intocável; aparece com `reveal()` (ex.: recompensa de chefe).
+@export var hidden_until_revealed := false
 
 @export_group("Destaque")
 @export var highlight := true
@@ -27,6 +29,7 @@ const SPARKLE_COUNT := 3
 @export var sparkle_color := Color("#fffbe6")
 
 var _collected := false
+var _hidden := false
 var _time := 0.0
 var _sprite: Node2D
 
@@ -41,6 +44,27 @@ func _ready() -> void:
 		shader_material.shader = SILHOUETTE_SHADER
 		material = shader_material
 	set_process(highlight and _sprite != null)
+	if hidden_until_revealed:
+		_hidden = true
+		hide()
+
+
+## Mostra o item e permite coletá-lo (com um "pop" de escala, se houver movimento).
+func reveal() -> void:
+	if not _hidden:
+		return
+	_hidden = false
+	show()
+	set_deferred("monitoring", true)
+	if not bool(Settings.get_setting("reduced_motion", false)):
+		scale = Vector2.ZERO
+		create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT).tween_property(
+			self, "scale", Vector2.ONE, 0.4
+		)
+
+
+func is_hidden() -> bool:
+	return _hidden
 
 
 func _process(delta: float) -> void:
@@ -62,7 +86,7 @@ func get_icon() -> Texture2D:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if _collected or not body.is_in_group(collector_group):
+	if _collected or _hidden or not body.is_in_group(collector_group):
 		return
 	_collected = true
 	set_deferred("monitoring", false)

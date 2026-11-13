@@ -71,6 +71,8 @@ var _last_narrated_tutorial := ""
 var _enemy_intro_done := false
 ## Dica "use o dash" no HUD, ativa da apresentação até derrotar ou passar o inimigo.
 var _dash_hint_active := false
+## Instrução da luta contra o chefe (vazia fora da luta); tem prioridade no tutorial.
+var _boss_hint := ""
 
 @onready var player: Player = $Player
 @onready var restoration: RestorationProgress = $Restoration
@@ -88,6 +90,8 @@ var _dash_hint_active := false
 @onready var tutorial_reee: AreaCollectible = $ReeeCelular
 ## Barreira invisível depois do Garidog; abre quando o REEE do tutorial é coletado.
 @onready var tutorial_gate: StaticBody2D = $TutorialGate
+## Arena da Nuvem de Poluição: trava a câmera, roda as cutscenes e a luta.
+@onready var boss_arena: BossArena = $BossArena
 @onready var talking_npcs: Array[Phase1Npc] = [$Garidog, $CorreioBo, $Morador, $Crianca, $DonaLia, $Pipa]
 
 
@@ -128,6 +132,9 @@ func _ready() -> void:
 	enemy_cutscene.started.connect(_on_cinematic_started)
 	enemy_cutscene.finished.connect(_on_enemy_intro_finished)
 	intro_enemy.defeated.connect(_on_intro_enemy_defeated)
+	boss_arena.cutscene_started.connect(_on_cinematic_started)
+	boss_arena.cutscene_finished.connect(_resume_tutorial)
+	boss_arena.hint_changed.connect(_on_boss_hint_changed)
 	_apply_accessibility_preferences()
 	_set_tutorial_visible(false)
 	_update_hud()
@@ -475,6 +482,7 @@ func _tutorial_blocked() -> bool:
 		or intro_cutscene.is_running()
 		or reee_cutscene.is_running()
 		or enemy_cutscene.is_running()
+		or boss_arena.is_in_cutscene()
 		or _dialogue_active
 		or _conclusion_dialogue_active
 		or _minigames_active
@@ -510,6 +518,8 @@ func _update_hud() -> void:
 func _tutorial_text() -> String:
 	if _phase_completed:
 		return "Missão concluída! Explore a vila recuperada e veja o parque e o rio."
+	if not _boss_hint.is_empty():
+		return _boss_hint
 	if not _learned_walk:
 		return "Primeiro, ande pela rua: A/D ou setas esquerda/direita."
 	if not _learned_jump:
@@ -572,6 +582,11 @@ func _freeze_intro_enemy(frozen: bool) -> void:
 	var sprite := intro_enemy.get_node_or_null("Body/Sprite") as AnimatedSprite2D
 	if frozen and sprite:
 		sprite.play(&"idle")
+
+
+func _on_boss_hint_changed(text: String) -> void:
+	_boss_hint = text
+	_update_hud()
 
 
 func _on_intro_enemy_defeated() -> void:

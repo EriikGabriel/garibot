@@ -15,8 +15,9 @@ A exploração é reversível: é possível voltar para buscar qualquer REEE esq
 | Rua | 350 a 1150 | Introduzir movimento e salto com um bloqueio baixo | Celular |
 | Residências | 1150 a 2300 | Praticar subida, conversar e procurar acima da rua | Fios no telhado |
 | Parque | 2300 a 3500 | Combinar saltos e alturas até o mirante; chão permite repetir | Peça de computador |
-| Rio | 3500 a 4750 | Testar saltos com alturas e intervalos diferentes | Placa e componente |
-| Praça | 4750 a 5400 | Diálogo, minigames e contemplação da recuperação | Conclusão |
+| Rio | 3500 a 4640 | Testar saltos com alturas e intervalos diferentes | Componente |
+| Arena do chefe | 4640 a 5440 | Dois rolling steal entram pela direita; depois a Nuvem de Poluição acorda (chuva ácida, pilhas e plantas curativas) | Pilha usada: na cutscene final, a última pilha cai da nuvem, morre e solta o REEE |
+| Praça | 5440 em diante | Diálogo, minigames e contemplação da recuperação | Conclusão |
 
 ## Edição no Godot
 
